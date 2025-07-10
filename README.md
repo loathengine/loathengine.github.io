@@ -5,7 +5,7 @@ Empirical Precision
 
 ![](/select_image.png)
 
-### Click the set scale button and selecet two points on your image to define the scale.
+### Click the set scale button and select two points on your image to define the scale.
 
 ![](/set_scale.png)
 
