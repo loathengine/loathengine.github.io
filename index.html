@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empirical Accuracy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .sidebar {
+            width: 300px;
+            background-color: #f8fafc;
+        }
+        .main-content {
+            flex-grow: 1;
+        }
+        canvas {
+            cursor: grab;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+        }
+        /* --- Modern Button Style --- */
+        .btn {
+            @apply w-full font-semibold py-3 px-4 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 transition-all duration-300 ease-in-out transform hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 active:shadow-md;
+        }
+        .btn:disabled {
+            @apply bg-slate-300 text-slate-500 cursor-not-allowed shadow-inner transform-none hover:shadow-inner hover:-translate-y-0;
+        }
+        .results-box {
+            @apply bg-white p-4 rounded-lg shadow;
+        }
+        .results-box h3 {
+            @apply text-lg font-semibold mb-2;
+        }
+        .results-box p {
+            @apply text-sm mb-1;
+        }
+        #statusMessage {
+            @apply p-2 rounded-md text-center text-sm font-medium transition-opacity duration-300;
+        }
+        .status-info { @apply bg-blue-100 text-blue-800; }
+        .status-success { @apply bg-green-100 text-green-800; }
+        .status-error { @apply bg-red-100 text-red-800; }
+        
+        /* Toggle Switch */
+        .switch {
+          position: relative;
+          display: inline-block;
+          width: 60px;
+          height: 34px;
+        }
+
+        .switch input { 
+          opacity: 0;
+          width: 0;
+          height: 0;
+        }
+
+        .slider {
+          position: absolute;
+          cursor: pointer;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #ccc;
+          -webkit-transition: .4s;
+          transition: .4s;
+        }
+
+        .slider:before {
+          position: absolute;
+          content: "";
+          height: 26px;
+          width: 26px;
+          left: 4px;
+          bottom: 4px;
+          background-color: white;
+          -webkit-transition: .4s;
+          transition: .4s;
+        }
+
+        input:checked + .slider {
+          background-color: #2196F3;
+        }
+
+        input:focus + .slider {
+          box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+          -webkit-transform: translateX(26px);
+          -ms-transform: translateX(26px);
+          transform: translateX(26px);
+        }
+
+        .slider.round {
+          border-radius: 34px;
+        }
+
+        .slider.round:before {
+          border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="flex h-screen bg-gray-100">
+
+    <!-- Sidebar -->
+    <div class="sidebar flex flex-col p-4 space-y-4 overflow-y-auto border-r border-gray-200">
+        <h2 class="text-xl font-bold text-center">Empirical Accuracy</h2>
+
+        <div class="space-y-2">
+            <label for="imageSelector" class="block text-sm font-medium text-gray-700">Current Image:</label>
+            <select id="imageSelector" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" disabled>
+                <!-- Image options will be added dynamically -->
+            </select>
+        </div>
+
+        <div>
+            <label for="imageLoader" class="btn bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 focus:ring-indigo-500 text-white cursor-pointer text-center block">Add New Image</label>
+            <input type="file" id="imageLoader" class="hidden" accept="image/*"/>
+        </div>
+        
+        <button id="removeImageBtn" class="btn bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-700 hover:to-rose-800 focus:ring-red-500 text-white" disabled>Remove Current Image</button>
+
+        <hr>
+
+        <div class="grid grid-cols-2 gap-2">
+            <button id="zoomInBtn" class="btn bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 focus:ring-slate-500 text-white">+</button>
+            <button id="zoomOutBtn" class="btn bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 focus:ring-slate-500 text-white">-</button>
+        </div>
+        
+        <button id="unitToggleBtn" class="btn bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 focus:ring-amber-400 text-gray-800">Units: Imperial (in)</button>
+        
+        <button id="setScaleBtn" class="btn bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 focus:ring-indigo-500 text-white">Set Scale</button>
+        
+        <div class="mt-2">
+            <label for="groupSelector" class="block text-sm font-medium text-gray-700">Current Group:</label>
+            <select id="groupSelector" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" disabled>
+                <!-- Options will be added dynamically -->
+            </select>
+        </div>
+
+        <button id="createGroupBtn" class="btn bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 focus:ring-indigo-500 text-white">Create New Group</button>
+        
+        <button id="markAimBtn" class="btn bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 focus:ring-indigo-500 text-white" disabled>Mark Point of Aim</button>
+        
+        <button id="markImpactBtn" class="btn bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 focus:ring-indigo-500 text-white" disabled>Mark Point of Impact</button>
+        
+        <button id="removeGroupBtn" class="btn bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-700 hover:to-rose-800 focus:ring-red-500 text-white" disabled>Remove Selected Group</button>
+
+        <button id="clearAllBtn" class="btn bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-700 hover:to-rose-800 focus:ring-red-500 text-white">Clear All Data</button>
+
+        <div id="statusMessage" class="opacity-0"></div>
+
+        <div class="flex items-center justify-center my-2">
+            <span class="mr-3 text-sm font-medium text-gray-900">Combined Analysis</span>
+            <label class="switch">
+                <input type="checkbox" id="combinedAnalysisToggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
+
+        <div id="results" class="results-box mt-auto">
+            <h3 id="analysisTitle" class="text-center">Ballistic Analysis</h3>
+            <p><strong>Horizontal ES:</strong> <span id="hSpread">N/A</span></p>
+            <p><strong>Vertical ES:</strong> <span id="vSpread">N/A</span></p>
+            <p><strong>H/V Ratio:</strong> <span id="hvRatio">N/A</span></p>
+            <p><strong>ES:</strong> <span id="eSpread">N/A</span></p>
+            <p><strong>Mean Radius:</strong> <span id="mRadius">N/A</span></p>
+            <p><strong>P95 Radius:</strong> <span id="p95Radius">N/A</span></p>
+            <hr class="my-2">
+            <div id="impactPointsList">
+                <p class="text-gray-500">Add an image to begin.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content flex items-center justify-center bg-gray-200 p-4">
+        <canvas id="canvas" width="800" height="800"></canvas>
+    </div>
+
+    <script>
+        // Get all DOM elements
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const imageLoader = document.getElementById('imageLoader');
+        const imageSelector = document.getElementById('imageSelector');
+        const removeImageBtn = document.getElementById('removeImageBtn');
+        const zoomInBtn = document.getElementById('zoomInBtn');
+        const zoomOutBtn = document.getElementById('zoomOutBtn');
+        const unitToggleBtn = document.getElementById('unitToggleBtn');
+        const setScaleBtn = document.getElementById('setScaleBtn');
+        const createGroupBtn = document.getElementById('createGroupBtn');
+        const groupSelector = document.getElementById('groupSelector');
+        const removeGroupBtn = document.getElementById('removeGroupBtn');
+        const markAimBtn = document.getElementById('markAimBtn');
+        const markImpactBtn = document.getElementById('markImpactBtn');
+        const clearAllBtn = document.getElementById('clearAllBtn');
+        const combinedAnalysisToggle = document.getElementById('combinedAnalysisToggle');
+        const statusMessageEl = document.getElementById('statusMessage');
+        
+        // Get analysis display elements
+        const analysisTitle = document.getElementById('analysisTitle');
+        const impactPointsList = document.getElementById('impactPointsList');
+        const hSpreadEl = document.getElementById('hSpread');
+        const vSpreadEl = document.getElementById('vSpread');
+        const hvRatioEl = document.getElementById('hvRatio');
+        const eSpreadEl = document.getElementById('eSpread');
+        const mRadiusEl = document.getElementById('mRadius');
+        const p95RadiusEl = document.getElementById('p95Radius');
+
+        // App state variables
+        let imageSessions = [];
+        let currentImageIndex = -1;
+        
+        let isDragging = false;
+        let lastX = 0;
+        let lastY = 0;
+
+        let settingScale = false;
+        let markingAim = false;
+        let markingImpact = false;
+        let statusTimeout;
+        
+        // Constants
+        const GROUP_COLORS = ['#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#A133FF', '#33FFA1'];
+        const gradients = {
+            blue: ['from-blue-500', 'to-indigo-600', 'hover:from-blue-600', 'hover:to-indigo-700', 'focus:ring-indigo-500', 'text-white'],
+            green: ['from-green-500', 'to-emerald-600', 'hover:from-green-600', 'hover:to-emerald-700', 'focus:ring-green-500', 'text-white'],
+            yellow: ['from-yellow-400', 'to-amber-500', 'hover:from-yellow-500', 'hover:to-amber-600', 'focus:ring-amber-400', 'text-gray-800'],
+            all: [
+                'from-blue-500', 'to-indigo-600', 'hover:from-blue-600', 'hover:to-indigo-700', 'focus:ring-indigo-500',
+                'from-green-500', 'to-emerald-600', 'hover:from-green-600', 'hover:to-emerald-700', 'focus:ring-green-500',
+                'from-yellow-400', 'to-amber-500', 'hover:from-yellow-500', 'hover:to-amber-600', 'focus:ring-amber-400',
+                'text-white', 'text-gray-800'
+            ]
+        };
+        
+        /**
+         * Returns the currently active image session object.
+         * @returns {object|null} The current session or null.
+         */
+        function getCurrentSession() {
+            return imageSessions[currentImageIndex] || null;
+        }
+
+        /**
+         * Sets the color gradient for a button.
+         * @param {HTMLElement} button - The button element.
+         * @param {string} state - The color state ('blue', 'green', 'yellow').
+         */
+        function setButtonState(button, state) {
+            button.classList.remove(...gradients.all);
+            button.classList.add(...gradients[state]);
+        }
+
+        // --- Event Listeners ---
+        imageLoader.addEventListener('change', handleImage, false);
+        imageSelector.addEventListener('change', handleImageSelection);
+        removeImageBtn.addEventListener('click', removeCurrentImage);
+        zoomInBtn.addEventListener('click', () => zoom(1.1));
+        zoomOutBtn.addEventListener('click', () => zoom(0.9));
+        canvas.addEventListener('mousedown', startDrag);
+        canvas.addEventListener('mouseup', stopDrag);
+        canvas.addEventListener('mousemove', drag);
+        canvas.addEventListener('mouseleave', stopDrag);
+        canvas.addEventListener('click', handleCanvasClick);
+        unitToggleBtn.addEventListener('click', toggleUnits);
+        setScaleBtn.addEventListener('click', startSettingScale);
+        createGroupBtn.addEventListener('click', createNewGroup);
+        groupSelector.addEventListener('change', handleGroupSelection);
+        removeGroupBtn.addEventListener('click', removeSelectedGroup);
+        markAimBtn.addEventListener('click', toggleMarkAim);
+        markImpactBtn.addEventListener('click', toggleMarkImpact);
+        clearAllBtn.addEventListener('click', clearAllSettings);
+        combinedAnalysisToggle.addEventListener('change', updateAnalysis);
+
+        /**
+         * Displays a status message to the user.
+         * @param {string} message - The message to display.
+         * @param {string} type - The type of message ('info', 'success', 'error').
+         * @param {number} duration - How long to display the message in ms.
+         */
+        function showStatusMessage(message, type = 'info', duration = 3000) {
+            clearTimeout(statusTimeout);
+            statusMessageEl.textContent = message;
+            statusMessageEl.className = 'opacity-100'; // Reset classes
+            statusMessageEl.classList.add('p-2', 'rounded-md', 'text-center', 'text-sm', 'font-medium', 'transition-opacity', 'duration-300', `status-${type}`);
+            
+            statusTimeout = setTimeout(() => {
+                statusMessageEl.classList.remove('opacity-100');
+                statusMessageEl.classList.add('opacity-0');
+            }, duration);
+        }
+
+        /**
+         * Updates the entire UI based on the current session state.
+         */
+        function updateUIForNewSession() {
+            const session = getCurrentSession();
+            if (!session) {
+                // No sessions exist, reset to initial state
+                imageSelector.innerHTML = '';
+                imageSelector.disabled = true;
+                removeImageBtn.disabled = true;
+                updateGroupSelector(); // will clear and disable group UI
+                updateAnalysis();
+                draw();
+                updateCursor();
+                return;
+            }
+            
+            updateImageSelector();
+            updateGroupSelector();
+            updateUnitButton();
+            updateAnalysis();
+            draw();
+            updateCursor();
+        }
+
+        /**
+         * Handles the selection of a new image from the dropdown.
+         * @param {Event} e - The change event object.
+         */
+        function handleImageSelection(e) {
+            currentImageIndex = parseInt(e.target.value, 10);
+            updateUIForNewSession();
+        }
+
+        /**
+         * Populates and updates the image selector dropdown.
+         */
+        function updateImageSelector() {
+            imageSelector.innerHTML = '';
+            if (imageSessions.length === 0) {
+                imageSelector.disabled = true;
+                removeImageBtn.disabled = true;
+                return;
+            }
+            
+            imageSelector.disabled = false;
+            removeImageBtn.disabled = false;
+            imageSessions.forEach((session, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = session.name;
+                imageSelector.appendChild(option);
+            });
+            imageSelector.value = currentImageIndex;
+        }
+
+        /**
+         * Handles a new file being selected by the user. Creates a new session.
+         * @param {Event} e - The change event from the file input.
+         */
+        function handleImage(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const newImg = new Image();
+                const newSession = {
+                    name: file.name,
+                    img: newImg,
+                    scale: 1.0,
+                    originX: 0,
+                    originY: 0,
+                    unit: 'imperial',
+                    pixelsPerUnit: 0,
+                    scalePoints: [],
+                    groups: [],
+                    currentGroupIndex: -1,
+                };
+                
+                newImg.onload = () => {
+                    // Calculate initial scale and position
+                    newSession.scale = Math.min(canvas.width / newImg.width, canvas.height / newImg.height);
+                    newSession.originX = (canvas.width - newImg.width * newSession.scale) / 2;
+                    newSession.originY = (canvas.height - newImg.height * newSession.scale) / 2;
+                    
+                    // Add new session and update UI
+                    imageSessions.push(newSession);
+                    currentImageIndex = imageSessions.length - 1;
+                    updateUIForNewSession();
+                };
+                newImg.src = event.target.result;
+            }
+            reader.readAsDataURL(file);
+            imageLoader.value = ''; // Reset file input to allow same file upload again
+        }
+        
+        /**
+         * Removes the currently selected image and its associated data.
+         */
+        function removeCurrentImage() {
+            const session = getCurrentSession();
+            if (!session) return;
+
+            if (confirm(`Are you sure you want to remove the image "${session.name}" and all its data?`)) {
+                imageSessions.splice(currentImageIndex, 1);
+                currentImageIndex = imageSessions.length > 0 ? 0 : -1;
+                updateUIForNewSession();
+                showStatusMessage("Image and its data removed.", "info");
+            }
+        }
+
+        /**
+         * Redraws the canvas with the current image and all points.
+         */
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const session = getCurrentSession();
+            if (!session || !session.img.src) return;
+
+            ctx.save();
+            ctx.translate(session.originX, session.originY);
+            ctx.scale(session.scale, session.scale);
+            ctx.drawImage(session.img, 0, 0);
+            
+            // Draw all groups and points for the current session
+            session.groups.forEach((group, index) => {
+                const color = GROUP_COLORS[index % GROUP_COLORS.length];
+                if (group.aim) drawPoint(group.aim.x, group.aim.y, color, 'A');
+                group.impacts.forEach(impact => drawPoint(impact.x, impact.y, color, 'I'));
+                if (group.impacts.length > 1) {
+                    const sumX = group.impacts.reduce((sum, p) => sum + p.x, 0);
+                    const sumY = group.impacts.reduce((sum, p) => sum + p.y, 0);
+                    drawPoint(sumX / group.impacts.length, sumY / group.impacts.length, 'green', 'M');
+                }
+            });
+            drawScalePoints();
+            ctx.restore();
+        }
+
+        /**
+         * Draws a single point on the canvas.
+         * @param {number} x - The x-coordinate.
+         * @param {number} y - The y-coordinate.
+         * @param {string} color - The color of the point.
+         * @param {string} label - The type of point ('A', 'I', 'M').
+         */
+        function drawPoint(x, y, color, label) {
+            const session = getCurrentSession();
+            if (!session) return;
+            const pointSize = 12 / session.scale;
+            ctx.lineWidth = 2.5 / session.scale;
+            ctx.beginPath();
+            if (label === 'A') { // Aim point
+                ctx.strokeStyle = 'black';
+                ctx.moveTo(x - pointSize / 2, y);
+                ctx.lineTo(x + pointSize / 2, y);
+                ctx.moveTo(x, y - pointSize / 2);
+                ctx.lineTo(x, y + pointSize / 2);
+            } else if (label === 'M') { // Mean point of impact
+                ctx.strokeStyle = 'green';
+                ctx.moveTo(x - pointSize / 2, y - pointSize / 2);
+                ctx.lineTo(x + pointSize / 2, y + pointSize / 2);
+                ctx.moveTo(x + pointSize / 2, y - pointSize / 2);
+                ctx.lineTo(x - pointSize / 2, y + pointSize / 2);
+            } else { // Impact point
+                ctx.lineWidth = 1.5 / session.scale;
+                ctx.fillStyle = color;
+                ctx.strokeStyle = 'black';
+                ctx.arc(x, y, (pointSize/2) * 0.66, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.stroke();
+                return; // Return to avoid double stroke
+            }
+            ctx.stroke();
+        }
+
+        /**
+         * Draws the points used for setting the scale.
+         */
+        function drawScalePoints() {
+            const session = getCurrentSession();
+            if (!session || session.scalePoints.length === 0) return;
+            ctx.fillStyle = 'rgba(255, 223, 0, 0.8)';
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 1.5 / session.scale;
+            session.scalePoints.forEach(p => {
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, 6 / session.scale, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.stroke();
+            });
+        }
+
+        /**
+         * Zooms the canvas in or out.
+         * @param {number} factor - The zoom factor (>1 for zoom in, <1 for zoom out).
+         */
+        function zoom(factor) {
+            const session = getCurrentSession();
+            if (!session) return;
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            session.originX = centerX - (centerX - session.originX) * factor;
+            session.originY = centerY - (centerY - session.originY) * factor;
+            session.scale *= factor;
+            draw();
+        }
+
+        /**
+         * Starts dragging the canvas.
+         * @param {MouseEvent} e - The mousedown event.
+         */
+        function startDrag(e) {
+            if (settingScale || markingAim || markingImpact) return;
+            isDragging = true;
+            lastX = e.offsetX;
+            lastY = e.offsetY;
+            canvas.style.cursor = 'grabbing';
+        }
+
+        /**
+         * Stops dragging the canvas.
+         */
+        function stopDrag() {
+            isDragging = false;
+            updateCursor();
+        }
+
+        /**
+         * Handles dragging the canvas.
+         * @param {MouseEvent} e - The mousemove event.
+         */
+        function drag(e) {
+            if (isDragging) {
+                const session = getCurrentSession();
+                if (!session) return;
+                session.originX += e.offsetX - lastX;
+                session.originY += e.offsetY - lastY;
+                lastX = e.offsetX;
+                lastY = e.offsetY;
+                draw();
+            }
+        }
+
+        /**
+         * Updates the cursor style based on the current mode.
+         */
+        function updateCursor() {
+            const session = getCurrentSession();
+            if (markingAim) {
+                canvas.style.cursor = 'crosshair';
+            } else if (markingImpact) {
+                canvas.style.cursor = "url('data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"%3E%3Ccircle cx=\"12\" cy=\"12\" r=\"10\" fill=\"rgba(255, 255, 255, 0.5)\" stroke=\"black\" stroke-width=\"1.5\"/%3E%3C/svg%3E') 12 12, auto";
+            } else if (settingScale) {
+                canvas.style.cursor = 'cell';
+            } else if (session && session.img.src) {
+                canvas.style.cursor = 'grab';
+            } else {
+                canvas.style.cursor = 'default';
+            }
+        }
+
+        /**
+         * Sets the visual state of the marking buttons.
+         */
+        function setMarkingButtonState() {
+            setButtonState(markAimBtn, markingAim ? 'green' : 'blue');
+            setButtonState(markImpactBtn, markingImpact ? 'green' : 'blue');
+        }
+
+        /**
+         * Toggles the 'marking aim' mode.
+         */
+        function toggleMarkAim() {
+            if (!getCurrentSession()) return;
+            markingAim = !markingAim;
+            if (markingAim) markingImpact = false; // Can't do both
+            setMarkingButtonState();
+            updateCursor();
+        }
+
+        /**
+         * Toggles the 'marking impact' mode.
+         */
+        function toggleMarkImpact() {
+            if (!getCurrentSession()) return;
+            markingImpact = !markingImpact;
+            if (markingImpact) markingAim = false; // Can't do both
+            setMarkingButtonState();
+            updateCursor();
+        }
+
+        /**
+         * Handles clicks on the canvas for various actions.
+         * @param {MouseEvent} e - The click event.
+         */
+        function handleCanvasClick(e) {
+            const session = getCurrentSession();
+            if (!session) return;
+            const canvasX = (e.offsetX - session.originX) / session.scale;
+            const canvasY = (e.offsetY - session.originY) / session.scale;
+            
+            if (settingScale) handleScalePoint(canvasX, canvasY);
+            else if (markingAim) setPointOfAim(canvasX, canvasY);
+            else if (markingImpact) addPointOfImpact(canvasX, canvasY);
+        }
+        
+        /**
+         * Updates the text on the unit toggle button.
+         */
+        function updateUnitButton() {
+            const session = getCurrentSession();
+            if (!session) return;
+            unitToggleBtn.textContent = `Units: ${session.unit === 'imperial' ? 'Imperial (in)' : 'Metric (mm)'}`;
+        }
+        
+        /**
+         * Toggles the measurement units for the current session.
+         */
+        function toggleUnits() {
+            const session = getCurrentSession();
+            if (!session) return;
+            session.unit = (session.unit === 'imperial') ? 'metric' : 'imperial';
+            session.pixelsPerUnit = 0; // Reset scale when units change
+            session.scalePoints = [];
+            setScaleBtn.textContent = 'Set Scale';
+            setButtonState(setScaleBtn, 'blue');
+            updateUnitButton();
+            updateAnalysis();
+            draw();
+        }
+
+        /**
+         * Starts the process of setting the scale.
+         */
+        function startSettingScale() {
+            if (!getCurrentSession()) {
+                showStatusMessage("Please add an image first.", 'error');
+                return;
+            }
+            settingScale = true;
+            getCurrentSession().scalePoints = [];
+            setButtonState(setScaleBtn, 'green');
+            updateCursor();
+            showStatusMessage(`Click two points for scale: ${getCurrentSession().unit === 'imperial' ? '1 inch' : '10 mm'}.`, 'info');
+            draw(); 
+        }
+
+        /**
+         * Handles a click when setting the scale.
+         * @param {number} x - The x-coordinate of the click.
+         * @param {number} y - The y-coordinate of the click.
+         */
+        function handleScalePoint(x, y) {
+            const session = getCurrentSession();
+            if (!session) return;
+            session.scalePoints.push({x, y});
+            draw();
+            if (session.scalePoints.length === 2) {
+                const dx = session.scalePoints[1].x - session.scalePoints[0].x;
+                const dy = session.scalePoints[1].y - session.scalePoints[0].y;
+                session.pixelsPerUnit = Math.sqrt(dx*dx + dy*dy) / ((session.unit === 'imperial') ? 1 : 10);
+                settingScale = false;
+                setScaleBtn.textContent = 'Set Scale';
+                setButtonState(setScaleBtn, 'blue');
+                showStatusMessage("Scale set successfully!", 'success');
+                updateCursor();
+                draw();
+                updateAnalysis();
+            }
+        }
+        
+        /**
+         * Populates and updates the group selector dropdown.
+         */
+        function updateGroupSelector() {
+            const session = getCurrentSession();
+            groupSelector.innerHTML = '';
+            
+            if (!session || session.groups.length === 0) {
+                groupSelector.disabled = true;
+                removeGroupBtn.disabled = true;
+                markAimBtn.disabled = true;
+                markImpactBtn.disabled = true;
+                if (session) session.currentGroupIndex = -1;
+                return;
+            }
+
+            session.groups.forEach((group, index) => {
+                const option = document.createElement('option');
+                option.value = index;
+                option.textContent = `Group ${index + 1}`;
+                groupSelector.appendChild(option);
+            });
+
+            groupSelector.disabled = false;
+            removeGroupBtn.disabled = false;
+            markAimBtn.disabled = false;
+            markImpactBtn.disabled = false;
+            if (session.currentGroupIndex === -1) {
+                session.currentGroupIndex = session.groups.length - 1;
+            }
+            groupSelector.value = session.currentGroupIndex;
+        }
+
+        /**
+         * Creates a new group for the current session.
+         */
+        function createNewGroup() {
+            const session = getCurrentSession();
+            if (!session) {
+                showStatusMessage("Please add an image first.", 'error');
+                return;
+            }
+            session.groups.push({ aim: null, impacts: [] });
+            session.currentGroupIndex = session.groups.length -1;
+            updateGroupSelector();
+            showStatusMessage(`Group ${session.groups.length} created. Mark Point of Aim.`, 'info');
+            if (!markingAim) toggleMarkAim();
+        }
+
+        /**
+         * Removes the currently selected group.
+         */
+        function removeSelectedGroup() {
+            const session = getCurrentSession();
+            if (!session || session.currentGroupIndex === -1) return;
+            const groupNumber = session.currentGroupIndex + 1;
+            session.groups.splice(session.currentGroupIndex, 1);
+            session.currentGroupIndex = session.groups.length > 0 ? 0 : -1;
+            updateGroupSelector();
+            draw();
+            updateAnalysis();
+            showStatusMessage(`Group ${groupNumber} removed.`, 'info');
+        }
+
+        /**
+         * Clears all image sessions and data.
+         */
+        function clearAllSettings() {
+            if (!confirm("Are you sure you want to clear ALL images and data? This action cannot be undone.")) {
+                return;
+            }
+            imageSessions = [];
+            currentImageIndex = -1;
+            updateUIForNewSession();
+            showStatusMessage("All data has been cleared.", 'success');
+        }
+
+        /**
+         * Handles selection of a new group from the dropdown.
+         * @param {Event} e - The change event.
+         */
+        function handleGroupSelection(e) {
+            const session = getCurrentSession();
+            if (!session) return;
+            session.currentGroupIndex = parseInt(e.target.value, 10);
+        }
+
+        /**
+         * Sets the point of aim for the current group.
+         * @param {number} x - The x-coordinate.
+         * @param {number} y - The y-coordinate.
+         */
+        function setPointOfAim(x, y) {
+            const session = getCurrentSession();
+            if (!session || session.currentGroupIndex === -1) return;
+            session.groups[session.currentGroupIndex].aim = {x, y};
+            
+            // Automatically switch to marking impacts
+            markingAim = false;
+            markingImpact = true;
+            setMarkingButtonState();
+            updateCursor();
+
+            draw();
+            updateAnalysis();
+            showStatusMessage(`Point of Aim set. Now marking Points of Impact.`, 'info');
+        }
+
+        /**
+         * Adds a point of impact to the current group.
+         * @param {number} x - The x-coordinate.
+         * @param {number} y - The y-coordinate.
+         */
+        function addPointOfImpact(x, y) {
+            const session = getCurrentSession();
+            if (!session || session.currentGroupIndex === -1) return;
+            session.groups[session.currentGroupIndex].impacts.push({x, y});
+            draw();
+            updateAnalysis();
+        }
+
+        /**
+         * Main analysis function that routes to individual or combined analysis.
+         */
+        function updateAnalysis() {
+            if (combinedAnalysisToggle.checked) {
+                analysisTitle.textContent = "Combined Analysis";
+                calculateCombinedAnalysis();
+            } else {
+                analysisTitle.textContent = "Ballistic Analysis";
+                calculateIndividualAnalysis();
+            }
+        }
+
+        /**
+         * Calculates and displays analysis for the current image only.
+         */
+        function calculateIndividualAnalysis() {
+            const session = getCurrentSession();
+            if (!session) {
+                hSpreadEl.textContent = 'N/A'; vSpreadEl.textContent = 'N/A';
+                hvRatioEl.textContent = 'N/A'; eSpreadEl.textContent = 'N/A';
+                mRadiusEl.textContent = 'N/A'; p95RadiusEl.textContent = 'N/A';
+                impactPointsList.innerHTML = '<p class="text-gray-500">Add an image to begin.</p>';
+                return;
+            }
+            
+            if (session.pixelsPerUnit === 0) {
+                const reason = ' (Set Scale)';
+                hSpreadEl.textContent = 'N/A' + reason; vSpreadEl.textContent = 'N/A' + reason;
+                hvRatioEl.textContent = 'N/A'; eSpreadEl.textContent = 'N/A' + reason;
+                mRadiusEl.textContent = 'N/A' + reason; p95RadiusEl.textContent = 'N/A' + reason;
+                impactPointsList.innerHTML = '<p class="text-gray-500">Set scale to see point data.</p>';
+                return;
+            }
+            
+            const allImpacts = [];
+            let impactDetailsHtml = '';
+            session.groups.forEach(group => {
+                if (!group.aim) return;
+                group.impacts.forEach(impact => {
+                    const dx_real = (impact.x - group.aim.x) / session.pixelsPerUnit;
+                    const dy_real = (impact.y - group.aim.y) / session.pixelsPerUnit;
+                    allImpacts.push({ x: dx_real, y: dy_real });
+                    impactDetailsHtml += `<p>(${dx_real.toFixed(2)},${dy_real.toFixed(2)})</p>`;
+                });
+            });
+            
+            impactPointsList.innerHTML = impactDetailsHtml ? `<h4 class="font-semibold">POI from POA:</h4>${impactDetailsHtml}` : '<p class="text-gray-500">No impact points marked yet.</p>';
+
+            performCalculations(allImpacts, session.unit);
+        }
+
+        /**
+         * Calculates and displays analysis for all images combined.
+         */
+        function calculateCombinedAnalysis() {
+            const allImpactsCombined = [];
+            let validSessions = 0;
+            let impactDetailsHtml = '';
+
+            imageSessions.forEach(session => {
+                if (session.pixelsPerUnit > 0) {
+                    validSessions++;
+                    session.groups.forEach(group => {
+                        if (group.aim) {
+                            group.impacts.forEach(impact => {
+                                let dx_real = (impact.x - group.aim.x) / session.pixelsPerUnit;
+                                let dy_real = (impact.y - group.aim.y) / session.pixelsPerUnit;
+                                // Convert to imperial for consistency in combined view
+                                if (session.unit === 'metric') {
+                                    dx_real /= 25.4;
+                                    dy_real /= 25.4;
+                                }
+                                allImpactsCombined.push({ x: dx_real, y: dy_real });
+                                impactDetailsHtml += `<p>(${dx_real.toFixed(2)},${dy_real.toFixed(2)})</p>`;
+                            });
+                        }
+                    });
+                }
+            });
+
+            if (validSessions === 0) {
+                 impactPointsList.innerHTML = '<p class="text-gray-500">No images with a set scale available for combined analysis.</p>';
+                 hSpreadEl.textContent = 'N/A'; vSpreadEl.textContent = 'N/A';
+                 hvRatioEl.textContent = 'N/A'; eSpreadEl.textContent = 'N/A';
+                 mRadiusEl.textContent = 'N/A'; p95RadiusEl.textContent = 'N/A';
+                 return;
+            }
+            
+            const summaryHtml = `<p class="text-gray-600">Combining data from ${validSessions} image(s) with ${allImpactsCombined.length} total impacts.</p>`;
+            impactPointsList.innerHTML = summaryHtml + (impactDetailsHtml ? `<h4 class="font-semibold mt-2">Combined POI from POA (in):</h4>${impactDetailsHtml}` : '');
+
+            performCalculations(allImpactsCombined, 'imperial'); // Always display combined in imperial
+        }
+
+        /**
+         * Performs the core statistical calculations on a set of impact points.
+         * @param {Array<object>} impacts - An array of impact points with x and y properties.
+         * @param {string} unit - The unit of measurement ('imperial' or 'metric').
+         */
+        function performCalculations(impacts, unit) {
+            if (impacts.length < 2) {
+                hSpreadEl.textContent = 'N/A'; vSpreadEl.textContent = 'N/A';
+                hvRatioEl.textContent = 'N/A'; eSpreadEl.textContent = 'N/A';
+                mRadiusEl.textContent = 'N/A'; p95RadiusEl.textContent = 'N/A';
+                return;
+            }
+            
+            const unitLabel = unit === 'imperial' ? 'in' : 'mm';
+            const xCoords = impacts.map(p => p.x);
+            const yCoords = impacts.map(p => p.y);
+            const hSpread = Math.max(...xCoords) - Math.min(...xCoords);
+            const vSpread = Math.max(...yCoords) - Math.min(...yCoords);
+            hSpreadEl.textContent = `${hSpread.toFixed(2)} ${unitLabel}`;
+            vSpreadEl.textContent = `${vSpread.toFixed(2)} ${unitLabel}`;
+            hvRatioEl.textContent = vSpread > 0 ? (hSpread / vSpread).toFixed(2) : 'N/A';
+            
+            let maxDistSq = 0;
+            for (let i = 0; i < impacts.length; i++) {
+                for (let j = i + 1; j < impacts.length; j++) {
+                    const distSq = (impacts[i].x - impacts[j].x)**2 + (impacts[i].y - impacts[j].y)**2;
+                    if (distSq > maxDistSq) maxDistSq = distSq;
+                }
+            }
+            eSpreadEl.textContent = `${Math.sqrt(maxDistSq).toFixed(2)} ${unitLabel}`;
+
+            const centerX = xCoords.reduce((s, x) => s + x, 0) / impacts.length;
+            const centerY = yCoords.reduce((s, y) => s + y, 0) / impacts.length;
+            
+            const radii = impacts.map(p => Math.sqrt((p.x - centerX)**2 + (p.y - centerY)**2));
+            mRadiusEl.textContent = `${(radii.reduce((s, r) => s + r, 0) / impacts.length).toFixed(2)} ${unitLabel}`;
+            
+            radii.sort((a, b) => a - b);
+            const p95Index = Math.ceil(0.95 * radii.length) - 1;
+            const p95Radius = radii[p95Index];
+            p95RadiusEl.textContent = `${p95Radius.toFixed(2)} ${unitLabel}`;
+        }
+        
+        // --- Initial State ---
+        draw();
+        updateCursor();
+
+    </script>
+</body>
+</html>
+
