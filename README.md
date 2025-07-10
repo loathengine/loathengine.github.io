@@ -1,4 +1,4 @@
 # loathengine.github.io
 Empirical Precision
 
-images/electrocat.png
+![](/select_image.png)
