@@ -119,12 +119,11 @@
             </select>
         </div>
 
-        <div>
-            <label for="imageLoader" class="btn bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 focus:ring-indigo-500 text-white cursor-pointer text-center block">Add New Image</label>
+        <div class="grid grid-cols-2 gap-2">
+            <label for="imageLoader" class="btn bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 focus:ring-indigo-500 text-white cursor-pointer text-center flex items-center justify-center">Add Image</label>
             <input type="file" id="imageLoader" class="hidden" accept="image/*"/>
+            <button id="removeImageBtn" class="btn bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-700 hover:to-rose-800 focus:ring-red-500 text-white" disabled>Remove Image</button>
         </div>
-        
-        <button id="removeImageBtn" class="btn bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-700 hover:to-rose-800 focus:ring-red-500 text-white" disabled>Remove Current Image</button>
 
         <hr>
 
@@ -144,13 +143,17 @@
             </select>
         </div>
 
-        <button id="createGroupBtn" class="btn bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 focus:ring-indigo-500 text-white">Create New Group</button>
+        <div class="grid grid-cols-2 gap-2">
+            <button id="createGroupBtn" class="btn bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 focus:ring-indigo-500 text-white">Add Group</button>
+            <button id="removeGroupBtn" class="btn bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-700 hover:to-rose-800 focus:ring-red-500 text-white" disabled>Remove Group</button>
+        </div>
         
         <button id="markAimBtn" class="btn bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 focus:ring-indigo-500 text-white" disabled>Mark Point of Aim</button>
         
-        <button id="markImpactBtn" class="btn bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 focus:ring-indigo-500 text-white" disabled>Mark Point of Impact</button>
-        
-        <button id="removeGroupBtn" class="btn bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-700 hover:to-rose-800 focus:ring-red-500 text-white" disabled>Remove Selected Group</button>
+        <div class="grid grid-cols-2 gap-2">
+            <button id="markImpactBtn" class="btn bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 focus:ring-indigo-500 text-white" disabled>Mark Impact</button>
+            <button id="deleteLastImpactBtn" class="btn bg-gradient-to-r from-amber-600 to-yellow-700 hover:from-amber-700 hover:to-yellow-800 focus:ring-amber-500 text-white" disabled>Remove Impact</button>
+        </div>
 
         <button id="clearAllBtn" class="btn bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-700 hover:to-rose-800 focus:ring-red-500 text-white">Clear All Data</button>
 
@@ -200,6 +203,7 @@
         const removeGroupBtn = document.getElementById('removeGroupBtn');
         const markAimBtn = document.getElementById('markAimBtn');
         const markImpactBtn = document.getElementById('markImpactBtn');
+        const deleteLastImpactBtn = document.getElementById('deleteLastImpactBtn');
         const clearAllBtn = document.getElementById('clearAllBtn');
         const combinedAnalysisToggle = document.getElementById('combinedAnalysisToggle');
         const statusMessageEl = document.getElementById('statusMessage');
@@ -277,6 +281,7 @@
         removeGroupBtn.addEventListener('click', removeSelectedGroup);
         markAimBtn.addEventListener('click', toggleMarkAim);
         markImpactBtn.addEventListener('click', toggleMarkImpact);
+        deleteLastImpactBtn.addEventListener('click', deleteLastImpact);
         clearAllBtn.addEventListener('click', clearAllSettings);
         combinedAnalysisToggle.addEventListener('change', updateAnalysis);
 
@@ -672,7 +677,7 @@
         }
         
         /**
-         * Populates and updates the group selector dropdown.
+         * Populates and updates the group selector dropdown and related buttons.
          */
         function updateGroupSelector() {
             const session = getCurrentSession();
@@ -683,6 +688,7 @@
                 removeGroupBtn.disabled = true;
                 markAimBtn.disabled = true;
                 markImpactBtn.disabled = true;
+                deleteLastImpactBtn.disabled = true;
                 if (session) session.currentGroupIndex = -1;
                 return;
             }
@@ -702,7 +708,11 @@
                 session.currentGroupIndex = session.groups.length - 1;
             }
             groupSelector.value = session.currentGroupIndex;
+            
+            const currentGroup = session.groups[session.currentGroupIndex];
+            deleteLastImpactBtn.disabled = !currentGroup || currentGroup.impacts.length === 0;
         }
+
 
         /**
          * Creates a new group for the current session.
@@ -756,6 +766,9 @@
             const session = getCurrentSession();
             if (!session) return;
             session.currentGroupIndex = parseInt(e.target.value, 10);
+            // Update delete button state for the new group
+            const currentGroup = session.groups[session.currentGroupIndex];
+            deleteLastImpactBtn.disabled = !currentGroup || currentGroup.impacts.length === 0;
         }
 
         /**
@@ -788,8 +801,30 @@
             const session = getCurrentSession();
             if (!session || session.currentGroupIndex === -1) return;
             session.groups[session.currentGroupIndex].impacts.push({x, y});
+            deleteLastImpactBtn.disabled = false; // Enable delete button
             draw();
             updateAnalysis();
+        }
+
+        /**
+         * Deletes the last point of impact from the current group.
+         */
+        function deleteLastImpact() {
+            const session = getCurrentSession();
+            if (!session || session.currentGroupIndex === -1) return;
+            
+            const currentGroup = session.groups[session.currentGroupIndex];
+            if (currentGroup.impacts.length > 0) {
+                currentGroup.impacts.pop();
+                if (currentGroup.impacts.length === 0) {
+                    deleteLastImpactBtn.disabled = true; // Disable if no impacts left
+                }
+                draw();
+                updateAnalysis();
+                showStatusMessage("Last point of impact removed.", "info");
+            } else {
+                showStatusMessage("No impacts to remove from this group.", "error");
+            }
         }
 
         /**
@@ -937,4 +972,3 @@
     </script>
 </body>
 </html>
-
