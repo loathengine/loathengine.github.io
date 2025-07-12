@@ -3,8 +3,6 @@ Empirical Precision
 
 ### Getting Started: A Step-by-Step Guide
 
-Here is a simple guide to using the Empirical Accuracy tool to analyze your target images.
-
 **1. Add an Image**
 * Click the **"Add Image"** button to select a target image from your computer.
 * Once loaded, the image will appear in the main canvas area.
