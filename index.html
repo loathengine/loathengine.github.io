@@ -156,6 +156,8 @@
         </div>
 
         <button id="clearAllBtn" class="btn bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-700 hover:to-rose-800 focus:ring-red-500 text-white">Clear All Data</button>
+        
+        <button id="exportImageBtn" class="btn bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 focus:ring-green-500 text-white" disabled>Export Image</button>
 
         <div id="statusMessage" class="opacity-0"></div>
 
@@ -207,6 +209,7 @@
         const markImpactBtn = document.getElementById('markImpactBtn');
         const deleteLastImpactBtn = document.getElementById('deleteLastImpactBtn');
         const clearAllBtn = document.getElementById('clearAllBtn');
+        const exportImageBtn = document.getElementById('exportImageBtn');
         const combinedAnalysisToggle = document.getElementById('combinedAnalysisToggle');
         const statusMessageEl = document.getElementById('statusMessage');
         
@@ -287,6 +290,7 @@
         markImpactBtn.addEventListener('click', toggleMarkImpact);
         deleteLastImpactBtn.addEventListener('click', deleteLastImpact);
         clearAllBtn.addEventListener('click', clearAllSettings);
+        exportImageBtn.addEventListener('click', exportCanvasAsImage);
         combinedAnalysisToggle.addEventListener('change', updateAnalysis);
 
         /**
@@ -317,6 +321,7 @@
                 imageSelector.innerHTML = '';
                 imageSelector.disabled = true;
                 removeImageBtn.disabled = true;
+                exportImageBtn.disabled = true;
                 updateGroupSelector(); // will clear and disable group UI
                 updateAnalysis();
                 draw();
@@ -349,11 +354,13 @@
             if (imageSessions.length === 0) {
                 imageSelector.disabled = true;
                 removeImageBtn.disabled = true;
+                exportImageBtn.disabled = true;
                 return;
             }
             
             imageSelector.disabled = false;
             removeImageBtn.disabled = false;
+            exportImageBtn.disabled = false;
             imageSessions.forEach((session, index) => {
                 const option = document.createElement('option');
                 option.value = index;
@@ -992,6 +999,162 @@
             } else {
                 p95RadiusEl.textContent = 'N/A';
             }
+        }
+        
+        /**
+         * Helper function to draw a single point on the export canvas.
+         * @param {CanvasRenderingContext2D} ctx - The context of the export canvas.
+         * @param {number} x - The x-coordinate.
+         * @param {number} y - The y-coordinate.
+         * @param {string} color - The color of the point.
+         * @param {string} label - The type of point ('A', 'I', 'M').
+         * @param {number} pointSize - The base size for the point.
+         * @param {number} lineWidth - The line width for strokes.
+         */
+        function drawPointForExport(ctx, x, y, color, label, pointSize, lineWidth) {
+            ctx.lineWidth = lineWidth;
+            ctx.beginPath();
+            if (label === 'A') { // Aim point
+                ctx.strokeStyle = 'black';
+                ctx.moveTo(x - pointSize / 2, y);
+                ctx.lineTo(x + pointSize / 2, y);
+                ctx.moveTo(x, y - pointSize / 2);
+                ctx.lineTo(x, y + pointSize / 2);
+            } else if (label === 'M') { // Mean point of impact
+                ctx.strokeStyle = 'green';
+                ctx.moveTo(x - pointSize / 2, y - pointSize / 2);
+                ctx.lineTo(x + pointSize / 2, y + pointSize / 2);
+                ctx.moveTo(x + pointSize / 2, y - pointSize / 2);
+                ctx.lineTo(x - pointSize / 2, y + pointSize / 2);
+            } else { // Impact point
+                ctx.lineWidth = lineWidth;
+                ctx.fillStyle = color;
+                ctx.strokeStyle = 'black';
+                ctx.arc(x, y, (pointSize / 2) * 0.66, 0, 2 * Math.PI);
+                ctx.fill();
+                ctx.stroke();
+                return;
+            }
+            ctx.stroke();
+        }
+
+        /**
+         * Exports the current canvas view with annotations and analysis data as a PNG image.
+         * The image is resized to a fixed width for uniform exports.
+         */
+        function exportCanvasAsImage() {
+            const session = getCurrentSession();
+            if (!session || !session.img.src) {
+                showStatusMessage("No image to export.", "error");
+                return;
+            }
+
+            // 1. Setup Canvas with FIXED SIZE
+            const exportCanvas = document.createElement('canvas');
+            const exportCtx = exportCanvas.getContext('2d');
+            const img = session.img;
+
+            // Define fixed export dimensions and calculate scaling
+            const EXPORT_WIDTH = 1200;
+            const aspectRatio = img.naturalHeight / img.naturalWidth;
+            const EXPORT_HEIGHT = EXPORT_WIDTH * aspectRatio;
+            const scaleFactor = EXPORT_WIDTH / img.naturalWidth;
+
+            // Define layout for the footer
+            const footerHeight = 220;
+            const padding = 25;
+            const lineHeight = 24;
+            const titleFontSize = 28;
+            const bodyFontSize = 20;
+            
+            exportCanvas.width = EXPORT_WIDTH;
+            exportCanvas.height = EXPORT_HEIGHT + footerHeight;
+
+            // 2. Draw Background and RESIZED Image
+            exportCtx.fillStyle = '#FFFFFF';
+            exportCtx.fillRect(0, 0, exportCanvas.width, exportCanvas.height);
+            exportCtx.drawImage(img, 0, 0, EXPORT_WIDTH, EXPORT_HEIGHT);
+
+            // 3. Draw SCALED Annotations (Points)
+            const pointSize = Math.max(12, EXPORT_WIDTH / 100);
+            const lineWidth = Math.max(2, EXPORT_WIDTH / 500);
+
+            session.groups.forEach((group, index) => {
+                const color = GROUP_COLORS[index % GROUP_COLORS.length];
+                // Scale all point coordinates by the calculated scaleFactor
+                if (group.aim) {
+                    drawPointForExport(exportCtx, group.aim.x * scaleFactor, group.aim.y * scaleFactor, 'black', 'A', pointSize, lineWidth);
+                }
+                group.impacts.forEach(impact => {
+                    drawPointForExport(exportCtx, impact.x * scaleFactor, impact.y * scaleFactor, color, 'I', pointSize, lineWidth * 0.75);
+                });
+                if (group.impacts.length > 1) {
+                    const sumX = group.impacts.reduce((sum, p) => sum + p.x, 0);
+                    const sumY = group.impacts.reduce((sum, p) => sum + p.y, 0);
+                    const meanX = (sumX / group.impacts.length) * scaleFactor;
+                    const meanY = (sumY / group.impacts.length) * scaleFactor;
+                    drawPointForExport(exportCtx, meanX, meanY, 'green', 'M', pointSize, lineWidth);
+                }
+            });
+
+            if (session.scalePoints.length > 0) {
+                exportCtx.fillStyle = 'rgba(255, 223, 0, 0.8)';
+                exportCtx.strokeStyle = 'black';
+                exportCtx.lineWidth = lineWidth * 0.75;
+                session.scalePoints.forEach(p => {
+                    exportCtx.beginPath();
+                    exportCtx.arc(p.x * scaleFactor, p.y * scaleFactor, pointSize / 2, 0, 2 * Math.PI);
+                    exportCtx.fill();
+                    exportCtx.stroke();
+                });
+            }
+
+            // 4. Draw Analysis Text in the Footer
+            const textYStart = EXPORT_HEIGHT + padding + titleFontSize;
+            exportCtx.fillStyle = '#000000';
+            
+            exportCtx.font = `bold ${titleFontSize}px Inter, sans-serif`;
+            exportCtx.textAlign = 'center';
+            exportCtx.fillText(analysisTitle.textContent, exportCanvas.width / 2, textYStart);
+
+            exportCtx.font = `${bodyFontSize}px Inter, sans-serif`;
+            exportCtx.textAlign = 'left';
+            let currentY_col1 = textYStart + lineHeight * 2;
+            let currentY_col2 = textYStart + lineHeight * 2;
+            const col1X = padding * 2;
+            const col2X = exportCanvas.width / 2 + padding;
+
+            const stats = [
+                { label: "Horizontal ES:", value: hSpreadEl.textContent },
+                { label: "Vertical ES:", value: vSpreadEl.textContent },
+                { label: "H/V Ratio:", value: hvRatioEl.textContent },
+                { label: "Mean Radius:", value: mRadiusEl.textContent },
+                { label: "Std. Deviation:", value: stdDevEl.textContent },
+                { label: "MoE (95% CI):", value: moeEl.textContent },
+                { label: "CEP (P50) Radius:", value: cepRadiusEl.textContent },
+                { label: "P95 Range:", value: p95RadiusEl.textContent }
+            ];
+
+            stats.forEach((stat, index) => {
+                if (index < 4) {
+                    exportCtx.fillText(`${stat.label} ${stat.value}`, col1X, currentY_col1);
+                    currentY_col1 += lineHeight;
+                } else {
+                    exportCtx.fillText(`${stat.label} ${stat.value}`, col2X, currentY_col2);
+                    currentY_col2 += lineHeight;
+                }
+            });
+
+            // 5. Trigger Download
+            const link = document.createElement('a');
+            const fileName = session.name.split('.').slice(0, -1).join('.') || 'analysis';
+            link.download = `${fileName}_analysis_uniform.png`;
+            link.href = exportCanvas.toDataURL('image/png');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            showStatusMessage("Uniform image exported successfully!", "success");
         }
         
         // --- Initial State ---
