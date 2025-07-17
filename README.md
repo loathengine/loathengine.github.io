@@ -52,3 +52,7 @@ The list below the stats shows the coordinates of each impact relative to the po
 * **Zoom:** Use the **"+"** and **"-"** buttons to zoom in and out of the image.  
 * **Pan:** Click and drag on the image to move it around within the viewer.  
 * **Manage Groups:** You can create multiple groups on a single target. Use the "Current Group" dropdown to switch between them. Click **"Remove Group"** to delete the currently selected group.
+* 
+
+![screenshot](images/screenshot.png)
+
