@@ -177,8 +177,7 @@
             <p><strong>Mean Radius:</strong> <span id="mRadius">N/A</span></p>
             <p><strong>Std. Deviation:</strong> <span id="stdDev">N/A</span></p>
             <p><strong>MoE (95% CI):</strong> <span id="moe">N/A</span></p>
-            <p><strong>CEP (P50) Radius:</strong> <span id="cepRadius">N/A</span></p>
-            <p><strong>P95 Range:</strong> <span id="p95Radius">N/A</span></p>
+            <p><strong>P95 Radius:</strong> <span id="p95Radius">N/A</span></p>
             <hr class="my-2">
             <div id="impactPointsList">
                 <p class="text-gray-500">Add an image to begin.</p>
@@ -222,7 +221,6 @@
         const mRadiusEl = document.getElementById('mRadius');
         const stdDevEl = document.getElementById('stdDev');
         const moeEl = document.getElementById('moe');
-        const cepRadiusEl = document.getElementById('cepRadius');
         const p95RadiusEl = document.getElementById('p95Radius');
 
         // App state variables
@@ -860,7 +858,7 @@
                 hSpreadEl.textContent = 'N/A'; vSpreadEl.textContent = 'N/A';
                 hvRatioEl.textContent = 'N/A';
                 mRadiusEl.textContent = 'N/A'; stdDevEl.textContent = 'N/A'; moeEl.textContent = 'N/A';
-                cepRadiusEl.textContent = 'N/A'; p95RadiusEl.textContent = 'N/A';
+                p95RadiusEl.textContent = 'N/A';
                 impactPointsList.innerHTML = '<p class="text-gray-500">Add an image to begin.</p>';
                 return;
             }
@@ -870,7 +868,7 @@
                 hSpreadEl.textContent = 'N/A' + reason; vSpreadEl.textContent = 'N/A' + reason;
                 hvRatioEl.textContent = 'N/A';
                 mRadiusEl.textContent = 'N/A' + reason; stdDevEl.textContent = 'N/A' + reason; moeEl.textContent = 'N/A' + reason;
-                cepRadiusEl.textContent = 'N/A' + reason; p95RadiusEl.textContent = 'N/A' + reason;
+                p95RadiusEl.textContent = 'N/A' + reason;
                 impactPointsList.innerHTML = '<p class="text-gray-500">Set scale to see point data.</p>';
                 return;
             }
@@ -926,7 +924,7 @@
                  hSpreadEl.textContent = 'N/A'; vSpreadEl.textContent = 'N/A';
                  hvRatioEl.textContent = 'N/A';
                  mRadiusEl.textContent = 'N/A'; stdDevEl.textContent = 'N/A'; moeEl.textContent = 'N/A';
-                 cepRadiusEl.textContent = 'N/A'; p95RadiusEl.textContent = 'N/A';
+                 p95RadiusEl.textContent = 'N/A';
                  return;
             }
             
@@ -946,7 +944,7 @@
                 hSpreadEl.textContent = 'N/A'; vSpreadEl.textContent = 'N/A';
                 hvRatioEl.textContent = 'N/A';
                 mRadiusEl.textContent = 'N/A'; stdDevEl.textContent = 'N/A'; moeEl.textContent = 'N/A';
-                cepRadiusEl.textContent = 'N/A'; p95RadiusEl.textContent = 'N/A';
+                p95RadiusEl.textContent = 'N/A';
                 return;
             }
             
@@ -971,11 +969,10 @@
             const stdDev = Math.sqrt(variance);
             stdDevEl.textContent = `${stdDev.toFixed(2)} ${unitLabel}`;
 
-            // Calculate Margin of Error (95% Confidence Interval)
+            // Calculate Margin of Error (95% Confidence Interval for the Mean Radius)
             const sampleSize = impacts.length;
-            let moe = 0;
             if (sampleSize > 1) {
-                moe = (1.96 * stdDev) / Math.sqrt(sampleSize);
+                const moe = (1.96 * stdDev) / Math.sqrt(sampleSize);
                 moeEl.textContent = `±${moe.toFixed(2)} ${unitLabel}`;
             } else {
                 moeEl.textContent = 'N/A';
@@ -983,19 +980,11 @@
             
             radii.sort((a, b) => a - b);
 
-            // Calculate CEP (P50)
-            const p50Index = Math.ceil(0.50 * radii.length) - 1;
-            const cepRadius = radii[p50Index];
-            cepRadiusEl.textContent = `${cepRadius.toFixed(2)} ${unitLabel}`;
-
-            // Calculate P95 Range
-            const p95Index = Math.ceil(0.95 * radii.length) - 1;
-            const p95Radius = radii[p95Index];
+            // Calculate P95 Radius (the radius that contains 95% of the shots)
             if (sampleSize > 1) {
-                const p95Lower = p95Radius - moe;
-                const p95Upper = p95Radius + moe;
-                const lowerBoundDisplay = Math.max(0, p95Lower);
-                p95RadiusEl.textContent = `${lowerBoundDisplay.toFixed(2)} - ${p95Upper.toFixed(2)} ${unitLabel}`;
+                const p95Index = Math.ceil(0.95 * radii.length) - 1;
+                const p95Radius = radii[p95Index];
+                p95RadiusEl.textContent = `${p95Radius.toFixed(2)} ${unitLabel}`;
             } else {
                 p95RadiusEl.textContent = 'N/A';
             }
@@ -1131,8 +1120,7 @@
                 { label: "Mean Radius:", value: mRadiusEl.textContent },
                 { label: "Std. Deviation:", value: stdDevEl.textContent },
                 { label: "MoE (95% CI):", value: moeEl.textContent },
-                { label: "CEP (P50) Radius:", value: cepRadiusEl.textContent },
-                { label: "P95 Range:", value: p95RadiusEl.textContent }
+                { label: "P95 Radius:", value: p95RadiusEl.textContent }
             ];
 
             stats.forEach((stat, index) => {
