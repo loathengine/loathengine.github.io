@@ -1,4 +1,4 @@
-# **How to Use the Empirical Precision Tool**
+# **How to use the Empirical Precision Tool**
 
 This guide will walk you through the steps to analyze shot groupings from an image of a target.
 
