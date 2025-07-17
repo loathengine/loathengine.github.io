@@ -1,58 +1,54 @@
-# loathengine.github.io
-Empirical Precision
+# **How to Use the Empirical Precision Tool**
 
-### Getting Started: A Step-by-Step Guide
+This guide will walk you through the steps to analyze shot groupings from an image of a target.
 
-**1. Add an Image**
-* Click the **"Add Image"** button to select a target image from your computer.
-* Once loaded, the image will appear in the main canvas area.
-* You can add multiple images. Use the **"Current Image"** dropdown to switch between them.
-* To remove the currently selected image, click the **"Remove Image"** button.
+### **1\. Add an Image**
 
-**2. Set the Scale**
-* Before you can get accurate measurements, you must set the scale for the image.
-* Click the **"Set Scale"** button. Your cursor will change.
-* Click on two points on the image that represent a known distance (e.g., the edges of a 1-inch square on your target).
-* The application will use this to calibrate all future measurements.
-* You can switch between **Imperial (in)** and **Metric (mm)** units by clicking the "Units" button. You must reset the scale if you change units.
+* Click the **"Add Image"** button to select a photo of your target from your device.  
+* Once loaded, the image will appear in the main viewing area, and the "Add Image" button will be disabled.  
+* To start over with a new image, click the **"Remove Image & Data"** button that appears.
 
-**3. Create a Group**
-* All shots are organized into groups.
-* Click the **"Create New Group"** button to start a new group.
-* You can switch between groups using the **"Current Group"** dropdown.
+### **2\. Set the Scale**
 
-**4. Mark Your Points**
-* **Point of Aim (POA):** Click **"Mark Point of Aim"**. Your cursor will become a crosshair. Click on the image where you were aiming for that group.
-* **Points of Impact (POI):** After setting the POA, the tool will automatically switch to marking impacts. Click **"Mark Point of Impact"**, and your cursor will change. Click on each bullet hole for the current group.
-* **Delete Last Impact:** If you make a mistake, click **"Delete Last Impact"** to remove the last point you added.
+This is the most critical step for accurate measurements. You need to tell the tool what a real-world distance looks like in the image.
 
-**5. Analyze the Results**
-* As you add points, the **"Ballistic Analysis"** box will automatically update with statistics like Extreme Spread (ES), Mean Radius, and more.
-* The points will be drawn on the canvas for visual reference.
+* Click the **"Set Scale"** button. It will turn green, indicating it's active.  
+* The default unit is inches. If you need to use millimeters, click the **"Units: Imperial (in)"** button to toggle it to metric.  
+* Find a feature on your target with a known length (e.g., a 1-inch grid square, the diameter of a bullseye).  
+* Click on one end of your known distance on the image.  
+* Click on the other end of your known distance.  
+* The tool will automatically calculate the pixels-per-unit ratio, and a confirmation message will appear. The "Set Scale" button will return to its original color.
 
-**6. Combined Analysis**
-* If you have multiple images with their scales set, you can toggle the **"Combined Analysis"** switch.
-* This will combine the data from all shots across all images to give you a comprehensive performance overview.
+### **3\. Create a Group & Mark Points**
 
-**7. Clear Data**
-* To start completely fresh, click the **"Clear All Data"** button. **Warning:** This will remove all images and data and cannot be undone.
+* Click the **"Add Group"** button. This will create a new group in the "Current Group" dropdown.  
+* The **"Mark Point of Aim"** button will activate automatically. Click it if it's not already active (it will be green).  
+* Click on the image to mark your intended point of aim for that group.  
+* After marking the aim, the tool will automatically switch to impact marking mode. The **"Mark Impact"** button will turn green.  
+* Click on the location of each shot/impact for the current group.  
+* If you make a mistake, click **"Remove Impact"** to delete the last point you marked for the selected group.
 
-### Use the select Image button to upload your target image.
+### **4\. Analyze the Data**
 
-![](/select_image.png)
+As you mark points, the **Ballistic Analysis** panel will automatically update with the following statistics:
 
-### Click the set scale button and select two points on your image to define the scale.
+* **Horizontal ES:** The extreme spread (width) of the group.  
+* **Vertical ES:** The extreme spread (height) of the group.  
+* **H/V Ratio:** The ratio of horizontal to vertical spread.  
+* **Mean Radius:** The average distance of all shots from the calculated center of the group.  
+* **Std. Deviation:** The standard deviation of the radii, indicating the consistency of the shots.  
+* **MoE (95% CI):** The Margin of Error for the Mean Radius at a 95% confidence interval.  
+* **P95 Radius:** The radius from the group center that encompasses 95% of the shots in your sample.
 
-![](/set_scale.png)
+The list below the stats shows the coordinates of each impact relative to the point of aim.
 
-### Notice the two yellow dots defining the "scale" 
+### **5\. Export Your Results**
 
-![](/scale_dots.png)
+* Once your analysis is complete, click the **"Export Image"** button.  
+* This will generate and download a high-resolution PNG file. The exported image includes your original target, all marked points, and a clean table of the complete analysis data.
 
-###Click new group button then click on image to define the Point of Aim then click for each point of impact.
+### **Additional Controls**
 
-![](/create_groups.png)
-
-###Notice that as you add groups and impacts the analysis will update
-
-![](/ballistic_analysis.png)
+* **Zoom:** Use the **"+"** and **"-"** buttons to zoom in and out of the image.  
+* **Pan:** Click and drag on the image to move it around within the viewer.  
+* **Manage Groups:** You can create multiple groups on a single target. Use the "Current Group" dropdown to switch between them. Click **"Remove Group"** to delete the currently selected group.
