@@ -44,66 +44,6 @@
         .status-info { @apply bg-blue-100 text-blue-800; }
         .status-success { @apply bg-green-100 text-green-800; }
         .status-error { @apply bg-red-100 text-red-800; }
-        
-        /* Toggle Switch */
-        .switch {
-          position: relative;
-          display: inline-block;
-          width: 60px;
-          height: 34px;
-        }
-
-        .switch input { 
-          opacity: 0;
-          width: 0;
-          height: 0;
-        }
-
-        .slider {
-          position: absolute;
-          cursor: pointer;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background-color: #ccc;
-          -webkit-transition: .4s;
-          transition: .4s;
-        }
-
-        .slider:before {
-          position: absolute;
-          content: "";
-          height: 26px;
-          width: 26px;
-          left: 4px;
-          bottom: 4px;
-          background-color: white;
-          -webkit-transition: .4s;
-          transition: .4s;
-        }
-
-        input:checked + .slider {
-          background-color: #2196F3;
-        }
-
-        input:focus + .slider {
-          box-shadow: 0 0 1px #2196F3;
-        }
-
-        input:checked + .slider:before {
-          -webkit-transform: translateX(26px);
-          -ms-transform: translateX(26px);
-          transform: translateX(26px);
-        }
-
-        .slider.round {
-          border-radius: 34px;
-        }
-
-        .slider.round:before {
-          border-radius: 50%;
-        }
     </style>
 </head>
 <body class="flex h-screen bg-gray-100">
@@ -112,18 +52,11 @@
     <div class="sidebar flex flex-col p-4 space-y-4 overflow-y-auto border-r border-gray-200">
         <h2 class="text-xl font-bold text-center">Empirical Precision</h2>
 
-        <div class="space-y-2">
-            <label for="imageSelector" class="block text-sm font-medium text-gray-700">Current Image:</label>
-            <select id="imageSelector" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" disabled>
-                <!-- Image options will be added dynamically -->
-            </select>
-        </div>
-
-        <div class="grid grid-cols-2 gap-2">
-            <label for="imageLoader" class="btn bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 focus:ring-indigo-500 text-white cursor-pointer text-center flex items-center justify-center">Add Image</label>
+        <div class="grid grid-cols-1 gap-2">
+            <label for="imageLoader" id="addImageBtn" class="btn bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 focus:ring-indigo-500 text-white cursor-pointer text-center flex items-center justify-center">Add Image</label>
             <input type="file" id="imageLoader" class="hidden" accept="image/*"/>
-            <button id="removeImageBtn" class="btn bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-700 hover:to-rose-800 focus:ring-red-500 text-white" disabled>Remove Image</button>
         </div>
+        <button id="removeImageBtn" class="btn bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-700 hover:to-rose-800 focus:ring-red-500 text-white hidden">Remove Image & Data</button>
 
         <hr>
 
@@ -154,20 +87,10 @@
             <button id="markImpactBtn" class="btn bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 focus:ring-indigo-500 text-white" disabled>Mark Impact</button>
             <button id="deleteLastImpactBtn" class="btn bg-gradient-to-r from-amber-600 to-yellow-700 hover:from-amber-700 hover:to-yellow-800 focus:ring-amber-500 text-white" disabled>Remove Impact</button>
         </div>
-
-        <button id="clearAllBtn" class="btn bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-700 hover:to-rose-800 focus:ring-red-500 text-white">Clear All Data</button>
         
         <button id="exportImageBtn" class="btn bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 focus:ring-green-500 text-white" disabled>Export Image</button>
 
         <div id="statusMessage" class="opacity-0"></div>
-
-        <div class="flex items-center justify-center my-2">
-            <span class="mr-3 text-sm font-medium text-gray-900">Combined Analysis</span>
-            <label class="switch">
-                <input type="checkbox" id="combinedAnalysisToggle">
-                <span class="slider round"></span>
-            </label>
-        </div>
 
         <div id="results" class="results-box mt-auto">
             <h3 id="analysisTitle" class="text-center">Ballistic Analysis</h3>
@@ -195,7 +118,7 @@
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
         const imageLoader = document.getElementById('imageLoader');
-        const imageSelector = document.getElementById('imageSelector');
+        const addImageBtn = document.getElementById('addImageBtn');
         const removeImageBtn = document.getElementById('removeImageBtn');
         const zoomInBtn = document.getElementById('zoomInBtn');
         const zoomOutBtn = document.getElementById('zoomOutBtn');
@@ -207,9 +130,7 @@
         const markAimBtn = document.getElementById('markAimBtn');
         const markImpactBtn = document.getElementById('markImpactBtn');
         const deleteLastImpactBtn = document.getElementById('deleteLastImpactBtn');
-        const clearAllBtn = document.getElementById('clearAllBtn');
         const exportImageBtn = document.getElementById('exportImageBtn');
-        const combinedAnalysisToggle = document.getElementById('combinedAnalysisToggle');
         const statusMessageEl = document.getElementById('statusMessage');
         
         // Get analysis display elements
@@ -224,8 +145,7 @@
         const p95RadiusEl = document.getElementById('p95Radius');
 
         // App state variables
-        let imageSessions = [];
-        let currentImageIndex = -1;
+        let session = null;
         
         let isDragging = false;
         let lastX = 0;
@@ -249,14 +169,6 @@
                 'text-white', 'text-gray-800'
             ]
         };
-        
-        /**
-         * Returns the currently active image session object.
-         * @returns {object|null} The current session or null.
-         */
-        function getCurrentSession() {
-            return imageSessions[currentImageIndex] || null;
-        }
 
         /**
          * Sets the color gradient for a button.
@@ -270,7 +182,6 @@
 
         // --- Event Listeners ---
         imageLoader.addEventListener('change', handleImage, false);
-        imageSelector.addEventListener('change', handleImageSelection);
         removeImageBtn.addEventListener('click', removeCurrentImage);
         zoomInBtn.addEventListener('click', () => zoom(1.1));
         zoomOutBtn.addEventListener('click', () => zoom(0.9));
@@ -287,9 +198,7 @@
         markAimBtn.addEventListener('click', toggleMarkAim);
         markImpactBtn.addEventListener('click', toggleMarkImpact);
         deleteLastImpactBtn.addEventListener('click', deleteLastImpact);
-        clearAllBtn.addEventListener('click', clearAllSettings);
         exportImageBtn.addEventListener('click', exportCanvasAsImage);
-        combinedAnalysisToggle.addEventListener('change', updateAnalysis);
 
         /**
          * Displays a status message to the user.
@@ -312,61 +221,43 @@
         /**
          * Updates the entire UI based on the current session state.
          */
-        function updateUIForNewSession() {
-            const session = getCurrentSession();
-            if (!session) {
-                // No sessions exist, reset to initial state
-                imageSelector.innerHTML = '';
-                imageSelector.disabled = true;
-                removeImageBtn.disabled = true;
-                exportImageBtn.disabled = true;
-                updateGroupSelector(); // will clear and disable group UI
-                updateAnalysis();
-                draw();
-                updateCursor();
-                return;
-            }
+        function updateUI() {
+            const hasSession = session !== null;
+
+            // Control the "Add Image" button appearance and functionality
+            addImageBtn.style.pointerEvents = hasSession ? 'none' : 'auto';
+            addImageBtn.classList.toggle('opacity-50', hasSession);
+            addImageBtn.classList.toggle('cursor-not-allowed', hasSession);
+
+            // Show/hide the "Remove Image" button
+            removeImageBtn.classList.toggle('hidden', !hasSession);
             
-            updateImageSelector();
-            updateGroupSelector();
-            updateUnitButton();
-            updateAnalysis();
+            // Enable/disable other controls
+            exportImageBtn.disabled = !hasSession;
+            zoomInBtn.disabled = !hasSession;
+            zoomOutBtn.disabled = !hasSession;
+            unitToggleBtn.disabled = !hasSession;
+            setScaleBtn.disabled = !hasSession;
+            createGroupBtn.disabled = !hasSession;
+
+            if (hasSession) {
+                updateGroupSelector();
+                updateUnitButton();
+            } else {
+                // No session, so reset group and analysis UI to initial state
+                groupSelector.innerHTML = '';
+                groupSelector.disabled = true;
+                removeGroupBtn.disabled = true;
+                markAimBtn.disabled = true;
+                markImpactBtn.disabled = true;
+                deleteLastImpactBtn.disabled = true;
+            }
+
+            calculateAnalysis();
             draw();
             updateCursor();
         }
 
-        /**
-         * Handles the selection of a new image from the dropdown.
-         * @param {Event} e - The change event object.
-         */
-        function handleImageSelection(e) {
-            currentImageIndex = parseInt(e.target.value, 10);
-            updateUIForNewSession();
-        }
-
-        /**
-         * Populates and updates the image selector dropdown.
-         */
-        function updateImageSelector() {
-            imageSelector.innerHTML = '';
-            if (imageSessions.length === 0) {
-                imageSelector.disabled = true;
-                removeImageBtn.disabled = true;
-                exportImageBtn.disabled = true;
-                return;
-            }
-            
-            imageSelector.disabled = false;
-            removeImageBtn.disabled = false;
-            exportImageBtn.disabled = false;
-            imageSessions.forEach((session, index) => {
-                const option = document.createElement('option');
-                option.value = index;
-                option.textContent = session.name;
-                imageSelector.appendChild(option);
-            });
-            imageSelector.value = currentImageIndex;
-        }
 
         /**
          * Handles a new file being selected by the user. Creates a new session.
@@ -398,10 +289,8 @@
                     newSession.originX = (canvas.width - newImg.width * newSession.scale) / 2;
                     newSession.originY = (canvas.height - newImg.height * newSession.scale) / 2;
                     
-                    // Add new session and update UI
-                    imageSessions.push(newSession);
-                    currentImageIndex = imageSessions.length - 1;
-                    updateUIForNewSession();
+                    session = newSession;
+                    updateUI();
                 };
                 newImg.src = event.target.result;
             }
@@ -410,17 +299,13 @@
         }
         
         /**
-         * Removes the currently selected image and its associated data.
+         * Removes the current image and its associated data.
          */
         function removeCurrentImage() {
-            const session = getCurrentSession();
-            if (!session) return;
-
-            if (confirm(`Are you sure you want to remove the image "${session.name}" and all its data?`)) {
-                imageSessions.splice(currentImageIndex, 1);
-                currentImageIndex = imageSessions.length > 0 ? 0 : -1;
-                updateUIForNewSession();
-                showStatusMessage("Image and its data removed.", "info");
+            if (confirm(`Are you sure you want to remove the current image and all its data?`)) {
+                session = null;
+                updateUI();
+                showStatusMessage("Image and data removed.", "info");
             }
         }
 
@@ -429,7 +314,6 @@
          */
         function draw() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            const session = getCurrentSession();
             if (!session || !session.img.src) return;
 
             ctx.save();
@@ -437,7 +321,6 @@
             ctx.scale(session.scale, session.scale);
             ctx.drawImage(session.img, 0, 0);
             
-            // Draw all groups and points for the current session
             session.groups.forEach((group, index) => {
                 const color = GROUP_COLORS[index % GROUP_COLORS.length];
                 if (group.aim) drawPoint(group.aim.x, group.aim.y, color, 'A');
@@ -460,7 +343,6 @@
          * @param {string} label - The type of point ('A', 'I', 'M').
          */
         function drawPoint(x, y, color, label) {
-            const session = getCurrentSession();
             if (!session) return;
             const pointSize = 12 / session.scale;
             ctx.lineWidth = 2.5 / session.scale;
@@ -493,7 +375,6 @@
          * Draws the points used for setting the scale.
          */
         function drawScalePoints() {
-            const session = getCurrentSession();
             if (!session || session.scalePoints.length === 0) return;
             ctx.fillStyle = 'rgba(255, 223, 0, 0.8)';
             ctx.strokeStyle = 'black';
@@ -511,7 +392,6 @@
          * @param {number} factor - The zoom factor (>1 for zoom in, <1 for zoom out).
          */
         function zoom(factor) {
-            const session = getCurrentSession();
             if (!session) return;
             const centerX = canvas.width / 2;
             const centerY = canvas.height / 2;
@@ -547,7 +427,6 @@
          */
         function drag(e) {
             if (isDragging) {
-                const session = getCurrentSession();
                 if (!session) return;
                 session.originX += e.offsetX - lastX;
                 session.originY += e.offsetY - lastY;
@@ -561,7 +440,6 @@
          * Updates the cursor style based on the current mode.
          */
         function updateCursor() {
-            const session = getCurrentSession();
             if (markingAim) {
                 canvas.style.cursor = 'crosshair';
             } else if (markingImpact) {
@@ -587,7 +465,7 @@
          * Toggles the 'marking aim' mode.
          */
         function toggleMarkAim() {
-            if (!getCurrentSession()) return;
+            if (!session) return;
             markingAim = !markingAim;
             if (markingAim) markingImpact = false; // Can't do both
             setMarkingButtonState();
@@ -598,7 +476,7 @@
          * Toggles the 'marking impact' mode.
          */
         function toggleMarkImpact() {
-            if (!getCurrentSession()) return;
+            if (!session) return;
             markingImpact = !markingImpact;
             if (markingImpact) markingAim = false; // Can't do both
             setMarkingButtonState();
@@ -610,7 +488,6 @@
          * @param {MouseEvent} e - The click event.
          */
         function handleCanvasClick(e) {
-            const session = getCurrentSession();
             if (!session) return;
             const canvasX = (e.offsetX - session.originX) / session.scale;
             const canvasY = (e.offsetY - session.originY) / session.scale;
@@ -624,7 +501,6 @@
          * Updates the text on the unit toggle button.
          */
         function updateUnitButton() {
-            const session = getCurrentSession();
             if (!session) return;
             unitToggleBtn.textContent = `Units: ${session.unit === 'imperial' ? 'Imperial (in)' : 'Metric (mm)'}`;
         }
@@ -633,7 +509,6 @@
          * Toggles the measurement units for the current session.
          */
         function toggleUnits() {
-            const session = getCurrentSession();
             if (!session) return;
             session.unit = (session.unit === 'imperial') ? 'metric' : 'imperial';
             session.pixelsPerUnit = 0; // Reset scale when units change
@@ -641,7 +516,7 @@
             setScaleBtn.textContent = 'Set Scale';
             setButtonState(setScaleBtn, 'blue');
             updateUnitButton();
-            updateAnalysis();
+            calculateAnalysis();
             draw();
         }
 
@@ -649,15 +524,15 @@
          * Starts the process of setting the scale.
          */
         function startSettingScale() {
-            if (!getCurrentSession()) {
+            if (!session) {
                 showStatusMessage("Please add an image first.", 'error');
                 return;
             }
             settingScale = true;
-            getCurrentSession().scalePoints = [];
+            session.scalePoints = [];
             setButtonState(setScaleBtn, 'green');
             updateCursor();
-            showStatusMessage(`Click two points for scale: ${getCurrentSession().unit === 'imperial' ? '1 inch' : '10 mm'}.`, 'info');
+            showStatusMessage(`Click two points for scale: ${session.unit === 'imperial' ? '1 inch' : '10 mm'}.`, 'info');
             draw(); 
         }
 
@@ -667,7 +542,6 @@
          * @param {number} y - The y-coordinate of the click.
          */
         function handleScalePoint(x, y) {
-            const session = getCurrentSession();
             if (!session) return;
             session.scalePoints.push({x, y});
             draw();
@@ -681,7 +555,7 @@
                 showStatusMessage("Scale set successfully!", 'success');
                 updateCursor();
                 draw();
-                updateAnalysis();
+                calculateAnalysis();
             }
         }
         
@@ -689,7 +563,6 @@
          * Populates and updates the group selector dropdown and related buttons.
          */
         function updateGroupSelector() {
-            const session = getCurrentSession();
             groupSelector.innerHTML = '';
             
             if (!session || session.groups.length === 0) {
@@ -727,7 +600,6 @@
          * Creates a new group for the current session.
          */
         function createNewGroup() {
-            const session = getCurrentSession();
             if (!session) {
                 showStatusMessage("Please add an image first.", 'error');
                 return;
@@ -743,28 +615,14 @@
          * Removes the currently selected group.
          */
         function removeSelectedGroup() {
-            const session = getCurrentSession();
             if (!session || session.currentGroupIndex === -1) return;
             const groupNumber = session.currentGroupIndex + 1;
             session.groups.splice(session.currentGroupIndex, 1);
             session.currentGroupIndex = session.groups.length > 0 ? 0 : -1;
             updateGroupSelector();
             draw();
-            updateAnalysis();
+            calculateAnalysis();
             showStatusMessage(`Group ${groupNumber} removed.`, 'info');
-        }
-
-        /**
-         * Clears all image sessions and data.
-         */
-        function clearAllSettings() {
-            if (!confirm("Are you sure you want to clear ALL images and data? This action cannot be undone.")) {
-                return;
-            }
-            imageSessions = [];
-            currentImageIndex = -1;
-            updateUIForNewSession();
-            showStatusMessage("All data has been cleared.", 'success');
         }
 
         /**
@@ -772,10 +630,8 @@
          * @param {Event} e - The change event.
          */
         function handleGroupSelection(e) {
-            const session = getCurrentSession();
             if (!session) return;
             session.currentGroupIndex = parseInt(e.target.value, 10);
-            // Update delete button state for the new group
             const currentGroup = session.groups[session.currentGroupIndex];
             deleteLastImpactBtn.disabled = !currentGroup || currentGroup.impacts.length === 0;
         }
@@ -786,18 +642,16 @@
          * @param {number} y - The y-coordinate.
          */
         function setPointOfAim(x, y) {
-            const session = getCurrentSession();
             if (!session || session.currentGroupIndex === -1) return;
             session.groups[session.currentGroupIndex].aim = {x, y};
             
-            // Automatically switch to marking impacts
             markingAim = false;
             markingImpact = true;
             setMarkingButtonState();
             updateCursor();
 
             draw();
-            updateAnalysis();
+            calculateAnalysis();
             showStatusMessage(`Point of Aim set. Now marking Points of Impact.`, 'info');
         }
 
@@ -807,29 +661,27 @@
          * @param {number} y - The y-coordinate.
          */
         function addPointOfImpact(x, y) {
-            const session = getCurrentSession();
             if (!session || session.currentGroupIndex === -1) return;
             session.groups[session.currentGroupIndex].impacts.push({x, y});
-            deleteLastImpactBtn.disabled = false; // Enable delete button
+            deleteLastImpactBtn.disabled = false;
             draw();
-            updateAnalysis();
+            calculateAnalysis();
         }
 
         /**
          * Deletes the last point of impact from the current group.
          */
         function deleteLastImpact() {
-            const session = getCurrentSession();
             if (!session || session.currentGroupIndex === -1) return;
             
             const currentGroup = session.groups[session.currentGroupIndex];
             if (currentGroup.impacts.length > 0) {
                 currentGroup.impacts.pop();
                 if (currentGroup.impacts.length === 0) {
-                    deleteLastImpactBtn.disabled = true; // Disable if no impacts left
+                    deleteLastImpactBtn.disabled = true;
                 }
                 draw();
-                updateAnalysis();
+                calculateAnalysis();
                 showStatusMessage("Last point of impact removed.", "info");
             } else {
                 showStatusMessage("No impacts to remove from this group.", "error");
@@ -837,23 +689,9 @@
         }
 
         /**
-         * Main analysis function that routes to individual or combined analysis.
+         * Calculates and displays analysis for the current image.
          */
-        function updateAnalysis() {
-            if (combinedAnalysisToggle.checked) {
-                analysisTitle.textContent = "Combined Analysis";
-                calculateCombinedAnalysis();
-            } else {
-                analysisTitle.textContent = "Ballistic Analysis";
-                calculateIndividualAnalysis();
-            }
-        }
-
-        /**
-         * Calculates and displays analysis for the current image only.
-         */
-        function calculateIndividualAnalysis() {
-            const session = getCurrentSession();
+        function calculateAnalysis() {
             if (!session) {
                 hSpreadEl.textContent = 'N/A'; vSpreadEl.textContent = 'N/A';
                 hvRatioEl.textContent = 'N/A';
@@ -881,57 +719,13 @@
                     const dx_real = (impact.x - group.aim.x) / session.pixelsPerUnit;
                     const dy_real = (impact.y - group.aim.y) / session.pixelsPerUnit;
                     allImpacts.push({ x: dx_real, y: dy_real });
-                    impactDetailsHtml += `<p>(${dx_real.toFixed(2)},${dy_real.toFixed(2)})</p>`;
+                    impactDetailsHtml += `<p>(${dx_real.toFixed(2)}, ${dy_real.toFixed(2)})</p>`;
                 });
             });
             
             impactPointsList.innerHTML = impactDetailsHtml ? `<h4 class="font-semibold">POI from POA:</h4>${impactDetailsHtml}` : '<p class="text-gray-500">No impact points marked yet.</p>';
 
             performCalculations(allImpacts, session.unit);
-        }
-
-        /**
-         * Calculates and displays analysis for all images combined.
-         */
-        function calculateCombinedAnalysis() {
-            const allImpactsCombined = [];
-            let validSessions = 0;
-            let impactDetailsHtml = '';
-
-            imageSessions.forEach(session => {
-                if (session.pixelsPerUnit > 0) {
-                    validSessions++;
-                    session.groups.forEach(group => {
-                        if (group.aim) {
-                            group.impacts.forEach(impact => {
-                                let dx_real = (impact.x - group.aim.x) / session.pixelsPerUnit;
-                                let dy_real = (impact.y - group.aim.y) / session.pixelsPerUnit;
-                                // Convert to imperial for consistency in combined view
-                                if (session.unit === 'metric') {
-                                    dx_real /= 25.4;
-                                    dy_real /= 25.4;
-                                }
-                                allImpactsCombined.push({ x: dx_real, y: dy_real });
-                                impactDetailsHtml += `<p>(${dx_real.toFixed(2)},${dy_real.toFixed(2)})</p>`;
-                            });
-                        }
-                    });
-                }
-            });
-
-            if (validSessions === 0) {
-                 impactPointsList.innerHTML = '<p class="text-gray-500">No images with a set scale available for combined analysis.</p>';
-                 hSpreadEl.textContent = 'N/A'; vSpreadEl.textContent = 'N/A';
-                 hvRatioEl.textContent = 'N/A';
-                 mRadiusEl.textContent = 'N/A'; stdDevEl.textContent = 'N/A'; moeEl.textContent = 'N/A';
-                 p95RadiusEl.textContent = 'N/A';
-                 return;
-            }
-            
-            const summaryHtml = `<p class="text-gray-600">Combining data from ${validSessions} image(s) with ${allImpactsCombined.length} total impacts.</p>`;
-            impactPointsList.innerHTML = summaryHtml + (impactDetailsHtml ? `<h4 class="font-semibold mt-2">Combined POI from POA (in):</h4>${impactDetailsHtml}` : '');
-
-            performCalculations(allImpactsCombined, 'imperial'); // Always display combined in imperial
         }
 
         /**
@@ -964,12 +758,10 @@
             const meanRadiusValue = radii.reduce((s, r) => s + r, 0) / impacts.length;
             mRadiusEl.textContent = `${meanRadiusValue.toFixed(2)} ${unitLabel}`;
             
-            // Calculate Standard Deviation
             const variance = radii.reduce((s, r) => s + (r - meanRadiusValue)**2, 0) / impacts.length;
             const stdDev = Math.sqrt(variance);
             stdDevEl.textContent = `${stdDev.toFixed(2)} ${unitLabel}`;
 
-            // Calculate Margin of Error (95% Confidence Interval for the Mean Radius)
             const sampleSize = impacts.length;
             if (sampleSize > 1) {
                 const moe = (1.96 * stdDev) / Math.sqrt(sampleSize);
@@ -980,7 +772,6 @@
             
             radii.sort((a, b) => a - b);
 
-            // Calculate P95 Radius (the radius that contains 95% of the shots)
             if (sampleSize > 1) {
                 const p95Index = Math.ceil(0.95 * radii.length) - 1;
                 const p95Radius = radii[p95Index];
@@ -1029,27 +820,22 @@
 
         /**
          * Exports the current canvas view with annotations and analysis data as a PNG image.
-         * The image is resized to a fixed width for uniform exports.
          */
         function exportCanvasAsImage() {
-            const session = getCurrentSession();
             if (!session || !session.img.src) {
                 showStatusMessage("No image to export.", "error");
                 return;
             }
 
-            // 1. Setup Canvas with FIXED SIZE
             const exportCanvas = document.createElement('canvas');
             const exportCtx = exportCanvas.getContext('2d');
             const img = session.img;
 
-            // Define fixed export dimensions and calculate scaling
             const EXPORT_WIDTH = 1200;
             const aspectRatio = img.naturalHeight / img.naturalWidth;
             const EXPORT_HEIGHT = EXPORT_WIDTH * aspectRatio;
             const scaleFactor = EXPORT_WIDTH / img.naturalWidth;
 
-            // Define layout for the footer
             const footerHeight = 220;
             const padding = 25;
             const lineHeight = 24;
@@ -1059,18 +845,15 @@
             exportCanvas.width = EXPORT_WIDTH;
             exportCanvas.height = EXPORT_HEIGHT + footerHeight;
 
-            // 2. Draw Background and RESIZED Image
             exportCtx.fillStyle = '#FFFFFF';
             exportCtx.fillRect(0, 0, exportCanvas.width, exportCanvas.height);
             exportCtx.drawImage(img, 0, 0, EXPORT_WIDTH, EXPORT_HEIGHT);
 
-            // 3. Draw SCALED Annotations (Points)
             const pointSize = Math.max(12, EXPORT_WIDTH / 100);
             const lineWidth = Math.max(2, EXPORT_WIDTH / 500);
 
             session.groups.forEach((group, index) => {
                 const color = GROUP_COLORS[index % GROUP_COLORS.length];
-                // Scale all point coordinates by the calculated scaleFactor
                 if (group.aim) {
                     drawPointForExport(exportCtx, group.aim.x * scaleFactor, group.aim.y * scaleFactor, 'black', 'A', pointSize, lineWidth);
                 }
@@ -1098,7 +881,6 @@
                 });
             }
 
-            // 4. Draw Analysis Text in the Footer
             const textYStart = EXPORT_HEIGHT + padding + titleFontSize;
             exportCtx.fillStyle = '#000000';
             
@@ -1133,21 +915,19 @@
                 }
             });
 
-            // 5. Trigger Download
             const link = document.createElement('a');
             const fileName = session.name.split('.').slice(0, -1).join('.') || 'analysis';
-            link.download = `${fileName}_analysis_uniform.png`;
+            link.download = `${fileName}_analysis.png`;
             link.href = exportCanvas.toDataURL('image/png');
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
             
-            showStatusMessage("Uniform image exported successfully!", "success");
+            showStatusMessage("Image exported successfully!", "success");
         }
         
         // --- Initial State ---
-        draw();
-        updateCursor();
+        updateUI();
 
     </script>
 </body>
