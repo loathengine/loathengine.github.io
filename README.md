@@ -1,59 +1,125 @@
-# **How to use the Empirical Precision Tool**
+# Empirical Precision: User Guide
 
-This guide will walk you through the steps to analyze shot groupings from an image of a target.
+Welcome to Empirical Precision, your all-in-one tool for managing reloading data, tracking performance, and analyzing your shooting results with statistical rigor. This guide will walk you through the recommended workflow to get the most out of the application.
 
-### **1\. Add an Image**
+---
 
-* Click the **"Add Image"** button to select a photo of your target from your device.  
-* Once loaded, the image will appear in the main viewing area, and the "Add Image" button will be disabled.  
-* To start over with a new image, click the **"Remove Image & Data"** button that appears.
+##  empfohlenen Vorgehensweise
 
-### **2\. Set the Scale**
+For a seamless experience, it's best to enter data in a specific order, as some records depend on others. The recommended workflow is:
 
-This is the most critical step for accurate measurements. You need to tell the tool what a real-world distance looks like in the image.
+1.  **Setup Foundational Data (`Misc` Tab):** Add your manufacturers, bullet diameters, and cartridge types first.
+2.  **Inventory Components (`Components` Tab):** Log the specific bullets, powders, primers, and brass you own.
+3.  **Add Your Firearms (`Firearms` Tab):** Create profiles for each of your firearms.
+4.  **Create Load Data (`Loads` Tab):** Define your hand loads or log your commercial ammunition.
+5.  **Upload Targets (`Targets` Tab):** Add images of your shot targets.
+6.  **Mark Your Shots (`Marking` Tab):** Digitize your groups by marking your point of aim and impacts on the target images.
+7.  **Analyze Performance (`Analysis` Tab):** Review detailed statistics, compare sessions, and export your findings.
+8.  **Manage Your Data (`DB Management` Tab):** Backup and restore your database as needed.
 
-* Click the **"Set Scale"** button. It will turn green, indicating it's active.  
-* The default unit is inches. If you need to use millimeters, click the **"Units: Imperial (in)"** button to toggle it to metric.  
-* Find a feature on your target with a known length (e.g., a 1-inch grid square, the diameter of a bullseye).  
-* Click on one end of your known distance on the image.  
-* Click on the other end of your known distance.  
-* The tool will automatically calculate the pixels-per-unit ratio, and a confirmation message will appear. The "Set Scale" button will return to its original color.
+---
 
-### **3\. Create a Group & Mark Points**
+## 1. Setup: Foundational Data
 
-* Click the **"Add Group"** button. This will create a new group in the "Current Group" dropdown.  
-* The **"Mark Point of Aim"** button will activate automatically. Click it if it's not already active (it will be green).  
-* Click on the image to mark your intended point of aim for that group.  
-* After marking the aim, the tool will automatically switch to impact marking mode. The **"Mark Impact"** button will turn green.  
-* Click on the location of each shot/impact for the current group.  
-* If you make a mistake, click **"Remove Impact"** to delete the last point you marked for the selected group.
+Before you can track loads or firearms, you need to input the basic building blocks.
 
-### **4\. Analyze the Data**
+### The `Misc` Tab
 
-As you mark points, the **Ballistic Analysis** panel will automatically update with the following statistics:
+This is the most important first step.
+* **Manufacturers:** Go to the `Manufacturers` sub-tab. Enter the names of manufacturers (e.g., Hornady, Hodgdon, CCI) and check the boxes for the types of products they make. This populates the manufacturer dropdowns in other forms.
+* **Diameters:** Go to the `Diameters` sub-tab. Add the bullet diameters you use (e.g., Imperial: `.224`, Metric: `5.56mm`).
+* **Cartridges:** Go to the `Cartridges` sub-tab. Add the cartridges you use (e.g., `223 Remington`), selecting the appropriate diameter you just created.
 
-* **Horizontal ES:** The extreme spread (width) of the group.  
-* **Vertical ES:** The extreme spread (height) of the group.  
-* **H/V Ratio:** The ratio of horizontal to vertical spread.  
-* **Mean Radius:** The average distance of all shots from the calculated center of the group.  
-* **Std. Deviation:** The standard deviation of the radii, indicating the consistency of the shots.  
-* **MoE (95% CI):** The Margin of Error for the Mean Radius at a 95% confidence interval.  
-* **P95 Radius:** The radius from the group center that encompasses 95% of the shots in your sample.
+### The `Components` Tab
 
-The list below the stats shows the coordinates of each impact relative to the point of aim.
+Here, you'll create a detailed inventory of your reloading components.
+* **Bullets:** Select the `Bullets` sub-tab. Enter the bullet's manufacturer, diameter, name, weight, and length.
+* **Powder:** Select the `Powder` sub-tab and add your powders, linking them to a manufacturer.
+* **Primers:** Select the `Primers` sub-tab and add your primers.
+* **Brass:** Select the `Brass` sub-tab. Select a cartridge (which you created in the `Misc` tab) and the manufacturer.
 
-### **5\. Export Your Results**
+### The `Firearms` Tab
 
-* Once your analysis is complete, click the **"Export Image"** button.  
-* This will generate and download a high-resolution PNG file. The exported image includes your original target, all marked points, and a clean table of the complete analysis data.
+Create a profile for each firearm you own.
+1.  Enter a **Nickname** for easy identification.
+2.  Select the **Diameter** and **Cartridge**. The cartridge list is filtered by the selected diameter.
+3.  Fill in other details like barrel length and twist rate.
+4.  Click **Save Firearm**.
 
-### **Additional Controls**
+---
 
-* **Zoom:** Use the **"+"** and **"-"** buttons to zoom in and out of the image.  
-* **Pan:** Click and drag on the image to move it around within the viewer.  
-* **Manage Groups:** You can create multiple groups on a single target. Use the "Current Group" dropdown to switch between them. Click **"Remove Group"** to delete the currently selected group.
+## 2. Data Entry
 
-###
+With the setup complete, you can now enter your specific load and target data.
 
-![screenshot](images/Screenshot.png)
+### The `Loads` Tab
 
+You can log both custom hand loads and factory-loaded commercial ammunition.
+* **For Hand Loads:**
+    1.  Select the `Hand Load` sub-tab.
+    2.  Choose the **Diameter** and **Cartridge**. This will filter the dropdowns for bullets and brass, showing only compatible components.
+    3.  Select the **Bullet**, **Powder**, **Primer**, and **Brass** from your component inventory.
+    4.  Enter the **Charge Weight**, COL (Cartridge Overall Length), CBTO (Cartridge Base to Ogive), and other relevant data.
+    5.  Click **Save Hand Load**.
+* **For Commercial Ammo:**
+    1.  Select the `Commercial Ammo` sub-tab.
+    2.  Choose the **Manufacturer**, **Ammo Name**, **Diameter**, and **Cartridge**.
+    3.  Enter the bullet weight and lot number if you have it.
+    4.  Click **Save Commercial Ammo**.
+
+### The `Targets` Tab
+
+This is where you build your library of target images for analysis.
+1.  Click the **"Upload New Target Image(s)"** button and select one or more image files from your device.
+2.  The images will be converted to an efficient format, saved, and displayed in the gallery.
+3.  You can **Rename** or **Delete** targets directly from the gallery.
+
+---
+
+## 3. Marking & Analysis (The Core Loop)
+
+This is where your data comes together to produce insights.
+
+### The `Marking` Tab
+
+Here you will digitize your shot groups.
+1.  **Load Image:** In the `Setup` panel, select a target from the **Load Saved Image** dropdown. The image will appear on the canvas.
+2.  **Set the Scale (Crucial Step):**
+    * In the `Image Controls` panel, enter a known distance in the **Scale** input fields (e.g., the 1-inch grid on your target). Select the correct units.
+    * Click the **Set Scale** button. It will turn blue.
+    * Click two points on the canvas that correspond to the known distance. A red line will appear. The application now knows the real-world size of a pixel on your target image. This is essential for accurate measurements.
+3.  **Mark Your Group:**
+    * In the `Marking Tools` panel, click **New Group**. A group will be added to the `Active Group` dropdown.
+    * Click the **Set POA** (Point of Aim) button.
+    * Click on the canvas where you were aiming for this group. A crosshair `+` will appear.
+    * The **Mark Impacts** button will automatically become active. Click on the canvas at the center of each bullet hole for that group. Blue dots will appear.
+4.  **Enter Session Info:**
+    * In the `Session Info` panel, select the **Firearm** and **Load** you used for this session.
+    * Enter the **Target Distance** (e.g., 100 yards).
+5.  **Save:** Click the **Save / Update Session** button.
+
+*Tip: You can also enter shot velocities in the `Impact Data` section that appears below the canvas.*
+
+### The `Analysis` Tab
+
+This tab provides a deep dive into the performance of a saved session.
+1.  **Load Session:** Select a session from the **Load Session from DB** dropdown. The shot data will populate the table and the calculated statistics will appear below.
+2.  **Review Statistics:**
+    * **Group Statistics:** See your group's Extreme Spread (ES) and Mean Radius.
+    * **Dispersion Statistics:** View the Horizontal/Vertical Standard Deviation and, most importantly, the **Radial Standard Deviation (RSD)**—a robust measure of your group's precision.
+    * **Velocity Statistics:** If you entered velocities, see the ES and SD for your muzzle velocity.
+3.  **Compare Sessions (F-Test):**
+    * Select another session in the **Compare Against Session** dropdown.
+    * The `F-Test for Variance` box will appear, telling you if the difference in precision (variance) between the two groups is statistically significant. This is far more reliable than just comparing two 5-shot group sizes.
+4.  **Export:** Click **Export Analysis as PDF** to generate a shareable report with all session info, statistics, and the target image.
+
+---
+
+## 4. Database Management
+
+The `DB Management` tab gives you full control over your data.
+
+* **Export Entire Database:** Use this to create a full backup of all your data into a single `.json` file. **It is highly recommended to do this regularly.**
+* **Import Entire Database:** Restores your application from a backup file. **Warning:** This will overwrite all current data.
+* **Delete Entire Database:** Wipes everything. **Use with extreme caution.**
+* **Table Specific Actions:** You can also select a single data table (like `bullets` or `firearms`) to view, export, clear, or import data for just that table.
