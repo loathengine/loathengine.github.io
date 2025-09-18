@@ -126,22 +126,23 @@
 
 
         /* --- Canvas & Impact Marking --- */
-        canvas { 
-            cursor: crosshair; 
-            border: 1px solid #4b5563; 
+        .canvas-container {
+            overflow: auto;
+            border: 1px solid #4b5563;
             border-radius: 0.375rem;
-            max-width: 100%;
-            height: auto;
             background-color: #374151;
+            max-height: 75vh;
+        }
+        canvas { 
+            cursor: crosshair;
+            max-width: none;
+            display: block;
         }
         canvas.delete-mode { cursor: not-allowed; }
         .stats-container { margin-top: 1.5rem; }
         .stats-output { font-size: 0.875rem; color: #9ca3af; }
         .stats-output > p { margin: 0.5rem 0; }
-        .stats-grid { display: grid; grid-template-columns: 1fr; gap: 0.25rem 1rem; margin-top: 0.5rem; }
-        @media (min-width: 768px) {
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-        }
+        .stats-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 0.5rem; }
         .stats-grid p { display: flex; justify-content: space-between; margin: 0.25rem 0; }
         .stats-grid p span:first-child { font-weight: 600; color: #e5e7eb; }
         
@@ -426,7 +427,9 @@
                     </div>
                 </div>
                 <div class="main-content card">
-                    <canvas id="targetCanvas" width="800" height="1150"></canvas>
+                    <div class="canvas-container">
+                        <canvas id="targetCanvas" width="800" height="1150"></canvas>
+                    </div>
                 </div>
             </div>
             <div id="stats-container" class="card stats-container">
@@ -442,10 +445,9 @@
                 <div class="card">
                     <div class="control-panel">
                          <div>
-                            <h4>Load & Export</h4>
+                            <h4>Load Session</h4>
                             <label for="sessionSelect">Load Session from DB</label>
                             <select id="sessionSelect"></select>
-                            <button id="exportAnalysisPdfBtn" class="btn-blue" style="margin-top: 1rem;">Export Analysis as PDF</button>
                         </div>
                          <div>
                             <h4>F-Test for Variance Comparison</h4>
@@ -454,6 +456,10 @@
                             <label for="pValue" style="margin-top:0.5rem;">P-value (Significance Level)</label>
                             <input type="number" id="pValue" step="0.01" value="0.05" placeholder="e.g., 0.05">
                         </div>
+                        <div>
+                            <h4>Actions</h4>
+                            <button id="exportAnalysisImageBtn" class="btn-indigo">Export Analysis Image</button>
+                        </div>
                         <div id="saTargetThumbnailContainer" style="display: none;">
                             <h4 style="margin-bottom: 0.5rem;">Target Used</h4>
                             <img id="saTargetThumbnail" src="" alt="Target Thumbnail" style="width: 100%; height: auto; border-radius: 0.25rem; border: 1px solid #4b5563;">
@@ -461,29 +467,10 @@
                     </div>
                 </div>
                 <div class="main-content card">
-                    <h3>Shot Data</h3>
-                     <div class="data-table-container">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>Shot #</th>
-                                    <th>Group</th>
-                                    <th>X</th>
-                                    <th>Y</th>
-                                    <th>Velocity</th>
-                                </tr>
-                            </thead>
-                            <tbody id="statShotDataTable">
-                                <tr><td colspan="5" style="text-align: center;">No data loaded.</td></tr>
-                            </tbody>
-                        </table>
+                    <h3>Calculated Statistics</h3>
+                    <div id="statAnalysisOutput" class="stats-grid">
+                         <p><span>No data to analyze.</span></p>
                     </div>
-                </div>
-            </div>
-            <div class="card" style="margin-top: 1.5rem;">
-                <h3>Calculated Statistics</h3>
-                <div id="statAnalysisOutput" class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-                     <p><span>No data to analyze.</span></p>
                 </div>
             </div>
             <div class="card" style="margin-top: 1.5rem;">
@@ -505,6 +492,25 @@
 
                          <h4>F-Test for Variance</h4>
                          <p>A statistical test used to compare the variance (RSD²) of the current group against a reference group. If the calculated F-Statistic is larger than a critical value (determined by the P-value), the difference in precision between the two groups is statistically significant.</p>
+            </div>
+            <div class="card" style="margin-top: 1.5rem;">
+                <h3>Shot Data</h3>
+                 <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Shot #</th>
+                                <th>Group</th>
+                                <th>X</th>
+                                <th>Y</th>
+                                <th>Velocity</th>
+                            </tr>
+                        </thead>
+                        <tbody id="statShotDataTable">
+                            <tr><td colspan="5" style="text-align: center;">No data loaded.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 
@@ -716,8 +722,6 @@
 
     </div>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
     <script>
         // --- DATABASE SETUP ---
         const DB_NAME = 'reloadingDB';
@@ -2178,9 +2182,13 @@
                         const firearm = await getItem('firearms', session.firearmId);
                         firearmText = firearm ? firearm.nickname : 'Unknown Firearm';
                     }
+                    let targetText = 'No Target';
+                    if (session.targetImageId) {
+                        const target = await getItem('targetImages', session.targetImageId);
+                        targetText = target ? target.name : 'Deleted Target';
+                    }
                     const totalShots = session.shots ? session.shots.length : (session.groups ? session.groups.reduce((acc, g) => acc + g.pois.length, 0) : 0);
-                    const shortId = session.id.substring(0, 8);
-                    option.textContent = `(${shortId}) - ${firearmText} (${totalShots} shots)`;
+                    option.textContent = `${targetText} - ${firearmText} (${totalShots} shots)`;
                     markingSessionSelect.appendChild(option);
                 }
                 markingSessionSelect.value = currentVal;
@@ -2692,7 +2700,7 @@
             const pValueInput = document.getElementById('pValue');
             const saTargetThumbnailContainer = document.getElementById('saTargetThumbnailContainer');
             const saTargetThumbnail = document.getElementById('saTargetThumbnail');
-            const exportPdfBtn = document.getElementById('exportAnalysisPdfBtn');
+            const exportAnalysisImageBtn = document.getElementById('exportAnalysisImageBtn');
 
             async function populateSessionSelects() {
                 const sessions = await getAllItems('impactData');
@@ -2714,9 +2722,13 @@
                             const firearm = await getItem('firearms', session.firearmId);
                             firearmText = firearm ? firearm.nickname : 'Unknown Firearm';
                         }
+                         let targetText = 'No Target';
+                        if (session.targetImageId) {
+                            const target = await getItem('targetImages', session.targetImageId);
+                            targetText = target ? target.name : 'Deleted Target';
+                        }
                         const totalShots = session.shots ? session.shots.length : 0;
-                        const shortId = session.id.substring(0, 8);
-                        option.textContent = `(${shortId}) - ${firearmText} (${totalShots} shots)`;
+                        option.textContent = `${targetText} - ${firearmText} (${totalShots} shots)`;
                         selectEl.appendChild(option);
                     }
                     selectEl.value = currentVal;
@@ -2736,6 +2748,7 @@
 
             const recalculateOnChange = [fTestSessionSelect, pValueInput];
             recalculateOnChange.forEach(el => el.addEventListener('change', calculateAndDisplayStats));
+            exportAnalysisImageBtn.addEventListener('click', handleExportImage);
 
             async function processNewData() {
                 await renderShotTableAndThumbnail();
@@ -2788,9 +2801,21 @@
                 const sd_y = Math.sqrt(all_y.reduce((sum, y) => sum + Math.pow(y - mean_y, 2), 0) / (n - 1));
                 const rsd = Math.sqrt(Math.pow(sd_x, 2) + Math.pow(sd_y, 2));
 
+                const velocityShots = shots.filter(s => s.velocity !== null && typeof s.velocity === 'number' && !isNaN(s.velocity));
+                let vel_es = null, vel_sd = null;
+                if (velocityShots.length >= 2) {
+                    const velocities = velocityShots.map(s => s.velocity);
+                    vel_es = Math.max(...velocities) - Math.min(...velocities);
+                    const mean_vel = velocities.reduce((a, b) => a + b, 0) / velocities.length;
+                    const sum_sq_diff = velocities.reduce((acc, v) => acc + Math.pow(v - mean_vel, 2), 0);
+                    vel_sd = Math.sqrt(sum_sq_diff / (velocities.length - 1));
+                }
+
                 return {
                     n: n,
                     units: dataUnits,
+                    mean_x: mean_x,
+                    mean_y: mean_y,
                     h_es: Math.max(...all_x) - Math.min(...all_x),
                     v_es: Math.max(...all_y) - Math.min(...all_y),
                     meanRadius: shots.reduce((sum, s) => sum + Math.hypot(s.x - mean_x, s.y - mean_y), 0) / n,
@@ -2799,6 +2824,8 @@
                     rsd: rsd,
                     variance: Math.pow(rsd, 2),
                     p95Size: rsd * Math.sqrt(-2 * Math.log(1 - 0.95)) * 2,
+                    vel_es: vel_es,
+                    vel_sd: vel_sd
                 };
             }
 
@@ -2814,47 +2841,48 @@
                      return;
                 }
 
-                let hvcHtml = '';
-                const velocityShots = currentSessionData.shots.filter(s => s.velocity !== null && typeof s.velocity === 'number' && !isNaN(s.velocity));
-                if (velocityShots.length >= 2) {
-                    const n_v = velocityShots.length;
-                    const velocities = velocityShots.map(s => s.velocity);
-                    const mean_vel = velocities.reduce((a, b) => a + b, 0) / n_v;
-                    const sum_x = velocityShots.reduce((acc, shot) => acc + shot.x, 0);
-                    const sum_v = mean_vel * n_v;
-                    const sum_xv = velocityShots.reduce((acc, shot) => acc + (shot.x * shot.velocity), 0);
-                    const sum_x_sq = velocityShots.reduce((acc, shot) => acc + (shot.x * shot.x), 0);
-                    const sum_v_sq = velocities.reduce((acc, v) => acc + (v * v), 0);
-                    const numerator = (n_v * sum_xv) - (sum_x * sum_v);
-                    const denominator = Math.sqrt(((n_v * sum_x_sq) - Math.pow(sum_x, 2)) * ((n_v * sum_v_sq) - Math.pow(sum_v, 2)));
-                    const correlation = denominator === 0 ? 0 : numerator / denominator;
-                    hvcHtml = `<p><span>HVC (r):</span> <span>${correlation.toFixed(4)}</span></p>`;
-                }
+                const refSessionId = fTestSessionSelect.value;
+                const isComparison = refSessionId && refSessionId !== currentSessionData.id;
 
-                let velocityAnalysisHtml = '';
-                 if (velocityShots.length >= 2) {
-                    const velocities = velocityShots.map(s => s.velocity);
-                    const vel_es = Math.max(...velocities) - Math.min(...velocities);
-                    const mean_vel = velocities.reduce((a, b) => a + b, 0) / velocities.length;
-                    const sum_sq_diff = velocities.reduce((acc, v) => acc + Math.pow(v - mean_vel, 2), 0);
-                    const vel_sd = Math.sqrt(sum_sq_diff / (velocities.length - 1));
-                    velocityAnalysisHtml = `
-                        <div class="stats-group">
+                const generateStatsBlock = (stats, title) => {
+                    if (!stats) return '';
+                    let velocityHtml = '';
+                    if (stats.vel_es !== null && stats.vel_sd !== null) {
+                        velocityHtml = `
                             <h4>Velocity Statistics</h4>
-                            <p><span>Velocity ES:</span> <span>${vel_es.toFixed(1)}</span></p>
-                            <p><span>Velocity SD:</span> <span>${vel_sd.toFixed(2)}</span></p>
+                            <div class="stats-grid" style="grid-template-columns: 1fr 1fr; gap: 0.25rem 1rem;">
+                                <p><span>Velocity ES:</span> <span>${stats.vel_es.toFixed(1)}</span></p>
+                                <p><span>Velocity SD:</span> <span>${stats.vel_sd.toFixed(2)}</span></p>
+                            </div>
+                        `;
+                    }
+                    return `
+                        <div class="stats-group">
+                            <h4 style="border-bottom: 1px solid #374151; padding-bottom: 0.5rem; margin-bottom: 0.75rem;">${title} (N=${stats.n})</h4>
+                            <div class="stats-grid" style="grid-template-columns: 1fr 1fr; gap: 0.25rem 1rem;">
+                                <p><span>Horizontal ES:</span> <span>${stats.h_es.toFixed(4)} ${stats.units}</span></p>
+                                <p><span>Vertical ES:</span> <span>${stats.v_es.toFixed(4)} ${stats.units}</span></p>
+                                <p><span>Mean Radius:</span> <span>${stats.meanRadius.toFixed(4)} ${stats.units}</span></p>
+                                <p><span>Radial SD (RSD):</span> <span>${stats.rsd.toFixed(4)} ${stats.units}</span></p>
+                                <p><span>H/V ES Ratio:</span> <span>${stats.v_es > 0 ? (stats.h_es / stats.v_es).toFixed(3) : 'N/A'}</span></p>
+                                <p><span>P95 Group Size (Est.):</span> <span>${stats.p95Size.toFixed(4)} ${stats.units}</span></p>
+                            </div>
+                            ${velocityHtml}
                         </div>
                     `;
-                }
+                };
 
-                // F-Test Logic
-                let fTestHtml = '';
-                const refSessionId = fTestSessionSelect.value;
-                if (refSessionId && refSessionId !== currentSessionData.id) {
+                let html = '';
+                const currentTitle = isComparison ? 'Current Session' : 'Calculated Statistics';
+                html += generateStatsBlock(currentStats, currentTitle);
+
+                if (isComparison) {
                     const refSessionData = await getItem('impactData', refSessionId);
                     const refStats = refSessionData ? calculateStatsForSession(refSessionData.shots) : null;
-
+                    
                     if (refStats) {
+                        html += generateStatsBlock(refStats, 'Reference Session');
+                        
                         let fStat, df_num, df_den, conclusion;
                         if (currentStats.variance > refStats.variance) {
                             fStat = currentStats.variance / refStats.variance;
@@ -2869,140 +2897,177 @@
                         const varianceDiff = currentStats.variance - refStats.variance;
                         const percentChange = (varianceDiff / refStats.variance) * 100;
                         if (percentChange > 0) {
-                             conclusion = `<p style="color:#ef4444;">Current session shows a ${percentChange.toFixed(1)}% larger variance (worse precision).</p>`;
+                            conclusion = `<p style="color:#ef4444; margin-top: 0.5rem;">Current session shows a ${percentChange.toFixed(1)}% larger variance (worse precision).</p>`;
                         } else {
-                            conclusion = `<p style="color:#22c55e;">Current session shows a ${Math.abs(percentChange).toFixed(1)}% smaller variance (improved precision).</p>`;
+                            conclusion = `<p style="color:#22c55e; margin-top: 0.5rem;">Current session shows a ${Math.abs(percentChange).toFixed(1)}% smaller variance (improved precision).</p>`;
                         }
 
-                        fTestHtml = `
+                        html += `
                             <div class="stats-group">
-                                <h4>F-Test for Variance</h4>
-                                <p><span>Current Variance (RSD²):</span> <span>${currentStats.variance.toFixed(6)}</span></p>
-                                <p><span>Reference Variance:</span> <span>${refStats.variance.toFixed(6)}</span></p>
-                                <p><span>F-Statistic:</span> <span>${fStat.toFixed(4)}</span></p>
-                                <p><span>Degrees of Freedom (num, den):</span> <span>(${df_num}, ${df_den})</span></p>
+                                <h4 style="border-bottom: 1px solid #374151; padding-bottom: 0.5rem; margin-bottom: 0.75rem;">F-Test for Variance Comparison</h4>
+                                <div class="stats-grid" style="grid-template-columns: 1fr 1fr; gap: 0.25rem 1rem;">
+                                    <p><span>Current Variance (RSD²):</span> <span>${currentStats.variance.toFixed(6)}</span></p>
+                                    <p><span>Reference Variance:</span> <span>${refStats.variance.toFixed(6)}</span></p>
+                                    <p><span>F-Statistic:</span> <span>${fStat.toFixed(4)}</span></p>
+                                    <p><span>Degrees of Freedom (num, den):</span> <span>(${df_num}, ${df_den})</span></p>
+                                </div>
                                 ${conclusion}
                             </div>`;
                     }
                 }
-
-                let html = `
-                    <div class="stats-group">
-                        <h4>Group Statistics</h4>
-                        <p><span>Horizontal ES:</span> <span>${currentStats.h_es.toFixed(4)} ${currentStats.units}</span></p>
-                        <p><span>Vertical ES:</span> <span>${currentStats.v_es.toFixed(4)} ${currentStats.units}</span></p>
-                        <p><span>Mean Radius:</span> <span>${currentStats.meanRadius.toFixed(4)} ${currentStats.units}</span></p>
-                        <p><span>H/V ES Ratio:</span> <span>${currentStats.v_es > 0 ? (currentStats.h_es / currentStats.v_es).toFixed(3) : 'N/A'}</span></p>
-                        ${hvcHtml}
-                    </div>
-                    <div class="stats-group">
-                        <h4>Dispersion Statistics</h4>
-                        <p><span>SD (Horizontal):</span> <span>${currentStats.sd_x.toFixed(4)} ${currentStats.units}</span></p>
-                        <p><span>SD (Vertical):</span> <span>${currentStats.sd_y.toFixed(4)} ${currentStats.units}</span></p>
-                        <p><span>Radial Standard Deviation (RSD):</span> <span>${currentStats.rsd.toFixed(4)} ${currentStats.units}</span></p>
-                        <p><span>P95 Group Size (Est.):</span> <span>${currentStats.p95Size.toFixed(4)} ${currentStats.units}</span></p>
-                    </div>
-                    ${velocityAnalysisHtml}
-                    ${fTestHtml}
-                `;
                 
                 statOutputContainer.innerHTML = html;
             }
-
-            async function exportAnalysisPdf() {
-                if (!currentSessionData) {
-                    alert("No session loaded to export.");
+            
+            async function handleExportImage() {
+                if (!currentSessionData || !currentSessionData.shots || currentSessionData.shots.length === 0) {
+                    alert('No data to export. Please load a session with analyzable shots.');
                     return;
                 }
 
-                const { jsPDF } = window.jspdf;
-                const doc = new jsPDF();
-                
-                const firearm = currentSessionData.firearmId ? await getItem('firearms', currentSessionData.firearmId) : null;
-                const load = currentSessionData.loadId ? await getItem('loads', currentSessionData.loadId) : null;
+                const currentShots = currentSessionData.shots;
+                const currentStats = calculateStatsForSession(currentShots);
 
-                let yPos = 15;
-                doc.setFontSize(18);
-                doc.text("Shooting Session Analysis", 105, yPos, { align: "center" });
-                yPos += 10;
-                
-                doc.setFontSize(10);
-                doc.text(`Session ID: ${currentSessionData.id}`, 14, yPos);
-                doc.text(`Date: ${new Date(currentSessionData.timestamp).toLocaleString()}`, 105, yPos, { align: "center" });
-                yPos += 7;
+                // Translate current shots to be centered on their own MPI
+                const translatedCurrentShots = currentShots.map(shot => ({
+                    ...shot,
+                    x: shot.x - currentStats.mean_x,
+                    y: shot.y - currentStats.mean_y
+                }));
 
-                doc.setFontSize(12);
-                doc.text("Session Information", 14, yPos);
-                yPos += 6;
-                doc.setFontSize(10);
-                doc.text(`Firearm: ${firearm ? firearm.nickname : 'N/A'}`, 14, yPos);
-                let loadText = 'N/A';
-                if (load) {
-                    if (load.loadType === 'commercial') {
-                        const mfg = await getItem('manufacturers', load.manufacturerId);
-                        loadText = `${mfg ? mfg.name : ''} ${load.name} ${load.bulletWeight || ''}gr`.trim();
-                    } else {
-                        const bullet = await getItem('bullets', load.bulletId);
-                        const powder = await getItem('powders', load.powderId);
-                        if (bullet && powder) {
-                             loadText = `Hand Load: ${bullet.weight}gr ${bullet.name} | ${powder.name} ${load.chargeWeight}gr`;
-                        }
+                let translatedRefShots = [];
+                let refStats = null;
+                const refSessionId = fTestSessionSelect.value;
+                if (refSessionId && refSessionId !== currentSessionData.id) {
+                    const refSessionData = await getItem('impactData', refSessionId);
+                    if (refSessionData && refSessionData.shots && refSessionData.shots.length > 0){
+                        const refShots = refSessionData.shots;
+                        refStats = calculateStatsForSession(refShots);
+                        // Translate reference shots to be centered on their own MPI
+                        translatedRefShots = refShots.map(shot => ({
+                            ...shot,
+                            x: shot.x - refStats.mean_x,
+                            y: shot.y - refStats.mean_y
+                        }));
                     }
                 }
-                doc.text(`Load: ${loadText}`, 105, yPos);
-                yPos += 5;
-                doc.text(`Target Distance: ${currentSessionData.targetDistance || 'N/A'} ${currentSessionData.distanceUnits || ''}`, 14, yPos);
-                yPos += 10;
+                // The combined array now contains data where each group is centered around (0,0)
+                const allTranslatedShots = [...translatedCurrentShots, ...translatedRefShots];
 
-                // --- NEW PDF ORDER ---
+                const canvas = document.createElement('canvas');
+                const PLOT_WIDTH = 900;
+                const TEXT_WIDTH = 700;
+                const PADDING = 40;
+                canvas.width = PLOT_WIDTH + TEXT_WIDTH;
+                canvas.height = 900;
+                const ctx = canvas.getContext('2d');
 
-                let statsY = yPos;
-                let imageY = yPos;
-                let finalStatsY = statsY;
-                let finalImageY = imageY;
+                ctx.fillStyle = '#1f2937';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-                // 1. Add Calculated Statistics Text
-                const statsText = document.getElementById('statAnalysisOutput').innerText.replace(/(\w+:)\s+/g, '$1\t');
-                doc.setFontSize(12);
-                doc.text("Calculated Statistics", 14, statsY);
-                statsY += 7;
-                doc.setFontSize(10);
-                const statsLines = doc.splitTextToSize(statsText, 120); 
-                doc.text(statsLines, 14, statsY, { lineHeightFactor: 1.5 });
-                const lineHeight = doc.getLineHeight() / doc.getFont().scaleFactor;
-                finalStatsY = statsY + (statsLines.length * lineHeight * 1.5);
+                const minX = Math.min(...allTranslatedShots.map(s => s.x));
+                const maxX = Math.max(...allTranslatedShots.map(s => s.x));
+                const minY = Math.min(...allTranslatedShots.map(s => s.y));
+                const maxY = Math.max(...allTranslatedShots.map(s => s.y));
                 
-                // 2. Add Target Image
-                if (saTargetThumbnail.src.startsWith('data:image')) {
-                     try {
-                        const imgData = saTargetThumbnail.src;
-                        const imgProps = doc.getImageProperties(imgData);
-                        const imgWidth = 50;
-                        const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
-                        doc.addImage(imgData, 'WEBP', 145, imageY, imgWidth, imgHeight);
-                        finalImageY = imageY + imgHeight;
-                     } catch(e) { console.error("Error adding image to PDF:", e); }
+                const dataWidth = maxX - minX;
+                const dataHeight = maxY - minY;
+                const dataAspectRatio = dataHeight / dataWidth;
+                const plotAspectRatio = (canvas.height - PADDING * 2) / (PLOT_WIDTH - PADDING * 2);
+
+                let scale;
+                if (dataAspectRatio > plotAspectRatio) {
+                    scale = (canvas.height - PADDING * 2) / dataHeight;
+                } else {
+                    scale = (PLOT_WIDTH - PADDING * 2) / dataWidth;
+                }
+                
+                const centerX = (minX + maxX) / 2;
+                const centerY = (minY + maxY) / 2;
+                const offsetX = (PLOT_WIDTH / 2) - (centerX * scale);
+                const offsetY = (canvas.height / 2) - (centerY * scale);
+
+                function transformPoint(x, y) {
+                    return { x: x * scale + offsetX, y: y * scale + offsetY };
                 }
 
-                // 3. Add Shot Data Table, starting below the taller of the two previous sections
-                const tableStartY = Math.max(finalStatsY, finalImageY) + 7;
+                ctx.strokeStyle = '#4b5563';
+                ctx.lineWidth = 1;
+                // Since data is centered around (0,0), this origin is the aligned MPI
+                const origin = transformPoint(0, 0);
+                ctx.beginPath();
+                ctx.moveTo(origin.x, 0); ctx.lineTo(origin.x, canvas.height);
+                ctx.moveTo(0, origin.y); ctx.lineTo(PLOT_WIDTH, origin.y);
+                ctx.stroke();
 
-                const tableHeaders = [["#", "Group", "X", "Y", "Velocity"]];
-                const tableBody = currentSessionData.shots.map(s => [
-                    s.shotNumber, s.group, s.x.toFixed(4), s.y.toFixed(4), s.velocity ?? 'N/A'
-                ]);
-
-                doc.autoTable({
-                    head: tableHeaders,
-                    body: tableBody,
-                    startY: tableStartY,
-                    headStyles: { fillColor: [41, 128, 185] }
+                translatedCurrentShots.forEach(shot => {
+                    const p = transformPoint(shot.x, shot.y);
+                    ctx.fillStyle = '#60a5fa'; // blue
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, 5, 0, 2 * Math.PI);
+                    ctx.fill();
                 });
                 
-                doc.save(`analysis-${currentSessionData.id.substring(0,8)}.pdf`);
+                if(refStats) {
+                     translatedRefShots.forEach(shot => {
+                        const p = transformPoint(shot.x, shot.y);
+                        ctx.fillStyle = '#22c55e'; // green
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, 5, 0, 2 * Math.PI);
+                        ctx.fill();
+                    });
+                }
+                
+                function drawStatsText(stats, title, x, y, color) {
+                    let currentY = y;
+                    const lineHeight = 24;
+                    const subLineHeight = 20;
+                    ctx.fillStyle = color;
+                    ctx.font = 'bold 20px Inter';
+                    ctx.fillText(title + ` (N=${stats.n})`, x, currentY);
+                    currentY += lineHeight * 1.5;
+
+                    ctx.fillStyle = '#f9fafb';
+                    ctx.font = '16px Inter';
+
+                    const statLines = [
+                        `Horizontal ES: ${stats.h_es.toFixed(4)} ${stats.units}`,
+                        `Vertical ES: ${stats.v_es.toFixed(4)} ${stats.units}`,
+                        `Mean Radius: ${stats.meanRadius.toFixed(4)} ${stats.units}`,
+                        `Radial SD (RSD): ${stats.rsd.toFixed(4)} ${stats.units}`,
+                        `H/V ES Ratio: ${stats.v_es > 0 ? (stats.h_es / stats.v_es).toFixed(3) : 'N/A'}`,
+                        `P95 Group Size (Est.): ${stats.p95Size.toFixed(4)} ${stats.units}`
+                    ];
+                    statLines.forEach(line => {
+                        ctx.fillText(line, x, currentY);
+                        currentY += lineHeight;
+                    });
+                    
+                    if (stats.vel_es !== null && stats.vel_sd !== null) {
+                        currentY += subLineHeight;
+                        ctx.font = 'bold 18px Inter';
+                        ctx.fillText('Velocity Statistics', x, currentY);
+                        currentY += lineHeight;
+                        ctx.font = '16px Inter';
+                        ctx.fillText(`Velocity ES: ${stats.vel_es.toFixed(1)}`, x, currentY);
+                        currentY += lineHeight;
+                        ctx.fillText(`Velocity SD: ${stats.vel_sd.toFixed(2)}`, x, currentY);
+                        currentY += lineHeight;
+                    }
+                    return currentY + subLineHeight;
+                }
+
+                let textY = drawStatsText(currentStats, 'Current Session', PLOT_WIDTH + PADDING, PADDING, '#60a5fa');
+                if (refStats) {
+                    drawStatsText(refStats, 'Reference Session', PLOT_WIDTH + PADDING, textY, '#22c55e');
+                }
+
+                const dataUrl = canvas.toDataURL('image/png');
+                const a = document.createElement('a');
+                a.href = dataUrl;
+                a.download = `analysis-export-${Date.now()}.png`;
+                a.click();
             }
-            
-            exportPdfBtn.addEventListener('click', exportAnalysisPdf);
 
             populateSessionSelects();
         }
