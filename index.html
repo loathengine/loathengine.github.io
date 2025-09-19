@@ -474,10 +474,7 @@
             <div class="card" style="margin-top: 1.5rem;">
                 <h3>Calculation Details & Terminology</h3>
                         <h4>Group Statistics</h4>
-                        <p><strong>Horizontal/Vertical ES (Extreme Spread):</strong> The distance between the two furthest impacts on each axis.</p>
                         <p><strong>Mean Radius:</strong> The average distance of all shots from the geometric center (mean point of impact) of the group.</p>
-                        <p><strong>H/V ES Ratio:</strong> The ratio of Horizontal ES to Vertical ES. A value near 1.0 suggests round groups.</p>
-                        <p><strong>HVC (r):</strong> Horizontal Velocity Correlation. A Pearson correlation coefficient that measures the linear relationship between shot velocity and horizontal shot placement. Values range from -1 (higher velocity = further left) to +1 (higher velocity = further right).</p>
 
                         <h4>Dispersion Statistics</h4>
                         <p><strong>SD (Horizontal/Vertical):</strong> The Standard Deviation of shot placement on each axis. Measures the consistency of shots along that axis.</p>
@@ -488,6 +485,11 @@
                         <h4>Velocity Statistics</h4>
                         <p><strong>Velocity ES (Extreme Spread):</strong> The difference between the highest and lowest recorded shot velocities.</p>
                         <p><strong>Velocity SD (Standard Deviation):</strong> A measure of the consistency of the muzzle velocity. A lower SD indicates more consistent ammunition.</p>
+                        
+                        <h4>Confidence Intervals (95%)</h4>
+                        <p><strong>How to Understand Confidence Intervals:</strong> A confidence interval gives you a range of likely values for something you are trying to measure. Because we are only using a small sample of shots (e.g., a 10-shot group) instead of all possible shots, our measurement has some uncertainty. The 95% confidence level means that if you were to shoot 100 different groups and calculate an interval for each one, about 95 of those intervals would capture the "true" value for your firearm and load combination.</p>
+                        <p><strong>CI for Mean (H/V):</strong> This interval shows the uncertainty in your group's center. A small range means you can be very confident that your group's center is close to your point of aim. A wide range, common with small groups, means your actual group center could be much different from what this single group shows.</p>
+                        <p><strong>CI for RSD:</strong> This is arguably the most important interval, as it shows the uncertainty in your actual precision measurement (the RSD). A <strong>wide interval</strong> (e.g., [0.25, 0.95]) tells you that your sample size is too small to have a good estimate of the load's true precision. A <strong>narrow interval</strong> (e.g., [0.45, 0.65]) gives you much higher confidence that your measured RSD is close to the true value. The key to shrinking this interval is to increase your sample size (shoot more shots).</p>
             </div>
             <div class="card" style="margin-top: 1.5rem;">
                 <h3>Shot Data</h3>
@@ -2688,6 +2690,35 @@
         }
         
         // --- STATISTICAL ANALYSIS LOGIC ---
+        
+        // --- Statistical Helper Functions & Lookup Tables ---
+        // t-distribution, 95% CI, two-tailed (alpha = 0.05)
+        const tDistributionTable = { 1: 12.706, 2: 4.303, 3: 3.182, 4: 2.776, 5: 2.571, 6: 2.447, 7: 2.365, 8: 2.306, 9: 2.262, 10: 2.228, 11: 2.201, 12: 2.179, 13: 2.160, 14: 2.145, 15: 2.131, 16: 2.120, 17: 2.110, 18: 2.101, 19: 2.093, 20: 2.086, 21: 2.080, 22: 2.074, 23: 2.069, 24: 2.064, 25: 2.060, 26: 2.056, 27: 2.052, 28: 2.048, 29: 2.045, 30: 2.042, 40: 2.021, 50: 2.009, 60: 2.000, 80: 1.990, 100: 1.984, "infinity": 1.960 };
+
+        function getTValue(df) {
+            if (df <= 0) return NaN;
+            if (df > 100) return tDistributionTable["infinity"];
+            if (tDistributionTable[df]) return tDistributionTable[df];
+            const keys = Object.keys(tDistributionTable).map(Number).filter(k => !isNaN(k) && k < df);
+            const closestKey = Math.max(...keys);
+            return tDistributionTable[closestKey];
+        }
+
+        // Chi-Square distribution, for 95% CI
+        const chiSquareTable = {
+            // df: [lower (0.975), upper (0.025)]
+            1: [0.001, 5.024], 2: [0.051, 7.378], 3: [0.216, 9.348], 4: [0.484, 11.143], 5: [0.831, 12.833], 6: [1.237, 14.449], 7: [1.690, 16.013], 8: [2.180, 17.535], 9: [2.700, 19.023], 10: [3.247, 20.483], 11: [3.816, 21.920], 12: [4.404, 23.337], 13: [5.009, 24.736], 14: [5.629, 26.119], 15: [6.262, 27.488], 16: [6.908, 28.845], 17: [7.564, 30.191], 18: [8.231, 31.526], 19: [8.907, 32.852], 20: [9.591, 34.170], 21: [10.283, 35.479], 22: [10.982, 36.781], 23: [11.689, 38.076], 24: [12.401, 39.364], 25: [13.120, 40.646], 26: [13.844, 41.923], 27: [14.573, 43.194], 28: [15.308, 44.461], 29: [16.047, 45.722], 30: [16.791, 46.979], 40: [24.433, 59.342], 50: [32.357, 71.420], 60: [40.482, 83.298], 70: [48.758, 95.023], 80: [57.153, 106.629], 90: [65.647, 118.136], 100: [74.222, 129.561]
+        };
+
+        function getChiSquareValues(df) {
+            if (df <= 0) return { lower: NaN, upper: NaN };
+            if (df > 100) df = 100; // Cap at 100 for this table
+            if (chiSquareTable[df]) return { lower: chiSquareTable[df][0], upper: chiSquareTable[df][1] };
+            const keys = Object.keys(chiSquareTable).map(Number).filter(k => !isNaN(k) && k < df);
+            const closestKey = Math.max(...keys);
+            return { lower: chiSquareTable[closestKey][0], upper: chiSquareTable[closestKey][1] };
+        }
+        
         function initStatisticalAnalysis() {
             let currentSessionData = null;
             const sessionSelect = document.getElementById('sessionSelect');
@@ -2785,15 +2816,27 @@
                 if (!shots || shots.length < 2) return null;
 
                 const n = shots.length;
+                const df = n - 1; // degrees of freedom
                 const dataUnits = shots[0].units || 'units';
 
                 const all_x = shots.map(s => s.x);
                 const all_y = shots.map(s => s.y);
                 const mean_x = all_x.reduce((a, b) => a + b, 0) / n;
                 const mean_y = all_y.reduce((a, b) => a + b, 0) / n;
-                const sd_x = Math.sqrt(all_x.reduce((sum, x) => sum + Math.pow(x - mean_x, 2), 0) / (n - 1));
-                const sd_y = Math.sqrt(all_y.reduce((sum, y) => sum + Math.pow(y - mean_y, 2), 0) / (n - 1));
+                const sd_x = Math.sqrt(all_x.reduce((sum, x) => sum + Math.pow(x - mean_x, 2), 0) / df);
+                const sd_y = Math.sqrt(all_y.reduce((sum, y) => sum + Math.pow(y - mean_y, 2), 0) / df);
                 const rsd = Math.sqrt(Math.pow(sd_x, 2) + Math.pow(sd_y, 2));
+
+                const t_value = getTValue(df);
+                const ci_mean_x_margin = t_value * (sd_x / Math.sqrt(n));
+                const ci_mean_y_margin = t_value * (sd_y / Math.sqrt(n));
+                const ci_mean_x = [mean_x - ci_mean_x_margin, mean_x + ci_mean_x_margin];
+                const ci_mean_y = [mean_y - ci_mean_y_margin, mean_y + ci_mean_y_margin];
+                
+                const chi_values = getChiSquareValues(df);
+                const ci_rsd_lower = Math.sqrt((df * Math.pow(rsd, 2)) / chi_values.upper);
+                const ci_rsd_upper = Math.sqrt((df * Math.pow(rsd, 2)) / chi_values.lower);
+                const ci_rsd = [ci_rsd_lower, ci_rsd_upper];
 
                 const velocityShots = shots.filter(s => s.velocity !== null && typeof s.velocity === 'number' && !isNaN(s.velocity));
                 let vel_es = null, vel_sd = null;
@@ -2822,7 +2865,11 @@
                     cep: cep,
                     p95Size: rsd * Math.sqrt(-2 * Math.log(1 - 0.95)) * 2,
                     vel_es: vel_es,
-                    vel_sd: vel_sd
+                    vel_sd: vel_sd,
+                    ci_mean_x: ci_mean_x,
+                    ci_mean_y: ci_mean_y,
+                    ci_rsd: ci_rsd,
+                    t_value: t_value
                 };
             }
 
@@ -2843,6 +2890,27 @@
 
                 const generateStatsBlock = (stats, title) => {
                     if (!stats) return '';
+                    
+                    function generateCiHtml(label, interval, referenceValue, ratioMetric, units, lowThreshold, highThreshold, uncertaintyLabels) {
+                        const width = interval[1] - interval[0];
+                        // Use the pre-calculated ratio metric for Mean CI, and the dynamic ratio for RSD CI.
+                        const ratio = ratioMetric !== undefined ? ratioMetric : (referenceValue > 0 ? width / referenceValue : 0);
+                        
+                        let color = '#eab308'; // yellow-500 for moderate
+                        let uncertaintyText = uncertaintyLabels.moderate;
+
+                        if (ratio > highThreshold) {
+                            color = '#ef4444'; // red-500 for high
+                            uncertaintyText = uncertaintyLabels.high;
+                        } else if (ratio < lowThreshold) {
+                            color = '#22c55e'; // green-500 for low
+                            uncertaintyText = uncertaintyLabels.low;
+                        }
+
+                        const note = ` <span style="font-size: 0.8em;">(${uncertaintyText})</span>`;
+                        return `<p><span>${label}:</span> <span style="color:${color};">[${interval[0].toFixed(4)}, ${interval[1].toFixed(4)}] ${units}${note}</span></p>`;
+                    }
+
                     let velocityHtml = '';
                     if (stats.vel_es !== null && stats.vel_sd !== null) {
                         velocityHtml = `
@@ -2853,18 +2921,37 @@
                             </div>
                         `;
                     }
+                    
+                    const uncertaintyLabels = { high: 'High Uncertainty', moderate: 'Moderate Uncertainty', low: 'Low Uncertainty' };
+                    // The metric for mean CI uncertainty is (2 * t) / sqrt(n). It's a ratio of CI width to the standard deviation.
+                    const meanCiMetric = (2 * stats.t_value) / Math.sqrt(stats.n);
+
+                    const ciMeanH_Html = generateCiHtml('CI for Mean (H)', stats.ci_mean_x, stats.sd_x, meanCiMetric, stats.units, 0.75, 1.5, uncertaintyLabels);
+                    const ciMeanV_Html = generateCiHtml('CI for Mean (V)', stats.ci_mean_y, stats.sd_y, meanCiMetric, stats.units, 0.75, 1.5, uncertaintyLabels);
+                    const ciRsd_Html = generateCiHtml('CI for RSD', stats.ci_rsd, stats.rsd, undefined, stats.units, 0.25, 0.75, uncertaintyLabels);
+
+                    const confidenceIntervalsHtml = `
+                        <h4>Confidence Intervals (95%)</h4>
+                        <div class="stats-grid" style="grid-template-columns: 1fr; gap: 0.25rem 1rem;">
+                             ${ciMeanH_Html}
+                             ${ciMeanV_Html}
+                             ${ciRsd_Html}
+                        </div>
+                    `;
+
                     return `
                         <div class="stats-group">
                             <h4 style="border-bottom: 1px solid #374151; padding-bottom: 0.5rem; margin-bottom: 0.75rem;">${title} (N=${stats.n})</h4>
                             <div class="stats-grid" style="grid-template-columns: 1fr 1fr; gap: 0.25rem 1rem;">
-                                <p><span>Horizontal ES:</span> <span>${stats.h_es.toFixed(4)} ${stats.units}</span></p>
-                                <p><span>Vertical ES:</span> <span>${stats.v_es.toFixed(4)} ${stats.units}</span></p>
+                                <p><span>Horizontal SD:</span> <span>${stats.sd_x.toFixed(4)} ${stats.units}</span></p>
+                                <p><span>Vertical SD:</span> <span>${stats.sd_y.toFixed(4)} ${stats.units}</span></p>
                                 <p><span>Mean Radius:</span> <span>${stats.meanRadius.toFixed(4)} ${stats.units}</span></p>
                                 <p><span>Radial SD (RSD):</span> <span>${stats.rsd.toFixed(4)} ${stats.units}</span></p>
                                 <p><span>CEP (50%):</span> <span>${stats.cep.toFixed(4)} ${stats.units}</span></p>
                                 <p><span>P95 Group Size (Est.):</span> <span>${stats.p95Size.toFixed(4)} ${stats.units}</span></p>
                             </div>
                             ${velocityHtml}
+                            ${confidenceIntervalsHtml}
                         </div>
                     `;
                 };
@@ -2906,7 +2993,7 @@
             }
             
             async function handleExportImage() {
-                if (!currentSessionData || !currentSessionData.shots || currentSessionData.shots.length === 0) {
+                if (!currentSessionData || !currentSessionData.shots || !currentSessionData.shots.length === 0) {
                     alert('No data to export. Please load a session with analyzable shots.');
                     return;
                 }
@@ -2941,11 +3028,14 @@
                 const allTranslatedShots = [...translatedCurrentShots, ...translatedRefShots];
 
                 const canvas = document.createElement('canvas');
-                const PLOT_WIDTH = 900;
-                const TEXT_WIDTH = 700;
-                const PADDING = 40;
-                canvas.width = PLOT_WIDTH + TEXT_WIDTH;
-                canvas.height = 900;
+                const DPI = 300;
+                const PRINT_WIDTH_INCHES = 7.5;
+                
+                canvas.width = PRINT_WIDTH_INCHES * DPI; // 2250px for 7.5" @ 300 DPI
+                canvas.height = 1500; // Adjusted height for a reasonable aspect ratio
+
+                const PLOT_WIDTH = 1260;
+                const PADDING = 60; // Increased padding for larger canvas
                 const ctx = canvas.getContext('2d');
 
                 ctx.fillStyle = '#1f2937';
@@ -2978,7 +3068,7 @@
                 }
 
                 ctx.strokeStyle = '#4b5563';
-                ctx.lineWidth = 1;
+                ctx.lineWidth = 2; // Thicker lines for higher res
                 // Since data is centered around (0,0), this origin is the aligned MPI
                 const origin = transformPoint(0, 0);
                 ctx.beginPath();
@@ -2990,7 +3080,7 @@
                     const p = transformPoint(shot.x, shot.y);
                     ctx.fillStyle = '#60a5fa'; // blue
                     ctx.beginPath();
-                    ctx.arc(p.x, p.y, 5, 0, 2 * Math.PI);
+                    ctx.arc(p.x, p.y, 7, 0, 2 * Math.PI); // Larger dots
                     ctx.fill();
                 });
                 
@@ -2999,26 +3089,26 @@
                         const p = transformPoint(shot.x, shot.y);
                         ctx.fillStyle = '#22c55e'; // green
                         ctx.beginPath();
-                        ctx.arc(p.x, p.y, 5, 0, 2 * Math.PI);
+                        ctx.arc(p.x, p.y, 7, 0, 2 * Math.PI);
                         ctx.fill();
                     });
                 }
                 
                 function drawStatsText(stats, title, x, y, color) {
                     let currentY = y;
-                    const lineHeight = 24;
-                    const subLineHeight = 20;
+                    const lineHeight = 36;
+                    const subLineHeight = 30;
                     ctx.fillStyle = color;
-                    ctx.font = 'bold 20px Inter';
+                    ctx.font = 'bold 30px Inter';
                     ctx.fillText(title + ` (N=${stats.n})`, x, currentY);
                     currentY += lineHeight * 1.5;
 
                     ctx.fillStyle = '#f9fafb';
-                    ctx.font = '16px Inter';
+                    ctx.font = '24px Inter';
 
                     const statLines = [
-                        `Horizontal ES: ${stats.h_es.toFixed(4)} ${stats.units}`,
-                        `Vertical ES: ${stats.v_es.toFixed(4)} ${stats.units}`,
+                        `Horizontal SD: ${stats.sd_x.toFixed(4)} ${stats.units}`,
+                        `Vertical SD: ${stats.sd_y.toFixed(4)} ${stats.units}`,
                         `Mean Radius: ${stats.meanRadius.toFixed(4)} ${stats.units}`,
                         `Radial SD (RSD): ${stats.rsd.toFixed(4)} ${stats.units}`,
                         `CEP (50%): ${stats.cep.toFixed(4)} ${stats.units}`,
@@ -3031,10 +3121,10 @@
                     
                     if (stats.vel_es !== null && stats.vel_sd !== null) {
                         currentY += subLineHeight;
-                        ctx.font = 'bold 18px Inter';
+                        ctx.font = 'bold 28px Inter';
                         ctx.fillText('Velocity Statistics', x, currentY);
                         currentY += lineHeight;
-                        ctx.font = '16px Inter';
+                        ctx.font = '24px Inter';
                         ctx.fillText(`Velocity ES: ${stats.vel_es.toFixed(1)}`, x, currentY);
                         currentY += lineHeight;
                         ctx.fillText(`Velocity SD: ${stats.vel_sd.toFixed(2)}`, x, currentY);
