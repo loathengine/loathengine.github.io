@@ -450,11 +450,9 @@
                             <select id="sessionSelect"></select>
                         </div>
                          <div>
-                            <h4>F-Test for Variance Comparison</h4>
+                            <h4>CEP Comparison</h4>
                             <label for="fTestSessionSelect">Compare Against Session</label>
                             <select id="fTestSessionSelect"></select>
-                            <label for="pValue" style="margin-top:0.5rem;">P-value (Significance Level)</label>
-                            <input type="number" id="pValue" step="0.01" value="0.05" placeholder="e.g., 0.05">
                         </div>
                         <div>
                             <h4>Actions</h4>
@@ -484,14 +482,12 @@
                         <h4>Dispersion Statistics</h4>
                         <p><strong>SD (Horizontal/Vertical):</strong> The Standard Deviation of shot placement on each axis. Measures the consistency of shots along that axis.</p>
                         <p><strong>RSD (Radial Standard Deviation):</strong> A measure of a group's precision. It represents the standard deviation in two dimensions. Smaller is better.</p>
+                        <p><strong>CEP (Circular Error Probable):</strong> A measure of precision defined as the radius of a circle, centered on the group's mean point of impact, that contains 50% of the shots. A smaller CEP value indicates a tighter, more precise group.</p>
                         <p><strong>P95 Group Size (Est.):</strong> An estimated group size that should contain 95% of all shots fired, based on the RSD. This provides a more statistically robust measure of precision than a single group's extreme spread.</p>
 
                         <h4>Velocity Statistics</h4>
                         <p><strong>Velocity ES (Extreme Spread):</strong> The difference between the highest and lowest recorded shot velocities.</p>
                         <p><strong>Velocity SD (Standard Deviation):</strong> A measure of the consistency of the muzzle velocity. A lower SD indicates more consistent ammunition.</p>
-
-                         <h4>F-Test for Variance</h4>
-                         <p>A statistical test used to compare the variance (RSD²) of the current group against a reference group. If the calculated F-Statistic is larger than a critical value (determined by the P-value), the difference in precision between the two groups is statistically significant.</p>
             </div>
             <div class="card" style="margin-top: 1.5rem;">
                 <h3>Shot Data</h3>
@@ -2697,7 +2693,6 @@
             const sessionSelect = document.getElementById('sessionSelect');
             const fTestSessionSelect = document.getElementById('fTestSessionSelect');
             const statOutputContainer = document.getElementById('statAnalysisOutput');
-            const pValueInput = document.getElementById('pValue');
             const saTargetThumbnailContainer = document.getElementById('saTargetThumbnailContainer');
             const saTargetThumbnail = document.getElementById('saTargetThumbnail');
             const exportAnalysisImageBtn = document.getElementById('exportAnalysisImageBtn');
@@ -2746,8 +2741,7 @@
                 await processNewData();
             });
 
-            const recalculateOnChange = [fTestSessionSelect, pValueInput];
-            recalculateOnChange.forEach(el => el.addEventListener('change', calculateAndDisplayStats));
+            fTestSessionSelect.addEventListener('change', calculateAndDisplayStats);
             exportAnalysisImageBtn.addEventListener('click', handleExportImage);
 
             async function processNewData() {
@@ -2810,6 +2804,9 @@
                     const sum_sq_diff = velocities.reduce((acc, v) => acc + Math.pow(v - mean_vel, 2), 0);
                     vel_sd = Math.sqrt(sum_sq_diff / (velocities.length - 1));
                 }
+                
+                // CEP approximation: CEP ≈ 0.589 * (σ_x + σ_y)
+                const cep = 0.589 * (sd_x + sd_y);
 
                 return {
                     n: n,
@@ -2822,7 +2819,7 @@
                     sd_x: sd_x,
                     sd_y: sd_y,
                     rsd: rsd,
-                    variance: Math.pow(rsd, 2),
+                    cep: cep,
                     p95Size: rsd * Math.sqrt(-2 * Math.log(1 - 0.95)) * 2,
                     vel_es: vel_es,
                     vel_sd: vel_sd
@@ -2864,7 +2861,7 @@
                                 <p><span>Vertical ES:</span> <span>${stats.v_es.toFixed(4)} ${stats.units}</span></p>
                                 <p><span>Mean Radius:</span> <span>${stats.meanRadius.toFixed(4)} ${stats.units}</span></p>
                                 <p><span>Radial SD (RSD):</span> <span>${stats.rsd.toFixed(4)} ${stats.units}</span></p>
-                                <p><span>H/V ES Ratio:</span> <span>${stats.v_es > 0 ? (stats.h_es / stats.v_es).toFixed(3) : 'N/A'}</span></p>
+                                <p><span>CEP (50%):</span> <span>${stats.cep.toFixed(4)} ${stats.units}</span></p>
                                 <p><span>P95 Group Size (Est.):</span> <span>${stats.p95Size.toFixed(4)} ${stats.units}</span></p>
                             </div>
                             ${velocityHtml}
@@ -2883,33 +2880,22 @@
                     if (refStats) {
                         html += generateStatsBlock(refStats, 'Reference Session');
                         
-                        let fStat, df_num, df_den, conclusion;
-                        if (currentStats.variance > refStats.variance) {
-                            fStat = currentStats.variance / refStats.variance;
-                            df_num = currentStats.n - 1;
-                            df_den = refStats.n - 1;
-                        } else {
-                            fStat = refStats.variance / currentStats.variance;
-                            df_num = refStats.n - 1;
-                            df_den = currentStats.n - 1;
-                        }
-                        
-                        const varianceDiff = currentStats.variance - refStats.variance;
-                        const percentChange = (varianceDiff / refStats.variance) * 100;
+                        const cepDiff = currentStats.cep - refStats.cep;
+                        const percentChange = (cepDiff / refStats.cep) * 100;
+                        let conclusion;
+
                         if (percentChange > 0) {
-                            conclusion = `<p style="color:#ef4444; margin-top: 0.5rem;">Current session shows a ${percentChange.toFixed(1)}% larger variance (worse precision).</p>`;
+                            conclusion = `<p style="color:#ef4444; margin-top: 0.5rem;">Current session's CEP is ${percentChange.toFixed(1)}% larger (less precise).</p>`;
                         } else {
-                            conclusion = `<p style="color:#22c55e; margin-top: 0.5rem;">Current session shows a ${Math.abs(percentChange).toFixed(1)}% smaller variance (improved precision).</p>`;
+                            conclusion = `<p style="color:#22c55e; margin-top: 0.5rem;">Current session's CEP is ${Math.abs(percentChange).toFixed(1)}% smaller (more precise).</p>`;
                         }
 
                         html += `
                             <div class="stats-group">
-                                <h4 style="border-bottom: 1px solid #374151; padding-bottom: 0.5rem; margin-bottom: 0.75rem;">F-Test for Variance Comparison</h4>
+                                <h4 style="border-bottom: 1px solid #374151; padding-bottom: 0.5rem; margin-bottom: 0.75rem;">CEP Comparison</h4>
                                 <div class="stats-grid" style="grid-template-columns: 1fr 1fr; gap: 0.25rem 1rem;">
-                                    <p><span>Current Variance (RSD²):</span> <span>${currentStats.variance.toFixed(6)}</span></p>
-                                    <p><span>Reference Variance:</span> <span>${refStats.variance.toFixed(6)}</span></p>
-                                    <p><span>F-Statistic:</span> <span>${fStat.toFixed(4)}</span></p>
-                                    <p><span>Degrees of Freedom (num, den):</span> <span>(${df_num}, ${df_den})</span></p>
+                                    <p><span>Current CEP:</span> <span>${currentStats.cep.toFixed(4)} ${currentStats.units}</span></p>
+                                    <p><span>Reference CEP:</span> <span>${refStats.cep.toFixed(4)} ${refStats.units}</span></p>
                                 </div>
                                 ${conclusion}
                             </div>`;
@@ -3035,7 +3021,7 @@
                         `Vertical ES: ${stats.v_es.toFixed(4)} ${stats.units}`,
                         `Mean Radius: ${stats.meanRadius.toFixed(4)} ${stats.units}`,
                         `Radial SD (RSD): ${stats.rsd.toFixed(4)} ${stats.units}`,
-                        `H/V ES Ratio: ${stats.v_es > 0 ? (stats.h_es / stats.v_es).toFixed(3) : 'N/A'}`,
+                        `CEP (50%): ${stats.cep.toFixed(4)} ${stats.units}`,
                         `P95 Group Size (Est.): ${stats.p95Size.toFixed(4)} ${stats.units}`
                     ];
                     statLines.forEach(line => {
