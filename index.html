@@ -208,10 +208,10 @@
                 <h4>Key Features:</h4>
                 <ul class="about-us-p" style="list-style-position: inside;">
                     <li><strong>Component Management:</strong> Keep a detailed inventory of your reloading components, including bullets, powders, primers, and brass.</li>
-                    <li><strong>Load Data Management:</strong> Develop, save, and manage your specific handload recipes.</li>
+                    <li><strong>Load Data Management:</strong> Develop, save, and manage your specific handload recipes and commercial ammunition.</li>
                     <li><strong>Target Management:</strong> Upload images of your targets to create a digital library for analysis.</li>
-                    <li><strong>Impact Marking & Analysis:</strong> Load a saved target, mark your aim and impact points, and instantly calculate critical statistics like group size, mean radius, and standard deviation.</li>
-                    <li><strong>Statistical Tools:</strong> Compare different shooting sessions and use statistical tests to determine if changes in your load have a significant impact on precision.</li>
+                    <li><strong>Impact Marking & Analysis:</strong> Digitize your targets by marking points of aim and impact, then instantly calculate critical statistics like Mean Radius and Standard Deviation.</li>
+                    <li><strong>Advanced Diagnostics:</strong> Automatically analyze shot dispersion to identify issues like vertical stringing and correlate it with muzzle velocity data to pinpoint the root cause.</li>
                 </ul>
                  <h4>Recommended Workflow:</h4>
                  <p class="about-us-p">
@@ -221,8 +221,8 @@
                     <li><strong>Firearms Tab:</strong> Start by adding the firearms you'll be using.</li>
                     <li><strong>Load Data Tab:</strong> Create your load recipes, linking them to your components.</li>
                     <li><strong>Targets Tab:</strong> Upload images of the paper targets you've shot.</li>
-                    <li><strong>Marking Tab:</strong> Select a firearm, load, and target. Then, mark your point-of-aim and impacts on the canvas to save a new session.</li>
-                    <li><strong>Analysis Tab:</strong> Load your saved sessions to view detailed statistics, compare performance against other sessions, and export your findings.</li>
+                    <li><strong>Marking Tab:</strong> Select a firearm, load, and target. Then, mark your point-of-aim and impacts on the canvas to save a new session. Enter velocity data for each shot if you have it.</li>
+                    <li><strong>Analysis Tab:</strong> Load your saved sessions to view detailed statistics, compare performance against other sessions, and use the diagnostic tools to understand your results.</li>
                  </ol>
                  <h4>A Note on Group Size & Statistical Significance</h4>
                  <p class="about-us-p">
@@ -275,23 +275,34 @@
 
                 <div id="load-forms-container">
                     <div class="tab-content active" id="hand-load-subtab">
-                        <form id="loadForm" class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                        <form id="loadForm">
                             <input type="hidden" id="loadId">
-                            <div><label for="loadDiameter">Diameter</label><select id="loadDiameter"></select></div>
-                            <div><label for="loadCartridge">Cartridge</label><select id="loadCartridge"></select></div>
-                            <div><label for="loadBullet">Bullet</label><select id="loadBullet"></select></div>
-                            <div><label for="loadBulletLot">Bullet Lot</label><input type="text" id="loadBulletLot"></div>
-                            <div><label for="loadPowderManufacturer">Powder Manufacturer</label><select id="loadPowderManufacturer"></select></div>
-                            <div><label for="loadPowder">Powder</label><select id="loadPowder"></select></div>
-                            <div><label for="loadPowderLot">Powder Lot</label><input type="text" id="loadPowderLot"></div>
-                            <div><label for="loadChargeWeight">Charge (grains)</label><input type="number" step="0.1" id="loadChargeWeight" required></div>
-                            <div><label for="loadCol">COL</label><input type="number" step="0.001" id="loadCol"></div>
-                            <div><label for="loadCbto">CBTO</label><input type="number" step="0.001" id="loadCbto"></div>
-                            <div><label for="loadPrimer">Primer</label><select id="loadPrimer"></select></div>
-                            <div><label for="loadPrimerLot">Primer Lot</label><input type="text" id="loadPrimerLot"></div>
-                            <div><label for="loadBrass">Brass</label><select id="loadBrass"></select></div>
-                            <div><label for="loadBrassLot">Brass Lot</label><input type="text" id="loadBrassLot"></div>
-                            <div><label for="loadFirings"># of Firings</label><input type="number" step="1" id="loadFirings"></div>
+                            <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                                <div><label for="loadDiameter">Diameter</label><select id="loadDiameter"></select></div>
+                                <div><label for="loadCartridge">Cartridge</label><select id="loadCartridge"></select></div>
+                            </div>
+                            <div class="form-grid" style="grid-template-columns: 1fr 2fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                                <div><label for="loadBulletWeight">Bullet Weight</label><select id="loadBulletWeight"></select></div>
+                                <div><label for="loadBullet">Bullet (Manuf./Name)</label><select id="loadBullet"></select></div>
+                                <div><label for="loadBulletLot">Bullet Lot</label><input type="text" id="loadBulletLot"></div>
+                            </div>
+                            <div class="form-grid" style="grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                                <div><label for="loadPowderManufacturer">Powder Manufacturer</label><select id="loadPowderManufacturer"></select></div>
+                                <div><label for="loadPowder">Powder</label><select id="loadPowder"></select></div>
+                                <div><label for="loadChargeWeight">Charge (grains)</label><input type="number" step="0.1" id="loadChargeWeight" required></div>
+                                <div><label for="loadPowderLot">Powder Lot</label><input type="text" id="loadPowderLot"></div>
+                            </div>
+                            <div class="form-grid" style="grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                                <div><label for="loadPrimer">Primer</label><select id="loadPrimer"></select></div>
+                                <div><label for="loadPrimerLot">Primer Lot</label><input type="text" id="loadPrimerLot"></div>
+                                <div><label for="loadCol">COL</label><input type="number" step="0.001" id="loadCol"></div>
+                                <div><label for="loadCbto">CBTO</label><input type="number" step="0.001" id="loadCbto"></div>
+                            </div>
+                            <div class="form-grid" style="grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                                <div><label for="loadBrass">Brass Manufacturer</label><select id="loadBrass"></select></div>
+                                <div><label for="loadBrassLot">Brass Lot</label><input type="text" id="loadBrassLot"></div>
+                                <div><label for="loadFirings"># of Firings</label><input type="number" step="1" id="loadFirings"></div>
+                            </div>
                         </form>
                         <div class="flex-container" style="margin-top: 1rem; max-width: 400px;">
                             <button type="submit" form="loadForm" class="btn-blue">Save Hand Load</button>
@@ -471,9 +482,10 @@
                         <h4>Dispersion Statistics</h4>
                         <p><strong>SD (Horizontal/Vertical):</strong> The Standard Deviation of shot placement on each axis. Measures the consistency of shots along that axis.</p>
 
-                        <h4>Velocity Statistics</h4>
-                        <p><strong>Velocity ES (Extreme Spread):</strong> The difference between the highest and lowest recorded shot velocities.</p>
+                        <h4>Velocity & Dispersion Analysis</h4>
                         <p><strong>Velocity SD (Standard Deviation):</strong> A measure of the consistency of the muzzle velocity. A lower SD indicates more consistent ammunition.</p>
+                        <p><strong>Vertical Stringing:</strong> The analysis automatically checks if the vertical spread (SD) of the group is significantly larger than the horizontal spread (specifically, if Vertical SD is > 1.5x Horizontal SD). If detected, it suggests a potential issue, often related to inconsistent muzzle velocity.</p>
+                        <p><strong>Velocity Correlation (R²):</strong> If vertical stringing is detected and velocity data is available (for 3+ shots), an R-squared (R²) value is calculated. This value, from 0% to 100%, indicates how much of the vertical shot placement can be explained by changes in velocity. A high R² value (e.g., > 40%) strongly suggests that inconsistent muzzle velocity is a primary cause of the vertical spread.</p>
             </div>
         </div>
 
@@ -1715,6 +1727,58 @@
         }
         
         // --- LOADS MANAGEMENT LOGIC ---
+        async function refreshLoadCartridgeDropdown() {
+            const allCartridges = await getAllItems('cartridges');
+            const selectedDiameter = document.getElementById('loadDiameter').value;
+            const filteredCartridges = selectedDiameter ? allCartridges.filter(c => c.diameterId === selectedDiameter) : [];
+            populateSelect('loadCartridge', filteredCartridges, 'name', 'id');
+        }
+
+        async function refreshBulletWeightDropdown() {
+            const diameterId = document.getElementById('loadDiameter').value;
+            const bulletWeightSelect = document.getElementById('loadBulletWeight');
+            const bulletSelect = document.getElementById('loadBullet');
+
+            bulletWeightSelect.innerHTML = '<option value="">-- Select --</option>';
+            bulletSelect.innerHTML = '<option value="">-- Select --</option>';
+
+            if (!diameterId) return;
+
+            const allBullets = await getAllItems('bullets');
+            const filteredBullets = allBullets.filter(b => b.diameterId === diameterId);
+
+            const weights = [...new Set(filteredBullets.map(b => b.weight))];
+            weights.sort((a, b) => a - b);
+
+            weights.forEach(weight => {
+                const option = document.createElement('option');
+                option.value = weight;
+                option.textContent = `${weight} gr`;
+                bulletWeightSelect.appendChild(option);
+            });
+        }
+
+        async function refreshBulletNameDropdown() {
+            const diameterId = document.getElementById('loadDiameter').value;
+            const selectedWeight = document.getElementById('loadBulletWeight').value;
+            const bulletSelect = document.getElementById('loadBullet');
+
+            bulletSelect.innerHTML = '<option value="">-- Select --</option>';
+
+            if (!diameterId || !selectedWeight) return;
+
+            const allBullets = await getAllItems('bullets');
+            const allManufacturers = await getAllItems('manufacturers');
+            const filteredBullets = allBullets.filter(b => b.diameterId === diameterId && b.weight == selectedWeight);
+
+            for (const bullet of filteredBullets) {
+                const manufacturer = allManufacturers.find(m => m.id === bullet.manufacturerId);
+                const option = document.createElement('option');
+                option.value = bullet.id;
+                option.textContent = `${manufacturer ? manufacturer.name : ''} ${bullet.name}`;
+                bulletSelect.appendChild(option);
+            }
+        }
         
         async function refreshBrassDropdownForLoad() {
             const selectedCartridgeId = document.getElementById('loadCartridge').value;
@@ -1767,10 +1831,13 @@
             document.getElementById('loadForm').addEventListener('reset', () => document.getElementById('loadId').value = '');
             document.getElementById('loadsTableBody').addEventListener('click', handleLoadTableClick);
             
-            document.getElementById('loadDiameter').addEventListener('change', async (e) => {
-                await refreshLoadsUI(e.target.value);
+            document.getElementById('loadDiameter').addEventListener('change', async () => {
+                await refreshLoadCartridgeDropdown();
+                await refreshBrassDropdownForLoad();
+                await refreshBulletWeightDropdown();
             });
             document.getElementById('loadCartridge').addEventListener('change', refreshBrassDropdownForLoad);
+            document.getElementById('loadBulletWeight').addEventListener('change', refreshBulletNameDropdown);
             document.getElementById('loadPowderManufacturer').addEventListener('change', refreshPowderNameDropdown);
 
             const subTabContainer = document.querySelector('#loads .tabs-nav');
@@ -1799,42 +1866,23 @@
             refreshLoadsUI();
         }
         
-        async function refreshLoadsUI(diameterId = null) {
+        async function refreshLoadsUI() {
             const allDiameters = await getAllItems('diameters');
-            const allBullets = await getAllItems('bullets');
             const allPrimers = await getAllItems('primers');
-            const allCartridges = await getAllItems('cartridges');
             const allManufacturers = await getAllItems('manufacturers');
             
-            // Handload Form
-            const loadDiameterSelect = document.getElementById('loadDiameter');
-            const currentDiameter = loadDiameterSelect.value;
+            // Handload Form: Populate only the non-dependent dropdowns
             populateSelect('loadDiameter', allDiameters, 'imperial', 'id');
-            loadDiameterSelect.value = diameterId || currentDiameter;
-            const selectedDiameter = loadDiameterSelect.value;
-
-            const filteredCartridges = selectedDiameter ? allCartridges.filter(c => c.diameterId === selectedDiameter) : [];
-            populateSelect('loadCartridge', filteredCartridges, 'name', 'id');
-
-            const filteredBullets = selectedDiameter ? allBullets.filter(b => b.diameterId === selectedDiameter) : [];
-            const bulletSelect = document.getElementById('loadBullet');
-            const currentBulletVal = bulletSelect.value;
-            bulletSelect.innerHTML = '<option value="">-- Select --</option>';
-            for (const bullet of filteredBullets) {
-                const manufacturer = allManufacturers.find(m => m.id === bullet.manufacturerId);
-                const option = document.createElement('option');
-                option.value = bullet.id;
-                option.textContent = `${bullet.weight}gr ${manufacturer ? manufacturer.name : ''} ${bullet.name}`;
-                bulletSelect.appendChild(option);
-            }
-            bulletSelect.value = currentBulletVal;
-
             populateSelect('loadPrimer', allPrimers, 'name', 'id');
             const powderManufacturers = allManufacturers.filter(m => m.type && m.type.includes('powder'));
             populateSelect('loadPowderManufacturer', powderManufacturers, 'name', 'id');
             
-            await refreshBrassDropdownForLoad();
-            await refreshPowderNameDropdown();
+            // Clear dependent dropdowns to ensure a fresh start
+            document.getElementById('loadCartridge').innerHTML = '<option value="">-- Select --</option>';
+            document.getElementById('loadBulletWeight').innerHTML = '<option value="">-- Select --</option>';
+            document.getElementById('loadBullet').innerHTML = '<option value="">-- Select --</option>';
+            document.getElementById('loadPowder').innerHTML = '<option value="">-- Select --</option>';
+            document.getElementById('loadBrass').innerHTML = '<option value="">-- Select --</option>';
 
             // Commercial Ammo Form
             populateSelect('commercialAmmoManufacturer', allManufacturers, 'name', 'id');
@@ -1981,25 +2029,39 @@
                     document.getElementById('commercialAmmoBulletWeight').value = item.bulletWeight;
                     document.getElementById('commercialAmmoLot').value = item.lot;
                 } else {
+                    document.getElementById('loadForm').reset();
                     document.getElementById('loadId').value = item.id;
-                    await refreshLoadsUI(item.diameterId);
+                    
+                    document.getElementById('loadDiameter').value = item.diameterId;
+                    await refreshLoadCartridgeDropdown();
                     document.getElementById('loadCartridge').value = item.cartridgeId;
+                    
+                    const bullet = await getItem('bullets', item.bulletId);
+                    await refreshBulletWeightDropdown();
+                    if (bullet) {
+                        document.getElementById('loadBulletWeight').value = bullet.weight;
+                    }
+
+                    await refreshBulletNameDropdown();
                     document.getElementById('loadBullet').value = item.bulletId;
                     document.getElementById('loadBulletLot').value = item.bulletLot;
+                    
                     const powder = await getItem('powders', item.powderId);
                     if (powder) {
                         document.getElementById('loadPowderManufacturer').value = powder.manufacturerId;
                     }
                     await refreshPowderNameDropdown();
                     document.getElementById('loadPowder').value = item.powderId;
-                    await refreshBrassDropdownForLoad();
-                    document.getElementById('loadBrass').value = item.brassId;
                     document.getElementById('loadPowderLot').value = item.powderLot;
                     document.getElementById('loadChargeWeight').value = item.chargeWeight;
-                    document.getElementById('loadCol').value = item.col;
-                    document.getElementById('loadCbto').value = item.cbto;
+                    
                     document.getElementById('loadPrimer').value = item.primerId;
                     document.getElementById('loadPrimerLot').value = item.primerLot;
+                    document.getElementById('loadCol').value = item.col;
+                    document.getElementById('loadCbto').value = item.cbto;
+
+                    await refreshBrassDropdownForLoad();
+                    document.getElementById('loadBrass').value = item.brassId;
                     document.getElementById('loadBrassLot').value = item.brassLot;
                     document.getElementById('loadFirings').value = item.firings;
                 }
@@ -2771,6 +2833,31 @@
                 return { lower: bootstrapMeans[lowerIndex], upper: bootstrapMeans[upperIndex] };
             }
 
+            function calculateLinearRegression(data) {
+                let sum_x = 0, sum_y = 0, sum_xy = 0, sum_x2 = 0, sum_y2 = 0;
+                const n = data.length;
+                if (n < 3) return { r: 0, r2: 0 };
+
+                for (const point of data) {
+                    sum_x += point.x;
+                    sum_y += point.y;
+                    sum_xy += point.x * point.y;
+                    sum_x2 += point.x * point.x;
+                    sum_y2 += point.y * point.y;
+                }
+
+                const numerator = (n * sum_xy) - (sum_x * sum_y);
+                const denominator_x = (n * sum_x2) - (sum_x * sum_x);
+                const denominator_y = (n * sum_y2) - (sum_y * sum_y);
+                
+                if (denominator_x === 0 || denominator_y === 0) {
+                    return { r: 0, r2: 0 };
+                }
+
+                const r = numerator / Math.sqrt(denominator_x * denominator_y);
+                return { r: r, r2: r * r };
+            }
+
             function calculateStatsForSession(shots) {
                 if (!shots || shots.length < 2) return null;
 
@@ -2786,14 +2873,23 @@
                 const sd_y = Math.sqrt(all_y.reduce((sum, y) => sum + Math.pow(y - mean_y, 2), 0) / df);
                 const meanRadius = shots.reduce((sum, s) => sum + Math.hypot(s.x - mean_x, s.y - mean_y), 0) / n;
                 
+                const hasVerticalDispersion = sd_y > sd_x * 1.5;
+
                 const velocityShots = shots.filter(s => s.velocity !== null && typeof s.velocity === 'number' && !isNaN(s.velocity));
-                let vel_es = null, vel_sd = null;
+                let vel_es = null, vel_sd = null, vel_vert_r2 = null;
+
                 if (velocityShots.length >= 2) {
                     const velocities = velocityShots.map(s => s.velocity);
                     vel_es = Math.max(...velocities) - Math.min(...velocities);
                     const mean_vel = velocities.reduce((a, b) => a + b, 0) / velocities.length;
                     const sum_sq_diff = velocities.reduce((acc, v) => acc + Math.pow(v - mean_vel, 2), 0);
                     vel_sd = Math.sqrt(sum_sq_diff / (velocities.length - 1));
+                }
+
+                if (velocityShots.length >= 3) {
+                    const regressionData = velocityShots.map(s => ({ x: s.velocity, y: s.y }));
+                    const regressionResult = calculateLinearRegression(regressionData);
+                    vel_vert_r2 = regressionResult.r2;
                 }
 
                 const ci_mr = bootstrapMeanRadiusCI(shots);
@@ -2818,6 +2914,8 @@
                     sd_y: sd_y,
                     vel_es: vel_es,
                     vel_sd: vel_sd,
+                    vel_vert_r2: vel_vert_r2,
+                    hasVerticalDispersion: hasVerticalDispersion,
                     ci_mean_radius: [ci_mr.lower, ci_mr.upper],
                     confidence_level: confidence_level,
                     confidence_color: confidence_color,
@@ -2890,6 +2988,7 @@
                         <th>Horiz. SD</th>
                         <th>Vert. SD</th>
                         <th>Vel. SD</th>
+                        <th>Dispersion Analysis</th>
                     </tr>
                 `;
                 
@@ -2899,6 +2998,20 @@
                     const color = colors[index % colors.length];
                     const row = document.createElement('tr');
                     
+                    let analysisHtml = 'Nominal';
+                    if (stats.hasVerticalDispersion) {
+                        if (stats.vel_vert_r2 !== null) {
+                            const r2_percent = (stats.vel_vert_r2 * 100).toFixed(1);
+                            if (stats.vel_vert_r2 > 0.4) {
+                                analysisHtml = `<span style="color: #f97316; font-weight: 500;">Vertical stringing correlates with velocity (R² = ${r2_percent}%)</span>`;
+                            } else {
+                                analysisHtml = `<span>Vertical stringing present, but not strongly correlated to velocity (R² = ${r2_percent}%)</span>`;
+                            }
+                        } else {
+                            analysisHtml = `<span style="color: #eab308;">Vertical stringing detected. Add velocity data to diagnose.</span>`;
+                        }
+                    }
+
                     row.innerHTML = `
                         <td><span style="display: inline-block; vertical-align: middle; width: 12px; height: 12px; background-color: ${color}; margin-right: 8px; border-radius: 3px;"></span>${result.sessionName}</td>
                         <td>${stats.n}</td>
@@ -2907,6 +3020,7 @@
                         <td>${stats.sd_x.toFixed(4)} ${stats.units}</td>
                         <td>${stats.sd_y.toFixed(4)} ${stats.units}</td>
                         <td>${stats.vel_sd !== null ? stats.vel_sd.toFixed(2) : 'N/A'}</td>
+                        <td>${analysisHtml}</td>
                     `;
                     tbody.appendChild(row);
                 });
