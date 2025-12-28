@@ -118,11 +118,9 @@
 
         /* --- Canvas & Impact Marking --- */
         .canvas-container {
-            overflow: auto;
             border: 1px solid #4b5563;
             border-radius: 0.375rem;
             background-color: #374151;
-            max-height: 75vh;
         }
         canvas { 
             cursor: crosshair;
