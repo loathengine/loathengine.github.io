@@ -1,0 +1,171 @@
+/* --- General Body & Font Styles --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* bg-gray-900 */
+            color: #d1d5db; /* text-gray-300 */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* --- Layout Containers --- */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .grid-layout { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+        .db-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+
+        @media (min-width: 768px) {
+            .db-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (min-width: 1024px) {
+            .grid-layout { grid-template-columns: repeat(3, 1fr); }
+            .grid-layout .main-content { grid-column: span 2 / span 2; }
+        }
+
+        /* --- Typography --- */
+        h1 { font-size: 1.875rem; font-weight: 700; text-align: center; margin-bottom: 1.5rem; color: #f9fafb; }
+        h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem; color: #f9fafb; }
+        h4 { font-size: 1.125rem; font-weight: 600; margin-bottom: 0.25rem; color: #f9fafb; }
+        label { display: block; font-size: 0.875rem; font-weight: 500; color: #9ca3af; margin-bottom: 0.25rem; }
+        .checkbox-group label { display: inline-block; margin-right: 1rem; color: #d1d5db; }
+        .about-us-p { line-height: 1.6; margin-bottom: 1rem; }
+
+        /* --- Tabs --- */
+        .tabs-nav-container { margin-bottom: 1rem; border-bottom: 1px solid #374151; }
+        .tabs-nav { display: flex; flex-wrap: wrap; margin-bottom: -1px; }
+        .tab-link { padding: 0.75rem 1rem; margin-right: 0.5rem; border-bottom: 2px solid transparent; text-decoration: none; color: #9ca3af; cursor: pointer; font-weight: 500; transition: color 0.2s, border-color 0.2s; }
+        .tab-link:hover { color: #e5e7eb; }
+        .tab-link.active { border-color: #3b82f6; color: #60a5fa; font-weight: 600; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        
+        .sub-tab-link { padding: 0.5rem 1rem; border-radius: 0.375rem; cursor: pointer; color: #9ca3af; }
+        .sub-tab-link.active { background-color: #374151; color: #e5e7eb; }
+
+        /* --- Cards & Panels --- */
+        .card { background-color: #1f2937; padding: 1rem; border-radius: 0.5rem; border: 1px solid #374151; }
+        .control-panel > div:not(:first-child) { border-top: 1px solid #374151; padding-top: 0.75rem; margin-top: 0.75rem; }
+        .db-actions .action-group { display: flex; flex-direction: column; gap: 0.75rem; }
+
+        /* --- Buttons --- */
+        button, .button { width: 100%; color: #ffffff; padding: 0.6rem 1rem; border-radius: 0.375rem; border: none; cursor: pointer; font-weight: 600; transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; text-align: center; box-sizing: border-box; display: inline-block; text-decoration: none; }
+        button:focus, .button:focus { outline: none; box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4); }
+        .btn-red { background-color: #ef4444; } .btn-red:hover { background-color: #dc2626; }
+        .btn-gray { background-color: #4b5563; color: #f3f4f6; } .btn-gray:hover { background-color: #6b7280; }
+        .btn-blue { background-color: #3b82f6; } .btn-blue:hover { background-color: #2563eb; }
+        .btn-yellow { background-color: #eab308; } .btn-yellow:hover { background-color: #ca8a04; }
+        .btn-orange { background-color: #f97316; } .btn-orange:hover { background-color: #ea580c; }
+        .btn-indigo { background-color: #6366f1; } .btn-indigo:hover { background-color: #4f46e5; }
+        .btn-small { padding: 0.25rem 0.5rem; font-size: 0.875rem; width: auto; }
+        
+        .toggle-btn.active { box-shadow: inset 0 2px 4px rgba(0,0,0,0.4); }
+        .btn-blue.toggle-btn.active { background-color: #1d4ed8; }
+        .btn-yellow.toggle-btn.active { background-color: #a16207; }
+        .btn-orange.toggle-btn.active { background-color: #c2410c; }
+
+        .flex-container { display: flex; gap: 0.5rem; }
+        .flex-container button { flex: 1 1 0%; }
+        
+        /* --- Forms --- */
+        input[type="file"], input[type="number"], input[type="text"], select { 
+            display: block; 
+            width: 100%; 
+            padding: 0.5rem 0.75rem; 
+            border: 1px solid #4b5563; 
+            border-radius: 0.375rem; 
+            box-sizing: border-box;
+            background-color: #374151;
+            color: #f3f4f6;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 2px #1e40af;
+        }
+        input[type="file"]::file-selector-button {
+            background-color: #4b5563;
+            color: #f3f4f6;
+            border: none;
+            padding: 0.4rem 0.75rem;
+            border-radius: 0.25rem;
+            margin-left: -0.75rem;
+            margin-right: 0.75rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        input[type="file"]::file-selector-button:hover {
+            background-color: #6b7280;
+        }
+        .scale-input-container { display: flex; gap: 0.5rem; align-items: center; }
+        .scale-input-container input { width: 33.33%; }
+        .scale-input-container select { width: 66.67%; }
+
+        /* --- Tables --- */
+        .data-table-container { overflow-x: auto; margin-top: 1.5rem; max-height: 400px; border: 1px solid #374151; border-radius: 0.5rem; }
+        .data-table { width: 100%; border-collapse: collapse; }
+        .data-table th, .data-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #374151; word-break: break-all; }
+        .data-table th { background-color: #374151; font-weight: 600; position: sticky; top: 0; color: #f9fafb; z-index: 10;}
+        .data-table tr:hover { background-color: #2a374a; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .data-table td .flex-container { justify-content: flex-end; }
+
+
+        /* --- Canvas & Impact Marking --- */
+        .canvas-container {
+            overflow: auto;
+            border: 1px solid #4b5563;
+            border-radius: 0.375rem;
+            background-color: #374151;
+            max-height: 75vh;
+        }
+        canvas { 
+            cursor: crosshair;
+            max-width: none;
+            display: block;
+        }
+        canvas.delete-mode { cursor: not-allowed; }
+        .stats-container { margin-top: 1.5rem; }
+        .stats-output { font-size: 0.875rem; color: #9ca3af; }
+        .stats-output > p { margin: 0.5rem 0; }
+        .stats-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 0.5rem; }
+        .stats-grid p { display: flex; justify-content: space-between; margin: 0.25rem 0; }
+        .stats-grid p span:first-child { font-weight: 600; color: #e5e7eb; }
+        
+        .impact-data-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+            max-height: 200px;
+            overflow-y: auto;
+            border: 1px solid #374151;
+            border-radius: 0.375rem;
+        }
+        .impact-data-list li {
+            padding: 0.5rem 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #374151;
+            gap: 0.5rem;
+        }
+        .impact-data-list li:last-child {
+            border-bottom: none;
+        }
+        .impact-data-list .velocity-input-tm {
+            width: 80px;
+            padding: 0.25rem 0.5rem;
+            text-align: right;
+        }
+        #calculationDetails {
+             font-size: 0.875rem; 
+             color: #9ca3af;
+        }
+        #calculationDetails h4 {
+            margin-top: 0.5rem;
+        }
