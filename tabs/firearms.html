@@ -1,0 +1,24 @@
+
+             <div class="card">
+                <h3>Manage Firearms</h3>
+                <form id="firearmForm" class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                    <input type="hidden" id="firearmId">
+                    <div><label for="firearmNickname">Nickname</label><input type="text" id="firearmNickname" required></div>
+                    <div><label for="firearmDiameter">Diameter</label><select id="firearmDiameter"></select></div>
+                    <div><label for="firearmCartridge">Cartridge</label><select id="firearmCartridge"></select></div>
+                    <div><label for="firearmBarrelLength">Barrel Length</label><input type="number" step="0.1" id="firearmBarrelLength"></div>
+                    <div><label for="firearmTwistRate">Twist Rate</label><input type="text" id="firearmTwistRate"></div>
+                    <div><label for="firearmMagCoal">Max Mag COAL</label><input type="number" step="0.001" id="firearmMagCoal"></div>
+                </form>
+                <div class="flex-container" style="margin-top: 1rem; max-width: 400px;">
+                    <button type="submit" form="firearmForm" class="btn-blue">Save Firearm</button>
+                    <button type="reset" form="firearmForm" class="btn-gray">Clear Form</button>
+                </div>
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead><tr><th>Nickname</th><th>Cartridge</th><th>Barrel</th><th>Twist</th><th>Actions</th></tr></thead>
+                        <tbody id="firearmsTableBody"></tbody>
+                    </table>
+                </div>
+             </div>
+        

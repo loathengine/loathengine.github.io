@@ -1,0 +1,79 @@
+
+            <div class="card">
+                <h3>Manage Load Data</h3>
+                <div class="tabs-nav" style="border-bottom: 1px solid #374151; margin-bottom: 1.5rem;">
+                    <a class="sub-tab-link active" data-subtab="hand-load">Hand Load</a>
+                    <a class="sub-tab-link" data-subtab="commercial-ammo">Commercial Ammo</a>
+                </div>
+
+                <div id="load-forms-container">
+                    <div class="tab-content active" id="hand-load-subtab">
+                        <form id="loadForm">
+                            <input type="hidden" id="loadId">
+                            <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                                <div><label for="loadDiameter">Diameter</label><select id="loadDiameter"></select></div>
+                                <div><label for="loadCartridge">Cartridge</label><select id="loadCartridge"></select></div>
+                            </div>
+                            <div class="form-grid" style="grid-template-columns: 1fr 2fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                                <div><label for="loadBulletWeight">Bullet Weight</label><select id="loadBulletWeight"></select></div>
+                                <div><label for="loadBullet">Bullet (Manuf./Name)</label><select id="loadBullet"></select></div>
+                                <div><label for="loadBulletLot">Bullet Lot</label><input type="text" id="loadBulletLot"></div>
+                            </div>
+                            <div class="form-grid" style="grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                                <div><label for="loadPowderManufacturer">Powder Manufacturer</label><select id="loadPowderManufacturer"></select></div>
+                                <div><label for="loadPowder">Powder</label><select id="loadPowder"></select></div>
+                                <div><label for="loadChargeWeight">Charge (grains)</label><input type="number" step="0.1" id="loadChargeWeight" required></div>
+                                <div><label for="loadPowderLot">Powder Lot</label><input type="text" id="loadPowderLot"></div>
+                            </div>
+                            <div class="form-grid" style="grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                                <div><label for="loadPrimer">Primer</label><select id="loadPrimer"></select></div>
+                                <div><label for="loadPrimerLot">Primer Lot</label><input type="text" id="loadPrimerLot"></div>
+                                <div><label for="loadCol">COL</label><input type="number" step="0.001" id="loadCol"></div>
+                                <div><label for="loadCbto">CBTO</label><input type="number" step="0.001" id="loadCbto"></div>
+                            </div>
+                            <div class="form-grid" style="grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                                <div><label for="loadBrass">Brass Manufacturer</label><select id="loadBrass"></select></div>
+                                <div><label for="loadBrassLot">Brass Lot</label><input type="text" id="loadBrassLot"></div>
+                                <div><label for="loadFirings"># of Firings</label><input type="number" step="1" id="loadFirings"></div>
+                            </div>
+                        </form>
+                        <div class="flex-container" style="margin-top: 1rem; max-width: 400px;">
+                            <button type="submit" form="loadForm" class="btn-blue">Save Hand Load</button>
+                            <button type="reset" form="loadForm" class="btn-gray">Clear Form</button>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="commercial-ammo-subtab">
+                        <form id="commercialAmmoForm" class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                            <input type="hidden" id="commercialAmmoId">
+                            <div><label for="commercialAmmoManufacturer">Manufacturer</label><select id="commercialAmmoManufacturer"></select></div>
+                            <div><label for="commercialAmmoName">Ammo Name</label><input type="text" id="commercialAmmoName" required></div>
+                            <div><label for="commercialAmmoDiameter">Diameter</label><select id="commercialAmmoDiameter"></select></div>
+                            <div><label for="commercialAmmoCartridge">Cartridge</label><select id="commercialAmmoCartridge"></select></div>
+                            <div><label for="commercialAmmoBulletWeight">Bullet Weight (grains)</label><input type="number" step="0.1" id="commercialAmmoBulletWeight"></div>
+                            <div><label for="commercialAmmoLot">Lot #</label><input type="text" id="commercialAmmoLot"></div>
+                        </form>
+                        <div class="flex-container" style="margin-top: 1rem; max-width: 400px;">
+                            <button type="submit" form="commercialAmmoForm" class="btn-blue">Save Commercial Ammo</button>
+                            <button type="reset" form="commercialAmmoForm" class="btn-gray">Clear Form</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Cartridge</th>
+                                <th>Details</th>
+                                <th>Charge</th>
+                                <th>COL / CBTO</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="loadsTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        

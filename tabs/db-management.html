@@ -1,0 +1,36 @@
+
+            <div class="db-grid">
+                <div class="card db-actions">
+                    <h3>Global Database Actions</h3>
+                    <div class="action-group">
+                        <button id="exportDbBtn" class="btn-blue">Export Entire Database</button>
+                        <div>
+                            <label for="importDbInput">Import Entire Database (JSON)</label>
+                            <input type="file" id="importDbInput" accept=".json">
+                        </div>
+                        <button id="deleteDbBtn" class="btn-red">Delete Entire Database</button>
+                    </div>
+                </div>
+                <div class="card db-actions">
+                    <h3>Table Specific Actions</h3>
+                    <div class="action-group">
+                        <div>
+                            <label for="tableSelect">Select Table to Manage</label>
+                            <select id="tableSelect"></select>
+                        </div>
+                        <button id="exportTableBtn" class="btn-blue">Export Selected Table</button>
+                        <div>
+                            <label for="importTableInput">Import to Selected Table (JSON)</label>
+                            <input type="file" id="importTableInput" accept=".json">
+                        </div>
+                        <button id="clearTableBtn" class="btn-orange">Clear Selected Table</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="margin-top: 1.5rem;">
+                <h3>Table Contents: <span id="selectedTableName" style="text-transform: capitalize;"></span></h3>
+                <div id="table-display-container" class="data-table-container">
+                    <p style="text-align: center; color: #9ca3af;">Select a table to view its contents.</p>
+                </div>
+            </div>
+        

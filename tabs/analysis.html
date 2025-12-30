@@ -1,0 +1,38 @@
+
+            <div class="card">
+                <h3>Session Analysis</h3>
+                 <div>
+                    <label for="firearmFilterSelect">Filter by Firearm</label>
+                    <select id="firearmFilterSelect"></select>
+                 </div>
+                 <div style="margin-top: 1rem;">
+                    <label for="sessionSelect">Select Session(s) to Analyze (Ctrl+Click or Cmd+Click for multiple)</label>
+                    <select id="sessionSelect" multiple size="8"></select>
+                </div>
+                <div style="margin-top: 1rem;" class="flex-container">
+                    <button id="compareSessionsBtn" class="btn-blue">Analyze Selected Session(s)</button>
+                    <button id="exportAnalysisBtn" class="btn-indigo">Export as Image</button>
+                </div>
+            </div>
+            <div class="card" style="margin-top: 1.5rem;">
+                <h3>Analysis Results</h3>
+                <div id="statAnalysisOutput" class="data-table-container" style="max-height: none;">
+                     <p style="text-align: center; padding: 1rem; color: #9ca3af;">Select one or more sessions and click analyze.</p>
+                </div>
+                <div id="analysisPlotContainer" style="margin-top: 1.5rem; text-align: center;"></div>
+            </div>
+            <div class="card" style="margin-top: 1.5rem;">
+                <h3>Calculation Details & Terminology</h3>
+                        <h4>Group Statistics</h4>
+                        <p><strong>Mean Radius:</strong> The average distance of all shots from the geometric center (mean point of impact) of the group. A smaller value indicates better precision. This is the primary metric used for ranking.</p>
+                        <p><strong>CI for Mean Radius (95%):</strong> This provides a likely range for the true Mean Radius of your load, calculated using bootstrapping. Because you are using a sample of shots, the measured Mean Radius has some uncertainty. The color-coded text indicates the level of confidence based on the width of this interval relative to the measured value. A <strong>narrow interval (High confidence)</strong> gives you high confidence that your measurement is close to the true value. A <strong>wide interval (Low confidence)</strong> indicates high uncertainty, usually due to a small number of shots.</p>
+
+                        <h4>Dispersion Statistics</h4>
+                        <p><strong>SD (Horizontal/Vertical):</strong> The Standard Deviation of shot placement on each axis. Measures the consistency of shots along that axis.</p>
+
+                        <h4>Velocity & Dispersion Analysis</h4>
+                        <p><strong>Velocity SD (Standard Deviation):</strong> A measure of the consistency of the muzzle velocity. A lower SD indicates more consistent ammunition.</p>
+                        <p><strong>Vertical Stringing:</strong> The analysis automatically checks if the vertical spread (SD) of the group is significantly larger than the horizontal spread (specifically, if Vertical SD is > 1.5x Horizontal SD). If detected, it suggests a potential issue, often related to inconsistent muzzle velocity.</p>
+                        <p><strong>Velocity Correlation (R²):</strong> If vertical stringing is detected and velocity data is available (for 3+ shots), an R-squared (R²) value is calculated. This value, from 0% to 100%, indicates how much of the vertical shot placement can be explained by changes in velocity. A high R² value (e.g., > 40%) strongly suggests that inconsistent muzzle velocity is a primary cause of the vertical spread.</p>
+            </div>
+        

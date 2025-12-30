@@ -1,0 +1,92 @@
+
+            <div class="card">
+                <div class="tabs-nav" style="border-bottom: none; margin-bottom: 1.5rem;">
+                    <a class="sub-tab-link active" data-subtab="bullets">Bullets</a>
+                    <a class="sub-tab-link" data-subtab="powders">Powder</a>
+                    <a class="sub-tab-link" data-subtab="primers">Primers</a>
+                    <a class="sub-tab-link" data-subtab="brass">Brass</a>
+                </div>
+
+                <div class="tab-content active" id="bullets-subtab">
+                    <h3>Manage Bullets</h3>
+                    <form id="bulletForm" class="form-grid">
+                        <input type="hidden" id="bulletId">
+                        <div><label for="bulletManufacturer">Manufacturer</label><select id="bulletManufacturer"></select></div>
+                        <div><label for="bulletDiameter">Diameter</label><select id="bulletDiameter"></select></div>
+                        <div><label for="bulletName">Bullet Name</label><input type="text" id="bulletName" required></div>
+                        <div><label for="bulletWeight">Weight (grains)</label><input type="number" id="bulletWeight" step="0.1" required></div>
+                        <div><label for="bulletLength">Length (in)</label><input type="number" id="bulletLength" step="0.001"></div>
+                    </form>
+                    <div class="flex-container" style="margin-top: 1rem; max-width: 400px;">
+                        <button type="submit" form="bulletForm" class="btn-blue">Save Bullet</button>
+                        <button type="reset" form="bulletForm" class="btn-gray">Clear Form</button>
+                    </div>
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead><tr><th>Name</th><th>Manufacturer</th><th>Diameter</th><th>Weight</th><th>Length</th><th>Actions</th></tr></thead>
+                            <tbody id="bulletsTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="powders-subtab">
+                    <h3>Manage Powders</h3>
+                    <form id="powderForm" class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                        <input type="hidden" id="powderId">
+                        <div><label for="powderManufacturer">Manufacturer</label><select id="powderManufacturer"></select></div>
+                        <div><label for="powderName">Powder Name</label><input type="text" id="powderName" required></div>
+                    </form>
+                     <div class="flex-container" style="margin-top: 1rem; max-width: 400px;">
+                        <button type="submit" form="powderForm" class="btn-blue">Save Powder</button>
+                        <button type="reset" form="powderForm" class="btn-gray">Clear Form</button>
+                    </div>
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead><tr><th>Name</th><th>Manufacturer</th><th>Actions</th></tr></thead>
+                            <tbody id="powdersTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="primers-subtab">
+                    <h3>Manage Primers</h3>
+                    <form id="primerForm" class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                        <input type="hidden" id="primerId">
+                        <div><label for="primerManufacturer">Manufacturer</label><select id="primerManufacturer"></select></div>
+                        <div><label for="primerName">Primer Name</label><input type="text" id="primerName" required></div>
+                    </form>
+                     <div class="flex-container" style="margin-top: 1rem; max-width: 400px;">
+                        <button type="submit" form="primerForm" class="btn-blue">Save Primer</button>
+                        <button type="reset" form="primerForm" class="btn-gray">Clear Form</button>
+                    </div>
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead><tr><th>Name</th><th>Manufacturer</th><th>Actions</th></tr></thead>
+                            <tbody id="primersTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="brass-subtab">
+                    <h3>Manage Brass</h3>
+                    <form id="brassForm" class="form-grid">
+                        <input type="hidden" id="brassId">
+                        <div><label for="brassDiameter">Diameter</label><select id="brassDiameter"></select></div>
+                        <div><label for="brassCartridge">Cartridge</label><select id="brassCartridge"></select></div>
+                        <div><label for="brassManufacturer">Manufacturer</label><select id="brassManufacturer"></select></div>
+                        <div><label for="brassPrimerPocket">Primer Pocket</label><input type="text" id="brassPrimerPocket"></div>
+                        <div><label for="brassPrimerHole">Primer Hole</label><input type="text" id="brassPrimerHole"></div>
+                    </form>
+                     <div class="flex-container" style="margin-top: 1rem; max-width: 400px;">
+                        <button type="submit" form="brassForm" class="btn-blue">Save Brass</button>
+                        <button type="reset" form="brassForm" class="btn-gray">Clear Form</button>
+                    </div>
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead><tr><th>Cartridge</th><th>Manufacturer</th><th>Pocket</th><th>Hole</th><th>Actions</th></tr></thead>
+                            <tbody id="brassTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        

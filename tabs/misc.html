@@ -1,0 +1,75 @@
+
+             <div class="card">
+                <div class="tabs-nav" style="border-bottom: none; margin-bottom: 1.5rem;">
+                    <a class="sub-tab-link active" data-subtab="manufacturers">Manufacturers</a>
+                    <a class="sub-tab-link" data-subtab="diameters">Diameters</a>
+                    <a class="sub-tab-link" data-subtab="cartridges">Cartridges</a>
+                </div>
+
+                <div class="tab-content active" id="manufacturers-subtab">
+                    <h3>Manage Manufacturers</h3>
+                    <form id="manufacturerForm" class="form-grid" style="grid-template-columns: 1fr; gap: 1.5rem;">
+                        <input type="hidden" id="manufacturerId">
+                        <div><label for="manufacturerName">Manufacturer Name</label><input type="text" id="manufacturerName" required></div>
+                        <div>
+                            <label>Type of Manufacturer</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="manufacturerType" value="bullet"> Bullet</label>
+                                <label><input type="checkbox" name="manufacturerType" value="powder"> Powder</label>
+                                <label><input type="checkbox" name="manufacturerType" value="primer"> Primer</label>
+                                <label><input type="checkbox" name="manufacturerType" value="brass"> Brass</label>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="flex-container" style="margin-top: 1rem; max-width: 400px;">
+                        <button type="submit" form="manufacturerForm" class="btn-blue">Save Manufacturer</button>
+                        <button type="reset" form="manufacturerForm" class="btn-gray">Clear Form</button>
+                    </div>
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead><tr><th>Name</th><th>Types</th><th>Actions</th></tr></thead>
+                            <tbody id="manufacturersTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="diameters-subtab">
+                    <h3>Manage Diameters</h3>
+                    <form id="diameterForm" class="form-grid">
+                        <input type="hidden" id="diameterId">
+                        <div><label for="diameterImperial">Imperial (e.g., .308)</label><input type="text" id="diameterImperial" required></div>
+                        <div><label for="diameterMetric">Metric (e.g., 7.62mm)</label><input type="text" id="diameterMetric"></div>
+                    </form>
+                    <div class="flex-container" style="margin-top: 1rem; max-width: 400px;">
+                        <button type="submit" form="diameterForm" class="btn-blue">Save Diameter</button>
+                        <button type="reset" form="diameterForm" class="btn-gray">Clear Form</button>
+                    </div>
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead><tr><th>Imperial</th><th>Metric</th><th>Actions</th></tr></thead>
+                            <tbody id="diametersTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="cartridges-subtab">
+                    <h3>Manage Cartridges</h3>
+                    <form id="cartridgeForm" class="form-grid">
+                        <input type="hidden" id="cartridgeId">
+                        <div><label for="cartridgeName">Cartridge Name</label><input type="text" id="cartridgeName" required></div>
+                        <div><label for="cartridgeDiameter">Diameter</label><select id="cartridgeDiameter"></select></div>
+                        <div><label for="cartridgeOAL">Overall Length (OAL)</label><input type="number" step="0.001" id="cartridgeOAL"></div>
+                    </form>
+                    <div class="flex-container" style="margin-top: 1rem; max-width: 400px;">
+                        <button type="submit" form="cartridgeForm" class="btn-blue">Save Cartridge</button>
+                        <button type="reset" form="cartridgeForm" class="btn-gray">Clear Form</button>
+                    </div>
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead><tr><th>Name</th><th>Diameter</th><th>OAL</th><th>Actions</th></tr></thead>
+                            <tbody id="cartridgesTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+             </div>
+        

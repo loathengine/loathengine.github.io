@@ -1,0 +1,92 @@
+
+            <div class="grid-layout">
+                <div class="card">
+                    <div class="control-panel">
+                        <div>
+                            <h4>Setup</h4>
+                            <label for="savedImageSelect">Load Saved Image</label>
+                            <select id="savedImageSelect"></select>
+
+                            <div style="border-top: 1px solid #374151; padding-top: 0.75rem; margin-top: 0.75rem;">
+                                <label for="markingSessionSelect">Load Saved Session</label>
+                                <select id="markingSessionSelect"></select>
+                                <div class="flex-container" style="margin-top: 0.5rem;">
+                                    <button id="loadMarkingSessionBtn" class="btn-blue">Load Session</button>
+                                    <button id="deleteMarkingSessionBtn" class="btn-red">Delete Session</button>
+                                </div>
+                            </div>
+                            
+                            <button id="removeImage" class="btn-red" style="margin-top: 1rem;">Clear Canvas & New Session</button>
+                        </div>
+                        <div>
+                            <h4>Image Controls</h4>
+                            <label>Zoom</label>
+                            <div class="flex-container">
+                                <button id="zoomIn" class="btn-gray">+</button>
+                                <button id="zoomOut" class="btn-gray">-</button>
+                            </div>
+                            <label style="margin-top: 0.5rem;">Scale</label>
+                            <div class="scale-input-container">
+                                <input type="number" id="scaleDistance" value="1" placeholder="e.g., 1">
+                                <select id="scaleUnits">
+                                    <option value="in">Inches (in)</option>
+                                    <option value="mm">Millimeters (mm)</option>
+                                </select>
+                            </div>
+                            <button id="setScale" class="btn-blue toggle-btn" style="margin-top: 0.5rem;">Set Scale</button>
+                        </div>
+                        <div>
+                            <h4>Marking Tools</h4>
+                             <div>
+                                <label for="groupSelect">Active Group</label>
+                                <select id="groupSelect"></select>
+                            </div>
+                            <div class="flex-container" style="margin-top: 0.5rem;">
+                                <button id="addGroup" class="btn-blue">New Group</button>
+                                <button id="deleteGroup" class="btn-red">Delete Group</button>
+                            </div>
+                            <div class="flex-container" style="margin-top: 0.5rem;">
+                                <button id="setPoa" class="btn-blue toggle-btn">Set POA</button>
+                                <button id="setPoi" class="btn-blue toggle-btn">Mark Impacts</button>
+                            </div>
+                            <div class="flex-container" style="margin-top: 0.5rem;">
+                                <button id="deleteShot" class="btn-yellow toggle-btn">Delete Shot</button>
+                                <button id="deleteLast" class="btn-yellow">Delete Last</button>
+                            </div>
+                        </div>
+                         <div>
+                            <h4>Session Info</h4>
+                            <label for="firearmSelect">Select Firearm</label>
+                            <select id="firearmSelect"></select>
+                            <label for="loadSelect" style="margin-top: 0.5rem;">Associate Load (Optional)</label>
+                            <select id="loadSelect"></select>
+                            <label for="tmTargetDistance" style="margin-top: 0.5rem;">Target Distance</label>
+                            <div class="flex-container">
+                                <input type="number" id="tmTargetDistance" placeholder="e.g., 100" style="width: 70%;">
+                                <select id="tmDistanceUnits" style="width: 30%;">
+                                    <option value="yards">Yards</option>
+                                    <option value="meters">Meters</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4>Actions</h4>
+                            <button id="saveImpactDataBtn" class="btn-blue" style="margin-top: 0.5rem;">Save / Update Session</button>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="main-content card">
+                    <div class="canvas-container">
+                        <canvas id="targetCanvas" width="800" height="1150"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div id="stats-container" class="card stats-container">
+                <h3>Impact Data</h3>
+                <div id="stats-output" class="stats-output">
+                    <p>Impact data will appear here once you mark points and set a scale.</p>
+                </div>
+            </div>
+        
