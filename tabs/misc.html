@@ -59,6 +59,8 @@
                         <div><label for="cartridgeName">Cartridge Name</label><input type="text" id="cartridgeName" required></div>
                         <div><label for="cartridgeDiameter">Diameter</label><select id="cartridgeDiameter"></select></div>
                         <div><label for="cartridgeOAL">Overall Length (OAL)</label><input type="number" step="0.001" id="cartridgeOAL"></div>
+                        <div><label for="cartridgeMaxCaseLength">Max Case Length</label><input type="number" step="0.001" id="cartridgeMaxCaseLength"></div>
+                        <div><label for="cartridgeTrimLength">Case Trim Length</label><input type="number" step="0.001" id="cartridgeTrimLength"></div>
                     </form>
                     <div class="flex-container" style="margin-top: 1rem; max-width: 400px;">
                         <button type="submit" form="cartridgeForm" class="btn-blue">Save Cartridge</button>
@@ -66,7 +68,7 @@
                     </div>
                     <div class="data-table-container">
                         <table class="data-table">
-                            <thead><tr><th>Name</th><th>Diameter</th><th>OAL</th><th>Actions</th></tr></thead>
+                            <thead><tr><th>Name</th><th>Diameter</th><th>OAL</th><th>Max Case</th><th>Trim Length</th><th>Actions</th></tr></thead>
                             <tbody id="cartridgesTableBody"></tbody>
                         </table>
                     </div>

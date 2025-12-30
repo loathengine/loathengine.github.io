@@ -150,7 +150,9 @@ async function handleCartridgeSubmit(e) {
         id: document.getElementById('cartridgeId').value || generateUniqueId(),
         name: document.getElementById('cartridgeName').value,
         diameterId: document.getElementById('cartridgeDiameter').value,
-        oal: parseFloat(document.getElementById('cartridgeOAL').value)
+        oal: parseFloat(document.getElementById('cartridgeOAL').value),
+        maxCaseLength: parseFloat(document.getElementById('cartridgeMaxCaseLength').value),
+        trimLength: parseFloat(document.getElementById('cartridgeTrimLength').value)
     };
     await updateItem('cartridges', cartridge);
     e.target.reset();
@@ -174,6 +176,8 @@ async function renderCartridgesTable() {
                 <td>${item.name}</td>
                 <td>${diameterImperial}</td>
                 <td>${item.oal || ''}</td>
+                <td>${item.maxCaseLength || ''}</td>
+                <td>${item.trimLength || ''}</td>
                 <td>
                     <div class="flex-container">
                         <button class="btn-yellow btn-small" data-id="${item.id}" data-action="edit">Edit</button>
@@ -201,5 +205,7 @@ async function handleCartridgeTableClick(e) {
         document.getElementById('cartridgeName').value = item.name;
         document.getElementById('cartridgeDiameter').value = item.diameterId;
         document.getElementById('cartridgeOAL').value = item.oal;
+        document.getElementById('cartridgeMaxCaseLength').value = item.maxCaseLength;
+        document.getElementById('cartridgeTrimLength').value = item.trimLength;
     }
 }

@@ -438,6 +438,8 @@ async function generateRecipeSheet(loadId) {
                         <h3>Dimensions</h3>
                         <div class="item"><span class="label">C.O.L.:</span> <span class="value">${load.col ? load.col.toFixed(3) + '"' : 'N/A'}</span></div>
                         <div class="item"><span class="label">C.B.T.O.:</span> <span class="value">${load.cbto ? load.cbto.toFixed(3) + '"' : 'N/A'}</span></div>
+                        <div class="item"><span class="label">Max Case Length:</span> <span class="value">${cartridge && cartridge.maxCaseLength ? cartridge.maxCaseLength.toFixed(3) + '"' : 'N/A'}</span></div>
+                        <div class="item"><span class="label">Trim Length:</span> <span class="value">${cartridge && cartridge.trimLength ? cartridge.trimLength.toFixed(3) + '"' : 'N/A'}</span></div>
                     </div>
                 </div>
             </div>
