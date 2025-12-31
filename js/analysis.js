@@ -230,14 +230,14 @@ export function initStatisticalAnalysis() {
         const thead = document.createElement('thead');
         thead.innerHTML = `
             <tr>
-                <th>Session Details</th>
-                <th>Shots</th>
-                <th>MR</th>
-                <th>MR CI (Confidence)</th>
-                <th>Horiz. SD</th>
-                <th>Vert. SD</th>
-                <th>Vel. SD</th>
-                <th>Dispersion Analysis</th>
+                <th style="white-space: nowrap;">Session Details</th>
+                <th style="white-space: nowrap;">Shots</th>
+                <th style="white-space: nowrap;">Mean Radius (MR)</th>
+                <th style="white-space: nowrap;">MR Confidence Interval (95%)</th>
+                <th style="white-space: nowrap;">Horizontal SD</th>
+                <th style="white-space: nowrap;">Vertical SD</th>
+                <th style="white-space: nowrap;">Velocity SD</th>
+                <th style="white-space: nowrap;">Dispersion Analysis</th>
             </tr>
         `;
         
