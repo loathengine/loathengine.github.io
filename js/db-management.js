@@ -107,7 +107,9 @@ async function exportDatabase() {
     const allData = {};
     const stores = getObjectStores();
     for (const storeName of stores) { allData[storeName] = await getAllItems(storeName); }
-    triggerDownload(JSON.stringify(allData, null, 2), 'reloading-db-backup.json');
+    const date = new Date();
+    const dateString = date.toISOString().slice(0, 10);
+    triggerDownload(JSON.stringify(allData, null, 2), `reloading-db-backup-${dateString}.json`);
 }
 
 function importDatabase(event) {
