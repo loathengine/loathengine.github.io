@@ -81,18 +81,33 @@ export async function renderSelectedTable() {
         headers.forEach(header => {
             const td = document.createElement('td');
             let value = item[header];
+            let displayValue = '';
+            
             if (header === 'dataUrl' && typeof value === 'string' && value.length > 100) {
-                value = value.substring(0, 100) + '...';
-            }
-            if (value === undefined || value === null) {
-                td.textContent = '';
+                 displayValue = value; // Keep full value for textarea
+            } else if (value === undefined || value === null) {
+                displayValue = '';
             } else if (typeof value === 'object') {
-                // Don't expand large objects in the table view
-                td.textContent = JSON.stringify(value).length > 200 ? '{...}' : JSON.stringify(value, null, 2);
+                displayValue = JSON.stringify(value, null, 2);
+            } else {
+                displayValue = value;
             }
-            else {
-                td.textContent = value;
-            }
+
+            const textarea = document.createElement('textarea');
+            textarea.value = displayValue;
+            textarea.readOnly = true;
+            textarea.style.width = '200px';
+            textarea.style.height = '60px';
+            textarea.style.minHeight = '60px';
+            textarea.style.resize = 'both';
+            textarea.style.border = '1px solid #4b5563';
+            textarea.style.borderRadius = '0.25rem';
+            textarea.style.backgroundColor = '#111827';
+            textarea.style.color = '#d1d5db';
+            textarea.style.padding = '0.25rem';
+            textarea.style.fontSize = '0.8rem';
+            
+            td.appendChild(textarea);
             row.appendChild(td);
         });
         tbody.appendChild(row);
