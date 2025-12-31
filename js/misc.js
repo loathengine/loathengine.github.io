@@ -151,6 +151,7 @@ async function handleCartridgeSubmit(e) {
         name: document.getElementById('cartridgeName').value,
         diameterId: document.getElementById('cartridgeDiameter').value,
         oal: parseFloat(document.getElementById('cartridgeOAL').value),
+        minCaseLength: parseFloat(document.getElementById('cartridgeMinCaseLength').value),
         maxCaseLength: parseFloat(document.getElementById('cartridgeMaxCaseLength').value),
         trimLength: parseFloat(document.getElementById('cartridgeTrimLength').value)
     };
@@ -176,6 +177,7 @@ async function renderCartridgesTable() {
                 <td>${item.name}</td>
                 <td>${diameterImperial}</td>
                 <td>${item.oal || ''}</td>
+                <td>${item.minCaseLength || ''}</td>
                 <td>${item.maxCaseLength || ''}</td>
                 <td>${item.trimLength || ''}</td>
                 <td>
@@ -205,6 +207,7 @@ async function handleCartridgeTableClick(e) {
         document.getElementById('cartridgeName').value = item.name;
         document.getElementById('cartridgeDiameter').value = item.diameterId;
         document.getElementById('cartridgeOAL').value = item.oal;
+        document.getElementById('cartridgeMinCaseLength').value = item.minCaseLength;
         document.getElementById('cartridgeMaxCaseLength').value = item.maxCaseLength;
         document.getElementById('cartridgeTrimLength').value = item.trimLength;
     }
