@@ -3,6 +3,8 @@ import { getAllItems, updateItem, deleteItem, getItem, generateUniqueId } from '
 import { populateSelect } from './utils.js';
 import { refreshImpactMarkingUI } from './marking.js';
 
+let currentLoadTypeFilter = 'all';
+
 async function refreshLoadCartridgeDropdown() {
     const allCartridges = await getAllItems('cartridges');
     const selectedDiameter = document.getElementById('loadDiameter').value;
@@ -129,12 +131,32 @@ export function initLoadsManagement() {
                     content.classList.remove('active');
                     if (content.id === `${subTabId}-subtab`) { content.classList.add('active'); }
                 });
+
+                // Update filter state based on selected tab
+                if (subTabId === 'hand-load') {
+                    currentLoadTypeFilter = 'handload';
+                } else if (subTabId === 'commercial-ammo') {
+                    currentLoadTypeFilter = 'commercial';
+                } else {
+                    currentLoadTypeFilter = 'all';
+                }
+                
                 document.getElementById('loadForm').reset();
                 document.getElementById('commercialAmmoForm').reset();
                 document.getElementById('loadId').value = '';
                 document.getElementById('commercialAmmoId').value = '';
+
+                renderLoadsTable();
             }
         });
+        
+        // Initialize default filter
+        const activeTab = subTabContainer.querySelector('.sub-tab-link.active');
+        if (activeTab) {
+             const subTabId = activeTab.getAttribute('data-subtab');
+             if (subTabId === 'hand-load') currentLoadTypeFilter = 'handload';
+             else if (subTabId === 'commercial-ammo') currentLoadTypeFilter = 'commercial';
+        }
     }
 
     document.getElementById('commercialAmmoForm').addEventListener('submit', handleCommercialAmmoSubmit);
@@ -215,7 +237,7 @@ async function handleCommercialAmmoSubmit(e) {
 }
 
 async function renderLoadsTable() {
-    const [
+    let [
         loads, cartridges, bullets, powders, manufacturers
     ] = await Promise.all([
         getAllItems('loads'),
@@ -224,6 +246,13 @@ async function renderLoadsTable() {
         getAllItems('powders'),
         getAllItems('manufacturers')
     ]);
+
+    // Filter loads based on the current active tab
+    if (currentLoadTypeFilter === 'handload') {
+        loads = loads.filter(l => l.loadType !== 'commercial');
+    } else if (currentLoadTypeFilter === 'commercial') {
+        loads = loads.filter(l => l.loadType === 'commercial');
+    }
 
     const cartridgeMap = new Map(cartridges.map(i => [i.id, i.name]));
     const manufacturerMap = new Map(manufacturers.map(i => [i.id, i.name]));
@@ -298,6 +327,14 @@ async function handleLoadTableClick(e) {
         subTabContents.forEach(content => {
             content.classList.toggle('active', content.id === `${targetTab}-subtab`);
         });
+
+        // Update filter to match the edit item type so it stays visible
+        if (item.loadType === 'commercial') {
+            currentLoadTypeFilter = 'commercial';
+        } else {
+            currentLoadTypeFilter = 'handload';
+        }
+        renderLoadsTable();
 
         if (item.loadType === 'commercial') {
             document.getElementById('commercialAmmoId').value = item.id;
