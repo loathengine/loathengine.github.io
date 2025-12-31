@@ -410,7 +410,6 @@ async function generateRecipeSheet(loadId) {
                         <div class="item"><span class="label">Manufacturer:</span> <span class="value">${bulletMfg ? bulletMfg.name : 'N/A'}</span></div>
                         <div class="item"><span class="label">Name:</span> <span class="value">${bullet ? bullet.name : 'N/A'}</span></div>
                         <div class="item"><span class="label">Weight:</span> <span class="value">${bullet ? bullet.weight + ' gr' : 'N/A'}</span></div>
-                        <div class="item"><span class="label">Diameter:</span> <span class="value">${bullet ? bullet.diameterId : 'N/A'}</span></div> <!-- Ideally map ID to text -->
                         <div class="item"><span class="label">Lot #:</span> <span class="value">${load.bulletLot || 'N/A'}</span></div>
                     </div>
                     
