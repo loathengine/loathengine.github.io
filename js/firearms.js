@@ -16,7 +16,7 @@ export function initFirearmsManagement() {
     document.getElementById('firearmForm').addEventListener('submit', handleFirearmSubmit);
     document.getElementById('firearmForm').addEventListener('reset', () => {
         document.getElementById('firearmId').value = '';
-        setTimeout(refreshFirearmsUI, 0);
+        setTimeout(refreshFirearmsUI, 0); // Refresh UI after reset to clear dependent dropdowns correctly if needed
     });
     document.getElementById('firearmsTableBody').addEventListener('click', handleFirearmTableClick);
     document.getElementById('firearmDiameter').addEventListener('change', refreshFirearmCartridgeDropdown);
@@ -27,7 +27,8 @@ export function initFirearmsManagement() {
 export async function refreshFirearmsUI() {
     const diameters = await getAllItems('diameters');
     populateSelect('firearmDiameter', diameters, 'imperial', 'id');
-    await refreshFirearmCartridgeDropdown();
+    // Ensure cartridge dropdown is reset or populated based on initial selection (usually empty on refresh unless editing)
+    await refreshFirearmCartridgeDropdown(); 
     renderFirearmsTable();
 }
 
@@ -43,7 +44,7 @@ async function handleFirearmSubmit(e) {
         magCoal: parseFloat(document.getElementById('firearmMagCoal').value)
     };
     await updateItem('firearms', firearm);
-    e.target.reset();
+    e.target.reset(); // This triggers the reset listener
     renderFirearmsTable();
     refreshImpactMarkingUI(); 
 }
@@ -86,11 +87,20 @@ async function handleFirearmTableClick(e) {
         }
     } else if (action === 'edit') {
         const item = await getItem('firearms', id);
+        if (!item) return;
+
         document.getElementById('firearmId').value = item.id;
         document.getElementById('firearmNickname').value = item.nickname;
+        
+        // Populate diameter and wait for it to be set
         document.getElementById('firearmDiameter').value = item.diameterId;
+        
+        // Trigger cartridge dropdown refresh based on the selected diameter
         await refreshFirearmCartridgeDropdown();
+        
+        // Set cartridge value AFTER the dropdown options have been repopulated
         document.getElementById('firearmCartridge').value = item.cartridgeId;
+        
         document.getElementById('firearmBarrelLength').value = item.barrelLength;
         document.getElementById('firearmTwistRate').value = item.twistRate;
         document.getElementById('firearmMagCoal').value = item.magCoal;
