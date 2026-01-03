@@ -22,14 +22,13 @@
                             <div class="form-grid" style="grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                                 <div><label for="loadPowderManufacturer">Powder Manufacturer</label><select id="loadPowderManufacturer"></select></div>
                                 <div><label for="loadPowder">Powder</label><select id="loadPowder"></select></div>
-                                <div><label for="loadChargeWeight">Charge (grains)</label><input type="number" step="0.1" id="loadChargeWeight" required></div>
+                                <div><label for="loadChargeWeight">Charge (gr) (comma sep)</label><input type="text" id="loadChargeWeight" required></div>
                                 <div><label for="loadPowderLot">Powder Lot</label><input type="text" id="loadPowderLot"></div>
                             </div>
-                            <div class="form-grid" style="grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                            <div class="form-grid" style="grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                                 <div><label for="loadPrimer">Primer</label><select id="loadPrimer"></select></div>
                                 <div><label for="loadPrimerLot">Primer Lot</label><input type="text" id="loadPrimerLot"></div>
-                                <div><label for="loadCol">COL</label><input type="number" step="0.001" id="loadCol"></div>
-                                <div><label for="loadCbto">CBTO</label><input type="number" step="0.001" id="loadCbto"></div>
+                                <div><label for="loadCol">COAL (comma sep)</label><input type="text" id="loadCol"></div>
                             </div>
                             <div class="form-grid" style="grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                                 <div><label for="loadBrass">Brass Manufacturer</label><select id="loadBrass"></select></div>
@@ -67,7 +66,7 @@
                                 <th>Cartridge</th>
                                 <th>Details</th>
                                 <th>Charge</th>
-                                <th>COL / CBTO</th>
+                                <th>COAL</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>

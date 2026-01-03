@@ -194,6 +194,12 @@ export async function refreshLoadsUI() {
 
 async function handleLoadSubmit(e) {
     e.preventDefault();
+    const chargeWeightStr = document.getElementById('loadChargeWeight').value;
+    const colStr = document.getElementById('loadCol').value;
+
+    const chargeWeights = chargeWeightStr.split(',').map(s => s.trim()).filter(s => s !== '');
+    const cols = colStr.split(',').map(s => s.trim()).filter(s => s !== '');
+
     const load = {
         id: document.getElementById('loadId').value || generateUniqueId(),
         loadType: 'handload',
@@ -203,9 +209,8 @@ async function handleLoadSubmit(e) {
         bulletLot: document.getElementById('loadBulletLot').value,
         powderId: document.getElementById('loadPowder').value,
         powderLot: document.getElementById('loadPowderLot').value,
-        chargeWeight: parseFloat(document.getElementById('loadChargeWeight').value),
-        col: parseFloat(document.getElementById('loadCol').value),
-        cbto: parseFloat(document.getElementById('loadCbto').value),
+        chargeWeight: chargeWeights,
+        col: cols,
         primerId: document.getElementById('loadPrimer').value,
         primerLot: document.getElementById('loadPrimerLot').value,
         brassId: document.getElementById('loadBrass').value,
@@ -268,7 +273,7 @@ async function renderLoadsTable() {
     tableBody.innerHTML = '';
 
     for (const load of loads) {
-        let type, details, charge, colCbto, recipeButton = '';
+        let type, details, charge, col, recipeButton = '';
         const cartridgeName = cartridgeMap.get(load.cartridgeId) || 'N/A';
 
         if (load.loadType === 'commercial') {
@@ -276,22 +281,36 @@ async function renderLoadsTable() {
             const mfgName = manufacturerMap.get(load.manufacturerId) || '';
             details = `${mfgName} ${load.name} ${load.bulletWeight || ''}gr`.trim();
             charge = 'N/A';
-            colCbto = 'N/A';
+            col = 'N/A';
         } else { // Handload or legacy data
             type = 'Hand Load';
             details = bulletMap.get(load.bulletId) || 'N/A';
-            charge = `${load.chargeWeight || ''} gr ${powderMap.get(load.powderId) || ''}`.trim();
-            colCbto = `${load.col ? load.col.toFixed(3) : '---'} / ${load.cbto ? load.cbto.toFixed(3) : '---'}`;
+            
+            let chargeVal = '---';
+            if (Array.isArray(load.chargeWeight)) {
+                chargeVal = load.chargeWeight.join(', ');
+            } else if (load.chargeWeight !== undefined) {
+                 chargeVal = load.chargeWeight; // Legacy support
+            }
+
+            let colVal = '---';
+             if (Array.isArray(load.col)) {
+                colVal = load.col.join(', ');
+            } else if (load.col !== undefined) {
+                 colVal = load.col; // Legacy support
+            }
+
+            charge = `${chargeVal} gr ${powderMap.get(load.powderId) || ''}`.trim();
+            col = `${colVal}`;
             recipeButton = `<button class="btn-indigo btn-small" data-id="${load.id}" data-action="recipe">Recipe</button>`;
         }
 
         const row = `
             <tr>
-                <td>${type}</td>
                 <td>${cartridgeName}</td>
                 <td>${details}</td>
                 <td>${charge}</td>
-                <td>${colCbto}</td>
+                <td>${col}</td>
                 <td>
                     <div class="flex-container">
                         ${recipeButton}
@@ -370,12 +389,23 @@ async function handleLoadTableClick(e) {
             await refreshPowderNameDropdown();
             document.getElementById('loadPowder').value = item.powderId;
             document.getElementById('loadPowderLot').value = item.powderLot;
-            document.getElementById('loadChargeWeight').value = item.chargeWeight;
+            
+            // Handle array or legacy single value for chargeWeight
+            if (Array.isArray(item.chargeWeight)) {
+                 document.getElementById('loadChargeWeight').value = item.chargeWeight.join(', ');
+            } else {
+                 document.getElementById('loadChargeWeight').value = item.chargeWeight;
+            }
             
             document.getElementById('loadPrimer').value = item.primerId;
             document.getElementById('loadPrimerLot').value = item.primerLot;
-            document.getElementById('loadCol').value = item.col;
-            document.getElementById('loadCbto').value = item.cbto;
+            
+            // Handle array or legacy single value for col
+            if (Array.isArray(item.col)) {
+                document.getElementById('loadCol').value = item.col.join(', ');
+            } else {
+                document.getElementById('loadCol').value = item.col;
+            }
 
             await refreshBrassDropdownForLoad();
             document.getElementById('loadBrass').value = item.brassId;
@@ -408,6 +438,20 @@ async function generateRecipeSheet(loadId) {
 
     const recipeTitle = `Reloading Recipe: ${cartridge ? cartridge.name : 'Unknown Cartridge'}`;
     const date = new Date().toLocaleDateString();
+
+    let chargeVal = '---';
+    if (Array.isArray(load.chargeWeight)) {
+        chargeVal = load.chargeWeight.join(', ');
+    } else if (load.chargeWeight !== undefined) {
+         chargeVal = load.chargeWeight;
+    }
+    
+    let colVal = '---';
+    if (Array.isArray(load.col)) {
+        colVal = load.col.join(', ');
+    } else if (load.col !== undefined) {
+        colVal = load.col; 
+    }
 
     const htmlContent = `
         <!DOCTYPE html>
@@ -454,7 +498,7 @@ async function generateRecipeSheet(loadId) {
                         <h3>Powder</h3>
                         <div class="item"><span class="label">Manufacturer:</span> <span class="value">${powderMfg ? powderMfg.name : 'N/A'}</span></div>
                         <div class="item"><span class="label">Name:</span> <span class="value">${powder ? powder.name : 'N/A'}</span></div>
-                        <div class="item"><span class="label">Charge Weight:</span> <span class="value">${load.chargeWeight} gr</span></div>
+                        <div class="item"><span class="label">Charge Weight:</span> <span class="value">${chargeVal} gr</span></div>
                         <div class="item"><span class="label">Lot #:</span> <span class="value">${load.powderLot || 'N/A'}</span></div>
                     </div>
                 </div>
@@ -472,8 +516,7 @@ async function generateRecipeSheet(loadId) {
 
                     <div class="section">
                         <h3>Dimensions</h3>
-                        <div class="item"><span class="label">C.O.L.:</span> <span class="value">${load.col ? load.col.toFixed(3) + '"' : 'N/A'}</span></div>
-                        <div class="item"><span class="label">C.B.T.O.:</span> <span class="value">${load.cbto ? load.cbto.toFixed(3) + '"' : 'N/A'}</span></div>
+                        <div class="item"><span class="label">C.O.A.L.:</span> <span class="value">${colVal}"</span></div>
                         <div class="item"><span class="label">Min Case Length:</span> <span class="value">${cartridge && cartridge.minCaseLength ? cartridge.minCaseLength.toFixed(3) + '"' : 'N/A'}</span></div>
                         <div class="item"><span class="label">Max Case Length:</span> <span class="value">${cartridge && cartridge.maxCaseLength ? cartridge.maxCaseLength.toFixed(3) + '"' : 'N/A'}</span></div>
                         <div class="item"><span class="label">Trim Length:</span> <span class="value">${cartridge && cartridge.trimLength ? cartridge.trimLength.toFixed(3) + '"' : 'N/A'}</span></div>

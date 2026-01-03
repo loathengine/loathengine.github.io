@@ -71,7 +71,14 @@ export async function createSessionName(session) {
                     bulletText = `${bulletMfg ? bulletMfg.name : ''} ${bullet.weight}gr`;
                 }
                 const powderName = powder ? powder.name : '?';
-                const chargeWeight = load.chargeWeight || '?';
+                
+                let chargeWeight = '?';
+                if (Array.isArray(load.chargeWeight)) {
+                    chargeWeight = load.chargeWeight.join(', ');
+                } else if (load.chargeWeight !== undefined) {
+                     chargeWeight = load.chargeWeight;
+                }
+                
                 loadText = `HL: ${bulletText} / ${powderName} ${chargeWeight}gr`;
             }
         }

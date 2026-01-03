@@ -41,7 +41,15 @@ export async function refreshImpactMarkingUI() {
                 bulletName = `${bullet.weight}gr ${bulletMfg ? bulletMfg.name : ''} ${bullet.name}`;
             }
             const powderName = powder ? powder.name : 'Unknown Powder';
-            option.textContent = `(HL) ${bulletName} | ${powderName} ${load.chargeWeight}gr`;
+            
+            let chargeVal = '---';
+            if (Array.isArray(load.chargeWeight)) {
+                chargeVal = load.chargeWeight.join(', ');
+            } else if (load.chargeWeight !== undefined) {
+                 chargeVal = load.chargeWeight;
+            }
+
+            option.textContent = `(HL) ${bulletName} | ${powderName} ${chargeVal}gr`;
         }
         loadSelect.appendChild(option);
     }

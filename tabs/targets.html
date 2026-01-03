@@ -1,6 +1,21 @@
 
             <div class="card">
                 <h3>Manage Targets</h3>
+                <div class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; align-items: end; margin-bottom: 1rem;">
+                    <div>
+                        <label for="targetFirearmSelect">Firearm (Optional)</label>
+                        <select id="targetFirearmSelect"></select>
+                    </div>
+                    <div>
+                        <label for="targetLoadSelect">Load (Optional)</label>
+                        <select id="targetLoadSelect"></select>
+                    </div>
+                    <div>
+                        <label for="targetNamePrefix">Custom Name (Optional)</label>
+                        <input type="text" id="targetNamePrefix" placeholder="e.g., Range Day 1">
+                    </div>
+                </div>
+
                 <div>
                     <label for="uploadTargetImage">Upload New Target Image(s)</label>
                     <input type="file" id="uploadTargetImage" accept="image/*" multiple>
