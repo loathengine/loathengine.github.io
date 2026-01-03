@@ -65,6 +65,7 @@ export async function renderTargetImages() {
                 <input type="text" value="${item.name}" class="target-name-input" style="margin-top: 0.5rem; width: 100%; box-sizing: border-box;">
                 <div class="flex-container" style="margin-top: 0.5rem;">
                     <button class="btn-yellow btn-small" data-action="rename">Rename</button>
+                    <button class="btn-indigo btn-small" data-action="apply-info">Apply Info</button>
                     <button class="btn-red btn-small" data-action="delete">Delete</button>
                 </div>
             </div>
@@ -80,15 +81,13 @@ export function initTargetsManagement() {
     // Populate dropdowns on init
     refreshTargetDropdowns();
     
-    // Also listen for a global refresh event if we implement one, 
-    // or just call it every time the tab is shown (if tab logic supports it).
-    // For now, we call it once here. The user can switch tabs to refresh.
-
     uploadInput.addEventListener('change', handleTargetUpload);
     targetGallery.addEventListener('click', handleGalleryClick);
 
     async function handleTargetUpload(e) {
-        const files = e.target.files;
+        const files = Array.from(e.target.files); // Convert FileList to Array
+        if (files.length === 0) return;
+
         const firearmId = document.getElementById('targetFirearmSelect').value;
         const loadId = document.getElementById('targetLoadSelect').value;
         const customName = document.getElementById('targetNamePrefix').value.trim();
@@ -112,8 +111,13 @@ export function initTargetsManagement() {
             }
         }
 
-        for (const file of files) {
-            if (!file.type.startsWith('image/')) continue;
+        let processedCount = 0;
+
+        files.forEach((file, index) => {
+            if (!file.type.startsWith('image/')) {
+                processedCount++;
+                return;
+            }
 
             const reader = new FileReader();
             reader.onload = async (event) => {
@@ -129,17 +133,15 @@ export function initTargetsManagement() {
                         finalName = file.name.replace(/\.[^/.]+$/, "");
                     }
 
-                    // Append firearm and load info if available and not already part of the name
+                    // Append firearm and load info if available
                     const parts = [];
                     if (finalName) parts.push(finalName);
                     if (firearmName) parts.push(firearmName);
                     if (loadName) parts.push(loadName);
                     
-                    // If multiple files are selected, we might want to append an index or timestamp to avoid collisions if the base name is identical
-                    // But for now, we'll just trust the user or let them rename later. 
-                    // To be safe, we can append a short timestamp segment.
+                    // If multiple files are selected, append the index (1-based) to ensure uniqueness
                     if (files.length > 1) {
-                         parts.push(Math.floor(Math.random() * 1000));
+                         parts.push(index + 1);
                     }
 
                     const name = parts.join(' - ') + '.webp';
@@ -149,24 +151,27 @@ export function initTargetsManagement() {
                         name: name,
                         dataUrl: webpDataUrl,
                         timestamp: new Date().toISOString(),
-                        firearmId: firearmId || null, // Store association if possible for future use
+                        firearmId: firearmId || null,
                         loadId: loadId || null
                     };
                     await updateItem('targetImages', targetData);
-                    await renderTargetImages();
-                    await refreshImpactMarkingUI();
                 } catch (error) {
                     console.error("Failed to process and save image:", error);
                     alert("There was an error converting the image to WebP format.");
+                } finally {
+                    processedCount++;
+                    // Only render once all files are processed to avoid flickering and performance issues
+                    if (processedCount === files.length) {
+                        await renderTargetImages();
+                        await refreshImpactMarkingUI();
+                        // Reset inputs after full batch completion
+                        e.target.value = '';
+                        document.getElementById('targetNamePrefix').value = '';
+                    }
                 }
             };
             reader.readAsDataURL(file);
-        }
-        e.target.value = '';
-        // Optionally clear the inputs
-        document.getElementById('targetNamePrefix').value = '';
-        // document.getElementById('targetFirearmSelect').value = '';
-        // document.getElementById('targetLoadSelect').value = '';
+        });
     }
     
     async function handleGalleryClick(e) {
@@ -194,6 +199,81 @@ export function initTargetsManagement() {
                 await renderTargetImages();
                 await refreshImpactMarkingUI();
             }
+        } else if (action === 'apply-info') {
+             const firearmId = document.getElementById('targetFirearmSelect').value;
+             const loadId = document.getElementById('targetLoadSelect').value;
+             const customName = document.getElementById('targetNamePrefix').value.trim();
+             
+             if (!firearmId && !loadId && !customName) {
+                 alert('Please select a firearm, load, or enter a custom name prefix to apply.');
+                 return;
+             }
+
+             if(!confirm('This will rename the target using the selected Firearm, Load, and Custom Name (if provided). Continue?')) return;
+
+             const item = await getItem('targetImages', id);
+             if (!item) return;
+
+             let firearmName = '';
+             if (firearmId) {
+                const firearm = await getItem('firearms', firearmId);
+                if (firearm) firearmName = firearm.nickname;
+             }
+
+             let loadName = '';
+             if (loadId) {
+                const load = await getItem('loads', loadId);
+                if (load) {
+                     if (load.loadType === 'commercial') {
+                        loadName = load.name;
+                    } else {
+                        const bullet = await getItem('bullets', load.bulletId);
+                        if (bullet) loadName = `${bullet.weight}gr ${bullet.name}`;
+                    }
+                }
+             }
+
+             // Construct new name
+             let finalName = '';
+             if (customName) {
+                 finalName = customName;
+             } else {
+                 // Keep existing name prefix if no custom name provided, 
+                 // but try to strip old firearm/load info if we can guess it? 
+                 // Easier to just use the current name as the base if no custom name is given.
+                 // However, "Apply Info" implies we want to standardize it.
+                 // Let's use the current "Custom Name" input as the base. 
+                 // If empty, we might just prepend to the existing name or replace? 
+                 // Let's assume the user wants to REPLACE the metadata part.
+                 
+                 // If customName is empty, let's use the first part of the existing name 
+                 // (assuming it was formatted as Name - Firearm - Load). 
+                 // This is a bit risky. 
+                 
+                 // Safer approach: If customName is empty, ask user or just use "Target".
+                 // Or better: Just use the current input value. If empty, maybe just use "Target"?
+                 // Actually, if customName is empty, let's just use the current filename (without extension) as the base,
+                 // but that might result in "OldName - Firearm - Load".
+                 
+                 // Let's stick to the behavior: Custom Name replaces the "Event/Date" part.
+                 // If no Custom Name is provided, we just append the info to the CURRENT name (stripped of extension).
+                 finalName = item.name.replace(/\.[^/.]+$/, "");
+             }
+
+             const parts = [finalName];
+             if (firearmName) parts.push(firearmName);
+             if (loadName) parts.push(loadName);
+             
+             const newName = parts.join(' - ') + '.webp';
+             
+             item.name = newName;
+             item.firearmId = firearmId || item.firearmId; // Update associations if provided
+             item.loadId = loadId || item.loadId;
+
+             await updateItem('targetImages', item);
+             alert('Target info applied and renamed.');
+             await renderTargetImages();
+             await refreshImpactMarkingUI();
         }
     }
     renderTargetImages();
