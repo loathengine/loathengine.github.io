@@ -108,8 +108,8 @@
 
         /* --- Tables --- */
         .data-table-container { overflow-x: auto; margin-top: 1.5rem; max-height: 400px; border: 1px solid #374151; border-radius: 0.5rem; }
-        .data-table { width: 100%; border-collapse: collapse; }
-        .data-table th, .data-table td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #374151; word-break: break-all; }
+        .data-table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        .data-table th, .data-table td { padding: 0.5rem 0.75rem; text-align: left; border-bottom: 1px solid #374151; word-break: break-all; font-size: 0.875rem; }
         .data-table th { background-color: #374151; font-weight: 600; position: sticky; top: 0; color: #f9fafb; z-index: 10;}
         .data-table tr:hover { background-color: #2a374a; }
         .data-table tr:last-child td { border-bottom: none; }
