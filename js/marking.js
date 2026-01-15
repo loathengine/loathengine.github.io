@@ -10,10 +10,9 @@ let settingState = null;
 let sessionID = null;
 let currentTargetId = null;
 
-let transform = { x: 0, y: 0, scale: 1 };
-let isPanning = false;
-let panStart = { x: 0, y: 0 };
-let mousePos = { x: 0, y: 0 };
+// Panning logic removed in favor of browser native scrolling.
+// Scale logic now resizes the canvas element.
+let transform = { scale: 1 }; 
 let animationFrameId;
 
 export async function refreshImpactMarkingUI() {
@@ -111,21 +110,43 @@ export function initImpactMarking() {
     refreshImpactMarkingUI().then(populateMarkingSessionSelect);
     resetCanvasState();
 
+    function updateCanvasSize() {
+        if (!img) return;
+        // Resize the canvas to match the zoomed dimensions
+        // Note: Changing canvas.width/height clears the canvas, so draw() must be called afterwards (which happens in loop)
+        canvas.width = img.baseWidth * transform.scale;
+        canvas.height = img.baseHeight * transform.scale;
+    }
+
     function draw() {
+        if (!img) {
+             ctx.clearRect(0, 0, canvas.width, canvas.height);
+             return; 
+        }
+
+        // No need to clearRect if we are overwriting everything with the image or if resize happened
+        // But for safety:
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
         ctx.save();
-        ctx.translate(transform.x, transform.y);
+        // Since we resized the canvas to be larger, we also scale the context 
+        // so that drawing operations (which use base coordinates) are scaled up.
         ctx.scale(transform.scale, transform.scale);
 
-        if (img) { ctx.drawImage(img, 0, 0, img.scaledWidth, img.scaledHeight); }
+        ctx.drawImage(img, 0, 0, img.baseWidth, img.baseHeight);
+
+        // Drawing overlays
+        // IMPORTANT: overlay coordinates are in "base" space (0..baseWidth)
+        // context scale handles the mapping to "zoomed" space
 
         if (settingState === 'scale_p2' && scale.p1) {
             ctx.beginPath();
             ctx.moveTo(scale.p1.x, scale.p1.y);
+            // Mouse pos is already converted to base coords in getCanvasCoords
             const currentMouse = getCanvasCoords({clientX: mousePos.x, clientY: mousePos.y});
             ctx.lineTo(currentMouse.x, currentMouse.y);
             ctx.strokeStyle = 'rgba(255, 0, 0, 0.7)';
-            ctx.lineWidth = 2 / transform.scale;
+            ctx.lineWidth = 2 / transform.scale; 
             ctx.setLineDash([5, 5]);
             ctx.stroke();
             ctx.setLineDash([]);
@@ -151,6 +172,10 @@ export function initImpactMarking() {
     }
     
     function drawCircle(point, color) {
+        // Radius should appear constant relative to image features?
+        // Or constant relative to screen?
+        // Original code: radius = 8 / transform.scale => constant on screen
+        // If we want constant on screen:
         const radius = 8 / transform.scale;
         ctx.beginPath();
         ctx.arc(point.x, point.y, radius, 0, 2 * Math.PI);
@@ -180,14 +205,26 @@ export function initImpactMarking() {
     }
     
     function getCanvasCoords(e) {
+        if (!img) return { x: 0, y: 0 };
         const rect = canvas.getBoundingClientRect();
+        
+        // e.clientX is relative to viewport. rect is relative to viewport.
+        // The difference is the position relative to the canvas element's top-left corner.
+        // Because the canvas element is sized to match the zoom, we just need to 
+        // map these pixels back to "base" coordinates by dividing by scale.
+        
+        const canvasX = e.clientX - rect.left;
+        const canvasY = e.clientY - rect.top;
+        
+        // However, we must consider if CSS scaling is happening (unlikely if we just set width/height attributes).
+        // But for robustness:
         const scaleX = canvas.width / rect.width;
         const scaleY = canvas.height / rect.height;
-        const canvasX = (e.clientX - rect.left) * scaleX;
-        const canvasY = (e.clientY - rect.top) * scaleY;
-        const finalX = (canvasX - transform.x) / transform.scale;
-        const finalY = (canvasY - transform.y) / transform.scale;
-        return { x: finalX, y: finalY };
+        
+        const trueCanvasX = canvasX * scaleX;
+        const trueCanvasY = canvasY * scaleY;
+
+        return { x: trueCanvasX / transform.scale, y: trueCanvasY / transform.scale };
     }
 
     function updateActiveButton(activeButton) {
@@ -212,10 +249,24 @@ export function initImpactMarking() {
             img = new Image();
             img.onload = () => { 
                 currentTargetId = targetId;
+                
+                // Establish base dimensions
+                // We'll use a fixed base width for coordinate consistency, or just use natural size?
+                // Using a fixed base width (e.g. 800) keeps dots consistent relative to image size if we swap images?
+                // Actually, let's use the image natural size as the base, or a standard working width.
+                // The previous code effectively used 800 as the working width.
+                const workingBaseWidth = 800;
                 const aspectRatio = img.naturalHeight / img.naturalWidth;
-                img.scaledWidth = canvas.width;
-                img.scaledHeight = canvas.width * aspectRatio;
-                if (!sessionID) { resetCanvasState(); } // Reset only if not loading a session
+                
+                img.baseWidth = workingBaseWidth;
+                img.baseHeight = workingBaseWidth * aspectRatio;
+                
+                // Reset zoom when loading new image
+                transform.scale = 1; 
+                
+                updateCanvasSize();
+
+                if (!sessionID) { resetCanvasState(); }
             };
             img.src = targetData.dataUrl;
         }
@@ -228,10 +279,12 @@ export function initImpactMarking() {
         markingSessionSelect.value = '';
         currentTargetId = null;
         statsOutput.innerHTML = '<p>Impact data will appear here once you mark points and set a scale.</p>';
+        canvas.width = 800; // Reset to default placeholder size
+        canvas.height = 600;
     });
 
     function resetCanvasState() {
-        transform = { x: 0, y: 0, scale: 1 };
+        transform = { scale: 1 };
         scale = { p1: null, p2: null, distance: null, units: 'in', pixelsPerUnit: null };
         groups = [];
         currentGroupIndex = -1;
@@ -240,24 +293,33 @@ export function initImpactMarking() {
         renderGroupSelector();
         updateActiveButton(null);
         updateStatsDisplay();
+        if(img) updateCanvasSize();
     }
 
-    zoomInBtn.addEventListener('click', () => { transform.scale *= 1.2; });
-    zoomOutBtn.addEventListener('click', () => { transform.scale /= 1.2; });
+    zoomInBtn.addEventListener('click', () => { 
+        if(!img) return;
+        transform.scale *= 1.2; 
+        updateCanvasSize();
+    });
+    
+    zoomOutBtn.addEventListener('click', () => { 
+        if(!img) return;
+        transform.scale /= 1.2; 
+        // Prevent zooming out too much?
+        if (transform.scale < 0.1) transform.scale = 0.1;
+        updateCanvasSize();
+    });
+
+    // Panning listeners removed as browser scroll is used.
 
     canvas.addEventListener('mousedown', (e) => {
         if (e.button !== 0) return;
-        if (!settingState) {
-            isPanning = true;
-            panStart = { x: e.clientX - transform.x, y: e.clientY - transform.y };
-        }
+        // No panning state needed
     });
 
     canvas.addEventListener('mouseup', (e) => {
-        if (isPanning) {
-            isPanning = false;
-            return;
-        }
+        // No panning logic needed
+        
         if (!settingState) return;
 
         const coords = getCanvasCoords(e);
@@ -308,10 +370,11 @@ export function initImpactMarking() {
         }
     });
 
-    canvas.addEventListener('mouseleave', () => { isPanning = false; });
+    // canvas.addEventListener('mouseleave', () => { }); // Not needed
+    
     canvas.addEventListener('mousemove', (e) => {
         mousePos = { x: e.clientX, y: e.clientY };
-        if (isPanning) { transform.x = e.clientX - panStart.x; transform.y = e.clientY - panStart.y; }
+        // No panning logic
     });
     
     setScaleBtn.addEventListener('click', () => {

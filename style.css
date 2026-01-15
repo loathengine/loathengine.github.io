@@ -121,10 +121,11 @@
             border: 1px solid #4b5563;
             border-radius: 0.375rem;
             background-color: #374151;
+            overflow: auto;
+            max-height: 80vh;
         }
         canvas { 
             cursor: crosshair;
-            max-width: none;
             display: block;
         }
         canvas.delete-mode { cursor: not-allowed; }

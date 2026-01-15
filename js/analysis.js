@@ -107,7 +107,21 @@ export function initStatisticalAnalysis() {
         return { r: r, r2: r * r };
     }
 
-    function calculateStatsForSession(shots) {
+    function getMradFactor(dataUnits, targetDistance, distanceUnits) {
+        if (!targetDistance || targetDistance <= 0) return null;
+        
+        let distMeters = targetDistance;
+        if (distanceUnits === 'yards') distMeters *= 0.9144;
+        
+        let sizeMeters = 1;
+        if (dataUnits === 'in') sizeMeters = 0.0254;
+        else if (dataUnits === 'mm') sizeMeters = 0.001;
+        
+        // mrad = (size / distance) * 1000
+        return (sizeMeters / distMeters) * 1000;
+    }
+
+    function calculateStatsForSession(shots, targetDistance = null, distanceUnits = null) {
         if (!shots || shots.length < 2) return null;
 
         const n = shots.length;
@@ -155,17 +169,32 @@ export function initStatisticalAnalysis() {
             confidence_color = '#22c55e'; // green
         }
         
+        // Calculate mrad values if distance is available
+        const mradFactor = getMradFactor(dataUnits, targetDistance, distanceUnits);
+        let meanRadiusMrad = null, sd_xMrad = null, sd_yMrad = null, ci_mrMrad = null;
+        
+        if (mradFactor) {
+            meanRadiusMrad = meanRadius * mradFactor;
+            sd_xMrad = sd_x * mradFactor;
+            sd_yMrad = sd_y * mradFactor;
+            ci_mrMrad = [ci_mr.lower * mradFactor, ci_mr.upper * mradFactor];
+        }
+
         return {
             n: n,
             units: dataUnits,
             meanRadius: meanRadius,
             sd_x: sd_x,
             sd_y: sd_y,
+            meanRadiusMrad: meanRadiusMrad,
+            sd_xMrad: sd_xMrad,
+            sd_yMrad: sd_yMrad,
             vel_es: vel_es,
             vel_sd: vel_sd,
             vel_vert_r2: vel_vert_r2,
             hasVerticalDispersion: hasVerticalDispersion,
             ci_mean_radius: [ci_mr.lower, ci_mr.upper],
+            ci_mean_radiusMrad: ci_mrMrad,
             confidence_level: confidence_level,
             confidence_color: confidence_color,
             mpi: {x: mean_x, y: mean_y}
@@ -184,7 +213,12 @@ export function initStatisticalAnalysis() {
         for (const id of selectedIds) {
             const sessionData = await getItem('impactData', id);
             if (sessionData && sessionData.shots && sessionData.shots.length > 0) {
-                const stats = calculateStatsForSession(sessionData.shots);
+                const stats = calculateStatsForSession(
+                    sessionData.shots, 
+                    sessionData.targetDistance, 
+                    sessionData.distanceUnits
+                );
+                
                 if (stats) {
                     const sessionName = await createSessionName(sessionData);
                     results.push({
@@ -260,14 +294,31 @@ export function initStatisticalAnalysis() {
                     analysisHtml = `<span style="color: #eab308;">Vertical stringing detected. Add velocity data to diagnose.</span>`;
                 }
             }
+            
+            // Format MR, SD X, SD Y with mrad if available
+            const mrDisplay = stats.meanRadiusMrad !== null 
+                ? `${stats.meanRadiusMrad.toFixed(4)} mrad` 
+                : `${stats.meanRadius.toFixed(4)} ${stats.units}`;
+            
+            const mrCiDisplay = stats.ci_mean_radiusMrad !== null
+                ? `[${stats.ci_mean_radiusMrad[0].toFixed(4)}, ${stats.ci_mean_radiusMrad[1].toFixed(4)}] mrad`
+                : `[${stats.ci_mean_radius[0].toFixed(4)}, ${stats.ci_mean_radius[1].toFixed(4)}]`;
+
+            const sdXDisplay = stats.sd_xMrad !== null 
+                ? `${stats.sd_xMrad.toFixed(4)} mrad`
+                : `${stats.sd_x.toFixed(4)} ${stats.units}`;
+                
+            const sdYDisplay = stats.sd_yMrad !== null 
+                ? `${stats.sd_yMrad.toFixed(4)} mrad`
+                : `${stats.sd_y.toFixed(4)} ${stats.units}`;
 
             row.innerHTML = `
                 <td><span style="display: inline-block; vertical-align: middle; width: 12px; height: 12px; background-color: ${color}; margin-right: 8px; border-radius: 3px;"></span>${result.sessionName}</td>
                 <td>${stats.n}</td>
-                <td style="font-weight: 600;">${stats.meanRadius.toFixed(4)} ${stats.units}</td>
-                <td>[${stats.ci_mean_radius[0].toFixed(4)}, ${stats.ci_mean_radius[1].toFixed(4)}] <span style="color: ${stats.confidence_color}; font-weight: 600;">(${stats.confidence_level})</span></td>
-                <td>${stats.sd_x.toFixed(4)} ${stats.units}</td>
-                <td>${stats.sd_y.toFixed(4)} ${stats.units}</td>
+                <td style="font-weight: 600;">${mrDisplay}</td>
+                <td>${mrCiDisplay} <span style="color: ${stats.confidence_color}; font-weight: 600;">(${stats.confidence_level})</span></td>
+                <td>${sdXDisplay}</td>
+                <td>${sdYDisplay}</td>
                 <td>${stats.vel_sd !== null ? stats.vel_sd.toFixed(2) : 'N/A'}</td>
                 <td>${analysisHtml}</td>
             `;
@@ -421,15 +472,35 @@ export function initStatisticalAnalysis() {
             ctx.fillStyle = '#f3f4f6';
             ctx.fillText(sessionText, columns[0].x + 50, currentY + rowHeight / 2);
             ctx.fillText(stats.n, columns[1].x, currentY + rowHeight / 2);
-            ctx.fillText(`${stats.meanRadius.toFixed(4)} ${stats.units}`, columns[2].x, currentY + rowHeight / 2);
-            ctx.fillText(`[${stats.ci_mean_radius[0].toFixed(4)}, ${stats.ci_mean_radius[1].toFixed(4)}]`, columns[3].x, currentY + rowHeight / 2);
+
+            // Use mrad for text if available
+            const mrText = stats.meanRadiusMrad !== null 
+                ? `${stats.meanRadiusMrad.toFixed(4)} mrad` 
+                : `${stats.meanRadius.toFixed(4)} ${stats.units}`;
+            
+            const mrCiText = stats.ci_mean_radiusMrad !== null
+                ? `[${stats.ci_mean_radiusMrad[0].toFixed(4)}, ${stats.ci_mean_radiusMrad[1].toFixed(4)}]`
+                : `[${stats.ci_mean_radius[0].toFixed(4)}, ${stats.ci_mean_radius[1].toFixed(4)}]`;
+
+            ctx.fillText(mrText, columns[2].x, currentY + rowHeight / 2);
+            ctx.fillText(mrCiText, columns[3].x, currentY + rowHeight / 2);
             ctx.fillText(`${stats.vel_sd !== null ? stats.vel_sd.toFixed(2) : 'N/A'}`, columns[4].x, currentY + rowHeight / 2);
             currentY += rowHeight;
         });
 
         const a = document.createElement('a');
         a.href = canvas.toDataURL('image/png');
-        a.download = 'analysis_report.png';
+        
+        // Time stamped output
+        const now = new Date();
+        const timestamp = now.getFullYear() + '-' +
+            String(now.getMonth() + 1).padStart(2, '0') + '-' +
+            String(now.getDate()).padStart(2, '0') + '_' +
+            String(now.getHours()).padStart(2, '0') + '-' +
+            String(now.getMinutes()).padStart(2, '0') + '-' +
+            String(now.getSeconds()).padStart(2, '0');
+        
+        a.download = `analysis_report_${timestamp}.png`;
         a.click();
     }
 
