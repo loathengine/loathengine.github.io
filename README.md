@@ -11,7 +11,7 @@
     - [Load Data Tab](#load-data-tab)
     - [Targets Tab](#targets-tab)
     - [Marking Tab (Core Functionality)](#marking-tab-core-functionality)
-    - [Analysis Tab](#analysis-tab)
+    - [Analysis Tab (Composite & Compare)](#analysis-tab-composite--compare)
     - [DB Management Tab](#db-management-tab)
 5.  [Data Backup and Management](#data-backup-and-management)
 
@@ -20,6 +20,9 @@
 ## Introduction
 
 Welcome to Empirical Precision! This application is a powerful, all-in-one tool for shooting enthusiasts to manage every aspect of their hobby. From cataloging reloading components and firearms to performing in-depth statistical analysis of target performance, this app helps you make data-driven decisions to improve your precision.
+
+**Key Feature: Group Compositing**
+One of the primary functions of this application is to allow you to shoot multiple smaller groups (e.g., 3-shot or 5-shot groups) on different targets or on different days, and then **composite** them into a single large-sample analysis. This provides statistically significant data without requiring you to shoot 20+ rounds at a single point of aim in one sitting.
 
 ### Core Concepts: Data & Privacy
 
@@ -46,11 +49,13 @@ For the most efficient use of the application, follow this workflow:
 4.  **Upload Your Targets:**
     -   Go to the `Targets` tab and upload images of your shot targets.
 
-5.  **Mark and Save a Session:**
-    -   Go to the `Marking` tab. This is where you will load a target image, mark your point of aim and impacts, associate the session with a firearm and load, and save the session data.
+5.  **Mark and Save Sessions:**
+    -   Go to the `Marking` tab. Load a target image, set the scale, and mark your impacts.
+    -   **Important:** You can mark individual groups on different targets and save them as separate sessions. The Analysis tab will let you combine them later.
 
-6.  **Analyze Your Performance:**
-    -   Go to the `Analysis` tab to load one or more saved sessions, compare their performance statistics, and diagnose potential issues with your loads.
+6.  **Analyze & Composite:**
+    -   Go to the `Analysis` tab. Select multiple sessions corresponding to the same load/firearm combination.
+    -   The app will **composite** these separate groups into a single aggregate analysis, giving you a true picture of your precision (Mean Radius, SD, etc.) based on the total number of shots.
 
 ---
 
@@ -106,22 +111,21 @@ This is the most interactive part of the application, where you turn a target im
     -   Enter the **Target Distance**.
 6.  **Enter Velocity Data (Optional but Recommended):**
     -   As you mark impacts, a list will appear below the canvas. You can type the muzzle velocity for each shot into the input field next to it. This is crucial for advanced dispersion analysis.
-7.  **Save the Session:** Click **"Save / Update Session"**. Your marked points, scale, and session info are now saved and ready for analysis.
+7.  **Save the Session:** Click **"Save / Update Session"**. Your marked points, scale, and session info are now saved. You can treat each saved session as a "part" of a larger aggregate group if you wish.
 
-### Analysis Tab
-This is where you can view and compare the performance of your saved sessions.
+### Analysis Tab (Composite & Compare)
+This is where the magic happens. You can analyze individual sessions or **composite multiple sessions** to get better statistical data.
 
-1.  **Select Sessions:** Use the list to select one or more sessions. To select multiple, hold `Ctrl` (on Windows/Linux) or `Cmd` (on Mac) and click on each session you want to analyze.
+1.  **Select Sessions:** Use the list to select sessions.
+    -   **Comparison:** Select different loads to compare them side-by-side.
+    -   **Compositing:** Select multiple sessions that used the **same load** (e.g., "5 shots on Target A" and "5 shots on Target B"). The app will overlay them based on their Point of Aim (POA) to simulate a single 10-shot group.
+    -   Hold `Ctrl` (on Windows/Linux) or `Cmd` (on Mac) to select multiple items.
 2.  **Analyze:** Click the **"Analyze Selected Session(s)"** button.
 3.  **Review the Results:**
-    -   A **table** will appear with detailed statistics. Each session is color-coded.
-    -   **Mean Radius (MR):** The primary measure of precision. Smaller is better. The Confidence Interval (CI) tells you how reliable that measurement is based on the number of shots.
-    -   **Dispersion Analysis:** This is the most powerful diagnostic column.
-        -   If it says **"Nominal"**, your horizontal and vertical spread are balanced.
-        -   If it flags **"Vertical stringing detected"**, it means your vertical spread is unusually large. If you did not provide velocity data, it will prompt you to do so.
-        -   If you did provide velocity, it will show an **R-squared (R²)** value. This percentage tells you how much of that vertical stringing is likely caused by inconsistent muzzle velocity. A high R² (e.g., 65%) strongly suggests your powder charge is the culprit.
-4.  **View the Plot:** Below the table, a plot visually represents all selected groups overlaid on top of each other, centered on their point of impact. This makes it easy to visually compare group shapes and sizes.
-5.  **Export:** Click **"Export as Image"** to save a high-quality PNG image of the plot and results table, perfect for sharing or record-keeping.
+    -   A **table** will appear with detailed statistics (Mean Radius, SD, etc.) in **Milliradians (mrad)** (if distance was provided) or original units.
+    -   **Dispersion Analysis:** Checks for vertical stringing and velocity correlations.
+4.  **View the Composite Plot:** Below the table, a plot visually represents all selected groups overlaid on top of each other, centered on their point of impact (MPI).
+5.  **Export:** Click **"Export as Image"** to save a timestamped image of the plot and stats.
 
 ### DB Management Tab
 This tab is for advanced data management. **Use with caution.**
