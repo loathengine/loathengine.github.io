@@ -1,0 +1,2049 @@
+{
+  "manufacturers": [
+    {
+      "id": "mfg_accurate",
+      "name": "Accurate Powder",
+      "type": [
+        "powder"
+      ]
+    },
+    {
+      "id": "mfg_alliant",
+      "name": "Alliant Powder",
+      "type": [
+        "powder"
+      ]
+    },
+    {
+      "id": "mfg_barnes",
+      "name": "Barnes",
+      "type": [
+        "bullet"
+      ]
+    },
+    {
+      "id": "mfg_berger",
+      "name": "Berger",
+      "type": [
+        "bullet"
+      ]
+    },
+    {
+      "id": "mfg_cci",
+      "name": "CCI",
+      "type": [
+        "primer"
+      ]
+    },
+    {
+      "id": "mfg_federal",
+      "name": "Federal",
+      "type": [
+        "primer",
+        "brass",
+        "bullet"
+      ]
+    },
+    {
+      "id": "mfg_hodgdon",
+      "name": "Hodgdon",
+      "type": [
+        "powder"
+      ]
+    },
+    {
+      "id": "mfg_hornady",
+      "name": "Hornady",
+      "type": [
+        "bullet",
+        "brass"
+      ]
+    },
+    {
+      "id": "mfg_lapua",
+      "name": "Lapua",
+      "type": [
+        "brass",
+        "bullet"
+      ]
+    },
+    {
+      "id": "mfg_lehighDefense",
+      "name": "Lehigh Defense",
+      "type": [
+        "bullet"
+      ]
+    },
+    {
+      "id": "mfg_nosler",
+      "name": "Nosler",
+      "type": [
+        "bullet",
+        "brass"
+      ]
+    },
+    {
+      "id": "mfg_ramshot",
+      "name": "Ramshot",
+      "type": [
+        "powder"
+      ]
+    },
+    {
+      "id": "mfg_remington",
+      "name": "Remington",
+      "type": [
+        "bullet"
+      ]
+    },
+    {
+      "id": "mfg_sierra",
+      "name": "Sierra",
+      "type": [
+        "bullet"
+      ]
+    },
+    {
+      "id": "mfg_speer",
+      "name": "Speer",
+      "type": [
+        "bullet"
+      ]
+    },
+    {
+      "id": "mfg_swift",
+      "name": "Swift",
+      "type": [
+        "bullet"
+      ]
+    },
+    {
+      "id": "mfg_vihtavuori",
+      "name": "Vihtavuori",
+      "type": [
+        "powder"
+      ]
+    },
+    {
+      "id": "mfg_winchester",
+      "name": "Winchester",
+      "type": [
+        "primer",
+        "brass",
+        "powder",
+        "bullet"
+      ]
+    },
+    {
+      "id": "tDgVyxWdx2OYdHcMVVPFpg",
+      "name": "Peterson",
+      "type": [
+        "brass"
+      ]
+    },
+    {
+      "id": "yrLTX8mO-CFo-k-eJscxuw",
+      "name": "Norma",
+      "type": [
+        "brass"
+      ]
+    }
+  ],
+  "diameters": [
+    {
+      "id": "dia_172",
+      "imperial": ".172",
+      "metric": "4.4mm"
+    },
+    {
+      "id": "dia_204",
+      "imperial": ".204",
+      "metric": "5.2mm"
+    },
+    {
+      "id": "dia_224",
+      "imperial": ".224",
+      "metric": "5.56mm"
+    },
+    {
+      "id": "dia_243",
+      "imperial": ".243",
+      "metric": "6mm"
+    },
+    {
+      "id": "dia_257",
+      "imperial": ".257",
+      "metric": "6.5mm"
+    },
+    {
+      "id": "dia_264",
+      "imperial": ".264",
+      "metric": "6.5mm"
+    },
+    {
+      "id": "dia_277",
+      "imperial": ".277",
+      "metric": "6.8mm"
+    },
+    {
+      "id": "dia_284",
+      "imperial": ".284",
+      "metric": "7mm"
+    },
+    {
+      "id": "dia_308",
+      "imperial": ".308",
+      "metric": "7.62mm"
+    },
+    {
+      "id": "dia_338",
+      "imperial": ".338",
+      "metric": "8.6mm"
+    }
+  ],
+  "bullets": [
+    {
+      "id": "0AgjoNd5kEzz6HwVRKKhKw",
+      "manufacturerId": "mfg_berger",
+      "diameterId": "dia_308",
+      "name": "FB Target",
+      "weight": 115,
+      "length": 0.94
+    },
+    {
+      "id": "GTYLKm9m2yjzmB8xdVitfQ",
+      "manufacturerId": "mfg_berger",
+      "diameterId": "dia_308",
+      "name": "FB Target",
+      "weight": 155.5,
+      "length": 1.226
+    },
+    {
+      "id": "IpjwupTocdtQGPtN5sP4vg",
+      "manufacturerId": "mfg_berger",
+      "diameterId": "dia_308",
+      "name": "Hybrid Target",
+      "weight": 168,
+      "length": 1.287
+    },
+    {
+      "id": "Vz2UeHld2snm4foBvbEn6Q",
+      "manufacturerId": "mfg_sierra",
+      "diameterId": "dia_308",
+      "name": "MatchKing",
+      "weight": 125,
+      "length": 1.105
+    },
+    {
+      "id": "bjM-hFi5OGzpp4h8TPXbzA",
+      "manufacturerId": "mfg_sierra",
+      "diameterId": "dia_308",
+      "name": "Tipped MatchKing",
+      "weight": 175,
+      "length": 1.38
+    },
+    {
+      "id": "blt_Bar224Tsx55",
+      "manufacturerId": "mfg_barnes",
+      "diameterId": "dia_224",
+      "name": "TSX",
+      "weight": 55,
+      "length": 0.898
+    },
+    {
+      "id": "blt_Bar224Ttsx62",
+      "manufacturerId": "mfg_barnes",
+      "diameterId": "dia_224",
+      "name": "TTSX",
+      "weight": 62,
+      "length": 0.981
+    },
+    {
+      "id": "blt_Bar243Tsx85",
+      "manufacturerId": "mfg_barnes",
+      "diameterId": "dia_243",
+      "name": "TSX",
+      "weight": 85,
+      "length": 1.058
+    },
+    {
+      "id": "blt_Bar243Ttsx80",
+      "manufacturerId": "mfg_barnes",
+      "diameterId": "dia_243",
+      "name": "TTSX",
+      "weight": 80,
+      "length": 1.081
+    },
+    {
+      "id": "blt_Bar264Lrx127",
+      "manufacturerId": "mfg_barnes",
+      "diameterId": "dia_264",
+      "name": "LRX",
+      "weight": 127,
+      "length": 1.399
+    },
+    {
+      "id": "blt_Bar264Ttsx120",
+      "manufacturerId": "mfg_barnes",
+      "diameterId": "dia_264",
+      "name": "TTSX",
+      "weight": 120,
+      "length": 1.322
+    },
+    {
+      "id": "blt_Bar277Tsx130",
+      "manufacturerId": "mfg_barnes",
+      "diameterId": "dia_277",
+      "name": "TSX",
+      "weight": 130,
+      "length": 1.322
+    },
+    {
+      "id": "blt_Bar277Ttsx130",
+      "manufacturerId": "mfg_barnes",
+      "diameterId": "dia_277",
+      "name": "TTSX",
+      "weight": 130,
+      "length": 1.4035
+    },
+    {
+      "id": "blt_Bar284Lrx145",
+      "manufacturerId": "mfg_barnes",
+      "diameterId": "dia_284",
+      "name": "LRX",
+      "weight": 145,
+      "length": 1.422
+    },
+    {
+      "id": "blt_Bar284Ttsx140",
+      "manufacturerId": "mfg_barnes",
+      "diameterId": "dia_284",
+      "name": "TTSX",
+      "weight": 140,
+      "length": 1.27
+    },
+    {
+      "id": "blt_Bar308Tsx168",
+      "manufacturerId": "mfg_barnes",
+      "diameterId": "dia_308",
+      "name": "TSX",
+      "weight": 168,
+      "length": 1.406
+    },
+    {
+      "id": "blt_Bar308Ttsx150",
+      "manufacturerId": "mfg_barnes",
+      "diameterId": "dia_308",
+      "name": "TTSX",
+      "weight": 150,
+      "length": 1.3
+    },
+    {
+      "id": "blt_Bar338Lrx265",
+      "manufacturerId": "mfg_barnes",
+      "diameterId": "dia_338",
+      "name": "LRX",
+      "weight": 265,
+      "length": 1.783
+    },
+    {
+      "id": "blt_Bar338Ttsx225",
+      "manufacturerId": "mfg_barnes",
+      "diameterId": "dia_338",
+      "name": "TTSX",
+      "weight": 225,
+      "length": 1.547
+    },
+    {
+      "id": "blt_Ber224ClassHunt80",
+      "manufacturerId": "mfg_berger",
+      "diameterId": "dia_224",
+      "name": "Classic Hunter",
+      "weight": 80,
+      "length": 1.106
+    },
+    {
+      "id": "blt_Ber224VldTgt77",
+      "manufacturerId": "mfg_berger",
+      "diameterId": "dia_224",
+      "name": "VLD Target",
+      "weight": 77,
+      "length": 1.015
+    },
+    {
+      "id": "blt_Ber243ClassHunt95",
+      "manufacturerId": "mfg_berger",
+      "diameterId": "dia_243",
+      "name": "Classic Hunter",
+      "weight": 95,
+      "length": 1.076
+    },
+    {
+      "id": "blt_Ber243HybTgt105",
+      "manufacturerId": "mfg_berger",
+      "diameterId": "dia_243",
+      "name": "Hybrid Target",
+      "weight": 105,
+      "length": 1.256
+    },
+    {
+      "id": "blt_Ber243VldHunt95",
+      "manufacturerId": "mfg_berger",
+      "diameterId": "dia_243",
+      "name": "VLD Hunting",
+      "weight": 95,
+      "length": 1.13
+    },
+    {
+      "id": "blt_Ber264ClassHunt135",
+      "manufacturerId": "mfg_berger",
+      "diameterId": "dia_264",
+      "name": "Classic Hunter",
+      "weight": 135,
+      "length": 1.325
+    },
+    {
+      "id": "blt_Ber264HybTgt140",
+      "manufacturerId": "mfg_berger",
+      "diameterId": "dia_264",
+      "name": "Hybrid Target",
+      "weight": 140,
+      "length": 1.403
+    },
+    {
+      "id": "blt_Ber264VldHunt140",
+      "manufacturerId": "mfg_berger",
+      "diameterId": "dia_264",
+      "name": "VLD Hunting",
+      "weight": 140,
+      "length": 1.286
+    },
+    {
+      "id": "blt_Ber277EliteHunt170",
+      "manufacturerId": "mfg_berger",
+      "diameterId": "dia_277",
+      "name": "Elite Hunter",
+      "weight": 170,
+      "length": 1.49
+    },
+    {
+      "id": "blt_Ber277VldHunt150",
+      "manufacturerId": "mfg_berger",
+      "diameterId": "dia_277",
+      "name": "VLD Hunting",
+      "weight": 150,
+      "length": 1.294
+    },
+    {
+      "id": "blt_Ber284ClassHunt150",
+      "manufacturerId": "mfg_berger",
+      "diameterId": "dia_284",
+      "name": "Classic Hunter",
+      "weight": 150,
+      "length": 1.253
+    },
+    {
+      "id": "blt_Ber284HybTgt180",
+      "manufacturerId": "mfg_berger",
+      "diameterId": "dia_284",
+      "name": "Hybrid Target",
+      "weight": 180,
+      "length": 1.527
+    },
+    {
+      "id": "blt_Ber284VldHunt168",
+      "manufacturerId": "mfg_berger",
+      "diameterId": "dia_284",
+      "name": "VLD Hunting",
+      "weight": 168,
+      "length": 1.372
+    },
+    {
+      "id": "blt_Ber308ClassHunt168",
+      "manufacturerId": "mfg_berger",
+      "diameterId": "dia_308",
+      "name": "Classic Hunter",
+      "weight": 168,
+      "length": 1.228
+    },
+    {
+      "id": "blt_Ber308HybTgt185",
+      "manufacturerId": "mfg_berger",
+      "diameterId": "dia_308",
+      "name": "Hybrid Target",
+      "weight": 185,
+      "length": 1.418
+    },
+    {
+      "id": "blt_Ber308VldHunt168",
+      "manufacturerId": "mfg_berger",
+      "diameterId": "dia_308",
+      "name": "VLD Hunting",
+      "weight": 168,
+      "length": 1.28
+    },
+    {
+      "id": "blt_Ber338HybOtm300",
+      "manufacturerId": "mfg_berger",
+      "diameterId": "dia_338",
+      "name": "Hybrid OTM Tactical",
+      "weight": 300,
+      "length": 1.874
+    },
+    {
+      "id": "blt_Fed224Tbt62",
+      "manufacturerId": "mfg_federal",
+      "diameterId": "dia_224",
+      "name": "Trophy Bonded Tip",
+      "weight": 62,
+      "length": 0.9
+    },
+    {
+      "id": "blt_Fed243Fusion95",
+      "manufacturerId": "mfg_federal",
+      "diameterId": "dia_243",
+      "name": "Fusion",
+      "weight": 95,
+      "length": 1.025
+    },
+    {
+      "id": "blt_Fed264TermAsc130",
+      "manufacturerId": "mfg_federal",
+      "diameterId": "dia_264",
+      "name": "Terminal Ascent",
+      "weight": 130,
+      "length": 1.354
+    },
+    {
+      "id": "blt_Fed277Tbt130",
+      "manufacturerId": "mfg_federal",
+      "diameterId": "dia_277",
+      "name": "Trophy Bonded Tip",
+      "weight": 130,
+      "length": 1.29
+    },
+    {
+      "id": "blt_Fed284Fusion140",
+      "manufacturerId": "mfg_federal",
+      "diameterId": "dia_284",
+      "name": "Fusion",
+      "weight": 140,
+      "length": 1.135
+    },
+    {
+      "id": "blt_Fed308Fusion150",
+      "manufacturerId": "mfg_federal",
+      "diameterId": "dia_308",
+      "name": "Fusion",
+      "weight": 150,
+      "length": 1.065
+    },
+    {
+      "id": "blt_Fed308TermAsc175",
+      "manufacturerId": "mfg_federal",
+      "diameterId": "dia_308",
+      "name": "Terminal Ascent",
+      "weight": 175,
+      "length": 1.466
+    },
+    {
+      "id": "blt_Hdy224Eldm75",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_224",
+      "name": "ELD Match",
+      "weight": 75,
+      "length": 1.049
+    },
+    {
+      "id": "blt_Hdy224Fmj55",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_224",
+      "name": "FMJ-BT",
+      "weight": 55,
+      "length": 0.735
+    },
+    {
+      "id": "blt_Hdy224Gmx55",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_224",
+      "name": "GMX",
+      "weight": 55,
+      "length": 0.822
+    },
+    {
+      "id": "blt_Hdy224Vmax55",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_224",
+      "name": "V-MAX",
+      "weight": 55,
+      "length": 0.81
+    },
+    {
+      "id": "blt_Hdy243Eldm108",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_243",
+      "name": "ELD Match",
+      "weight": 108,
+      "length": 1.252
+    },
+    {
+      "id": "blt_Hdy243Il100",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_243",
+      "name": "InterLock",
+      "weight": 100,
+      "length": 1.057
+    },
+    {
+      "id": "blt_Hdy243Sst95",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_243",
+      "name": "SST",
+      "weight": 95,
+      "length": 1.13
+    },
+    {
+      "id": "blt_Hdy243Vmax75",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_243",
+      "name": "V-MAX",
+      "weight": 75,
+      "length": 0.942
+    },
+    {
+      "id": "blt_Hdy264Amax140",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_264",
+      "name": "A-MAX",
+      "weight": 140,
+      "length": 1.375
+    },
+    {
+      "id": "blt_Hdy264Eldm140",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_264",
+      "name": "ELD Match",
+      "weight": 140,
+      "length": 1.38
+    },
+    {
+      "id": "blt_Hdy264Gmx120",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_264",
+      "name": "GMX",
+      "weight": 120,
+      "length": 1.365
+    },
+    {
+      "id": "blt_Hdy264Sst129",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_264",
+      "name": "SST",
+      "weight": 129,
+      "length": 1.31
+    },
+    {
+      "id": "blt_Hdy277Eldx145",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_277",
+      "name": "ELD-X",
+      "weight": 145,
+      "length": 1.4
+    },
+    {
+      "id": "blt_Hdy277Il150",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_277",
+      "name": "InterLock",
+      "weight": 150,
+      "length": 1.205
+    },
+    {
+      "id": "blt_Hdy277Sst130",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_277",
+      "name": "SST",
+      "weight": 130,
+      "length": 1.25
+    },
+    {
+      "id": "blt_Hdy284Eldm162",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_284",
+      "name": "ELD Match",
+      "weight": 162,
+      "length": 1.42
+    },
+    {
+      "id": "blt_Hdy284Il154",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_284",
+      "name": "InterLock",
+      "weight": 154,
+      "length": 1.25
+    },
+    {
+      "id": "blt_Hdy284Sst139",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_284",
+      "name": "SST",
+      "weight": 139,
+      "length": 1.28
+    },
+    {
+      "id": "blt_Hdy308Amax168",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_308",
+      "name": "A-MAX",
+      "weight": 168,
+      "length": 1.375
+    },
+    {
+      "id": "blt_Hdy308Bthp168",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_308",
+      "name": "BTHP Match",
+      "weight": 168,
+      "length": 1.24
+    },
+    {
+      "id": "blt_Hdy308Eldm168",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_308",
+      "name": "ELD Match",
+      "weight": 168,
+      "length": 1.375
+    },
+    {
+      "id": "blt_Hdy308Il150",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_308",
+      "name": "InterLock",
+      "weight": 150,
+      "length": 1.055
+    },
+    {
+      "id": "blt_Hdy308Sst150",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_308",
+      "name": "SST",
+      "weight": 150,
+      "length": 1.155
+    },
+    {
+      "id": "blt_Hdy338Atip300",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_338",
+      "name": "A-TIP Match",
+      "weight": 300,
+      "length": 1.815
+    },
+    {
+      "id": "blt_Hdy338Eldm285",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_338",
+      "name": "ELD Match",
+      "weight": 285,
+      "length": 1.725
+    },
+    {
+      "id": "blt_KC2jBvTCxwT-9kIWN8rNpA",
+      "manufacturerId": "mfg_berger",
+      "diameterId": "dia_224",
+      "name": "FB Target",
+      "weight": 55,
+      "length": 0.743
+    },
+    {
+      "id": "blt_Lap264Scenar139",
+      "manufacturerId": "mfg_lapua",
+      "diameterId": "dia_264",
+      "name": "Scenar",
+      "weight": 139,
+      "length": 1.28
+    },
+    {
+      "id": "blt_Lap308Scenar155",
+      "manufacturerId": "mfg_lapua",
+      "diameterId": "dia_308",
+      "name": "Scenar",
+      "weight": 155,
+      "length": 1.24
+    },
+    {
+      "id": "blt_Lap338Scenar250",
+      "manufacturerId": "mfg_lapua",
+      "diameterId": "dia_338",
+      "name": "Scenar",
+      "weight": 250,
+      "length": 1.44
+    },
+    {
+      "id": "blt_Leh308CtrlChaos152",
+      "manufacturerId": "mfg_lehighDefense",
+      "diameterId": "dia_308",
+      "name": "Controlled Chaos",
+      "weight": 152,
+      "length": 1.34
+    },
+    {
+      "id": "blt_Nos224AccuB64",
+      "manufacturerId": "mfg_nosler",
+      "diameterId": "dia_224",
+      "name": "AccuBond",
+      "weight": 64,
+      "length": 0.94
+    },
+    {
+      "id": "blt_Nos224BTip55",
+      "manufacturerId": "mfg_nosler",
+      "diameterId": "dia_224",
+      "name": "Ballistic Tip",
+      "weight": 55,
+      "length": 0.81
+    },
+    {
+      "id": "blt_Nos224Varm55",
+      "manufacturerId": "mfg_nosler",
+      "diameterId": "dia_224",
+      "name": "Varmageddon",
+      "weight": 55,
+      "length": 0.78
+    },
+    {
+      "id": "blt_Nos243Accub90",
+      "manufacturerId": "mfg_nosler",
+      "diameterId": "dia_243",
+      "name": "AccuBond",
+      "weight": 90,
+      "length": 1.05
+    },
+    {
+      "id": "blt_Nos243Btip95",
+      "manufacturerId": "mfg_nosler",
+      "diameterId": "dia_243",
+      "name": "Ballistic Tip",
+      "weight": 95,
+      "length": 1.11
+    },
+    {
+      "id": "blt_Nos243Part95",
+      "manufacturerId": "mfg_nosler",
+      "diameterId": "dia_243",
+      "name": "Partition",
+      "weight": 95,
+      "length": 0.97
+    },
+    {
+      "id": "blt_Nos264Accub140",
+      "manufacturerId": "mfg_nosler",
+      "diameterId": "dia_264",
+      "name": "AccuBond",
+      "weight": 140,
+      "length": 1.35
+    },
+    {
+      "id": "blt_Nos264Btip120",
+      "manufacturerId": "mfg_nosler",
+      "diameterId": "dia_264",
+      "name": "Ballistic Tip",
+      "weight": 120,
+      "length": 1.25
+    },
+    {
+      "id": "blt_Nos264Part140",
+      "manufacturerId": "mfg_nosler",
+      "diameterId": "dia_264",
+      "name": "Partition",
+      "weight": 140,
+      "length": 1.16
+    },
+    {
+      "id": "blt_Nos277Accub140",
+      "manufacturerId": "mfg_nosler",
+      "diameterId": "dia_277",
+      "name": "AccuBond",
+      "weight": 140,
+      "length": 1.29
+    },
+    {
+      "id": "blt_Nos277Btip130",
+      "manufacturerId": "mfg_nosler",
+      "diameterId": "dia_277",
+      "name": "Ballistic Tip",
+      "weight": 130,
+      "length": 1.22
+    },
+    {
+      "id": "blt_Nos277Part150",
+      "manufacturerId": "mfg_nosler",
+      "diameterId": "dia_277",
+      "name": "Partition",
+      "weight": 150,
+      "length": 1.15
+    },
+    {
+      "id": "blt_Nos284Accub160",
+      "manufacturerId": "mfg_nosler",
+      "diameterId": "dia_284",
+      "name": "AccuBond",
+      "weight": 160,
+      "length": 1.38
+    },
+    {
+      "id": "blt_Nos284Btip140",
+      "manufacturerId": "mfg_nosler",
+      "diameterId": "dia_284",
+      "name": "Ballistic Tip",
+      "weight": 140,
+      "length": 1.29
+    },
+    {
+      "id": "blt_Nos284Part160",
+      "manufacturerId": "mfg_nosler",
+      "diameterId": "dia_284",
+      "name": "Partition",
+      "weight": 160,
+      "length": 1.2
+    },
+    {
+      "id": "blt_Nos308Accub180",
+      "manufacturerId": "mfg_nosler",
+      "diameterId": "dia_308",
+      "name": "AccuBond",
+      "weight": 180,
+      "length": 1.34
+    },
+    {
+      "id": "blt_Nos308Btip150",
+      "manufacturerId": "mfg_nosler",
+      "diameterId": "dia_308",
+      "name": "Ballistic Tip",
+      "weight": 150,
+      "length": 1.17
+    },
+    {
+      "id": "blt_Nos308CustComp168",
+      "manufacturerId": "mfg_nosler",
+      "diameterId": "dia_308",
+      "name": "Custom Competition",
+      "weight": 168,
+      "length": 1.22
+    },
+    {
+      "id": "blt_Nos308Part180",
+      "manufacturerId": "mfg_nosler",
+      "diameterId": "dia_308",
+      "name": "Partition",
+      "weight": 180,
+      "length": 1.25
+    },
+    {
+      "id": "blt_Nos338Accub225",
+      "manufacturerId": "mfg_nosler",
+      "diameterId": "dia_338",
+      "name": "AccuBond",
+      "weight": 225,
+      "length": 1.52
+    },
+    {
+      "id": "blt_Nos338Part250",
+      "manufacturerId": "mfg_nosler",
+      "diameterId": "dia_338",
+      "name": "Partition",
+      "weight": 250,
+      "length": 1.4
+    },
+    {
+      "id": "blt_Rem224AccutipV50",
+      "manufacturerId": "mfg_remington",
+      "diameterId": "dia_224",
+      "name": "AccuTip-V",
+      "weight": 50,
+      "length": 0.77
+    },
+    {
+      "id": "blt_Rem243Cl100",
+      "manufacturerId": "mfg_remington",
+      "diameterId": "dia_243",
+      "name": "Core-Lokt",
+      "weight": 100,
+      "length": 1
+    },
+    {
+      "id": "blt_Rem264Clt129",
+      "manufacturerId": "mfg_remington",
+      "diameterId": "dia_264",
+      "name": "Core-Lokt Tipped",
+      "weight": 129,
+      "length": 1.31
+    },
+    {
+      "id": "blt_Rem277Cl130",
+      "manufacturerId": "mfg_remington",
+      "diameterId": "dia_277",
+      "name": "Core-Lokt",
+      "weight": 130,
+      "length": 1.07
+    },
+    {
+      "id": "blt_Rem284Clt150",
+      "manufacturerId": "mfg_remington",
+      "diameterId": "dia_284",
+      "name": "Core-Lokt Tipped",
+      "weight": 150,
+      "length": 1.32
+    },
+    {
+      "id": "blt_Rem308Cl150",
+      "manufacturerId": "mfg_remington",
+      "diameterId": "dia_308",
+      "name": "Core-Lokt",
+      "weight": 150,
+      "length": 1.04
+    },
+    {
+      "id": "blt_Rem308Clt150",
+      "manufacturerId": "mfg_remington",
+      "diameterId": "dia_308",
+      "name": "Core-Lokt Tipped",
+      "weight": 150,
+      "length": 1.2
+    },
+    {
+      "id": "blt_Sie224Blitz50",
+      "manufacturerId": "mfg_sierra",
+      "diameterId": "dia_224",
+      "name": "BlitzKing",
+      "weight": 50,
+      "length": 0.79
+    },
+    {
+      "id": "blt_Sie224Match69",
+      "manufacturerId": "mfg_sierra",
+      "diameterId": "dia_224",
+      "name": "MatchKing",
+      "weight": 69,
+      "length": 0.9
+    },
+    {
+      "id": "blt_Sie224Match77",
+      "manufacturerId": "mfg_sierra",
+      "diameterId": "dia_224",
+      "name": "MatchKing",
+      "weight": 77,
+      "length": 0.99
+    },
+    {
+      "id": "blt_Sie243Gk100",
+      "manufacturerId": "mfg_sierra",
+      "diameterId": "dia_243",
+      "name": "GameKing",
+      "weight": 100,
+      "length": 1.078
+    },
+    {
+      "id": "blt_Sie243Match107",
+      "manufacturerId": "mfg_sierra",
+      "diameterId": "dia_243",
+      "name": "MatchKing",
+      "weight": 107,
+      "length": 1.25
+    },
+    {
+      "id": "blt_Sie243ProHunt100",
+      "manufacturerId": "mfg_sierra",
+      "diameterId": "dia_243",
+      "name": "Pro-Hunter",
+      "weight": 100,
+      "length": 0.98
+    },
+    {
+      "id": "blt_Sie264Gk130",
+      "manufacturerId": "mfg_sierra",
+      "diameterId": "dia_264",
+      "name": "GameKing",
+      "weight": 130,
+      "length": 1.21
+    },
+    {
+      "id": "blt_Sie264Match142",
+      "manufacturerId": "mfg_sierra",
+      "diameterId": "dia_264",
+      "name": "MatchKing",
+      "weight": 142,
+      "length": 1.3
+    },
+    {
+      "id": "blt_Sie277Gk130",
+      "manufacturerId": "mfg_sierra",
+      "diameterId": "dia_277",
+      "name": "GameKing",
+      "weight": 130,
+      "length": 1.15
+    },
+    {
+      "id": "blt_Sie277ProHunt150",
+      "manufacturerId": "mfg_sierra",
+      "diameterId": "dia_277",
+      "name": "Pro-Hunter",
+      "weight": 150,
+      "length": 1.11
+    },
+    {
+      "id": "blt_Sie284Gk150",
+      "manufacturerId": "mfg_sierra",
+      "diameterId": "dia_284",
+      "name": "GameKing",
+      "weight": 150,
+      "length": 1.22
+    },
+    {
+      "id": "blt_Sie284Match168",
+      "manufacturerId": "mfg_sierra",
+      "diameterId": "dia_284",
+      "name": "MatchKing",
+      "weight": 168,
+      "length": 1.34
+    },
+    {
+      "id": "blt_Sie308Gk165",
+      "manufacturerId": "mfg_sierra",
+      "diameterId": "dia_308",
+      "name": "GameKing",
+      "weight": 165,
+      "length": 1.2
+    },
+    {
+      "id": "blt_Sie308Match168",
+      "manufacturerId": "mfg_sierra",
+      "diameterId": "dia_308",
+      "name": "MatchKing",
+      "weight": 168,
+      "length": 1.21
+    },
+    {
+      "id": "blt_Sie308Match175",
+      "manufacturerId": "mfg_sierra",
+      "diameterId": "dia_308",
+      "name": "MatchKing",
+      "weight": 175,
+      "length": 1.27
+    },
+    {
+      "id": "blt_Sie338Gk250",
+      "manufacturerId": "mfg_sierra",
+      "diameterId": "dia_338",
+      "name": "GameKing",
+      "weight": 250,
+      "length": 1.48
+    },
+    {
+      "id": "blt_Sie338Match300",
+      "manufacturerId": "mfg_sierra",
+      "diameterId": "dia_338",
+      "name": "MatchKing",
+      "weight": 300,
+      "length": 1.63
+    },
+    {
+      "id": "blt_Spr224Gd62",
+      "manufacturerId": "mfg_speer",
+      "diameterId": "dia_224",
+      "name": "Gold Dot",
+      "weight": 62,
+      "length": 0.88
+    },
+    {
+      "id": "blt_Spr224Tnt50",
+      "manufacturerId": "mfg_speer",
+      "diameterId": "dia_224",
+      "name": "TNT",
+      "weight": 50,
+      "length": 0.69
+    },
+    {
+      "id": "blt_Spr243Gs100",
+      "manufacturerId": "mfg_speer",
+      "diameterId": "dia_243",
+      "name": "Grand Slam",
+      "weight": 100,
+      "length": 1.04
+    },
+    {
+      "id": "blt_Spr243Hc100",
+      "manufacturerId": "mfg_speer",
+      "diameterId": "dia_243",
+      "name": "Hot-Cor",
+      "weight": 100,
+      "length": 1.0655
+    },
+    {
+      "id": "blt_Spr264Gd140",
+      "manufacturerId": "mfg_speer",
+      "diameterId": "dia_264",
+      "name": "Gold Dot",
+      "weight": 140,
+      "length": 1.36
+    },
+    {
+      "id": "blt_Spr277Dc150",
+      "manufacturerId": "mfg_speer",
+      "diameterId": "dia_277",
+      "name": "DeepCurl",
+      "weight": 150,
+      "length": 1.15
+    },
+    {
+      "id": "blt_Spr277Hc130",
+      "manufacturerId": "mfg_speer",
+      "diameterId": "dia_277",
+      "name": "Hot-Cor",
+      "weight": 130,
+      "length": 1.06
+    },
+    {
+      "id": "blt_Spr284Gs160",
+      "manufacturerId": "mfg_speer",
+      "diameterId": "dia_284",
+      "name": "Grand Slam",
+      "weight": 160,
+      "length": 1.22
+    },
+    {
+      "id": "blt_Spr284Hc145",
+      "manufacturerId": "mfg_speer",
+      "diameterId": "dia_284",
+      "name": "Hot-Cor",
+      "weight": 145,
+      "length": 1.15
+    },
+    {
+      "id": "blt_Spr308Hc150",
+      "manufacturerId": "mfg_speer",
+      "diameterId": "dia_308",
+      "name": "Hot-Cor",
+      "weight": 150,
+      "length": 1.05
+    },
+    {
+      "id": "blt_Spr308Impact172",
+      "manufacturerId": "mfg_speer",
+      "diameterId": "dia_308",
+      "name": "Impact",
+      "weight": 172,
+      "length": 1.41
+    },
+    {
+      "id": "blt_Swi264Scirocco130",
+      "manufacturerId": "mfg_swift",
+      "diameterId": "dia_264",
+      "name": "Scirocco II",
+      "weight": 130,
+      "length": 1.34
+    },
+    {
+      "id": "blt_Swi284Aframe160",
+      "manufacturerId": "mfg_swift",
+      "diameterId": "dia_284",
+      "name": "A-Frame",
+      "weight": 160,
+      "length": 1.2
+    },
+    {
+      "id": "blt_Win224Dsxp64",
+      "manufacturerId": "mfg_winchester",
+      "diameterId": "dia_224",
+      "name": "Deer Season XP",
+      "weight": 64,
+      "length": 0.88
+    },
+    {
+      "id": "blt_Win224Pp55",
+      "manufacturerId": "mfg_winchester",
+      "diameterId": "dia_224",
+      "name": "Power-Point",
+      "weight": 55,
+      "length": 0.71
+    },
+    {
+      "id": "blt_Win243Bs95",
+      "manufacturerId": "mfg_winchester",
+      "diameterId": "dia_243",
+      "name": "Ballistic Silvertip",
+      "weight": 95,
+      "length": 1.1
+    },
+    {
+      "id": "blt_Win264AccuLr142",
+      "manufacturerId": "mfg_winchester",
+      "diameterId": "dia_264",
+      "name": "AccuBond LR",
+      "weight": 142,
+      "length": 1.41
+    },
+    {
+      "id": "blt_Win277Ci130",
+      "manufacturerId": "mfg_winchester",
+      "diameterId": "dia_277",
+      "name": "Copper Impact",
+      "weight": 130,
+      "length": 1.37
+    },
+    {
+      "id": "blt_Win277Pp150",
+      "manufacturerId": "mfg_winchester",
+      "diameterId": "dia_277",
+      "name": "Power-Point",
+      "weight": 150,
+      "length": 1.12
+    },
+    {
+      "id": "blt_Win284Bs140",
+      "manufacturerId": "mfg_winchester",
+      "diameterId": "dia_284",
+      "name": "Ballistic Silvertip",
+      "weight": 140,
+      "length": 1.3
+    },
+    {
+      "id": "blt_Win308Dsxp150",
+      "manufacturerId": "mfg_winchester",
+      "diameterId": "dia_308",
+      "name": "Deer Season XP",
+      "weight": 150,
+      "length": 1.15
+    },
+    {
+      "id": "blt_Win308Pp150",
+      "manufacturerId": "mfg_winchester",
+      "diameterId": "dia_308",
+      "name": "Power-Point",
+      "weight": 150,
+      "length": 1.05
+    },
+    {
+      "id": "eeZ7VCVbFePdWPzXf_H1tw",
+      "manufacturerId": "mfg_berger",
+      "diameterId": "dia_308",
+      "name": "Hybrid Target",
+      "weight": 168,
+      "length": 1.287
+    },
+    {
+      "id": "oU_DmYuUe3C7HZMyxqTOOQ",
+      "manufacturerId": "mfg_hornady",
+      "diameterId": "dia_224",
+      "name": "HP Match",
+      "weight": 53,
+      "length": 0.715
+    }
+  ],
+  "powders": [
+    {
+      "id": "pow_accurate2230",
+      "manufacturerId": "mfg_accurate",
+      "name": "2230"
+    },
+    {
+      "id": "pow_accurate2460",
+      "manufacturerId": "mfg_accurate",
+      "name": "2460"
+    },
+    {
+      "id": "pow_accurate2520",
+      "manufacturerId": "mfg_accurate",
+      "name": "2520"
+    },
+    {
+      "id": "pow_accurate4350",
+      "manufacturerId": "mfg_accurate",
+      "name": "4350"
+    },
+    {
+      "id": "pow_benchmark",
+      "manufacturerId": "mfg_hodgdon",
+      "name": "Benchmark"
+    },
+    {
+      "id": "pow_biggame",
+      "manufacturerId": "mfg_ramshot",
+      "name": "Big Game"
+    },
+    {
+      "id": "pow_blc2",
+      "manufacturerId": "mfg_hodgdon",
+      "name": "BL-C(2)"
+    },
+    {
+      "id": "pow_cfe223",
+      "manufacturerId": "mfg_hodgdon",
+      "name": "CFE 223"
+    },
+    {
+      "id": "pow_h1000",
+      "manufacturerId": "mfg_hodgdon",
+      "name": "H1000"
+    },
+    {
+      "id": "pow_h335",
+      "manufacturerId": "mfg_hodgdon",
+      "name": "H335"
+    },
+    {
+      "id": "pow_h380",
+      "manufacturerId": "mfg_hodgdon",
+      "name": "H380"
+    },
+    {
+      "id": "pow_h4198",
+      "manufacturerId": "mfg_hodgdon",
+      "name": "H4198"
+    },
+    {
+      "id": "pow_h4350",
+      "manufacturerId": "mfg_hodgdon",
+      "name": "H4350"
+    },
+    {
+      "id": "pow_h4831sc",
+      "manufacturerId": "mfg_hodgdon",
+      "name": "H4831SC"
+    },
+    {
+      "id": "pow_h4895",
+      "manufacturerId": "mfg_hodgdon",
+      "name": "H4895"
+    },
+    {
+      "id": "pow_hunter",
+      "manufacturerId": "mfg_ramshot",
+      "name": "Hunter"
+    },
+    {
+      "id": "pow_imr3031",
+      "manufacturerId": "mfg_hodgdon",
+      "name": "IMR 3031"
+    },
+    {
+      "id": "pow_imr4064",
+      "manufacturerId": "mfg_hodgdon",
+      "name": "IMR 4064"
+    },
+    {
+      "id": "pow_imr4198",
+      "manufacturerId": "mfg_hodgdon",
+      "name": "IMR 4198"
+    },
+    {
+      "id": "pow_imr4350",
+      "manufacturerId": "mfg_hodgdon",
+      "name": "IMR 4350"
+    },
+    {
+      "id": "pow_imr4451",
+      "manufacturerId": "mfg_hodgdon",
+      "name": "IMR 4451"
+    },
+    {
+      "id": "pow_imr4831",
+      "manufacturerId": "mfg_hodgdon",
+      "name": "IMR 4831"
+    },
+    {
+      "id": "pow_imr4895",
+      "manufacturerId": "mfg_hodgdon",
+      "name": "IMR 4895"
+    },
+    {
+      "id": "pow_imr7828",
+      "manufacturerId": "mfg_hodgdon",
+      "name": "IMR 7828"
+    },
+    {
+      "id": "pow_imr8208xbr",
+      "manufacturerId": "mfg_hodgdon",
+      "name": "IMR 8208 XBR"
+    },
+    {
+      "id": "pow_lt32",
+      "manufacturerId": "mfg_accurate",
+      "name": "LT-32"
+    },
+    {
+      "id": "pow_magnum",
+      "manufacturerId": "mfg_ramshot",
+      "name": "Magnum"
+    },
+    {
+      "id": "pow_n133",
+      "manufacturerId": "mfg_vihtavuori",
+      "name": "N133"
+    },
+    {
+      "id": "pow_n135",
+      "manufacturerId": "mfg_vihtavuori",
+      "name": "N135"
+    },
+    {
+      "id": "pow_n140",
+      "manufacturerId": "mfg_vihtavuori",
+      "name": "N140"
+    },
+    {
+      "id": "pow_n160",
+      "manufacturerId": "mfg_vihtavuori",
+      "name": "N160"
+    },
+    {
+      "id": "pow_n540",
+      "manufacturerId": "mfg_vihtavuori",
+      "name": "N540"
+    },
+    {
+      "id": "pow_n555",
+      "manufacturerId": "mfg_vihtavuori",
+      "name": "N555"
+    },
+    {
+      "id": "pow_n560",
+      "manufacturerId": "mfg_vihtavuori",
+      "name": "N560"
+    },
+    {
+      "id": "pow_pp2000mr",
+      "manufacturerId": "mfg_alliant",
+      "name": "Power Pro 2000-MR"
+    },
+    {
+      "id": "pow_retumbo",
+      "manufacturerId": "mfg_hodgdon",
+      "name": "Retumbo"
+    },
+    {
+      "id": "pow_rl15",
+      "manufacturerId": "mfg_alliant",
+      "name": "Reloder 15"
+    },
+    {
+      "id": "pow_rl16",
+      "manufacturerId": "mfg_alliant",
+      "name": "Reloder 16"
+    },
+    {
+      "id": "pow_rl17",
+      "manufacturerId": "mfg_alliant",
+      "name": "Reloder 17"
+    },
+    {
+      "id": "pow_rl19",
+      "manufacturerId": "mfg_alliant",
+      "name": "Reloder 19"
+    },
+    {
+      "id": "pow_rl22",
+      "manufacturerId": "mfg_alliant",
+      "name": "Reloder 22"
+    },
+    {
+      "id": "pow_rl23",
+      "manufacturerId": "mfg_alliant",
+      "name": "Reloder 23"
+    },
+    {
+      "id": "pow_rl26",
+      "manufacturerId": "mfg_alliant",
+      "name": "Reloder 26"
+    },
+    {
+      "id": "pow_staball65",
+      "manufacturerId": "mfg_winchester",
+      "name": "StaBALL 6.5"
+    },
+    {
+      "id": "pow_superformance",
+      "manufacturerId": "mfg_hodgdon",
+      "name": "Superformance"
+    },
+    {
+      "id": "pow_tac",
+      "manufacturerId": "mfg_ramshot",
+      "name": "TAC"
+    },
+    {
+      "id": "pow_us869",
+      "manufacturerId": "mfg_hodgdon",
+      "name": "US 869"
+    },
+    {
+      "id": "pow_varget",
+      "manufacturerId": "mfg_hodgdon",
+      "name": "Varget"
+    },
+    {
+      "id": "pow_win748",
+      "manufacturerId": "mfg_winchester",
+      "name": "748"
+    },
+    {
+      "id": "pow_xterminator",
+      "manufacturerId": "mfg_ramshot",
+      "name": "X-Terminator"
+    }
+  ],
+  "primers": [
+    {
+      "id": "pri_cci200",
+      "manufacturerId": "mfg_cci",
+      "name": "CCI 200 Large Rifle"
+    },
+    {
+      "id": "pri_cci400",
+      "manufacturerId": "mfg_cci",
+      "name": "CCI 400 Small Rifle"
+    },
+    {
+      "id": "pri_cci450",
+      "manufacturerId": "mfg_cci",
+      "name": "CCI 450 Small Rifle Magnum"
+    },
+    {
+      "id": "pri_ccibr2",
+      "manufacturerId": "mfg_cci",
+      "name": "CCI BR-2 Large Rifle Benchrest"
+    },
+    {
+      "id": "pri_ccibr4",
+      "manufacturerId": "mfg_cci",
+      "name": "CCI BR-4 Small Rifle Benchrest"
+    },
+    {
+      "id": "pri_fed205",
+      "manufacturerId": "mfg_federal",
+      "name": "Federal 205 Small Rifle"
+    },
+    {
+      "id": "pri_fed210m",
+      "manufacturerId": "mfg_federal",
+      "name": "Federal 210M Large Rifle Match"
+    },
+    {
+      "id": "pri_fed215",
+      "manufacturerId": "mfg_federal",
+      "name": "Federal 215 Large Rifle Magnum"
+    },
+    {
+      "id": "pri_rem7_5",
+      "manufacturerId": "mfg_remington",
+      "name": "Remington 7 1/2 Small Rifle Benchrest"
+    },
+    {
+      "id": "pri_rem9_5",
+      "manufacturerId": "mfg_remington",
+      "name": "Remington 9 1/2 Large Rifle"
+    },
+    {
+      "id": "pri_win_lr",
+      "manufacturerId": "mfg_winchester",
+      "name": "WLR Large Rifle"
+    },
+    {
+      "id": "pri_win_sr",
+      "manufacturerId": "mfg_winchester",
+      "name": "WSR Small Rifle"
+    }
+  ],
+  "brass": [
+    {
+      "id": "ESh0SQr8xBngXAIeXCSwug",
+      "cartridgeId": "cart_223rem",
+      "manufacturerId": "mfg_federal",
+      "primerPocket": "Small",
+      "primerHole": "Standard"
+    },
+    {
+      "id": "br_223_hornady",
+      "cartridgeId": "cart_223rem",
+      "manufacturerId": "mfg_hornady",
+      "primerPocket": "Small",
+      "primerHole": "Standard"
+    },
+    {
+      "id": "br_308_federal",
+      "cartridgeId": "cart_308win",
+      "manufacturerId": "mfg_federal",
+      "primerPocket": "Large",
+      "primerHole": "Standard"
+    },
+    {
+      "id": "br_65cm_lapua",
+      "cartridgeId": "cart_65cm",
+      "manufacturerId": "mfg_lapua",
+      "primerPocket": "Small",
+      "primerHole": "Standard"
+    },
+    {
+      "id": "iCTf0Mw4do-OKjnfGbBX0A",
+      "cartridgeId": "cart_308win",
+      "manufacturerId": "tDgVyxWdx2OYdHcMVVPFpg",
+      "primerPocket": "Small",
+      "primerHole": "Standard"
+    }
+  ],
+  "cartridges": [
+    {
+      "id": "cart_17hornet",
+      "name": ".17 Hornet",
+      "diameterId": "dia_172",
+      "oal": 1.723,
+      "trim": 1.34
+    },
+    {
+      "id": "cart_204ruger",
+      "name": ".204 Ruger",
+      "diameterId": "dia_204",
+      "oal": 2.26,
+      "trim": 1.84
+    },
+    {
+      "id": "cart_220swift",
+      "name": ".220 Swift",
+      "diameterId": "dia_224",
+      "oal": 2.68,
+      "trim": 2.195
+    },
+    {
+      "id": "cart_22250",
+      "name": ".22-250 Remington",
+      "diameterId": "dia_224",
+      "oal": 2.35,
+      "trim": 1.902
+    },
+    {
+      "id": "cart_223rem",
+      "name": ".223 Remington",
+      "diameterId": "dia_224",
+      "oal": 2.26,
+      "trim": 1.75
+    },
+    {
+      "id": "cart_22hornet",
+      "name": ".22 Hornet",
+      "diameterId": "dia_224",
+      "oal": 1.723,
+      "trim": 1.396
+    },
+    {
+      "id": "cart_243win",
+      "name": ".243 Winchester",
+      "diameterId": "dia_243",
+      "oal": 2.71,
+      "trim": 2.035
+    },
+    {
+      "id": "cart_2506rem",
+      "name": ".25-06 Remington",
+      "diameterId": "dia_257",
+      "oal": 3.25,
+      "trim": 2.484
+    },
+    {
+      "id": "cart_257wby",
+      "name": ".257 Weatherby Magnum",
+      "diameterId": "dia_257",
+      "oal": 3.25,
+      "trim": 2.539
+    },
+    {
+      "id": "cart_260rem",
+      "name": ".260 Remington",
+      "diameterId": "dia_264",
+      "oal": 2.8,
+      "trim": 2.025
+    },
+    {
+      "id": "cart_270win",
+      "name": ".270 Winchester",
+      "diameterId": "dia_277",
+      "oal": 3.34,
+      "trim": 2.53
+    },
+    {
+      "id": "cart_270wsm",
+      "name": ".270 WSM",
+      "diameterId": "dia_277",
+      "oal": 2.86,
+      "trim": 2.09
+    },
+    {
+      "id": "cart_280ai",
+      "name": ".280 Ackley Improved",
+      "diameterId": "dia_284",
+      "oal": 3.33,
+      "trim": 2.515
+    },
+    {
+      "id": "cart_28nosler",
+      "name": ".28 Nosler",
+      "diameterId": "dia_284",
+      "oal": 3.34,
+      "trim": 2.58
+    },
+    {
+      "id": "cart_3006",
+      "name": ".30-06 Springfield",
+      "diameterId": "dia_308",
+      "oal": 3.34,
+      "trim": 2.484
+    },
+    {
+      "id": "cart_300blk",
+      "name": ".300 AAC Blackout",
+      "diameterId": "dia_308",
+      "oal": 2.26,
+      "trim": 1.358
+    },
+    {
+      "id": "cart_300prc",
+      "name": ".300 PRC",
+      "diameterId": "dia_308",
+      "oal": 3.7,
+      "trim": 2.57
+    },
+    {
+      "id": "cart_300wby",
+      "name": ".300 Weatherby Magnum",
+      "diameterId": "dia_308",
+      "oal": 3.56,
+      "trim": 2.815
+    },
+    {
+      "id": "cart_300wm",
+      "name": ".300 Winchester Magnum",
+      "diameterId": "dia_308",
+      "oal": 3.34,
+      "trim": 2.61
+    },
+    {
+      "id": "cart_300wsm",
+      "name": ".300 WSM",
+      "diameterId": "dia_308",
+      "oal": 2.86,
+      "trim": 2.09
+    },
+    {
+      "id": "cart_3030win",
+      "name": ".30-30 Winchester",
+      "diameterId": "dia_308",
+      "oal": 2.55,
+      "trim": 2.029
+    },
+    {
+      "id": "cart_303brit",
+      "name": ".303 British",
+      "diameterId": "dia_311",
+      "oal": 3.075,
+      "trim": 2.212
+    },
+    {
+      "id": "cart_308win",
+      "name": ".308 Winchester",
+      "diameterId": "dia_308",
+      "oal": 2.8,
+      "trim": 2.005
+    },
+    {
+      "id": "cart_30carbine",
+      "name": ".30 Carbine",
+      "diameterId": "dia_308",
+      "oal": 1.68,
+      "trim": 1.28
+    },
+    {
+      "id": "cart_338federal",
+      "name": ".338 Federal",
+      "diameterId": "dia_338",
+      "oal": 2.8,
+      "trim": 2.005
+    },
+    {
+      "id": "cart_338lapua",
+      "name": ".338 Lapua Magnum",
+      "diameterId": "dia_338",
+      "oal": 3.681,
+      "trim": 2.714
+    },
+    {
+      "id": "cart_338winmag",
+      "name": ".338 Winchester Magnum",
+      "diameterId": "dia_338",
+      "oal": 3.34,
+      "trim": 2.49
+    },
+    {
+      "id": "cart_35whelen",
+      "name": ".35 Whelen",
+      "diameterId": "dia_358",
+      "oal": 3.34,
+      "trim": 2.484
+    },
+    {
+      "id": "cart_375hh",
+      "name": ".375 H&H Magnum",
+      "diameterId": "dia_375",
+      "oal": 3.6,
+      "trim": 2.84
+    },
+    {
+      "id": "cart_416rigby",
+      "name": ".416 Rigby",
+      "diameterId": "dia_416",
+      "oal": 3.75,
+      "trim": 2.895
+    },
+    {
+      "id": "cart_444marlin",
+      "name": ".444 Marlin",
+      "diameterId": "dia_429",
+      "oal": 2.55,
+      "trim": 2.215
+    },
+    {
+      "id": "cart_4570govt",
+      "name": ".45-70 Government",
+      "diameterId": "dia_458",
+      "oal": 2.55,
+      "trim": 2.095
+    },
+    {
+      "id": "cart_458lott",
+      "name": ".458 Lott",
+      "diameterId": "dia_458",
+      "oal": 3.6,
+      "trim": 2.79
+    },
+    {
+      "id": "cart_458winmag",
+      "name": ".458 Winchester Magnum",
+      "diameterId": "dia_458",
+      "oal": 3.34,
+      "trim": 2.49
+    },
+    {
+      "id": "cart_50bmg",
+      "name": ".50 BMG",
+      "diameterId": "dia_510",
+      "oal": 5.45,
+      "trim": 3.9
+    },
+    {
+      "id": "cart_556nato",
+      "name": "5.56x45mm NATO",
+      "diameterId": "dia_224",
+      "oal": 2.26,
+      "trim": 1.75
+    },
+    {
+      "id": "cart_65284norma",
+      "name": "6.5-284 Norma",
+      "diameterId": "dia_264",
+      "oal": 3.228,
+      "trim": 2.16
+    },
+    {
+      "id": "cart_65cm",
+      "name": "6.5 Creedmoor",
+      "diameterId": "dia_264",
+      "oal": 2.825,
+      "trim": 1.91
+    },
+    {
+      "id": "cart_65grendel",
+      "name": "6.5 Grendel",
+      "diameterId": "dia_264",
+      "oal": 2.26,
+      "trim": 1.51
+    },
+    {
+      "id": "cart_65prc",
+      "name": "6.5 PRC",
+      "diameterId": "dia_264",
+      "oal": 2.955,
+      "trim": 2.02
+    },
+    {
+      "id": "cart_65x55swedish",
+      "name": "6.5x55mm Swedish",
+      "diameterId": "dia_264",
+      "oal": 3.15,
+      "trim": 2.155
+    },
+    {
+      "id": "cart_68spc",
+      "name": "6.8 SPC",
+      "diameterId": "dia_277",
+      "oal": 2.26,
+      "trim": 1.676
+    },
+    {
+      "id": "cart_6mmbr",
+      "name": "6mm BR Norma",
+      "diameterId": "dia_243",
+      "oal": 2.3,
+      "trim": 1.55
+    },
+    {
+      "id": "cart_6mmcm",
+      "name": "6mm Creedmoor",
+      "diameterId": "dia_243",
+      "oal": 2.8,
+      "trim": 1.91
+    },
+    {
+      "id": "cart_762x39",
+      "name": "7.62x39mm",
+      "diameterId": "dia_310",
+      "oal": 2.2,
+      "trim": 1.518
+    },
+    {
+      "id": "cart_762x54r",
+      "name": "7.62x54mmR",
+      "diameterId": "dia_311",
+      "oal": 3.029,
+      "trim": 2.105
+    },
+    {
+      "id": "cart_7mm08",
+      "name": "7mm-08 Remington",
+      "diameterId": "dia_284",
+      "oal": 2.8,
+      "trim": 2.025
+    },
+    {
+      "id": "cart_7mmremmag",
+      "name": "7mm Remington Magnum",
+      "diameterId": "dia_284",
+      "oal": 3.29,
+      "trim": 2.49
+    },
+    {
+      "id": "cart_7prc",
+      "name": "7mm PRC",
+      "diameterId": "dia_284",
+      "oal": 3.34,
+      "trim": 2.27
+    },
+    {
+      "id": "cart_7x57mauser",
+      "name": "7x57mm Mauser",
+      "diameterId": "dia_284",
+      "oal": 3.065,
+      "trim": 2.235
+    }
+  ],
+  "firearms": [],
+  "loads": [],
+  "impactData": [],
+  "targetImages": []
+}
