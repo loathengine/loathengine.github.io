@@ -273,7 +273,7 @@ export function initStatisticalAnalysis() {
                 <th style="white-space: nowrap;">Session Details</th>
                 <th style="white-space: nowrap;">Shots</th>
                 <th style="white-space: nowrap;">Mean Radius (MR)</th>
-                <th style="white-space: nowrap;">R95</th>
+                <th style="white-space: nowrap;">95th Percentile Radius</th>
                 <th style="white-space: nowrap;">MR Confidence Interval (95%)</th>
                 <th style="white-space: nowrap;">Horizontal SD</th>
                 <th style="white-space: nowrap;">Vertical SD</th>
@@ -451,12 +451,12 @@ export function initStatisticalAnalysis() {
 
         let currentY = plotHeight + padding;
         const columns = [
-            { header: 'Session Details', x: padding, width: (canvasWidth - padding * 2) * 0.35 },
-            { header: 'Shots', x: padding + (canvasWidth - padding * 2) * 0.35, width: (canvasWidth - padding * 2) * 0.08 },
-            { header: 'MR', x: padding + (canvasWidth - padding * 2) * 0.43, width: (canvasWidth - padding * 2) * 0.12 },
-            { header: 'R95', x: padding + (canvasWidth - padding * 2) * 0.55, width: (canvasWidth - padding * 2) * 0.12 },
-            { header: 'MR CI (95%)', x: padding + (canvasWidth - padding * 2) * 0.67, width: (canvasWidth - padding * 2) * 0.18 },
-            { header: 'Vel. SD', x: padding + (canvasWidth - padding * 2) * 0.85, width: (canvasWidth - padding * 2) * 0.15 }
+            { header: 'Session Details', x: padding, width: (canvasWidth - padding * 2) * 0.32 },
+            { header: 'Shots', x: padding + (canvasWidth - padding * 2) * 0.32, width: (canvasWidth - padding * 2) * 0.08 },
+            { header: 'MR', x: padding + (canvasWidth - padding * 2) * 0.40, width: (canvasWidth - padding * 2) * 0.10 },
+            { header: '95th Percentile Radius', x: padding + (canvasWidth - padding * 2) * 0.50, width: (canvasWidth - padding * 2) * 0.20 },
+            { header: 'MR CI (95%)', x: padding + (canvasWidth - padding * 2) * 0.70, width: (canvasWidth - padding * 2) * 0.18 },
+            { header: 'Vel. SD', x: padding + (canvasWidth - padding * 2) * 0.88, width: (canvasWidth - padding * 2) * 0.12 }
         ];
 
         ctx.font = `bold ${FONT_SIZE_PT * 2.5}px Inter`;
