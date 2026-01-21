@@ -107,7 +107,8 @@ export function initStatisticalAnalysis() {
         return { r: r, r2: r * r };
     }
 
-    function getMradFactor(dataUnits, targetDistance, distanceUnits) {
+    // Helper to get conversion multipliers for both MOA and Mrad
+    function getAngularFactors(dataUnits, targetDistance, distanceUnits) {
         if (!targetDistance || targetDistance <= 0) return null;
         
         let distMeters = targetDistance;
@@ -117,8 +118,13 @@ export function initStatisticalAnalysis() {
         if (dataUnits === 'in') sizeMeters = 0.0254;
         else if (dataUnits === 'mm') sizeMeters = 0.001;
         
-        // mrad = (size / distance) * 1000
-        return (sizeMeters / distMeters) * 1000;
+        // Base radians = size / distance
+        const radFactor = sizeMeters / distMeters;
+        
+        return {
+            mrad: radFactor * 1000,
+            moa: radFactor * (180 / Math.PI) * 60 // approx 3437.75
+        };
     }
 
     function calculateStatsForSession(shots, targetDistance = null, distanceUnits = null) {
@@ -136,11 +142,11 @@ export function initStatisticalAnalysis() {
         const sd_y = Math.sqrt(all_y.reduce((sum, y) => sum + Math.pow(y - mean_y, 2), 0) / df);
         const meanRadius = shots.reduce((sum, s) => sum + Math.hypot(s.x - mean_x, s.y - mean_y), 0) / n;
         
-        // R95 estimate: R95 = MR * sqrt(4 * ln(20) / pi) approx MR * 1.953
+        // R95 estimate
         const r95 = meanRadius * 1.953;
-
         const hasVerticalDispersion = sd_y > sd_x * 1.5;
 
+        // Velocity Stats
         const velocityShots = shots.filter(s => s.velocity !== null && typeof s.velocity === 'number' && !isNaN(s.velocity));
         let vel_es = null, vel_sd = null, vel_vert_r2 = null;
 
@@ -159,8 +165,8 @@ export function initStatisticalAnalysis() {
         }
 
         const ci_mr = bootstrapMeanRadiusCI(shots);
-        
         const relativeWidth = (ci_mr.upper - ci_mr.lower) / meanRadius;
+        
         let confidence_level = 'Medium';
         let confidence_color = '#eab308'; // yellow
 
@@ -172,38 +178,51 @@ export function initStatisticalAnalysis() {
             confidence_color = '#22c55e'; // green
         }
         
-        // Calculate mrad values if distance is available
-        const mradFactor = getMradFactor(dataUnits, targetDistance, distanceUnits);
-        let meanRadiusMrad = null, sd_xMrad = null, sd_yMrad = null, ci_mrMrad = null, r95Mrad = null;
+        // Calculate Angular values (MOA and Mrad)
+        const factors = getAngularFactors(dataUnits, targetDistance, distanceUnits);
         
-        if (mradFactor) {
-            meanRadiusMrad = meanRadius * mradFactor;
-            sd_xMrad = sd_x * mradFactor;
-            sd_yMrad = sd_y * mradFactor;
-            ci_mrMrad = [ci_mr.lower * mradFactor, ci_mr.upper * mradFactor];
-            r95Mrad = r95 * mradFactor;
+        let angStats = {
+            mr: { moa: null, mrad: null },
+            r95: { moa: null, mrad: null },
+            sd_x: { moa: null, mrad: null },
+            sd_y: { moa: null, mrad: null },
+            ci: { moa: null, mrad: null }
+        };
+
+        if (factors) {
+            angStats.mr.moa = meanRadius * factors.moa;
+            angStats.mr.mrad = meanRadius * factors.mrad;
+            
+            angStats.r95.moa = r95 * factors.moa;
+            angStats.r95.mrad = r95 * factors.mrad;
+            
+            angStats.sd_x.moa = sd_x * factors.moa;
+            angStats.sd_x.mrad = sd_x * factors.mrad;
+            
+            angStats.sd_y.moa = sd_y * factors.moa;
+            angStats.sd_y.mrad = sd_y * factors.mrad;
+            
+            angStats.ci.moa = [ci_mr.lower * factors.moa, ci_mr.upper * factors.moa];
+            angStats.ci.mrad = [ci_mr.lower * factors.mrad, ci_mr.upper * factors.mrad];
         }
 
         return {
             n: n,
-            units: dataUnits,
-            meanRadius: meanRadius,
-            r95: r95,
-            sd_x: sd_x,
-            sd_y: sd_y,
-            meanRadiusMrad: meanRadiusMrad,
-            r95Mrad: r95Mrad,
-            sd_xMrad: sd_xMrad,
-            sd_yMrad: sd_yMrad,
+            // Keep linear units for Plotting logic only
+            raw: {
+                meanRadius, 
+                units: dataUnits,
+                mpi: {x: mean_x, y: mean_y}
+            },
+            // Angular Stats
+            ang: angStats,
+            hasDistance: !!factors,
             vel_es: vel_es,
             vel_sd: vel_sd,
             vel_vert_r2: vel_vert_r2,
             hasVerticalDispersion: hasVerticalDispersion,
-            ci_mean_radius: [ci_mr.lower, ci_mr.upper],
-            ci_mean_radiusMrad: ci_mrMrad,
             confidence_level: confidence_level,
-            confidence_color: confidence_color,
-            mpi: {x: mean_x, y: mean_y}
+            confidence_color: confidence_color
         };
     }
 
@@ -231,13 +250,14 @@ export function initStatisticalAnalysis() {
                         sessionId: id,
                         sessionName: sessionName,
                         stats: stats,
-                        shots: sessionData.shots // Keep shots for plotting
+                        shots: sessionData.shots 
                     });
                 }
             }
         }
         
-        results.sort((a, b) => a.stats.meanRadius - b.stats.meanRadius);
+        // Sort by MR (Linear for sorting is fine, but we display angular)
+        results.sort((a, b) => a.stats.raw.meanRadius - b.stats.raw.meanRadius);
         
         renderComparisonTable(results);
         
@@ -274,7 +294,7 @@ export function initStatisticalAnalysis() {
                 <th style="white-space: nowrap;">Shots</th>
                 <th style="white-space: nowrap;">Mean Radius (MR)</th>
                 <th style="white-space: nowrap;">95th Percentile Radius</th>
-                <th style="white-space: nowrap;">MR Confidence Interval (95%)</th>
+                <th style="white-space: nowrap;">MR Confidence (95%)</th>
                 <th style="white-space: nowrap;">Horizontal SD</th>
                 <th style="white-space: nowrap;">Vertical SD</th>
                 <th style="white-space: nowrap;">Velocity SD</th>
@@ -302,33 +322,35 @@ export function initStatisticalAnalysis() {
                 }
             }
             
-            // Format MR, R95 with both units if mrad available
-            let mrDisplay = `${stats.meanRadius.toFixed(4)} ${stats.units}`;
-            let r95Display = `${stats.r95.toFixed(4)} ${stats.units}`;
-            
-            if (stats.meanRadiusMrad !== null) {
-                mrDisplay += ` / ${stats.meanRadiusMrad.toFixed(4)} mrad`;
-                r95Display += ` / ${stats.r95Mrad.toFixed(4)} mrad`;
-            }
-            
-            const mrCiDisplay = stats.ci_mean_radiusMrad !== null
-                ? `[${stats.ci_mean_radiusMrad[0].toFixed(4)}, ${stats.ci_mean_radiusMrad[1].toFixed(4)}] mrad`
-                : `[${stats.ci_mean_radius[0].toFixed(4)}, ${stats.ci_mean_radius[1].toFixed(4)}]`;
+            // Format Strings - Fallback if no distance provided
+            const noDistMsg = '<span style="color:#9ca3af; font-size:0.8em">Set Dist.</span>';
 
-            const sdXDisplay = stats.sd_xMrad !== null 
-                ? `${stats.sd_xMrad.toFixed(4)} mrad`
-                : `${stats.sd_x.toFixed(4)} ${stats.units}`;
+            const mrDisplay = stats.hasDistance 
+                ? `${stats.ang.mr.moa.toFixed(2)} moa <br><span style="color:#9ca3af; font-size:0.85em">${stats.ang.mr.mrad.toFixed(2)} mrad</span>` 
+                : noDistMsg;
+
+            const r95Display = stats.hasDistance
+                ? `${stats.ang.r95.moa.toFixed(2)} moa <br><span style="color:#9ca3af; font-size:0.85em">${stats.ang.r95.mrad.toFixed(2)} mrad</span>` 
+                : noDistMsg;
+
+            const mrCiDisplay = stats.hasDistance
+                ? `${stats.ang.ci.moa[0].toFixed(2)} - ${stats.ang.ci.moa[1].toFixed(2)} moa`
+                : noDistMsg;
+
+            const sdXDisplay = stats.hasDistance
+                ? `${stats.ang.sd_x.moa.toFixed(2)} moa`
+                : noDistMsg;
                 
-            const sdYDisplay = stats.sd_yMrad !== null 
-                ? `${stats.sd_yMrad.toFixed(4)} mrad`
-                : `${stats.sd_y.toFixed(4)} ${stats.units}`;
+            const sdYDisplay = stats.hasDistance
+                ? `${stats.ang.sd_y.moa.toFixed(2)} moa`
+                : noDistMsg;
 
             row.innerHTML = `
                 <td><span style="display: inline-block; vertical-align: middle; width: 12px; height: 12px; background-color: ${color}; margin-right: 8px; border-radius: 3px;"></span>${result.sessionName}</td>
                 <td>${stats.n}</td>
                 <td style="font-weight: 600;">${mrDisplay}</td>
                 <td style="font-weight: 600;">${r95Display}</td>
-                <td>${mrCiDisplay} <span style="color: ${stats.confidence_color}; font-weight: 600;">(${stats.confidence_level})</span></td>
+                <td>${mrCiDisplay} <br><span style="color: ${stats.confidence_color}; font-weight: 600; font-size: 0.85em">(${stats.confidence_level})</span></td>
                 <td>${sdXDisplay}</td>
                 <td>${sdYDisplay}</td>
                 <td>${stats.vel_sd !== null ? stats.vel_sd.toFixed(2) : 'N/A'}</td>
@@ -352,14 +374,14 @@ export function initStatisticalAnalysis() {
 
         let maxOffset = 0;
         sessionResults.forEach(res => {
-            const sessionMPI = res.stats.mpi;
+            const sessionMPI = res.stats.raw.mpi;
             res.shots.forEach(shot => {
                 const offset = Math.hypot(shot.x - sessionMPI.x, shot.y - sessionMPI.y);
                 if (offset > maxOffset) maxOffset = offset;
             });
         });
 
-        const units = sessionResults[0].stats.units;
+        const units = sessionResults[0].stats.raw.units;
         const gridSpacing = (units === 'in') ? 1.0 : 25.0;
         let viewSpan = Math.ceil(maxOffset * 2 * 1.2 / gridSpacing) * gridSpacing;
         if (viewSpan === 0) viewSpan = gridSpacing * 4;
@@ -385,8 +407,8 @@ export function initStatisticalAnalysis() {
 
         sessionResults.forEach((res, index) => {
             const color = colors[index % colors.length];
-            const sessionMPI = res.stats.mpi;
-            const sessionMR = res.stats.meanRadius;
+            const sessionMPI = res.stats.raw.mpi;
+            const sessionMR = res.stats.raw.meanRadius;
 
             const radius = sessionMR * pixelsPerUnit;
             ctx.strokeStyle = color;
@@ -427,10 +449,10 @@ export function initStatisticalAnalysis() {
         const DPI = 300;
         const IMG_WIDTH_INCHES = 8;
         const PLOT_HEIGHT_INCHES = 8;
-        const ROW_HEIGHT_INCHES = 0.25;
+        const ROW_HEIGHT_INCHES = 0.35; // Increased slightly for double lines
         const HEADER_HEIGHT_INCHES = 0.4;
         const PADDING_INCHES = 0.2;
-        const FONT_SIZE_PT = 12;
+        const FONT_SIZE_PT = 11;
 
         const canvasWidth = IMG_WIDTH_INCHES * DPI;
         const plotHeight = PLOT_HEIGHT_INCHES * DPI;
@@ -453,8 +475,8 @@ export function initStatisticalAnalysis() {
         const columns = [
             { header: 'Session Details', x: padding, width: (canvasWidth - padding * 2) * 0.32 },
             { header: 'Shots', x: padding + (canvasWidth - padding * 2) * 0.32, width: (canvasWidth - padding * 2) * 0.08 },
-            { header: 'MR', x: padding + (canvasWidth - padding * 2) * 0.40, width: (canvasWidth - padding * 2) * 0.10 },
-            { header: '95th Percentile Radius', x: padding + (canvasWidth - padding * 2) * 0.50, width: (canvasWidth - padding * 2) * 0.20 },
+            { header: 'Mean Radius', x: padding + (canvasWidth - padding * 2) * 0.40, width: (canvasWidth - padding * 2) * 0.15 },
+            { header: '95% Radius', x: padding + (canvasWidth - padding * 2) * 0.55, width: (canvasWidth - padding * 2) * 0.15 },
             { header: 'MR CI (95%)', x: padding + (canvasWidth - padding * 2) * 0.70, width: (canvasWidth - padding * 2) * 0.18 },
             { header: 'Vel. SD', x: padding + (canvasWidth - padding * 2) * 0.88, width: (canvasWidth - padding * 2) * 0.12 }
         ];
@@ -486,22 +508,28 @@ export function initStatisticalAnalysis() {
             ctx.fillText(sessionText, columns[0].x + 50, currentY + rowHeight / 2);
             ctx.fillText(stats.n, columns[1].x, currentY + rowHeight / 2);
 
-            // Use simple display for export to save space
-            const mrText = stats.meanRadiusMrad !== null 
-                ? `${stats.meanRadiusMrad.toFixed(4)} mrad` 
-                : `${stats.meanRadius.toFixed(4)} ${stats.units}`;
-            
-            const r95Text = stats.r95Mrad !== null
-                ? `${stats.r95Mrad.toFixed(4)} mrad`
-                : `${stats.r95.toFixed(4)} ${stats.units}`;
+            let mrText, r95Text, mrCiText;
 
-            const mrCiText = stats.ci_mean_radiusMrad !== null
-                ? `[${stats.ci_mean_radiusMrad[0].toFixed(4)}, ${stats.ci_mean_radiusMrad[1].toFixed(4)}]`
-                : `[${stats.ci_mean_radius[0].toFixed(4)}, ${stats.ci_mean_radius[1].toFixed(4)}]`;
+            if (stats.hasDistance) {
+                mrText = `${stats.ang.mr.moa.toFixed(2)} moa`;
+                r95Text = `${stats.ang.r95.moa.toFixed(2)} moa`;
+                mrCiText = `[${stats.ang.ci.moa[0].toFixed(2)}, ${stats.ang.ci.moa[1].toFixed(2)}]`;
+                
+                // Add mrad below or next to it (Doing next to it for export legibility)
+                const mrTextSub = ` / ${stats.ang.mr.mrad.toFixed(2)} mrad`;
+                const r95TextSub = ` / ${stats.ang.r95.mrad.toFixed(2)} mrad`;
+                
+                ctx.fillText(mrText + mrTextSub, columns[2].x, currentY + rowHeight / 2);
+                ctx.fillText(r95Text + r95TextSub, columns[3].x, currentY + rowHeight / 2);
+                ctx.fillText(mrCiText, columns[4].x, currentY + rowHeight / 2);
+            } else {
+                ctx.fillStyle = '#9ca3af';
+                ctx.fillText("Set Dist.", columns[2].x, currentY + rowHeight / 2);
+                ctx.fillText("Set Dist.", columns[3].x, currentY + rowHeight / 2);
+                ctx.fillText("-", columns[4].x, currentY + rowHeight / 2);
+                ctx.fillStyle = '#f3f4f6';
+            }
 
-            ctx.fillText(mrText, columns[2].x, currentY + rowHeight / 2);
-            ctx.fillText(r95Text, columns[3].x, currentY + rowHeight / 2);
-            ctx.fillText(mrCiText, columns[4].x, currentY + rowHeight / 2);
             ctx.fillText(`${stats.vel_sd !== null ? stats.vel_sd.toFixed(2) : 'N/A'}`, columns[5].x, currentY + rowHeight / 2);
             currentY += rowHeight;
         });
@@ -509,7 +537,6 @@ export function initStatisticalAnalysis() {
         const a = document.createElement('a');
         a.href = canvas.toDataURL('image/png');
         
-        // Time stamped output
         const now = new Date();
         const timestamp = now.getFullYear() + '-' +
             String(now.getMonth() + 1).padStart(2, '0') + '-' +
@@ -522,6 +549,5 @@ export function initStatisticalAnalysis() {
         a.click();
     }
 
-    // Initial population
     sessionSelect.dispatchEvent(new Event('refresh'));
 }
