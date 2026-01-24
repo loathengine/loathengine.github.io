@@ -14,6 +14,38 @@
                     
                     <button id="compareSessionsBtn" class="btn-blue" style="margin-top: 1rem;">Analyze Selected Session(s)</button>
                     <button id="exportAnalysisBtn" class="btn-gray" style="margin-top: 0.5rem;">Export as Image</button>
+
+                    <div style="margin-top: 2rem; font-size: 0.8rem; color: #d1d5db;">
+                        <h4 style="color: #9ca3af; border-bottom: 1px solid #374151; padding-bottom: 0.25rem; margin-bottom: 0.5rem;">Definitions</h4>
+                        <dl>
+                            <dt style="font-weight: 600; color: #f3f4f6;">Mean Radius (MR)</dt>
+                            <dd style="margin-left: 0.5rem; margin-bottom: 0.5rem;">The average distance of all shots from the center of the group (Mean Point of Impact). A statistically robust measure of precision.</dd>
+
+                            <dt style="font-weight: 600; color: #f3f4f6;">95th Percentile Radius</dt>
+                            <dd style="margin-left: 0.5rem; margin-bottom: 0.5rem;">The estimated radius of a circle centered on the group that would contain 95% of future shots. Derived from Mean Radius.</dd>
+
+                            <dt style="font-weight: 600; color: #f3f4f6;">MR Confidence (95%)</dt>
+                            <dd style="margin-left: 0.5rem; margin-bottom: 0.5rem;">The 95% confidence interval for the true population Mean Radius, calculated via bootstrapping. Indicates the reliability of the observed Mean Radius.</dd>
+
+                            <dt style="font-weight: 600; color: #f3f4f6;">Group Size</dt>
+                            <dd style="margin-left: 0.5rem; margin-bottom: 0.5rem;">The maximum distance between the centers of the two furthest shots in the group (Extreme Spread).</dd>
+
+                            <dt style="font-weight: 600; color: #f3f4f6;">A-ZED (A-Zone Effective Distance)</dt>
+                            <dd style="margin-left: 0.5rem; margin-bottom: 0.5rem;">The theoretical maximum distance where 95% of shots would land within the width of an IPSC A-zone (15cm), based on the group's precision.</dd>
+
+                            <dt style="font-weight: 600; color: #f3f4f6;">Horizontal SD</dt>
+                            <dd style="margin-left: 0.5rem; margin-bottom: 0.5rem;">Standard Deviation of shot positions along the horizontal (X) axis.</dd>
+
+                            <dt style="font-weight: 600; color: #f3f4f6;">Vertical SD</dt>
+                            <dd style="margin-left: 0.5rem; margin-bottom: 0.5rem;">Standard Deviation of shot positions along the vertical (Y) axis.</dd>
+
+                            <dt style="font-weight: 600; color: #f3f4f6;">Velocity SD</dt>
+                            <dd style="margin-left: 0.5rem; margin-bottom: 0.5rem;">Standard Deviation of the recorded muzzle velocities.</dd>
+
+                            <dt style="font-weight: 600; color: #f3f4f6;">Dispersion Analysis</dt>
+                            <dd style="margin-left: 0.5rem; margin-bottom: 0.5rem;">Analyzes the relationship between vertical dispersion and velocity variation to detect potential tuning issues.</dd>
+                        </dl>
+                    </div>
                 </div>
                 <div class="main-content card">
                     <h3>Analysis Results</h3>
