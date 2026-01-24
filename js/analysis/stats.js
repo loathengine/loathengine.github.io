@@ -96,39 +96,26 @@ export function calculateStatsForSession(shots, targetDistance = null, distanceU
 
         // A-ZED Calculation
         // IPSC A-zone is roughly 15cm wide by 32.5cm high.
-        // We will approximate it as a rectangle 6x11 inches for simplicity or stick to metric 15x32.5cm
-        // Or more conservatively, the smallest dimension is the width: 15cm (approx 5.9 inches).
-        // If we want 100% of shots to land in A-zone, the Group Size (maxSpread) must be smaller than the A-zone width.
-        // However, Group Size is center-to-center. Bullet diameter matters but is usually small relative to A-zone.
-        // Let's assume we need the extreme spread to fit within the 15cm width.
-        // So, (Group Size in rads) * Distance = A-zone Width
-        // Distance = A-zone Width / (Group Size in rads)
+        // Based on 95th Percentile Radius (R95).
+        // R95 represents the radius of a circle that would contain 95% of the shots.
+        // We want to fit this circle within the A-zone.
+        // A-zone width is 15cm.
+        // So, 2 * R95 (Diameter of 95% circle) must be <= A-zone Width (15cm).
+        // Distance = A-zone Width / (2 * R95 in radians)
         
-        // A-zone width ~ 15 cm = 0.15 meters.
-        // Group Size (maxSpread) is in 'dataUnits'.
-        // We need maxSpread in meters.
-        
-        let maxSpreadMeters = maxSpread;
-        if (dataUnits === 'in') maxSpreadMeters *= 0.0254;
-        else if (dataUnits === 'mm') maxSpreadMeters *= 0.001;
-        
-        // However, maxSpread is measured at 'targetDistance'.
-        // Angular size in radians = maxSpreadMeters / targetDistanceMeters
+        let r95Meters = r95;
+        if (dataUnits === 'in') r95Meters *= 0.0254;
+        else if (dataUnits === 'mm') r95Meters *= 0.001;
         
         let targetDistMeters = targetDistance;
         if (distanceUnits === 'yards') targetDistMeters *= 0.9144;
         
-        if (targetDistMeters > 0 && maxSpreadMeters > 0) {
-             const groupSizeRadians = maxSpreadMeters / targetDistMeters;
+        if (targetDistMeters > 0 && r95Meters > 0) {
+             const r95Radians = r95Meters / targetDistMeters;
              
              // A-zone width = 0.15 meters (approx 6 inches)
-             // A-ZED (meters) = 0.15 / groupSizeRadians
-             const aZedMeters = 0.15 / groupSizeRadians;
-             
-             // Convert to yards for display if distanceUnits is yards, otherwise keep meters? 
-             // Usually shooters prefer same units. Let's provide both or match input.
-             // Let's return the string directly or value.
-             // If input was yards, return yards.
+             // A-ZED (meters) = 0.15 / (2 * r95Radians)
+             const aZedMeters = 0.15 / (2 * r95Radians);
              
              if (distanceUnits === 'yards') {
                  angStats.a_zed = (aZedMeters / 0.9144); // Yards
