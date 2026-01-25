@@ -60,18 +60,35 @@ async function refreshBulletNameDropdown() {
 
 async function refreshBrassDropdownForLoad() {
     const selectedCartridgeId = document.getElementById('loadCartridge').value;
-    const allBrass = await getAllItems('brass');
     const brassSelect = document.getElementById('loadBrass');
     
-    const filteredBrass = selectedCartridgeId ? allBrass.filter(b => b.cartridgeId === selectedCartridgeId) : [];
+    if (!selectedCartridgeId) {
+         brassSelect.innerHTML = '<option value="">-- Select Cartridge First --</option>';
+         return;
+    }
+
+    const allBrass = await getAllItems('brass');
+    const filteredBrass = allBrass.filter(b => b.cartridgeId === selectedCartridgeId);
 
     const oldValue = brassSelect.value;
     brassSelect.innerHTML = '<option value="">-- Select --</option>';
+
+    if (filteredBrass.length === 0) {
+        const option = document.createElement('option');
+        option.disabled = true;
+        option.textContent = "-- No Brass Inventory --";
+        brassSelect.appendChild(option);
+    }
+
     for (const brassItem of filteredBrass) {
         const manufacturer = await getItem('manufacturers', brassItem.manufacturerId);
         const option = document.createElement('option');
         option.value = brassItem.id;
-        option.textContent = manufacturer ? manufacturer.name : 'N/A';
+        
+        let label = manufacturer ? manufacturer.name : 'Unknown Mfg';
+        if (brassItem.primerPocket) label += ` (${brassItem.primerPocket})`;
+        
+        option.textContent = label;
         brassSelect.appendChild(option);
     }
     brassSelect.value = oldValue;

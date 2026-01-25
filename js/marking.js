@@ -111,11 +111,11 @@ export function initImpactMarking() {
     resetCanvasState();
 
     function updateCanvasSize() {
-        if (!img) return;
+        if (!img || !img.baseWidth) return;
         // Resize the canvas to match the zoomed dimensions
         // Note: Changing canvas.width/height clears the canvas, so draw() must be called afterwards (which happens in loop)
-        canvas.width = img.baseWidth * transform.scale;
-        canvas.height = img.baseHeight * transform.scale;
+        canvas.width = Math.floor(img.baseWidth * transform.scale);
+        canvas.height = Math.floor(img.baseHeight * transform.scale);
     }
 
     function draw() {
@@ -237,8 +237,11 @@ export function initImpactMarking() {
 
     savedImageSelect.addEventListener('change', async (e) => {
         const targetId = e.target.value;
+        
+        // Clear current image immediately as we are switching
+        img = null;
+
         if (!targetId) {
-            img = null;
             currentTargetId = null;
             resetCanvasState();
             return;
@@ -246,8 +249,9 @@ export function initImpactMarking() {
         
         const targetData = await getItem('targetImages', targetId);
         if (targetData) {
-            img = new Image();
-            img.onload = () => { 
+            // Use local variable to avoid race condition where img exists but baseWidth is undefined
+            const newImg = new Image();
+            newImg.onload = () => { 
                 currentTargetId = targetId;
                 
                 // Establish base dimensions
@@ -256,19 +260,20 @@ export function initImpactMarking() {
                 // Actually, let's use the image natural size as the base, or a standard working width.
                 // The previous code effectively used 800 as the working width.
                 const workingBaseWidth = 800;
-                const aspectRatio = img.naturalHeight / img.naturalWidth;
+                const aspectRatio = newImg.naturalHeight / newImg.naturalWidth;
                 
-                img.baseWidth = workingBaseWidth;
-                img.baseHeight = workingBaseWidth * aspectRatio;
+                newImg.baseWidth = workingBaseWidth;
+                newImg.baseHeight = workingBaseWidth * aspectRatio;
                 
                 // Reset zoom when loading new image
                 transform.scale = 1; 
                 
+                img = newImg; // Update global image only when ready
                 updateCanvasSize();
 
                 if (!sessionID) { resetCanvasState(); }
             };
-            img.src = targetData.dataUrl;
+            newImg.src = targetData.dataUrl;
         }
     });
     
