@@ -124,7 +124,7 @@ async function exportDatabase() {
     for (const storeName of stores) { allData[storeName] = await getAllItems(storeName); }
     const date = new Date();
     const dateString = date.toISOString().slice(0, 10);
-    triggerDownload(JSON.stringify(allData, null, 2), `reloading-db-backup-${dateString}.json`);
+    triggerDownload(JSON.stringify(allData, null, 2), `master-db-backup-${dateString}.json`);
 }
 
 function importDatabase(event) {
@@ -156,7 +156,7 @@ function importDatabase(event) {
                 window.dispatchEvent(new Event('app-refresh'));
             };
             transaction.onerror = (err) => { console.error('Import transaction error:', err); alert('Failed to import database.'); };
-        } catch (error) { console.error('Error parsing or importing DB file:', error); alert('Invalid database file format.'); }
+        } catch (error) { console.error('Error parsing or importing DB file:', error); alert('Invalid database file format.'); };
     };
     reader.readAsText(file);
 }
@@ -209,7 +209,7 @@ function importTableData(event) {
                 window.dispatchEvent(new Event('app-refresh'));
             };
             transaction.onerror = (err) => { console.error(`Import error for table ${tableName}:`, err); alert(`Failed to import data for table '${tableName}'.`); };
-        } catch (error) { console.error('Error parsing or importing table file:', error); alert('Invalid table file format. Must be a JSON array.'); }
+        } catch (error) { console.error('Error parsing or importing table file:', error); alert('Invalid table file format. Must be a JSON array.'); };
     };
     reader.readAsText(file);
 }
