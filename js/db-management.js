@@ -124,7 +124,13 @@ async function exportDatabase() {
     for (const storeName of stores) { allData[storeName] = await getAllItems(storeName); }
     const date = new Date();
     const dateString = date.toISOString().slice(0, 10);
-    triggerDownload(JSON.stringify(allData, null, 2), `master-db-backup-${dateString}.json`);
+    const jsonString = '{\n' +
+        Object.keys(allData).map(storeName => {
+            const items = allData[storeName].map(item => '    ' + JSON.stringify(item));
+            return `  "${storeName}": [\n${items.join(',\n')}\n  ]`;
+        }).join(',\n') +
+    '\n}';
+    triggerDownload(jsonString, `master-db-backup-${dateString}.json`);
 }
 
 function importDatabase(event) {
@@ -181,7 +187,10 @@ async function exportTableData() {
         return;
     }
     const data = await getAllItems(tableName);
-    triggerDownload(JSON.stringify(data, null, 2), `${tableName}-backup.json`);
+    const jsonString = '[\n' +
+        data.map(item => '  ' + JSON.stringify(item)).join(',\n') +
+    '\n]';
+    triggerDownload(jsonString, `${tableName}-backup.json`);
 }
 
 function importTableData(event) {
