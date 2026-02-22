@@ -53,7 +53,7 @@ async function refreshAllUI() {
     
     // DB Management Tab (if a table is displayed)
     const tableSelect = document.getElementById('tableSelect');
-    if (tableSelect && tableSelect.value) {
+    if (tableSelect) {
         await renderSelectedTable();
     }
     console.log("UI Refresh complete.");
