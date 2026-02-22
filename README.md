@@ -132,6 +132,7 @@ This tab is for advanced data management. **Use with caution.**
 
 -   **Global Actions:**
     -   `Export Entire Database`: Saves a single JSON file of all your data. **This is the recommended way to create backups.**
+    -   `Import Master Database`: Imports a master database from a pre-defined online source. **This will overwrite all existing data.** Use this to initialize the application with a standard set of components and data.
     -   `Import Entire Database`: Restores your data from a backup file. This will overwrite all existing data.
     -   `Delete Entire Database`: **PERMANENTLY DELETES ALL DATA.** This action cannot be undone.
 -   **Table Specific Actions:** Allows you to export, import, or clear the data from individual tables (e.g., just your bullets).
