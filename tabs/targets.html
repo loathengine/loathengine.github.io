@@ -1,12 +1,11 @@
+            <div class="card">
+                <h3>Targets</h3>
+                <div class="tabs-nav" style="border-bottom: none; margin-bottom: 1.5rem;">
+                    <a class="sub-tab-link active" data-subtab="manage-targets">Manage Targets</a>
+                    <a class="sub-tab-link" data-subtab="create-targets">Create Target</a>
+                </div>
 
-            <div class="tabs-nav sub-tabs-nav" style="margin-bottom: 1rem;">
-                <button class="tab-link active" data-tab="manage-targets">Manage Targets</button>
-                <button class="tab-link" data-tab="create-targets">Create Target</button>
-            </div>
-
-            <div id="manage-targets" class="tab-content active">
-                <div class="card">
-                    <h3>Manage Targets</h3>
+                <div id="manage-targets-subtab" class="tab-content active">
                     <div>
                         <label for="uploadTargetImage">Upload New Target Image(s)</label>
                         <input type="file" id="uploadTargetImage" accept="image/*" multiple>
@@ -14,11 +13,8 @@
                     <div id="targetGallery" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
                     </div>
                 </div>
-            </div>
 
-            <div id="create-targets" class="tab-content">
-                <div class="card">
-                    <h3>Create Custom Target</h3>
+                <div id="create-targets-subtab" class="tab-content">
                     
                     <div style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #374151;">
                         <label>Load Preset</label>
@@ -82,7 +78,6 @@
                             <input type="number" id="centerDotSize" value="0.2" step="0.001" min="0">
                         </div>
                         
-                        <!-- Extra fields for rings could go here, but sticking to basic implementation first -->
                         <div>
                             <label>Outer Ring Size (in)</label>
                             <input type="number" id="outerRingSize" value="0" step="0.001" min="0" placeholder="Optional">
