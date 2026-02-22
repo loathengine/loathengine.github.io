@@ -36,24 +36,28 @@ One of the primary functions of this application is to allow you to shoot multip
 
 For the most efficient use of the application, follow this workflow:
 
-1.  **Setup Foundational Data:**
-    -   Go to the `Misc` tab to add **Diameters** (e.g., .308) and **Manufacturers** (e.g., Hornady, Hodgdon).
-    -   Go to the `Components` tab to add your specific **Bullets**, **Powders**, **Primers**, and **Brass**. These lists will populate the dropdowns used for creating load data.
+1.  **Initialize Database (Recommended):**
+    -   **Important:** Before adding your own data, go to the `DB Management` tab and click **"Import Master Database"**. 
+    -   This will populate the application with a comprehensive list of standard diameters, cartridges, and manufacturers (Hornady, Sierra, Hodgdon, etc.), saving you hours of manual entry.
 
-2.  **Define Your Equipment:**
+2.  **Setup Foundational Data:**
+    -   Go to the `Misc` tab to add any custom **Diameters** or **Manufacturers** not covered by the master database.
+    -   Go to the `Components` tab to add your specific inventory of **Bullets**, **Powders**, **Primers**, and **Brass**.
+
+3.  **Define Your Equipment:**
     -   Go to the `Firearms` tab to add the rifles or pistols you will be testing.
 
-3.  **Create Load Data:**
+4.  **Create Load Data:**
     -   Go to the `Load Data` tab to create entries for your handloads or commercial ammunition.
 
-4.  **Upload Your Targets:**
-    -   Go to the `Targets` tab and upload images of your shot targets.
+5.  **Upload Your Targets:**
+    -   Go to the `Targets` tab. You can upload existing images of your shot targets, or use the **"Create Target"** feature to generate and print custom targets (NRA B-8, ISSF, etc.).
 
-5.  **Mark and Save Sessions:**
+6.  **Mark and Save Sessions:**
     -   Go to the `Marking` tab. Load a target image, set the scale, and mark your impacts.
     -   **Important:** You can mark individual groups on different targets and save them as separate sessions. The Analysis tab will let you combine them later.
 
-6.  **Analyze & Composite:**
+7.  **Analyze & Composite:**
     -   Go to the `Analysis` tab. Select multiple sessions corresponding to the same load/firearm combination.
     -   The app will **composite** these separate groups into a single aggregate analysis, giving you a true picture of your precision (Mean Radius, SD, etc.) based on the total number of shots.
 
@@ -90,9 +94,8 @@ This tab lets you catalog your ammunition.
 ### Targets Tab
 This is your digital library of target images.
 
--   Click **"Upload New Target Image(s)"** to select one or more image files from your computer.
--   The images are automatically converted to the efficient `.webp` format to save space.
--   You can **Rename** or **Delete** targets directly from this gallery.
+-   **Manage Targets:** Click **"Upload New Target Image(s)"** to select one or more image files from your computer. The images are automatically converted to the efficient `.webp` format to save space. You can **Rename** or **Delete** targets directly from this gallery.
+-   **Create Target:** Use this sub-tab to generate custom printable targets. You can select standard presets like **NRA B-8** or **ISSF 10m**, or define your own grid, bullseye size, and layout. You can then download the target as an image or print it directly.
 
 ### Marking Tab (Core Functionality)
 This is the most interactive part of the application, where you turn a target image into analyzable data.
