@@ -1,11 +1,121 @@
 
-            <div class="card">
-                <h3>Manage Targets</h3>
-                <div>
-                    <label for="uploadTargetImage">Upload New Target Image(s)</label>
-                    <input type="file" id="uploadTargetImage" accept="image/*" multiple>
-                </div>
-                <div id="targetGallery" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+            <div class="tabs-nav sub-tabs-nav" style="margin-bottom: 1rem;">
+                <button class="tab-link active" data-tab="manage-targets">Manage Targets</button>
+                <button class="tab-link" data-tab="create-targets">Create Target</button>
+            </div>
+
+            <div id="manage-targets" class="tab-content active">
+                <div class="card">
+                    <h3>Manage Targets</h3>
+                    <div>
+                        <label for="uploadTargetImage">Upload New Target Image(s)</label>
+                        <input type="file" id="uploadTargetImage" accept="image/*" multiple>
                     </div>
+                    <div id="targetGallery" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                    </div>
+                </div>
+            </div>
+
+            <div id="create-targets" class="tab-content">
+                <div class="card">
+                    <h3>Create Custom Target</h3>
+                    
+                    <div style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #374151;">
+                        <label>Load Preset</label>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <select id="targetPresetSelect">
+                                <option value="">-- Select a Preset --</option>
+                            </select>
+                            <button id="deletePresetBtn" class="btn-red" style="width: auto;">Delete</button>
+                        </div>
+                    </div>
+
+                    <div class="target-generator-controls" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                        <div>
+                            <label>Paper Size</label>
+                            <select id="paperSize">
+                                <option value="letter">Letter (8.5" x 11")</option>
+                                <option value="a4">A4 (210mm x 297mm)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Orientation</label>
+                            <select id="paperOrientation">
+                                <option value="portrait">Portrait</option>
+                                <option value="landscape">Landscape</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Grid Size</label>
+                            <select id="gridSize">
+                                <option value="1">1 Inch</option>
+                                <option value="0.5">0.5 Inch</option>
+                                <option value="0.25">0.25 Inch</option>
+                                <option value="cm">1 Centimeter</option>
+                                <option value="none">No Grid</option>
+                            </select>
+                        </div>
+                         <div>
+                            <label>Grid Color</label>
+                            <input type="color" id="gridColor" value="#e5e7eb">
+                        </div>
+                        
+                        <div>
+                            <label>Bullseye Shape</label>
+                            <select id="bullseyeShape">
+                                <option value="circle">Circle</option>
+                                <option value="square">Square</option>
+                                <option value="diamond">Diamond</option>
+                                <option value="crosshair">Crosshair Only</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Bullseye Size (in)</label>
+                            <input type="number" id="bullseyeSize" value="1" step="0.001" min="0.1">
+                        </div>
+                         <div>
+                            <label>Bullseye Color</label>
+                            <input type="color" id="bullseyeColor" value="#ef4444">
+                        </div>
+                        <div>
+                            <label>Center Dot Size (in)</label>
+                            <input type="number" id="centerDotSize" value="0.2" step="0.001" min="0">
+                        </div>
+                        
+                        <!-- Extra fields for rings could go here, but sticking to basic implementation first -->
+                        <div>
+                            <label>Outer Ring Size (in)</label>
+                            <input type="number" id="outerRingSize" value="0" step="0.001" min="0" placeholder="Optional">
+                            <small style="color: #9ca3af; display: block;">Draws a ring around the bullseye</small>
+                        </div>
+
+                         <div style="grid-column: span 2;">
+                            <label>Layout (Rows x Columns)</label>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <input type="number" id="rows" value="3" min="1" placeholder="Rows">
+                                <span>x</span>
+                                <input type="number" id="cols" value="2" min="1" placeholder="Columns">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem; display: flex; gap: 0.5rem; align-items: flex-end;">
+                        <div style="flex-grow: 1;">
+                            <label>Save As Preset Name</label>
+                            <input type="text" id="presetName" placeholder="e.g., NRA B-8">
+                        </div>
+                        <button id="savePresetBtn" class="btn-green" style="width: auto;">Save Preset</button>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                        <button id="previewTargetBtn" class="btn-blue">Update Preview</button>
+                        <button id="downloadTargetBtn" class="btn-green">Download PDF</button>
+                         <button id="downloadTargetImgBtn" class="btn-blue">Download Image</button>
+                    </div>
+                    
+                    <div id="targetPreviewContainer" style="border: 1px solid #4b5563; overflow: auto; padding: 1rem; background-color: #f3f4f6; text-align: center;">
+                        <canvas id="targetCanvas" style="background-color: white; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);"></canvas>
+                    </div>
+                </div>
             </div>
         
