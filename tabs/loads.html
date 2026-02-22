@@ -1,6 +1,6 @@
 
             <div class="card">
-                <h3>Manage Load Data</h3>
+                <h3>Manage Ammo Data</h3>
                 <div class="tabs-nav" style="border-bottom: none; margin-bottom: 1.5rem;">
                     <a class="sub-tab-link active" data-subtab="hand-load">Hand Load</a>
                     <a class="sub-tab-link" data-subtab="commercial-ammo">Commercial Ammo</a>
@@ -45,10 +45,9 @@
                     <div class="tab-content" id="commercial-ammo-subtab">
                         <form id="commercialAmmoForm" class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
                             <input type="hidden" id="commercialAmmoId">
-                            <div><label for="commercialAmmoManufacturer">Manufacturer</label><select id="commercialAmmoManufacturer"></select></div>
-                            <div><label for="commercialAmmoName">Ammo Name</label><input type="text" id="commercialAmmoName" required></div>
                             <div><label for="commercialAmmoDiameter">Diameter</label><select id="commercialAmmoDiameter"></select></div>
                             <div><label for="commercialAmmoCartridge">Cartridge</label><select id="commercialAmmoCartridge"></select></div>
+                            <div><label for="commercialAmmoName">Ammo Name</label><input type="text" id="commercialAmmoName" required></div>
                             <div><label for="commercialAmmoBulletWeight">Bullet Weight (grains)</label><input type="number" step="0.1" id="commercialAmmoBulletWeight"></div>
                             <div><label for="commercialAmmoLot">Lot #</label><input type="text" id="commercialAmmoLot"></div>
                         </form>

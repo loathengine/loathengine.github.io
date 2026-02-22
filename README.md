@@ -8,7 +8,7 @@
     - [About Us](#about-us)
     - [Setup Tabs (Misc & Components)](#setup-tabs-misc--components)
     - [Firearms Tab](#firearms-tab)
-    - [Load Data Tab](#load-data-tab)
+    - [Ammo Data Tab](#ammo-data-tab)
     - [Targets Tab](#targets-tab)
     - [Marking Tab (Core Functionality)](#marking-tab-core-functionality)
     - [Analysis Tab (Composite & Compare)](#analysis-tab-composite--compare)
@@ -47,8 +47,8 @@ For the most efficient use of the application, follow this workflow:
 3.  **Define Your Equipment:**
     -   Go to the `Firearms` tab to add the rifles or pistols you will be testing.
 
-4.  **Create Load Data:**
-    -   Go to the `Load Data` tab to create entries for your handloads or commercial ammunition.
+4.  **Create Ammo Data:**
+    -   Go to the `Ammo Data` tab to create entries for your handloads or commercial ammunition.
 
 5.  **Upload Your Targets:**
     -   Go to the `Targets` tab. You can upload existing images of your shot targets, or use the **"Create Target"** feature to generate and print custom targets (NRA B-8, ISSF, etc.).
@@ -84,12 +84,12 @@ Here, you can manage your collection of firearms.
 -   **To Add a Firearm:** Fill out the form with a nickname, cartridge, barrel length, and other details. Click **"Save Firearm"**.
 -   **To Edit a Firearm:** Click the **"Edit"** button next to an entry in the table. The form will be populated with its data. Make your changes and click **"Save Firearm"** again.
 
-### Load Data Tab
+### Ammo Data Tab
 This tab lets you catalog your ammunition.
 
 -   **Hand Load vs. Commercial Ammo:** Use the sub-tabs to switch between creating a custom handload recipe and logging factory ammunition.
 -   **Creating a Hand Load:** The form uses a series of dependent dropdowns. For example, after you select a `Diameter`, the `Cartridge` and `Bullet Weight` dropdowns will be filtered to show only relevant options. Fill in all known details for your recipe.
--   **Creating Commercial Ammo:** A simpler form to log factory ammunition by manufacturer, name, and lot number.
+-   **Creating Commercial Ammo:** A simpler form to log factory ammunition by diameter, cartridge, name, and lot number.
 
 ### Targets Tab
 This is your digital library of target images.

@@ -202,7 +202,7 @@ export async function refreshLoadsUI() {
     document.getElementById('loadBrass').innerHTML = '<option value="">-- Select --</option>';
 
     // Commercial Ammo Form
-    populateSelect('commercialAmmoManufacturer', allManufacturers, 'name', 'id');
+    // Removed: populateSelect('commercialAmmoManufacturer', allManufacturers, 'name', 'id');
     populateSelect('commercialAmmoDiameter', allDiameters, 'imperial', 'id');
     await refreshCommercialAmmoCartridgeDropdown();
 
@@ -245,7 +245,7 @@ async function handleCommercialAmmoSubmit(e) {
     const ammo = {
         id: document.getElementById('commercialAmmoId').value || generateUniqueId(),
         loadType: 'commercial',
-        manufacturerId: document.getElementById('commercialAmmoManufacturer').value,
+        // Removed: manufacturerId: document.getElementById('commercialAmmoManufacturer').value,
         name: document.getElementById('commercialAmmoName').value,
         diameterId: document.getElementById('commercialAmmoDiameter').value,
         cartridgeId: document.getElementById('commercialAmmoCartridge').value,
@@ -295,7 +295,7 @@ async function renderLoadsTable() {
 
         if (load.loadType === 'commercial') {
             type = 'Commercial';
-            const mfgName = manufacturerMap.get(load.manufacturerId) || '';
+            const mfgName = load.manufacturerId ? (manufacturerMap.get(load.manufacturerId) || '') : '';
             details = `${mfgName} ${load.name} ${load.bulletWeight || ''}gr`.trim();
             charge = 'N/A';
             col = 'N/A';
@@ -374,7 +374,7 @@ async function handleLoadTableClick(e) {
 
         if (item.loadType === 'commercial') {
             document.getElementById('commercialAmmoId').value = item.id;
-            document.getElementById('commercialAmmoManufacturer').value = item.manufacturerId;
+            // Removed: document.getElementById('commercialAmmoManufacturer').value = item.manufacturerId;
             document.getElementById('commercialAmmoName').value = item.name;
             document.getElementById('commercialAmmoDiameter').value = item.diameterId;
             await refreshCommercialAmmoCartridgeDropdown();

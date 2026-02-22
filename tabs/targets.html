@@ -26,91 +26,103 @@
                         </div>
                     </div>
 
-                    <div class="target-generator-controls" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
-                        <div>
-                            <label>Paper Size</label>
-                            <select id="paperSize">
-                                <option value="letter">Letter (8.5" x 11")</option>
-                                <option value="a4">A4 (210mm x 297mm)</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label>Orientation</label>
-                            <select id="paperOrientation">
-                                <option value="portrait">Portrait</option>
-                                <option value="landscape">Landscape</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label>Grid Size</label>
-                            <select id="gridSize">
-                                <option value="1">1 Inch</option>
-                                <option value="0.5">0.5 Inch</option>
-                                <option value="0.25">0.25 Inch</option>
-                                <option value="cm">1 Centimeter</option>
-                                <option value="none">No Grid</option>
-                            </select>
-                        </div>
-                         <div>
-                            <label>Grid Color</label>
-                            <input type="color" id="gridColor" value="#e5e7eb">
-                        </div>
-                        
-                        <div>
-                            <label>Bullseye Shape</label>
-                            <select id="bullseyeShape">
-                                <option value="circle">Circle</option>
-                                <option value="square">Square</option>
-                                <option value="diamond">Diamond</option>
-                                <option value="crosshair">Crosshair Only</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label>Bullseye Size (in)</label>
-                            <input type="number" id="bullseyeSize" value="1" step="0.001" min="0.1">
-                        </div>
-                         <div>
-                            <label>Bullseye Color</label>
-                            <input type="color" id="bullseyeColor" value="#ef4444">
-                        </div>
-                        <div>
-                            <label>Center Dot Size (in)</label>
-                            <input type="number" id="centerDotSize" value="0.2" step="0.001" min="0">
-                        </div>
-                        
-                        <div>
-                            <label>Outer Ring Size (in)</label>
-                            <input type="number" id="outerRingSize" value="0" step="0.001" min="0" placeholder="Optional">
-                            <small style="color: #9ca3af; display: block;">Draws a ring around the bullseye</small>
+                    <div class="target-generator-grid" style="display: grid; grid-template-columns: 1fr 2fr; gap: 1.5rem;">
+                        <!-- Left Control Panel -->
+                        <div class="control-panel">
+                            
+                            <!-- Page Settings -->
+                            <div class="section" style="margin-bottom: 1rem;">
+                                <h4>Page Settings</h4>
+                                <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                                    <div><label>Size</label><select id="paperSize"><option value="letter">Letter</option><option value="a4">A4</option></select></div>
+                                    <div><label>Orientation</label><select id="paperOrientation"><option value="portrait">Portrait</option><option value="landscape">Landscape</option></select></div>
+                                </div>
+                            </div>
+
+                            <!-- Grid Options -->
+                            <div class="section" style="margin-bottom: 1rem; border-top: 1px solid #374151; padding-top: 1rem;">
+                                <h4>Grid Options</h4>
+                                <div style="margin-bottom: 0.5rem;">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" id="gridEnabled" checked> Show Grid
+                                    </label>
+                                </div>
+                                <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                                    <div><label>Size (in)</label><input type="number" id="gridSize" value="1.0" step="0.125"></div>
+                                    <div><label>Color</label><input type="color" id="gridColor" value="#cccccc" style="height: 38px;"></div>
+                                </div>
+                            </div>
+
+                            <!-- Target Layout -->
+                            <div class="section" style="margin-bottom: 1rem; border-top: 1px solid #374151; padding-top: 1rem;">
+                                <h4>Target Layout</h4>
+                                <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                                    <div><label>Rows</label><input type="number" id="rows" value="1" min="1"></div>
+                                    <div><label>Cols</label><input type="number" id="cols" value="1" min="1"></div>
+                                </div>
+                                <div style="margin-top: 0.5rem;">
+                                    <label>Page Margin (in)</label>
+                                    <input type="number" id="margin" value="0.5" step="0.1" min="0">
+                                </div>
+                            </div>
+
+                            <!-- Target Design -->
+                            <div class="section" style="margin-bottom: 1rem; border-top: 1px solid #374151; padding-top: 1rem;">
+                                <h4>Target Design</h4>
+                                <div style="margin-bottom: 0.5rem;"><label>Shape</label><select id="bullseyeShape"><option value="circle">Round</option><option value="square">Square</option><option value="triangle">Triangle</option><option value="hexagon">Hexagon</option></select></div>
+                                <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                                    <div><label>Diameter (in)</label><input type="number" id="bullseyeSize" value="6.0" step="0.1"></div>
+                                    <div><label>Ring Count</label><input type="number" id="numRings" value="5" min="1"></div>
+                                </div>
+                            </div>
+
+                             <!-- Colors -->
+                             <div class="section" style="margin-bottom: 1rem; border-top: 1px solid #374151; padding-top: 1rem;">
+                                <h4>Colors</h4>
+                                <div class="form-grid" style="grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem;">
+                                    <div><label>Center</label><input type="color" id="bullseyeColor" value="#ff0000" style="height: 38px;"></div>
+                                    <div><label>Ring A</label><input type="color" id="ringColorA" value="#000000" style="height: 38px;"></div>
+                                    <div><label>Ring B</label><input type="color" id="ringColorB" value="#ffffff" style="height: 38px;"></div>
+                                </div>
+                            </div>
+
+                            <!-- Text Label -->
+                            <div class="section" style="margin-bottom: 1rem; border-top: 1px solid #374151; padding-top: 1rem;">
+                                <h4>Text Label</h4>
+                                <textarea id="labelText" rows="3" style="width: 100%; box-sizing: border-box; margin-bottom: 0.5rem;" placeholder="Enter label text..."></textarea>
+                                <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                                    <div><label>Position</label><select id="labelPosition"><option value="top-left">Top Left</option><option value="top-right">Top Right</option><option value="bottom-left">Bottom Left</option><option value="bottom-right">Bottom Right</option></select></div>
+                                    <div><label>Size (pt)</label><input type="number" id="labelSize" value="12" min="6"></div>
+                                </div>
+                            </div>
+
+                            <!-- Preset Actions -->
+                             <div class="section" style="margin-bottom: 1rem; border-top: 1px solid #374151; padding-top: 1rem;">
+                                <div style="display: flex; gap: 0.5rem; align-items: flex-end;">
+                                    <div style="flex-grow: 1;">
+                                        <label>Preset Name</label>
+                                        <input type="text" id="presetName" placeholder="My Custom Target">
+                                    </div>
+                                    <button id="savePresetBtn" class="btn-green" style="width: auto;">Save</button>
+                                </div>
+                            </div>
+
                         </div>
 
-                         <div style="grid-column: span 2;">
-                            <label>Layout (Rows x Columns)</label>
-                            <div style="display: flex; gap: 0.5rem;">
-                                <input type="number" id="rows" value="3" min="1" placeholder="Rows">
-                                <span>x</span>
-                                <input type="number" id="cols" value="2" min="1" placeholder="Columns">
+                        <!-- Right Preview Panel -->
+                        <div class="preview-panel">
+                            <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                                <button id="previewTargetBtn" class="btn-blue">Refresh Preview</button>
+                                <button id="downloadTargetBtn" class="btn-green">Export to PDF (Print)</button>
+                                <button id="downloadTargetImgBtn" class="btn-blue">Export Image</button>
+                            </div>
+                            
+                            <div id="targetPreviewContainer" style="border: 1px solid #4b5563; overflow: auto; padding: 1rem; background-color: #555555; text-align: center; height: 800px;">
+                                <canvas id="targetCanvas" style="background-color: white; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);"></canvas>
                             </div>
                         </div>
                     </div>
-                    
-                    <div style="margin-bottom: 1.5rem; display: flex; gap: 0.5rem; align-items: flex-end;">
-                        <div style="flex-grow: 1;">
-                            <label>Save As Preset Name</label>
-                            <input type="text" id="presetName" placeholder="e.g., NRA B-8">
-                        </div>
-                        <button id="savePresetBtn" class="btn-green" style="width: auto;">Save Preset</button>
-                    </div>
 
-                    <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
-                        <button id="previewTargetBtn" class="btn-blue">Update Preview</button>
-                        <button id="downloadTargetBtn" class="btn-green">Download PDF</button>
-                         <button id="downloadTargetImgBtn" class="btn-blue">Download Image</button>
-                    </div>
-                    
-                    <div id="targetPreviewContainer" style="border: 1px solid #4b5563; overflow: auto; padding: 1rem; background-color: #f3f4f6; text-align: center;">
-                        <canvas id="targetCanvas" style="background-color: white; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);"></canvas>
-                    </div>
                 </div>
             </div>
         
