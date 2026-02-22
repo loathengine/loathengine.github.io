@@ -23,6 +23,7 @@ export function initDbManagement() {
     });
 
     document.getElementById('exportDbBtn').addEventListener('click', exportDatabase);
+    document.getElementById('importMasterDbBtn').addEventListener('click', importMasterDatabase);
     document.getElementById('importDbInput').addEventListener('change', importDatabase);
     document.getElementById('deleteDbBtn').addEventListener('click', handleDeleteDatabase);
     
@@ -32,6 +33,47 @@ export function initDbManagement() {
 
     tableSelect.addEventListener('change', renderSelectedTable);
 }
+
+async function importMasterDatabase() {
+    if (!confirm('Are you sure you want to import the master database? This will overwrite all existing data.')) {
+        return;
+    }
+
+    const url = 'https://raw.githubusercontent.com/loathengine/Empirical-Percision/main/master-db.json';
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        
+        const db = await openDB();
+        const stores = getObjectStores();
+
+        const transaction = db.transaction(stores, 'readwrite');
+        for (const storeName of stores) {
+            if (data[storeName]) {
+                const store = transaction.objectStore(storeName);
+                store.clear();
+                for (const item of data[storeName]) {
+                    store.put(item);
+                }
+            }
+        }
+        transaction.oncomplete = async () => {
+            alert('Master database imported successfully!');
+            window.dispatchEvent(new Event('app-refresh'));
+        };
+        transaction.onerror = (err) => {
+            console.error('Import transaction error:', err);
+            alert('Failed to import master database.');
+        };
+    } catch (error) {
+        console.error('Error fetching or importing master DB file:', error);
+        alert('Could not fetch or import the master database.');
+    }
+}
+
 
 export async function renderSelectedTable() {
     const tableName = document.getElementById('tableSelect').value;
