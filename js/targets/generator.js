@@ -2,6 +2,7 @@
 import { getAllItems, updateItem, deleteItem, generateUniqueId } from '../db.js';
 
 export async function initTargetGenerator() {
+    console.log("Initializing Target Generator...");
     const canvas = document.getElementById('targetCanvas');
     if (!canvas) {
         console.error("Target generator canvas not found");
@@ -84,7 +85,14 @@ export async function initTargetGenerator() {
 
     async function loadPresets() {
         try {
-            const presets = await getAllItems('customTargets');
+            console.log("Loading target presets...");
+            let presets = [];
+            try {
+                presets = await getAllItems('customTargets');
+            } catch (dbError) {
+                console.warn("Could not load custom targets:", dbError);
+            }
+            
             targetPresetSelect.innerHTML = '<option value="">-- Select a Preset --</option>';
             
             const presetMap = new Map();
@@ -104,7 +112,10 @@ export async function initTargetGenerator() {
                 const selectedId = targetPresetSelect.value;
                 if (!selectedId) return;
                 const preset = presetMap.get(selectedId);
-                if (preset) applyPreset(preset);
+                if (preset) {
+                    console.log("Applying preset:", preset.name);
+                    applyPreset(preset);
+                }
             };
         } catch (error) {
             console.error("Failed to load presets:", error);
@@ -116,7 +127,9 @@ export async function initTargetGenerator() {
         controls.paperSize.value = preset.paperSize || "letter";
         controls.orientation.value = preset.orientation || "portrait";
         
-        controls.gridEnabled.checked = preset.gridEnabled !== undefined ? preset.gridEnabled : true;
+        controls.gridEnabled.checked = (preset.gridEnabled === true || preset.gridEnabled === "true");
+        if (preset.gridEnabled === undefined) controls.gridEnabled.checked = true;
+
         controls.gridSize.value = preset.gridSize || 1.0;
         controls.gridColor.value = preset.gridColor || "#cccccc";
         
@@ -289,14 +302,23 @@ export async function initTargetGenerator() {
 
     function drawTarget() {
         try {
+            console.log("Drawing target...");
             const dim = getPaperDimsPoints();
             const pW = dim.w;
             const pH = dim.h;
             
+            if (!pW || !pH) return;
+
             canvas.width = pW * SCALE;
             canvas.height = pH * SCALE;
+            
+            // Explicitly set context state
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
             ctx.scale(SCALE, SCALE);
 
+            // Fill Background
             ctx.fillStyle = "white";
             ctx.fillRect(0, 0, pW, pH);
 
@@ -460,5 +482,6 @@ export async function initTargetGenerator() {
     }
 
     await loadPresets();
+    // Force initial draw
     drawTarget();
 }
