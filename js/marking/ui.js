@@ -90,18 +90,67 @@ export async function refreshImpactMarkingUI() {
     const firearms = await getAllItems('firearms');
     populateSelect('firearmSelect', firearms, 'nickname', 'id');
 
-    const loads = await getAllItems('loads');
+    // Initial load population (will be filtered if a firearm is already selected)
+    await updateLoadSelectBasedOnFirearm();
+    
+    const savedImageSelect = document.getElementById('savedImageSelect');
+    const targets = await getAllItems('targetImages');
+    const currentTargetVal = savedImageSelect.value;
+    savedImageSelect.innerHTML = '<option value="">-- Select a Saved Target --</option>';
+    targets.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+    targets.forEach(target => {
+        const option = document.createElement('option');
+        option.value = target.id;
+        option.textContent = target.name;
+        savedImageSelect.appendChild(option);
+    });
+    savedImageSelect.value = currentTargetVal;
+}
+
+export async function updateLoadSelectBasedOnFirearm() {
+    const firearmSelect = document.getElementById('firearmSelect');
+    const selectedFirearmId = firearmSelect.value;
     const loadSelect = document.getElementById('loadSelect');
+    
     if (!loadSelect) return;
+    
+    let loads = await getAllItems('loads');
+    
+    // Filter by cartridge if firearm is selected
+    if (selectedFirearmId) {
+        const firearm = await getItem('firearms', selectedFirearmId);
+        if (firearm && firearm.cartridgeId) {
+            loads = loads.filter(l => l.cartridgeId === firearm.cartridgeId);
+        }
+    }
+
     const currentLoadVal = loadSelect.value;
     loadSelect.innerHTML = '<option value="">-- Associate Load (Optional) --</option>';
+    
+    if (loads.length === 0 && selectedFirearmId) {
+         const option = document.createElement('option');
+         option.disabled = true;
+         option.textContent = "-- No compatible loads found --";
+         loadSelect.appendChild(option);
+    }
+
     for (const load of loads) {
         const option = document.createElement('option');
         option.value = load.id;
         
         if (load.loadType === 'commercial') {
             const mfg = await getItem('manufacturers', load.manufacturerId);
-            option.textContent = `${mfg ? mfg.name : ''} ${load.name} ${load.bulletWeight || ''}gr`.trim();
+            
+            // Fetch bullet info if available
+            let bulletInfo = '';
+            if (load.bulletId) {
+                const bullet = await getItem('bullets', load.bulletId);
+                bulletInfo = bullet ? `${bullet.weight}gr ${bullet.name}` : '';
+            } else if (load.bulletWeight) {
+                 bulletInfo = `${load.bulletWeight}gr`;
+            }
+
+            option.textContent = `${mfg ? mfg.name : ''} ${load.name} ${bulletInfo}`.trim();
         } else {
             const bullet = await getItem('bullets', load.bulletId);
             const powder = await getItem('powders', load.powderId);
@@ -123,20 +172,12 @@ export async function refreshImpactMarkingUI() {
         }
         loadSelect.appendChild(option);
     }
-    loadSelect.value = currentLoadVal;
-    
-    const savedImageSelect = document.getElementById('savedImageSelect');
-    const targets = await getAllItems('targetImages');
-    const currentTargetVal = savedImageSelect.value;
-    savedImageSelect.innerHTML = '<option value="">-- Select a Saved Target --</option>';
-    targets.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
-    targets.forEach(target => {
-        const option = document.createElement('option');
-        option.value = target.id;
-        option.textContent = target.name;
-        savedImageSelect.appendChild(option);
-    });
-    savedImageSelect.value = currentTargetVal;
+    // Restore selection if still valid, otherwise reset
+    if ([...loadSelect.options].some(o => o.value === currentLoadVal)) {
+        loadSelect.value = currentLoadVal;
+    } else {
+        loadSelect.value = "";
+    }
 }
 
 export async function populateMarkingSessionSelect() {

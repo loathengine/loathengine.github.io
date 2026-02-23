@@ -1,6 +1,6 @@
 import { state, resetState, setImg, setCanvas } from './state.js';
 import { draw, updateCanvasSize, getCanvasCoords } from './canvas.js';
-import { updateActiveButton, updateStatsDisplay, renderGroupSelector, populateMarkingSessionSelect } from './ui.js';
+import { updateActiveButton, updateStatsDisplay, renderGroupSelector, populateMarkingSessionSelect, updateLoadSelectBasedOnFirearm } from './ui.js';
 import { getItem, updateItem, deleteItem, generateUniqueId } from '../db.js';
 
 export function setupEventListeners() {
@@ -26,6 +26,11 @@ export function setupEventListeners() {
     const deleteGroupBtn = document.getElementById('deleteGroup');
     const statsOutput = document.getElementById('stats-output');
     const saveImpactDataBtn = document.getElementById('saveImpactDataBtn');
+    const firearmSelect = document.getElementById('firearmSelect');
+
+    firearmSelect.addEventListener('change', async () => {
+        await updateLoadSelectBasedOnFirearm();
+    });
 
     savedImageSelect.addEventListener('change', async (e) => {
         const targetId = e.target.value;
@@ -315,7 +320,10 @@ export function setupEventListeners() {
         state.currentGroupIndex = state.groups.length > 0 ? 0 : -1;
         
         document.getElementById('firearmSelect').value = data.firearmId;
+        // Trigger load select update, then set value
+        await updateLoadSelectBasedOnFirearm();
         document.getElementById('loadSelect').value = data.loadId;
+
         document.getElementById('tmTargetDistance').value = data.targetDistance;
         document.getElementById('tmDistanceUnits').value = data.distanceUnits;
         document.getElementById('scaleDistance').value = state.scale.distance;

@@ -194,6 +194,7 @@ export function initLoadsManagement() {
                 
                 document.getElementById('loadForm').reset();
                 document.getElementById('commercialAmmoForm').reset();
+                // Explicitly clear IDs on tab switch
                 document.getElementById('loadId').value = '';
                 document.getElementById('commercialAmmoId').value = '';
 
@@ -270,6 +271,7 @@ async function handleLoadSubmit(e) {
     };
     await updateItem('loads', load);
     e.target.reset();
+    document.getElementById('loadId').value = ''; // Explicitly clear ID
     renderLoadsTable();
     refreshImpactMarkingUI();
 }
@@ -279,7 +281,6 @@ async function handleCommercialAmmoSubmit(e) {
     const ammo = {
         id: document.getElementById('commercialAmmoId').value || generateUniqueId(),
         loadType: 'commercial',
-        // Removed: manufacturerId: document.getElementById('commercialAmmoManufacturer').value,
         name: document.getElementById('commercialAmmoName').value,
         diameterId: document.getElementById('commercialAmmoDiameter').value,
         cartridgeId: document.getElementById('commercialAmmoCartridge').value,
@@ -289,6 +290,7 @@ async function handleCommercialAmmoSubmit(e) {
     };
     await updateItem('loads', ammo);
     e.target.reset();
+    document.getElementById('commercialAmmoId').value = ''; // Explicitly clear ID
     renderLoadsTable();
     refreshImpactMarkingUI();
 }
@@ -323,7 +325,7 @@ async function renderLoadsTable() {
         return `${bullet.weight}gr ${mfgName} ${bullet.name}`;
     };
 
-    // Keep map for handloads just in case
+    // Keep map for handloads
     const bulletMap = new Map(bullets.map(i => {
         const mfgName = manufacturerMap.get(i.manufacturerId) || '';
         const text = `${i.weight}gr ${mfgName} ${i.name}`;
