@@ -1,5 +1,5 @@
 // js/targets/generator.js
-import { getAllItems, updateItem, deleteItem, generateUniqueId } from '../db.js';
+import { getAllItems, updateItem, deleteItem, generateUniqueId, getItem } from '../db.js';
 
 export async function initTargetGenerator() {
     console.log("Initializing Target Generator...");
@@ -17,6 +17,10 @@ export async function initTargetGenerator() {
     const deletePresetBtn = document.getElementById('deletePresetBtn');
     const targetPresetSelect = document.getElementById('targetPresetSelect');
     const presetNameInput = document.getElementById('presetName');
+
+    const importFirearmSelect = document.getElementById('importFirearm');
+    const importLoadSelect = document.getElementById('importLoad');
+    const importDataBtn = document.getElementById('importDataBtn');
 
     // Controls Mapping
     const controls = {
@@ -58,6 +62,7 @@ export async function initTargetGenerator() {
     // Paper Definitions (in Points)
     const PAPERS = {
         "letter": { w: 612, h: 792 },
+        "legal": { w: 612, h: 1008 },
         "a4": { w: 595, h: 842 }
     };
 
@@ -119,6 +124,111 @@ export async function initTargetGenerator() {
             };
         } catch (error) {
             console.error("Failed to load presets:", error);
+        }
+    }
+
+    async function loadImportData() {
+        if (!importFirearmSelect || !importLoadSelect) return;
+
+        try {
+            const firearms = await getAllItems('firearms');
+            const loads = await getAllItems('loads');
+            const cartridges = await getAllItems('cartridges');
+            const bullets = await getAllItems('bullets');
+            const powders = await getAllItems('powders');
+            const manufacturers = await getAllItems('manufacturers');
+
+            // Populate Firearms
+            importFirearmSelect.innerHTML = '<option value="">-- Select Firearm --</option>';
+            firearms.forEach(f => {
+                const option = document.createElement('option');
+                option.value = f.id;
+                option.textContent = f.nickname;
+                importFirearmSelect.appendChild(option);
+            });
+
+            // Populate Loads
+            importLoadSelect.innerHTML = '<option value="">-- Select Load --</option>';
+            loads.forEach(l => {
+                const option = document.createElement('option');
+                option.value = l.id;
+
+                let label = "Unknown Load";
+                const cartridge = cartridges.find(c => c.id === l.cartridgeId);
+                const cartName = cartridge ? cartridge.name : "N/A";
+
+                if (l.loadType === 'commercial') {
+                    const mfg = manufacturers.find(m => m.id === l.manufacturerId);
+                    const mfgName = mfg ? mfg.name : '';
+                    label = `${cartName} - ${mfgName} ${l.name}`;
+                } else {
+                    const bullet = bullets.find(b => b.id === l.bulletId);
+                    const powder = powders.find(p => p.id === l.powderId);
+                    const bulletStr = bullet ? `${bullet.weight}gr` : '';
+                    const powderStr = powder ? powder.name : '';
+                    let chargeStr = '';
+                    if (Array.isArray(l.chargeWeight)) chargeStr = l.chargeWeight.join(',');
+                    else if (l.chargeWeight) chargeStr = l.chargeWeight;
+                    
+                    label = `${cartName} - ${bulletStr} ${chargeStr}gr ${powderStr}`;
+                }
+
+                option.textContent = label;
+                importLoadSelect.appendChild(option);
+            });
+
+        } catch (err) {
+            console.error("Error loading import data", err);
+        }
+    }
+
+    async function insertImportData() {
+        const firearmId = importFirearmSelect.value;
+        const loadId = importLoadSelect.value;
+        
+        let textToInsert = "";
+
+        if (firearmId) {
+            const firearm = await getItem('firearms', firearmId);
+            if (firearm) {
+                textToInsert += `Firearm: ${firearm.nickname}\n`;
+            }
+        }
+
+        if (loadId) {
+            const load = await getItem('loads', loadId);
+            if (load) {
+                 const cartridge = await getItem('cartridges', load.cartridgeId);
+                 const cartName = cartridge ? cartridge.name : "";
+
+                 if (load.loadType === 'commercial') {
+                    const mfg = await getItem('manufacturers', load.manufacturerId);
+                    textToInsert += `Ammo: ${mfg ? mfg.name : ''} ${load.name} (${cartName})\n`;
+                 } else {
+                    const bullet = await getItem('bullets', load.bulletId);
+                    const powder = await getItem('powders', load.powderId);
+                    const bulletStr = bullet ? `${bullet.weight}gr ${bullet.name}` : 'Unknown Bullet';
+                    const powderName = powder ? powder.name : 'Unknown Powder';
+                    
+                    let chargeStr = '';
+                    if (Array.isArray(load.chargeWeight)) chargeStr = load.chargeWeight.join(', ');
+                    else chargeStr = load.chargeWeight || '';
+
+                    textToInsert += `Load: ${cartName}\nBullet: ${bulletStr}\nPowder: ${chargeStr}gr ${powderName}\n`;
+                    if (load.col) {
+                         let colStr = '';
+                         if (Array.isArray(load.col)) colStr = load.col.join(', ');
+                         else colStr = load.col;
+                         textToInsert += `COAL: ${colStr}"\n`;
+                    }
+                 }
+            }
+        }
+
+        if (textToInsert) {
+            const currentText = controls.labelText.value;
+            controls.labelText.value = currentText + (currentText ? "\n" : "") + textToInsert;
+            drawTarget();
         }
     }
 
@@ -412,6 +522,7 @@ export async function initTargetGenerator() {
                 let textAlign = "left";
                 let textBaseline = "top";
 
+                // Ensure margin is respected for text
                 if (pos === "top-left") {
                     tx = margin + pad;
                     ty = margin + pad;
@@ -444,6 +555,7 @@ export async function initTargetGenerator() {
     if(previewBtn) previewBtn.addEventListener('click', drawTarget);
     if(savePresetBtn) savePresetBtn.addEventListener('click', savePreset);
     if(deletePresetBtn) deletePresetBtn.addEventListener('click', deletePreset);
+    if(importDataBtn) importDataBtn.addEventListener('click', insertImportData);
     
     Object.values(controls).forEach(input => {
         if(input) input.addEventListener('input', drawTarget);
@@ -482,6 +594,7 @@ export async function initTargetGenerator() {
     }
 
     await loadPresets();
+    await loadImportData(); // Initialize import dropdowns
     // Force initial draw
     drawTarget();
 }

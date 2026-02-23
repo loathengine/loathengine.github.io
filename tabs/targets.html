@@ -34,7 +34,7 @@
                             <div class="section" style="margin-bottom: 1rem;">
                                 <h4>Page Settings</h4>
                                 <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 0.5rem;">
-                                    <div><label>Size</label><select id="paperSize"><option value="letter">Letter</option><option value="a4">A4</option></select></div>
+                                    <div><label>Size</label><select id="paperSize"><option value="letter">Letter</option><option value="legal">Legal</option><option value="a4">A4</option></select></div>
                                     <div><label>Orientation</label><select id="paperOrientation"><option value="portrait">Portrait</option><option value="landscape">Landscape</option></select></div>
                                 </div>
                             </div>
@@ -89,6 +89,16 @@
                             <!-- Text Label -->
                             <div class="section" style="margin-bottom: 1rem; border-top: 1px solid #374151; padding-top: 1rem;">
                                 <h4>Text Label</h4>
+                                <div style="margin-bottom: 0.5rem;">
+                                    <label>Import Data</label>
+                                    <select id="importFirearm" style="width: 100%; margin-bottom: 0.25rem;">
+                                        <option value="">-- Select Firearm --</option>
+                                    </select>
+                                    <select id="importLoad" style="width: 100%;">
+                                        <option value="">-- Select Load --</option>
+                                    </select>
+                                    <button id="importDataBtn" class="btn-indigo btn-small" style="width: 100%; margin-top: 0.25rem;">Insert Data</button>
+                                </div>
                                 <textarea id="labelText" rows="3" style="width: 100%; box-sizing: border-box; margin-bottom: 0.5rem;" placeholder="Enter label text..."></textarea>
                                 <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 0.5rem;">
                                     <div><label>Position</label><select id="labelPosition"><option value="top-left">Top Left</option><option value="top-right">Top Right</option><option value="bottom-left">Bottom Left</option><option value="bottom-right">Bottom Right</option></select></div>
