@@ -119,6 +119,40 @@ async function refreshCommercialAmmoCartridgeDropdown() {
         ? allCartridges.filter(c => c.diameterId === diameterId)
         : []; 
     populateSelect('commercialAmmoCartridge', filteredCartridges, 'name', 'id');
+    
+    // Also refresh bullets when diameter changes, as diameter drives bullet choices too
+    await refreshCommercialAmmoBulletDropdown();
+}
+
+async function refreshCommercialAmmoBulletDropdown() {
+    const diameterId = document.getElementById('commercialAmmoDiameter').value;
+    const bulletSelect = document.getElementById('commercialAmmoBullet');
+    
+    bulletSelect.innerHTML = '<option value="">-- Select --</option>';
+    
+    if (!diameterId) return;
+
+    const allBullets = await getAllItems('bullets');
+    const allManufacturers = await getAllItems('manufacturers');
+    
+    // Filter bullets by the selected diameter
+    const filteredBullets = allBullets.filter(b => b.diameterId === diameterId);
+
+    // Sort bullets by weight then name
+    filteredBullets.sort((a, b) => {
+        if (a.weight !== b.weight) return a.weight - b.weight;
+        return a.name.localeCompare(b.name);
+    });
+
+    for (const bullet of filteredBullets) {
+        const manufacturer = allManufacturers.find(m => m.id === bullet.manufacturerId);
+        const mfgName = manufacturer ? manufacturer.name : 'Unknown';
+        
+        const option = document.createElement('option');
+        option.value = bullet.id;
+        option.textContent = `${bullet.weight}gr ${mfgName} ${bullet.name}`;
+        bulletSelect.appendChild(option);
+    }
 }
 
 export function initLoadsManagement() {
@@ -202,8 +236,8 @@ export async function refreshLoadsUI() {
     document.getElementById('loadBrass').innerHTML = '<option value="">-- Select --</option>';
 
     // Commercial Ammo Form
-    // Removed: populateSelect('commercialAmmoManufacturer', allManufacturers, 'name', 'id');
     populateSelect('commercialAmmoDiameter', allDiameters, 'imperial', 'id');
+    // Initialize dependent commercial dropdowns
     await refreshCommercialAmmoCartridgeDropdown();
 
     renderLoadsTable();
@@ -249,7 +283,7 @@ async function handleCommercialAmmoSubmit(e) {
         name: document.getElementById('commercialAmmoName').value,
         diameterId: document.getElementById('commercialAmmoDiameter').value,
         cartridgeId: document.getElementById('commercialAmmoCartridge').value,
-        bulletWeight: parseFloat(document.getElementById('commercialAmmoBulletWeight').value),
+        bulletId: document.getElementById('commercialAmmoBullet').value,
         partNumber: document.getElementById('commercialAmmoPartNumber').value,
         lot: document.getElementById('commercialAmmoLot').value,
     };
@@ -281,6 +315,15 @@ async function renderLoadsTable() {
     const manufacturerMap = new Map(manufacturers.map(i => [i.id, i.name]));
     const powderMap = new Map(powders.map(i => [i.id, i.name]));
     
+    // Updated helper to get full bullet description
+    const getBulletDescription = (bulletId) => {
+        const bullet = bullets.find(b => b.id === bulletId);
+        if (!bullet) return 'Unknown Bullet';
+        const mfgName = manufacturerMap.get(bullet.manufacturerId) || '';
+        return `${bullet.weight}gr ${mfgName} ${bullet.name}`;
+    };
+
+    // Keep map for handloads just in case
     const bulletMap = new Map(bullets.map(i => {
         const mfgName = manufacturerMap.get(i.manufacturerId) || '';
         const text = `${i.weight}gr ${mfgName} ${i.name}`;
@@ -297,7 +340,18 @@ async function renderLoadsTable() {
         if (load.loadType === 'commercial') {
             type = 'Commercial';
             const mfgName = load.manufacturerId ? (manufacturerMap.get(load.manufacturerId) || '') : '';
-            details = `${mfgName} ${load.name} ${load.bulletWeight || ''}gr`.trim();
+            
+            // Build details string: Manufacturer Name + Bullet Description
+            let bulletDesc = '';
+            if (load.bulletId) {
+                bulletDesc = getBulletDescription(load.bulletId);
+            } else if (load.bulletWeight) {
+                // Legacy fallback
+                bulletDesc = `${load.bulletWeight}gr`;
+            }
+
+            details = `${mfgName} ${load.name} with ${bulletDesc}`.trim();
+
             if (load.partNumber) {
                 details += ` (Part: ${load.partNumber})`;
             }
@@ -378,12 +432,14 @@ async function handleLoadTableClick(e) {
 
         if (item.loadType === 'commercial') {
             document.getElementById('commercialAmmoId').value = item.id;
-            // Removed: document.getElementById('commercialAmmoManufacturer').value = item.manufacturerId;
             document.getElementById('commercialAmmoName').value = item.name;
             document.getElementById('commercialAmmoDiameter').value = item.diameterId;
+            
+            // Trigger refresh chain
             await refreshCommercialAmmoCartridgeDropdown();
+            
             document.getElementById('commercialAmmoCartridge').value = item.cartridgeId;
-            document.getElementById('commercialAmmoBulletWeight').value = item.bulletWeight;
+            document.getElementById('commercialAmmoBullet').value = item.bulletId;
             document.getElementById('commercialAmmoPartNumber').value = item.partNumber || '';
             document.getElementById('commercialAmmoLot').value = item.lot;
         } else {
