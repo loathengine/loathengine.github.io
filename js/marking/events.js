@@ -4,7 +4,8 @@ import { updateActiveButton, updateStatsDisplay, renderGroupSelector, populateMa
 import { getItem, updateItem, deleteItem, generateUniqueId } from '../db.js';
 
 export function setupEventListeners() {
-    const canvas = document.getElementById('targetCanvas');
+    // FIX: select the correct canvas element for the Marking tab
+    const canvas = document.getElementById('markingCanvas');
     if (!canvas) return;
 
     setCanvas(canvas);
