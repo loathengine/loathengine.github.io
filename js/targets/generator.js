@@ -188,6 +188,7 @@ export async function initTargetGenerator() {
         
         let textToInsert = "";
 
+        // FIREARM DATA
         if (firearmId) {
             const firearm = await getItem('firearms', firearmId);
             if (firearm) {
@@ -195,39 +196,74 @@ export async function initTargetGenerator() {
             }
         }
 
+        // LOAD DATA
         if (loadId) {
             const load = await getItem('loads', loadId);
             if (load) {
                  const cartridge = await getItem('cartridges', load.cartridgeId);
                  const cartName = cartridge ? cartridge.name : "";
 
+                 // Commercial Ammo
                  if (load.loadType === 'commercial') {
                     const mfg = await getItem('manufacturers', load.manufacturerId);
-                    textToInsert += `Ammo: ${mfg ? mfg.name : ''} ${load.name} (${cartName})\n`;
-                 } else {
+                    // Minimal check for bullet info if present
+                    let bulletInfo = "";
+                    if (load.bulletId) {
+                        const bullet = await getItem('bullets', load.bulletId);
+                        const bMfg = bullet ? await getItem('manufacturers', bullet.manufacturerId) : null;
+                        if (bullet) {
+                            bulletInfo = `${bMfg ? bMfg.name : ''} ${bullet.name} ${bullet.weight}gr`.trim();
+                        }
+                    }
+
+                    textToInsert += `Cartridge: ${cartName}\n`;
+                    textToInsert += `Ammo: ${mfg ? mfg.name : ''} ${load.name}\n`;
+                    if (bulletInfo) textToInsert += `Bullet: ${bulletInfo}\n`;
+                 } 
+                 // Handload
+                 else {
                     const bullet = await getItem('bullets', load.bulletId);
+                    const bulletMfg = bullet ? await getItem('manufacturers', bullet.manufacturerId) : null;
+                    
                     const powder = await getItem('powders', load.powderId);
-                    const bulletStr = bullet ? `${bullet.weight}gr ${bullet.name}` : 'Unknown Bullet';
-                    const powderName = powder ? powder.name : 'Unknown Powder';
+                    const powderMfg = powder ? await getItem('manufacturers', powder.manufacturerId) : null;
+                    
+                    const primer = await getItem('primers', load.primerId);
+                    const primerMfg = primer ? await getItem('manufacturers', primer.manufacturerId) : null;
+                    
+                    const brass = await getItem('brass', load.brassId);
+                    const brassMfg = brass ? await getItem('manufacturers', brass.manufacturerId) : null;
+
+                    // Building Strings
+                    const bulletStr = bullet ? `${bulletMfg ? bulletMfg.name : ''} ${bullet.name} ${bullet.weight}gr` : '';
+                    const powderStr = powder ? `${powderMfg ? powderMfg.name : ''} ${powder.name}` : '';
                     
                     let chargeStr = '';
                     if (Array.isArray(load.chargeWeight)) chargeStr = load.chargeWeight.join(', ');
                     else chargeStr = load.chargeWeight || '';
 
-                    textToInsert += `Load: ${cartName}\nBullet: ${bulletStr}\nPowder: ${chargeStr}gr ${powderName}\n`;
+                    // Construct the text block
+                    textToInsert += `Cartridge: ${cartName}\n`;
+                    if (bulletStr) textToInsert += `Bullet: ${bulletStr}\n`;
+                    if (powderStr) textToInsert += `Powder: ${powderStr} (${chargeStr}gr)\n`;
+                    
                     if (load.col) {
                          let colStr = '';
                          if (Array.isArray(load.col)) colStr = load.col.join(', ');
                          else colStr = load.col;
                          textToInsert += `COAL: ${colStr}"\n`;
                     }
+                    
+                    if (primer) textToInsert += `Primer: ${primerMfg ? primerMfg.name : ''} ${primer.name}\n`;
+                    if (brass) textToInsert += `Brass: ${brassMfg ? brassMfg.name : ''}\n`;
                  }
             }
         }
 
         if (textToInsert) {
             const currentText = controls.labelText.value;
-            controls.labelText.value = currentText + (currentText ? "\n" : "") + textToInsert;
+            // Append with a newline if there's already text
+            controls.labelText.value = currentText + (currentText ? "\n" : "") + textToInsert.trim();
             drawTarget();
         }
     }
