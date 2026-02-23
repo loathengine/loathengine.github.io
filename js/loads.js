@@ -250,6 +250,7 @@ async function handleCommercialAmmoSubmit(e) {
         diameterId: document.getElementById('commercialAmmoDiameter').value,
         cartridgeId: document.getElementById('commercialAmmoCartridge').value,
         bulletWeight: parseFloat(document.getElementById('commercialAmmoBulletWeight').value),
+        partNumber: document.getElementById('commercialAmmoPartNumber').value,
         lot: document.getElementById('commercialAmmoLot').value,
     };
     await updateItem('loads', ammo);
@@ -297,6 +298,9 @@ async function renderLoadsTable() {
             type = 'Commercial';
             const mfgName = load.manufacturerId ? (manufacturerMap.get(load.manufacturerId) || '') : '';
             details = `${mfgName} ${load.name} ${load.bulletWeight || ''}gr`.trim();
+            if (load.partNumber) {
+                details += ` (Part: ${load.partNumber})`;
+            }
             charge = 'N/A';
             col = 'N/A';
         } else { // Handload or legacy data
@@ -380,6 +384,7 @@ async function handleLoadTableClick(e) {
             await refreshCommercialAmmoCartridgeDropdown();
             document.getElementById('commercialAmmoCartridge').value = item.cartridgeId;
             document.getElementById('commercialAmmoBulletWeight').value = item.bulletWeight;
+            document.getElementById('commercialAmmoPartNumber').value = item.partNumber || '';
             document.getElementById('commercialAmmoLot').value = item.lot;
         } else {
             document.getElementById('loadForm').reset();
