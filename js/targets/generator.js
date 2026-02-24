@@ -33,7 +33,8 @@ export async function initTargetGenerator() {
         
         rows: document.getElementById('rows'),
         cols: document.getElementById('cols'),
-        margin: document.getElementById('margin'),
+        marginX: document.getElementById('marginX'),
+        marginY: document.getElementById('marginY'),
         
         shape: document.getElementById('bullseyeShape'),
         diameter: document.getElementById('bullseyeSize'),
@@ -259,7 +260,11 @@ export async function initTargetGenerator() {
         
         controls.rows.value = preset.rows || 1;
         controls.cols.value = preset.cols || 1;
-        controls.margin.value = preset.margin !== undefined ? preset.margin : 0.5;
+        
+        // Handle margins (fallback to old 'margin' if available)
+        const legacyMargin = preset.margin !== undefined ? preset.margin : 0.5;
+        controls.marginX.value = preset.marginX !== undefined ? preset.marginX : legacyMargin;
+        controls.marginY.value = preset.marginY !== undefined ? preset.marginY : legacyMargin;
         
         controls.shape.value = preset.shape || "circle";
         controls.diameter.value = preset.diameter || 6.0;
@@ -290,7 +295,8 @@ export async function initTargetGenerator() {
             gridColor: controls.gridColor.value,
             rows: parseInt(controls.rows.value),
             cols: parseInt(controls.cols.value),
-            margin: parseFloat(controls.margin.value),
+            marginX: parseFloat(controls.marginX.value),
+            marginY: parseFloat(controls.marginY.value),
             shape: controls.shape.value,
             diameter: parseFloat(controls.diameter.value),
             numRings: parseInt(controls.numRings.value),
@@ -345,9 +351,12 @@ export async function initTargetGenerator() {
         let steps = 0;
         let offset = 0;
 
-        if (shape === "triangle") {
+        if (shape === "triangle" || shape === "triangle-up") {
             steps = 3;
             offset = -Math.PI / 2;
+        } else if (shape === "triangle-down") {
+            steps = 3;
+            offset = Math.PI / 2;
         } else if (shape === "square") {
             steps = 4;
             offset = -Math.PI / 4;
@@ -371,16 +380,17 @@ export async function initTargetGenerator() {
     function calculateTargetPositions(pW, pH) {
         const rows = parseInt(controls.rows.value) || 1;
         const cols = parseInt(controls.cols.value) || 1;
-        const margin = (parseFloat(controls.margin.value) || 0) * PPI;
+        const mX = (parseFloat(controls.marginX.value) || 0) * PPI;
+        const mY = (parseFloat(controls.marginY.value) || 0) * PPI;
         const coords = [];
 
         if (!controls.gridEnabled.checked) {
-            const cellW = (pW - (2 * margin)) / cols;
-            const cellH = (pH - (2 * margin)) / rows;
+            const cellW = (pW - (2 * mX)) / cols;
+            const cellH = (pH - (2 * mY)) / rows;
             for (let r = 0; r < rows; r++) {
                 for (let c = 0; c < cols; c++) {
-                    const cx = margin + (c * cellW) + (cellW / 2);
-                    const cy = margin + (r * cellH) + (cellH / 2);
+                    const cx = mX + (c * cellW) + (cellW / 2);
+                    const cy = mY + (r * cellH) + (cellH / 2);
                     coords.push({ cx, cy });
                 }
             }
@@ -390,7 +400,7 @@ export async function initTargetGenerator() {
         const gridSizeVal = parseFloat(controls.gridSize.value) || 1.0;
         const gridPts = gridSizeVal * PPI;
         
-        const availW = pW - (2 * margin);
+        const availW = pW - (2 * mX);
         const rawSpacingX = availW / Math.max(1, cols);
         let snappedSpacingX = Math.round(rawSpacingX / gridPts) * gridPts;
         if (snappedSpacingX < gridPts) snappedSpacingX = gridPts;
@@ -402,7 +412,7 @@ export async function initTargetGenerator() {
         const alignedOffsetX = Math.round(offsetX / gridPts) * gridPts;
         const startX = centerX + alignedOffsetX;
 
-        const availH = pH - (2 * margin);
+        const availH = pH - (2 * mY);
         const rawSpacingY = availH / Math.max(1, rows);
         let snappedSpacingY = Math.round(rawSpacingY / gridPts) * gridPts;
         if (snappedSpacingY < gridPts) snappedSpacingY = gridPts;
@@ -447,7 +457,8 @@ export async function initTargetGenerator() {
             ctx.fillStyle = "white";
             ctx.fillRect(0, 0, pW, pH);
 
-            const margin = (parseFloat(controls.margin.value) || 0) * PPI;
+            const mX = (parseFloat(controls.marginX.value) || 0) * PPI;
+            const mY = (parseFloat(controls.marginY.value) || 0) * PPI;
 
             // 1. Draw Targets
             const targetCoords = calculateTargetPositions(pW, pH);
@@ -507,15 +518,15 @@ export async function initTargetGenerator() {
 
                 ctx.beginPath();
                 for (let x = startX; x <= pW; x += gridPts) {
-                    if (x >= margin && x <= (pW - margin)) {
-                        ctx.moveTo(x, margin);
-                        ctx.lineTo(x, pH - margin);
+                    if (x >= mX && x <= (pW - mX)) {
+                        ctx.moveTo(x, mY);
+                        ctx.lineTo(x, pH - mY);
                     }
                 }
                 for (let y = startY; y <= pH; y += gridPts) {
-                    if (y >= margin && y <= (pH - margin)) {
-                        ctx.moveTo(margin, y);
-                        ctx.lineTo(pW - margin, y);
+                    if (y >= mY && y <= (pH - mY)) {
+                        ctx.moveTo(mX, y);
+                        ctx.lineTo(pW - mX, y);
                     }
                 }
                 ctx.stroke();
