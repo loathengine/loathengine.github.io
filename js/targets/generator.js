@@ -360,9 +360,27 @@ export async function initTargetGenerator() {
         } else if (shape === "square") {
             steps = 4;
             offset = -Math.PI / 4;
+        } else if (shape === "diamond") {
+            steps = 4;
+            offset = 0; 
         } else if (shape === "hexagon") {
             steps = 6;
             offset = -Math.PI / 2;
+        } else if (shape === "star") {
+            const spikes = 5;
+            const outerRadius = r;
+            const innerRadius = r / 2;
+            const step = Math.PI / spikes;
+            
+            for (let i = 0; i < 2 * spikes; i++) {
+                const radius = (i % 2 === 0) ? outerRadius : innerRadius;
+                const angle = (i * step) - Math.PI / 2;
+                points.push({
+                    x: cx + radius * Math.cos(angle),
+                    y: cy + radius * Math.sin(angle)
+                });
+            }
+            return points;
         } else {
             return [];
         }
