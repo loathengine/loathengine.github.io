@@ -45,7 +45,8 @@ export async function initTargetGenerator() {
         
         labelText: document.getElementById('labelText'),
         labelPosition: document.getElementById('labelPosition'),
-        labelSize: document.getElementById('labelSize')
+        labelSize: document.getElementById('labelSize'),
+        labelMargin: document.getElementById('labelMargin')
     };
 
     // Check for missing controls
@@ -66,31 +67,9 @@ export async function initTargetGenerator() {
         "a4": { w: 595, h: 842 }
     };
 
-    // Defaults
-    const defaultPresets = [
-        {
-            name: "NRA B-8 (25-Yard Pistol)",
-            paperSize: "letter", orientation: "portrait", 
-            gridEnabled: false, gridSize: 1.0, gridColor: "#cccccc",
-            rows: 1, cols: 1, margin: 0.5,
-            shape: "circle", diameter: 5.54, numRings: 2, 
-            bullseyeColor: "#000000", ringColorA: "#ffffff", ringColorB: "#000000",
-            labelText: "NRA B-8 (Approx)", labelPosition: "top-left", labelSize: 12
-        },
-        {
-            name: "ISSF 10m Air Rifle (Grid of 12)",
-            paperSize: "letter", orientation: "portrait", 
-            gridEnabled: false, gridSize: 1.0, gridColor: "#cccccc",
-            rows: 4, cols: 3, margin: 0.5,
-            shape: "circle", diameter: 1.2, numRings: 1, 
-            bullseyeColor: "#000000", ringColorA: "#ffffff", ringColorB: "#ffffff",
-            labelText: "ISSF 10m", labelPosition: "top-left", labelSize: 10
-        }
-    ];
-
     async function loadPresets() {
         try {
-            console.log("Loading target presets...");
+            console.log("Loading saved targets...");
             let presets = [];
             try {
                 presets = await getAllItems('customTargets');
@@ -98,10 +77,9 @@ export async function initTargetGenerator() {
                 console.warn("Could not load custom targets:", dbError);
             }
             
-            targetPresetSelect.innerHTML = '<option value="">-- Select a Preset --</option>';
+            targetPresetSelect.innerHTML = '<option value="">-- Select a Saved Target --</option>';
             
             const presetMap = new Map();
-            defaultPresets.forEach(p => presetMap.set('default-' + p.name, { ...p, id: 'default-' + p.name, isDefault: true }));
             if (presets) {
                 presets.forEach(p => presetMap.set(p.id, p));
             }
@@ -109,7 +87,7 @@ export async function initTargetGenerator() {
             presetMap.forEach((preset, id) => {
                 const option = document.createElement('option');
                 option.value = id;
-                option.textContent = preset.name + (preset.isDefault ? ' (Default)' : '');
+                option.textContent = preset.name;
                 targetPresetSelect.appendChild(option);
             });
 
@@ -118,12 +96,12 @@ export async function initTargetGenerator() {
                 if (!selectedId) return;
                 const preset = presetMap.get(selectedId);
                 if (preset) {
-                    console.log("Applying preset:", preset.name);
+                    console.log("Applying saved target:", preset.name);
                     applyPreset(preset);
                 }
             };
         } catch (error) {
-            console.error("Failed to load presets:", error);
+            console.error("Failed to load saved targets:", error);
         }
     }
 
@@ -294,13 +272,14 @@ export async function initTargetGenerator() {
         controls.labelText.value = preset.labelText || "";
         controls.labelPosition.value = preset.labelPosition || "top-left";
         controls.labelSize.value = preset.labelSize || 12;
+        controls.labelMargin.value = preset.labelMargin !== undefined ? preset.labelMargin : 0.25;
 
         drawTarget();
     }
 
     async function savePreset() {
         const name = presetNameInput.value.trim();
-        if (!name) return alert('Please enter a name for the preset.');
+        if (!name) return alert('Please enter a name for the target.');
 
         const preset = {
             name: name,
@@ -320,33 +299,33 @@ export async function initTargetGenerator() {
             ringColorB: controls.ringColorB.value,
             labelText: controls.labelText.value,
             labelPosition: controls.labelPosition.value,
-            labelSize: parseInt(controls.labelSize.value)
+            labelSize: parseInt(controls.labelSize.value),
+            labelMargin: parseFloat(controls.labelMargin.value)
         };
 
         try {
             await updateItem('customTargets', preset);
-            alert('Preset saved!');
+            alert('Target saved!');
             presetNameInput.value = '';
             await loadPresets();
         } catch (error) {
-            console.error("Failed to save preset:", error);
-            alert("Failed to save preset.");
+            console.error("Failed to save target:", error);
+            alert("Failed to save target.");
         }
     }
 
     async function deletePreset() {
         const selectedId = targetPresetSelect.value;
-        if (!selectedId) return alert('Please select a preset to delete.');
-        if (selectedId.startsWith('default-')) return alert('Cannot delete default presets.');
+        if (!selectedId) return alert('Please select a target to delete.');
         
-        if (confirm('Are you sure you want to delete this preset?')) {
+        if (confirm('Are you sure you want to delete this target?')) {
             try {
                 await deleteItem('customTargets', selectedId);
                 await loadPresets();
-                alert('Preset deleted.');
+                alert('Target deleted.');
             } catch (error) {
-                console.error("Failed to delete preset:", error);
-                alert("Failed to delete preset.");
+                console.error("Failed to delete target:", error);
+                alert("Failed to delete target.");
             }
         }
     }
@@ -547,39 +526,56 @@ export async function initTargetGenerator() {
             if (labelText.trim()) {
                 const fontSize = parseInt(controls.labelSize.value) || 12;
                 ctx.font = `bold ${fontSize}px Arial`;
-                ctx.fillStyle = "black";
                 
                 const lines = labelText.split('\n');
                 const lineHeight = fontSize * 1.2;
                 const pos = controls.labelPosition.value;
-                const pad = 10;
+                
+                const labelMarginVal = parseFloat(controls.labelMargin.value);
+                const lMargin = (isNaN(labelMarginVal) ? 0.25 : labelMarginVal) * PPI;
+                const boxPad = 5;
 
-                let tx, ty;
-                let textAlign = "left";
-                let textBaseline = "top";
+                // Calculate Text Block Dimensions
+                let maxW = 0;
+                lines.forEach(line => {
+                    const w = ctx.measureText(line).width;
+                    if (w > maxW) maxW = w;
+                });
+                const totalH = lines.length * lineHeight;
 
-                // Ensure margin is respected for text
+                let startX, startY;
+
+                // Determine coordinates of Top-Left of text block
                 if (pos === "top-left") {
-                    tx = margin + pad;
-                    ty = margin + pad;
+                    startX = lMargin;
+                    startY = lMargin;
                 } else if (pos === "top-right") {
-                    tx = pW - margin - pad;
-                    ty = margin + pad;
-                    textAlign = "right";
+                    startX = pW - lMargin - maxW; 
+                    startY = lMargin;
                 } else if (pos === "bottom-left") {
-                    tx = margin + pad;
-                    ty = pH - margin - pad - (lines.length * lineHeight);
+                    startX = lMargin;
+                    startY = pH - lMargin - totalH;
                 } else if (pos === "bottom-right") {
-                    tx = pW - margin - pad;
-                    ty = pH - margin - pad - (lines.length * lineHeight);
-                    textAlign = "right";
+                    startX = pW - lMargin - maxW;
+                    startY = pH - lMargin - totalH;
                 }
 
-                ctx.textAlign = textAlign;
-                ctx.textBaseline = textBaseline;
+                // Draw Box Background
+                ctx.fillStyle = "white";
+                ctx.fillRect(startX - boxPad, startY - boxPad, maxW + (boxPad * 2), totalH + (boxPad * 2));
+                
+                // Draw Box Border
+                ctx.strokeStyle = "black";
+                ctx.lineWidth = 1;
+                ctx.strokeRect(startX - boxPad, startY - boxPad, maxW + (boxPad * 2), totalH + (boxPad * 2));
+
+                // Draw Text
+                ctx.fillStyle = "black";
+                ctx.textAlign = "left";
+                ctx.textBaseline = "top";
 
                 lines.forEach((line, i) => {
-                    ctx.fillText(line, tx, ty + (i * lineHeight));
+                    ctx.fillText(line, startX, startY + (i * lineHeight));
                 });
             }
         } catch (error) {

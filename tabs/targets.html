@@ -17,10 +17,10 @@
                 <div id="create-targets-subtab" class="tab-content">
                     
                     <div style="margin-bottom: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #374151;">
-                        <label>Load Preset</label>
+                        <label>Load Saved Target</label>
                         <div style="display: flex; gap: 0.5rem;">
                             <select id="targetPresetSelect">
-                                <option value="">-- Select a Preset --</option>
+                                <option value="">-- Select a Saved Target --</option>
                             </select>
                             <button id="deletePresetBtn" class="btn-red" style="width: auto;">Delete</button>
                         </div>
@@ -104,13 +104,17 @@
                                     <div><label>Position</label><select id="labelPosition"><option value="top-left">Top Left</option><option value="top-right">Top Right</option><option value="bottom-left">Bottom Left</option><option value="bottom-right">Bottom Right</option></select></div>
                                     <div><label>Size (pt)</label><input type="number" id="labelSize" value="12" min="6"></div>
                                 </div>
+                                <div style="margin-top: 0.5rem;">
+                                    <label>Margin (in)</label>
+                                    <input type="number" id="labelMargin" value="0.25" step="0.05" min="0">
+                                </div>
                             </div>
 
                             <!-- Preset Actions -->
                              <div class="section" style="margin-bottom: 1rem; border-top: 1px solid #374151; padding-top: 1rem;">
                                 <div style="display: flex; gap: 0.5rem; align-items: flex-end;">
                                     <div style="flex-grow: 1;">
-                                        <label>Preset Name</label>
+                                        <label>Target Name</label>
                                         <input type="text" id="presetName" placeholder="My Custom Target">
                                     </div>
                                     <button id="savePresetBtn" class="btn-blue" style="width: auto;">Save</button>
