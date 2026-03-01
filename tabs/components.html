@@ -9,14 +9,45 @@
 
                 <div class="tab-content active" id="bullets-subtab">
                     <h3>Manage Bullets</h3>
-                    <form id="bulletForm" class="form-grid">
+                    <form id="bulletForm">
                         <input type="hidden" id="bulletId">
-                        <div><label for="bulletManufacturer">Manufacturer</label><select id="bulletManufacturer"></select></div>
-                        <div><label for="bulletDiameter">Diameter</label><select id="bulletDiameter"></select></div>
-                        <div><label for="bulletName">Bullet Name</label><input type="text" id="bulletName" required></div>
-                        <div><label for="bulletWeight">Weight (grains)</label><input type="number" id="bulletWeight" step="0.1" required></div>
-                        <div><label for="bulletLength">Length (in)</label><input type="number" id="bulletLength" step="0.001"></div>
+                        
+                        <div class="form-grid">
+                            <div><label for="bulletManufacturer">Manufacturer</label><select id="bulletManufacturer"></select></div>
+                            <div><label for="bulletDiameter">Diameter</label><select id="bulletDiameter"></select></div>
+                            <div><label for="bulletName">Bullet Name</label><input type="text" id="bulletName" required></div>
+                            <div><label for="bulletWeight">Weight (grains)</label><input type="number" id="bulletWeight" step="0.1" required></div>
+                            <div><label for="bulletLength">Length (in)</label><input type="number" id="bulletLength" step="0.001"></div>
+                            <div><label for="bulletDragModel">Drag Model</label><input type="text" id="bulletDragModel"></div>
+                        </div>
+
+                        <h4 style="margin-top: 1rem; border-bottom: 1px solid #4b5563; padding-bottom: 0.5rem;">Stability Variables</h4>
+                        <div class="form-grid">
+                            <div><label for="bulletIx">Ix</label><input type="number" step="any" id="bulletIx"></div>
+                            <div><label for="bulletIy">Iy</label><input type="number" step="any" id="bulletIy"></div>
+                            <div><label for="bulletCgFromBase">CG From Base</label><input type="number" step="any" id="bulletCgFromBase"></div>
+                            <div><label for="bulletMeplat">Meplat Diameter</label><input type="number" step="any" id="bulletMeplat"></div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem; padding-top: 1.5rem;">
+                                <input type="checkbox" id="bulletIsTipped" style="width: auto;">
+                                <label for="bulletIsTipped" style="margin-bottom: 0;">Is Tipped</label>
+                            </div>
+                            <div><label for="bulletTipLength">Tip Length</label><input type="number" step="any" id="bulletTipLength"></div>
+                        </div>
+
+                        <h4 style="margin-top: 1rem; border-bottom: 1px solid #4b5563; padding-bottom: 0.5rem;">Ballistics</h4>
+                        <div class="form-grid">
+                            <div><label for="bulletPreferredModel">Preferred Model</label>
+                                <select id="bulletPreferredModel">
+                                    <option value="G7">G7</option>
+                                    <option value="G1">G1</option>
+                                </select>
+                            </div>
+                            <div><label for="bulletG1BC">G1 BC</label><input type="number" step="any" id="bulletG1BC"></div>
+                            <div><label for="bulletG7BC">G7 BC</label><input type="number" step="any" id="bulletG7BC"></div>
+                            <div><label for="bulletG7FormFactor">G7 Form Factor</label><input type="number" step="any" id="bulletG7FormFactor"></div>
+                        </div>
                     </form>
+
                     <div class="flex-container" style="margin-top: 1rem; max-width: 400px;">
                         <button type="submit" form="bulletForm" class="btn-blue">Save Bullet</button>
                         <button type="reset" form="bulletForm" class="btn-gray">Clear Form</button>

@@ -80,7 +80,23 @@ async function handleBulletSubmit(e) {
         diameterId: document.getElementById('bulletDiameter').value,
         name: document.getElementById('bulletName').value,
         weight: parseFloat(document.getElementById('bulletWeight').value),
-        length: parseFloat(document.getElementById('bulletLength').value)
+        length: parseFloat(document.getElementById('bulletLength').value),
+        drag_model: document.getElementById('bulletDragModel').value || null,
+        stability_vars: {
+            ix: parseFloat(document.getElementById('bulletIx').value) || null,
+            iy: parseFloat(document.getElementById('bulletIy').value) || null,
+            cg_from_base: parseFloat(document.getElementById('bulletCgFromBase').value) || null,
+            meplat_diameter: parseFloat(document.getElementById('bulletMeplat').value) || null,
+            is_tipped: document.getElementById('bulletIsTipped').checked,
+            tip_length: parseFloat(document.getElementById('bulletTipLength').value) || null
+        },
+        ballistics: {
+            preferred_model: document.getElementById('bulletPreferredModel').value,
+            g1_bc: parseFloat(document.getElementById('bulletG1BC').value) || null,
+            g7_bc: parseFloat(document.getElementById('bulletG7BC').value) || null,
+            g7_form_factor: parseFloat(document.getElementById('bulletG7FormFactor').value) || null,
+            bc_velocity_bands: []
+        }
     };
     await updateItem('bullets', bullet);
     e.target.reset();
@@ -140,6 +156,37 @@ async function handleBulletTableClick(e) {
         document.getElementById('bulletName').value = bullet.name;
         document.getElementById('bulletWeight').value = bullet.weight;
         document.getElementById('bulletLength').value = bullet.length;
+
+        // Populate new fields
+        document.getElementById('bulletDragModel').value = bullet.drag_model || '';
+        
+        if (bullet.stability_vars) {
+            document.getElementById('bulletIx').value = bullet.stability_vars.ix || '';
+            document.getElementById('bulletIy').value = bullet.stability_vars.iy || '';
+            document.getElementById('bulletCgFromBase').value = bullet.stability_vars.cg_from_base || '';
+            document.getElementById('bulletMeplat').value = bullet.stability_vars.meplat_diameter || '';
+            document.getElementById('bulletIsTipped').checked = bullet.stability_vars.is_tipped || false;
+            document.getElementById('bulletTipLength').value = bullet.stability_vars.tip_length || '';
+        } else {
+            document.getElementById('bulletIx').value = '';
+            document.getElementById('bulletIy').value = '';
+            document.getElementById('bulletCgFromBase').value = '';
+            document.getElementById('bulletMeplat').value = '';
+            document.getElementById('bulletIsTipped').checked = false;
+            document.getElementById('bulletTipLength').value = '';
+        }
+
+        if (bullet.ballistics) {
+            document.getElementById('bulletPreferredModel').value = bullet.ballistics.preferred_model || 'G7';
+            document.getElementById('bulletG1BC').value = bullet.ballistics.g1_bc || '';
+            document.getElementById('bulletG7BC').value = bullet.ballistics.g7_bc || '';
+            document.getElementById('bulletG7FormFactor').value = bullet.ballistics.g7_form_factor || '';
+        } else {
+            document.getElementById('bulletPreferredModel').value = 'G7';
+            document.getElementById('bulletG1BC').value = '';
+            document.getElementById('bulletG7BC').value = '';
+            document.getElementById('bulletG7FormFactor').value = '';
+        }
     }
 }
 
