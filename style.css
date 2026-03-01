@@ -61,6 +61,7 @@
         .btn-yellow { background-color: #eab308; } .btn-yellow:hover { background-color: #ca8a04; }
         .btn-orange { background-color: #f97316; } .btn-orange:hover { background-color: #ea580c; }
         .btn-indigo { background-color: #6366f1; } .btn-indigo:hover { background-color: #4f46e5; }
+        .btn-green { background-color: #10b981; } .btn-green:hover { background-color: #059669; }
         .btn-small { padding: 0.25rem 0.5rem; font-size: 0.875rem; width: auto; }
         
         .toggle-btn.active { box-shadow: inset 0 2px 4px rgba(0,0,0,0.4); }
