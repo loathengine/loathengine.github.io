@@ -120,6 +120,9 @@ async function renderBulletsTable() {
     for (const bullet of bullets) {
         const manufacturerName = manufacturerMap.get(bullet.manufacturerId) || 'N/A';
         const diameterImperial = diameterMap.get(bullet.diameterId) || 'N/A';
+        const prefModel = (bullet.ballistics && bullet.ballistics.preferred_model) ? bullet.ballistics.preferred_model : '-';
+        const g1 = (bullet.ballistics && bullet.ballistics.g1_bc) ? bullet.ballistics.g1_bc : '-';
+        const g7 = (bullet.ballistics && bullet.ballistics.g7_bc) ? bullet.ballistics.g7_bc : '-';
         
         const row = `
             <tr>
@@ -127,7 +130,9 @@ async function renderBulletsTable() {
                 <td>${manufacturerName}</td>
                 <td>${diameterImperial}</td>
                 <td>${bullet.weight} gr</td>
-                <td>${bullet.length ? bullet.length.toFixed(3) + '"' : ''}</td>
+                <td>${prefModel}</td>
+                <td>${g1}</td>
+                <td>${g7}</td>
                 <td>
                     <div class="flex-container">
                         <button class="btn-yellow btn-small" data-id="${bullet.id}" data-action="edit">Edit</button>

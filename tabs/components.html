@@ -46,15 +46,27 @@
                             <div><label for="bulletG7BC">G7 BC</label><input type="number" step="any" id="bulletG7BC"></div>
                             <div><label for="bulletG7FormFactor">G7 Form Factor</label><input type="number" step="any" id="bulletG7FormFactor"></div>
                         </div>
-                    </form>
 
-                    <div class="flex-container" style="margin-top: 1rem; max-width: 400px;">
-                        <button type="submit" form="bulletForm" class="btn-blue">Save Bullet</button>
-                        <button type="reset" form="bulletForm" class="btn-gray">Clear Form</button>
-                    </div>
+                        <div class="flex-container" style="margin-top: 1rem; max-width: 400px;">
+                            <button type="submit" form="bulletForm" class="btn-blue">Save Bullet</button>
+                            <button type="reset" form="bulletForm" class="btn-gray">Clear Form</button>
+                        </div>
+                    </form>
+                    
                     <div class="data-table-container">
                         <table class="data-table">
-                            <thead><tr><th>Name</th><th>Manufacturer</th><th>Diameter</th><th>Weight</th><th>Length</th><th>Actions</th></tr></thead>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Manufacturer</th>
+                                    <th>Diameter</th>
+                                    <th>Weight</th>
+                                    <th>Model</th>
+                                    <th>G1 BC</th>
+                                    <th>G7 BC</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
                             <tbody id="bulletsTableBody"></tbody>
                         </table>
                     </div>
@@ -66,11 +78,11 @@
                         <input type="hidden" id="powderId">
                         <div><label for="powderManufacturer">Manufacturer</label><select id="powderManufacturer"></select></div>
                         <div><label for="powderName">Powder Name</label><input type="text" id="powderName" required></div>
+                        <div class="flex-container" style="margin-top: 1.5rem;">
+                            <button type="submit" class="btn-blue">Save Powder</button>
+                            <button type="reset" class="btn-gray">Clear Form</button>
+                        </div>
                     </form>
-                     <div class="flex-container" style="margin-top: 1rem; max-width: 400px;">
-                        <button type="submit" form="powderForm" class="btn-blue">Save Powder</button>
-                        <button type="reset" form="powderForm" class="btn-gray">Clear Form</button>
-                    </div>
                     <div class="data-table-container">
                         <table class="data-table">
                             <thead><tr><th>Name</th><th>Manufacturer</th><th>Actions</th></tr></thead>
@@ -85,11 +97,11 @@
                         <input type="hidden" id="primerId">
                         <div><label for="primerManufacturer">Manufacturer</label><select id="primerManufacturer"></select></div>
                         <div><label for="primerName">Primer Name</label><input type="text" id="primerName" required></div>
+                        <div class="flex-container" style="margin-top: 1.5rem;">
+                            <button type="submit" class="btn-blue">Save Primer</button>
+                            <button type="reset" class="btn-gray">Clear Form</button>
+                        </div>
                     </form>
-                     <div class="flex-container" style="margin-top: 1rem; max-width: 400px;">
-                        <button type="submit" form="primerForm" class="btn-blue">Save Primer</button>
-                        <button type="reset" form="primerForm" class="btn-gray">Clear Form</button>
-                    </div>
                     <div class="data-table-container">
                         <table class="data-table">
                             <thead><tr><th>Name</th><th>Manufacturer</th><th>Actions</th></tr></thead>
@@ -107,11 +119,11 @@
                         <div><label for="brassManufacturer">Manufacturer</label><select id="brassManufacturer"></select></div>
                         <div><label for="brassPrimerPocket">Primer Pocket</label><input type="text" id="brassPrimerPocket"></div>
                         <div><label for="brassPrimerHole">Primer Hole</label><input type="text" id="brassPrimerHole"></div>
+                        <div class="flex-container" style="margin-top: 1.5rem;">
+                            <button type="submit" class="btn-blue">Save Brass</button>
+                            <button type="reset" class="btn-gray">Clear Form</button>
+                        </div>
                     </form>
-                     <div class="flex-container" style="margin-top: 1rem; max-width: 400px;">
-                        <button type="submit" form="brassForm" class="btn-blue">Save Brass</button>
-                        <button type="reset" form="brassForm" class="btn-gray">Clear Form</button>
-                    </div>
                     <div class="data-table-container">
                         <table class="data-table">
                             <thead><tr><th>Cartridge</th><th>Manufacturer</th><th>Pocket</th><th>Hole</th><th>Actions</th></tr></thead>

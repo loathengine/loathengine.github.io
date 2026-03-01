@@ -275,6 +275,21 @@ export async function renderSelectedTable() {
         return;
     }
 
+    let displayItems = items;
+    
+    // Flatten complex objects for specific tables to improve visibility
+    if (tableName === 'bullets') {
+        displayItems = items.map(item => {
+            const flat = { ...item };
+            if (flat.ballistics) {
+                flat.pref_model = flat.ballistics.preferred_model;
+                flat.g1_bc = flat.ballistics.g1_bc;
+                flat.g7_bc = flat.ballistics.g7_bc;
+            }
+            return flat;
+        });
+    }
+
     const table = document.createElement('table');
     table.className = 'data-table';
     const thead = document.createElement('thead');
@@ -282,7 +297,7 @@ export async function renderSelectedTable() {
     const headerRow = document.createElement('tr');
 
     const headerSet = new Set();
-    items.forEach(item => {
+    displayItems.forEach(item => {
         Object.keys(item).forEach(key => headerSet.add(key));
     });
     const headers = Array.from(headerSet);
@@ -299,7 +314,7 @@ export async function renderSelectedTable() {
     });
     thead.appendChild(headerRow);
 
-    items.forEach(item => {
+    displayItems.forEach(item => {
         const row = document.createElement('tr');
         headers.forEach(header => {
             const td = document.createElement('td');
