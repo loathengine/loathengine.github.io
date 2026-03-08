@@ -1,6 +1,5 @@
 // js/main.js
 import { openDB } from './db.js';
-import { initMiscManagement, refreshMiscUI } from './misc.js';
 import { initComponentsManagement, refreshComponentUI } from './components.js';
 import { initFirearmsManagement, refreshFirearmsUI } from './firearms.js';
 import { initLoadsManagement, refreshLoadsUI } from './loads.js';
@@ -12,7 +11,7 @@ import { initDbManagement, renderSelectedTable } from './db-management.js';
 async function loadTabContent() {
     const tabContainer = document.getElementById('tab-content-container');
     const tabs = [
-        'about-us', 'firearms', 'loads', 'targets', 'marking', 'analysis', 'components', 'misc', 'db-management'
+        'about-us', 'firearms', 'loads', 'targets', 'marking', 'analysis', 'components', 'db-management'
     ];
 
     for (const tab of tabs) {
@@ -35,8 +34,7 @@ async function loadTabContent() {
 
 async function refreshAllUI() {
     console.log("Refreshing all application UI components...");
-    // Misc & Components are linked, start with base data
-    await refreshMiscUI();
+    // Components are linked, start with base data
     await refreshComponentUI();
     
     // Dependent UI
@@ -94,7 +92,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     // 4. Initialize Modules
-    initMiscManagement();
     initComponentsManagement();
     initFirearmsManagement();
     initLoadsManagement();

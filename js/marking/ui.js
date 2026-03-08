@@ -34,37 +34,24 @@ export function updateStatsDisplay() {
     const statsOutput = document.getElementById('stats-output');
     
     if (hasImpacts) {
-         let impactListHtml = '<ul class="impact-data-list">';
-         let shotCounter = 0;
+         let impactText = '';
          state.groups.forEach((group, groupIndex) => {
             if (group.pois.length > 0) {
                 const referencePoint = group.poa;
                 group.pois.forEach((poi, poiIndex) => {
-                    shotCounter++;
-                    let coordText = '<i>(Set POA & Scale for coords)</i>';
+                    let coordText = 'N/A,N/A';
                     if (referencePoint && state.scale.pixelsPerUnit) {
                         const x_coord = (poi.x - referencePoint.x) / state.scale.pixelsPerUnit;
                         const y_coord = (poi.y - referencePoint.y) / state.scale.pixelsPerUnit;
-                        coordText = `X: ${x_coord.toFixed(3)}, Y: ${y_coord.toFixed(3)}`;
+                        // Invert Y coordinate so up is positive
+                        coordText = `${x_coord.toFixed(3)},${(-y_coord).toFixed(3)}`;
                     }
-                    impactListHtml += `
-                        <li>
-                            <span>
-                                <b>Shot ${shotCounter} (G${groupIndex+1}):</b> 
-                                ${coordText}
-                            </span>
-                            <input type="number" class="velocity-input-tm" 
-                                   data-group-index="${groupIndex}" 
-                                   data-poi-index="${poiIndex}" 
-                                   value="${poi.velocity !== null ? poi.velocity : ''}" 
-                                   placeholder="fps/mps">
-                        </li>
-                    `;
+                    const velocity = poi.velocity !== null ? poi.velocity : '';
+                    impactText += `${coordText},${velocity}\n`;
                 });
             }
          });
-         impactListHtml += '</ul>';
-         html += impactListHtml;
+         html += `<textarea readonly rows="10" style="width: 100%; resize: vertical; font-family: monospace;">${impactText.trim()}</textarea>`;
     }
 
     if (html === '') {
