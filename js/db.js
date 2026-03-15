@@ -1,12 +1,12 @@
 // js/db.js
 
 const DB_NAME = 'reloadingDB';
-const DB_VERSION = 3; // Incremented version
+const DB_VERSION = 4; // Incremented for new precision fields
 let db;
 
 const objectStores = [
     'manufacturers', 'diameters', 'bullets', 'powders', 'primers', 
-    'brass', 'cartridges', 'firearms', 'loads', 'impactData', 'targetImages', 'customTargets' // Added customTargets
+    'brass', 'cartridges', 'firearms', 'loads', 'impactData', 'targetImages', 'customTargets'
 ];
 
 export function openDB() {
@@ -20,7 +20,6 @@ export function openDB() {
         
         request.onupgradeneeded = (event) => {
             const db = event.target.result;
-            // Create any missing object stores
             objectStores.forEach(storeName => {
                 if (!db.objectStoreNames.contains(storeName)) {
                     db.createObjectStore(storeName, { keyPath: 'id' });
@@ -36,15 +35,12 @@ export function openDB() {
     });
 }
 
-// Helper to ensure DB is open before operations (for quick imports/exports)
-// In main app flow, openDB() is called at start, so db variable is set.
 function getDB() {
     if (db) return Promise.resolve(db);
     return openDB();
 }
 
 export function generateUniqueId() {
-    // Simple unique ID generator
     return Date.now().toString(36) + Math.random().toString(36).substr(2);
 }
 
@@ -59,8 +55,10 @@ export function updateItem(storeName, item) {
                 item.id = generateUniqueId(); 
             }
             
-            const request = store.put(item);
+            // Log modification timestamp
+            item.lastModified = new Date().toISOString();
             
+            const request = store.put(item);
             request.onsuccess = () => resolve(request.result);
             request.onerror = (event) => reject(event.target.error);
         } catch (e) {
@@ -76,7 +74,6 @@ export function deleteItem(storeName, id) {
             const transaction = db.transaction([storeName], 'readwrite');
             const store = transaction.objectStore(storeName);
             const request = store.delete(id);
-            
             request.onsuccess = () => resolve();
             request.onerror = (event) => reject(event.target.error);
         } catch (e) {
@@ -90,11 +87,9 @@ export function getItem(storeName, id) {
         try {
             const db = await getDB();
             if (!id) return resolve(null);
-            
             const transaction = db.transaction([storeName], 'readonly');
             const store = transaction.objectStore(storeName);
             const request = store.get(id);
-            
             request.onsuccess = () => resolve(request.result);
             request.onerror = (event) => reject(event.target.error);
         } catch (e) {
@@ -110,7 +105,6 @@ export function getAllItems(storeName) {
             const transaction = db.transaction([storeName], 'readonly');
             const store = transaction.objectStore(storeName);
             const request = store.getAll();
-            
             request.onsuccess = () => resolve(request.result);
             request.onerror = (event) => reject(event.target.error);
         } catch (e) {
