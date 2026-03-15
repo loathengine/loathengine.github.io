@@ -6,9 +6,9 @@
                     <div><label for="firearmNickname">Nickname</label><input type="text" id="firearmNickname" required></div>
                     <div><label for="firearmDiameter">Diameter</label><select id="firearmDiameter"></select></div>
                     <div><label for="firearmCartridge">Cartridge</label><select id="firearmCartridge"></select></div>
-                    <div><label for="firearmBarrelLength">Barrel Length</label><input type="number" step="0.1" id="firearmBarrelLength"></div>
-                    <div><label for="firearmTwistRate">Twist Rate</label><input type="text" id="firearmTwistRate"></div>
-                    <div><label for="firearmMagCoal">Max Mag COAL</label><input type="number" step="0.001" id="firearmMagCoal"></div>
+                    <div><label for="firearmBarrelLength">Barrel Length</label><input type="number" step="0.1" id="firearmBarrelLength" inputmode="decimal"></div>
+                    <div><label for="firearmTwistRate">Twist Rate</label><input type="text" id="firearmTwistRate" placeholder="e.g. 1:10"></div>
+                    <div><label for="firearmMagCoal">Max Mag COAL</label><input type="number" step="0.001" id="firearmMagCoal" inputmode="decimal"></div>
                 </form>
                 <div class="flex-container" style="margin-top: 1rem; max-width: 400px;">
                     <button type="submit" form="firearmForm" class="btn-blue">Save Firearm</button>
