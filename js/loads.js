@@ -484,7 +484,7 @@ async function generateRecipeSheet(loadId) {
 
     const bulletNameStr = bullet ? `${bulletMfg ? bulletMfg.name : ''} ${bullet.name} ${bullet.weight}gr`.trim() : '';
     const date = new Date().toLocaleDateString();
-    const recipeTitle = `Recipe: ${cartridge ? cartridge.name : ''} - ${bulletNameStr} - ${date}`;
+    const recipeTitle = `${cartridge ? cartridge.name : ''} - ${bulletNameStr} - ${date}`;
 
     let chargeVal = '';
     if (Array.isArray(load.chargeWeight)) { chargeVal = load.chargeWeight[0] || ''; } 
@@ -494,7 +494,11 @@ async function generateRecipeSheet(loadId) {
     if (Array.isArray(load.col)) { colVal = load.col[0] || ''; } 
     else if (load.col !== undefined) { colVal = load.col; }
 
-    const formatVal = (val) => (val === null || val === undefined || val === '') ? '' : val;
+    const formatVal = (val, precision = 3) => {
+        if (val === null || val === undefined || val === '') return '';
+        if (typeof val === 'number') return val.toFixed(precision);
+        return val;
+    };
 
     const htmlContent = `
         <!DOCTYPE html>
@@ -503,80 +507,96 @@ async function generateRecipeSheet(loadId) {
             <meta charset="UTF-8">
             <title>${recipeTitle}</title>
             <style>
-                body { font-family: 'Inter', sans-serif; padding: 2rem; color: #1f2937; line-height: 1.5; }
-                h1 { border-bottom: 2px solid #374151; padding-bottom: 0.5rem; margin-bottom: 1.5rem; font-size: 1.5rem; }
-                .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+                body { font-family: 'Inter', -apple-system, sans-serif; padding: 1.5rem; color: #111827; line-height: 1.4; background: #fff; }
+                .sheet { max-width: 8.5in; margin: 0 auto; border: 1px solid #e5e7eb; padding: 2rem; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+                header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 3px solid #111827; padding-bottom: 0.75rem; margin-bottom: 2rem; }
+                h1 { margin: 0; font-size: 1.75rem; font-weight: 800; color: #111827; text-transform: uppercase; letter-spacing: -0.025em; }
+                .date-label { font-size: 0.875rem; font-weight: 600; color: #6b7280; }
+                
+                .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
                 .section { margin-bottom: 2rem; }
-                .section h3 { background-color: #f3f4f6; padding: 0.5rem; border-radius: 0.25rem; margin-bottom: 0.5rem; font-size: 1.1rem; }
-                .item { margin-bottom: 0.5rem; display: flex; justify-content: space-between; border-bottom: 1px dashed #e5e7eb; padding-bottom: 0.25rem; }
-                .label { font-weight: 600; color: #4b5563; }
-                .value { font-weight: 500; }
-                .notes { border: 1px solid #d1d5db; padding: 1rem; height: 150px; border-radius: 0.5rem; margin-top: 1rem; }
+                .section h3 { font-size: 1rem; font-weight: 700; color: #111827; text-transform: uppercase; border-bottom: 1.5px solid #e5e7eb; padding-bottom: 0.25rem; margin-bottom: 0.75rem; background: transparent; }
+                
+                .item { margin-bottom: 0.4rem; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #f3f4f6; padding-bottom: 0.2rem; }
+                .label { font-weight: 600; font-size: 0.8125rem; color: #4b5563; }
+                .value { font-weight: 700; font-size: 0.9375rem; color: #111827; font-family: 'JetBrains Mono', 'Courier New', monospace; }
+                
+                .notes-container { margin-top: 1.5rem; }
+                .notes-box { border: 1px solid #d1d5db; border-radius: 0.375rem; height: 180px; background-image: repeating-linear-gradient(white, white 24px, #f3f4f6 25px); line-height: 25px; padding: 0 0.5rem; }
+                
+                .footer { margin-top: 3rem; pt-1rem; border-top: 1px solid #e5e7eb; font-size: 0.75rem; color: #9ca3af; text-align: center; font-style: italic; }
+
                 @media print {
-                    body { padding: 0; }
+                    body { padding: 0; background: #fff; }
+                    .sheet { border: none; box-shadow: none; width: 100%; max-width: none; }
                     .btn-print { display: none; }
                 }
                 .btn-print {
-                    background-color: #2563eb; color: white; border: none; padding: 0.5rem 1rem; 
-                    border-radius: 0.25rem; cursor: pointer; font-size: 1rem; margin-bottom: 2rem;
+                    position: fixed; top: 1.5rem; right: 1.5rem; background-color: #2563eb; color: white; border: none; padding: 0.625rem 1.25rem; 
+                    border-radius: 0.5rem; cursor: pointer; font-size: 0.875rem; font-weight: 600; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
                 }
+                .btn-print:hover { background-color: #1d4ed8; }
             </style>
         </head>
         <body>
-            <button class="btn-print" onclick="window.print()">Print Recipe</button>
-            <h1>${recipeTitle}</h1>
-            
-            <div class="grid">
-                <div>
-                    <div class="section">
-                        <h3>Projectile</h3>
-                        <div class="item"><span class="label">Manufacturer:</span> <span class="value">${bulletMfg ? bulletMfg.name : ''}</span></div>
-                        <div class="item"><span class="label">Name:</span> <span class="value">${bullet ? bullet.name : ''}</span></div>
-                        <div class="item"><span class="label">Weight:</span> <span class="value">${bullet ? bullet.weight + ' gr' : ''}</span></div>
-                        <div class="item"><span class="label">Lot #:</span> <span class="value">${load.bulletLot || ''}</span></div>
+            <button class="btn-print" onclick="window.print()">Print Sheet</button>
+            <div class="sheet">
+                <header>
+                    <h1>${recipeTitle.split(' - ').slice(0, 2).join(' - ')}</h1>
+                    <div class="date-label">Generated: ${date}</div>
+                </header>
+                
+                <div class="grid">
+                    <div>
+                        <div class="section">
+                            <h3>Projectile</h3>
+                            <div class="item"><span class="label">Manufacturer</span> <span class="value">${bulletMfg ? bulletMfg.name : ''}</span></div>
+                            <div class="item"><span class="label">Name</span> <span class="value">${bullet ? bullet.name : ''}</span></div>
+                            <div class="item"><span class="label">Weight</span> <span class="value">${bullet ? bullet.weight + ' gr' : ''}</span></div>
+                            <div class="item"><span class="label">Lot #</span> <span class="value">${load.bulletLot || ''}</span></div>
+                        </div>
+                        
+                        <div class="section">
+                            <h3>Powder</h3>
+                            <div class="item"><span class="label">Manufacturer</span> <span class="value">${powderMfg ? powderMfg.name : ''}</span></div>
+                            <div class="item"><span class="label">Name</span> <span class="value">${powder ? powder.name : ''}</span></div>
+                            <div class="item"><span class="label">Charge Weight</span> <span class="value">${chargeVal} ${chargeVal ? 'gr' : ''}</span></div>
+                            <div class="item"><span class="label">Lot #</span> <span class="value">${load.powderLot || ''}</span></div>
+                        </div>
+
+                        <div class="section">
+                            <h3>Primer & Case</h3>
+                            <div class="item"><span class="label">Primer Mfg</span> <span class="value">${primerMfg ? primerMfg.name : ''}</span></div>
+                            <div class="item"><span class="label">Primer Name</span> <span class="value">${primer ? primer.name : ''}</span></div>
+                            <div class="item"><span class="label">Primer Lot</span> <span class="value">${load.primerLot || ''}</span></div>
+                            <div class="item"><span class="label">Brass Mfg</span> <span class="value">${brassMfg ? brassMfg.name : ''}</span></div>
+                            <div class="item"><span class="label">Brass Lot</span> <span class="value">${load.brassLot || ''}</span></div>
+                            <div class="item"><span class="label"># of Firings</span> <span class="value">${load.firings || ''}</span></div>
+                        </div>
                     </div>
-                    
-                    <div class="section">
-                        <h3>Powder</h3>
-                        <div class="item"><span class="label">Manufacturer:</span> <span class="value">${powderMfg ? powderMfg.name : ''}</span></div>
-                        <div class="item"><span class="label">Name:</span> <span class="value">${powder ? powder.name : ''}</span></div>
-                        <div class="item"><span class="label">Charge Weight:</span> <span class="value">${chargeVal} ${chargeVal ? 'gr' : ''}</span></div>
-                        <div class="item"><span class="label">Lot #:</span> <span class="value">${load.powderLot || ''}</span></div>
+
+                    <div>
+                        <div class="section">
+                            <h3>Dimensions & Specs</h3>
+                            <div class="item"><span class="label">C.O.A.L.</span> <span class="value">${colVal}${colVal ? '"' : ''}</span></div>
+                            <div class="item"><span class="label">CBTO</span> <span class="value">${formatVal(load.cbto)}${load.cbto ? '"' : ''}</span></div>
+                            <div class="item"><span class="label">CBTO Comparator</span> <span class="value">${load.cbtoComp || ''}</span></div>
+                            <div class="item"><span class="label">Shoulder Position</span> <span class="value">${formatVal(load.shoulder)}${load.shoulder ? '"' : ''}</span></div>
+                            <div class="item"><span class="label">Shoulder Comparator</span> <span class="value">${load.shoulderComp || ''}</span></div>
+                            <div class="item" style="margin-top: 0.5rem;"><span class="label">Min Case Length</span> <span class="value">${formatVal(cartridge?.minCaseLength)}${cartridge?.minCaseLength ? '"' : ''}</span></div>
+                            <div class="item"><span class="label">Max Case Length</span> <span class="value">${formatVal(cartridge?.maxCaseLength)}${cartridge?.maxCaseLength ? '"' : ''}</span></div>
+                            <div class="item"><span class="label">Trim Length</span> <span class="value">${formatVal(cartridge?.trimLength)}${cartridge?.trimLength ? '"' : ''}</span></div>
+                        </div>
+
+                        <div class="section notes-container">
+                            <h3>Range / Performance Notes</h3>
+                            <div class="notes-box"></div>
+                        </div>
                     </div>
                 </div>
 
-                <div>
-                    <div class="section">
-                        <h3>Primer & Case</h3>
-                        <div class="item"><span class="label">Primer Mfg:</span> <span class="value">${primerMfg ? primerMfg.name : ''}</span></div>
-                        <div class="item"><span class="label">Primer Name:</span> <span class="value">${primer ? primer.name : ''}</span></div>
-                        <div class="item"><span class="label">Primer Lot:</span> <span class="value">${load.primerLot || ''}</span></div>
-                        <div class="item"><span class="label">Brass Mfg:</span> <span class="value">${brassMfg ? brassMfg.name : ''}</span></div>
-                        <div class="item"><span class="label">Brass Lot:</span> <span class="value">${load.brassLot || ''}</span></div>
-                        <div class="item"><span class="label"># of Firings:</span> <span class="value">${load.firings || ''}</span></div>
-                    </div>
-
-                    <div class="section">
-                        <h3>Dimensions</h3>
-                        <div class="item"><span class="label">C.O.A.L.:</span> <span class="value">${colVal}${colVal ? '"' : ''}</span></div>
-                        <div class="item"><span class="label">CBTO:</span> <span class="value">${formatVal(load.cbto)}${load.cbto ? '"' : ''}</span></div>
-                        <div class="item"><span class="label">CBTO Comp:</span> <span class="value">${load.cbtoComp || ''}</span></div>
-                        <div class="item"><span class="label">Shoulder Pos:</span> <span class="value">${formatVal(load.shoulder)}${load.shoulder ? '"' : ''}</span></div>
-                        <div class="item"><span class="label">Shoulder Comp:</span> <span class="value">${load.shoulderComp || ''}</span></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h3>Case Specs (Ref)</h3>
-                <div class="item"><span class="label">Min Case Length:</span> <span class="value">${cartridge && cartridge.minCaseLength ? cartridge.minCaseLength.toFixed(3) + '"' : ''}</span></div>
-                <div class="item"><span class="label">Max Case Length:</span> <span class="value">${cartridge && cartridge.maxCaseLength ? cartridge.maxCaseLength.toFixed(3) + '"' : ''}</span></div>
-                <div class="item"><span class="label">Trim Length:</span> <span class="value">${cartridge && cartridge.trimLength ? cartridge.trimLength.toFixed(3) + '"' : ''}</span></div>
-            </div>
-
-            <div class="section">
-                <h3>Notes / Performance Data</h3>
-                <div class="notes">
+                <div class="footer">
+                    Empirical Precision - Data-Driven Ballistics Management
                 </div>
             </div>
         </body>

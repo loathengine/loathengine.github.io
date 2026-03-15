@@ -14,11 +14,24 @@
                     <div class="section">
                         <h4>Environmental Data</h4>
                         <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 0.5rem;">
-                            <div><label for="stabTemp">Temp (°F)</label><input type="number" id="stabTemp" value="59"></div>
-                            <div><label for="stabPressure">Pressure (inHg)</label><input type="number" id="stabPressure" value="29.92" step="0.01"></div>
+                            <div><label for="stabTemp">Temp (°F)</label><input type="number" id="stabTemp" value="59" inputmode="decimal"></div>
+                            <div><label for="stabAltitude">Altitude (ft)</label><input type="number" id="stabAltitude" value="0" inputmode="numeric"></div>
+                        </div>
+                        <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.5rem;">
+                             <div>
+                                <label for="stabPressure">Pressure (inHg)</label>
+                                <input type="number" id="stabPressure" value="29.92" step="0.01" inputmode="decimal">
+                             </div>
+                             <div>
+                                <label for="stabPressureType">Pressure Type</label>
+                                <select id="stabPressureType">
+                                    <option value="station">Station (Actual)</option>
+                                    <option value="sea">Barometric (Sea Level)</option>
+                                </select>
+                             </div>
                         </div>
                         <div class="form-grid" style="grid-template-columns: 1fr; gap: 0.5rem; margin-top: 0.5rem;">
-                             <div><label for="stabVelocity">Muzzle Velocity (fps)</label><input type="number" id="stabVelocity" value="2800"></div>
+                             <div><label for="stabVelocity">Muzzle Velocity (fps)</label><input type="number" id="stabVelocity" value="2800" inputmode="numeric"></div>
                         </div>
                     </div>
 
@@ -29,7 +42,7 @@
                             <option value="">-- Manual Entry --</option>
                         </select>
                         <div class="form-grid" style="grid-template-columns: 1fr; gap: 0.5rem; margin-top: 0.5rem;">
-                            <div><label for="stabTwist">Twist Rate (1:X)</label><input type="number" id="stabTwist" value="10" step="0.1"></div>
+                            <div><label for="stabTwist">Twist Rate (1:X)</label><input type="number" id="stabTwist" value="10" step="0.1" inputmode="decimal"></div>
                         </div>
                     </div>
 
@@ -37,16 +50,22 @@
                         <h4>Bullet Data</h4>
                         <div style="margin-bottom: 0.5rem;">
                             <label class="checkbox-container">
-                                <input type="checkbox" id="stabUseLoadBullet" checked> Use Bullet from Ammo Data
+                                <input type="checkbox" id="stabUseLoadBullet" checked> Use Bullet from Load Data
                             </label>
                         </div>
                         
                         <div id="stabLoadSelectContainer">
-                            <label for="stabLoadSelect">Select Ammo/Load</label>
+                            <label for="stabLoadSelect">Select Load</label>
                             <select id="stabLoadSelect"></select>
                         </div>
 
                         <div id="stabManualBulletContainer" style="display: none;">
+                            <div style="margin-bottom: 0.5rem;">
+                                <label for="stabBulletCaliberSelect">Filter by Caliber</label>
+                                <select id="stabBulletCaliberSelect">
+                                    <option value="">-- All Calibers --</option>
+                                </select>
+                            </div>
                             <label for="stabBulletSelect">Select Bullet (Inventory)</label>
                             <select id="stabBulletSelect">
                                 <option value="">-- Manual Entry --</option>
@@ -54,11 +73,21 @@
                         </div>
 
                         <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.5rem;">
-                            <div><label for="stabBulletWeight">Weight (gr)</label><input type="number" id="stabBulletWeight" step="0.1"></div>
-                            <div><label for="stabBulletDiameter">Diameter (in)</label><input type="number" id="stabBulletDiameter" step="0.001"></div>
+                            <div><label for="stabBulletWeight">Weight (gr)</label><input type="number" id="stabBulletWeight" step="0.1" inputmode="decimal"></div>
+                            <div><label for="stabBulletDiameter">Diameter (in)</label><input type="number" id="stabBulletDiameter" step="0.001" inputmode="decimal"></div>
                         </div>
                         <div class="form-grid" style="grid-template-columns: 1fr; gap: 0.5rem; margin-top: 0.5rem;">
-                             <div><label for="stabBulletLength">Bullet Length (in)</label><input type="number" id="stabBulletLength" step="0.001"></div>
+                             <div><label for="stabBulletLength">Total Length (in)</label><input type="number" id="stabBulletLength" step="0.001" inputmode="decimal"></div>
+                        </div>
+                        
+                        <div style="margin-top: 1rem;">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="stabIsTipped"> Bullet has Plastic Tip
+                            </label>
+                            <div id="stabTipLengthContainer" style="display: none; margin-top: 0.5rem;">
+                                <label for="stabTipLength">Tip Length (in)</label>
+                                <input type="number" id="stabTipLength" value="0.150" step="0.001" inputmode="decimal">
+                            </div>
                         </div>
                     </div>
 
@@ -66,9 +95,14 @@
                 </div>
 
                 <div class="main-content card">
-                    <h3>Stability Analysis (Miller Twist Formula)</h3>
+                    <h3>Stability Analysis (Refined Miller Formula)</h3>
                     <div id="stabilityResultOutput" class="data-table-container" style="border: none; text-align: center; padding: 2rem;">
                         <p style="color: #9ca3af;">Enter data and click Calculate to see results.</p>
+                    </div>
+
+                    <div id="stabilityDeepDive" style="display: none; margin-top: 1rem; padding: 1rem; background: #111827; border-radius: 0.5rem; border: 1px solid #374151; font-family: monospace; font-size: 0.85rem;">
+                        <h4 style="margin-bottom: 0.5rem; color: #9ca3af; font-family: 'Inter', sans-serif;">Calculation Details</h4>
+                        <div id="stabDeepDiveContent"></div>
                     </div>
 
                     <div style="margin-top: 2rem; padding: 1rem; background: #1f2937; border-radius: 0.5rem; border: 1px solid #374151;">
@@ -77,10 +111,9 @@
                             <li><strong>Sg < 1.0:</strong> Unstable. Bullet will tumble.</li>
                             <li><strong>1.0 < Sg < 1.5:</strong> Marginally Stable. Risk of inaccuracy and reduced BC.</li>
                             <li><strong>Sg > 1.5:</strong> Fully Stable. Recommended for long-range precision.</li>
-                            <li><strong>Sg > 2.0:</strong> Over-stabilized. Small imperfections in bullet balance may cause increased dispersion, but the bullet is flight-stable.</li>
                         </ul>
                         <p style="font-size: 0.8rem; color: #9ca3af; margin-top: 1rem;">
-                            Note: This calculator uses the Miller Twist Rule. It is an estimation and results may vary based on specific bullet geometry.
+                            Note: This calculator uses the refined Miller Twist Rule, accounting for velocity and atmospheric density. Plastic tips are handled by calculating stability based on the metal core length.
                         </p>
                     </div>
                 </div>

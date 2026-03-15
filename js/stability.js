@@ -8,57 +8,99 @@ export function initStabilityCalculator() {
     const loadSelect = document.getElementById('stabLoadSelect');
     const bulletSelect = document.getElementById('stabBulletSelect');
     const sessionSelect = document.getElementById('stabSessionSelect');
+    const caliberFilterSelect = document.getElementById('stabBulletCaliberSelect');
+    
     const useLoadBulletCheckbox = document.getElementById('stabUseLoadBullet');
     const useSessionCheckbox = document.getElementById('stabUseSession');
+    const isTippedCheckbox = document.getElementById('stabIsTipped');
     
     const loadSelectContainer = document.getElementById('stabLoadSelectContainer');
     const manualBulletContainer = document.getElementById('stabManualBulletContainer');
     const sessionSelectContainer = document.getElementById('stabSessionSelectContainer');
+    const tipLengthContainer = document.getElementById('stabTipLengthContainer');
 
     if (calculateBtn) calculateBtn.addEventListener('click', calculateStability);
-    
     if (firearmSelect) firearmSelect.addEventListener('change', handleFirearmChange);
     if (loadSelect) loadSelect.addEventListener('change', handleLoadChange);
     if (bulletSelect) bulletSelect.addEventListener('change', handleBulletChange);
     if (sessionSelect) sessionSelect.addEventListener('change', handleSessionChange);
+    if (caliberFilterSelect) caliberFilterSelect.addEventListener('change', refreshBulletInventoryDropdown);
     
     if (useLoadBulletCheckbox) {
         useLoadBulletCheckbox.addEventListener('change', (e) => {
-            if (e.target.checked) {
-                loadSelectContainer.style.display = 'block';
-                manualBulletContainer.style.display = 'none';
-                handleLoadChange();
-            } else {
-                loadSelectContainer.style.display = 'none';
-                manualBulletContainer.style.display = 'block';
-                handleBulletChange();
-            }
+            loadSelectContainer.style.display = e.target.checked ? 'block' : 'none';
+            manualBulletContainer.style.display = e.target.checked ? 'none' : 'block';
+            if (e.target.checked) handleLoadChange(); else handleBulletChange();
         });
     }
 
     if (useSessionCheckbox) {
         useSessionCheckbox.addEventListener('change', (e) => {
-            if (e.target.checked) {
-                sessionSelectContainer.style.display = 'block';
-                handleSessionChange();
-            } else {
-                sessionSelectContainer.style.display = 'none';
-            }
+            sessionSelectContainer.style.display = e.target.checked ? 'block' : 'none';
+            if (e.target.checked) handleSessionChange();
+        });
+    }
+
+    if (isTippedCheckbox) {
+        isTippedCheckbox.addEventListener('change', (e) => {
+            tipLengthContainer.style.display = e.target.checked ? 'block' : 'none';
         });
     }
 
     refreshStabilityUI();
 }
 
-export async function refreshStabilityUI() {
-    const firearms = await getAllItems('firearms');
-    const loads = await getAllItems('loads');
+async function refreshBulletInventoryDropdown() {
+    const caliberId = document.getElementById('stabBulletCaliberSelect').value;
+    const bulletSelect = document.getElementById('stabBulletSelect');
+    
     const bullets = await getAllItems('bullets');
     const manufacturers = await getAllItems('manufacturers');
-    const cartridges = await getAllItems('cartridges');
-    const sessions = await getAllItems('impactData');
+    
+    const currentVal = bulletSelect.value;
+    bulletSelect.innerHTML = '<option value="">-- Manual Entry --</option>';
+    
+    const filteredBullets = caliberId ? bullets.filter(b => b.diameterId === caliberId) : bullets;
+    
+    filteredBullets.forEach(b => {
+        const mfg = manufacturers.find(m => m.id === b.manufacturerId);
+        const opt = document.createElement('option');
+        opt.value = b.id;
+        opt.textContent = `${b.weight}gr ${mfg ? mfg.name : ''} ${b.name}`;
+        bulletSelect.appendChild(opt);
+    });
+    
+    if ([...bulletSelect.options].some(o => o.value === currentVal)) {
+        bulletSelect.value = currentVal;
+    } else {
+        bulletSelect.value = "";
+    }
+}
 
-    // Populate Firearms
+export async function refreshStabilityUI() {
+    const [firearms, loads, bullets, manufacturers, cartridges, sessions, diameters] = await Promise.all([
+        getAllItems('firearms'),
+        getAllItems('loads'),
+        getAllItems('bullets'),
+        getAllItems('manufacturers'),
+        getAllItems('cartridges'),
+        getAllItems('impactData'),
+        getAllItems('diameters')
+    ]);
+
+    const caliberFilter = document.getElementById('stabBulletCaliberSelect');
+    if (caliberFilter) {
+        const currentVal = caliberFilter.value;
+        caliberFilter.innerHTML = '<option value="">-- All Calibers --</option>';
+        diameters.sort((a,b) => a.imperial.localeCompare(b.imperial)).forEach(d => {
+            const opt = document.createElement('option');
+            opt.value = d.id;
+            opt.textContent = d.imperial;
+            caliberFilter.appendChild(opt);
+        });
+        caliberFilter.value = currentVal;
+    }
+
     const firearmSelect = document.getElementById('stabFirearmSelect');
     if (firearmSelect) {
         const currentVal = firearmSelect.value;
@@ -72,46 +114,27 @@ export async function refreshStabilityUI() {
         firearmSelect.value = currentVal;
     }
 
-    // Populate Loads
     const loadSelect = document.getElementById('stabLoadSelect');
     if (loadSelect) {
         const currentVal = loadSelect.value;
         loadSelect.innerHTML = '<option value="">-- Select Load --</option>';
         for (const l of loads) {
             const cartridge = cartridges.find(c => c.id === l.cartridgeId);
-            const cartName = cartridge ? cartridge.name : 'N/A';
-            let label = '';
-            if (l.loadType === 'commercial') {
-                label = `${cartName}: ${l.name}`;
-            } else {
-                const bullet = bullets.find(b => b.id === l.bulletId);
-                const weight = bullet ? bullet.weight : '?';
-                label = `${cartName}: ${weight}gr Handload`;
-            }
             const opt = document.createElement('option');
             opt.value = l.id;
-            opt.textContent = label;
+            if (l.loadType === 'commercial') {
+                opt.textContent = `${cartridge ? cartridge.name : 'N/A'}: ${l.name}`;
+            } else {
+                const bullet = bullets.find(b => b.id === l.bulletId);
+                opt.textContent = `${cartridge ? cartridge.name : 'N/A'}: ${bullet ? bullet.weight : '?'}gr Handload`;
+            }
             loadSelect.appendChild(opt);
         }
         loadSelect.value = currentVal;
     }
 
-    // Populate Bullets
-    const bulletSelect = document.getElementById('stabBulletSelect');
-    if (bulletSelect) {
-        const currentVal = bulletSelect.value;
-        bulletSelect.innerHTML = '<option value="">-- Manual Entry --</option>';
-        bullets.forEach(b => {
-            const mfg = manufacturers.find(m => m.id === b.manufacturerId);
-            const opt = document.createElement('option');
-            opt.value = b.id;
-            opt.textContent = `${b.weight}gr ${mfg ? mfg.name : ''} ${b.name}`;
-            bulletSelect.appendChild(opt);
-        });
-        bulletSelect.value = currentVal;
-    }
+    await refreshBulletInventoryDropdown();
 
-    // Populate Sessions
     const sessionSelect = document.getElementById('stabSessionSelect');
     if (sessionSelect) {
         const currentVal = sessionSelect.value;
@@ -133,9 +156,7 @@ async function handleFirearmChange() {
     const firearm = await getItem('firearms', id);
     if (firearm && firearm.twistRate) {
         const twist = parseFloat(firearm.twistRate.replace('1:', '').trim());
-        if (!isNaN(twist)) {
-            document.getElementById('stabTwist').value = twist;
-        }
+        if (!isNaN(twist)) document.getElementById('stabTwist').value = twist;
     }
 }
 
@@ -143,9 +164,7 @@ async function handleLoadChange() {
     const id = document.getElementById('stabLoadSelect').value;
     if (!id) return;
     const load = await getItem('loads', id);
-    if (load && load.bulletId) {
-        populateBulletFields(load.bulletId);
-    }
+    if (load && load.bulletId) populateBulletFields(load.bulletId);
 }
 
 async function handleBulletChange() {
@@ -187,13 +206,19 @@ async function populateBulletFields(bulletId) {
     if (bullet) {
         document.getElementById('stabBulletWeight').value = bullet.weight || '';
         document.getElementById('stabBulletLength').value = bullet.length || '';
+        if (bullet.tipLength) {
+             document.getElementById('stabIsTipped').checked = true;
+             document.getElementById('stabTipLengthContainer').style.display = 'block';
+             document.getElementById('stabTipLength').value = bullet.tipLength;
+        } else {
+             document.getElementById('stabIsTipped').checked = false;
+             document.getElementById('stabTipLengthContainer').style.display = 'none';
+        }
         const diameter = await getItem('diameters', bullet.diameterId);
         if (diameter) {
-            // Ensure we extract a decimal value like 0.308
             const match = diameter.imperial.match(/[0-9.]+/);
             if (match) {
                 let val = parseFloat(match[0]);
-                // If it's a whole number like 308, convert to inches
                 if (val > 1) val = val / 1000;
                 document.getElementById('stabBulletDiameter').value = val;
             }
@@ -202,55 +227,64 @@ async function populateBulletFields(bulletId) {
 }
 
 function calculateStability() {
-    const m = parseFloat(document.getElementById('stabBulletWeight').value); // grains
-    const d = parseFloat(document.getElementById('stabBulletDiameter').value); // inches
-    const l = parseFloat(document.getElementById('stabBulletLength').value); // inches
-    const t = parseFloat(document.getElementById('stabTwist').value); // inches
+    const m = parseFloat(document.getElementById('stabBulletWeight').value); // gr
+    const d = parseFloat(document.getElementById('stabBulletDiameter').value); // in
+    const totalL = parseFloat(document.getElementById('stabBulletLength').value); // in
+    const t = parseFloat(document.getElementById('stabTwist').value); // in
     const v = parseFloat(document.getElementById('stabVelocity').value); // fps
     const temp = parseFloat(document.getElementById('stabTemp').value); // F
-    const p = parseFloat(document.getElementById('stabPressure').value); // inHg
+    const alt = parseFloat(document.getElementById('stabAltitude').value); // ft
+    const pInput = parseFloat(document.getElementById('stabPressure').value); // inHg
+    const pType = document.getElementById('stabPressureType').value;
+    const isTipped = document.getElementById('stabIsTipped').checked;
+    const tipL = parseFloat(document.getElementById('stabTipLength').value) || 0;
 
     const output = document.getElementById('stabilityResultOutput');
+    const deepDive = document.getElementById('stabilityDeepDive');
+    const deepDiveContent = document.getElementById('stabDeepDiveContent');
 
-    if (isNaN(m) || isNaN(d) || isNaN(l) || isNaN(t) || isNaN(v)) {
-        output.innerHTML = '<p style="color: #ef4444;">Please fill in all required fields (Weight, Diameter, Length, Twist, Velocity).</p>';
+    if (isNaN(m) || isNaN(d) || isNaN(totalL) || isNaN(t) || isNaN(v)) {
+        output.innerHTML = '<p style="color: #ef4444;">Please fill in all required fields.</p>';
         return;
     }
 
-    // Miller Twist Formula (Corrected for T in inches)
-    // Sg = (30 * m) / (T^2 * d^3 * (l/d) * (1 + (l/d)^2))
-    // Which simplifies to:
-    // Sg = (30 * m) / (T^2 * d * l * (1 + (l/d)^2))
-    
+    const l = isTipped ? (totalL - tipL) : totalL;
+
+    let stationPressure = pInput;
+    if (pType === 'sea') {
+        stationPressure = pInput * Math.pow(1 - (0.0000068755 * alt), 5.2559);
+    }
+
+    const standardDensity = 0.0765; // lb/ft3
+    const currentDensity = (stationPressure * 0.4912) / (1716.5 * (temp + 459.67) / 144);
+    const adr = currentDensity / standardDensity;
+
+    const twistInCalibers = t / d;
     const ld = l / d;
-    let sg = (30 * m) / (Math.pow(t, 2) * d * l * (1 + Math.pow(ld, 2)));
+    
+    let sg = (30 * m) / (Math.pow(twistInCalibers, 2) * Math.pow(d, 3) * ld * (1 + Math.pow(ld, 2)));
 
-    // Correct for Velocity (Miller's formula is calibrated for 2800 fps)
-    const velCorrection = Math.pow(v / 2800, 1/3);
-    sg *= velCorrection;
-
-    // Correct for Atmosphere (Miller formula assumes standard density)
-    const atmCorrection = (29.92 / p) * ((temp + 459.67) / (59 + 459.67));
-    sg *= atmCorrection;
+    const velFactor = Math.pow(v / 2800, 1/3);
+    sg *= velFactor;
+    sg = sg / adr;
 
     let color = "#ef4444"; 
     let status = "Unstable";
-
-    if (sg >= 1.5) {
-        color = "#10b981"; 
-        status = "Stable";
-    } else if (sg >= 1.0) {
-        color = "#f59e0b"; 
-        status = "Marginally Stable";
-    }
+    if (sg >= 1.5) { color = "#10b981"; status = "Stable"; }
+    else if (sg >= 1.1) { color = "#f59e0b"; status = "Marginally Stable"; }
 
     output.innerHTML = `
         <div style="font-size: 3rem; font-weight: 700; color: ${color};">${sg.toFixed(2)}</div>
         <div style="font-size: 1.5rem; color: ${color}; margin-top: 0.5rem;">${status}</div>
-        <div style="margin-top: 1.5rem; text-align: left; display: inline-block;">
-             <p><strong>Bullet:</strong> ${m}gr, ${d}" dia, ${l}" long</p>
-             <p><strong>Barrel Twist:</strong> 1:${t}"</p>
-             <p><strong>Environment:</strong> ${v} fps @ ${temp}°F / ${p} inHg</p>
-        </div>
+    `;
+
+    deepDive.style.display = 'block';
+    deepDiveContent.innerHTML = `
+        <p>Effective Length (Metal): ${l.toFixed(3)}"</p>
+        <p>Length/Diameter Ratio: ${ld.toFixed(3)}</p>
+        <p>Twist in Calibers: ${twistInCalibers.toFixed(2)}</p>
+        <p>Station Pressure: ${stationPressure.toFixed(2)} inHg</p>
+        <p>Air Density Ratio (ADR): ${adr.toFixed(4)}</p>
+        <p>Velocity Correction: ${velFactor.toFixed(4)}</p>
     `;
 }

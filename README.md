@@ -8,7 +8,7 @@
     - [About Us](#about-us)
     - [Components Tab (Foundational Data)](#components-tab-foundational-data)
     - [Firearms Tab](#firearms-tab)
-    - [Ammo Data Tab](#ammo-data-tab)
+    - [Load Data Tab](#load-data-tab)
     - [Targets Tab](#targets-tab)
     - [Marking Tab (Core Functionality)](#marking-tab-core-functionality)
     - [Analysis Tab (Composite & Compare)](#analysis-tab-composite--compare)
@@ -49,8 +49,8 @@ For the most efficient use of the application, follow this workflow:
 3.  **Define Your Equipment:**
     -   Go to the **Firearms** tab to add the rifles or pistols you will be testing.
 
-4.  **Create Ammo Data:**
-    -   Go to the **Ammo Data** tab to create entries for your handloads or commercial ammunition.
+4.  **Create Load Data:**
+    -   Go to the **Load Data** tab to create entries for your handloads or commercial ammunition.
 
 5.  **Upload Your Targets:**
     -   Go to the **Targets** tab. You can upload images of your shot targets, or use the **"Create Target"** feature to generate and print custom targets (NRA B-8, ISSF, etc.).
@@ -85,7 +85,7 @@ Here, you can manage your collection of firearms.
 -   **To Add a Firearm:** Fill out the form with a nickname, cartridge, barrel length, and other details. Click **"Save Firearm"**.
 -   **To Edit a Firearm:** Click the **"Edit"** button next to an entry in the table. The form will be populated with its data. Make your changes and click **"Save Firearm"** again.
 
-### Ammo Data Tab
+### Load Data Tab
 This tab lets you catalog your ammunition.
 
 -   **Hand Load vs. Commercial Ammo:** Use the sub-tabs to switch between creating a custom handload recipe and logging factory ammunition.
@@ -111,7 +111,7 @@ This is where you turn a target image into analyzable data.
 4.  **Mark Points:**
     -   Click **"Set POA"** (Point of Aim) and click where you were aiming.
     -   Click **"Mark Impacts"** and click on each bullet hole.
-5.  **Enter Session Info:** Associate the group with a Firearm, Load, and Target Distance.
+5.  **Enter Range Session Info:** Associate the group with a Firearm, Load, and Target Distance.
 6.  **Enter Velocity Data (Optional):** You can type the muzzle velocity for each shot in the list below the canvas.
 7.  **Save the Session:** Click **"Save / Update Session"**.
 
@@ -130,9 +130,9 @@ Analyze individual sessions or **composite multiple sessions** for better statis
 Estimate the gyroscopic stability ($S_g$) of your projectiles.
 
 -   **Firearm Selection:** Automatically pulls twist rate from your firearms database.
--   **Bullet Selection:** Pulls bullet specifications (weight, diameter, length) from your ammo data or bullet inventory.
--   **Environmental Correction:** Accounts for temperature, pressure, and velocity to provide an accurate $S_g$ value.
--   ** Miller Twist Formula:** Uses the standard Miller formula with velocity and air density corrections.
+-   **Bullet Selection:** Pulls bullet specifications (weight, diameter, length) from your load data or bullet inventory.
+-   **Environmental Correction:** Accounts for temperature, altitude, pressure, and velocity to provide an accurate $S_g$ value.
+-   ** Miller Twist Formula:** Uses the refined Miller formula with velocity, tip correction, and air density modeling.
 
 ### DB Management Tab
 Advanced data management for your local IndexedDB.
