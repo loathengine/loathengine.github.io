@@ -247,6 +247,10 @@ async function handleLoadSubmit(e) {
         powderLot: document.getElementById('loadPowderLot').value,
         chargeWeight: parseFloat(document.getElementById('loadChargeWeight').value),
         col: parseFloat(document.getElementById('loadCol').value),
+        cbto: parseFloat(document.getElementById('loadCbto').value) || null,
+        cbtoComp: document.getElementById('loadCbtoComp').value || '',
+        shoulder: parseFloat(document.getElementById('loadShoulder').value) || null,
+        shoulderComp: document.getElementById('loadShoulderComp').value || '',
         primerId: document.getElementById('loadPrimer').value,
         primerLot: document.getElementById('loadPrimerLot').value,
         brassId: document.getElementById('loadBrass').value,
@@ -414,9 +418,7 @@ async function handleLoadTableClick(e) {
             document.getElementById('commercialAmmoId').value = item.id;
             document.getElementById('commercialAmmoName').value = item.name;
             document.getElementById('commercialAmmoDiameter').value = item.diameterId;
-            
             await refreshCommercialAmmoCartridgeDropdown();
-            
             document.getElementById('commercialAmmoCartridge').value = item.cartridgeId;
             document.getElementById('commercialAmmoBullet').value = item.bulletId;
             document.getElementById('commercialAmmoPartNumber').value = item.partNumber || '';
@@ -424,43 +426,34 @@ async function handleLoadTableClick(e) {
         } else {
             document.getElementById('loadForm').reset();
             document.getElementById('loadId').value = item.id;
-            
             document.getElementById('loadDiameter').value = item.diameterId;
             await refreshLoadCartridgeDropdown();
             document.getElementById('loadCartridge').value = item.cartridgeId;
-            
             const bullet = await getItem('bullets', item.bulletId);
             await refreshBulletWeightDropdown();
-            if (bullet) {
-                document.getElementById('loadBulletWeight').value = bullet.weight;
-            }
-
+            if (bullet) document.getElementById('loadBulletWeight').value = bullet.weight;
             await refreshBulletNameDropdown();
             document.getElementById('loadBullet').value = item.bulletId;
             document.getElementById('loadBulletLot').value = item.bulletLot;
-            
             const powder = await getItem('powders', item.powderId);
-            if (powder) {
-                document.getElementById('loadPowderManufacturer').value = powder.manufacturerId;
-            }
+            if (powder) document.getElementById('loadPowderManufacturer').value = powder.manufacturerId;
             await refreshPowderNameDropdown();
             document.getElementById('loadPowder').value = item.powderId;
             document.getElementById('loadPowderLot').value = item.powderLot;
             
-            if (Array.isArray(item.chargeWeight)) {
-                 document.getElementById('loadChargeWeight').value = item.chargeWeight[0] || '';
-            } else {
-                 document.getElementById('loadChargeWeight').value = item.chargeWeight;
-            }
+            if (Array.isArray(item.chargeWeight)) document.getElementById('loadChargeWeight').value = item.chargeWeight[0] || '';
+            else document.getElementById('loadChargeWeight').value = item.chargeWeight;
             
             document.getElementById('loadPrimer').value = item.primerId;
             document.getElementById('loadPrimerLot').value = item.primerLot;
             
-            if (Array.isArray(item.col)) {
-                document.getElementById('loadCol').value = item.col[0] || '';
-            } else {
-                document.getElementById('loadCol').value = item.col;
-            }
+            if (Array.isArray(item.col)) document.getElementById('loadCol').value = item.col[0] || '';
+            else document.getElementById('loadCol').value = item.col;
+
+            document.getElementById('loadCbto').value = item.cbto || '';
+            document.getElementById('loadCbtoComp').value = item.cbtoComp || '';
+            document.getElementById('loadShoulder').value = item.shoulder || '';
+            document.getElementById('loadShoulderComp').value = item.shoulderComp || '';
 
             await refreshBrassDropdownForLoad();
             document.getElementById('loadBrass').value = item.brassId;
@@ -476,13 +469,12 @@ async function generateRecipeSheet(loadId) {
     const load = await getItem('loads', loadId);
     if (!load) return alert('Load not found.');
 
-    const [cartridge, bullet, powder, primer, brass, mfg] = await Promise.all([
+    const [cartridge, bullet, powder, primer, brass] = await Promise.all([
         getItem('cartridges', load.cartridgeId),
         getItem('bullets', load.bulletId),
         getItem('powders', load.powderId),
         getItem('primers', load.primerId),
-        getItem('brass', load.brassId),
-        getItem('manufacturers', load.manufacturerId)
+        getItem('brass', load.brassId)
     ]);
     
     const bulletMfg = bullet ? await getItem('manufacturers', bullet.manufacturerId) : null;
@@ -490,22 +482,19 @@ async function generateRecipeSheet(loadId) {
     const primerMfg = primer ? await getItem('manufacturers', primer.manufacturerId) : null;
     const brassMfg = brass ? await getItem('manufacturers', brass.manufacturerId) : null;
 
-    const recipeTitle = `Reloading Recipe: ${cartridge ? cartridge.name : 'Unknown Cartridge'}`;
+    const bulletNameStr = bullet ? `${bulletMfg ? bulletMfg.name : ''} ${bullet.name} ${bullet.weight}gr`.trim() : '';
     const date = new Date().toLocaleDateString();
+    const recipeTitle = `Recipe: ${cartridge ? cartridge.name : ''} - ${bulletNameStr} - ${date}`;
 
-    let chargeVal = '---';
-    if (Array.isArray(load.chargeWeight)) {
-        chargeVal = load.chargeWeight[0] || '---';
-    } else if (load.chargeWeight !== undefined) {
-         chargeVal = load.chargeWeight;
-    }
+    let chargeVal = '';
+    if (Array.isArray(load.chargeWeight)) { chargeVal = load.chargeWeight[0] || ''; } 
+    else if (load.chargeWeight !== undefined) { chargeVal = load.chargeWeight; }
     
-    let colVal = '---';
-    if (Array.isArray(load.col)) {
-        colVal = load.col[0] || '---';
-    } else if (load.col !== undefined) {
-        colVal = load.col; 
-    }
+    let colVal = '';
+    if (Array.isArray(load.col)) { colVal = load.col[0] || ''; } 
+    else if (load.col !== undefined) { colVal = load.col; }
+
+    const formatVal = (val) => (val === null || val === undefined || val === '') ? '' : val;
 
     const htmlContent = `
         <!DOCTYPE html>
@@ -515,10 +504,10 @@ async function generateRecipeSheet(loadId) {
             <title>${recipeTitle}</title>
             <style>
                 body { font-family: 'Inter', sans-serif; padding: 2rem; color: #1f2937; line-height: 1.5; }
-                h1 { border-bottom: 2px solid #374151; padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+                h1 { border-bottom: 2px solid #374151; padding-bottom: 0.5rem; margin-bottom: 1.5rem; font-size: 1.5rem; }
                 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
                 .section { margin-bottom: 2rem; }
-                .section h3 { background-color: #f3f4f6; padding: 0.5rem; border-radius: 0.25rem; margin-bottom: 0.5rem; }
+                .section h3 { background-color: #f3f4f6; padding: 0.5rem; border-radius: 0.25rem; margin-bottom: 0.5rem; font-size: 1.1rem; }
                 .item { margin-bottom: 0.5rem; display: flex; justify-content: space-between; border-bottom: 1px dashed #e5e7eb; padding-bottom: 0.25rem; }
                 .label { font-weight: 600; color: #4b5563; }
                 .value { font-weight: 500; }
@@ -536,46 +525,53 @@ async function generateRecipeSheet(loadId) {
         <body>
             <button class="btn-print" onclick="window.print()">Print Recipe</button>
             <h1>${recipeTitle}</h1>
-            <p><strong>Date Generated:</strong> ${date}</p>
             
             <div class="grid">
                 <div>
                     <div class="section">
                         <h3>Projectile</h3>
-                        <div class="item"><span class="label">Manufacturer:</span> <span class="value">${bulletMfg ? bulletMfg.name : 'N/A'}</span></div>
-                        <div class="item"><span class="label">Name:</span> <span class="value">${bullet ? bullet.name : 'N/A'}</span></div>
-                        <div class="item"><span class="label">Weight:</span> <span class="value">${bullet ? bullet.weight + ' gr' : 'N/A'}</span></div>
-                        <div class="item"><span class="label">Lot #:</span> <span class="value">${load.bulletLot || 'N/A'}</span></div>
+                        <div class="item"><span class="label">Manufacturer:</span> <span class="value">${bulletMfg ? bulletMfg.name : ''}</span></div>
+                        <div class="item"><span class="label">Name:</span> <span class="value">${bullet ? bullet.name : ''}</span></div>
+                        <div class="item"><span class="label">Weight:</span> <span class="value">${bullet ? bullet.weight + ' gr' : ''}</span></div>
+                        <div class="item"><span class="label">Lot #:</span> <span class="value">${load.bulletLot || ''}</span></div>
                     </div>
                     
                     <div class="section">
                         <h3>Powder</h3>
-                        <div class="item"><span class="label">Manufacturer:</span> <span class="value">${powderMfg ? powderMfg.name : 'N/A'}</span></div>
-                        <div class="item"><span class="label">Name:</span> <span class="value">${powder ? powder.name : 'N/A'}</span></div>
-                        <div class="item"><span class="label">Charge Weight:</span> <span class="value">${chargeVal} gr</span></div>
-                        <div class="item"><span class="label">Lot #:</span> <span class="value">${load.powderLot || 'N/A'}</span></div>
+                        <div class="item"><span class="label">Manufacturer:</span> <span class="value">${powderMfg ? powderMfg.name : ''}</span></div>
+                        <div class="item"><span class="label">Name:</span> <span class="value">${powder ? powder.name : ''}</span></div>
+                        <div class="item"><span class="label">Charge Weight:</span> <span class="value">${chargeVal} ${chargeVal ? 'gr' : ''}</span></div>
+                        <div class="item"><span class="label">Lot #:</span> <span class="value">${load.powderLot || ''}</span></div>
                     </div>
                 </div>
 
                 <div>
                     <div class="section">
                         <h3>Primer & Case</h3>
-                        <div class="item"><span class="label">Primer Mfg:</span> <span class="value">${primerMfg ? primerMfg.name : 'N/A'}</span></div>
-                        <div class="item"><span class="label">Primer Name:</span> <span class="value">${primer ? primer.name : 'N/A'}</span></div>
-                        <div class="item"><span class="label">Primer Lot:</span> <span class="value">${load.primerLot || 'N/A'}</span></div>
-                        <div class="item"><span class="label">Brass Mfg:</span> <span class="value">${brassMfg ? brassMfg.name : 'N/A'}</span></div>
-                        <div class="item"><span class="label">Brass Lot:</span> <span class="value">${load.brassLot || 'N/A'}</span></div>
-                        <div class="item"><span class="label"># of Firings:</span> <span class="value">${load.firings || '0'}</span></div>
+                        <div class="item"><span class="label">Primer Mfg:</span> <span class="value">${primerMfg ? primerMfg.name : ''}</span></div>
+                        <div class="item"><span class="label">Primer Name:</span> <span class="value">${primer ? primer.name : ''}</span></div>
+                        <div class="item"><span class="label">Primer Lot:</span> <span class="value">${load.primerLot || ''}</span></div>
+                        <div class="item"><span class="label">Brass Mfg:</span> <span class="value">${brassMfg ? brassMfg.name : ''}</span></div>
+                        <div class="item"><span class="label">Brass Lot:</span> <span class="value">${load.brassLot || ''}</span></div>
+                        <div class="item"><span class="label"># of Firings:</span> <span class="value">${load.firings || ''}</span></div>
                     </div>
 
                     <div class="section">
                         <h3>Dimensions</h3>
-                        <div class="item"><span class="label">C.O.A.L.:</span> <span class="value">${colVal}"</span></div>
-                        <div class="item"><span class="label">Min Case Length:</span> <span class="value">${cartridge && cartridge.minCaseLength ? cartridge.minCaseLength.toFixed(3) + '"' : 'N/A'}</span></div>
-                        <div class="item"><span class="label">Max Case Length:</span> <span class="value">${cartridge && cartridge.maxCaseLength ? cartridge.maxCaseLength.toFixed(3) + '"' : 'N/A'}</span></div>
-                        <div class="item"><span class="label">Trim Length:</span> <span class="value">${cartridge && cartridge.trimLength ? cartridge.trimLength.toFixed(3) + '"' : 'N/A'}</span></div>
+                        <div class="item"><span class="label">C.O.A.L.:</span> <span class="value">${colVal}${colVal ? '"' : ''}</span></div>
+                        <div class="item"><span class="label">CBTO:</span> <span class="value">${formatVal(load.cbto)}${load.cbto ? '"' : ''}</span></div>
+                        <div class="item"><span class="label">CBTO Comp:</span> <span class="value">${load.cbtoComp || ''}</span></div>
+                        <div class="item"><span class="label">Shoulder Pos:</span> <span class="value">${formatVal(load.shoulder)}${load.shoulder ? '"' : ''}</span></div>
+                        <div class="item"><span class="label">Shoulder Comp:</span> <span class="value">${load.shoulderComp || ''}</span></div>
                     </div>
                 </div>
+            </div>
+
+            <div class="section">
+                <h3>Case Specs (Ref)</h3>
+                <div class="item"><span class="label">Min Case Length:</span> <span class="value">${cartridge && cartridge.minCaseLength ? cartridge.minCaseLength.toFixed(3) + '"' : ''}</span></div>
+                <div class="item"><span class="label">Max Case Length:</span> <span class="value">${cartridge && cartridge.maxCaseLength ? cartridge.maxCaseLength.toFixed(3) + '"' : ''}</span></div>
+                <div class="item"><span class="label">Trim Length:</span> <span class="value">${cartridge && cartridge.trimLength ? cartridge.trimLength.toFixed(3) + '"' : ''}</span></div>
             </div>
 
             <div class="section">
