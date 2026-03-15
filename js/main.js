@@ -6,12 +6,13 @@ import { initLoadsManagement, refreshLoadsUI } from './loads.js';
 import { initTargetsManagement, renderTargetImages } from './targets.js';
 import { initImpactMarking, refreshImpactMarkingUI } from './marking.js';
 import { initStatisticalAnalysis } from './analysis.js';
+import { initStabilityCalculator, refreshStabilityUI } from './stability.js';
 import { initDbManagement, renderSelectedTable } from './db-management.js';
 
 async function loadTabContent() {
     const tabContainer = document.getElementById('tab-content-container');
     const tabs = [
-        'about-us', 'firearms', 'loads', 'targets', 'marking', 'analysis', 'components', 'db-management'
+        'about-us', 'firearms', 'loads', 'targets', 'marking', 'analysis', 'stability', 'components', 'db-management'
     ];
 
     for (const tab of tabs) {
@@ -42,6 +43,7 @@ async function refreshAllUI() {
     await refreshLoadsUI();
     await renderTargetImages();
     await refreshImpactMarkingUI();
+    await refreshStabilityUI();
     
     // Analysis Tab dropdowns
     const sessionSelect = document.getElementById('sessionSelect');
@@ -98,6 +100,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     initTargetsManagement();
     initImpactMarking();
     initStatisticalAnalysis();
+    initStabilityCalculator();
     initDbManagement();
 
     // 5. Setup Global Event Listeners

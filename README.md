@@ -6,12 +6,13 @@
 3.  [Recommended Workflow](#recommended-workflow)
 4.  [Tab-by-Tab Guide](#tab-by-tab-guide)
     - [About Us](#about-us)
-    - [Setup Tabs (Misc & Components)](#setup-tabs-misc--components)
+    - [Components Tab (Foundational Data)](#components-tab-foundational-data)
     - [Firearms Tab](#firearms-tab)
     - [Ammo Data Tab](#ammo-data-tab)
     - [Targets Tab](#targets-tab)
     - [Marking Tab (Core Functionality)](#marking-tab-core-functionality)
     - [Analysis Tab (Composite & Compare)](#analysis-tab-composite--compare)
+    - [Stability Tab (Miller Twist Calculator)](#stability-tab-miller-twist-calculator)
     - [DB Management Tab](#db-management-tab)
 5.  [Data Backup and Management](#data-backup-and-management)
 
@@ -41,24 +42,25 @@ For the most efficient use of the application, follow this workflow:
     -   This will populate the application with a comprehensive list of standard diameters, cartridges, and manufacturers (Hornady, Sierra, Hodgdon, etc.), saving you hours of manual entry.
 
 2.  **Setup Foundational Data:**
-    -   Go to the `Misc` tab to add any custom **Diameters** or **Manufacturers** not covered by the master database.
-    -   Go to the `Components` tab to add your specific inventory of **Bullets**, **Powders**, **Primers**, and **Brass**.
+    -   Go to the **Components** tab.
+    -   Use the **Manufacturers**, **Diameters**, and **Cartridges** sub-tabs to add any custom items not covered by the master database.
+    -   Then, use the **Bullets**, **Powders**, **Primers**, and **Brass** sub-tabs to add your specific inventory.
 
 3.  **Define Your Equipment:**
-    -   Go to the `Firearms` tab to add the rifles or pistols you will be testing.
+    -   Go to the **Firearms** tab to add the rifles or pistols you will be testing.
 
 4.  **Create Ammo Data:**
-    -   Go to the `Ammo Data` tab to create entries for your handloads or commercial ammunition.
+    -   Go to the **Ammo Data** tab to create entries for your handloads or commercial ammunition.
 
 5.  **Upload Your Targets:**
-    -   Go to the `Targets` tab. You can upload existing images of your shot targets, or use the **"Create Target"** feature to generate and print custom targets (NRA B-8, ISSF, etc.).
+    -   Go to the **Targets** tab. You can upload images of your shot targets, or use the **"Create Target"** feature to generate and print custom targets (NRA B-8, ISSF, etc.).
 
 6.  **Mark and Save Sessions:**
-    -   Go to the `Marking` tab. Load a target image, set the scale, and mark your impacts.
+    -   Go to the **Marking** tab. Load a target image, set the scale, and mark your impacts.
     -   **Important:** You can mark individual groups on different targets and save them as separate sessions. The Analysis tab will let you combine them later.
 
 7.  **Analyze & Composite:**
-    -   Go to the `Analysis` tab. Select multiple sessions corresponding to the same load/firearm combination.
+    -   Go to the **Analysis** tab. Select multiple sessions corresponding to the same load/firearm combination.
     -   The app will **composite** these separate groups into a single aggregate analysis, giving you a true picture of your precision (Mean Radius, SD, etc.) based on the total number of shots.
 
 ---
@@ -66,17 +68,16 @@ For the most efficient use of the application, follow this workflow:
 ## Tab-by-Tab Guide
 
 ### About Us
-This is the landing page. It provides a general overview of the application's purpose and features, along with the recommended workflow for new users.
+This is the landing page. It provides a general overview of the application's purpose, scientific methodology, and privacy architecture.
 
-### Setup Tabs (Misc & Components)
+### Components Tab (Foundational Data)
 
-These two tabs are the foundation of the application. Populating them first will make creating firearms and loads much easier.
+This tab is the foundation of the application. Populating it first will make creating firearms and loads much easier. It is divided into several sub-tabs:
 
--   **Misc Tab:** Use the sub-tabs here to manage the basic building blocks:
-    -   **Manufacturers:** Add the names of companies that make bullets, powder, etc.
-    -   **Diameters:** Define the calibers you use (e.g., `.223`, `.308`).
-    -   **Cartridges:** Define the specific cartridges you use (e.g., `308 Winchester`), linking them to a diameter.
--   **Components Tab:** Use the sub-tabs here to create a detailed inventory of your reloading components. The manufacturers you added in the `Misc` tab will be available in the dropdowns.
+-   **Manufacturers:** Add the names of companies that make bullets, powder, etc.
+-   **Diameters:** Define the calibers you use (e.g., `.223`, `.308`).
+-   **Cartridges:** Define the specific cartridges you use (e.g., `308 Winchester`), linking them to a diameter.
+-   **Inventory (Bullets, Powder, Primers, Brass):** Create a detailed inventory of your reloading components. The manufacturers and diameters you added previously will be available in these forms.
 
 ### Firearms Tab
 Here, you can manage your collection of firearms.
@@ -88,57 +89,61 @@ Here, you can manage your collection of firearms.
 This tab lets you catalog your ammunition.
 
 -   **Hand Load vs. Commercial Ammo:** Use the sub-tabs to switch between creating a custom handload recipe and logging factory ammunition.
--   **Creating a Hand Load:** The form uses a series of dependent dropdowns. For example, after you select a `Diameter`, the `Cartridge` and `Bullet Weight` dropdowns will be filtered to show only relevant options. Fill in all known details for your recipe.
+-   **Creating a Hand Load:** The form uses a series of dependent dropdowns. Fill in all known details for your recipe. You can enter multiple charge weights or COALs separated by commas.
 -   **Creating Commercial Ammo:** A simpler form to log factory ammunition by diameter, cartridge, name, and lot number.
+-   **Recipe Sheet:** Click the **"Recipe"** button in the table to generate a printable summary of a specific handload.
 
 ### Targets Tab
-This is your digital library of target images.
+This is your digital library of target images and a custom target generator.
 
--   **Manage Targets:** Click **"Upload New Target Image(s)"** to select one or more image files from your computer. The images are automatically converted to the efficient `.webp` format to save space. You can **Rename** or **Delete** targets directly from this gallery.
--   **Create Target:** Use this sub-tab to generate custom printable targets. You can select standard presets like **NRA B-8** or **ISSF 10m**, or define your own grid, bullseye size, and layout. You can then download the target as an image or print it directly.
+-   **Upload Targets:** Click **"Upload New Target Image(s)"** to select one or more image files. The images are automatically converted to `.webp` to save space.
+-   **Create Target:** A robust tool to generate custom printable targets. You can define page size, grid options, bullseye shapes (Circle, Square, Diamond, etc.), and layout. You can also import firearm and load data directly onto the target as a text label.
 
 ### Marking Tab (Core Functionality)
-This is the most interactive part of the application, where you turn a target image into analyzable data.
+This is where you turn a target image into analyzable data.
 
-1.  **Load a Target:** Use the **"Load Saved Image"** dropdown to select a target you uploaded. It will appear on the canvas.
-2.  **Set the Scale (CRITICAL STEP):** For the application to make accurate measurements, you must tell it how large things are in the image.
-    -   Enter a known distance in the **Scale** input fields (e.g., `1` and `Inches (in)` if your target grid is 1 inch).
-    -   Click the **"Set Scale"** button. It will turn blue and become active.
-    -   Click two points on the canvas that correspond to the distance you entered (e.g., the start and end of a 1-inch line on the target grid). The scale is now set.
-3.  **Create a Group:** Click **"New Group"**. This will create an active group for you to work with.
+1.  **Load a Target:** Use the **"Load Saved Image"** dropdown to select a target.
+2.  **Set the Scale (CRITICAL STEP):** 
+    -   Enter a known distance and units (e.g., `1` and `Inches (in)`).
+    -   Click **"Set Scale"**.
+    -   Click two points on the canvas that correspond to that distance.
+3.  **Create a Group:** Click **"New Group"**.
 4.  **Mark Points:**
-    -   Click the **"Set POA"** (Point of Aim) button and click on the canvas where you were aiming for that group.
-    -   The **"Mark Impacts"** button will automatically become active. Click on the canvas to mark each bullet hole for that group.
-5.  **Enter Session Info:**
-    -   Use the dropdowns to associate the session with a **Firearm** and a **Load**.
-    -   Enter the **Target Distance**.
-6.  **Enter Velocity Data (Optional but Recommended):**
-    -   As you mark impacts, a list will appear below the canvas. You can type the muzzle velocity for each shot into the input field next to it. This is crucial for advanced dispersion analysis.
-7.  **Save the Session:** Click **"Save / Update Session"**. Your marked points, scale, and session info are now saved. You can treat each saved session as a "part" of a larger aggregate group if you wish.
+    -   Click **"Set POA"** (Point of Aim) and click where you were aiming.
+    -   Click **"Mark Impacts"** and click on each bullet hole.
+5.  **Enter Session Info:** Associate the group with a Firearm, Load, and Target Distance.
+6.  **Enter Velocity Data (Optional):** You can type the muzzle velocity for each shot in the list below the canvas.
+7.  **Save the Session:** Click **"Save / Update Session"**.
 
 ### Analysis Tab (Composite & Compare)
-This is where the magic happens. You can analyze individual sessions or **composite multiple sessions** to get better statistical data.
+Analyze individual sessions or **composite multiple sessions** for better statistical data.
 
-1.  **Select Sessions:** Use the list to select sessions.
-    -   **Comparison:** Select different loads to compare them side-by-side.
-    -   **Compositing:** Select multiple sessions that used the **same load** (e.g., "5 shots on Target A" and "5 shots on Target B"). The app will overlay them based on their Point of Aim (POA) to simulate a single 10-shot group.
-    -   Hold `Ctrl` (on Windows/Linux) or `Cmd` (on Mac) to select multiple items.
-2.  **Analyze:** Click the **"Analyze Selected Session(s)"** button.
+1.  **Select Sessions:** Use the list to select sessions. Hold `Ctrl` or `Cmd` to select multiple.
+2.  **Analyze:** Click **"Analyze Selected Session(s)"**.
 3.  **Review the Results:**
-    -   A **table** will appear with detailed statistics (Mean Radius, SD, etc.) in **Milliradians (mrad)** (if distance was provided) or original units.
+    -   **Statistics Table:** View Mean Radius (MR), Group Size, 95th Percentile Radius, A-ZED, and more.
     -   **Dispersion Analysis:** Checks for vertical stringing and velocity correlations.
-4.  **View the Composite Plot:** Below the table, a plot visually represents all selected groups overlaid on top of each other, centered on their point of impact (MPI).
-5.  **Export:** Click **"Export as Image"** to save a timestamped image of the plot and stats.
+    -   **Composite Plot:** A visual representation of all selected groups overlaid, centered on their mean point of impact (MPI).
+4.  **Export:** Click **"Export as Image"** to save the plot and stats.
+
+### Stability Tab (Miller Twist Calculator)
+Estimate the gyroscopic stability ($S_g$) of your projectiles.
+
+-   **Firearm Selection:** Automatically pulls twist rate from your firearms database.
+-   **Bullet Selection:** Pulls bullet specifications (weight, diameter, length) from your ammo data or bullet inventory.
+-   **Environmental Correction:** Accounts for temperature, pressure, and velocity to provide an accurate $S_g$ value.
+-   ** Miller Twist Formula:** Uses the standard Miller formula with velocity and air density corrections.
 
 ### DB Management Tab
-This tab is for advanced data management. **Use with caution.**
+Advanced data management for your local IndexedDB.
 
 -   **Global Actions:**
-    -   `Export Entire Database`: Saves a single JSON file of all your data. **This is the recommended way to create backups.**
-    -   `Import Master Database`: Imports a master database from a pre-defined online source. **This will overwrite all existing data.** Use this to initialize the application with a standard set of components and data.
-    -   `Import Entire Database`: Restores your data from a backup file. This will overwrite all existing data.
-    -   `Delete Entire Database`: **PERMANENTLY DELETES ALL DATA.** This action cannot be undone.
--   **Table Specific Actions:** Allows you to export, import, or clear the data from individual tables (e.g., just your bullets).
+    -   `Export Entire Database`: Saves a JSON backup. **Highly recommended.**
+    -   `Import Master Database`: Loads a standard set of components. **Overwrites existing data.**
+    -   `Import Entire Database`: Restores from a backup file.
+    -   `Delete Entire Database`: **Permanent deletion.**
+-   **Merge Database:** Allows you to select a JSON backup and merge its contents into your current database. You can "Test Merge" first to see how many new records will be added or updated.
+-   **Table Specific Actions:** Export, import, or clear individual tables (e.g., just your firearms).
 
 ---
 
@@ -148,4 +153,4 @@ Because all data is stored within your browser, it is vulnerable to being delete
 
 **It is critical that you regularly back up your database.**
 
-To do this, go to the `DB Management` tab and click **"Export Entire Database"**. Save the resulting `.json` file in a safe place. You can use this file to restore all of your data at any time.
+Go to the `DB Management` tab and click **"Export Entire Database"** regularly. Save the `.json` file safely.

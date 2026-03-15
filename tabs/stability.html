@@ -1,0 +1,78 @@
+            <div class="grid-layout">
+                <div class="card control-panel">
+                    <h3>Stability Setup</h3>
+                    
+                    <div class="section">
+                        <h4>Environmental Data</h4>
+                        <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                            <div><label for="stabTemp">Temp (°F)</label><input type="number" id="stabTemp" value="59"></div>
+                            <div><label for="stabPressure">Pressure (inHg)</label><input type="number" id="stabPressure" value="29.92" step="0.01"></div>
+                        </div>
+                        <div class="form-grid" style="grid-template-columns: 1fr; gap: 0.5rem; margin-top: 0.5rem;">
+                             <div><label for="stabVelocity">Muzzle Velocity (fps)</label><input type="number" id="stabVelocity" value="2800"></div>
+                        </div>
+                    </div>
+
+                    <div class="section" style="margin-top: 1.5rem; border-top: 1px solid #374151; padding-top: 1rem;">
+                        <h4>Firearm & Barrel</h4>
+                        <label for="stabFirearmSelect">Select Firearm</label>
+                        <select id="stabFirearmSelect">
+                            <option value="">-- Manual Entry --</option>
+                        </select>
+                        <div class="form-grid" style="grid-template-columns: 1fr; gap: 0.5rem; margin-top: 0.5rem;">
+                            <div><label for="stabTwist">Twist Rate (1:X)</label><input type="number" id="stabTwist" value="10" step="0.1"></div>
+                        </div>
+                    </div>
+
+                    <div class="section" style="margin-top: 1.5rem; border-top: 1px solid #374151; padding-top: 1rem;">
+                        <h4>Bullet Data</h4>
+                        <div style="margin-bottom: 0.5rem;">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="stabUseLoadBullet" checked> Use Bullet from Ammo Data
+                            </label>
+                        </div>
+                        
+                        <div id="stabLoadSelectContainer">
+                            <label for="stabLoadSelect">Select Ammo/Load</label>
+                            <select id="stabLoadSelect"></select>
+                        </div>
+
+                        <div id="stabManualBulletContainer" style="display: none;">
+                            <label for="stabBulletSelect">Select Bullet (Inventory)</label>
+                            <select id="stabBulletSelect">
+                                <option value="">-- Manual Entry --</option>
+                            </select>
+                        </div>
+
+                        <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.5rem;">
+                            <div><label for="stabBulletWeight">Weight (gr)</label><input type="number" id="stabBulletWeight" step="0.1"></div>
+                            <div><label for="stabBulletDiameter">Diameter (in)</label><input type="number" id="stabBulletDiameter" step="0.001"></div>
+                        </div>
+                        <div class="form-grid" style="grid-template-columns: 1fr; gap: 0.5rem; margin-top: 0.5rem;">
+                             <div><label for="stabBulletLength">Bullet Length (in)</label><input type="number" id="stabBulletLength" step="0.001"></div>
+                        </div>
+                    </div>
+
+                    <button id="calculateStabilityBtn" class="btn-blue" style="margin-top: 1.5rem;">Calculate Stability</button>
+                </div>
+
+                <div class="main-content card">
+                    <h3>Stability Analysis (Miller Twist Formula)</h3>
+                    <div id="stabilityResultOutput" class="data-table-container" style="border: none; text-align: center; padding: 2rem;">
+                        <p style="color: #9ca3af;">Enter data and click Calculate to see results.</p>
+                    </div>
+
+                    <div style="margin-top: 2rem; padding: 1rem; background: #1f2937; border-radius: 0.5rem; border: 1px solid #374151;">
+                        <h4>Understanding Gyroscopic Stability (Sg)</h4>
+                        <ul style="color: #d1d5db; line-height: 1.6; margin-top: 0.5rem;">
+                            <li><strong>Sg < 1.0:</strong> Unstable. Bullet will tumble.</li>
+                            <li><strong>1.0 < Sg < 1.5:</strong> Marginally Stable. Risk of inaccuracy and reduced BC.</li>
+                            <li><strong>Sg > 1.5:</strong> Fully Stable. Recommended for long-range precision.</li>
+                            <li><strong>Sg > 2.0:</strong> Over-stabilized. Small imperfections in bullet balance may cause increased dispersion, but the bullet is flight-stable.</li>
+                        </ul>
+                        <p style="font-size: 0.8rem; color: #9ca3af; margin-top: 1rem;">
+                            Note: This calculator uses the Miller Twist Rule. It is an estimation and results may vary based on specific bullet geometry.
+                        </p>
+                    </div>
+                </div>
+            </div>
