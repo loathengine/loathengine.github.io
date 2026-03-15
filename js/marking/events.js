@@ -284,6 +284,8 @@ export function setupEventListeners() {
             loadId: document.getElementById('loadSelect').value || null,
             targetDistance: parseFloat(document.getElementById('tmTargetDistance').value) || null,
             distanceUnits: document.getElementById('tmDistanceUnits').value,
+            temp: parseFloat(document.getElementById('tmTemp').value) || null,
+            pressure: parseFloat(document.getElementById('tmPressure').value) || null,
             groups: state.groups, 
             scale: state.scale,     
             shots: shotsForAnalysis 
@@ -294,6 +296,7 @@ export function setupEventListeners() {
             alert('Session data saved successfully!');
             await populateMarkingSessionSelect();
             document.getElementById('sessionSelect').dispatchEvent(new Event('refresh'));
+            window.dispatchEvent(new Event('app-refresh')); // Refresh Stability tab dropdowns
         } catch (error) {
             console.error("Failed to save impact data:", error);
             alert("An error occurred while saving the session data.");
@@ -321,12 +324,14 @@ export function setupEventListeners() {
         state.currentGroupIndex = state.groups.length > 0 ? 0 : -1;
         
         document.getElementById('firearmSelect').value = data.firearmId;
-        // Trigger load select update, then set value
         await updateLoadSelectBasedOnFirearm();
         document.getElementById('loadSelect').value = data.loadId;
 
         document.getElementById('tmTargetDistance').value = data.targetDistance;
         document.getElementById('tmDistanceUnits').value = data.distanceUnits;
+        document.getElementById('tmTemp').value = data.temp || 59;
+        document.getElementById('tmPressure').value = data.pressure || 29.92;
+        
         document.getElementById('scaleDistance').value = state.scale.distance;
         document.getElementById('scaleUnits').value = state.scale.units;
 
