@@ -206,10 +206,10 @@ async function populateBulletFields(bulletId) {
     if (bullet) {
         document.getElementById('stabBulletWeight').value = bullet.weight || '';
         document.getElementById('stabBulletLength').value = bullet.length || '';
-        if (bullet.tipLength) {
+        if (bullet.stability_vars && bullet.stability_vars.is_tipped) {
              document.getElementById('stabIsTipped').checked = true;
              document.getElementById('stabTipLengthContainer').style.display = 'block';
-             document.getElementById('stabTipLength').value = bullet.tipLength;
+             document.getElementById('stabTipLength').value = bullet.stability_vars.tip_length || 0;
         } else {
              document.getElementById('stabIsTipped').checked = false;
              document.getElementById('stabTipLengthContainer').style.display = 'none';
@@ -248,24 +248,31 @@ function calculateStability() {
         return;
     }
 
+    // 1. Tip Correction (Effective Length Logic)
     const l = isTipped ? (totalL - tipL) : totalL;
 
+    // 2. Air Density Ratio (ADR)
+    // Relative to Sea Level Standard (59F, 29.92 inHg)
     let stationPressure = pInput;
     if (pType === 'sea') {
         stationPressure = pInput * Math.pow(1 - (0.0000068755 * alt), 5.2559);
     }
+    const adr = (stationPressure / 29.92) * (518.67 / (temp + 459.67));
 
-    const standardDensity = 0.0765; // lb/ft3
-    const currentDensity = (stationPressure * 0.4912) / (1716.5 * (temp + 459.67) / 144);
-    const adr = currentDensity / standardDensity;
-
-    const twistInCalibers = t / d;
+    // 3. Miller Twist Formula (Standard Logic)
+    // Formula for Twist in inches (T):
+    // Sg = (30 * m) / (T^2 * l * (1 + (l/d)^2))
+    // This assumes T is in inches and l is in inches.
     const ld = l / d;
-    
-    let sg = (30 * m) / (Math.pow(twistInCalibers, 2) * Math.pow(d, 3) * ld * (1 + Math.pow(ld, 2)));
+    let sg = (30 * m) / (Math.pow(t, 2) * l * (1 + Math.pow(ld, 2)));
 
+    // 4. Velocity Correction
+    // Miller is for 2800 fps. Refined Miller uses (v/2800)^(1/3).
     const velFactor = Math.pow(v / 2800, 1/3);
     sg *= velFactor;
+
+    // 5. Air Density Correction
+    // Stability is inversely proportional to air density.
     sg = sg / adr;
 
     let color = "#ef4444"; 
@@ -280,9 +287,8 @@ function calculateStability() {
 
     deepDive.style.display = 'block';
     deepDiveContent.innerHTML = `
-        <p>Effective Length (Metal): ${l.toFixed(3)}"</p>
+        <p>Metal Length: ${l.toFixed(3)}"</p>
         <p>Length/Diameter Ratio: ${ld.toFixed(3)}</p>
-        <p>Twist in Calibers: ${twistInCalibers.toFixed(2)}</p>
         <p>Station Pressure: ${stationPressure.toFixed(2)} inHg</p>
         <p>Air Density Ratio (ADR): ${adr.toFixed(4)}</p>
         <p>Velocity Correction: ${velFactor.toFixed(4)}</p>
