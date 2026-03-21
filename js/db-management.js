@@ -4,9 +4,11 @@ import { triggerDownload } from './utils.js';
 
 export function initDbManagement() {
     const tableSelect = document.getElementById('tableSelect');
+    
+    // Default option is entire database
     const defaultOption = document.createElement('option');
-    defaultOption.value = '';
-    defaultOption.textContent = '-- Select Table --';
+    defaultOption.value = 'all';
+    defaultOption.textContent = '-- Entire Database --';
     tableSelect.appendChild(defaultOption);
 
     const stores = getObjectStores();
@@ -17,25 +19,17 @@ export function initDbManagement() {
         tableSelect.appendChild(option);
     });
 
-    // Global Actions
-    document.getElementById('exportDbBtn').addEventListener('click', exportDatabase);
+    // Unified Actions
+    document.getElementById('unifiedExportBtn').addEventListener('click', handleUnifiedExport);
+    document.getElementById('unifiedImportBtn').addEventListener('click', handleUnifiedImport);
+    document.getElementById('unifiedMergeBtn').addEventListener('click', handleUnifiedMerge);
+    document.getElementById('unifiedDeleteBtn').addEventListener('click', handleUnifiedDelete);
     document.getElementById('importMasterDbBtn').addEventListener('click', importMasterDatabase);
-    document.getElementById('deleteDbBtn').addEventListener('click', handleDeleteDatabase);
-    
-    // Import & Merge Actions
-    document.getElementById('testMergeBtn').addEventListener('click', handleTestMerge);
-    document.getElementById('mergeDbBtn').addEventListener('click', handleMergeDatabase);
-    document.getElementById('overwriteDbBtn').addEventListener('click', handleOverwriteDatabase);
-
-    // Table Actions
-    document.getElementById('exportTableBtn').addEventListener('click', exportTableData);
-    document.getElementById('importTableInput').addEventListener('change', importTableData);
-    document.getElementById('clearTableBtn').addEventListener('click', clearTableData);
 
     tableSelect.addEventListener('change', renderSelectedTable);
 }
 
-// Helper to log to the merge result area
+// Helper to log to the result area
 function logMergeResult(message, isError = false) {
     const logDiv = document.getElementById('mergeResultLog');
     logDiv.style.display = 'block';
@@ -51,101 +45,158 @@ function clearMergeLog() {
     logDiv.style.display = 'none';
 }
 
-async function handleTestMerge() {
+async function handleUnifiedExport() {
+    const scope = document.getElementById('tableSelect').value;
+    if (scope === 'all') {
+        const allData = {};
+        const stores = getObjectStores();
+        for (const storeName of stores) { 
+            allData[storeName] = await getAllItems(storeName); 
+        }
+        const dateString = new Date().toISOString().slice(0, 10);
+        const jsonString = '{\n' +
+            Object.keys(allData).map(storeName => {
+                const items = allData[storeName].map(item => '    ' + JSON.stringify(item));
+                return `  "${storeName}": [\n${items.join(',\n')}\n  ]`;
+            }).join(',\n') +
+        '\n}';
+        triggerDownload(jsonString, `master-db-backup-${dateString}.json`);
+    } else {
+        if (!scope) {
+            alert('Please select a target scope to export.');
+            return;
+        }
+        const data = await getAllItems(scope);
+        const jsonString = '[\n' +
+            data.map(item => '  ' + JSON.stringify(item)).join(',\n') +
+        '\n]';
+        triggerDownload(jsonString, `${scope}-backup.json`);
+    }
+}
+
+async function handleUnifiedDelete() {
+    const scope = document.getElementById('tableSelect').value;
+    if (scope === 'all') {
+        if (confirm('Are you sure you want to permanently delete the entire database? This action cannot be undone.')) {
+            try {
+                await deleteDatabase();
+                alert('Database deleted successfully. The page will now reload.');
+                location.reload();
+            } catch (err) {
+                console.error('Error deleting database:', err);
+                alert('Could not delete the database.');
+            }
+        }
+    } else {
+        if (!scope) {
+            alert('Please select a target scope to delete.');
+            return;
+        }
+        if (confirm(`Are you sure you want to delete all data from the '${scope}' table?`)) {
+            try {
+                const db = await openDB();
+                const transaction = db.transaction([scope], 'readwrite');
+                const store = transaction.objectStore(scope);
+                store.clear();
+                transaction.oncomplete = async () => { 
+                    alert(`Table '${scope}' has been cleared.`); 
+                    window.dispatchEvent(new Event('app-refresh'));
+                    renderSelectedTable();
+                };
+                transaction.onerror = (err) => { 
+                    console.error(`Error clearing table ${scope}:`, err); 
+                    alert(`Failed to clear table '${scope}'.`); 
+                };
+            } catch (err) {
+                console.error('Error clearing table:', err);
+            }
+        }
+    }
+}
+
+async function handleUnifiedImport() {
     clearMergeLog();
-    const fileInput = document.getElementById('mergeDbInput');
+    const scope = document.getElementById('tableSelect').value;
+    const fileInput = document.getElementById('dbFileInput');
     const file = fileInput.files[0];
     
     if (!file) {
-        alert('Please select a JSON file to merge.');
+        alert('Please select a JSON file to import.');
         return;
     }
 
-    logMergeResult('Starting Test Merge...', false);
+    if (!confirm('Are you sure you want to overwrite? ALL existing records in the target scope will be erased!')) return;
+    
+    logMergeResult(`Starting absolute overwrite for ${scope === 'all' ? 'Entire Database' : 'Table: ' + scope}...`, false);
 
     const reader = new FileReader();
     reader.onload = async (e) => {
         try {
             const data = JSON.parse(e.target.result);
-            if (typeof data !== 'object' || Array.isArray(data)) {
-                logMergeResult('Error: Invalid JSON format. Root must be an object keyed by table names.', true);
-                return;
-            }
-
-            const db = await openDB();
-            const stores = getObjectStores();
-            let totalNew = 0;
-            let totalUpdates = 0;
-            let errors = 0;
-
-            for (const storeName of Object.keys(data)) {
-                if (!stores.includes(storeName)) {
-                    logMergeResult(`Warning: Table '${storeName}' does not exist in the database. Skipping.`, true);
-                    continue;
+            const db = await openDB(); 
+            
+            if (scope === 'all') {
+                if (typeof data !== 'object' || Array.isArray(data)) {
+                    logMergeResult(`Error: Invalid JSON format. Root must be an object keyed by table names.`, true);
+                    return;
                 }
-
-                const items = data[storeName];
-                if (!Array.isArray(items)) {
-                    logMergeResult(`Error: Data for table '${storeName}' is not an array.`, true);
-                    errors++;
-                    continue;
+                const stores = getObjectStores();
+                const validStores = Object.keys(data).filter(s => stores.includes(s));
+                if (validStores.length === 0) {
+                    logMergeResult('Error: No valid tables found in import file.', true);
+                    return;
                 }
-
-                let newCount = 0;
-                let updateCount = 0;
-
-                // Check items against DB
-                // We use a transaction to check existence
-                const transaction = db.transaction([storeName], 'readonly');
-                const store = transaction.objectStore(storeName);
-
-                // We need to wait for all requests in this loop
-                // Using Promise.all with store.get requests
-                const checkPromises = items.map(item => {
-                    return new Promise((resolve) => {
-                        if (!item.id) {
-                            // If no ID, it will be a new item (generated ID)
-                            resolve('new'); 
-                            return;
-                        }
-                        const req = store.get(item.id);
-                        req.onsuccess = () => {
-                            if (req.result) resolve('update');
-                            else resolve('new');
-                        };
-                        req.onerror = () => resolve('error');
-                    });
-                });
-
-                const results = await Promise.all(checkPromises);
-                
-                results.forEach(res => {
-                    if (res === 'new') newCount++;
-                    else if (res === 'update') updateCount++;
-                });
-
-                totalNew += newCount;
-                totalUpdates += updateCount;
-
-                logMergeResult(`Table '${storeName}': ${newCount} New, ${updateCount} Updates.`);
+                const transaction = db.transaction(validStores, 'readwrite');
+                for (const storeName of validStores) {
+                    const store = transaction.objectStore(storeName);
+                    store.clear();
+                    const items = data[storeName];
+                    if (Array.isArray(items)) {
+                        for (const item of items) { store.put(item); }
+                    }
+                }
+                transaction.oncomplete = async () => {
+                    logMergeResult(`Overwrite Successful! Database replaced.`);
+                    alert('Database overwritten successfully!');
+                    fileInput.value = '';
+                    window.dispatchEvent(new Event('app-refresh'));
+                    renderSelectedTable();
+                };
+                transaction.onerror = (err) => { 
+                    logMergeResult(`Overwrite Failed: ${err.target.error.message}`, true);
+                };
+            } else {
+                if (!Array.isArray(data)) {
+                    logMergeResult(`Error: Invalid JSON format. Expected an array of records for a specific table.`, true);
+                    return;
+                }
+                const transaction = db.transaction([scope], 'readwrite');
+                const store = transaction.objectStore(scope);
+                store.clear();
+                data.forEach(item => store.put(item));
+                transaction.oncomplete = async () => { 
+                    logMergeResult(`Table '${scope}' imported successfully!`); 
+                    alert(`Table '${scope}' imported successfully!`); 
+                    fileInput.value = '';
+                    window.dispatchEvent(new Event('app-refresh'));
+                    renderSelectedTable();
+                };
+                transaction.onerror = (err) => { 
+                    logMergeResult(`Import Failed: ${err.target.error.message}`, true);
+                };
             }
-
-            logMergeResult('-----------------------------------');
-            logMergeResult(`Test Complete: ${totalNew} Records to Insert, ${totalUpdates} Records to Update.`);
-            if (errors > 0) logMergeResult(`Found ${errors} errors.`, true);
-            else logMergeResult('No schema errors found. Safe to merge.');
-
-        } catch (error) {
-            console.error(error);
-            logMergeResult(`Critical Error: ${error.message}`, true);
-        }
+        } catch (error) { 
+            console.error('Error parsing or importing DB file:', error); 
+            logMergeResult(`Critical Error: Invalid JSON file format.`, true);
+        };
     };
     reader.readAsText(file);
 }
 
-async function handleMergeDatabase() {
+async function handleUnifiedMerge() {
     clearMergeLog();
-    const fileInput = document.getElementById('mergeDbInput');
+    const scope = document.getElementById('tableSelect').value;
+    const fileInput = document.getElementById('dbFileInput');
     const file = fileInput.files[0];
     
     if (!file) {
@@ -153,71 +204,96 @@ async function handleMergeDatabase() {
         return;
     }
 
-    if (!confirm('Are you sure you want to merge this data? Existing records with matching IDs will be overwritten.')) {
-        return;
-    }
+    if (!confirm('Are you sure you want to merge this data? Existing records with matching IDs will be overwritten.')) return;
 
-    logMergeResult('Starting Merge Process...', false);
+    logMergeResult(`Starting Merge Process for ${scope === 'all' ? 'Entire Database' : 'Table: ' + scope}...`, false);
 
     const reader = new FileReader();
     reader.onload = async (e) => {
         try {
             const data = JSON.parse(e.target.result);
             const db = await openDB();
-            const stores = getObjectStores();
-            const validStores = Object.keys(data).filter(s => stores.includes(s));
-
-            if (validStores.length === 0) {
-                logMergeResult('Error: No valid tables found in import file.', true);
-                return;
-            }
-
-            const transaction = db.transaction(validStores, 'readwrite');
-            let successCount = 0;
-
-            for (const storeName of validStores) {
-                const store = transaction.objectStore(storeName);
-                const items = data[storeName];
-                if (Array.isArray(items)) {
-                    items.forEach(item => {
-                        // Ensure item has an ID if missing, though typically merge implies we want to keep IDs.
-                        // If ID is missing, put() might fail if keyPath is 'id' and autoIncrement is false (default).
-                        // Our db.js generates IDs in updateItem, but here we use raw put.
-                        // If no ID, generate one.
-                        if (!item.id) {
-                            item.id = Date.now().toString(36) + Math.random().toString(36).substr(2);
-                        }
-                        store.put(item);
-                        successCount++;
-                    });
+            
+            if (scope === 'all') {
+                if (typeof data !== 'object' || Array.isArray(data)) {
+                    logMergeResult('Error: Invalid JSON format for entire DB. Root must be an object.', true);
+                    return;
                 }
+                const stores = getObjectStores();
+                const validStores = Object.keys(data).filter(s => stores.includes(s));
+
+                if (validStores.length === 0) {
+                    logMergeResult('Error: No valid tables found in merge file.', true);
+                    return;
+                }
+
+                const transaction = db.transaction(validStores, 'readwrite');
+                let successCount = 0;
+
+                for (const storeName of validStores) {
+                    const store = transaction.objectStore(storeName);
+                    const items = data[storeName];
+                    if (Array.isArray(items)) {
+                        items.forEach(item => {
+                            if (!item.id) {
+                                item.id = Date.now().toString(36) + Math.random().toString(36).substr(2);
+                            }
+                            store.put(item);
+                            successCount++;
+                        });
+                    }
+                }
+
+                transaction.oncomplete = () => {
+                    logMergeResult(`Merge Successful! Processed ${successCount} records.`);
+                    alert('Database merged successfully!');
+                    fileInput.value = '';
+                    window.dispatchEvent(new Event('app-refresh'));
+                    renderSelectedTable();
+                };
+
+                transaction.onerror = (err) => {
+                    logMergeResult(`Merge Failed: ${err.target.error.message}`, true);
+                };
+            } else {
+                if (!Array.isArray(data)) {
+                    logMergeResult('Error: Invalid JSON format. Expected an array for table merge.', true);
+                    return;
+                }
+                const transaction = db.transaction([scope], 'readwrite');
+                const store = transaction.objectStore(scope);
+                let successCount = 0;
+                
+                data.forEach(item => {
+                    if (!item.id) {
+                        item.id = Date.now().toString(36) + Math.random().toString(36).substr(2);
+                    }
+                    store.put(item);
+                    successCount++;
+                });
+                
+                transaction.oncomplete = () => {
+                    logMergeResult(`Merge Successful! Processed ${successCount} records for table '${scope}'.`);
+                    alert(`Table '${scope}' merged successfully!`);
+                    fileInput.value = '';
+                    window.dispatchEvent(new Event('app-refresh'));
+                    renderSelectedTable();
+                };
+
+                transaction.onerror = (err) => {
+                    logMergeResult(`Merge Failed: ${err.target.error.message}`, true);
+                };
             }
-
-            transaction.oncomplete = () => {
-                logMergeResult(`Merge Successful! Processed ${successCount} records.`);
-                alert('Database merged successfully!');
-                window.dispatchEvent(new Event('app-refresh'));
-                renderSelectedTable();
-                fileInput.value = ''; // Clear input
-            };
-
-            transaction.onerror = (err) => {
-                console.error('Merge transaction error:', err);
-                logMergeResult(`Merge Failed: ${err.target.error.message}`, true);
-                alert('Merge failed. See log for details.');
-            };
-
         } catch (error) {
             console.error(error);
-            logMergeResult(`Critical Error: ${error.message}`, true);
-            alert('Merge failed due to a critical error.');
+            logMergeResult(`Critical Error: Invalid JSON file format.`, true);
         }
     };
     reader.readAsText(file);
 }
 
 async function importMasterDatabase() {
-    if (!confirm('Are you sure you want to import the master database? This will overwrite all existing data.')) {
+    if (!confirm('Are you sure you want to restore the default master database? This will overwrite all existing data.')) {
         return;
     }
 
@@ -243,13 +319,13 @@ async function importMasterDatabase() {
             }
         }
         transaction.oncomplete = async () => {
-            alert('Master database imported successfully!');
+            alert('Default Master Database restored successfully!');
             window.dispatchEvent(new Event('app-refresh'));
             renderSelectedTable();
         };
         transaction.onerror = (err) => {
             console.error('Import transaction error:', err);
-            alert('Failed to import master database.');
+            alert('Failed to restore master database.');
         };
     } catch (error) {
         console.error('Error fetching or importing master DB file:', error);
@@ -257,16 +333,15 @@ async function importMasterDatabase() {
     }
 }
 
-
 export async function renderSelectedTable() {
     const tableName = document.getElementById('tableSelect').value;
     const container = document.getElementById('table-display-container');
     const titleSpan = document.getElementById('selectedTableName');
     container.innerHTML = '';
-    titleSpan.textContent = tableName;
+    titleSpan.textContent = tableName === 'all' ? 'Entire Database' : tableName;
 
-    if (!tableName) {
-        container.innerHTML = '<p style="text-align: center; color: #9ca3af;">Select a table to view its contents.</p>';
+    if (!tableName || tableName === 'all') {
+        container.innerHTML = '<p style="text-align: center; color: #9ca3af;">Select a specific table to view its contents.</p>';
         return;
     }
 
@@ -388,142 +463,4 @@ export async function renderSelectedTable() {
     table.appendChild(thead);
     table.appendChild(tbody);
     container.appendChild(table);
-}
-
-async function exportDatabase() {
-    const allData = {};
-    const stores = getObjectStores();
-    for (const storeName of stores) { allData[storeName] = await getAllItems(storeName); }
-    const date = new Date();
-    const dateString = date.toISOString().slice(0, 10);
-    const jsonString = '{\n' +
-        Object.keys(allData).map(storeName => {
-            const items = allData[storeName].map(item => '    ' + JSON.stringify(item));
-            return `  "${storeName}": [\n${items.join(',\n')}\n  ]`;
-        }).join(',\n') +
-    '\n}';
-    triggerDownload(jsonString, `master-db-backup-${dateString}.json`);
-}
-
-async function handleOverwriteDatabase() {
-    clearMergeLog();
-    const fileInput = document.getElementById('mergeDbInput');
-    const file = fileInput.files[0];
-    if (!file) {
-        alert('Please select a JSON file to import.');
-        return;
-    }
-
-    if (!confirm('Are you absolutely sure you want to overwrite? ALL existing database records will be erased!')) return;
-
-    logMergeResult('Starting Absolute Overwrite...', false);
-
-    const reader = new FileReader();
-    reader.onload = async (e) => {
-        const db = await openDB(); 
-        const stores = getObjectStores();
-        try {
-            const data = JSON.parse(e.target.result);
-            const transaction = db.transaction(stores, 'readwrite');
-            for (const storeName of stores) {
-                if (data[storeName]) {
-                    const store = transaction.objectStore(storeName);
-                    store.clear();
-                    for (const item of data[storeName]) { store.put(item); }
-                }
-            }
-            transaction.oncomplete = async () => {
-                logMergeResult(`Overwrite Successful! Database replaced.`);
-                alert('Database overwritten successfully!');
-                fileInput.value = '';
-                window.dispatchEvent(new Event('app-refresh'));
-                renderSelectedTable();
-            };
-            transaction.onerror = (err) => { 
-                console.error('Import transaction error:', err); 
-                logMergeResult(`Overwrite Failed: ${err.target.error.message}`, true);
-            };
-        } catch (error) { 
-            console.error('Error parsing or importing DB file:', error); 
-            logMergeResult(`Critical Error: Invalid format. Must be JSON dictionary.`, true);
-        };
-    };
-    reader.readAsText(file);
-}
-
-async function handleDeleteDatabase() {
-    if (confirm('Are you sure you want to permanently delete the entire database? This action cannot be undone.')) {
-        try {
-            await deleteDatabase();
-            alert('Database deleted successfully. The page will now reload.');
-            location.reload();
-        } catch (err) {
-            console.error('Error deleting database:', err);
-            alert('Could not delete the database.');
-        }
-    }
-}
-
-async function exportTableData() {
-    const tableName = document.getElementById('tableSelect').value;
-    if (!tableName) {
-        alert('Please select a table to export.');
-        return;
-    }
-    const data = await getAllItems(tableName);
-    const jsonString = '[\n' +
-        data.map(item => '  ' + JSON.stringify(item)).join(',\n') +
-    '\n]';
-    triggerDownload(jsonString, `${tableName}-backup.json`);
-}
-
-function importTableData(event) {
-    const file = event.target.files[0];
-    if (!file) return;
-    const tableName = document.getElementById('tableSelect').value;
-        if (!tableName) {
-        alert('Please select a table to import data into.');
-        event.target.value = '';
-        return;
-    }
-    const reader = new FileReader();
-    reader.onload = async (e) => {
-        try {
-            const db = await openDB();
-            const data = JSON.parse(e.target.result);
-            if (!Array.isArray(data)) throw new Error('JSON is not an array.');
-            const transaction = db.transaction([tableName], 'readwrite');
-            const store = transaction.objectStore(tableName);
-            store.clear();
-            data.forEach(item => store.put(item));
-            transaction.oncomplete = async () => { 
-                alert(`Table '${tableName}' imported successfully!`); 
-                event.target.value = '';
-                window.dispatchEvent(new Event('app-refresh'));
-                renderSelectedTable();
-            };
-            transaction.onerror = (err) => { console.error(`Import error for table ${tableName}:`, err); alert(`Failed to import data for table '${tableName}'.`); };
-        } catch (error) { console.error('Error parsing or importing table file:', error); alert('Invalid table file format. Must be a JSON array.'); };
-    };
-    reader.readAsText(file);
-}
-
-async function clearTableData() {
-    const tableName = document.getElementById('tableSelect').value;
-        if (!tableName) {
-        alert('Please select a table to clear.');
-        return;
-    }
-    if (confirm(`Are you sure you want to delete all data from the '${tableName}' table?`)) {
-        const db = await openDB();
-        const transaction = db.transaction([tableName], 'readwrite');
-        const store = transaction.objectStore(tableName);
-        store.clear();
-        transaction.oncomplete = async () => { 
-            alert(`Table '${tableName}' has been cleared.`); 
-            window.dispatchEvent(new Event('app-refresh'));
-            renderSelectedTable();
-        };
-        transaction.onerror = (err) => { console.error(`Error clearing table ${tableName}:`, err); alert(`Failed to clear table '${tableName}'.`); };
-    }
 }
