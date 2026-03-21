@@ -1,5 +1,5 @@
 // js/db-management.js
-import { getAllItems, getObjectStores, deleteDatabase, openDB } from './db.js';
+import { getAllItems, getObjectStores, deleteDatabase, openDB, deleteItem } from './db.js';
 import { triggerDownload } from './utils.js';
 
 export function initDbManagement() {
@@ -20,12 +20,12 @@ export function initDbManagement() {
     // Global Actions
     document.getElementById('exportDbBtn').addEventListener('click', exportDatabase);
     document.getElementById('importMasterDbBtn').addEventListener('click', importMasterDatabase);
-    document.getElementById('importDbInput').addEventListener('change', importDatabase);
     document.getElementById('deleteDbBtn').addEventListener('click', handleDeleteDatabase);
     
-    // Merge Actions
+    // Import & Merge Actions
     document.getElementById('testMergeBtn').addEventListener('click', handleTestMerge);
     document.getElementById('mergeDbBtn').addEventListener('click', handleMergeDatabase);
+    document.getElementById('overwriteDbBtn').addEventListener('click', handleOverwriteDatabase);
 
     // Table Actions
     document.getElementById('exportTableBtn').addEventListener('click', exportTableData);
@@ -197,6 +197,7 @@ async function handleMergeDatabase() {
                 logMergeResult(`Merge Successful! Processed ${successCount} records.`);
                 alert('Database merged successfully!');
                 window.dispatchEvent(new Event('app-refresh'));
+                renderSelectedTable();
                 fileInput.value = ''; // Clear input
             };
 
@@ -244,6 +245,7 @@ async function importMasterDatabase() {
         transaction.oncomplete = async () => {
             alert('Master database imported successfully!');
             window.dispatchEvent(new Event('app-refresh'));
+            renderSelectedTable();
         };
         transaction.onerror = (err) => {
             console.error('Import transaction error:', err);
@@ -285,6 +287,12 @@ export async function renderSelectedTable() {
                 flat.pref_model = flat.ballistics.preferred_model;
                 flat.g1_bc = flat.ballistics.g1_bc;
                 flat.g7_bc = flat.ballistics.g7_bc;
+                delete flat.ballistics;
+            }
+            if (flat.stability_vars) {
+                flat.is_tipped = flat.stability_vars.is_tipped;
+                flat.tip_length = flat.stability_vars.tip_length;
+                delete flat.stability_vars;
             }
             return flat;
         });
@@ -307,6 +315,10 @@ export async function renderSelectedTable() {
         headers.unshift('id');
     }
 
+    const actionTh = document.createElement('th');
+    actionTh.textContent = 'Actions';
+    headerRow.appendChild(actionTh);
+
     headers.forEach(headerText => {
         const th = document.createElement('th');
         th.textContent = headerText;
@@ -316,13 +328,35 @@ export async function renderSelectedTable() {
 
     displayItems.forEach(item => {
         const row = document.createElement('tr');
+        
+        const actionTd = document.createElement('td');
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.className = 'btn-red';
+        deleteBtn.style.padding = '0.2rem 0.5rem';
+        deleteBtn.style.fontSize = '0.75rem';
+        deleteBtn.onclick = async () => {
+            if (confirm(`Are you sure you want to delete this specific record (ID: ${item.id})?`)) {
+                try {
+                    await deleteItem(tableName, item.id);
+                    window.dispatchEvent(new Event('app-refresh'));
+                    renderSelectedTable();
+                } catch (e) {
+                    console.error('Failed to delete item:', e);
+                    alert('Error deleting item.');
+                }
+            }
+        };
+        actionTd.appendChild(deleteBtn);
+        row.appendChild(actionTd);
+
         headers.forEach(header => {
             const td = document.createElement('td');
             let value = item[header];
             let displayValue = '';
             
             if (header === 'dataUrl' && typeof value === 'string' && value.length > 100) {
-                 displayValue = value; // Keep full value for textarea
+                 displayValue = `[Base64 Image Data: ${(value.length / 1024).toFixed(1)} KB]`; 
             } else if (value === undefined || value === null) {
                 displayValue = '';
             } else if (typeof value === 'object') {
@@ -371,14 +405,23 @@ async function exportDatabase() {
     triggerDownload(jsonString, `master-db-backup-${dateString}.json`);
 }
 
-function importDatabase(event) {
-    const file = event.target.files[0];
-    if (!file) return;
+async function handleOverwriteDatabase() {
+    clearMergeLog();
+    const fileInput = document.getElementById('mergeDbInput');
+    const file = fileInput.files[0];
+    if (!file) {
+        alert('Please select a JSON file to import.');
+        return;
+    }
+
+    if (!confirm('Are you absolutely sure you want to overwrite? ALL existing database records will be erased!')) return;
+
+    logMergeResult('Starting Absolute Overwrite...', false);
+
     const reader = new FileReader();
     reader.onload = async (e) => {
         const db = await openDB(); 
         const stores = getObjectStores();
-
         try {
             const data = JSON.parse(e.target.result);
             const transaction = db.transaction(stores, 'readwrite');
@@ -390,12 +433,20 @@ function importDatabase(event) {
                 }
             }
             transaction.oncomplete = async () => {
-                alert('Database imported successfully!');
-                event.target.value = '';
+                logMergeResult(`Overwrite Successful! Database replaced.`);
+                alert('Database overwritten successfully!');
+                fileInput.value = '';
                 window.dispatchEvent(new Event('app-refresh'));
+                renderSelectedTable();
             };
-            transaction.onerror = (err) => { console.error('Import transaction error:', err); alert('Failed to import database.'); };
-        } catch (error) { console.error('Error parsing or importing DB file:', error); alert('Invalid database file format.'); };
+            transaction.onerror = (err) => { 
+                console.error('Import transaction error:', err); 
+                logMergeResult(`Overwrite Failed: ${err.target.error.message}`, true);
+            };
+        } catch (error) { 
+            console.error('Error parsing or importing DB file:', error); 
+            logMergeResult(`Critical Error: Invalid format. Must be JSON dictionary.`, true);
+        };
     };
     reader.readAsText(file);
 }
@@ -449,6 +500,7 @@ function importTableData(event) {
                 alert(`Table '${tableName}' imported successfully!`); 
                 event.target.value = '';
                 window.dispatchEvent(new Event('app-refresh'));
+                renderSelectedTable();
             };
             transaction.onerror = (err) => { console.error(`Import error for table ${tableName}:`, err); alert(`Failed to import data for table '${tableName}'.`); };
         } catch (error) { console.error('Error parsing or importing table file:', error); alert('Invalid table file format. Must be a JSON array.'); };
@@ -470,6 +522,7 @@ async function clearTableData() {
         transaction.oncomplete = async () => { 
             alert(`Table '${tableName}' has been cleared.`); 
             window.dispatchEvent(new Event('app-refresh'));
+            renderSelectedTable();
         };
         transaction.onerror = (err) => { console.error(`Error clearing table ${tableName}:`, err); alert(`Failed to clear table '${tableName}'.`); };
     }

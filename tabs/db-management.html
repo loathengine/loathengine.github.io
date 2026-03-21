@@ -4,24 +4,21 @@
                     <h3>Global Database Actions</h3>
                     <div class="action-group">
                         <button id="exportDbBtn" class="btn-blue">Export Entire Database</button>
-                        <button id="importMasterDbBtn" class="btn-blue">Import Master Database</button>
-                        <div>
-                            <label for="importDbInput">Import Entire Database (JSON) - <em>Overwrites</em></label>
-                            <input type="file" id="importDbInput" accept=".json">
-                        </div>
+                        <button id="importMasterDbBtn" class="btn-blue">Import Default Master Data</button>
                         <button id="deleteDbBtn" class="btn-red">Delete Entire Database</button>
                     </div>
                 </div>
                 <div class="card db-actions">
-                    <h3>Merge Database</h3>
+                    <h3>Import & Merge Database</h3>
                     <div class="action-group">
                         <div>
-                            <label for="mergeDbInput">Select Database File to Merge (JSON)</label>
+                            <label for="mergeDbInput">Select Database File (JSON)</label>
                             <input type="file" id="mergeDbInput" accept=".json">
                         </div>
-                        <div class="button-group" style="display: flex; gap: 0.5rem;">
-                            <button id="testMergeBtn" class="btn-yellow">Test Merge (Check for Errors)</button>
-                            <button id="mergeDbBtn" class="btn-green">Merge into Current DB</button>
+                        <div class="button-group" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                            <button id="testMergeBtn" class="btn-yellow" style="flex: 1;">Test Import (Dry</button>
+                            <button id="mergeDbBtn" class="btn-green" style="flex: 1;">Merge Data</button>
+                            <button id="overwriteDbBtn" class="btn-red" style="flex: 1;">Overwrite DB</button>
                         </div>
                         <div id="mergeResultLog" style="margin-top: 1rem; max-height: 150px; overflow-y: auto; background: #1f2937; padding: 0.5rem; border-radius: 0.25rem; font-family: monospace; font-size: 0.8rem; white-space: pre-wrap; display: none;"></div>
                     </div>
