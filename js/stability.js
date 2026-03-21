@@ -9,11 +9,12 @@ export function initStabilityCalculator() {
     const bulletSelect = document.getElementById('stabBulletSelect');
     const sessionSelect = document.getElementById('stabSessionSelect');
     const caliberFilterSelect = document.getElementById('stabBulletCaliberSelect');
-    
+    const useFirearmDataCheckbox = document.getElementById('stabUseFirearmData');
     const useLoadBulletCheckbox = document.getElementById('stabUseLoadBullet');
     const useSessionCheckbox = document.getElementById('stabUseSession');
     const isTippedCheckbox = document.getElementById('stabIsTipped');
     
+    const firearmSelectContainer = document.getElementById('stabFirearmSelectContainer');
     const loadSelectContainer = document.getElementById('stabLoadSelectContainer');
     const manualBulletContainer = document.getElementById('stabManualBulletContainer');
     const sessionSelectContainer = document.getElementById('stabSessionSelectContainer');
@@ -25,6 +26,17 @@ export function initStabilityCalculator() {
     if (bulletSelect) bulletSelect.addEventListener('change', handleBulletChange);
     if (sessionSelect) sessionSelect.addEventListener('change', handleSessionChange);
     if (caliberFilterSelect) caliberFilterSelect.addEventListener('change', refreshBulletInventoryDropdown);
+
+    if (useFirearmDataCheckbox) {
+        useFirearmDataCheckbox.addEventListener('change', (e) => {
+            firearmSelectContainer.style.display = e.target.checked ? 'block' : 'none';
+            if (e.target.checked) {
+                handleFirearmChange();
+            } else {
+                if (firearmSelect) firearmSelect.value = '';
+            }
+        });
+    }
     
     if (useLoadBulletCheckbox) {
         useLoadBulletCheckbox.addEventListener('change', (e) => {
@@ -104,7 +116,7 @@ export async function refreshStabilityUI() {
     const firearmSelect = document.getElementById('stabFirearmSelect');
     if (firearmSelect) {
         const currentVal = firearmSelect.value;
-        firearmSelect.innerHTML = '<option value="">-- Manual Entry --</option>';
+        firearmSelect.innerHTML = '<option value="">-- Select Firearm --</option>';
         firearms.forEach(f => {
             const opt = document.createElement('option');
             opt.value = f.id;
@@ -179,6 +191,9 @@ async function handleSessionChange() {
     const session = await getItem('impactData', id);
     if (session) {
         if (session.firearmId) {
+            const useFirearmCb = document.getElementById('stabUseFirearmData');
+            if (useFirearmCb) useFirearmCb.checked = true;
+            document.getElementById('stabFirearmSelectContainer').style.display = 'block';
             document.getElementById('stabFirearmSelect').value = session.firearmId;
             await handleFirearmChange();
         }
@@ -191,6 +206,8 @@ async function handleSessionChange() {
         }
         if (session.temp) document.getElementById('stabTemp').value = session.temp;
         if (session.pressure) document.getElementById('stabPressure').value = session.pressure;
+        if (session.altitude !== undefined && session.altitude !== null) document.getElementById('stabAltitude').value = session.altitude;
+        if (session.pressureType) document.getElementById('stabPressureType').value = session.pressureType;
         if (session.shots && session.shots.length > 0) {
             const velocities = session.shots.map(s => s.velocity).filter(v => v !== null && v !== undefined && v !== '');
             if (velocities.length > 0) {

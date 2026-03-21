@@ -265,7 +265,7 @@ export function setupEventListeners() {
                     group.pois.forEach((poi) => {
                         shotCounter++;
                         const x_coord = (poi.x - group.poa.x) / state.scale.pixelsPerUnit;
-                        const y_coord = (poi.y - group.poa.y) / state.scale.pixelsPerUnit;
+                        const y_coord = (group.poa.y - poi.y) / state.scale.pixelsPerUnit; // Standard Cartesian (Positive = UP)
                         shotsForAnalysis.push({
                             shotNumber: shotCounter, group: groupIndex + 1,
                             x: parseFloat(x_coord.toFixed(4)), y: parseFloat(y_coord.toFixed(4)),
@@ -285,7 +285,9 @@ export function setupEventListeners() {
             targetDistance: parseFloat(document.getElementById('tmTargetDistance').value) || null,
             distanceUnits: document.getElementById('tmDistanceUnits').value,
             temp: parseFloat(document.getElementById('tmTemp').value) || null,
+            altitude: parseFloat(document.getElementById('tmAltitude').value) || 0,
             pressure: parseFloat(document.getElementById('tmPressure').value) || null,
+            pressureType: document.getElementById('tmPressureType').value,
             groups: state.groups, 
             scale: state.scale,     
             shots: shotsForAnalysis 
@@ -330,7 +332,9 @@ export function setupEventListeners() {
         document.getElementById('tmTargetDistance').value = data.targetDistance;
         document.getElementById('tmDistanceUnits').value = data.distanceUnits;
         document.getElementById('tmTemp').value = data.temp || 59;
+        document.getElementById('tmAltitude').value = data.altitude || 0;
         document.getElementById('tmPressure').value = data.pressure || 29.92;
+        document.getElementById('tmPressureType').value = data.pressureType || 'station';
         
         document.getElementById('scaleDistance').value = state.scale.distance;
         document.getElementById('scaleUnits').value = state.scale.units;
