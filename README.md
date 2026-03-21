@@ -22,8 +22,8 @@
 
 Welcome to Empirical Precision! This application is a powerful, all-in-one tool for shooting enthusiasts to manage every aspect of their hobby. From cataloging reloading components and firearms to performing in-depth statistical analysis of target performance, this app helps you make data-driven decisions to improve your precision.
 
-**Key Feature: Group Compositing**
-One of the primary functions of this application is to allow you to shoot multiple smaller groups (e.g., 3-shot or 5-shot groups) on different targets or on different days, and then **composite** them into a single large-sample analysis. This provides statistically significant data without requiring you to shoot 20+ rounds at a single point of aim in one sitting.
+**Key Feature: Statistical Composite Group Analysis**
+One of the primary functions of this application is to allow you to shoot multiple smaller groups (e.g., 3-shot or 5-shot groups) on different targets or on different days, and then **composite** them into a single large-sample analysis. By aligning the groups around their Centers of Impact or Points of Aim, this provides an aggregated, statistically significant dataset focused on **Mean Radius (MR)**, mitigating the unreliability of Extreme Spread measurements on small sample batches.
 
 ### Core Concepts: Data & Privacy
 
@@ -57,11 +57,11 @@ For the most efficient use of the application, follow this workflow:
 
 6.  **Mark and Save Sessions:**
     -   Go to the **Marking** tab. Load a target image, set the scale, and mark your impacts.
-    -   **Important:** You can mark individual groups on different targets and save them as separate sessions. The Analysis tab will let you combine them later.
+    -   **Important:** You can mark individual groups on different targets and save them as separate sessions for composite analysis later.
 
 7.  **Analyze & Composite:**
     -   Go to the **Analysis** tab. Select multiple sessions corresponding to the same load/firearm combination.
-    -   The app will **composite** these separate groups into a single aggregate analysis, giving you a true picture of your precision (Mean Radius, SD, etc.) based on the total number of shots.
+    -   The app will **composite** these separate groups into a single aggregate analysis, providing reliable metrics (Mean Radius, standard deviations, extreme spread) based on an aggregated, large-sample dataset.
 
 ---
 
@@ -121,9 +121,9 @@ Analyze individual sessions or **composite multiple sessions** for better statis
 1.  **Select Sessions:** Use the list to select sessions. Hold `Ctrl` or `Cmd` to select multiple.
 2.  **Analyze:** Click **"Analyze Selected Session(s)"**.
 3.  **Review the Results:**
-    -   **Statistics Table:** View Mean Radius (MR), Group Size, 95th Percentile Radius, A-ZED, and more.
+    -   **Statistics Table:** View robust statistical metrics including **Mean Radius (MR)**, Group Size (Extreme Spread), 95th Percentile Radius, and A-ZED. 
     -   **Dispersion Analysis:** Checks for vertical stringing and velocity correlations.
-    -   **Composite Plot:** A visual representation of all selected groups overlaid, centered on their mean point of impact (MPI).
+    -   **Composite Plot:** A visual representation of all selected groups overlaid, aligned by their Mean Point of Impact (MPI). This effectively builds a much larger, statistically significant dataset that accurately illustrates the true dispersion capabilities of the system.
 4.  **Export:** Click **"Export as Image"** to save the plot and stats.
 
 ### Stability Tab (Miller Twist Calculator)
@@ -131,8 +131,8 @@ Estimate the gyroscopic stability ($S_g$) of your projectiles.
 
 -   **Firearm Selection:** Automatically pulls twist rate from your firearms database.
 -   **Bullet Selection:** Pulls bullet specifications (weight, diameter, length) from your load data or bullet inventory.
--   **Environmental Correction:** Accounts for temperature, altitude, pressure, and velocity to provide an accurate $S_g$ value.
--   ** Miller Twist Formula:** Uses the refined Miller formula with velocity, tip correction, and air density modeling.
+-   **Environmental Correction:** Models the Air Density Ratio (ADR) relative to Standard Sea Level by accounting for temperature, altitude, and station pressure. 
+-   **Refined Miller Twist Formula:** Incorporates real-time velocity corrections and plastic tip length logic (effective metal length vs overall length) to provide an incredibly precise $S_g$ value. An $S_g \ge 1.5$ corresponds to optimum stability and maximum ballistic coefficient retention.
 
 ### DB Management Tab
 Advanced data management for your local IndexedDB.

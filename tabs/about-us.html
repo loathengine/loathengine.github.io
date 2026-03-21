@@ -7,7 +7,7 @@
 
                     <h3>Scientific Methodology</h3>
                     <p class="about-us-p">
-                        Traditional methods of evaluating load performance often suffer from small sample sizes. Empirical Precision leverages <strong>composite group analysis</strong>, allowing users to aggregate multiple smaller sample groups (e.g., several 3 or 5-shot groups) into a single, statistically significant dataset. This approach mitigates the noise inherent in limited testing and provides a more accurate representation of true system dispersion.
+                        Traditional methods of evaluating load performance often suffer from small sample sizes. Empirical Precision leverages <strong>composite group analysis</strong>, allowing users to aggregate multiple smaller sample groups (e.g., several 3 or 5-shot groups) into a single, statistically significant dataset by aligning their Centers of Impact or Points of Aim. This approach prioritizes metrics like <strong>Mean Radius</strong> over extreme spread (group size), which is highly susceptible to outliers, mitigating the noise inherent in limited testing and providing a much more accurate representation of true system dispersion.
                     </p>
 
                     <h3>Comparative Analytics</h3>
@@ -15,9 +15,14 @@
                         Move beyond anecdotal evidence. The <strong>Analysis Module</strong> enables direct, side-by-side comparison of different load developments, seating depths, or tuner settings. By evaluating key metrics such as Mean Radius and Standard Deviation across aggregated datasets, users can make data-driven decisions to optimize their precision.
                     </p>
 
+                    <h3>Gyroscopic Stability Calculator</h3>
+                    <p class="about-us-p">
+                        The application features a built-in gyroscopic stability ($S_g$) calculator utilizing the <strong>Refined Miller Twist Rule</strong>. It automatically applies effective length corrections for plastic-tipped bullets and dynamically models the Air Density Ratio (ADR) relative to sea-level based on environmental parameters like pressure (station vs. sea-level), temperature, altitude, and current velocity.
+                    </p>
+
                     <h3>Privacy & Architecture</h3>
                     <p class="about-us-p">
-                        Built with a privacy-first architecture, Empirical Precision operates as a <strong>fully offline client-side application</strong>. All data, such as rifle info, proprietary load recipes, and target imagery—is stored locally within your personal IndexedDB. No data is ever transmitted to external servers.
+                        Built with a privacy-first architecture, Empirical Precision operates as a <strong>fully offline client-side application</strong>. All data—such as rifle info, proprietary load recipes, and target imagery—is stored entirely locally within your browser's IndexedDB. No data is ever transmitted to external servers.
                     </p>
 
                     <h3>Documentation</h3>
