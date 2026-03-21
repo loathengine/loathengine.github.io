@@ -121,7 +121,8 @@ Analyze individual sessions or **composite multiple sessions** for better statis
 1.  **Select Sessions:** Use the list to select sessions. Hold `Ctrl` or `Cmd` to select multiple.
 2.  **Analyze:** Click **"Analyze Selected Session(s)"**.
 3.  **Review the Results:**
-    -   **Statistics Table:** View robust statistical metrics including **Mean Radius (MR)**, Group Size (Extreme Spread), 95th Percentile Radius, and A-ZED. 
+    -   **Statistics Table:** View robust statistical metrics including **Mean Radius (MR)**, Group Size (Extreme Spread), **95th Percentile Spread**, and A-ZED.
+        - *Note: The 95th Percentile Spread mathematically models the true edge-to-edge diameter of a distribution circle capable of containing 95% of your shots, making it an excellent predictor of field capability.*
     -   **Dispersion Analysis:** Checks for vertical stringing and velocity correlations.
     -   **Composite Plot:** A visual representation of all selected groups overlaid, aligned by their Mean Point of Impact (MPI). This effectively builds a much larger, statistically significant dataset that accurately illustrates the true dispersion capabilities of the system.
 4.  **Export:** Click **"Export as Image"** to save the plot and stats.

@@ -67,7 +67,7 @@ export function calculateStatsForSession(shots, targetDistance = null, distanceU
     
     let angStats = {
         mr: { moa: null, mrad: null },
-        r95: { moa: null, mrad: null },
+        spread95: { moa: null, mrad: null },
         gs: { moa: null, mrad: null },
         sd_x: { moa: null, mrad: null },
         sd_y: { moa: null, mrad: null },
@@ -79,8 +79,9 @@ export function calculateStatsForSession(shots, targetDistance = null, distanceU
         angStats.mr.moa = meanRadius * factors.moa;
         angStats.mr.mrad = meanRadius * factors.mrad;
         
-        angStats.r95.moa = r95 * factors.moa;
-        angStats.r95.mrad = r95 * factors.mrad;
+        const spread95 = r95 * 2;
+        angStats.spread95.moa = spread95 * factors.moa;
+        angStats.spread95.mrad = spread95 * factors.mrad;
 
         angStats.gs.moa = maxSpread * factors.moa;
         angStats.gs.mrad = maxSpread * factors.mrad;

@@ -16,8 +16,8 @@ export function renderComparisonTable(results, statOutputContainer) {
             <th style="white-space: nowrap;">Session Details</th>
             <th style="white-space: nowrap;">Shots</th>
             <th style="white-space: nowrap;">Mean Radius (MR)</th>
-            <th style="white-space: nowrap;">95th Percentile Radius</th>
             <th style="white-space: nowrap;">MR Confidence (95%)</th>
+            <th style="white-space: nowrap;">95th Percentile Spread</th>
             <th style="white-space: nowrap;">Group Size</th>
             <th style="white-space: nowrap;">A-ZED</th>
             <th style="white-space: nowrap;">Horizontal SD</th>
@@ -55,7 +55,7 @@ export function renderComparisonTable(results, statOutputContainer) {
             : noDistMsg;
 
         const r95Display = stats.hasDistance
-            ? `${stats.ang.r95.moa.toFixed(2)} moa <br><span style="color:#9ca3af; font-size:0.85em">${stats.ang.r95.mrad.toFixed(2)} mrad</span>` 
+            ? `${stats.ang.spread95.moa.toFixed(2)} moa <br><span style="color:#9ca3af; font-size:0.85em">${stats.ang.spread95.mrad.toFixed(2)} mrad</span>` 
             : noDistMsg;
 
         const mrCiDisplay = stats.hasDistance
@@ -82,8 +82,8 @@ export function renderComparisonTable(results, statOutputContainer) {
             <td><span style="display: inline-block; vertical-align: middle; width: 12px; height: 12px; background-color: ${color}; margin-right: 8px; border-radius: 3px;"></span>${result.sessionName}</td>
             <td>${stats.n}</td>
             <td style="font-weight: 600;">${mrDisplay}</td>
-            <td style="font-weight: 600;">${r95Display}</td>
             <td>${mrCiDisplay} <br><span style="color: ${stats.confidence_color}; font-weight: 600; font-size: 0.85em">(${stats.confidence_level})</span></td>
+            <td style="font-weight: 600;">${r95Display}</td>
             <td>${gsDisplay}</td>
             <td style="font-weight: 600; color: #3b82f6;">${aZedDisplay}</td>
             <td>${sdXDisplay}</td>
