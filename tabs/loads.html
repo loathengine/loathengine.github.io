@@ -67,6 +67,27 @@
                     </div>
                 </div>
 
+                <div id="load-filters" style="margin-bottom: 1rem; padding: 1rem; background-color: #f9fafb; border-radius: 0.375rem; border: 1px solid #e5e7eb;">
+                    <h4 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 0.875rem;">Filter Loads</h4>
+                    <div class="form-grid" style="grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1rem;">
+                        <div>
+                            <label for="filterCartridge">Cartridge</label>
+                            <select id="filterCartridge"><option value="">All</option></select>
+                        </div>
+                        <div>
+                            <label for="filterBullet">Bullet</label>
+                            <select id="filterBullet"><option value="">All</option></select>
+                        </div>
+                        <div>
+                            <label for="filterPowder">Powder</label>
+                            <select id="filterPowder"><option value="">All</option></select>
+                        </div>
+                        <div style="display: flex; align-items: flex-end;">
+                            <button type="button" id="clearFilters" class="btn-gray btn-small" style="width: 100%; margin-bottom: 0.2rem;">Clear Filters</button>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="data-table-container">
                     <table class="data-table">
                         <thead>
