@@ -72,12 +72,12 @@ export async function handleAnalysisExport(lastAnalysisResults) {
 
         if (stats.hasDistance) {
             mrText = `${stats.ang.mr.moa.toFixed(2)} moa`;
-            r95Text = `${stats.ang.r95.moa.toFixed(2)} moa`;
+            r95Text = `${stats.ang.spread95.moa.toFixed(2)} moa`;
             mrCiText = `[${stats.ang.ci.moa[0].toFixed(2)}, ${stats.ang.ci.moa[1].toFixed(2)}]`;
             
             // Add mrad below or next to it (Doing next to it for export legibility)
             const mrTextSub = ` / ${stats.ang.mr.mrad.toFixed(2)} mrad`;
-            const r95TextSub = ` / ${stats.ang.r95.mrad.toFixed(2)} mrad`;
+            const r95TextSub = ` / ${stats.ang.spread95.mrad.toFixed(2)} mrad`;
             
             ctx.fillText(mrText + mrTextSub, columns[2].x, currentY + rowHeight / 2);
             ctx.fillText(r95Text + r95TextSub, columns[3].x, currentY + rowHeight / 2);

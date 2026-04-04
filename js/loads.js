@@ -152,6 +152,44 @@ async function refreshCommercialAmmoBulletDropdown() {
     }
 }
 
+async function refreshFilterBulletDropdown() {
+    const allBullets = await getAllItems('bullets');
+    const allManufacturers = await getAllItems('manufacturers');
+    const filterCartridgeId = document.getElementById('filterCartridge').value;
+    
+    let filteredBullets = allBullets;
+    if (filterCartridgeId) {
+        const cartridge = await getItem('cartridges', filterCartridgeId);
+        if (cartridge) {
+            filteredBullets = allBullets.filter(b => b.diameterId === cartridge.diameterId);
+        }
+    }
+
+    const filterBulletSelect = document.getElementById('filterBullet');
+    const oldBulletFilter = filterBulletSelect.value;
+    filterBulletSelect.innerHTML = '<option value="">All</option>';
+    
+    // Sort bullets by weight then name
+    filteredBullets.sort((a, b) => {
+        if (a.weight !== b.weight) return a.weight - b.weight;
+        return a.name.localeCompare(b.name);
+    });
+
+    for (const bullet of filteredBullets) {
+        const mfg = allManufacturers.find(m => m.id === bullet.manufacturerId);
+        const mfgName = mfg ? mfg.name : 'Unknown';
+        const opt = document.createElement('option');
+        opt.value = bullet.id;
+        opt.textContent = `${bullet.weight}gr ${mfgName} ${bullet.name}`;
+        filterBulletSelect.appendChild(opt);
+    }
+    
+    filterBulletSelect.value = oldBulletFilter || '';
+    if (filterBulletSelect.selectedIndex === -1) {
+        filterBulletSelect.value = '';
+    }
+}
+
 export function initLoadsManagement() {
     document.getElementById('loadForm').addEventListener('submit', handleLoadSubmit);
     document.getElementById('loadForm').addEventListener('reset', () => document.getElementById('loadId').value = '');
@@ -209,11 +247,15 @@ export function initLoadsManagement() {
     document.getElementById('commercialAmmoForm').addEventListener('reset', () => document.getElementById('commercialAmmoId').value = '');
     document.getElementById('commercialAmmoDiameter').addEventListener('change', refreshCommercialAmmoCartridgeDropdown);
 
-    document.getElementById('filterCartridge').addEventListener('change', renderLoadsTable);
+    document.getElementById('filterCartridge').addEventListener('change', async () => {
+        await refreshFilterBulletDropdown();
+        renderLoadsTable();
+    });
     document.getElementById('filterBullet').addEventListener('change', renderLoadsTable);
     document.getElementById('filterPowder').addEventListener('change', renderLoadsTable);
-    document.getElementById('clearFilters').addEventListener('click', () => {
+    document.getElementById('clearFilters').addEventListener('click', async () => {
         document.getElementById('filterCartridge').value = '';
+        await refreshFilterBulletDropdown();
         document.getElementById('filterBullet').value = '';
         document.getElementById('filterPowder').value = '';
         renderLoadsTable();
@@ -242,7 +284,6 @@ export async function refreshLoadsUI() {
     await refreshCommercialAmmoCartridgeDropdown();
 
     const allCartridges = await getAllItems('cartridges');
-    const allBullets = await getAllItems('bullets');
     const allPowders = await getAllItems('powders');
 
     const filterCartridgeSelect = document.getElementById('filterCartridge');
@@ -267,18 +308,7 @@ export async function refreshLoadsUI() {
     });
     filterPowderSelect.value = oldPowderFilter || '';
 
-    const filterBulletSelect = document.getElementById('filterBullet');
-    const oldBulletFilter = filterBulletSelect.value;
-    filterBulletSelect.innerHTML = '<option value="">All</option>';
-    for (const bullet of allBullets) {
-        const mfg = allManufacturers.find(m => m.id === bullet.manufacturerId);
-        const mfgName = mfg ? mfg.name : 'Unknown';
-        const opt = document.createElement('option');
-        opt.value = bullet.id;
-        opt.textContent = `${bullet.weight}gr ${mfgName} ${bullet.name}`;
-        filterBulletSelect.appendChild(opt);
-    }
-    filterBulletSelect.value = oldBulletFilter || '';
+    await refreshFilterBulletDropdown();
 
     renderLoadsTable();
 }
