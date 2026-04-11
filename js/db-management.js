@@ -297,7 +297,7 @@ async function importMasterDatabase() {
         return;
     }
 
-    const url = 'https://raw.githubusercontent.com/loathengine/Empirical-Percision/main/master-db.json';
+    const url = './master-db.json';
     try {
         const response = await fetch(url);
         if (!response.ok) {
