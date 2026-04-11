@@ -14,7 +14,7 @@ export function renderComparisonTable(results, statOutputContainer) {
     thead.innerHTML = `
         <tr>
             <th style="white-space: nowrap;">Session Details</th>
-            <th style="white-space: nowrap;">Shots</th>
+            <th style="white-space: nowrap;">Shots (Reliability)</th>
             <th style="white-space: nowrap;">Mean Radius (MR)</th>
             <th style="white-space: nowrap;">CEP (90%)</th>
             <th style="white-space: nowrap;">Group Size</th>
@@ -73,9 +73,15 @@ export function renderComparisonTable(results, statOutputContainer) {
             ? `${stats.ang.sd_y.moa.toFixed(2)} moa`
             : noDistMsg;
 
+        const seMarginDisplay = stats.hasDistance && stats.ang.se_margin && stats.ang.se_margin.moa
+            ? `Standard Error: ±${stats.ang.se_margin.moa.toFixed(2)} moa`
+            : `Confidence Estimate`;
+
+        const shotsDisplay = `${stats.n} <br><span title="${seMarginDisplay}" style="color: ${stats.reliability_color}; font-size: 0.85em; font-weight: 600;">${stats.reliability_rating}</span>`;
+
         row.innerHTML = `
             <td><span style="display: inline-block; vertical-align: middle; width: 12px; height: 12px; background-color: ${color}; margin-right: 8px; border-radius: 3px;"></span>${result.sessionName}</td>
-            <td>${stats.n}</td>
+            <td>${shotsDisplay}</td>
             <td style="font-weight: 600;">${mrDisplay}</td>
             <td style="font-weight: 600;">${cepDisplay}</td>
             <td>${gsDisplay}</td>

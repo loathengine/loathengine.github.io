@@ -1,4 +1,4 @@
-import { calculateLinearRegression, getAngularFactors } from './math.js';
+import { calculateLinearRegression, getAngularFactors, calculateReliabilityCI } from './math.js';
 
 export function calculateStatsForSession(shots, targetDistance = null, distanceUnits = null) {
     if (!shots || shots.length < 2) return null;
@@ -50,8 +50,22 @@ export function calculateStatsForSession(shots, targetDistance = null, distanceU
         vel_vert_r2 = regressionResult.r2;
     }
 
-
+    const ci_mr = calculateReliabilityCI(shots);
+    const relativeWidth = meanRadius > 0 ? (ci_mr.upper - ci_mr.lower) / meanRadius : 0;
     
+    let reliability_rating = 'Acceptable';
+    let reliability_color = '#eab308'; // yellow
+
+    if (n < 5 || relativeWidth > 0.75) {
+        reliability_rating = 'Poor';
+        reliability_color = '#ef4444'; // red
+    } else if (relativeWidth < 0.35 && n >= 10) {
+        reliability_rating = 'Excellent';
+        reliability_color = '#22c55e'; // green
+    }
+
+    const se_margin_linear = (ci_mr.upper - ci_mr.lower) / 2;
+
     // Calculate Angular values (MOA and Mrad)
     const factors = getAngularFactors(dataUnits, targetDistance, distanceUnits);
     
@@ -61,6 +75,7 @@ export function calculateStatsForSession(shots, targetDistance = null, distanceU
         gs: { moa: null, mrad: null },
         sd_x: { moa: null, mrad: null },
         sd_y: { moa: null, mrad: null },
+        se_margin: { moa: null, mrad: null },
         a_zed: null // Add a_zed placeholder
     };
 
@@ -79,6 +94,9 @@ export function calculateStatsForSession(shots, targetDistance = null, distanceU
         
         angStats.sd_y.moa = sd_y * factors.moa;
         angStats.sd_y.mrad = sd_y * factors.mrad;
+        
+        angStats.se_margin.moa = se_margin_linear * factors.moa;
+        angStats.se_margin.mrad = se_margin_linear * factors.mrad;
 
         // A-ZED Calculation
         // IPSC A-zone is roughly 15cm wide by 32.5cm high.
@@ -126,6 +144,8 @@ export function calculateStatsForSession(shots, targetDistance = null, distanceU
         vel_sd: vel_sd,
         vel_vert_r2: vel_vert_r2,
         hasVerticalDispersion: hasVerticalDispersion,
+        reliability_rating: reliability_rating,
+        reliability_color: reliability_color,
         distanceUnits: distanceUnits
     };
 }

@@ -1,4 +1,3 @@
-
 export function calculateLinearRegression(data) {
     let sum_x = 0, sum_y = 0, sum_xy = 0, sum_x2 = 0, sum_y2 = 0;
     const n = data.length;
@@ -41,4 +40,28 @@ export function getAngularFactors(dataUnits, targetDistance, distanceUnits) {
         mrad: radFactor * 1000,
         moa: radFactor * (180 / Math.PI) * 60 // approx 3437.75
     };
+}
+
+export function calculateReliabilityCI(shots, samples = 1000) {
+    const n = shots.length;
+    if (n < 2) return { lower: 0, upper: 0 };
+
+    const bootstrapMeans = [];
+    for (let i = 0; i < samples; i++) {
+        const bootstrapSample = [];
+        for (let j = 0; j < n; j++) {
+            bootstrapSample.push(shots[Math.floor(Math.random() * n)]);
+        }
+        
+        const mean_x = bootstrapSample.reduce((a, b) => a + b.x, 0) / n;
+        const mean_y = bootstrapSample.reduce((a, b) => a + b.y, 0) / n;
+        const meanRadius = bootstrapSample.reduce((sum, s) => sum + Math.hypot(s.x - mean_x, s.y - mean_y), 0) / n;
+        bootstrapMeans.push(meanRadius);
+    }
+
+    bootstrapMeans.sort((a, b) => a - b);
+    const lowerIndex = Math.floor(samples * 0.025);
+    const upperIndex = Math.floor(samples * 0.975);
+    
+    return { lower: bootstrapMeans[lowerIndex], upper: bootstrapMeans[upperIndex] };
 }
