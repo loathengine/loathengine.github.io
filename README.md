@@ -35,33 +35,18 @@ One of the primary functions of this application is to allow you to shoot multip
 
 ## Recommended Workflow
 
-For the most efficient use of the application, follow this workflow:
+For the most efficient use of the application, follow this logical flow:
 
-1.  **Initialize Database (Recommended):**
-    -   **Important:** Before adding your own data, go to the `DB Management` tab and click **"Import Master Database"**. 
-    -   This will populate the application with a comprehensive list of standard diameters, cartridges, and manufacturers (Hornady, Sierra, Hodgdon, etc.), saving you hours of manual entry.
-
-2.  **Setup Foundational Data:**
-    -   Go to the **Components** tab.
-    -   Use the **Manufacturers**, **Diameters**, and **Cartridges** sub-tabs to add any custom items not covered by the master database.
-    -   Then, use the **Bullets**, **Powders**, **Primers**, and **Brass** sub-tabs to add your specific inventory.
-
-3.  **Define Your Equipment:**
-    -   Go to the **Firearms** tab to add the rifles or pistols you will be testing.
-
-4.  **Create Load Data:**
-    -   Go to the **Load Data** tab to create entries for your handloads or commercial ammunition.
-
-5.  **Upload Your Targets:**
-    -   Go to the **Targets** tab. You can upload images of your shot targets, or use the **"Create Target"** feature to generate and print custom targets (NRA B-8, ISSF, etc.).
-
-6.  **Mark and Save Sessions:**
-    -   Go to the **Marking** tab. Load a target image, set the scale, and mark your impacts.
-    -   **Important:** You can mark individual groups on different targets and save them as separate sessions for composite analysis later.
-
-7.  **Analyze & Composite:**
-    -   Go to the **Analysis** tab. Select multiple sessions corresponding to the same load/firearm combination.
-    -   The app will **composite** these separate groups into a single aggregate analysis, providing reliable metrics (Mean Radius, standard deviations, extreme spread) based on an aggregated, large-sample dataset.
+1.  **Add Firearm:** Go to the `Firearms` tab and define your rifle or pistol.
+2.  **Add Load Data:** Go to the `Load Data` tab and log your commercial ammo or custom handload recipe.
+3.  **Create Target:** Use the generator in the `Targets` tab to design your ideal target.
+4.  **Print Target:** Print your generated custom target.
+5.  **Range Session:** Take your target to the range and make impacts on it (shoot your groups).
+6.  **Import Target:** Take a photo of your shot target and import it into the app via the `Targets` or `Marking` tab.
+7.  **Mark Shots:** Go to the `Marking` tab, load your image, set the scale, and mark your shots to create a session.
+8.  **Analyze Session:** Switch to the `Analysis` tab and run statistical analysis on the range session target.
+9.  **Compare Sessions:** Select multiple sessions in the `Analysis` tab to easily composite and compare your data.
+10. **Check Stability:** If necessary, utilize the `Stability` tab to verify the gyroscopic stability of your bullet.
 
 ---
 

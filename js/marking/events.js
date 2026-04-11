@@ -297,7 +297,8 @@ export function setupEventListeners() {
             await updateItem('impactData', sessionData);
             alert('Session data saved successfully!');
             await populateMarkingSessionSelect();
-            document.getElementById('sessionSelect').dispatchEvent(new Event('refresh'));
+            const checkboxContainer = document.getElementById('sessionCheckboxContainer');
+            if (checkboxContainer) checkboxContainer.dispatchEvent(new Event('refresh'));
             window.dispatchEvent(new Event('app-refresh')); // Refresh Stability tab dropdowns
         } catch (error) {
             console.error("Failed to save impact data:", error);

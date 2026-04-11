@@ -631,6 +631,29 @@ export async function initTargetGenerator() {
         });
     }
 
+    const saveAsTargetImageBtn = document.getElementById('saveAsTargetImageBtn');
+    if (saveAsTargetImageBtn) {
+        saveAsTargetImageBtn.addEventListener('click', async () => {
+            const dataUrl = canvas.toDataURL('image/webp', 0.8);
+            const newImage = {
+                id: generateUniqueId(),
+                name: presetNameInput.value.trim() || `Custom Target ${new Date().toLocaleString()}`,
+                timestamp: new Date().toISOString(),
+                data: dataUrl,
+                size: Math.round((dataUrl.length * (3/4)) / 1024) + ' KB'
+            };
+            
+            try {
+                await updateItem('targetImages', newImage);
+                alert('Target saved directly to your target gallery! You can now select it in the Marking Tab.');
+                window.dispatchEvent(new Event('app-refresh'));
+            } catch (err) {
+                console.error('Failed to save generated target to DB:', err);
+                alert('Error explicitly saving target.');
+            }
+        });
+    }
+
     if(downloadBtn) {
         downloadBtn.addEventListener('click', () => {
             const img = canvas.toDataURL('image/png');

@@ -8,7 +8,10 @@ import { handleAnalysisExport } from './analysis/export.js';
 let lastAnalysisResults = [];
 
 export function initStatisticalAnalysis() {
-    const sessionSelect = document.getElementById('sessionSelect');
+    const sessionCheckboxContainer = document.getElementById('sessionCheckboxContainer');
+    const loadFilterSelect = document.getElementById('loadFilterSelect');
+    const selectAllBtn = document.getElementById('selectAllSessionsBtn');
+    const deselectAllBtn = document.getElementById('deselectAllSessionsBtn');
     const firearmFilterSelect = document.getElementById('firearmFilterSelect');
     const compareBtn = document.getElementById('compareSessionsBtn');
     const exportBtn = document.getElementById('exportAnalysisBtn');
@@ -27,34 +30,123 @@ export function initStatisticalAnalysis() {
         });
     }
 
-    async function populateSessionSelect(firearmId = null) {
+    async function populateLoadFilter(firearmId = null) {
+        loadFilterSelect.innerHTML = '<option value="">-- All Loads --</option>';
+        let loads = await getAllItems('loads');
+        
+        if (firearmId) {
+            const firearm = await getItem('firearms', firearmId);
+            if (firearm && firearm.cartridgeId) {
+                loads = loads.filter(l => l.cartridgeId === firearm.cartridgeId);
+            }
+        }
+        
+        for (const load of loads) {
+            const option = document.createElement('option');
+            option.value = load.id;
+            
+            if (load.loadType === 'commercial') {
+                const mfg = await getItem('manufacturers', load.manufacturerId);
+                let bulletInfo = '';
+                if (load.bulletId) {
+                    const bullet = await getItem('bullets', load.bulletId);
+                    bulletInfo = bullet ? `${bullet.weight}gr ${bullet.name}` : '';
+                } else if (load.bulletWeight) {
+                     bulletInfo = `${load.bulletWeight}gr`;
+                }
+                option.textContent = `${mfg ? mfg.name : ''} ${load.name} ${bulletInfo}`.trim();
+            } else {
+                const bullet = await getItem('bullets', load.bulletId);
+                const powder = await getItem('powders', load.powderId);
+                let bulletName = 'Unknown Bullet';
+                if (bullet) {
+                    const bulletMfg = await getItem('manufacturers', bullet.manufacturerId);
+                    bulletName = `${bullet.weight}gr ${bulletMfg ? bulletMfg.name : ''} ${bullet.name}`;
+                }
+                const powderName = powder ? powder.name : 'Unknown Powder';
+                
+                let chargeVal = '---';
+                if (Array.isArray(load.chargeWeight)) {
+                    chargeVal = load.chargeWeight.join(', ');
+                } else if (load.chargeWeight !== undefined) {
+                     chargeVal = load.chargeWeight;
+                }
+                option.textContent = `(HL) ${bulletName} | ${powderName} ${chargeVal}gr`;
+            }
+            loadFilterSelect.appendChild(option);
+        }
+    }
+
+    async function populateSessionSelect(firearmId = null, loadId = null) {
         let sessions = await getAllItems('impactData');
         
         if (firearmId) {
             sessions = sessions.filter(session => session.firearmId === firearmId);
         }
+        if (loadId) {
+            sessions = sessions.filter(session => session.loadId === loadId);
+        }
 
         sessions.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
         
-        sessionSelect.innerHTML = ``;
+        sessionCheckboxContainer.innerHTML = '';
+
+        if (sessions.length === 0) {
+            sessionCheckboxContainer.innerHTML = '<div style="color: #9ca3af; padding: 0.5rem;">No sessions found matching filters.</div>';
+            return;
+        }
 
         for(const session of sessions) {
             if (!session.shots || session.shots.length < 2) continue;
 
-            const option = document.createElement('option');
-            option.value = session.id;
-            option.textContent = await createSessionName(session);
-            sessionSelect.appendChild(option);
+            const label = document.createElement('label');
+            label.style.display = 'flex';
+            label.style.alignItems = 'center';
+            label.style.gap = '0.5rem';
+            label.style.cursor = 'pointer';
+            label.style.padding = '0.25rem 0.5rem';
+            label.style.borderRadius = '0.25rem';
+            label.style.transition = 'background-color 0.2s';
+
+            label.onmouseenter = () => label.style.backgroundColor = '#374151';
+            label.onmouseleave = () => label.style.backgroundColor = 'transparent';
+
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.value = session.id;
+            checkbox.className = 'session-checkbox';
+
+            const textNode = document.createTextNode(await createSessionName(session));
+
+            label.appendChild(checkbox);
+            label.appendChild(textNode);
+            sessionCheckboxContainer.appendChild(label);
         }
     }
     
-    sessionSelect.addEventListener('refresh', async () => {
+    sessionCheckboxContainer.addEventListener('refresh', async () => {
         await populateFirearmFilter();
-        await populateSessionSelect(firearmFilterSelect.value);
+        await populateLoadFilter(firearmFilterSelect.value);
+        await populateSessionSelect(firearmFilterSelect.value, loadFilterSelect.value);
     });
     
-    firearmFilterSelect.addEventListener('change', (e) => {
-        populateSessionSelect(e.target.value);
+    firearmFilterSelect.addEventListener('change', async (e) => {
+        await populateLoadFilter(e.target.value);
+        await populateSessionSelect(e.target.value, loadFilterSelect.value);
+    });
+    
+    loadFilterSelect.addEventListener('change', async (e) => {
+        await populateSessionSelect(firearmFilterSelect.value, e.target.value);
+    });
+
+    selectAllBtn.addEventListener('click', () => {
+        const checkboxes = sessionCheckboxContainer.querySelectorAll('.session-checkbox');
+        checkboxes.forEach(cb => cb.checked = true);
+    });
+
+    deselectAllBtn.addEventListener('click', () => {
+        const checkboxes = sessionCheckboxContainer.querySelectorAll('.session-checkbox');
+        checkboxes.forEach(cb => cb.checked = false);
     });
     
     compareBtn.addEventListener('click', handleSessionComparison);
@@ -62,7 +154,8 @@ export function initStatisticalAnalysis() {
 
 
     async function handleSessionComparison() {
-        const selectedIds = Array.from(sessionSelect.selectedOptions).map(option => option.value);
+        const checkboxes = sessionCheckboxContainer.querySelectorAll('.session-checkbox:checked');
+        const selectedIds = Array.from(checkboxes).map(cb => cb.value);
 
         if (selectedIds.length < 1) {
             alert("Please select at least one session to analyze.");
@@ -112,5 +205,5 @@ export function initStatisticalAnalysis() {
         }
     }
 
-    sessionSelect.dispatchEvent(new Event('refresh'));
+    sessionCheckboxContainer.dispatchEvent(new Event('refresh'));
 }

@@ -2,15 +2,28 @@
                 <div class="card control-panel">
                     <h3>Analysis Setup</h3>
                     
-                    <label for="firearmFilterSelect">Filter by Firearm</label>
-                    <select id="firearmFilterSelect"></select>
+                    <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                        <div>
+                            <label for="firearmFilterSelect">Filter by Firearm</label>
+                            <select id="firearmFilterSelect"></select>
+                        </div>
+                        <div>
+                            <label for="loadFilterSelect">Filter by Load</label>
+                            <select id="loadFilterSelect"></select>
+                        </div>
+                    </div>
                     
-                    <label for="sessionSelect" style="margin-top: 1rem;">Select Sessions to Compare</label>
+                    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 1rem; margin-bottom: 0.5rem;">
+                        <label>Select Sessions to Compare</label>
+                        <div>
+                            <button id="selectAllSessionsBtn" class="btn-gray btn-small" style="padding: 0.2rem 0.5rem; font-size: 0.7rem;">Select All</button>
+                            <button id="deselectAllSessionsBtn" class="btn-gray btn-small" style="padding: 0.2rem 0.5rem; font-size: 0.7rem;">Deselect All</button>
+                        </div>
+                    </div>
                     <p style="font-size: 0.75rem; color: #9ca3af; margin-bottom: 0.5rem;">
                         Select multiple sessions to composite different groups into a single aggregate analysis.
                     </p>
-                    <select id="sessionSelect" multiple size="10" style="height: auto; min-height: 200px;"></select>
-                    <p style="font-size: 0.8rem; color: #9ca3af; margin-top: 0.25rem;">Hold Ctrl (Cmd) to select multiple sessions.</p>
+                    <div id="sessionCheckboxContainer" style="border: 1px solid #4b5563; border-radius: 0.375rem; background-color: #1f2937; height: auto; min-height: 200px; max-height: 300px; overflow-y: auto; padding: 0.5rem; display: flex; flex-direction: column; gap: 0.25rem;"></div>
                     
                     <button id="compareSessionsBtn" class="btn-blue" style="margin-top: 1rem;">Analyze Selected Session(s)</button>
                     <button id="exportAnalysisBtn" class="btn-blue" style="margin-top: 0.5rem;">Export as Image</button>
