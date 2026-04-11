@@ -34,7 +34,7 @@
                             <!-- Page Settings -->
                             <div class="section" style="margin-bottom: 1rem;">
                                 <h4>Page Settings</h4>
-                                <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                                <div class="form-grid">
                                     <div><label>Size</label><select id="paperSize"><option value="letter">Letter</option><option value="legal">Legal</option><option value="a4">A4</option></select></div>
                                     <div><label>Orientation</label><select id="paperOrientation"><option value="portrait">Portrait</option><option value="landscape">Landscape</option></select></div>
                                 </div>
@@ -48,7 +48,7 @@
                                         <input type="checkbox" id="gridEnabled" checked> Show Grid
                                     </label>
                                 </div>
-                                <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                                <div class="form-grid">
                                     <div><label>Size (in)</label><input type="number" id="gridSize" value="1.0" step="0.125"></div>
                                     <div><label>Color</label><input type="color" id="gridColor" value="#cccccc" style="height: 38px;"></div>
                                 </div>
@@ -57,11 +57,11 @@
                             <!-- Target Layout -->
                             <div class="section" style="margin-bottom: 1rem; border-top: 1px solid #374151; padding-top: 1rem;">
                                 <h4>Target Layout</h4>
-                                <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                                <div class="form-grid">
                                     <div><label>Rows</label><input type="number" id="rows" value="1" min="1"></div>
                                     <div><label>Cols</label><input type="number" id="cols" value="1" min="1"></div>
                                 </div>
-                                <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.5rem;">
+                                <div class="form-grid" style="margin-top: 0.5rem;">
                                     <div><label>Margin Left/Right (in)</label><input type="number" id="marginX" value="0.5" step="0.1" min="0"></div>
                                     <div><label>Margin Top/Bottom (in)</label><input type="number" id="marginY" value="0.5" step="0.1" min="0"></div>
                                 </div>
@@ -81,7 +81,7 @@
                                         <option value="hexagon">Hexagon</option>
                                     </select>
                                 </div>
-                                <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                                <div class="form-grid">
                                     <div><label>Diameter (in)</label><input type="number" id="bullseyeSize" value="6.0" step="0.1"></div>
                                     <div><label>Ring Count</label><input type="number" id="numRings" value="5" min="1"></div>
                                 </div>
@@ -90,7 +90,7 @@
                              <!-- Colors -->
                              <div class="section" style="margin-bottom: 1rem; border-top: 1px solid #374151; padding-top: 1rem;">
                                 <h4>Colors</h4>
-                                <div class="form-grid" style="grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem;">
+                                <div class="form-grid">
                                     <div><label>Center</label><input type="color" id="bullseyeColor" value="#ff0000" style="height: 38px;"></div>
                                     <div><label>Ring A</label><input type="color" id="ringColorA" value="#000000" style="height: 38px;"></div>
                                     <div><label>Ring B</label><input type="color" id="ringColorB" value="#ffffff" style="height: 38px;"></div>
@@ -111,7 +111,7 @@
                                     <button id="importDataBtn" class="btn-indigo btn-small" style="width: 100%; margin-top: 0.25rem;">Insert Data</button>
                                 </div>
                                 <textarea id="labelText" rows="3" style="width: 100%; box-sizing: border-box; margin-bottom: 0.5rem;" placeholder="Enter label text..."></textarea>
-                                <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                                <div class="form-grid">
                                     <div><label>Position</label><select id="labelPosition"><option value="top-left">Top Left</option><option value="top-right">Top Right</option><option value="bottom-left">Bottom Left</option><option value="bottom-right">Bottom Right</option></select></div>
                                     <div><label>Size (pt)</label><input type="number" id="labelSize" value="12" min="6"></div>
                                 </div>
