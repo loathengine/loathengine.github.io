@@ -9439,7 +9439,68 @@
     }
   ],
   "firearms": [],
-  "loads": [],
+  "loads": [
+    {
+      "id": "LOAD_COMM_FED_308_168_SMK",
+      "name": "Federal Premium Gold Medal Match 168gr SMK",
+      "isCommercial": true,
+      "cartridgeId": "CTG_308WIN_cC82",
+      "bulletId": "BUL_SIERRA_308_168_SMK",
+      "powderCharge": null,
+      "powderId": null,
+      "primerId": null,
+      "brassId": null,
+      "notes": "Industry standard baseline for objective .308 Winchester testing."
+    },
+    {
+      "id": "LOAD_COMM_HORN_65CM_140_ELDM",
+      "name": "Hornady Match 140gr ELD-M",
+      "isCommercial": true,
+      "cartridgeId": "CTG_65CM_cN72",
+      "bulletId": "BUL_HORNADY_264_140_ELDM",
+      "powderCharge": null,
+      "powderId": null,
+      "primerId": null,
+      "brassId": "BRS_HORN_65CM_drV7",
+      "notes": "Dominant commercial baseline for 6.5 Creedmoor."
+    },
+    {
+      "id": "LOAD_COMM_HORN_300PRC_225_ELDM",
+      "name": "Hornady Match 225gr ELD-M",
+      "isCommercial": true,
+      "cartridgeId": "CTG_300PRC_cK02",
+      "bulletId": "BUL_HORNADY_308_225_ELDM",
+      "powderCharge": null,
+      "powderId": null,
+      "primerId": null,
+      "brassId": "BRS_WINC_300PRC_jrP1",
+      "notes": "Standard factory load for 300 PRC evaluation."
+    },
+    {
+      "id": "LOAD_COMM_HORN_6ARC_108_ELDM",
+      "name": "Hornady Match 108gr ELD-M",
+      "isCommercial": true,
+      "cartridgeId": "CTG_6ARC_cH92",
+      "bulletId": "BUL_HORNADY_243_108_ELDM",
+      "powderCharge": null,
+      "powderId": null,
+      "primerId": null,
+      "brassId": null,
+      "notes": "Primary commercial baseline for 6mm ARC gas and bolt platforms."
+    },
+    {
+      "id": "LOAD_COMM_LAP_338_250_SCENAR",
+      "name": "Lapua Match 250gr Scenar",
+      "isCommercial": true,
+      "cartridgeId": "CTG_338LAP_cO62",
+      "bulletId": "BUL_LAPUA_338_250_SCENAR",
+      "powderCharge": null,
+      "powderId": null,
+      "primerId": null,
+      "brassId": null,
+      "notes": "Gold standard for .338 Lapua Magnum factory precision."
+    }
+  ],
   "impactData": [],
   "targetImages": [],
   "customTargets": []

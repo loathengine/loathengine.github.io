@@ -283,15 +283,43 @@ async function handleSyncMaster(url) {
             return;
         }
 
-        const transaction = db.transaction(validSystemStores, 'readwrite');
+        const transactionStores = [...validSystemStores];
+        if (data.loads && Array.isArray(data.loads)) {
+            transactionStores.push('loads');
+        }
+
+        const transaction = db.transaction(transactionStores, 'readwrite');
         let totalItems = 0;
 
-        for (const storeName of validSystemStores) {
+        for (const storeName of transactionStores) {
             const store = transaction.objectStore(storeName);
-            store.clear();
-            for (const item of data[storeName]) {
-                store.put(item);
-                totalItems++;
+            
+            if (storeName === 'loads') {
+                // Unique safely merge strategy for Loads: Preserve user Hand Loads, replace only Commercial Ammo
+                const request = store.getAll();
+                request.onsuccess = (e) => {
+                    const existingLoads = e.target.result || [];
+                    const personalLoads = existingLoads.filter(l => l.loadType !== 'commercial' && !l.isCommercial);
+                    const incomingCommercial = data.loads.filter(l => l.loadType === 'commercial' || l.isCommercial);
+                    
+                    store.clear();
+                    // Put personal loads back
+                    for (const item of personalLoads) {
+                        store.put(item);
+                    }
+                    // Insert synced commercial loads
+                    for (const item of incomingCommercial) {
+                        store.put(item);
+                        totalItems++;
+                    }
+                };
+            } else {
+                // System tables (bullets, cartridges, etc) are fully overwritten
+                store.clear();
+                for (const item of data[storeName]) {
+                    store.put(item);
+                    totalItems++;
+                }
             }
         }
         transaction.oncomplete = async () => {
