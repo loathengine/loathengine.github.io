@@ -1,4 +1,4 @@
-import { calculateLinearRegression, getAngularFactors, bootstrapMeanRadiusCI } from './math.js';
+import { calculateLinearRegression, getAngularFactors } from './math.js';
 
 export function calculateStatsForSession(shots, targetDistance = null, distanceUnits = null) {
     if (!shots || shots.length < 2) return null;
@@ -50,19 +50,7 @@ export function calculateStatsForSession(shots, targetDistance = null, distanceU
         vel_vert_r2 = regressionResult.r2;
     }
 
-    const ci_mr = bootstrapMeanRadiusCI(shots);
-    const relativeWidth = (ci_mr.upper - ci_mr.lower) / meanRadius;
-    
-    let confidence_level = 'Medium';
-    let confidence_color = '#eab308'; // yellow
 
-    if (relativeWidth > 0.75) {
-        confidence_level = 'Low';
-        confidence_color = '#ef4444'; // red
-    } else if (relativeWidth < 0.35) {
-        confidence_level = 'High';
-        confidence_color = '#22c55e'; // green
-    }
     
     // Calculate Angular values (MOA and Mrad)
     const factors = getAngularFactors(dataUnits, targetDistance, distanceUnits);
@@ -73,7 +61,6 @@ export function calculateStatsForSession(shots, targetDistance = null, distanceU
         gs: { moa: null, mrad: null },
         sd_x: { moa: null, mrad: null },
         sd_y: { moa: null, mrad: null },
-        ci: { moa: null, mrad: null },
         a_zed: null // Add a_zed placeholder
     };
 
@@ -92,9 +79,6 @@ export function calculateStatsForSession(shots, targetDistance = null, distanceU
         
         angStats.sd_y.moa = sd_y * factors.moa;
         angStats.sd_y.mrad = sd_y * factors.mrad;
-        
-        angStats.ci.moa = [ci_mr.lower * factors.moa, ci_mr.upper * factors.moa];
-        angStats.ci.mrad = [ci_mr.lower * factors.mrad, ci_mr.upper * factors.mrad];
 
         // A-ZED Calculation
         // IPSC A-zone is roughly 15cm wide by 32.5cm high.
@@ -142,8 +126,6 @@ export function calculateStatsForSession(shots, targetDistance = null, distanceU
         vel_sd: vel_sd,
         vel_vert_r2: vel_vert_r2,
         hasVerticalDispersion: hasVerticalDispersion,
-        confidence_level: confidence_level,
-        confidence_color: confidence_color,
         distanceUnits: distanceUnits
     };
 }
