@@ -411,6 +411,21 @@ async function renderLoadsTable() {
     const tableBody = document.getElementById('loadsTableBody');
     tableBody.innerHTML = '';
 
+    loads.sort((a, b) => {
+        const cartA = cartridgeMap.get(a.cartridgeId) || '';
+        const cartB = cartridgeMap.get(b.cartridgeId) || '';
+        if (cartA !== cartB) return cartA.localeCompare(cartB);
+        
+        // Secondary sort by load type then ID
+        if (a.loadType !== b.loadType) return (a.loadType || '').localeCompare(b.loadType || '');
+        return Number(a.id) - Number(b.id);
+    });
+
+    if (loads.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="100%" style="text-align:center; padding: 1.5rem; color: #9ca3af;">No loads found.</td></tr>';
+        return;
+    }
+
     for (const load of loads) {
         let type, details, charge, col, recipeButton = '';
         const cartridgeName = cartridgeMap.get(load.cartridgeId) || 'N/A';

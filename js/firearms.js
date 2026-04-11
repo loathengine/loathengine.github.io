@@ -16,10 +16,16 @@ export function initFirearmsManagement() {
     document.getElementById('firearmForm').addEventListener('submit', handleFirearmSubmit);
     document.getElementById('firearmForm').addEventListener('reset', () => {
         document.getElementById('firearmId').value = '';
-        setTimeout(refreshFirearmsUI, 0); // Refresh UI after reset to clear dependent dropdowns correctly if needed
+        setTimeout(refreshFirearmsUI, 0);
     });
     document.getElementById('firearmsTableBody').addEventListener('click', handleFirearmTableClick);
     document.getElementById('firearmDiameter').addEventListener('change', refreshFirearmCartridgeDropdown);
+    
+    document.getElementById('filterFirearmsCartridge').addEventListener('change', renderFirearmsTable);
+    document.getElementById('clearFirearmsFilters').addEventListener('click', () => {
+        document.getElementById('filterFirearmsCartridge').value = '';
+        renderFirearmsTable();
+    });
 
     refreshFirearmsUI();
 }
@@ -27,9 +33,27 @@ export function initFirearmsManagement() {
 export async function refreshFirearmsUI() {
     const diameters = await getAllItems('diameters');
     populateSelect('firearmDiameter', diameters, 'imperial', 'id');
-    // Ensure cartridge dropdown is reset or populated based on initial selection (usually empty on refresh unless editing)
     await refreshFirearmCartridgeDropdown(); 
+    await refreshFirearmFilters();
     renderFirearmsTable();
+}
+
+async function refreshFirearmFilters() {
+    const firearms = await getAllItems('firearms');
+    const allCartridges = await getAllItems('cartridges');
+    
+    const filterCartridge = document.getElementById('filterFirearmsCartridge');
+    const selectedCartridge = filterCartridge.value;
+    
+    const availableCartridges = new Set(firearms.map(f => f.cartridgeId).filter(Boolean));
+    filterCartridge.innerHTML = '<option value="">All</option>';
+    allCartridges.filter(c => availableCartridges.has(c.id)).sort((a,b) => a.name.localeCompare(b.name)).forEach(c => {
+        const opt = document.createElement('option');
+        opt.value = c.id;
+        opt.textContent = c.name;
+        filterCartridge.appendChild(opt);
+    });
+    filterCartridge.value = availableCartridges.has(selectedCartridge) ? selectedCartridge : '';
 }
 
 async function handleFirearmSubmit(e) {
@@ -44,7 +68,8 @@ async function handleFirearmSubmit(e) {
         magCoal: parseFloat(document.getElementById('firearmMagCoal').value)
     };
     await updateItem('firearms', firearm);
-    e.target.reset(); // This triggers the reset listener
+    e.target.reset();
+    await refreshFirearmFilters();
     renderFirearmsTable();
     refreshImpactMarkingUI(); 
 }
@@ -55,9 +80,25 @@ async function renderFirearmsTable() {
         getAllItems('cartridges')
     ]);
     const cartridgeMap = new Map(cartridges.map(c => [c.id, c.name]));
+    const filterCartridgeId = document.getElementById('filterFirearmsCartridge').value;
+    let filteredFirearms = filterCartridgeId ? firearms.filter(f => f.cartridgeId === filterCartridgeId) : firearms;
+    
+    filteredFirearms.sort((a, b) => {
+        const cartA = cartridgeMap.get(a.cartridgeId) || '';
+        const cartB = cartridgeMap.get(b.cartridgeId) || '';
+        if (cartA !== cartB) return cartA.localeCompare(cartB);
+        return (a.nickname || '').localeCompare(b.nickname || '');
+    });
+
     const tableBody = document.getElementById('firearmsTableBody');
     tableBody.innerHTML = '';
-    for (const firearm of firearms) {
+    
+    if (filteredFirearms.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="100%" style="text-align:center; padding: 1.5rem; color: #9ca3af;">No firearms found.</td></tr>';
+        return;
+    }
+
+    for (const firearm of filteredFirearms) {
         const cartridgeName = cartridgeMap.get(firearm.cartridgeId) || 'N/A';
         const row = `
             <tr>
@@ -82,6 +123,7 @@ async function handleFirearmTableClick(e) {
     if (action === 'delete') {
         if (confirm('Are you sure?')) { 
             await deleteItem('firearms', id); 
+            await refreshFirearmFilters();
             renderFirearmsTable(); 
             refreshImpactMarkingUI(); 
         }

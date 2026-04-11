@@ -29,11 +29,32 @@
                         <button type="submit" form="manufacturerForm" class="btn-blue">Save Manufacturer</button>
                         <button type="reset" form="manufacturerForm" class="btn-gray">Clear Form</button>
                     </div>
-                    <div class="data-table-container">
-                        <table class="data-table">
-                            <thead><tr><th>Name</th><th>Types</th><th>Actions</th></tr></thead>
-                            <tbody id="manufacturersTableBody"></tbody>
-                        </table>
+                    <div style="border: 1px solid #374151; border-radius: 0.5rem; background-color: #1f2937; margin-top: 2rem;">
+                        <div style="padding: 1rem; border-bottom: 1px solid #374151; background-color: #2a374a; border-radius: 0.5rem 0.5rem 0 0;">
+                            <h4 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 0.875rem; color: #9ca3af;">Data Table Filters</h4>
+                            <div class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                                <div>
+                                    <label for="filterManufacturerType">Manufacturer Type</label>
+                                    <select id="filterManufacturerType">
+                                        <option value="">All</option>
+                                        <option value="bullet">Bullet</option>
+                                        <option value="powder">Powder</option>
+                                        <option value="primer">Primer</option>
+                                        <option value="brass">Brass</option>
+                                    </select>
+                                </div>
+                                <div></div><div></div>
+                                <div style="display: flex; align-items: flex-end;">
+                                    <button type="button" id="clearManufacturerFilters" class="btn-gray btn-small" style="width: 100%; margin-bottom: 0.2rem;">Clear Filters</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="data-table-container" style="margin-top: 0; border: none; border-radius: 0 0 0.5rem 0.5rem;">
+                            <table class="data-table">
+                                <thead><tr><th>Name</th><th>Types</th><th>Actions</th></tr></thead>
+                                <tbody id="manufacturersTableBody"></tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
@@ -48,11 +69,26 @@
                         <button type="submit" form="diameterForm" class="btn-blue">Save Diameter</button>
                         <button type="reset" form="diameterForm" class="btn-gray">Clear Form</button>
                     </div>
-                    <div class="data-table-container">
-                        <table class="data-table">
-                            <thead><tr><th>Imperial</th><th>Metric</th><th>Actions</th></tr></thead>
-                            <tbody id="diametersTableBody"></tbody>
-                        </table>
+                    <div style="border: 1px solid #374151; border-radius: 0.5rem; background-color: #1f2937; margin-top: 2rem;">
+                        <div style="padding: 1rem; border-bottom: 1px solid #374151; background-color: #2a374a; border-radius: 0.5rem 0.5rem 0 0;">
+                            <h4 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 0.875rem; color: #9ca3af;">Data Table Filters</h4>
+                            <div class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                                <div>
+                                    <label for="filterDiameterSearch">Search</label>
+                                    <input type="text" id="filterDiameterSearch" placeholder="Search Diameters...">
+                                </div>
+                                <div></div><div></div>
+                                <div style="display: flex; align-items: flex-end;">
+                                    <button type="button" id="clearDiameterFilters" class="btn-gray btn-small" style="width: 100%; margin-bottom: 0.2rem;">Clear Filters</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="data-table-container" style="margin-top: 0; border: none; border-radius: 0 0 0.5rem 0.5rem;">
+                            <table class="data-table">
+                                <thead><tr><th>Imperial</th><th>Metric</th><th>Actions</th></tr></thead>
+                                <tbody id="diametersTableBody"></tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 
@@ -71,11 +107,26 @@
                         <button type="submit" form="cartridgeForm" class="btn-blue">Save Cartridge</button>
                         <button type="reset" form="cartridgeForm" class="btn-gray">Clear Form</button>
                     </div>
-                    <div class="data-table-container">
-                        <table class="data-table">
-                            <thead><tr><th>Name</th><th>Diameter</th><th>Cartridge OAL</th><th>Max Case</th><th>Trim to Length</th><th>Actions</th></tr></thead>
-                            <tbody id="cartridgesTableBody"></tbody>
-                        </table>
+                    <div style="border: 1px solid #374151; border-radius: 0.5rem; background-color: #1f2937; margin-top: 2rem;">
+                        <div style="padding: 1rem; border-bottom: 1px solid #374151; background-color: #2a374a; border-radius: 0.5rem 0.5rem 0 0;">
+                            <h4 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 0.875rem; color: #9ca3af;">Data Table Filters</h4>
+                            <div class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                                <div>
+                                    <label for="filterCartridgeDiameter">Diameter</label>
+                                    <select id="filterCartridgeDiameter"><option value="">All</option></select>
+                                </div>
+                                <div></div><div></div>
+                                <div style="display: flex; align-items: flex-end;">
+                                    <button type="button" id="clearCartridgeFilters" class="btn-gray btn-small" style="width: 100%; margin-bottom: 0.2rem;">Clear Filters</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="data-table-container" style="margin-top: 0; border: none; border-radius: 0 0 0.5rem 0.5rem;">
+                            <table class="data-table">
+                                <thead><tr><th>Name</th><th>Diameter</th><th>Cartridge OAL</th><th>Max Case</th><th>Trim to Length</th><th>Actions</th></tr></thead>
+                                <tbody id="cartridgesTableBody"></tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
@@ -125,22 +176,41 @@
                         </div>
                     </form>
                     
-                    <div class="data-table-container">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Manufacturer</th>
-                                    <th>Diameter</th>
-                                    <th>Weight</th>
-                                    <th>Model</th>
-                                    <th>G1 BC</th>
-                                    <th>G7 BC</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody id="bulletsTableBody"></tbody>
-                        </table>
+                    <div style="border: 1px solid #374151; border-radius: 0.5rem; background-color: #1f2937; margin-top: 2rem;">
+                        <div style="padding: 1rem; border-bottom: 1px solid #374151; background-color: #2a374a; border-radius: 0.5rem 0.5rem 0 0;">
+                            <h4 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 0.875rem; color: #9ca3af;">Data Table Filters</h4>
+                            <div class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                                <div>
+                                    <label for="filterBulletDiameter">Diameter</label>
+                                    <select id="filterBulletDiameter"><option value="">All</option></select>
+                                </div>
+                                <div>
+                                    <label for="filterBulletManufacturer">Manufacturer</label>
+                                    <select id="filterBulletManufacturer"><option value="">All</option></select>
+                                </div>
+                                <div></div>
+                                <div style="display: flex; align-items: flex-end;">
+                                    <button type="button" id="clearBulletFilters" class="btn-gray btn-small" style="width: 100%; margin-bottom: 0.2rem;">Clear Filters</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="data-table-container" style="margin-top: 0; border: none; border-radius: 0 0 0.5rem 0.5rem;">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Manufacturer</th>
+                                        <th>Diameter</th>
+                                        <th>Weight</th>
+                                        <th>Model</th>
+                                        <th>G1 BC</th>
+                                        <th>G7 BC</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bulletsTableBody"></tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
@@ -155,11 +225,26 @@
                             <button type="reset" class="btn-gray">Clear Form</button>
                         </div>
                     </form>
-                    <div class="data-table-container">
-                        <table class="data-table">
-                            <thead><tr><th>Name</th><th>Manufacturer</th><th>Actions</th></tr></thead>
-                            <tbody id="powdersTableBody"></tbody>
-                        </table>
+                    <div style="border: 1px solid #374151; border-radius: 0.5rem; background-color: #1f2937; margin-top: 2rem;">
+                        <div style="padding: 1rem; border-bottom: 1px solid #374151; background-color: #2a374a; border-radius: 0.5rem 0.5rem 0 0;">
+                            <h4 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 0.875rem; color: #9ca3af;">Data Table Filters</h4>
+                            <div class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                                <div>
+                                    <label for="filterPowderManufacturer">Manufacturer</label>
+                                    <select id="filterPowderManufacturer"><option value="">All</option></select>
+                                </div>
+                                <div></div><div></div>
+                                <div style="display: flex; align-items: flex-end;">
+                                    <button type="button" id="clearPowderFilters" class="btn-gray btn-small" style="width: 100%; margin-bottom: 0.2rem;">Clear Filters</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="data-table-container" style="margin-top: 0; border: none; border-radius: 0 0 0.5rem 0.5rem;">
+                            <table class="data-table">
+                                <thead><tr><th>Name</th><th>Manufacturer</th><th>Actions</th></tr></thead>
+                                <tbody id="powdersTableBody"></tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
@@ -174,11 +259,26 @@
                             <button type="reset" class="btn-gray">Clear Form</button>
                         </div>
                     </form>
-                    <div class="data-table-container">
-                        <table class="data-table">
-                            <thead><tr><th>Name</th><th>Manufacturer</th><th>Actions</th></tr></thead>
-                            <tbody id="primersTableBody"></tbody>
-                        </table>
+                    <div style="border: 1px solid #374151; border-radius: 0.5rem; background-color: #1f2937; margin-top: 2rem;">
+                        <div style="padding: 1rem; border-bottom: 1px solid #374151; background-color: #2a374a; border-radius: 0.5rem 0.5rem 0 0;">
+                            <h4 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 0.875rem; color: #9ca3af;">Data Table Filters</h4>
+                            <div class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                                <div>
+                                    <label for="filterPrimerManufacturer">Manufacturer</label>
+                                    <select id="filterPrimerManufacturer"><option value="">All</option></select>
+                                </div>
+                                <div></div><div></div>
+                                <div style="display: flex; align-items: flex-end;">
+                                    <button type="button" id="clearPrimerFilters" class="btn-gray btn-small" style="width: 100%; margin-bottom: 0.2rem;">Clear Filters</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="data-table-container" style="margin-top: 0; border: none; border-radius: 0 0 0.5rem 0.5rem;">
+                            <table class="data-table">
+                                <thead><tr><th>Name</th><th>Manufacturer</th><th>Actions</th></tr></thead>
+                                <tbody id="primersTableBody"></tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
@@ -196,11 +296,30 @@
                             <button type="reset" class="btn-gray">Clear Form</button>
                         </div>
                     </form>
-                    <div class="data-table-container">
-                        <table class="data-table">
-                            <thead><tr><th>Cartridge</th><th>Manufacturer</th><th>Pocket</th><th>Hole</th><th>Actions</th></tr></thead>
-                            <tbody id="brassTableBody"></tbody>
-                        </table>
+                    <div style="border: 1px solid #374151; border-radius: 0.5rem; background-color: #1f2937; margin-top: 2rem;">
+                        <div style="padding: 1rem; border-bottom: 1px solid #374151; background-color: #2a374a; border-radius: 0.5rem 0.5rem 0 0;">
+                            <h4 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 0.875rem; color: #9ca3af;">Data Table Filters</h4>
+                            <div class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                                <div>
+                                    <label for="filterBrassManufacturer">Manufacturer</label>
+                                    <select id="filterBrassManufacturer"><option value="">All</option></select>
+                                </div>
+                                <div>
+                                    <label for="filterBrassCartridge">Cartridge</label>
+                                    <select id="filterBrassCartridge"><option value="">All</option></select>
+                                </div>
+                                <div></div>
+                                <div style="display: flex; align-items: flex-end;">
+                                    <button type="button" id="clearBrassFilters" class="btn-gray btn-small" style="width: 100%; margin-bottom: 0.2rem;">Clear Filters</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="data-table-container" style="margin-top: 0; border: none; border-radius: 0 0 0.5rem 0.5rem;">
+                            <table class="data-table">
+                                <thead><tr><th>Cartridge</th><th>Manufacturer</th><th>Pocket</th><th>Hole</th><th>Actions</th></tr></thead>
+                                <tbody id="brassTableBody"></tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

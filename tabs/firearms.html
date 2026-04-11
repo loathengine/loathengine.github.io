@@ -14,11 +14,26 @@
                     <button type="submit" form="firearmForm" class="btn-blue">Save Firearm</button>
                     <button type="reset" form="firearmForm" class="btn-gray">Clear Form</button>
                 </div>
-                <div class="data-table-container">
-                    <table class="data-table">
-                        <thead><tr><th>Nickname</th><th>Cartridge</th><th>Barrel</th><th>Twist</th><th>Actions</th></tr></thead>
-                        <tbody id="firearmsTableBody"></tbody>
-                    </table>
+                <div style="border: 1px solid #374151; border-radius: 0.5rem; background-color: #1f2937; margin-top: 2rem;">
+                    <div style="padding: 1rem; border-bottom: 1px solid #374151; background-color: #2a374a; border-radius: 0.5rem 0.5rem 0 0;">
+                        <h4 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 0.875rem; color: #9ca3af;">Data Table Filters</h4>
+                        <div class="form-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                            <div>
+                                <label for="filterFirearmsCartridge">Cartridge</label>
+                                <select id="filterFirearmsCartridge"><option value="">All</option></select>
+                            </div>
+                            <div></div><div></div>
+                            <div style="display: flex; align-items: flex-end;">
+                                <button type="button" id="clearFirearmsFilters" class="btn-gray btn-small" style="width: 100%; margin-bottom: 0.2rem;">Clear Filters</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="data-table-container" style="margin-top: 0; border: none; border-radius: 0 0 0.5rem 0.5rem;">
+                        <table class="data-table">
+                            <thead><tr><th>Nickname</th><th>Cartridge</th><th>Barrel</th><th>Twist</th><th>Actions</th></tr></thead>
+                            <tbody id="firearmsTableBody"></tbody>
+                        </table>
+                    </div>
                 </div>
              </div>
         
