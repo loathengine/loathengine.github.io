@@ -152,42 +152,66 @@ async function refreshCommercialAmmoBulletDropdown() {
     }
 }
 
-async function refreshFilterBulletDropdown() {
+async function refreshLoadFilters() {
+    const allLoads = await getAllItems('loads');
+    const allCartridges = await getAllItems('cartridges');
     const allBullets = await getAllItems('bullets');
+    const allPowders = await getAllItems('powders');
     const allManufacturers = await getAllItems('manufacturers');
-    const filterCartridgeId = document.getElementById('filterCartridge').value;
-    
-    let filteredBullets = allBullets;
-    if (filterCartridgeId) {
-        const cartridge = await getItem('cartridges', filterCartridgeId);
-        if (cartridge) {
-            filteredBullets = allBullets.filter(b => b.diameterId === cartridge.diameterId);
-        }
-    }
 
+    const filterCartridgeSelect = document.getElementById('filterCartridge');
     const filterBulletSelect = document.getElementById('filterBullet');
-    const oldBulletFilter = filterBulletSelect.value;
-    filterBulletSelect.innerHTML = '<option value="">All</option>';
+    const filterPowderSelect = document.getElementById('filterPowder');
+
+    const selectedCartridge = filterCartridgeSelect.value;
+    const selectedBullet = filterBulletSelect.value;
+    const selectedPowder = filterPowderSelect.value;
+
+    const availableCartridgeIds = new Set(allLoads.map(l => l.cartridgeId).filter(Boolean));
+    filterCartridgeSelect.innerHTML = '<option value="">All</option>';
+    allCartridges.filter(c => availableCartridgeIds.has(c.id)).sort((a,b) => a.name.localeCompare(b.name)).forEach(c => {
+        const opt = document.createElement('option');
+        opt.value = c.id;
+        opt.textContent = c.name;
+        filterCartridgeSelect.appendChild(opt);
+    });
+    filterCartridgeSelect.value = availableCartridgeIds.has(selectedCartridge) ? selectedCartridge : '';
+
+    let validLoadBullets = allLoads;
+    if (filterCartridgeSelect.value) {
+        validLoadBullets = validLoadBullets.filter(l => l.cartridgeId === filterCartridgeSelect.value);
+    }
+    const availableBulletIds = new Set(validLoadBullets.map(l => l.bulletId).filter(Boolean));
     
-    // Sort bullets by weight then name
+    filterBulletSelect.innerHTML = '<option value="">All</option>';
+    const filteredBullets = allBullets.filter(b => availableBulletIds.has(b.id));
     filteredBullets.sort((a, b) => {
         if (a.weight !== b.weight) return a.weight - b.weight;
         return a.name.localeCompare(b.name);
     });
-
     for (const bullet of filteredBullets) {
         const mfg = allManufacturers.find(m => m.id === bullet.manufacturerId);
-        const mfgName = mfg ? mfg.name : 'Unknown';
         const opt = document.createElement('option');
         opt.value = bullet.id;
-        opt.textContent = `${bullet.weight}gr ${mfgName} ${bullet.name}`;
+        opt.textContent = `${bullet.weight}gr ${mfg ? mfg.name : 'Unknown'} ${bullet.name}`;
         filterBulletSelect.appendChild(opt);
     }
-    
-    filterBulletSelect.value = oldBulletFilter || '';
-    if (filterBulletSelect.selectedIndex === -1) {
-        filterBulletSelect.value = '';
+    filterBulletSelect.value = availableBulletIds.has(selectedBullet) ? selectedBullet : '';
+
+    let validLoadPowders = validLoadBullets;
+    if (filterBulletSelect.value) {
+        validLoadPowders = validLoadPowders.filter(l => l.bulletId === filterBulletSelect.value);
     }
+    const availablePowderIds = new Set(validLoadPowders.map(l => l.powderId).filter(Boolean));
+
+    filterPowderSelect.innerHTML = '<option value="">All</option>';
+    allPowders.filter(p => availablePowderIds.has(p.id)).sort((a,b) => a.name.localeCompare(b.name)).forEach(p => {
+        const opt = document.createElement('option');
+        opt.value = p.id;
+        opt.textContent = p.name;
+        filterPowderSelect.appendChild(opt);
+    });
+    filterPowderSelect.value = availablePowderIds.has(selectedPowder) ? selectedPowder : '';
 }
 
 export function initLoadsManagement() {
@@ -248,16 +272,19 @@ export function initLoadsManagement() {
     document.getElementById('commercialAmmoDiameter').addEventListener('change', refreshCommercialAmmoCartridgeDropdown);
 
     document.getElementById('filterCartridge').addEventListener('change', async () => {
-        await refreshFilterBulletDropdown();
+        await refreshLoadFilters();
         renderLoadsTable();
     });
-    document.getElementById('filterBullet').addEventListener('change', renderLoadsTable);
+    document.getElementById('filterBullet').addEventListener('change', async () => {
+        await refreshLoadFilters();
+        renderLoadsTable();
+    });
     document.getElementById('filterPowder').addEventListener('change', renderLoadsTable);
     document.getElementById('clearFilters').addEventListener('click', async () => {
         document.getElementById('filterCartridge').value = '';
-        await refreshFilterBulletDropdown();
         document.getElementById('filterBullet').value = '';
         document.getElementById('filterPowder').value = '';
+        await refreshLoadFilters();
         renderLoadsTable();
     });
 
@@ -283,32 +310,7 @@ export async function refreshLoadsUI() {
     populateSelect('commercialAmmoDiameter', allDiameters, 'imperial', 'id');
     await refreshCommercialAmmoCartridgeDropdown();
 
-    const allCartridges = await getAllItems('cartridges');
-    const allPowders = await getAllItems('powders');
-
-    const filterCartridgeSelect = document.getElementById('filterCartridge');
-    const oldCartridgeFilter = filterCartridgeSelect.value;
-    filterCartridgeSelect.innerHTML = '<option value="">All</option>';
-    allCartridges.forEach(c => {
-        const opt = document.createElement('option');
-        opt.value = c.id;
-        opt.textContent = c.name;
-        filterCartridgeSelect.appendChild(opt);
-    });
-    filterCartridgeSelect.value = oldCartridgeFilter || '';
-
-    const filterPowderSelect = document.getElementById('filterPowder');
-    const oldPowderFilter = filterPowderSelect.value;
-    filterPowderSelect.innerHTML = '<option value="">All</option>';
-    allPowders.forEach(p => {
-        const opt = document.createElement('option');
-        opt.value = p.id;
-        opt.textContent = p.name;
-        filterPowderSelect.appendChild(opt);
-    });
-    filterPowderSelect.value = oldPowderFilter || '';
-
-    await refreshFilterBulletDropdown();
+    await refreshLoadFilters();
 
     renderLoadsTable();
 }
@@ -339,6 +341,7 @@ async function handleLoadSubmit(e) {
     await updateItem('loads', load);
     e.target.reset();
     document.getElementById('loadId').value = ''; 
+    await refreshLoadFilters();
     renderLoadsTable();
     refreshImpactMarkingUI();
 }
@@ -358,6 +361,7 @@ async function handleCommercialAmmoSubmit(e) {
     await updateItem('loads', ammo);
     e.target.reset();
     document.getElementById('commercialAmmoId').value = ''; 
+    await refreshLoadFilters();
     renderLoadsTable();
     refreshImpactMarkingUI();
 }
@@ -476,7 +480,8 @@ async function handleLoadTableClick(e) {
 
     if (action === 'delete') {
         if (confirm('Are you sure?')) { 
-            await deleteItem('loads', id); 
+            await deleteItem('loads', id);
+            await refreshLoadFilters();
             renderLoadsTable(); 
             refreshImpactMarkingUI();
         }

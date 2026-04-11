@@ -67,40 +67,42 @@
                     </div>
                 </div>
 
-                <div id="load-filters" class="card" style="margin-bottom: 1rem; padding: 1rem;">
-                    <h4 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 0.875rem;">Filter Loads</h4>
-                    <div class="form-grid">
-                        <div>
-                            <label for="filterCartridge">Cartridge</label>
-                            <select id="filterCartridge"><option value="">All</option></select>
-                        </div>
-                        <div>
-                            <label for="filterBullet">Bullet</label>
-                            <select id="filterBullet"><option value="">All</option></select>
-                        </div>
-                        <div>
-                            <label for="filterPowder">Powder</label>
-                            <select id="filterPowder"><option value="">All</option></select>
-                        </div>
-                        <div style="display: flex; align-items: flex-end;">
-                            <button type="button" id="clearFilters" class="btn-gray btn-small" style="width: 100%; margin-bottom: 0.2rem;">Clear Filters</button>
+                <div style="border: 1px solid #374151; border-radius: 0.5rem; background-color: #1f2937; margin-top: 2rem;">
+                    <div id="load-filters" style="padding: 1rem; border-bottom: 1px solid #374151; background-color: #2a374a; border-radius: 0.5rem 0.5rem 0 0;">
+                        <h4 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 0.875rem; color: #9ca3af;">Data Table Filters</h4>
+                        <div class="form-grid">
+                            <div>
+                                <label for="filterCartridge">Cartridge</label>
+                                <select id="filterCartridge"><option value="">All</option></select>
+                            </div>
+                            <div>
+                                <label for="filterBullet">Bullet</label>
+                                <select id="filterBullet"><option value="">All</option></select>
+                            </div>
+                            <div>
+                                <label for="filterPowder">Powder</label>
+                                <select id="filterPowder"><option value="">All</option></select>
+                            </div>
+                            <div style="display: flex; align-items: flex-end;">
+                                <button type="button" id="clearFilters" class="btn-gray btn-small" style="width: 100%; margin-bottom: 0.2rem;">Clear Filters</button>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="data-table-container">
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Cartridge</th>
-                                <th>Bullet</th>
-                                <th>Charge</th>
-                                <th>COAL</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody id="loadsTableBody"></tbody>
-                    </table>
+                    <div class="data-table-container" style="margin-top: 0; border: none; border-radius: 0 0 0.5rem 0.5rem;">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Cartridge</th>
+                                    <th>Bullet</th>
+                                    <th>Charge</th>
+                                    <th>COAL</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="loadsTableBody"></tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         
