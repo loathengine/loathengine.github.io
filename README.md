@@ -106,8 +106,8 @@ Analyze individual sessions or **composite multiple sessions** for better statis
 1.  **Select Sessions:** Use the list to select sessions. Hold `Ctrl` or `Cmd` to select multiple.
 2.  **Analyze:** Click **"Analyze Selected Session(s)"**.
 3.  **Review the Results:**
-    -   **Statistics Table:** View robust statistical metrics including **Mean Radius (MR)**, Group Size (Extreme Spread), **95th Percentile Spread**, and A-ZED.
-        - *Note: The 95th Percentile Spread mathematically models the true edge-to-edge diameter of a distribution circle capable of containing 95% of your shots, making it an excellent predictor of field capability.*
+    -   **Statistics Table:** View robust statistical metrics including **Mean Radius (MR)**, Group Size (Extreme Spread), **Circular Error Probable (CEP)** at 90%, and A-ZED.
+        - *Note: CEP 90% mathematically models an impact radius where 90% of your shots are expected to land, making it an excellent predictor of field capability compared to highly-variable Extreme Spread.*
     -   **Dispersion Analysis:** Checks for vertical stringing and velocity correlations.
     -   **Composite Plot:** A visual representation of all selected groups overlaid, aligned by their Mean Point of Impact (MPI). This effectively builds a much larger, statistically significant dataset that accurately illustrates the true dispersion capabilities of the system.
 4.  **Export:** Click **"Export as Image"** to save the plot and stats.
@@ -123,13 +123,13 @@ Estimate the gyroscopic stability ($S_g$) of your projectiles.
 ### DB Management Tab
 Advanced data management for your local IndexedDB.
 
--   **Global Actions:**
-    -   `Export Entire Database`: Saves a JSON backup. **Highly recommended.**
-    -   `Import Master Database`: Loads a standard set of components. **Overwrites existing data.**
-    -   `Import Entire Database`: Restores from a backup file.
-    -   `Delete Entire Database`: **Permanent deletion.**
--   **Merge Database:** Allows you to select a JSON backup and merge its contents into your current database. You can "Test Merge" first to see how many new records will be added or updated.
--   **Table Specific Actions:** Export, import, or clear individual tables (e.g., just your firearms).
+-   **System vs Personal Data:** The application natively separates and protects your personal entries (Firearms, Targets, Sessions, and Hand Loads) while allowing you to effortlessly sync standard industry components.
+-   **Safe Sync Tools:**
+    -   `Sync Components`: Securely merges hundreds of standard bullet profiles, powders, brass makes, and commercial loads directly from the Open-Source `master-db.json` into your application **without** touching your personal data.
+-   **Management Actions:**
+    -   `Nuclear Reset`: Completely wipes your local IndexedDB to initialize a clean session.
+    -   `Export System Backup`: Safely saves a JSON export of your personal database.
+    -   `Merge Database`: Allows you to select an old saved JSON backup and merge your firearms/loads into a new installation context.
 
 ---
 
