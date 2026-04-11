@@ -639,7 +639,7 @@ export async function initTargetGenerator() {
                 id: generateUniqueId(),
                 name: presetNameInput.value.trim() || `Custom Target ${new Date().toLocaleString()}`,
                 timestamp: new Date().toISOString(),
-                data: dataUrl,
+                dataUrl: dataUrl,
                 size: Math.round((dataUrl.length * (3/4)) / 1024) + ' KB'
             };
             

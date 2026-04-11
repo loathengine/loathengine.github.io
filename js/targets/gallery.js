@@ -30,7 +30,7 @@ export async function renderTargetImages() {
                     <input type="checkbox" class="combine-checkbox" data-id="${item.id}" style="width: 1.25rem; height: 1.25rem; cursor: pointer;">
                 </div>
                 <div style="width: 100%; aspect-ratio: 1 / 1.4; background-color: #374151; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 0.25rem;">
-                     <img src="${item.dataUrl}" alt="${item.name}" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                     <img src="${item.dataUrl || item.data}" alt="${item.name}" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                 </div>
                 <input type="text" value="${item.name}" class="target-name-input" style="margin-top: 0.5rem; width: 100%; box-sizing: border-box;">
                 <div class="flex-container" style="margin-top: 0.5rem; justify-content: center;">

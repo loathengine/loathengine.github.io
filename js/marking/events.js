@@ -66,7 +66,7 @@ export function setupEventListeners() {
 
                 if (!state.sessionID) { resetState(); } 
             };
-            newImg.src = targetData.dataUrl;
+            newImg.src = targetData.dataUrl || targetData.data;
         }
     });
 
