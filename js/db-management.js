@@ -2,6 +2,9 @@
 import { getAllItems, getObjectStores, deleteDatabase, openDB, deleteItem } from './db.js';
 import { triggerDownload } from './utils.js';
 
+const SYSTEM_TABLES = ['cartridges', 'diameters', 'manufacturers', 'bullets', 'powders', 'primers', 'brass'];
+const PERSONAL_TABLES = ['firearms', 'loads', 'targets', 'impactData'];
+
 export function initDbManagement() {
     const tableSelect = document.getElementById('tableSelect');
     
@@ -19,12 +22,15 @@ export function initDbManagement() {
         tableSelect.appendChild(option);
     });
 
-    // Unified Actions
-    document.getElementById('unifiedExportBtn').addEventListener('click', handleUnifiedExport);
-    document.getElementById('unifiedImportBtn').addEventListener('click', handleUnifiedImport);
+    document.getElementById('syncLocalMasterBtn').addEventListener('click', () => handleSyncMaster('./master-db.json'));
+    document.getElementById('syncWebMasterBtn').addEventListener('click', () => handleSyncMaster('https://raw.githubusercontent.com/loathengine/Empirical-Percision/main/master-db.json'));
+    
     document.getElementById('unifiedMergeBtn').addEventListener('click', handleUnifiedMerge);
+    document.getElementById('exportPersonalBtn').addEventListener('click', handleExportPersonal);
+    document.getElementById('unifiedExportBtn').addEventListener('click', handleUnifiedExport);
+    
+    document.getElementById('wipePersonalBtn').addEventListener('click', handleWipePersonal);
     document.getElementById('unifiedDeleteBtn').addEventListener('click', handleUnifiedDelete);
-    document.getElementById('importMasterDbBtn').addEventListener('click', importMasterDatabase);
 
     tableSelect.addEventListener('change', renderSelectedTable);
 }
@@ -43,6 +49,21 @@ function clearMergeLog() {
     const logDiv = document.getElementById('mergeResultLog');
     logDiv.innerHTML = '';
     logDiv.style.display = 'none';
+}
+
+async function handleExportPersonal() {
+    const allData = {};
+    for (const storeName of PERSONAL_TABLES) { 
+        allData[storeName] = await getAllItems(storeName); 
+    }
+    const dateString = new Date().toISOString().slice(0, 10);
+    const jsonString = '{\n' +
+        Object.keys(allData).map(storeName => {
+            const items = allData[storeName].map(item => '    ' + JSON.stringify(item));
+            return `  "${storeName}": [\n${items.join(',\n')}\n  ]`;
+        }).join(',\n') +
+    '\n}';
+    triggerDownload(jsonString, `personal-data-backup-${dateString}.json`);
 }
 
 async function handleUnifiedExport() {
@@ -114,83 +135,28 @@ async function handleUnifiedDelete() {
     }
 }
 
-async function handleUnifiedImport() {
-    clearMergeLog();
-    const scope = document.getElementById('tableSelect').value;
-    const fileInput = document.getElementById('dbFileInput');
-    const file = fileInput.files[0];
-    
-    if (!file) {
-        alert('Please select a JSON file to import.');
-        return;
-    }
-
-    if (!confirm('Are you sure you want to overwrite? ALL existing records in the target scope will be erased!')) return;
-    
-    logMergeResult(`Starting absolute overwrite for ${scope === 'all' ? 'Entire Database' : 'Table: ' + scope}...`, false);
-
-    const reader = new FileReader();
-    reader.onload = async (e) => {
+async function handleWipePersonal() {
+    if (confirm('Are you sure you want to permanently delete ALL personal data (Firearms, Loads, Targets, Markings)? System components will remain untouched.')) {
         try {
-            const data = JSON.parse(e.target.result);
-            const db = await openDB(); 
-            
-            if (scope === 'all') {
-                if (typeof data !== 'object' || Array.isArray(data)) {
-                    logMergeResult(`Error: Invalid JSON format. Root must be an object keyed by table names.`, true);
-                    return;
-                }
-                const stores = getObjectStores();
-                const validStores = Object.keys(data).filter(s => stores.includes(s));
-                if (validStores.length === 0) {
-                    logMergeResult('Error: No valid tables found in import file.', true);
-                    return;
-                }
-                const transaction = db.transaction(validStores, 'readwrite');
-                for (const storeName of validStores) {
-                    const store = transaction.objectStore(storeName);
-                    store.clear();
-                    const items = data[storeName];
-                    if (Array.isArray(items)) {
-                        for (const item of items) { store.put(item); }
-                    }
-                }
-                transaction.oncomplete = async () => {
-                    logMergeResult(`Overwrite Successful! Database replaced.`);
-                    alert('Database overwritten successfully!');
-                    fileInput.value = '';
-                    window.dispatchEvent(new Event('app-refresh'));
-                    renderSelectedTable();
-                };
-                transaction.onerror = (err) => { 
-                    logMergeResult(`Overwrite Failed: ${err.target.error.message}`, true);
-                };
-            } else {
-                if (!Array.isArray(data)) {
-                    logMergeResult(`Error: Invalid JSON format. Expected an array of records for a specific table.`, true);
-                    return;
-                }
-                const transaction = db.transaction([scope], 'readwrite');
-                const store = transaction.objectStore(scope);
+            const db = await openDB();
+            const transaction = db.transaction(PERSONAL_TABLES, 'readwrite');
+            for (const storeName of PERSONAL_TABLES) {
+                const store = transaction.objectStore(storeName);
                 store.clear();
-                data.forEach(item => store.put(item));
-                transaction.oncomplete = async () => { 
-                    logMergeResult(`Table '${scope}' imported successfully!`); 
-                    alert(`Table '${scope}' imported successfully!`); 
-                    fileInput.value = '';
-                    window.dispatchEvent(new Event('app-refresh'));
-                    renderSelectedTable();
-                };
-                transaction.onerror = (err) => { 
-                    logMergeResult(`Import Failed: ${err.target.error.message}`, true);
-                };
             }
-        } catch (error) { 
-            console.error('Error parsing or importing DB file:', error); 
-            logMergeResult(`Critical Error: Invalid JSON file format.`, true);
-        };
-    };
-    reader.readAsText(file);
+            transaction.oncomplete = async () => { 
+                alert('All personal data has been wiped.'); 
+                window.dispatchEvent(new Event('app-refresh'));
+                renderSelectedTable();
+            };
+            transaction.onerror = (err) => { 
+                console.error(`Error clearing personal tables:`, err); 
+                alert(`Failed to clear personal data.`); 
+            };
+        } catch (err) {
+            console.error('Error in handleWipePersonal:', err);
+        }
+    }
 }
 
 async function handleUnifiedMerge() {
@@ -292,12 +258,14 @@ async function handleUnifiedMerge() {
     reader.readAsText(file);
 }
 
-async function importMasterDatabase() {
-    if (!confirm('Are you sure you want to restore the default master database? This will overwrite all existing data.')) {
+async function handleSyncMaster(url) {
+    if (!confirm('Are you sure you want to sync System Components from the master database? This will safely overwrite Components (Bullets, Powders, etc) but your Personal Data (Firearms/Loads) will NOT be touched.')) {
         return;
     }
 
-    const url = './master-db.json';
+    clearMergeLog();
+    logMergeResult(`Fetching master database from ${url}...`, false);
+
     try {
         const response = await fetch(url);
         if (!response.ok) {
@@ -306,29 +274,40 @@ async function importMasterDatabase() {
         const data = await response.json();
         
         const db = await openDB();
-        const stores = getObjectStores();
+        
+        // We only overwrite SYSTEM_TABLES safely
+        const validSystemStores = SYSTEM_TABLES.filter(s => data[s] && Array.isArray(data[s]));
 
-        const transaction = db.transaction(stores, 'readwrite');
-        for (const storeName of stores) {
-            if (data[storeName]) {
-                const store = transaction.objectStore(storeName);
-                store.clear();
-                for (const item of data[storeName]) {
-                    store.put(item);
-                }
+        if (validSystemStores.length === 0) {
+            logMergeResult('Error: No valid system components found in the master file.', true);
+            return;
+        }
+
+        const transaction = db.transaction(validSystemStores, 'readwrite');
+        let totalItems = 0;
+
+        for (const storeName of validSystemStores) {
+            const store = transaction.objectStore(storeName);
+            store.clear();
+            for (const item of data[storeName]) {
+                store.put(item);
+                totalItems++;
             }
         }
         transaction.oncomplete = async () => {
-            alert('Default Master Database restored successfully!');
+            logMergeResult(`Sync Successful! Imported ${totalItems} components from ${validSystemStores.length} tables.`);
+            alert('System Components successfully synchronized!');
             window.dispatchEvent(new Event('app-refresh'));
             renderSelectedTable();
         };
         transaction.onerror = (err) => {
             console.error('Import transaction error:', err);
-            alert('Failed to restore master database.');
+            logMergeResult(`Sync Failed: ${err.target.error.message}`, true);
+            alert('Failed to sync master database.');
         };
     } catch (error) {
         console.error('Error fetching or importing master DB file:', error);
+        logMergeResult(`Critical Error: Could not fetch or parse the master database.`, true);
         alert('Could not fetch or import the master database.');
     }
 }

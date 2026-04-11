@@ -1,32 +1,54 @@
 
-            <div class="db-grid" style="display: block; max-width: 800px; margin: 0 auto;">
-                <div class="card db-actions">
-                    <h3>Database Management</h3>
-                    <div class="action-group">
-                        <div>
-                            <label for="tableSelect">Target Scope</label>
-                            <select id="tableSelect">
-                                <!-- Options populated by JS -->
-                            </select>
-                        </div>
-                        <div>
-                            <label for="dbFileInput">Select Data File (JSON)</label>
-                            <input type="file" id="dbFileInput" accept=".json">
-                        </div>
-                        <div class="button-group" style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
-                            <button id="unifiedImportBtn" class="btn-yellow" style="flex: 1;">Import (Overwrite)</button>
-                            <button id="unifiedMergeBtn" class="btn-green" style="flex: 1;">Merge</button>
-                            <button id="unifiedExportBtn" class="btn-blue" style="flex: 1;">Export</button>
-                            <button id="unifiedDeleteBtn" class="btn-red" style="flex: 1;">Delete / Clear</button>
-                        </div>
-                        <div style="margin-top: 1rem;">
-                            <button id="importMasterDbBtn" class="btn-blue" style="width: 100%;">Restore Default Master Data</button>
-                        </div>
-                        <div id="mergeResultLog" style="margin-top: 1rem; max-height: 150px; overflow-y: auto; background: #1f2937; padding: 0.5rem; border-radius: 0.25rem; font-family: monospace; font-size: 0.8rem; white-space: pre-wrap; display: none;"></div>
+            <div class="db-grid" style="display: flex; flex-direction: column; max-width: 800px; margin: 0 auto; gap: 1.5rem;">
+                
+                <!-- 1. System Sync -->
+                <div class="card db-actions" style="border: 1px solid #3b82f6;">
+                    <h3 style="color: #3b82f6;">System Data Sync (Safe)</h3>
+                    <p style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 1rem;">Safely pull the latest components (Bullets, Powders, Cartridges) from the master database. <strong>This will NOT overwrite your personal Firearms, Targets, or Loads.</strong></p>
+                    <div class="button-group" style="display: flex; gap: 0.5rem;">
+                        <button id="syncLocalMasterBtn" class="btn-blue" style="flex: 1;">Sync Components (Local File)</button>
+                        <button id="syncWebMasterBtn" class="btn-blue" style="flex: 1;">Sync Components (Website)</button>
                     </div>
                 </div>
+
+                <!-- 2. Backup & Restore -->
+                <div class="card db-actions" style="border: 1px solid #10b981;">
+                    <h3 style="color: #10b981;">Backup & Restore</h3>
+                    <p style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 1rem;">Export your files safely. Restoring from a backup will merge records by ID without destroying unrelated items.</p>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label for="dbFileInput">Restore from JSON Backup</label>
+                        <input type="file" id="dbFileInput" accept=".json">
+                        <button id="unifiedMergeBtn" class="btn-green" style="width: 100%; margin-top: 0.5rem;">Restore / Merge Data</button>
+                    </div>
+
+                    <div class="button-group" style="display: flex; gap: 0.5rem; border-top: 1px solid #374151; padding-top: 1rem;">
+                        <button id="exportPersonalBtn" class="btn-gray" style="flex: 1;">Export Personal Data Only</button>
+                        <button id="unifiedExportBtn" class="btn-gray" style="flex: 1;">Export Entire Database</button>
+                    </div>
+                </div>
+
+                <!-- 3. Danger Zone -->
+                <div class="card db-actions" style="border: 1px solid #ef4444;">
+                    <h3 style="color: #ef4444;">Danger Zone</h3>
+                    <p style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 1rem;">Irreversible operations.</p>
+                    <div class="button-group" style="display: flex; gap: 0.5rem;">
+                        <button id="wipePersonalBtn" class="btn-red" style="flex: 1;">Wipe Personal Data</button>
+                        <button id="unifiedDeleteBtn" class="btn-red" style="flex: 1;">Nuclear Reset (All Data)</button>
+                    </div>
+                </div>
+
+                <div id="mergeResultLog" style="margin-top: 1rem; max-height: 150px; overflow-y: auto; background: #1f2937; padding: 0.5rem; border-radius: 0.25rem; font-family: monospace; font-size: 0.8rem; white-space: pre-wrap; display: none;"></div>
             </div>
+
             <div class="card" style="margin-top: 1.5rem;">
+                <h3>Advanced Table Browser</h3>
+                <div style="margin-bottom: 1rem; max-width: 400px;">
+                    <label for="tableSelect">Target Scope</label>
+                    <select id="tableSelect">
+                        <!-- Options populated by JS -->
+                    </select>
+                </div>
                 <h3>Table Contents: <span id="selectedTableName" style="text-transform: capitalize;"></span></h3>
                 <div id="table-display-container" class="data-table-container">
                     <p style="text-align: center; color: #9ca3af;">Select a table to view its contents.</p>
