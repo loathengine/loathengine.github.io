@@ -26,8 +26,10 @@ export function calculateStatsForSession(shots, targetDistance = null, distanceU
         }
     }
 
-    // R95 estimate
+    // R95 estimate for A-ZED
     const r95 = meanRadius * 1.953;
+    // CEP 90% (Circle radius containing 90% of shots based on Rayleigh distribution)
+    const cep90 = meanRadius * 1.712;
     const hasVerticalDispersion = sd_y > sd_x * 1.5;
 
     // Velocity Stats
@@ -67,7 +69,7 @@ export function calculateStatsForSession(shots, targetDistance = null, distanceU
     
     let angStats = {
         mr: { moa: null, mrad: null },
-        spread95: { moa: null, mrad: null },
+        cep90: { moa: null, mrad: null },
         gs: { moa: null, mrad: null },
         sd_x: { moa: null, mrad: null },
         sd_y: { moa: null, mrad: null },
@@ -79,9 +81,8 @@ export function calculateStatsForSession(shots, targetDistance = null, distanceU
         angStats.mr.moa = meanRadius * factors.moa;
         angStats.mr.mrad = meanRadius * factors.mrad;
         
-        const spread95 = r95 * 2;
-        angStats.spread95.moa = spread95 * factors.moa;
-        angStats.spread95.mrad = spread95 * factors.mrad;
+        angStats.cep90.moa = cep90 * factors.moa;
+        angStats.cep90.mrad = cep90 * factors.mrad;
 
         angStats.gs.moa = maxSpread * factors.moa;
         angStats.gs.mrad = maxSpread * factors.mrad;

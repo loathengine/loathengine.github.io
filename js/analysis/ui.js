@@ -15,9 +15,9 @@ export function renderComparisonTable(results, statOutputContainer) {
         <tr>
             <th style="white-space: nowrap;">Session Details</th>
             <th style="white-space: nowrap;">Shots</th>
-            <th style="white-space: nowrap;">Mean Radius (MR)</th>
             <th style="white-space: nowrap;">MR Confidence (95%)</th>
-            <th style="white-space: nowrap;">95th Percentile Spread</th>
+            <th style="white-space: nowrap;">Mean Radius (MR)</th>
+            <th style="white-space: nowrap;">CEP (90%)</th>
             <th style="white-space: nowrap;">Group Size</th>
             <th style="white-space: nowrap;">A-ZED</th>
             <th style="white-space: nowrap;">Horizontal SD</th>
@@ -54,8 +54,8 @@ export function renderComparisonTable(results, statOutputContainer) {
             ? `${stats.ang.mr.moa.toFixed(2)} moa <br><span style="color:#9ca3af; font-size:0.85em">${stats.ang.mr.mrad.toFixed(2)} mrad</span>` 
             : noDistMsg;
 
-        const r95Display = stats.hasDistance
-            ? `${stats.ang.spread95.moa.toFixed(2)} moa <br><span style="color:#9ca3af; font-size:0.85em">${stats.ang.spread95.mrad.toFixed(2)} mrad</span>` 
+        const cepDisplay = stats.hasDistance
+            ? `${stats.ang.cep90.moa.toFixed(2)} moa <br><span style="color:#9ca3af; font-size:0.85em">${stats.ang.cep90.mrad.toFixed(2)} mrad</span>` 
             : noDistMsg;
 
         const mrCiDisplay = stats.hasDistance
@@ -81,9 +81,9 @@ export function renderComparisonTable(results, statOutputContainer) {
         row.innerHTML = `
             <td><span style="display: inline-block; vertical-align: middle; width: 12px; height: 12px; background-color: ${color}; margin-right: 8px; border-radius: 3px;"></span>${result.sessionName}</td>
             <td>${stats.n}</td>
-            <td style="font-weight: 600;">${mrDisplay}</td>
             <td>${mrCiDisplay} <br><span style="color: ${stats.confidence_color}; font-weight: 600; font-size: 0.85em">(${stats.confidence_level})</span></td>
-            <td style="font-weight: 600;">${r95Display}</td>
+            <td style="font-weight: 600;">${mrDisplay}</td>
+            <td style="font-weight: 600;">${cepDisplay}</td>
             <td>${gsDisplay}</td>
             <td style="font-weight: 600; color: #3b82f6;">${aZedDisplay}</td>
             <td>${sdXDisplay}</td>
