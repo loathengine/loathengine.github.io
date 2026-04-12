@@ -23,7 +23,7 @@ export function initDbManagement() {
     });
 
     document.getElementById('syncLocalMasterBtn').addEventListener('click', () => handleSyncMaster('./master-db.json'));
-    document.getElementById('syncWebMasterBtn').addEventListener('click', () => handleSyncMaster('https://raw.githubusercontent.com/loathengine/Empirical-Percision/main/master-db.json'));
+    document.getElementById('syncWebMasterBtn').addEventListener('click', () => handleSyncMaster('https://raw.githubusercontent.com/loathengine/loathengine.github.io/main/master-db.json'));
     
     document.getElementById('unifiedMergeBtn').addEventListener('click', handleUnifiedMerge);
     document.getElementById('exportPersonalBtn').addEventListener('click', handleExportPersonal);
