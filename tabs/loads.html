@@ -1,27 +1,40 @@
             <div class="card">
                 <h3>Manage Load Data</h3>
-                <div class="tabs-nav" style="border-bottom: none; margin-bottom: 1.5rem;">
-                    <a class="sub-tab-link active" data-subtab="hand-load">Hand Load</a>
-                    <a class="sub-tab-link" data-subtab="commercial-ammo">Commercial Ammo</a>
+                <div class="form-grid" style="margin-bottom: 1rem;">
+                    <label class="checkbox-container" style="display: flex; align-items: center; justify-content: flex-start; cursor: pointer; padding: 0.5rem; background: #1f2937; border-radius: 0.375rem; border: 1px solid #374151; width: fit-content;">
+                        <input type="checkbox" id="loadIsCommercialCheckbox" style="margin-right: 0.5rem;">
+                        <span style="font-weight: 600; color: #d1d5db;">This is a Commercial Load</span>
+                    </label>
                 </div>
 
                 <div id="load-forms-container">
-                    <div class="tab-content active" id="hand-load-subtab">
-                        <form id="loadForm">
-                            <input type="hidden" id="loadId">
-                            <div class="form-grid" style="margin-bottom: 1rem;">
-                                <div><label for="loadDiameter">Diameter</label><select id="loadDiameter"></select></div>
-                                <div><label for="loadCartridge">Cartridge</label><select id="loadCartridge"></select></div>
-                            </div>
-                            <div class="form-grid" style="margin-bottom: 1rem;">
-                                <div><label for="loadBulletWeight">Bullet Weight</label><select id="loadBulletWeight"></select></div>
-                                <div><label for="loadBullet">Bullet (Manuf./Name)</label><select id="loadBullet"></select></div>
-                                <div><label for="loadBulletLot">Bullet Lot</label><input type="text" id="loadBulletLot"></div>
-                            </div>
+                    <form id="loadForm">
+                        <input type="hidden" id="loadId">
+                        
+                        <div class="form-grid" style="margin-bottom: 1rem;">
+                            <div><label for="loadDiameter">Diameter</label><select id="loadDiameter"></select></div>
+                            <div><label for="loadCartridge">Cartridge</label><select id="loadCartridge"></select></div>
+                        </div>
+
+                        <!-- Commercial fields -->
+                        <div id="commercialNameContainer" class="form-grid" style="display: none; margin-bottom: 1rem;">
+                            <div style="grid-column: span 2;"><label for="loadCommercialName">Commercial Ammo Name</label><input type="text" id="loadCommercialName" placeholder="e.g. Hornady Match"></div>
+                            <div><label for="loadCommercialPart">Part #</label><input type="text" id="loadCommercialPart"></div>
+                        </div>
+                        
+                        <div class="form-grid" style="margin-bottom: 1rem;">
+                            <!-- Handload primarily filters by weight first, commercial just picks from all bullets in diameter -->
+                            <div id="bulletWeightContainer"><label for="loadBulletWeight">Bullet Weight</label><select id="loadBulletWeight"></select></div>
+                            <div id="bulletNameContainer"><label for="loadBullet">Bullet (Manuf./Name)</label><select id="loadBullet"></select></div>
+                            <div><label for="loadBulletLot">Bullet / Ammo Lot</label><input type="text" id="loadBulletLot"></div>
+                        </div>
+
+                        <!-- HANDLOAD ONLY FIELDS -->
+                        <div id="handloadOnlySections">
                             <div class="form-grid" style="margin-bottom: 1rem;">
                                 <div><label for="loadPowderManufacturer">Powder Manufacturer</label><select id="loadPowderManufacturer"></select></div>
                                 <div><label for="loadPowder">Powder</label><select id="loadPowder"></select></div>
-                                <div><label for="loadChargeWeight">Charge (gr)</label><input type="number" step="0.1" id="loadChargeWeight" inputmode="decimal" required></div>
+                                <div><label for="loadChargeWeight">Charge (gr)</label><input type="number" step="0.1" id="loadChargeWeight" inputmode="decimal"></div>
                                 <div><label for="loadPowderLot">Powder Lot</label><input type="text" id="loadPowderLot"></div>
                             </div>
                             <div class="form-grid" style="margin-bottom: 1rem;">
@@ -43,27 +56,11 @@
                                 <div><label for="loadBrassLot">Brass Lot</label><input type="text" id="loadBrassLot"></div>
                                 <div><label for="loadFirings"># of Firings</label><input type="number" step="1" id="loadFirings" inputmode="numeric"></div>
                             </div>
-                        </form>
-                        <div class="flex-container" style="margin-top: 1rem; max-width: 400px;">
-                            <button type="submit" form="loadForm" class="btn-blue">Save Hand Load</button>
-                            <button type="reset" form="loadForm" class="btn-gray">Clear Form</button>
                         </div>
-                    </div>
-
-                    <div class="tab-content" id="commercial-ammo-subtab">
-                        <form id="commercialAmmoForm" class="form-grid">
-                            <input type="hidden" id="commercialAmmoId">
-                            <div><label for="commercialAmmoDiameter">Diameter</label><select id="commercialAmmoDiameter"></select></div>
-                            <div><label for="commercialAmmoCartridge">Cartridge</label><select id="commercialAmmoCartridge"></select></div>
-                            <div><label for="commercialAmmoName">Ammo Name</label><input type="text" id="commercialAmmoName" required></div>
-                            <div><label for="commercialAmmoBullet">Bullet</label><select id="commercialAmmoBullet"></select></div>
-                            <div><label for="commercialAmmoPartNumber">Part #</label><input type="text" id="commercialAmmoPartNumber"></div>
-                            <div><label for="commercialAmmoLot">Lot #</label><input type="text" id="commercialAmmoLot"></div>
-                        </form>
-                        <div class="flex-container" style="margin-top: 1rem; max-width: 400px;">
-                            <button type="submit" form="commercialAmmoForm" class="btn-blue">Save Commercial Ammo</button>
-                            <button type="reset" form="commercialAmmoForm" class="btn-gray">Clear Form</button>
-                        </div>
+                    </form>
+                    <div class="flex-container" style="margin-top: 1rem; max-width: 400px;">
+                        <button type="submit" form="loadForm" class="btn-blue">Save Load Data</button>
+                        <button type="reset" form="loadForm" class="btn-gray">Clear Form</button>
                     </div>
                 </div>
 
@@ -71,6 +68,10 @@
                     <div id="load-filters" style="padding: 1rem; border-bottom: 1px solid #374151; background-color: #2a374a; border-radius: 0.5rem 0.5rem 0 0;">
                         <h4 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 0.875rem; color: #9ca3af;">Data Table Filters</h4>
                         <div class="form-grid">
+                            <div style="grid-column: 1 / -1; display: flex; gap: 1.5rem; margin-bottom: 0.5rem; align-items: center; border-bottom: 1px solid #374151; padding-bottom: 1rem;">
+                                <label class="checkbox-container"><input type="checkbox" id="filterShowHandloads" checked> Show Hand Loads</label>
+                                <label class="checkbox-container"><input type="checkbox" id="filterShowCommercial" checked> Show Commercial Loads</label>
+                            </div>
                             <div>
                                 <label for="filterCartridge">Cartridge</label>
                                 <select id="filterCartridge"><option value="">All</option></select>

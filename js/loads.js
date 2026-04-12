@@ -3,8 +3,6 @@ import { getAllItems, updateItem, deleteItem, getItem, generateUniqueId } from '
 import { populateSelect } from './utils.js';
 import { refreshImpactMarkingUI } from './marking.js';
 
-let currentLoadTypeFilter = 'all';
-
 async function refreshLoadCartridgeDropdown() {
     const allCartridges = await getAllItems('cartridges');
     const selectedDiameter = document.getElementById('loadDiameter').value;
@@ -112,45 +110,7 @@ async function refreshPowderNameDropdown() {
     powderSelect.value = oldValue;
 }
 
-async function refreshCommercialAmmoCartridgeDropdown() {
-    const diameterId = document.getElementById('commercialAmmoDiameter').value;
-    const allCartridges = await getAllItems('cartridges');
-    const filteredCartridges = diameterId
-        ? allCartridges.filter(c => c.diameterId === diameterId)
-        : []; 
-    populateSelect('commercialAmmoCartridge', filteredCartridges, 'name', 'id');
-    
-    await refreshCommercialAmmoBulletDropdown();
-}
 
-async function refreshCommercialAmmoBulletDropdown() {
-    const diameterId = document.getElementById('commercialAmmoDiameter').value;
-    const bulletSelect = document.getElementById('commercialAmmoBullet');
-    
-    bulletSelect.innerHTML = '<option value="">-- Select --</option>';
-    
-    if (!diameterId) return;
-
-    const allBullets = await getAllItems('bullets');
-    const allManufacturers = await getAllItems('manufacturers');
-    
-    const filteredBullets = allBullets.filter(b => b.diameterId === diameterId);
-
-    filteredBullets.sort((a, b) => {
-        if (a.weight !== b.weight) return a.weight - b.weight;
-        return a.name.localeCompare(b.name);
-    });
-
-    for (const bullet of filteredBullets) {
-        const manufacturer = allManufacturers.find(m => m.id === bullet.manufacturerId);
-        const mfgName = manufacturer ? manufacturer.name : 'Unknown';
-        
-        const option = document.createElement('option');
-        option.value = bullet.id;
-        option.textContent = `${bullet.weight}gr ${mfgName} ${bullet.name}`;
-        bulletSelect.appendChild(option);
-    }
-}
 
 async function refreshLoadFilters() {
     const allLoads = await getAllItems('loads');
@@ -216,8 +176,17 @@ async function refreshLoadFilters() {
 
 export function initLoadsManagement() {
     document.getElementById('loadForm').addEventListener('submit', handleLoadSubmit);
-    document.getElementById('loadForm').addEventListener('reset', () => document.getElementById('loadId').value = '');
+    document.getElementById('loadForm').addEventListener('reset', () => {
+        document.getElementById('loadId').value = '';
+        setTimeout(toggleCommercialFields, 0);
+    });
+    
     document.getElementById('loadsTableBody').addEventListener('click', handleLoadTableClick);
+    
+    const isCommercialCheckbox = document.getElementById('loadIsCommercialCheckbox');
+    if (isCommercialCheckbox) {
+        isCommercialCheckbox.addEventListener('change', toggleCommercialFields);
+    }
     
     document.getElementById('loadDiameter').addEventListener('change', async () => {
         await refreshLoadCartridgeDropdown();
@@ -228,48 +197,8 @@ export function initLoadsManagement() {
     document.getElementById('loadBulletWeight').addEventListener('change', refreshBulletNameDropdown);
     document.getElementById('loadPowderManufacturer').addEventListener('change', refreshPowderNameDropdown);
 
-    const subTabContainer = document.querySelector('#loads .tabs-nav');
-    if(subTabContainer) {
-        const subTabContents = document.querySelectorAll('#load-forms-container .tab-content');
-        subTabContainer.addEventListener('click', (e) => {
-            if(e.target && e.target.classList.contains('sub-tab-link')) {
-                e.preventDefault();
-                const subTabId = e.target.getAttribute('data-subtab');
-                subTabContainer.querySelectorAll('.sub-tab-link').forEach(l => l.classList.remove('active'));
-                e.target.classList.add('active');
-                subTabContents.forEach(content => {
-                    content.classList.remove('active');
-                    if (content.id === `${subTabId}-subtab`) { content.classList.add('active'); }
-                });
-
-                if (subTabId === 'hand-load') {
-                    currentLoadTypeFilter = 'handload';
-                } else if (subTabId === 'commercial-ammo') {
-                    currentLoadTypeFilter = 'commercial';
-                } else {
-                    currentLoadTypeFilter = 'all';
-                }
-                
-                document.getElementById('loadForm').reset();
-                document.getElementById('commercialAmmoForm').reset();
-                document.getElementById('loadId').value = '';
-                document.getElementById('commercialAmmoId').value = '';
-
-                renderLoadsTable();
-            }
-        });
-        
-        const activeTab = subTabContainer.querySelector('.sub-tab-link.active');
-        if (activeTab) {
-             const subTabId = activeTab.getAttribute('data-subtab');
-             if (subTabId === 'hand-load') currentLoadTypeFilter = 'handload';
-             else if (subTabId === 'commercial-ammo') currentLoadTypeFilter = 'commercial';
-        }
-    }
-
-    document.getElementById('commercialAmmoForm').addEventListener('submit', handleCommercialAmmoSubmit);
-    document.getElementById('commercialAmmoForm').addEventListener('reset', () => document.getElementById('commercialAmmoId').value = '');
-    document.getElementById('commercialAmmoDiameter').addEventListener('change', refreshCommercialAmmoCartridgeDropdown);
+    document.getElementById('filterShowHandloads').addEventListener('change', renderLoadsTable);
+    document.getElementById('filterShowCommercial').addEventListener('change', renderLoadsTable);
 
     document.getElementById('filterCartridge').addEventListener('change', async () => {
         await refreshLoadFilters();
@@ -307,60 +236,66 @@ export async function refreshLoadsUI() {
     document.getElementById('loadPowder').innerHTML = '<option value="">-- Select --</option>';
     document.getElementById('loadBrass').innerHTML = '<option value="">-- Select --</option>';
 
-    populateSelect('commercialAmmoDiameter', allDiameters, 'imperial', 'id');
-    await refreshCommercialAmmoCartridgeDropdown();
-
     await refreshLoadFilters();
 
     renderLoadsTable();
+}
+
+function toggleCommercialFields() {
+    const isCommercial = document.getElementById('loadIsCommercialCheckbox').checked;
+    const commercialOnly = document.getElementById('commercialNameContainer');
+    const handloadOnly = document.getElementById('handloadOnlySections');
+    const chargeWeightInput = document.getElementById('loadChargeWeight');
+    const commNameInput = document.getElementById('loadCommercialName');
+    
+    if (isCommercial) {
+        commercialOnly.style.display = 'grid';
+        handloadOnly.style.display = 'none';
+        chargeWeightInput.removeAttribute('required');
+        commNameInput.setAttribute('required', 'true');
+    } else {
+        commercialOnly.style.display = 'none';
+        handloadOnly.style.display = 'block';
+        chargeWeightInput.setAttribute('required', 'true');
+        commNameInput.removeAttribute('required');
+    }
 }
 
 async function handleLoadSubmit(e) {
     e.preventDefault();
+    const isCommercial = document.getElementById('loadIsCommercialCheckbox').checked;
+    
     const load = {
         id: document.getElementById('loadId').value || generateUniqueId(),
-        loadType: 'handload',
+        loadType: isCommercial ? 'commercial' : 'handload',
         cartridgeId: document.getElementById('loadCartridge').value,
         diameterId: document.getElementById('loadDiameter').value,
         bulletId: document.getElementById('loadBullet').value,
         bulletLot: document.getElementById('loadBulletLot').value,
-        powderId: document.getElementById('loadPowder').value,
-        powderLot: document.getElementById('loadPowderLot').value,
-        chargeWeight: parseFloat(document.getElementById('loadChargeWeight').value),
-        col: parseFloat(document.getElementById('loadCol').value),
-        cbto: parseFloat(document.getElementById('loadCbto').value) || null,
-        cbtoComp: document.getElementById('loadCbtoComp').value || '',
-        shoulder: parseFloat(document.getElementById('loadShoulder').value) || null,
-        shoulderComp: document.getElementById('loadShoulderComp').value || '',
-        primerId: document.getElementById('loadPrimer').value,
-        primerLot: document.getElementById('loadPrimerLot').value,
-        brassId: document.getElementById('loadBrass').value,
-        brassLot: document.getElementById('loadBrassLot').value,
-        firings: parseInt(document.getElementById('loadFirings').value)
     };
-    await updateItem('loads', load);
-    e.target.reset();
-    document.getElementById('loadId').value = ''; 
-    await refreshLoadFilters();
-    renderLoadsTable();
-    refreshImpactMarkingUI();
-}
+    
+    if (isCommercial) {
+        load.name = document.getElementById('loadCommercialName').value;
+        load.partNumber = document.getElementById('loadCommercialPart').value;
+        load.lot = document.getElementById('loadBulletLot').value; // mapping bullet lot to general lot
+    } else {
+        load.powderId = document.getElementById('loadPowder').value;
+        load.powderLot = document.getElementById('loadPowderLot').value;
+        load.chargeWeight = parseFloat(document.getElementById('loadChargeWeight').value);
+        load.col = parseFloat(document.getElementById('loadCol').value);
+        load.cbto = parseFloat(document.getElementById('loadCbto').value) || null;
+        load.cbtoComp = document.getElementById('loadCbtoComp').value || '';
+        load.shoulder = parseFloat(document.getElementById('loadShoulder').value) || null;
+        load.shoulderComp = document.getElementById('loadShoulderComp').value || '';
+        load.primerId = document.getElementById('loadPrimer').value;
+        load.primerLot = document.getElementById('loadPrimerLot').value;
+        load.brassId = document.getElementById('loadBrass').value;
+        load.brassLot = document.getElementById('loadBrassLot').value;
+        load.firings = parseInt(document.getElementById('loadFirings').value);
+    }
 
-async function handleCommercialAmmoSubmit(e) {
-    e.preventDefault();
-    const ammo = {
-        id: document.getElementById('commercialAmmoId').value || generateUniqueId(),
-        loadType: 'commercial',
-        name: document.getElementById('commercialAmmoName').value,
-        diameterId: document.getElementById('commercialAmmoDiameter').value,
-        cartridgeId: document.getElementById('commercialAmmoCartridge').value,
-        bulletId: document.getElementById('commercialAmmoBullet').value,
-        partNumber: document.getElementById('commercialAmmoPartNumber').value,
-        lot: document.getElementById('commercialAmmoLot').value,
-    };
-    await updateItem('loads', ammo);
-    e.target.reset();
-    document.getElementById('commercialAmmoId').value = ''; 
+    await updateItem('loads', load);
+    e.target.reset(); // will also trigger timeout to restore UI state
     await refreshLoadFilters();
     renderLoadsTable();
     refreshImpactMarkingUI();
@@ -377,11 +312,13 @@ async function renderLoadsTable() {
         getAllItems('manufacturers')
     ]);
 
-    if (currentLoadTypeFilter === 'handload') {
-        loads = loads.filter(l => l.loadType !== 'commercial');
-    } else if (currentLoadTypeFilter === 'commercial') {
-        loads = loads.filter(l => l.loadType === 'commercial');
-    }
+    const showHandloads = document.getElementById('filterShowHandloads').checked;
+    const showCommercial = document.getElementById('filterShowCommercial').checked;
+
+    loads = loads.filter(l => {
+        if (l.loadType === 'commercial') return showCommercial;
+        return showHandloads;
+    });
 
     const filterCartridge = document.getElementById('filterCartridge').value;
     const filterBullet = document.getElementById('filterBullet').value;
@@ -441,7 +378,8 @@ async function renderLoadsTable() {
                 bulletDesc = `${load.bulletWeight}gr`;
             }
 
-            details = `${mfgName} ${load.name} with ${bulletDesc}`.trim();
+            details = `<span style="display:inline-block; padding: 0.1rem 0.4rem; background-color: #374151; border-radius: 0.25rem; font-size: 0.7rem; color: #93c5fd; margin-right: 0.5rem; vertical-align: middle;">Commercial</span>${mfgName} ${load.name}`;
+            if (bulletDesc) details += ` with ${bulletDesc}`;
 
             if (load.partNumber) {
                 details += ` (Part: ${load.partNumber})`;
@@ -503,45 +441,30 @@ async function handleLoadTableClick(e) {
     } else if (action === 'edit') {
         const item = await getItem('loads', id);
         
-        const subTabContainer = document.querySelector('#loads .tabs-nav');
-        const subTabContents = document.querySelectorAll('#load-forms-container .tab-content');
-        const targetTab = item.loadType === 'commercial' ? 'commercial-ammo' : 'hand-load';
+        document.getElementById('loadForm').reset();
+        document.getElementById('loadId').value = item.id;
         
-        subTabContainer.querySelectorAll('.sub-tab-link').forEach(l => {
-            l.classList.toggle('active', l.dataset.subtab === targetTab);
-        });
-        subTabContents.forEach(content => {
-            content.classList.toggle('active', content.id === `${targetTab}-subtab`);
-        });
+        const isCommercial = item.loadType === 'commercial';
+        const checkbox = document.getElementById('loadIsCommercialCheckbox');
+        checkbox.checked = isCommercial;
+        toggleCommercialFields();
 
-        if (item.loadType === 'commercial') {
-            currentLoadTypeFilter = 'commercial';
+        document.getElementById('loadDiameter').value = item.diameterId;
+        await refreshLoadCartridgeDropdown();
+        document.getElementById('loadCartridge').value = item.cartridgeId;
+        
+        const bullet = await getItem('bullets', item.bulletId);
+        await refreshBulletWeightDropdown();
+        if (bullet) document.getElementById('loadBulletWeight').value = bullet.weight;
+        await refreshBulletNameDropdown();
+        document.getElementById('loadBullet').value = item.bulletId || '';
+        
+        if (isCommercial) {
+            document.getElementById('loadCommercialName').value = item.name || '';
+            document.getElementById('loadCommercialPart').value = item.partNumber || '';
+            document.getElementById('loadBulletLot').value = item.lot || '';
         } else {
-            currentLoadTypeFilter = 'handload';
-        }
-        renderLoadsTable();
-
-        if (item.loadType === 'commercial') {
-            document.getElementById('commercialAmmoId').value = item.id;
-            document.getElementById('commercialAmmoName').value = item.name;
-            document.getElementById('commercialAmmoDiameter').value = item.diameterId;
-            await refreshCommercialAmmoCartridgeDropdown();
-            document.getElementById('commercialAmmoCartridge').value = item.cartridgeId;
-            document.getElementById('commercialAmmoBullet').value = item.bulletId;
-            document.getElementById('commercialAmmoPartNumber').value = item.partNumber || '';
-            document.getElementById('commercialAmmoLot').value = item.lot;
-        } else {
-            document.getElementById('loadForm').reset();
-            document.getElementById('loadId').value = item.id;
-            document.getElementById('loadDiameter').value = item.diameterId;
-            await refreshLoadCartridgeDropdown();
-            document.getElementById('loadCartridge').value = item.cartridgeId;
-            const bullet = await getItem('bullets', item.bulletId);
-            await refreshBulletWeightDropdown();
-            if (bullet) document.getElementById('loadBulletWeight').value = bullet.weight;
-            await refreshBulletNameDropdown();
-            document.getElementById('loadBullet').value = item.bulletId;
-            document.getElementById('loadBulletLot').value = item.bulletLot;
+            document.getElementById('loadBulletLot').value = item.bulletLot || '';
             const powder = await getItem('powders', item.powderId);
             if (powder) document.getElementById('loadPowderManufacturer').value = powder.manufacturerId;
             await refreshPowderNameDropdown();
