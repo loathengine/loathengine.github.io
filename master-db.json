@@ -9443,7 +9443,7 @@
     {
       "id": "LOAD_COMM_FED_308_168_SMK",
       "name": "Federal Premium Gold Medal Match 168gr SMK",
-      "isCommercial": true,
+      "loadType": "commercial",
       "cartridgeId": "CTG_308WIN_cC82",
       "bulletId": "BUL_SIERRA_308_168_SMK",
       "powderCharge": null,
@@ -9455,7 +9455,7 @@
     {
       "id": "LOAD_COMM_HORN_65CM_140_ELDM",
       "name": "Hornady Match 140gr ELD-M",
-      "isCommercial": true,
+      "loadType": "commercial",
       "cartridgeId": "CTG_65CM_cN72",
       "bulletId": "BUL_HORNADY_264_140_ELDM",
       "powderCharge": null,
@@ -9467,7 +9467,7 @@
     {
       "id": "LOAD_COMM_HORN_300PRC_225_ELDM",
       "name": "Hornady Match 225gr ELD-M",
-      "isCommercial": true,
+      "loadType": "commercial",
       "cartridgeId": "CTG_300PRC_cK02",
       "bulletId": "BUL_HORNADY_308_225_ELDM",
       "powderCharge": null,
@@ -9479,7 +9479,7 @@
     {
       "id": "LOAD_COMM_HORN_6ARC_108_ELDM",
       "name": "Hornady Match 108gr ELD-M",
-      "isCommercial": true,
+      "loadType": "commercial",
       "cartridgeId": "CTG_6ARC_cH92",
       "bulletId": "BUL_HORNADY_243_108_ELDM",
       "powderCharge": null,
@@ -9491,7 +9491,7 @@
     {
       "id": "LOAD_COMM_LAP_338_250_SCENAR",
       "name": "Lapua Match 250gr Scenar",
-      "isCommercial": true,
+      "loadType": "commercial",
       "cartridgeId": "CTG_338LAP_cO62",
       "bulletId": "BUL_LAPUA_338_250_SCENAR",
       "powderCharge": null,
