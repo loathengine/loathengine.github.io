@@ -3,11 +3,11 @@
                 
                 <!-- 1. System Sync -->
                 <div class="card db-actions" style="border: 1px solid #3b82f6;">
-                    <h3 style="color: #3b82f6;">System Data Sync (Safe)</h3>
-                    <p style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 1rem;">Safely pull the latest components (Bullets, Powders, Cartridges) from the master database. <strong>This will NOT overwrite your personal Firearms, Targets, or Loads.</strong></p>
+                    <h3 style="color: #3b82f6;">Database Sync</h3>
+                    <p style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 1rem;">Pull down the latest components, firearms, loads, and targets from a master database. <strong>This will overwrite your existing records with the data from the master file.</strong></p>
                     <div class="button-group" style="display: flex; gap: 0.5rem;">
-                        <button id="syncLocalMasterBtn" class="btn-blue" style="flex: 1;">Sync Components (Local File)</button>
-                        <button id="syncWebMasterBtn" class="btn-blue" style="flex: 1;">Sync Components (Website)</button>
+                        <button id="syncLocalMasterBtn" class="btn-blue" style="flex: 1;">Sync Database (Local File)</button>
+                        <button id="syncWebMasterBtn" class="btn-blue" style="flex: 1;">Sync Database (Website)</button>
                     </div>
                 </div>
 
@@ -22,9 +22,8 @@
                         <button id="unifiedMergeBtn" class="btn-green" style="width: 100%; margin-top: 0.5rem;">Restore / Merge Data</button>
                     </div>
 
-                    <div class="button-group" style="display: flex; gap: 0.5rem; border-top: 1px solid #374151; padding-top: 1rem;">
-                        <button id="exportPersonalBtn" class="btn-gray" style="flex: 1;">Export Personal Data Only</button>
-                        <button id="unifiedExportBtn" class="btn-gray" style="flex: 1;">Export Entire Database</button>
+                    <div class="button-group" style="display: flex; flex-direction: column; gap: 0.5rem; border-top: 1px solid #374151; padding-top: 1rem;">
+                        <button id="unifiedExportBtn" class="btn-gray" style="width: 100%;">Export Entire Database</button>
                     </div>
                 </div>
 
@@ -33,7 +32,6 @@
                     <h3 style="color: #ef4444;">Danger Zone</h3>
                     <p style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 1rem;">Irreversible operations.</p>
                     <div class="button-group" style="display: flex; gap: 0.5rem;">
-                        <button id="wipePersonalBtn" class="btn-red" style="flex: 1;">Wipe Personal Data</button>
                         <button id="unifiedDeleteBtn" class="btn-red" style="flex: 1;">Nuclear Reset (All Data)</button>
                     </div>
                 </div>

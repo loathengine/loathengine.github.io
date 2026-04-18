@@ -2,8 +2,7 @@
 import { getAllItems, getObjectStores, deleteDatabase, getDB, deleteItem } from './db.js';
 import { triggerDownload } from './utils.js';
 
-const SYSTEM_TABLES = ['cartridges', 'diameters', 'manufacturers', 'bullets', 'powders', 'primers', 'brass'];
-const PERSONAL_TABLES = ['firearms', 'loads', 'targets', 'impactData', 'targetImages', 'customTargets'];
+// All tables are treated equally.
 
 export function initDbManagement() {
     const tableSelect = document.getElementById('tableSelect');
@@ -26,10 +25,8 @@ export function initDbManagement() {
     document.getElementById('syncWebMasterBtn').addEventListener('click', () => handleSyncMaster('https://raw.githubusercontent.com/loathengine/loathengine.github.io/main/master-db.json'));
     
     document.getElementById('unifiedMergeBtn').addEventListener('click', handleUnifiedMerge);
-    document.getElementById('exportPersonalBtn').addEventListener('click', handleExportPersonal);
     document.getElementById('unifiedExportBtn').addEventListener('click', handleUnifiedExport);
     
-    document.getElementById('wipePersonalBtn').addEventListener('click', handleWipePersonal);
     document.getElementById('unifiedDeleteBtn').addEventListener('click', handleUnifiedDelete);
 
     tableSelect.addEventListener('change', () => {
@@ -74,25 +71,7 @@ function clearMergeLog() {
     logDiv.style.display = 'none';
 }
 
-async function handleExportPersonal() {
-    try {
-        const allData = {};
-        for (const storeName of PERSONAL_TABLES) { 
-            allData[storeName] = await getAllItems(storeName); 
-        }
-        const dateString = new Date().toISOString().slice(0, 10);
-        const jsonString = '{\n' +
-            Object.keys(allData).map(storeName => {
-                const items = allData[storeName].map(item => '    ' + JSON.stringify(item));
-                return `  "${storeName}": [\n${items.join(',\n')}\n  ]`;
-            }).join(',\n') +
-        '\n}';
-        triggerDownload(jsonString, `personal-data-backup-${dateString}.json`);
-    } catch (e) {
-        console.error("Failed to export personal data:", e);
-        alert("There was an error accessing personal data for export. Try refreshing the page to ensure the database is upgraded.");
-    }
-}
+// Removed specific HandleExportPersonal logic
 
 async function handleUnifiedExport() {
     const scope = document.getElementById('tableSelect').value;
@@ -178,29 +157,7 @@ async function handleUnifiedDelete() {
     }
 }
 
-async function handleWipePersonal() {
-    if (confirm('Are you sure you want to permanently delete ALL personal data (Firearms, Loads, Targets, Markings)? System components will remain untouched.')) {
-        try {
-            const db = await getDB();
-            const transaction = db.transaction(PERSONAL_TABLES, 'readwrite');
-            for (const storeName of PERSONAL_TABLES) {
-                const store = transaction.objectStore(storeName);
-                store.clear();
-            }
-            transaction.oncomplete = async () => { 
-                alert('All personal data has been wiped.'); 
-                window.dispatchEvent(new Event('app-refresh'));
-                renderSelectedTable();
-            };
-            transaction.onerror = (err) => { 
-                console.error(`Error clearing personal tables:`, err); 
-                alert(`Failed to clear personal data.`); 
-            };
-        } catch (err) {
-            console.error('Error in handleWipePersonal:', err);
-        }
-    }
-}
+// Removed specific HandleWipePersonal logic
 
 async function handleUnifiedMerge() {
     clearMergeLog();
@@ -302,12 +259,12 @@ async function handleUnifiedMerge() {
 }
 
 async function handleSyncMaster(url) {
-    if (!confirm('Are you sure you want to sync System Components from the master database? This will safely overwrite Components (Bullets, Powders, etc) but your Personal Data (Firearms/Loads) will NOT be touched.')) {
+    if (!confirm('Are you sure you want to sync Database Data? This will completely overwrite records in all matching tables using the data from the imported file.')) {
         return;
     }
 
     clearMergeLog();
-    logMergeResult(`Fetching master database from ${url}...`, false);
+    logMergeResult(`Fetching database from ${url}...`, false);
 
     try {
         const response = await fetch(url);
@@ -318,56 +275,29 @@ async function handleSyncMaster(url) {
         
         const db = await getDB();
         
-        // We only overwrite SYSTEM_TABLES safely
-        const validSystemStores = SYSTEM_TABLES.filter(s => data[s] && Array.isArray(data[s]));
+        // Find ALL present stores inside the imported DB that currently exist in our schema
+        const validStores = Array.from(db.objectStoreNames).filter(s => data[s] && Array.isArray(data[s]));
 
-        if (validSystemStores.length === 0) {
-            logMergeResult('Error: No valid system components found in the master file.', true);
+        if (validStores.length === 0) {
+            logMergeResult('Error: No valid tables found in the given database file.', true);
             return;
         }
 
-        const transactionStores = [...validSystemStores];
-        if (data.loads && Array.isArray(data.loads)) {
-            transactionStores.push('loads');
-        }
-
-        const transaction = db.transaction(transactionStores, 'readwrite');
+        const transaction = db.transaction(validStores, 'readwrite');
         let totalItems = 0;
 
-        for (const storeName of transactionStores) {
+        for (const storeName of validStores) {
             const store = transaction.objectStore(storeName);
-            
-            if (storeName === 'loads') {
-                // Unique safely merge strategy for Loads: Preserve user Hand Loads, replace only Commercial Ammo
-                const request = store.getAll();
-                request.onsuccess = (e) => {
-                    const existingLoads = e.target.result || [];
-                    const personalLoads = existingLoads.filter(l => l.loadType !== 'commercial' && !l.isCommercial);
-                    const incomingCommercial = data.loads.filter(l => l.loadType === 'commercial' || l.isCommercial);
-                    
-                    store.clear();
-                    // Put personal loads back
-                    for (const item of personalLoads) {
-                        store.put(item);
-                    }
-                    // Insert synced commercial loads
-                    for (const item of incomingCommercial) {
-                        store.put(item);
-                        totalItems++;
-                    }
-                };
-            } else {
-                // System tables (bullets, cartridges, etc) are fully overwritten
-                store.clear();
-                for (const item of data[storeName]) {
-                    store.put(item);
-                    totalItems++;
-                }
+            store.clear(); // Complete overwrite per 'all data equal' philosophy
+            for (const item of data[storeName]) {
+                store.put(item);
+                totalItems++;
             }
         }
+        
         transaction.oncomplete = async () => {
-            logMergeResult(`Sync Successful! Imported ${totalItems} components from ${validSystemStores.length} tables.`);
-            alert('System Components successfully synchronized!');
+            logMergeResult(`Sync Successful! Imported ${totalItems} records across ${validStores.length} tables.`);
+            alert('Database explicitly synchronized successfully!');
             window.dispatchEvent(new Event('app-refresh'));
             renderSelectedTable();
         };

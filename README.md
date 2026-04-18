@@ -123,14 +123,13 @@ Estimate the gyroscopic stability ($S_g$) of your projectiles.
 ### DB Management Tab
 Advanced data management for your local IndexedDB.
 
--   **System vs Personal Data:** The application natively separates and protects your personal entries (Firearms, Targets, Sessions, and Hand Loads) while allowing you to effortlessly sync standard industry components.
--   **Safe Sync Tools:**
-    -   `Sync Components`: Securely merges hundreds of standard bullet profiles, powders, brass makes, and commercial loads directly from the Open-Source `master-db.json` into your application **without** touching your personal data.
+-   **Unified Database:** The application manages all your firearms, targets, sessions, and load data within a centralized IndexedDB architecture.
+-   **Sync Tools:**
+    -   `Sync Database`: Merges hundreds of standard bullet profiles, powders, brass makes, and commercial loads directly from the Open-Source `master-db.json` into your application. **Note:** This explicitly overwrites matching records within all tables seamlessly!
 -   **Management Actions:** (Action labels dynamically adapt based on the scope selected in the Advanced Table Browser)
-    -   `Wipe Personal Data`: Permanently deletes all personal data (Firearms, Loads, Targets, Markings) while preserving industry system components.
     -   `Nuclear Reset`: Aggressively clears all data from the entire database to initialize a completely clean session using schema-agnostic clearing routines.
     -   `Clear Table`: Replaces the Nuclear Reset button when a specific table is singled out in the browser, allowing surgically precise clearing of individual tables without touching others.
-    -   `Export Data`: Generates a fully compliant JSON backup of whatever context (entire database, table scope, or just personal data) is currently selected.
+    -   `Export Data`: Generates a fully compliant JSON backup of whatever context (entire database or table scope) is currently selected.
     -   `Restore / Merge Data`: Safely restores data from a JSON backup by parsing records and mapping them into the correct tables, seamlessly overwriting matching IDs.
 
 ---
