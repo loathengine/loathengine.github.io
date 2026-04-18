@@ -49,11 +49,21 @@ export function initGallery() {
 
             e.target.disabled = true;
             let successCount = 0;
+            
+            const progressContainer = document.getElementById('uploadProgressContainer');
+            const progressBar = document.getElementById('uploadProgressBar');
+            const progressText = document.getElementById('uploadProgressText');
+            
+            if (progressContainer) progressContainer.style.display = 'block';
+            if (progressBar) progressBar.style.width = `0%`;
+            if (progressText) progressText.textContent = `Processing 1 of ${files.length}...`;
 
             try {
                 for (let i = 0; i < files.length; i++) {
                     const file = files[i];
                     if (!file.type.startsWith('image/')) continue;
+                    
+                    if (progressText) progressText.textContent = `Processing ${i + 1} of ${files.length}...`;
 
                     const dataUrl = await new Promise((resolve, reject) => {
                         const reader = new FileReader();
@@ -78,6 +88,8 @@ export function initGallery() {
                     
                     await updateItem('targetImages', targetData);
                     successCount++;
+                    
+                    if (progressBar) progressBar.style.width = `${((i + 1) / files.length) * 100}%`;
                 }
             } catch (error) {
                 console.error("Failed to process and save image list:", error);
@@ -86,6 +98,10 @@ export function initGallery() {
                 if (successCount > 0) {
                     await renderTargetImages();
                     await refreshImpactMarkingUI(); // Update dropdowns in other tabs
+                }
+                if (progressContainer) {
+                    progressContainer.style.display = 'none';
+                    if (progressBar) progressBar.style.width = '0%';
                 }
                 e.target.value = '';
                 e.target.disabled = false;

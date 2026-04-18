@@ -9,6 +9,10 @@
                     <div>
                         <label for="uploadTargetImage">Upload New Target Image(s)</label>
                         <input type="file" id="uploadTargetImage" accept="image/*" multiple>
+                        <div id="uploadProgressContainer" style="display: none; margin-top: 0.5rem; width: 100%; height: 1.5rem; background-color: #374151; border-radius: 0.25rem; overflow: hidden; position: relative;">
+                            <div id="uploadProgressBar" style="width: 0%; height: 100%; background-color: #3b82f6; transition: width 0.2s;"></div>
+                            <span id="uploadProgressText" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 0.75rem; font-weight: bold; color: white;">0%</span>
+                        </div>
                     </div>
                     <div id="targetGallery" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
                     </div>
