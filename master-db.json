@@ -9429,13 +9429,28 @@
       "length": 1.35
     },
     {
-      "id": "mlylfsmk2iq2aiv2nqy",
+      "id": "BUL_SIERRA_224_77_SMK",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "diameterId": "DIA_224_L5X8",
       "name": "MatchKing",
-      "stability_vars": {},
+      "stability_vars": {
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null,
+        "is_tipped": false,
+        "tip_length": null,
+        "meplat_diameter": null
+      },
+      "ballistics": {
+        "preferred_model": "G7",
+        "g1_bc": 0.372,
+        "g7_bc": 0.193,
+        "g7_form_factor": null,
+        "bc_velocity_bands": []
+      },
+      "drag_model": null,
       "weight": 77,
-      "length": 0.995
+      "length": 0.994
     }
   ],
   "firearms": [],
