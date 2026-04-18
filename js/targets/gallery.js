@@ -59,6 +59,9 @@ export function initGallery() {
             if (progressText) progressText.textContent = `Processing 1 of ${files.length}...`;
 
             try {
+                const existingTargets = await getAllItems('targetImages');
+                const existingNames = new Set(existingTargets.map(t => t.name));
+
                 for (let i = 0; i < files.length; i++) {
                     const file = files[i];
                     if (!file.type.startsWith('image/')) continue;
@@ -74,10 +77,15 @@ export function initGallery() {
 
                     const webpDataUrl = await convertToWebP(dataUrl);
 
-                    let name = file.name.replace(/\.[^/.]+$/, "");
-                    if (files.length > 1) {
-                         name += ` - ${i + 1}`;
+                    let baseName = file.name.replace(/\.[^/.]+$/, "");
+                    let name = baseName;
+                    let counter = 1;
+                    
+                    while (existingNames.has(name)) {
+                        name = `${baseName} (${counter})`;
+                        counter++;
                     }
+                    existingNames.add(name);
 
                     const targetData = {
                         id: generateUniqueId(),

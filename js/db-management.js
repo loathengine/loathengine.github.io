@@ -3,7 +3,7 @@ import { getAllItems, getObjectStores, deleteDatabase, openDB, deleteItem } from
 import { triggerDownload } from './utils.js';
 
 const SYSTEM_TABLES = ['cartridges', 'diameters', 'manufacturers', 'bullets', 'powders', 'primers', 'brass'];
-const PERSONAL_TABLES = ['firearms', 'loads', 'targets', 'impactData'];
+const PERSONAL_TABLES = ['firearms', 'loads', 'targets', 'impactData', 'targetImages', 'customTargets'];
 
 export function initDbManagement() {
     const tableSelect = document.getElementById('tableSelect');
@@ -52,18 +52,23 @@ function clearMergeLog() {
 }
 
 async function handleExportPersonal() {
-    const allData = {};
-    for (const storeName of PERSONAL_TABLES) { 
-        allData[storeName] = await getAllItems(storeName); 
+    try {
+        const allData = {};
+        for (const storeName of PERSONAL_TABLES) { 
+            allData[storeName] = await getAllItems(storeName); 
+        }
+        const dateString = new Date().toISOString().slice(0, 10);
+        const jsonString = '{\n' +
+            Object.keys(allData).map(storeName => {
+                const items = allData[storeName].map(item => '    ' + JSON.stringify(item));
+                return `  "${storeName}": [\n${items.join(',\n')}\n  ]`;
+            }).join(',\n') +
+        '\n}';
+        triggerDownload(jsonString, `personal-data-backup-${dateString}.json`);
+    } catch (e) {
+        console.error("Failed to export personal data:", e);
+        alert("There was an error accessing personal data for export. Try refreshing the page to ensure the database is upgraded.");
     }
-    const dateString = new Date().toISOString().slice(0, 10);
-    const jsonString = '{\n' +
-        Object.keys(allData).map(storeName => {
-            const items = allData[storeName].map(item => '    ' + JSON.stringify(item));
-            return `  "${storeName}": [\n${items.join(',\n')}\n  ]`;
-        }).join(',\n') +
-    '\n}';
-    triggerDownload(jsonString, `personal-data-backup-${dateString}.json`);
 }
 
 async function handleUnifiedExport() {

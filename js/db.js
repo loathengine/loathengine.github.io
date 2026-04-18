@@ -1,7 +1,7 @@
 // js/db.js
 
 const DB_NAME = 'reloadingDB';
-const DB_VERSION = 4; // Incremented for new precision fields
+const DB_VERSION = 5; // Incremented to ensure customTargets and targetImages schema exist
 let db;
 
 const objectStores = [
