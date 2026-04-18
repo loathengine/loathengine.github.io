@@ -47,45 +47,48 @@ export function initGallery() {
             const files = Array.from(e.target.files);
             if (files.length === 0) return;
 
-            let processedCount = 0;
+            e.target.disabled = true;
+            let successCount = 0;
 
-            for (let i = 0; i < files.length; i++) {
-                const file = files[i];
-                if (!file.type.startsWith('image/')) {
-                    processedCount++;
-                    continue;
-                }
+            try {
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    if (!file.type.startsWith('image/')) continue;
 
-                const reader = new FileReader();
-                reader.onload = async (event) => {
-                    try {
-                         const webpDataUrl = await convertToWebP(event.target.result);
-                    
-                        let name = file.name.replace(/\.[^/.]+$/, "");
-                        if (files.length > 1) {
-                             name += ` - ${i + 1}`;
-                        }
+                    const dataUrl = await new Promise((resolve, reject) => {
+                        const reader = new FileReader();
+                        reader.onload = event => resolve(event.target.result);
+                        reader.onerror = error => reject(error);
+                        reader.readAsDataURL(file);
+                    });
 
-                        const targetData = {
-                            id: generateUniqueId(),
-                            name: name,
-                            dataUrl: webpDataUrl,
-                            timestamp: new Date().toISOString()
-                        };
-                        await updateItem('targetImages', targetData);
-                    } catch (error) {
-                        console.error("Failed to process and save image:", error);
-                        alert("There was an error converting the image.");
-                    } finally {
-                        processedCount++;
-                        if (processedCount === files.length) {
-                            await renderTargetImages();
-                            await refreshImpactMarkingUI(); // Update dropdowns in other tabs
-                            e.target.value = '';
-                        }
+                    const webpDataUrl = await convertToWebP(dataUrl);
+
+                    let name = file.name.replace(/\.[^/.]+$/, "");
+                    if (files.length > 1) {
+                         name += ` - ${i + 1}`;
                     }
-                };
-                reader.readAsDataURL(file);
+
+                    const targetData = {
+                        id: generateUniqueId(),
+                        name: name,
+                        dataUrl: webpDataUrl,
+                        timestamp: new Date().toISOString()
+                    };
+                    
+                    await updateItem('targetImages', targetData);
+                    successCount++;
+                }
+            } catch (error) {
+                console.error("Failed to process and save image list:", error);
+                alert("There was an error converting or saving some images.");
+            } finally {
+                if (successCount > 0) {
+                    await renderTargetImages();
+                    await refreshImpactMarkingUI(); // Update dropdowns in other tabs
+                }
+                e.target.value = '';
+                e.target.disabled = false;
             }
         });
     }
