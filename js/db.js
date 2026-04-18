@@ -18,6 +18,11 @@ export function openDB() {
             reject(event.target.errorCode); 
         };
         
+        request.onblocked = (event) => {
+            alert("Please close all other browser tabs with this site open to allow the database to upgrade.");
+            reject("blocked");
+        };
+        
         request.onupgradeneeded = (event) => {
             const db = event.target.result;
             objectStores.forEach(storeName => {
