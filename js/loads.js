@@ -197,6 +197,7 @@ export function initLoadsManagement() {
     document.getElementById('loadBulletWeight').addEventListener('change', refreshBulletNameDropdown);
     document.getElementById('loadPowderManufacturer').addEventListener('change', refreshPowderNameDropdown);
 
+    document.getElementById('filterShowAll').addEventListener('change', renderLoadsTable);
     document.getElementById('filterShowHandloads').addEventListener('change', renderLoadsTable);
     document.getElementById('filterShowCommercial').addEventListener('change', renderLoadsTable);
 
@@ -312,12 +313,15 @@ async function renderLoadsTable() {
         getAllItems('manufacturers')
     ]);
 
+    const showAll = document.getElementById('filterShowAll').checked;
     const showHandloads = document.getElementById('filterShowHandloads').checked;
     const showCommercial = document.getElementById('filterShowCommercial').checked;
 
     loads = loads.filter(l => {
-        if (l.loadType === 'commercial') return showCommercial;
-        return showHandloads;
+        if (showAll) return true;
+        if (showCommercial && l.loadType === 'commercial') return true;
+        if (showHandloads && l.loadType !== 'commercial') return true;
+        return false;
     });
 
     const filterCartridge = document.getElementById('filterCartridge').value;

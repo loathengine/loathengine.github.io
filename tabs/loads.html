@@ -69,8 +69,9 @@
                         <h4 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 0.875rem; color: #9ca3af;">Data Table Filters</h4>
                         <div class="form-grid">
                             <div style="grid-column: 1 / -1; display: flex; gap: 1.5rem; margin-bottom: 0.5rem; align-items: center; border-bottom: 1px solid #374151; padding-bottom: 1rem;">
-                                <label class="checkbox-container"><input type="checkbox" id="filterShowHandloads" checked> Show Hand Loads</label>
-                                <label class="checkbox-container"><input type="checkbox" id="filterShowCommercial" checked> Show Commercial Loads</label>
+                                <label class="checkbox-container" style="display: flex; align-items: center;"><input type="radio" name="loadFilterType" value="all" id="filterShowAll" checked style="margin-right:0.4rem;"> Show All Loads</label>
+                                <label class="checkbox-container" style="display: flex; align-items: center;"><input type="radio" name="loadFilterType" value="handload" id="filterShowHandloads" style="margin-right:0.4rem;"> Hand Loads Only</label>
+                                <label class="checkbox-container" style="display: flex; align-items: center;"><input type="radio" name="loadFilterType" value="commercial" id="filterShowCommercial" style="margin-right:0.4rem;"> Commercial Loads Only</label>
                             </div>
                             <div>
                                 <label for="filterCartridge">Cartridge</label>
