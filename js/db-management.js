@@ -32,7 +32,30 @@ export function initDbManagement() {
     document.getElementById('wipePersonalBtn').addEventListener('click', handleWipePersonal);
     document.getElementById('unifiedDeleteBtn').addEventListener('click', handleUnifiedDelete);
 
-    tableSelect.addEventListener('change', renderSelectedTable);
+    tableSelect.addEventListener('change', () => {
+        renderSelectedTable();
+        updateUnifiedButtonLabels();
+    });
+    
+    updateUnifiedButtonLabels();
+}
+
+function updateUnifiedButtonLabels() {
+    const scope = document.getElementById('tableSelect').value;
+    const exportBtn = document.getElementById('unifiedExportBtn');
+    const deleteBtn = document.getElementById('unifiedDeleteBtn');
+    const mergeBtn = document.getElementById('unifiedMergeBtn');
+    
+    if (scope === 'all') {
+        exportBtn.textContent = 'Export Entire Database';
+        deleteBtn.textContent = 'Nuclear Reset (All Data)';
+        mergeBtn.textContent = 'Restore / Merge Data';
+    } else {
+        const formattedScope = scope.charAt(0).toUpperCase() + scope.slice(1);
+        exportBtn.textContent = `Export Table: ${formattedScope}`;
+        deleteBtn.textContent = `Clear Table: ${formattedScope}`;
+        mergeBtn.textContent = `Restore Table: ${formattedScope}`;
+    }
 }
 
 // Helper to log to the result area
@@ -105,12 +128,27 @@ async function handleUnifiedDelete() {
     if (scope === 'all') {
         if (confirm('Are you sure you want to permanently delete the entire database? This action cannot be undone.')) {
             try {
-                await deleteDatabase();
-                alert('Database deleted successfully. The page will now reload.');
-                location.reload();
+                const db = await openDB();
+                const stores = getObjectStores();
+                const transaction = db.transaction(stores, 'readwrite');
+                
+                stores.forEach(storeName => {
+                    transaction.objectStore(storeName).clear();
+                });
+
+                transaction.oncomplete = () => {
+                    alert('Nuclear Reset complete. All data has been cleared.');
+                    window.dispatchEvent(new Event('app-refresh'));
+                    renderSelectedTable();
+                };
+
+                transaction.onerror = (err) => {
+                    console.error('Error clearing database:', err);
+                    alert('Could not clear the database.');
+                };
             } catch (err) {
-                console.error('Error deleting database:', err);
-                alert('Could not delete the database.');
+                console.error('Error initiating database wipe:', err);
+                alert('An error occurred during database wipe.');
             }
         }
     } else {
