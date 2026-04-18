@@ -1,5 +1,5 @@
 // js/main.js
-import { openDB } from './db.js';
+import { getDB } from './db.js';
 import { initComponentsManagement, refreshComponentUI } from './components.js';
 import { initFirearmsManagement, refreshFirearmsUI } from './firearms.js';
 import { initLoadsManagement, refreshLoadsUI } from './loads.js';
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadTabContent();
 
     // 2. Initialize Database
-    await openDB();
+    await getDB();
 
     // 3. Setup Main Tab Navigation
     const mainTabContainer = document.querySelector('.tabs-nav');

@@ -9,7 +9,7 @@ const objectStores = [
     'brass', 'cartridges', 'firearms', 'loads', 'impactData', 'targetImages', 'customTargets'
 ];
 
-export function openDB() {
+function openDB() {
     return new Promise((resolve, reject) => {
         const request = indexedDB.open(DB_NAME, DB_VERSION);
         
@@ -40,7 +40,7 @@ export function openDB() {
     });
 }
 
-function getDB() {
+export function getDB() {
     if (db) return Promise.resolve(db);
     return openDB();
 }

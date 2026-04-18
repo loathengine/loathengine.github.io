@@ -1,5 +1,5 @@
 // js/db-management.js
-import { getAllItems, getObjectStores, deleteDatabase, openDB, deleteItem } from './db.js';
+import { getAllItems, getObjectStores, deleteDatabase, getDB, deleteItem } from './db.js';
 import { triggerDownload } from './utils.js';
 
 const SYSTEM_TABLES = ['cartridges', 'diameters', 'manufacturers', 'bullets', 'powders', 'primers', 'brass'];
@@ -128,8 +128,8 @@ async function handleUnifiedDelete() {
     if (scope === 'all') {
         if (confirm('Are you sure you want to permanently delete the entire database? This action cannot be undone.')) {
             try {
-                const db = await openDB();
-                const stores = getObjectStores();
+                const db = await getDB();
+                const stores = Array.from(db.objectStoreNames);
                 const transaction = db.transaction(stores, 'readwrite');
                 
                 stores.forEach(storeName => {
@@ -158,7 +158,7 @@ async function handleUnifiedDelete() {
         }
         if (confirm(`Are you sure you want to delete all data from the '${scope}' table?`)) {
             try {
-                const db = await openDB();
+                const db = await getDB();
                 const transaction = db.transaction([scope], 'readwrite');
                 const store = transaction.objectStore(scope);
                 store.clear();
@@ -181,7 +181,7 @@ async function handleUnifiedDelete() {
 async function handleWipePersonal() {
     if (confirm('Are you sure you want to permanently delete ALL personal data (Firearms, Loads, Targets, Markings)? System components will remain untouched.')) {
         try {
-            const db = await openDB();
+            const db = await getDB();
             const transaction = db.transaction(PERSONAL_TABLES, 'readwrite');
             for (const storeName of PERSONAL_TABLES) {
                 const store = transaction.objectStore(storeName);
@@ -221,7 +221,7 @@ async function handleUnifiedMerge() {
     reader.onload = async (e) => {
         try {
             const data = JSON.parse(e.target.result);
-            const db = await openDB();
+            const db = await getDB();
             
             if (scope === 'all') {
                 if (typeof data !== 'object' || Array.isArray(data)) {
@@ -316,7 +316,7 @@ async function handleSyncMaster(url) {
         }
         const data = await response.json();
         
-        const db = await openDB();
+        const db = await getDB();
         
         // We only overwrite SYSTEM_TABLES safely
         const validSystemStores = SYSTEM_TABLES.filter(s => data[s] && Array.isArray(data[s]));
