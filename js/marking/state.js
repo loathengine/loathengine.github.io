@@ -1,27 +1,69 @@
 import { generateUniqueId } from '../db.js';
 
 export const state = {
-    img: null,
-    scale: { p1: null, p2: null, distance: null, units: 'in', pixelsPerUnit: null },
-    groups: [],
-    currentGroupIndex: -1,
-    settingState: null,
+    targets: [], // Array of { id, targetImageId, img, scale, groups, transform }
+    activeTargetIndex: -1,
+    
+    // Global session properties
     sessionID: null,
-    currentTargetId: null,
-    transform: { scale: 1 },
+    
+    // Canvas interaction properties
+    settingState: null,
     mousePos: { x: 0, y: 0 },
     animationFrameId: null,
     ctx: null,
-    canvas: null
+    canvas: null,
+    
+    // Properties that alias the active target for easier refactoring
+    get img() { return this.activeTargetIndex >= 0 ? this.targets[this.activeTargetIndex].img : null; },
+    get scale() { return this.activeTargetIndex >= 0 ? this.targets[this.activeTargetIndex].scale : null; },
+    get groups() { return this.activeTargetIndex >= 0 ? this.targets[this.activeTargetIndex].groups : null; },
+    get transform() { return this.activeTargetIndex >= 0 ? this.targets[this.activeTargetIndex].transform : null; },
+    get currentTargetId() { return this.activeTargetIndex >= 0 ? this.targets[this.activeTargetIndex].targetImageId : null; },
+    
+    currentGroupIndex: -1
 };
 
 export function resetState() {
-    state.transform = { scale: 1 };
-    state.scale = { p1: null, p2: null, distance: null, units: 'in', pixelsPerUnit: null };
-    state.groups = [];
+    state.targets = [];
+    state.activeTargetIndex = -1;
     state.currentGroupIndex = -1;
     state.settingState = null;
     state.sessionID = generateUniqueId();
+}
+
+export function addTargetToSession(targetImageId, newImg) {
+    state.targets.push({
+        id: generateUniqueId(),
+        targetImageId: targetImageId,
+        img: newImg,
+        scale: { p1: null, p2: null, distance: null, units: 'in', pixelsPerUnit: null },
+        groups: [],
+        transform: { scale: 1 }
+    });
+    state.activeTargetIndex = state.targets.length - 1;
+    state.currentGroupIndex = -1;
+}
+
+export function setActiveTarget(index) {
+    if (index >= 0 && index < state.targets.length) {
+        state.activeTargetIndex = index;
+        state.currentGroupIndex = -1;
+        state.settingState = null;
+        return true;
+    }
+    return false;
+}
+
+export function removeTargetFromSession(index) {
+    if (index >= 0 && index < state.targets.length) {
+        state.targets.splice(index, 1);
+        if (state.activeTargetIndex >= state.targets.length) {
+            state.activeTargetIndex = state.targets.length - 1;
+        }
+        state.currentGroupIndex = -1;
+        state.settingState = null;
+    }
 }
 
 export function setImg(newImg) {

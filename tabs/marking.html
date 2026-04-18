@@ -2,9 +2,16 @@
                 <div class="card">
                     <div class="control-panel">
                         <div>
-                            <h4>Setup</h4>
-                            <label for="savedImageSelect">Load Saved Image</label>
-                            <select id="savedImageSelect"></select>
+                            <h4>Session Targets</h4>
+                            <label for="savedImageSelect">Add Target to Session</label>
+                            <div class="flex-container">
+                                <select id="savedImageSelect" style="flex-grow: 1;"></select>
+                                <button id="addSessionTargetBtn" class="btn-blue" style="width: auto;">Add</button>
+                            </div>
+                            <div id="sessionTargetsList" style="margin-top: 0.75rem; display: flex; flex-direction: column; gap: 0.5rem; max-height: 200px; overflow-y: auto; padding-right: 0.25rem;">
+                                <!-- dynamically populated list of targets in session -->
+                                <p style="font-size: 0.75rem; color: #9ca3af; text-align: center;">No targets in session.</p>
+                            </div>
 
                             <div style="border-top: 1px solid #374151; padding-top: 0.75rem; margin-top: 0.75rem;">
                                 <label for="markingSessionSelect">Load Saved Session</label>
@@ -15,7 +22,7 @@
                                 </div>
                             </div>
                             
-                            <button id="removeImage" class="btn-red" style="margin-top: 1rem;">Clear Canvas & New Session</button>
+                            <button id="removeImage" class="btn-red" style="margin-top: 1rem;">Clear Session</button>
                         </div>
                         <div>
                             <h4>Image Controls</h4>

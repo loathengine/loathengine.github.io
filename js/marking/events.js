@@ -1,7 +1,7 @@
-import { state, resetState, setImg, setCanvas } from './state.js';
+import { state, resetState, setCanvas, addTargetToSession, setActiveTarget, removeTargetFromSession } from './state.js';
 import { draw, updateCanvasSize, getCanvasCoords } from './canvas.js';
-import { updateActiveButton, updateStatsDisplay, renderGroupSelector, populateMarkingSessionSelect, updateLoadSelectBasedOnFirearm } from './ui.js';
-import { getItem, updateItem, deleteItem, generateUniqueId } from '../db.js';
+import { updateActiveButton, updateStatsDisplay, renderGroupSelector, populateMarkingSessionSelect, updateLoadSelectBasedOnFirearm, renderSessionTargets } from './ui.js';
+import { getItem, updateItem, deleteItem, generateUniqueId, getAllItems } from '../db.js';
 
 export function setupEventListeners() {
     // FIX: select the correct canvas element for the Marking tab
@@ -11,6 +11,7 @@ export function setupEventListeners() {
     setCanvas(canvas);
 
     const savedImageSelect = document.getElementById('savedImageSelect');
+    const addSessionTargetBtn = document.getElementById('addSessionTargetBtn');
     const markingSessionSelect = document.getElementById('markingSessionSelect');
     const loadMarkingSessionBtn = document.getElementById('loadMarkingSessionBtn');
     const deleteMarkingSessionBtn = document.getElementById('deleteMarkingSessionBtn');
@@ -33,17 +34,10 @@ export function setupEventListeners() {
         await updateLoadSelectBasedOnFirearm();
     });
 
-    savedImageSelect.addEventListener('change', async (e) => {
-        const targetId = e.target.value;
-        setImg(null); 
-        
+    addSessionTargetBtn.addEventListener('click', async () => {
+        const targetId = savedImageSelect.value;
         if (!targetId) {
-            state.currentTargetId = null;
-            resetState();
-            renderGroupSelector();
-            updateActiveButton(null);
-            updateStatsDisplay();
-            if(state.img) updateCanvasSize(); 
+            alert('Please select a target image to add.');
             return;
         }
         
@@ -51,35 +45,56 @@ export function setupEventListeners() {
         if (targetData) {
             const newImg = new Image();
             newImg.onload = () => { 
-                state.currentTargetId = targetId;
-                
                 const workingBaseWidth = 800;
                 const aspectRatio = newImg.naturalHeight / newImg.naturalWidth;
                 
                 newImg.baseWidth = workingBaseWidth;
                 newImg.baseHeight = workingBaseWidth * aspectRatio;
                 
-                state.transform.scale = 1; 
-                
-                setImg(newImg);
+                addTargetToSession(targetId, newImg);
                 updateCanvasSize();
-
-                if (!state.sessionID) { resetState(); } 
+                renderSessionTargets();
+                renderGroupSelector();
+                updateStatsDisplay();
             };
             newImg.src = targetData.dataUrl || targetData.data;
         }
     });
 
+    document.getElementById('sessionTargetsList').addEventListener('click', (e) => {
+        const btn = e.target.closest('button[data-action]');
+        if (btn) {
+            const index = parseInt(btn.dataset.index, 10);
+            if (btn.dataset.action === 'remove') {
+                removeTargetFromSession(index);
+                updateCanvasSize();
+                renderSessionTargets();
+                renderGroupSelector();
+                updateStatsDisplay();
+                return;
+            }
+        }
+        
+        const item = e.target.closest('.session-target-item');
+        if (item) {
+            const index = parseInt(item.dataset.index, 10);
+            if (setActiveTarget(index)) {
+                updateCanvasSize();
+                renderSessionTargets();
+                renderGroupSelector();
+                updateStatsDisplay();
+            }
+        }
+    });
+
     removeImageBtn.addEventListener('click', () => {
-        setImg(null);
         resetState();
+        renderSessionTargets();
         renderGroupSelector();
         updateActiveButton(null);
         updateStatsDisplay();
         
-        savedImageSelect.value = '';
         markingSessionSelect.value = '';
-        state.currentTargetId = null;
         statsOutput.innerHTML = '<p>Impact data will appear here once you mark points and set a scale.</p>';
         canvas.width = 800; 
         canvas.height = 600;
@@ -248,32 +263,45 @@ export function setupEventListeners() {
     saveImpactDataBtn.addEventListener('click', async () => {
         updateStatsDisplay(); 
 
-        if (!state.scale.pixelsPerUnit) {
-            alert("Please set the scale first to save meaningful coordinate data for analysis.");
-        }
-        
-        if (state.groups.length === 0 || state.groups.every(g => g.pois.length === 0)) {
-            alert("No impacts have been marked. Nothing to save.");
+        if (state.targets.length === 0) {
+            alert("No targets in session.");
             return;
         }
-
+        
         const shotsForAnalysis = [];
         let shotCounter = 0;
-        if(state.scale.pixelsPerUnit){
-            state.groups.forEach((group, groupIndex) => {
+        let globalGroupCounter = 0;
+        
+        for (const target of state.targets) {
+            if (!target.scale.pixelsPerUnit) {
+                alert("One or more targets is missing a scale. Please set a scale on every target before saving.");
+                return;
+            }
+            
+            target.groups.forEach((group) => {
+                globalGroupCounter++;
                 if (group.pois.length > 0 && group.poa) {
                     group.pois.forEach((poi) => {
                         shotCounter++;
-                        const x_coord = (poi.x - group.poa.x) / state.scale.pixelsPerUnit;
-                        const y_coord = (group.poa.y - poi.y) / state.scale.pixelsPerUnit; // Standard Cartesian (Positive = UP)
+                        const x_coord = (poi.x - group.poa.x) / target.scale.pixelsPerUnit;
+                        const y_coord = (group.poa.y - poi.y) / target.scale.pixelsPerUnit;
                         shotsForAnalysis.push({
-                            shotNumber: shotCounter, group: groupIndex + 1,
-                            x: parseFloat(x_coord.toFixed(4)), y: parseFloat(y_coord.toFixed(4)),
-                            units: state.scale.units, velocity: poi.velocity
+                            shotNumber: shotCounter,
+                            group: globalGroupCounter,
+                            x: parseFloat(x_coord.toFixed(4)), 
+                            y: parseFloat(y_coord.toFixed(4)),
+                            units: target.scale.units, 
+                            velocity: poi.velocity,
+                            targetId: target.id
                         });
                     });
                 }
             });
+        }
+        
+        if (shotsForAnalysis.length === 0) {
+            alert("No impacts have been marked. Nothing to save.");
+            return;
         }
         
         const sessionData = {
@@ -288,8 +316,13 @@ export function setupEventListeners() {
             altitude: parseFloat(document.getElementById('tmAltitude').value) || 0,
             pressure: parseFloat(document.getElementById('tmPressure').value) || null,
             pressureType: document.getElementById('tmPressureType').value,
-            groups: state.groups, 
-            scale: state.scale,     
+            targets: state.targets.map(t => ({
+                id: t.id,
+                targetImageId: t.targetImageId,
+                scale: t.scale,
+                groups: t.groups,
+                transform: t.transform
+            })),
             shots: shotsForAnalysis 
         };
         
@@ -321,10 +354,71 @@ export function setupEventListeners() {
         removeImageBtn.click(); 
         await new Promise(resolve => setTimeout(resolve, 50));
 
+        resetState();
         state.sessionID = data.id;
-        state.scale = data.scale || { p1: null, p2: null, distance: null, units: 'in', pixelsPerUnit: null };
-        state.groups = data.groups || [];
-        state.currentGroupIndex = state.groups.length > 0 ? 0 : -1;
+        
+        // Wait briefly for UI transitions if needed
+        await new Promise(resolve => setTimeout(resolve, 50));
+        
+        if (data.targets && Array.isArray(data.targets)) {
+            // New multi-target format
+            const allImages = await getAllItems('targetImages');
+            
+            for (const tData of data.targets) {
+                const targetData = allImages.find(img => img.id === tData.targetImageId);
+                if (targetData) {
+                    await new Promise((resolve) => {
+                        const newImg = new Image();
+                        newImg.onload = () => {
+                            const workingBaseWidth = 800;
+                            const aspectRatio = newImg.naturalHeight / newImg.naturalWidth;
+                            newImg.baseWidth = workingBaseWidth;
+                            newImg.baseHeight = workingBaseWidth * aspectRatio;
+                            
+                            state.targets.push({
+                                id: tData.id || generateUniqueId(),
+                                targetImageId: tData.targetImageId,
+                                img: newImg,
+                                scale: tData.scale || { p1: null, p2: null, distance: null, units: 'in', pixelsPerUnit: null },
+                                groups: tData.groups || [],
+                                transform: tData.transform || { scale: 1 }
+                            });
+                            resolve();
+                        };
+                        newImg.src = targetData.dataUrl || targetData.data;
+                    });
+                }
+            }
+            if (state.targets.length > 0) {
+                setActiveTarget(0);
+            }
+        } else if (data.targetImageId) {
+            // Legacy single-target format
+            const targetData = await getItem('targetImages', data.targetImageId);
+            if (targetData) {
+                await new Promise((resolve) => {
+                    const newImg = new Image();
+                    newImg.onload = () => {
+                        const workingBaseWidth = 800;
+                        const aspectRatio = newImg.naturalHeight / newImg.naturalWidth;
+                        newImg.baseWidth = workingBaseWidth;
+                        newImg.baseHeight = workingBaseWidth * aspectRatio;
+                        
+                        state.targets.push({
+                            id: generateUniqueId(),
+                            targetImageId: data.targetImageId,
+                            img: newImg,
+                            scale: data.scale || { p1: null, p2: null, distance: null, units: 'in', pixelsPerUnit: null },
+                            groups: data.groups || [],
+                            transform: { scale: 1 }
+                        });
+                        resolve();
+                    };
+                    newImg.src = targetData.dataUrl || targetData.data;
+                });
+                setActiveTarget(0);
+            }
+        }
         
         document.getElementById('firearmSelect').value = data.firearmId;
         await updateLoadSelectBasedOnFirearm();
@@ -337,14 +431,13 @@ export function setupEventListeners() {
         document.getElementById('tmPressure').value = data.pressure || 29.92;
         document.getElementById('tmPressureType').value = data.pressureType || 'station';
         
-        document.getElementById('scaleDistance').value = state.scale.distance;
-        document.getElementById('scaleUnits').value = state.scale.units;
-
-        if (data.targetImageId) {
-            savedImageSelect.value = data.targetImageId;
-            savedImageSelect.dispatchEvent(new Event('change'));
+        if (state.scale) {
+            document.getElementById('scaleDistance').value = state.scale.distance || 1;
+            document.getElementById('scaleUnits').value = state.scale.units || 'in';
         }
-        
+
+        renderSessionTargets();
+        updateCanvasSize();
         renderGroupSelector();
         updateStatsDisplay();
     });

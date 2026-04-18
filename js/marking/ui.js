@@ -61,6 +61,48 @@ export function updateStatsDisplay() {
     }
 }
 
+export function renderSessionTargets() {
+    const container = document.getElementById('sessionTargetsList');
+    if (!container) return;
+    
+    container.innerHTML = '';
+    
+    if (state.targets.length === 0) {
+        container.innerHTML = '<p style="font-size: 0.75rem; color: #9ca3af; text-align: center;">No targets in session.</p>';
+        return;
+    }
+    
+    state.targets.forEach((target, index) => {
+        const isActive = index === state.activeTargetIndex;
+        
+        const div = document.createElement('div');
+        div.className = `session-target-item ${isActive ? 'active' : ''}`;
+        div.dataset.index = index;
+        div.style.display = 'flex';
+        div.style.alignItems = 'center';
+        div.style.justifyContent = 'space-between';
+        div.style.padding = '0.4rem';
+        div.style.backgroundColor = isActive ? '#4b5563' : '#1f2937';
+        div.style.border = isActive ? '1px solid #60a5fa' : '1px solid #374151';
+        div.style.borderRadius = '0.3rem';
+        div.style.cursor = 'pointer';
+        
+        let targetName = `Target ${index + 1}`;
+        const selectEl = document.getElementById('savedImageSelect');
+        if (selectEl) {
+            const option = Array.from(selectEl.options).find(o => o.value === target.targetImageId);
+            if (option) targetName = option.textContent;
+        }
+        
+        div.innerHTML = `
+            <span style="font-size: 0.8rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: ${isActive ? 'bold' : 'normal'};" title="${targetName}">${targetName}</span>
+            <button data-action="remove" data-index="${index}" class="btn-red" style="padding: 0.1rem 0.4rem; font-size: 0.7rem; margin: 0; min-width: auto; width: auto; line-height: 1;">X</button>
+        `;
+        
+        container.appendChild(div);
+    });
+}
+
 export function renderGroupSelector() {
     const groupSelect = document.getElementById('groupSelect');
     groupSelect.innerHTML = '';
