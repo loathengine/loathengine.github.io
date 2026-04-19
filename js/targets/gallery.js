@@ -1,6 +1,6 @@
 // js/targets/gallery.js
 import { getAllItems, updateItem, deleteItem, getItem, generateUniqueId } from '../db.js';
-import { convertToWebP } from '../utils.js';
+import { convertToWebP, generateThumbnail } from '../utils.js';
 import { refreshImpactMarkingUI } from '../marking.js';
 
 export async function renderTargetImages() {
@@ -25,7 +25,7 @@ export async function renderTargetImages() {
         const cardHtml = `
             <div class="card" data-id="${item.id}" style="text-align: center; position: relative;">
                 <div style="width: 100%; aspect-ratio: 1 / 1.4; background-color: #374151; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 0.25rem;">
-                     <img src="${item.dataUrl || item.data}" alt="${item.name}" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                     <img src="${item.thumbnailUrl || item.dataUrl || item.data}" alt="${item.name}" style="max-width: 100%; max-height: 100%; object-fit: contain;">
                 </div>
                 <input type="text" value="${item.name}" class="target-name-input" style="margin-top: 0.5rem; width: 100%; box-sizing: border-box;">
                 <div class="flex-container" style="margin-top: 0.5rem; justify-content: center;">
@@ -76,6 +76,7 @@ export function initGallery() {
                     });
 
                     const webpDataUrl = await convertToWebP(dataUrl);
+                    const thumbnailUrl = await generateThumbnail(dataUrl, 300);
 
                     let baseName = file.name.replace(/\.[^/.]+$/, "");
                     let name = baseName;
@@ -91,6 +92,7 @@ export function initGallery() {
                         id: generateUniqueId(),
                         name: name,
                         dataUrl: webpDataUrl,
+                        thumbnailUrl: thumbnailUrl,
                         timestamp: new Date().toISOString()
                     };
                     

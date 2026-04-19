@@ -30,6 +30,45 @@ export function convertToWebP(dataUrl, quality = 0.8) {
     });
 }
 
+export function generateThumbnail(dataUrl, maxSize = 300) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => {
+            let width = img.naturalWidth;
+            let height = img.naturalHeight;
+            
+            if (width > maxSize || height > maxSize) {
+                if (width > height) {
+                    height = Math.round((height * maxSize) / width);
+                    width = maxSize;
+                } else {
+                    width = Math.round((width * maxSize) / height);
+                    height = maxSize;
+                }
+            }
+            
+            const canvas = document.createElement('canvas');
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext('2d');
+            
+            // Fill white background to handle transparency
+            ctx.fillStyle = "white";
+            ctx.fillRect(0, 0, width, height);
+            
+            ctx.drawImage(img, 0, 0, width, height);
+            // Thumbnails can use higher compression
+            const webpDataUrl = canvas.toDataURL('image/webp', 0.6);
+            resolve(webpDataUrl);
+        };
+        img.onerror = (err) => {
+            console.error("Error loading image for thumbnail generation:", err);
+            reject("Failed to load image for thumbnail generation.");
+        };
+        img.src = dataUrl;
+    });
+}
+
 export function populateSelect(elementId, data, textKey, valueKey) {
     const select = document.getElementById(elementId);
     if (!select) return;

@@ -1,5 +1,6 @@
 // js/targets/generator.js
 import { getAllItems, updateItem, deleteItem, generateUniqueId, getItem } from '../db.js';
+import { generateThumbnail } from '../utils.js';
 
 export async function initTargetGenerator() {
     console.log("Initializing Target Generator...");
@@ -635,11 +636,13 @@ export async function initTargetGenerator() {
     if (saveAsTargetImageBtn) {
         saveAsTargetImageBtn.addEventListener('click', async () => {
             const dataUrl = canvas.toDataURL('image/webp', 0.8);
+            const thumbnailUrl = await generateThumbnail(dataUrl, 300);
             const newImage = {
                 id: generateUniqueId(),
                 name: presetNameInput.value.trim() || `Custom Target ${new Date().toLocaleString()}`,
                 timestamp: new Date().toISOString(),
                 dataUrl: dataUrl,
+                thumbnailUrl: thumbnailUrl,
                 size: Math.round((dataUrl.length * (3/4)) / 1024) + ' KB'
             };
             
