@@ -24,6 +24,13 @@ export function calculateGroupStats(pois) {
 }
 
 export function updateStatsDisplay() {
+    const statsOutput = document.getElementById('stats-output');
+    
+    if (!state.groups) {
+        statsOutput.innerHTML = '<p>Impact data will appear here once you mark points and set a scale.</p>';
+        return;
+    }
+
     state.groups.forEach(group => {
         group.stats = calculateGroupStats(group.pois);
     });
@@ -105,13 +112,18 @@ export function renderSessionTargets() {
 
 export function renderGroupSelector() {
     const groupSelect = document.getElementById('groupSelect');
+    if (!groupSelect) return;
     groupSelect.innerHTML = '';
-    state.groups.forEach((group, index) => {
-        const option = document.createElement('option');
-        option.value = index;
-        option.textContent = `Group ${index + 1}`;
-        groupSelect.appendChild(option);
-    });
+    
+    if (state.groups) {
+        state.groups.forEach((group, index) => {
+            const option = document.createElement('option');
+            option.value = index;
+            option.textContent = `Group ${index + 1}`;
+            groupSelect.appendChild(option);
+        });
+    }
+    
     groupSelect.value = state.currentGroupIndex;
 }
 
