@@ -33,6 +33,9 @@
                         <!-- HANDLOAD ONLY FIELDS -->
                         <div id="handloadOnlySections">
                             <div class="form-grid" style="margin-bottom: 1rem;">
+                                <div><label for="loadHandloadName">Load Nickname</label><input type="text" id="loadHandloadName" placeholder="e.g. 6.5 CM Match"></div>
+                            </div>
+                            <div class="form-grid" style="margin-bottom: 1rem;">
                                 <div><label for="loadPowderManufacturer">Powder Manufacturer</label><select id="loadPowderManufacturer"></select></div>
                                 <div><label for="loadPowder">Powder</label><select id="loadPowder"></select></div>
                                 <div><label for="loadChargeWeight">Charge (gr)</label><input type="number" step="0.1" id="loadChargeWeight" inputmode="decimal"></div>
@@ -96,8 +99,10 @@
                         <table class="data-table">
                             <thead>
                                 <tr>
+                                    <th>Name</th>
                                     <th>Cartridge</th>
                                     <th>Bullet</th>
+                                    <th>Powder</th>
                                     <th>Charge</th>
                                     <th>COAL</th>
                                     <th>Actions</th>

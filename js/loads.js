@@ -284,6 +284,7 @@ async function handleLoadSubmit(e) {
         load.partNumber = document.getElementById('loadCommercialPart').value;
         load.lot = document.getElementById('loadBulletLot').value; // mapping bullet lot to general lot
     } else {
+        load.name = document.getElementById('loadHandloadName').value;
         load.powderId = document.getElementById('loadPowder').value;
         load.powderLot = document.getElementById('loadPowderLot').value;
         load.chargeWeight = parseFloat(document.getElementById('loadChargeWeight').value);
@@ -372,7 +373,8 @@ async function renderLoadsTable() {
     }
 
     for (const load of loads) {
-        let type, details, charge, col, recipeButton = '';
+        let type, recipeButton = '';
+        let nameColumn, bulletColumn, powderColumn, chargeColumn, colColumn;
         const cartridgeName = cartridgeMap.get(load.cartridgeId) || 'N/A';
 
         if (load.loadType === 'commercial') {
@@ -386,17 +388,19 @@ async function renderLoadsTable() {
                 bulletDesc = `${load.bulletWeight}gr`;
             }
 
-            details = `<span style="display:inline-block; padding: 0.1rem 0.4rem; background-color: #374151; border-radius: 0.25rem; font-size: 0.7rem; color: #93c5fd; margin-right: 0.5rem; vertical-align: middle;">Commercial</span>${mfgName} ${load.name}`;
-            if (bulletDesc) details += ` with ${bulletDesc}`;
+            nameColumn = `<span style="display:inline-block; padding: 0.1rem 0.4rem; background-color: #374151; border-radius: 0.25rem; font-size: 0.7rem; color: #93c5fd; margin-right: 0.5rem; vertical-align: middle;">Commercial</span>${mfgName} ${load.name}`;
+            bulletColumn = bulletDesc || 'N/A';
 
             if (load.partNumber) {
-                details += ` (Part: ${load.partNumber})`;
+                nameColumn += ` <span style="font-size:0.8rem;color:#9ca3af;">(Part: ${load.partNumber})</span>`;
             }
-            charge = 'N/A';
-            col = 'N/A';
+            powderColumn = 'N/A';
+            chargeColumn = 'N/A';
+            colColumn = 'N/A';
         } else { 
             type = 'Hand Load';
-            details = bulletMap.get(load.bulletId) || 'N/A';
+            nameColumn = load.name || 'Unnamed Load';
+            bulletColumn = bulletMap.get(load.bulletId) || 'N/A';
             
             let chargeVal = '---';
             if (Array.isArray(load.chargeWeight)) {
@@ -412,17 +416,20 @@ async function renderLoadsTable() {
                  colVal = load.col;
             }
 
-            charge = `${chargeVal} gr ${powderMap.get(load.powderId) || ''}`.trim();
-            col = `${colVal}`;
+            powderColumn = powderMap.get(load.powderId) || '---';
+            chargeColumn = chargeVal !== '---' ? `${chargeVal} gr` : '---';
+            colColumn = `${colVal}`;
             recipeButton = `<button class="btn-indigo btn-small" data-id="${load.id}" data-action="recipe">Recipe</button>`;
         }
 
         const row = `
             <tr>
+                <td>${nameColumn}</td>
                 <td>${cartridgeName}</td>
-                <td>${details}</td>
-                <td>${charge}</td>
-                <td>${col}</td>
+                <td>${bulletColumn}</td>
+                <td>${powderColumn}</td>
+                <td>${chargeColumn}</td>
+                <td>${colColumn}</td>
                 <td>
                     <div class="flex-container">
                         ${recipeButton}
@@ -473,6 +480,7 @@ async function handleLoadTableClick(e) {
             document.getElementById('loadCommercialPart').value = item.partNumber || '';
             document.getElementById('loadBulletLot').value = item.lot || '';
         } else {
+            document.getElementById('loadHandloadName').value = item.name || '';
             document.getElementById('loadBulletLot').value = item.bulletLot || '';
             const powder = await getItem('powders', item.powderId);
             if (powder) document.getElementById('loadPowderManufacturer').value = powder.manufacturerId;
