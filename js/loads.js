@@ -363,7 +363,7 @@ async function renderLoadsTable() {
         if (cartA !== cartB) return cartA.localeCompare(cartB);
         
         // Secondary sort by load type then ID
-        if (a.loadTypeId !== b.loadType) return (a.loadTypeId || '').localeCompare(b.loadTypeId || '');
+        if (a.loadTypeId !== b.loadTypeId) return (a.loadTypeId || '').localeCompare(b.loadTypeId || '');
         return Number(a.id) - Number(b.id);
     });
 

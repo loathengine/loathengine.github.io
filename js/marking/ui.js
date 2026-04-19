@@ -208,7 +208,11 @@ export async function updateLoadSelectBasedOnFirearm() {
                 chargeVal = load.chargeWeight;
             }
 
-            option.textContent = `(HL) ${bulletName} | ${powderName} ${chargeVal}gr`;
+            if (load.name) {
+                option.textContent = `(HL) ${load.name}`;
+            } else {
+                option.textContent = `(HL) ${bulletName} | ${powderName} ${chargeVal}gr`;
+            }
         }
         loadSelect.appendChild(option);
     }

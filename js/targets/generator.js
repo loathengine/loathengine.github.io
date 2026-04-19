@@ -150,7 +150,11 @@ export async function initTargetGenerator() {
                     if (Array.isArray(l.chargeWeight)) chargeStr = l.chargeWeight.join(',');
                     else if (l.chargeWeight) chargeStr = l.chargeWeight;
                     
-                    label = `${cartName} - ${bulletStr} ${chargeStr}gr ${powderStr}`;
+                    if (l.name) {
+                        label = `${cartName} - ${l.name}`;
+                    } else {
+                        label = `${cartName} - ${bulletStr} ${chargeStr}gr ${powderStr}`;
+                    }
                 }
 
                 option.textContent = label;
@@ -224,6 +228,7 @@ export async function initTargetGenerator() {
 
                     // Construct the text block
                     textToInsert += `Cartridge: ${cartName}\n`;
+                    if (load.name) textToInsert += `Load Name: ${load.name}\n`;
                     if (bulletStr) textToInsert += `Bullet: ${bulletStr}\n`;
                     if (powderStr) textToInsert += `Powder: ${powderStr} (${chargeStr}gr)\n`;
                     
