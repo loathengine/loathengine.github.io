@@ -62,7 +62,12 @@ async function refreshAllUI() {
 // Export for other modules if needed (though event is preferred)
 export { refreshAllUI };
 
-document.addEventListener('DOMContentLoaded', async () => {
+window.onerror = function(message, source, lineno, colno, error) {
+    alert(`Global Error: ${message} at ${source}:${lineno}`);
+};
+
+async function initApp() {
+    try {
     // 1. Load HTML Content
     await loadTabContent();
 
@@ -105,4 +110,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // 5. Setup Global Event Listeners
     window.addEventListener('app-refresh', refreshAllUI);
-});
+    } catch (e) {
+        alert("Startup Error: " + e.message + "\n\n" + e.stack);
+        console.error("Startup Error:", e);
+    }
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initApp);
+} else {
+    initApp();
+}
