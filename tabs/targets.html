@@ -14,7 +14,28 @@
                             <span id="uploadProgressText" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 0.75rem; font-weight: bold; color: white;">0%</span>
                         </div>
                     </div>
-                    <div id="targetGallery" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                    <div class="data-table-container" style="margin-top: 1.5rem;">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Target Name</th>
+                                    <th>Date Added</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="targetGalleryTableBody">
+                                <!-- Target rows will be dynamically injected here -->
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Preview Area -->
+                    <div id="targetPreviewArea" style="display: none; margin-top: 1.5rem; background-color: #374151; padding: 1.5rem; border-radius: 0.5rem; text-align: center; border: 1px solid #4b5563;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid #4b5563; padding-bottom: 0.5rem;">
+                            <h4 id="previewTargetName" style="margin: 0; color: #f3f4f6;"></h4>
+                            <button id="closePreviewBtn" class="btn-gray btn-small">Close Preview</button>
+                        </div>
+                        <img id="previewTargetImg" style="max-width: 100%; max-height: 800px; object-fit: contain; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);">
                     </div>
                 </div>
 

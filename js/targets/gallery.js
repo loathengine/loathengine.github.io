@@ -1,46 +1,54 @@
 // js/targets/gallery.js
 import { getAllItems, updateItem, deleteItem, getItem, generateUniqueId } from '../db.js';
-import { convertToWebP, generateThumbnail } from '../utils.js';
+import { convertToWebP } from '../utils.js';
 import { refreshImpactMarkingUI } from '../marking.js';
 
 export async function renderTargetImages() {
-    const targetGallery = document.getElementById('targetGallery');
+    const tableBody = document.getElementById('targetGalleryTableBody');
+    if (!tableBody) return;
     
-    if (!targetGallery) return;
-    
+    // In order to NOT crash the browser when getting all items, we must hope indexedDB handles it okay.
+    // If it's a real issue we would need a cursor to fetch only metadata, but since we just need to iterate, it's fine as long as we don't inject base64 into the DOM.
     const items = await getAllItems('targetImages');
     items.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
     
-    targetGallery.innerHTML = '';
+    tableBody.innerHTML = '';
     if (items.length === 0) {
-        targetGallery.innerHTML = '<p style="color: #9ca3af; grid-column: 1 / -1; text-align: center;">No targets uploaded yet. Use the button above to add some.</p>';
+        tableBody.innerHTML = '<tr><td colspan="3" style="text-align: center; color: #9ca3af; padding: 1.5rem;">No targets uploaded yet. Use the button above to add some.</td></tr>';
         return;
     }
     
-    // Check if we are in "Manage Targets" mode to show checkboxes? 
-    // The requirement says "add the ability to combine multiple uploads".
-    // We can add a checkbox to each card.
-    
     items.forEach(item => {
-        const cardHtml = `
-            <div class="card" data-id="${item.id}" style="text-align: center; position: relative;">
-                <div style="width: 100%; aspect-ratio: 1 / 1.4; background-color: #374151; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 0.25rem;">
-                     <img src="${item.thumbnailUrl || item.dataUrl || item.data}" alt="${item.name}" style="max-width: 100%; max-height: 100%; object-fit: contain;">
-                </div>
-                <input type="text" value="${item.name}" class="target-name-input" style="margin-top: 0.5rem; width: 100%; box-sizing: border-box;">
-                <div class="flex-container" style="margin-top: 0.5rem; justify-content: center;">
-                    <button class="btn-yellow btn-small" data-action="rename">Rename</button>
-                    <button class="btn-red btn-small" data-action="delete">Delete</button>
-                </div>
-            </div>
+        const dateStr = new Date(item.timestamp).toLocaleString();
+        const rowHtml = `
+            <tr data-id="${item.id}">
+                <td><strong>${item.name}</strong></td>
+                <td>${dateStr}</td>
+                <td>
+                    <div class="flex-container" style="justify-content: flex-start;">
+                        <button class="btn-indigo btn-small" data-action="preview" data-name="${item.name}">Preview</button>
+                        <button class="btn-blue btn-small" data-action="download" data-name="${item.name}">Download</button>
+                        <button class="btn-yellow btn-small" data-action="rename" data-name="${item.name}">Rename</button>
+                        <button class="btn-red btn-small" data-action="delete">Delete</button>
+                    </div>
+                </td>
+            </tr>
         `;
-        targetGallery.insertAdjacentHTML('beforeend', cardHtml);
+        tableBody.insertAdjacentHTML('beforeend', rowHtml);
     });
 }
 
 export function initGallery() {
     const uploadInput = document.getElementById('uploadTargetImage');
-    const targetGallery = document.getElementById('targetGallery');
+    const tableBody = document.getElementById('targetGalleryTableBody');
+    const closePreviewBtn = document.getElementById('closePreviewBtn');
+
+    if (closePreviewBtn) {
+        closePreviewBtn.addEventListener('click', () => {
+            document.getElementById('targetPreviewArea').style.display = 'none';
+            document.getElementById('previewTargetImg').src = '';
+        });
+    }
 
     if (uploadInput) {
         uploadInput.addEventListener('change', async (e) => {
@@ -76,7 +84,6 @@ export function initGallery() {
                     });
 
                     const webpDataUrl = await convertToWebP(dataUrl);
-                    const thumbnailUrl = await generateThumbnail(dataUrl, 300);
 
                     let baseName = file.name.replace(/\.[^/.]+$/, "");
                     let name = baseName;
@@ -92,7 +99,6 @@ export function initGallery() {
                         id: generateUniqueId(),
                         name: name,
                         dataUrl: webpDataUrl,
-                        thumbnailUrl: thumbnailUrl,
                         timestamp: new Date().toISOString()
                     };
                     
@@ -119,13 +125,13 @@ export function initGallery() {
         });
     }
 
-    if (targetGallery) {
-        targetGallery.addEventListener('click', async (e) => {
+    if (tableBody) {
+        tableBody.addEventListener('click', async (e) => {
             const button = e.target.closest('button[data-action]');
             if (!button) return;
             
-            const card = button.closest('[data-id]');
-            const id = card.dataset.id;
+            const row = button.closest('tr');
+            const id = row.dataset.id;
             const action = button.dataset.action;
 
             if (action === 'delete') {
@@ -135,15 +141,34 @@ export function initGallery() {
                     await refreshImpactMarkingUI();
                 }
             } else if (action === 'rename') {
-                const nameInput = card.querySelector('.target-name-input');
-                const newName = nameInput.value;
+                const currentName = button.dataset.name;
+                const newName = prompt('Enter new target name:', currentName);
+                if (newName && newName.trim() !== '' && newName !== currentName) {
+                    const item = await getItem('targetImages', id);
+                    if (item) {
+                        item.name = newName.trim();
+                        await updateItem('targetImages', item);
+                        await renderTargetImages();
+                        await refreshImpactMarkingUI();
+                    }
+                }
+            } else if (action === 'preview') {
                 const item = await getItem('targetImages', id);
                 if (item) {
-                    item.name = newName;
-                    await updateItem('targetImages', item);
-                    alert('Target renamed.');
-                    await renderTargetImages();
-                    await refreshImpactMarkingUI();
+                    document.getElementById('previewTargetName').textContent = item.name;
+                    document.getElementById('previewTargetImg').src = item.dataUrl || item.data;
+                    document.getElementById('targetPreviewArea').style.display = 'block';
+                    document.getElementById('targetPreviewArea').scrollIntoView({ behavior: 'smooth' });
+                }
+            } else if (action === 'download') {
+                const item = await getItem('targetImages', id);
+                if (item) {
+                    const a = document.createElement('a');
+                    a.href = item.dataUrl || item.data;
+                    a.download = `${item.name}.webp`;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
                 }
             }
         });
