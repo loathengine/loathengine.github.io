@@ -141,3 +141,191 @@ Because all data is stored within your browser, it is vulnerable to being delete
 **It is critical that you regularly back up your database.**
 
 Go to the `DB Management` tab and click **"Export Entire Database"** regularly. Save the `.json` file safely.
+
+
+## Database Schema Index
+
+This section serves as a technical reference for the standard JSON objects stored in the `master-db.json` and the local IndexedDB.
+
+### Cartridges
+```json
+{
+  "id": "CTG_17HMR_N1H2",
+  "name": "17 HMR",
+  "diameterId": "DIA_172_QW2R",
+  "maxCaseLength": 1.058,
+  "trimLength": 1.048,
+  "oal": 1.075
+}
+```
+
+### Brass
+```json
+{
+  "id": "BRS_ADGB_22CM_NYXQ",
+  "cartridgeId": "CTG_22CM_cA72",
+  "manufacturerId": "MAN_ADG_A4D7",
+  "primerHole": "0.080 (2mm)",
+  "primerPocket": "SMALL"
+}
+```
+
+### Firearms
+```json
+{
+  "id": "FIREARM_12345",
+  "name": "Custom R700",
+  "cartridgeId": "CTG_308WIN_cC82",
+  "barrelLength": 24,
+  "twistRate": 10,
+  "sightHeight": 2.0,
+  "notes": "Primary match rifle."
+}
+```
+
+### Loads
+```json
+{
+  "id": "LOAD_COMM_HORN_65CM_140_ELDM",
+  "name": "Hornady Match 140gr ELD-M",
+  "loadType": "commercial",
+  "manufacturerId": "MAN_HORNADY_JGR4",
+  "cartridgeId": "CTG_65CM_cN72",
+  "bulletId": "BUL_HORNADY_264_140_ELDM",
+  "powderCharge": null,
+  "powderId": null,
+  "primerId": null,
+  "brassId": "BRS_HORN_65CM_drV7",
+  "notes": "Dominant commercial baseline for 6.5 Creedmoor."
+}
+```
+
+### Impactdata
+```json
+{
+  "id": "SESS_12345",
+  "date": "2026-04-19T12:00:00.000Z",
+  "firearmId": "FIREARM_12345",
+  "loadId": "LOAD_COMM_HORN_65CM_140_ELDM",
+  "targetDistance": 100,
+  "distanceUnits": "yd",
+  "groups": [
+    {
+      "id": "GRP_1",
+      "pois": [
+        {
+          "x": 0.5,
+          "y": 0.2,
+          "velocity": 2700
+        },
+        {
+          "x": 0.4,
+          "y": 0.3,
+          "velocity": 2710
+        },
+        {
+          "x": 0.6,
+          "y": 0.1,
+          "velocity": 2695
+        }
+      ],
+      "poa": {
+        "x": 0,
+        "y": 0
+      }
+    }
+  ],
+  "targetImageId": "IMG_12345",
+  "notes": "Test session."
+}
+```
+
+### Targetimages
+```json
+{
+  "id": "IMG_12345",
+  "name": "Grid Target",
+  "date": "2026-04-19T12:00:00.000Z",
+  "dataUrl": "data:image/webp;base64,UklGR...",
+  "thumbnailUrl": "data:image/webp;base64,UklGR...",
+  "notes": "Standard 1-inch grid."
+}
+```
+
+### Customtargets
+```json
+{
+  "id": "CTGT_12345",
+  "name": "My Custom Diamond",
+  "config": {
+    "pageSize": "letter",
+    "gridType": "1in",
+    "bullseyeShape": "diamond",
+    "bullseyeSize": 1.0,
+    "layout": "5-diamond"
+  }
+}
+```
+
+### Manufacturers
+```json
+{
+  "id": "MAN_ACCURATE_A6B8",
+  "name": "Accurate",
+  "type": [
+    "powder"
+  ]
+}
+```
+
+### Diameters
+```json
+{
+  "id": "DIA_172_QW2R",
+  "imperial": ".172",
+  "metric": "4.5mm"
+}
+```
+
+### Powders
+```json
+{
+  "id": "PWD_ACCU_2230_R1A6",
+  "manufacturerId": "MAN_ACCURATE_A6B8",
+  "name": "Accurate 2230"
+}
+```
+
+### Primers
+```json
+{
+  "id": "PRI_CCI_200_C1R2",
+  "manufacturerId": "MAN_CCI_C2W7",
+  "name": "No. 200 Large Rifle"
+}
+```
+
+### Bullets
+```json
+{
+  "id": "BUL_BARNES_204_26_VG",
+  "manufacturerId": "MAN_BARNES_B2N5",
+  "name": "Varmint Grenade FB",
+  "weight": 26.0,
+  "diameterId": "DIA_204_M9K3",
+  "length": 0.535,
+  "ballistics": {
+    "g1_bc": 0.204,
+    "g7_bc": null,
+    "g7_form_factor": 0.131
+  },
+  "stability_vars": {
+    "is_tipped": false,
+    "tip_length": null,
+    "ix": 26.0,
+    "iy": 26.0,
+    "cg_from_base": 0.131
+  }
+}
+```
+
