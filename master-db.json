@@ -16217,7 +16217,7 @@
   ],
   "loads": [
     {
-      "id": "LOAD_COMM_VOIL",
+      "id": "LOAD_COMM_BARNES_65PRC_BARNES_62_TTSX_VOIL",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BARNES_B2N5",
@@ -16228,7 +16228,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_L4K7",
+      "id": "LOAD_COMM_BERGER_65CM_BERGER_25_FBVAR_L4K7",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BERGER_B9K2",
@@ -16239,7 +16239,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_MGP4",
+      "id": "LOAD_COMM_HORNADY_65PRC_BARNES_62_TTSX_MGP4",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -16250,7 +16250,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_OKS1",
+      "id": "LOAD_COMM_LAPUA_65CM_BERGER_25_FBVAR_OKS1",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_LAPUA_L5X1",
@@ -16261,7 +16261,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_9ENE",
+      "id": "LOAD_COMM_NOSLER_65PRC_HORNADY_750_HORNAD_9ENE",
       "name": "Hornady",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_NOSLER_N9K4",
@@ -16272,7 +16272,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_NQXN",
+      "id": "LOAD_COMM_BLAC_7PRC_HORNADY_750_HORNAD_NQXN",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BLAC_CS4B",
@@ -16283,7 +16283,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_4JOX",
+      "id": "LOAD_COMM_ACCURATE_68WEST_HORNADY_750_HORNAD_4JOX",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_ACCURATE_A6B8",
@@ -16294,7 +16294,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_S39E",
+      "id": "LOAD_COMM_BARNES_7PRC_HORNADY_750_HORNAD_S39E",
       "name": "X Marksman",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BARNES_B2N5",
@@ -16305,7 +16305,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_086H",
+      "id": "LOAD_COMM_BERGER_65SWE_BERGER_25_FBVAR_086H",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BERGER_B9K2",
@@ -16316,7 +16316,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_AEWJ",
+      "id": "LOAD_COMM_HORNADY_7PRC_BARNES_208_LRX_AEWJ",
       "name": "Gold Medal Match",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -16327,7 +16327,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_RREV",
+      "id": "LOAD_COMM_BLAC_7PRC_HORNADY_750_HORNAD_RREV",
       "name": "Hornady",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BLAC_CS4B",
@@ -16338,7 +16338,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_WN96",
+      "id": "LOAD_COMM_BARNES_7PRC_BARNES_130_TSX_WN96",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BARNES_B2N5",
@@ -16349,7 +16349,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_0K3Q",
+      "id": "LOAD_COMM_FEDERAL_7PRC_NORMA_100_BALLIS_0K3Q",
       "name": "Ballistic",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_FEDERAL_F4G7",
@@ -16360,7 +16360,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_RN2H",
+      "id": "LOAD_COMM_HORNADY_7PRC_SPEER_147_GOLDDO_RN2H",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -16371,7 +16371,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_M58G",
+      "id": "LOAD_COMM_NOSLER_7PRC_BARNES_69_MB_M58G",
       "name": "Gold Dot G",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_NOSLER_N9K4",
@@ -16382,7 +16382,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_09RB",
+      "id": "LOAD_COMM_ACCURATE_7REMMAG_SPEER_147_GOLDDO_09RB",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_ACCURATE_A6B8",
@@ -16393,7 +16393,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_45TP",
+      "id": "LOAD_COMM_ADG_8MAU_SPEER_147_GOLDDO_45TP",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_ADG_A4D7",
@@ -16404,7 +16404,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_09BS",
+      "id": "LOAD_COMM_ALLIANT_7PRC_BARNES_127_LRX_09BS",
       "name": "Ballistic",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_ALLIANT_A5R2",
@@ -16415,7 +16415,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_TQVB",
+      "id": "LOAD_COMM_ALPHA_8MAU_HORNADY_750_HORNAD_TQVB",
       "name": "Hornady",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_ALPHA_A1L2",
@@ -16426,7 +16426,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_9VOQ",
+      "id": "LOAD_COMM_BERGER_7MAU_BERGER_25_FBVAR_9VOQ",
       "name": "Gold Medal",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BERGER_B9K2",
@@ -16437,7 +16437,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_3X58",
+      "id": "LOAD_COMM_BERGER_8MAU_SPEER_147_GOLDDO_3X58",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BERGER_B9K2",
@@ -16448,7 +16448,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_XM52",
+      "id": "LOAD_COMM_BERGER_8MAU_HORNADY_750_HORNAD_XM52",
       "name": "Hornady",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BERGER_B9K2",
@@ -16459,7 +16459,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_IGPC",
+      "id": "LOAD_COMM_ACCURATE_8MAU_BARNES_70_TACTX_IGPC",
       "name": "Hornady",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_ACCURATE_A6B8",
@@ -16470,7 +16470,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_EEWE",
+      "id": "LOAD_COMM_NORMA_8MAU_BARNES_62_TSX_EEWE",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_NORMA_N8R2",
@@ -16481,7 +16481,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_JQOF",
+      "id": "LOAD_COMM_LAPUA_NEW_BERGER_25_FBVAR_JQOF",
       "name": "Scenar-L",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_LAPUA_L5X1",
@@ -16492,7 +16492,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_LFGL",
+      "id": "LOAD_COMM_HORNADY_NEW_NEW_0_UNK_LFGL",
       "name": "ELD-M",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -16503,7 +16503,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_GKX6",
+      "id": "LOAD_COMM_NOSLER_NEW_NEW_0_UNK_GKX6",
       "name": "Match Grade",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_NOSLER_N9K4",
@@ -16514,7 +16514,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_MUZW",
+      "id": "LOAD_COMM_BARNES_NEW_NEW_0_UNK_MUZW",
       "name": "Match Burner BT",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BARNES_B2N5",
@@ -16525,7 +16525,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_7Q7Y",
+      "id": "LOAD_COMM_BARNES_NEW_BARNES_110_TACTX_7Q7Y",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BARNES_B2N5",
@@ -16536,7 +16536,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_VD0Q",
+      "id": "LOAD_COMM_HORNADY_NEW_BERGER_40_BTVAR_VD0Q",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -16547,7 +16547,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_UCK7",
+      "id": "LOAD_COMM_HORNADY_NEW_BERGER_25_FBVAR_UCK7",
       "name": "Gold Medal Match",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -16558,7 +16558,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_SXA3",
+      "id": "LOAD_COMM_HORNADY_NEW_BERGER_35_FBVAR_SXA3",
       "name": "Match Burner BT (308)",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -16569,7 +16569,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_4YON",
+      "id": "LOAD_COMM_ALPHA_NEW_BARNES_69_MB_4YON",
       "name": "Match Burner BT (224)",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_ALPHA_A1L2",
@@ -16580,7 +16580,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_OVUA",
+      "id": "LOAD_COMM_ALLIANT_NEW_SPEER_147_GOLDDO_OVUA",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_ALLIANT_A5R2",
@@ -16591,7 +16591,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_5894",
+      "id": "LOAD_COMM_NORMA_223REM_NORMA_100_BALLIS_5894",
       "name": "Ballistic",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_NORMA_N8R2",
@@ -16602,7 +16602,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_Q4ST",
+      "id": "LOAD_COMM_FEDERAL_223REM_NEW_0_UNK_Q4ST",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_FEDERAL_F4G7",
@@ -16613,7 +16613,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_TCSK",
+      "id": "LOAD_COMM_BARNES_223REM_NEW_0_UNK_TCSK",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BARNES_B2N5",
@@ -16624,7 +16624,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_SGT2",
+      "id": "LOAD_COMM_BLAC_223REM_NEW_0_UNK_SGT2",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BLAC_CS4B",
@@ -16635,7 +16635,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_IX83",
+      "id": "LOAD_COMM_NORMA_223REM_NEW_0_UNK_IX83",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_NORMA_N8R2",
@@ -16646,7 +16646,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_OCN2",
+      "id": "LOAD_COMM_BERGER_223REM_NEW_0_UNK_OCN2",
       "name": "Hornady",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BERGER_B9K2",
@@ -16657,7 +16657,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_89B2",
+      "id": "LOAD_COMM_LAPUA_308WIN_NEW_0_UNK_89B2",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_LAPUA_L5X1",
@@ -16668,7 +16668,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_S6BF",
+      "id": "LOAD_COMM_NOSLER_223REM_NEW_0_UNK_S6BF",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_NOSLER_N9K4",
@@ -16679,7 +16679,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_OIS9",
+      "id": "LOAD_COMM_HORNADY_308WIN_SPEER_147_GOLDDO_OIS9",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -16690,7 +16690,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_FJA1",
+      "id": "LOAD_COMM_FEDERAL_308WIN_NEW_0_UNK_FJA1",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_FEDERAL_F4G7",
@@ -16701,7 +16701,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_CR8H",
+      "id": "LOAD_COMM_FEDERAL_308WIN_NEW_0_UNK_CR8H",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_FEDERAL_F4G7",
@@ -16712,7 +16712,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_20OD",
+      "id": "LOAD_COMM_FEDERAL_308WIN_NEW_0_UNK_20OD",
       "name": "Hornady",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_FEDERAL_F4G7",
@@ -16723,7 +16723,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_CHKR",
+      "id": "LOAD_COMM_BERGER_308WIN_SPEER_147_GOLDDO_CHKR",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BERGER_B9K2",
@@ -16734,7 +16734,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_MOQ9",
+      "id": "LOAD_COMM_LAPUA_308WIN_NORMA_100_BALLIS_MOQ9",
       "name": "Norma",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_LAPUA_L5X1",
@@ -16745,7 +16745,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_7PR1",
+      "id": "LOAD_COMM_NOSLER_308WIN_NEW_0_UNK_7PR1",
       "name": "Gold Medal",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_NOSLER_N9K4",
@@ -16756,7 +16756,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_3OBT",
+      "id": "LOAD_COMM_BLAC_308WIN_NEW_0_UNK_3OBT",
       "name": "Varmint",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BLAC_CS4B",
@@ -16767,7 +16767,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_BP4X",
+      "id": "LOAD_COMM_NORMA_308WIN_SPEER_147_GOLDDO_BP4X",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_NORMA_N8R2",
@@ -16778,7 +16778,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_38TI",
+      "id": "LOAD_COMM_FEDERAL_308WIN_NEW_0_UNK_38TI",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_FEDERAL_F4G7",
@@ -16789,7 +16789,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_0EA3",
+      "id": "LOAD_COMM_FEDERAL_308WIN_NEW_0_UNK_0EA3",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_FEDERAL_F4G7",
@@ -16800,7 +16800,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_MCHI",
+      "id": "LOAD_COMM_FEDERAL_308WIN_SPEER_147_GOLDDO_MCHI",
       "name": "Gold Medal",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_FEDERAL_F4G7",
@@ -16811,7 +16811,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_VA4T",
+      "id": "LOAD_COMM_NOSLER_223REM_SPEER_147_GOLDDO_VA4T",
       "name": "Ballistic Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_NOSLER_N9K4",
@@ -16822,7 +16822,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_0X1S",
+      "id": "LOAD_COMM_NOSLER_308WIN_NORMA_100_BALLIS_0X1S",
       "name": "Ballistic",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_NOSLER_N9K4",
@@ -16833,7 +16833,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_YQKW",
+      "id": "LOAD_COMM_FEDERAL_308WIN_SPEER_147_GOLDDO_YQKW",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_FEDERAL_F4G7",
@@ -16844,7 +16844,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_G9LD",
+      "id": "LOAD_COMM_LAPUA_223REM_NEW_0_UNK_G9LD",
       "name": "Hornady",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_LAPUA_L5X1",
@@ -16855,7 +16855,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_K3SR",
+      "id": "LOAD_COMM_BARNES_308WIN_NEW_0_UNK_K3SR",
       "name": "Gold Dot G",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BARNES_B2N5",
@@ -16866,7 +16866,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_JI35",
+      "id": "LOAD_COMM_BLAC_308WIN_NEW_0_UNK_JI35",
       "name": "Gold Medal",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BLAC_CS4B",
@@ -16877,7 +16877,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_0AOJ",
+      "id": "LOAD_COMM_NORMA_308WIN_SPEER_147_GOLDDO_0AOJ",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_NORMA_N8R2",
@@ -16888,7 +16888,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_ORBH",
+      "id": "LOAD_COMM_BARNES_65CM_NEW_0_UNK_ORBH",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BARNES_B2N5",
@@ -16899,7 +16899,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_N1DA",
+      "id": "LOAD_COMM_BARNES_308WIN_NORMA_100_BALLIS_N1DA",
       "name": "Norma",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BARNES_B2N5",
@@ -16910,7 +16910,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_527C",
+      "id": "LOAD_COMM_BARNES_300WINMAG_NEW_0_UNK_527C",
       "name": "Ballistic",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BARNES_B2N5",
@@ -16921,7 +16921,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_T0K9",
+      "id": "LOAD_COMM_LAPUA_NEW_NEW_0_UNK_T0K9",
       "name": "Gold Dot G",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_LAPUA_L5X1",
@@ -16932,7 +16932,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_SKIT",
+      "id": "LOAD_COMM_FEDERAL_308WIN_NORMA_100_BALLIS_SKIT",
       "name": "Ballistic",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_FEDERAL_F4G7",
@@ -16943,7 +16943,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_GMPV",
+      "id": "LOAD_COMM_FEDERAL_308WIN_NEW_0_UNK_GMPV",
       "name": "Hornady",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_FEDERAL_F4G7",
@@ -16954,7 +16954,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_GA88",
+      "id": "LOAD_COMM_HORNADY_308WIN_NEW_0_UNK_GA88",
       "name": "Match",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -16965,7 +16965,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_T793",
+      "id": "LOAD_COMM_BLAC_308WIN_NEW_0_UNK_T793",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BLAC_CS4B",
@@ -16976,7 +16976,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_UKL9",
+      "id": "LOAD_COMM_BERGER_6CM_NEW_0_UNK_UKL9",
       "name": "A-Tip",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BERGER_B9K2",
@@ -16987,7 +16987,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_WVSG",
+      "id": "LOAD_COMM_BERGER_6CM_NEW_0_UNK_WVSG",
       "name": "Hornady",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BERGER_B9K2",
@@ -16998,7 +16998,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_E9I4",
+      "id": "LOAD_COMM_LAPUA_6CM_NEW_0_UNK_E9I4",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_LAPUA_L5X1",
@@ -17009,7 +17009,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_VU7Z",
+      "id": "LOAD_COMM_NOSLER_6CM_NEW_0_UNK_VU7Z",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_NOSLER_N9K4",
@@ -17020,7 +17020,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_F3A2",
+      "id": "LOAD_COMM_BLAC_308WIN_NEW_0_UNK_F3A2",
       "name": "Supermax",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BLAC_CS4B",
@@ -17031,7 +17031,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_NJ22",
+      "id": "LOAD_COMM_HORNADY_22CM_NEW_0_UNK_NJ22",
       "name": "Gold Medal Match",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -17042,7 +17042,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_004Z",
+      "id": "LOAD_COMM_HORNADY_22CM_NEW_0_UNK_004Z",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -17053,7 +17053,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_0DKB",
+      "id": "LOAD_COMM_HORNADY_22CM_NEW_0_UNK_0DKB",
       "name": "InterLock",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -17064,7 +17064,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_NAXJ",
+      "id": "LOAD_COMM_HORNADY_22CM_NEW_0_UNK_NAXJ",
       "name": "A-Tip",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -17075,7 +17075,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_09UP",
+      "id": "LOAD_COMM_HORNADY_22CM_NEW_0_UNK_09UP",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -17086,7 +17086,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_660Z",
+      "id": "LOAD_COMM_HORNADY_6ARC_SPEER_147_GOLDDO_660Z",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -17097,7 +17097,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_6YU9",
+      "id": "LOAD_COMM_BERGER_7PRC_NEW_0_UNK_6YU9",
       "name": "Hornady",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BERGER_B9K2",
@@ -17108,7 +17108,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_59VH",
+      "id": "LOAD_COMM_HORNADY_224VALK_NEW_0_UNK_59VH",
       "name": "Hornady",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -17119,7 +17119,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_IA6B",
+      "id": "LOAD_COMM_LAPUA_224VALK_SPEER_147_GOLDDO_IA6B",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_LAPUA_L5X1",
@@ -17130,7 +17130,7 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_DMXT",
+      "id": "LOAD_COMM_BERGER_224VALK_NEW_0_UNK_DMXT",
       "name": "Gold Dot",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BERGER_B9K2",
@@ -17676,13 +17676,13 @@
   ],
   "powders": [
     {
-      "id": "PWD_NEW_MOMF",
+      "id": "PWD_VIHTAVUORI_MOMF",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
       "name": "Vihtavuori N170",
       "needs_recheck": 0
     },
     {
-      "id": "PWD_NEW_IRJS",
+      "id": "PWD_HORNADYOAL_IRJS",
       "manufacturerId": "MAN_HORNADY_JGR4",
       "name": "Hornady OAL",
       "needs_recheck": 0
@@ -18140,67 +18140,67 @@
   ],
   "primers": [
     {
-      "id": "PRI_NEW_PBA3",
+      "id": "PRI_CCIBR5LARG_PBA3",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "CCI BR5 Large Rifle Magnum",
       "needs_recheck": 0
     },
     {
-      "id": "PRI_NEW_KAYM",
+      "id": "PRI_CCIBR6MATC_KAYM",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "CCI BR6 Match",
       "needs_recheck": 0
     },
     {
-      "id": "PRI_NEW_LJJV",
+      "id": "PRI_CCIBR7BENC_LJJV",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "CCI BR7 Benchrest",
       "needs_recheck": 0
     },
     {
-      "id": "PRI_NEW_G6T1",
+      "id": "PRI_CCIBR2LARG_G6T1",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "CCI BR2 Large Rifle",
       "needs_recheck": 0
     },
     {
-      "id": "PRI_NEW_U9R8",
+      "id": "PRI_FEDERALGOL_U9R8",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "Federal Gold Medal Match 215 Small Rifle Magnum Primer",
       "needs_recheck": 0
     },
     {
-      "id": "PRI_NEW_3WPA",
+      "id": "PRI_CCIBR4SMAL_3WPA",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "CCI BR4 Small Rifle Benchrest",
       "needs_recheck": 0
     },
     {
-      "id": "PRI_NEW_IVW0",
+      "id": "PRI_WINCHESTER_IVW0",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
       "name": "Winchester USA Ready Large Rifle Match Grade Primers",
       "needs_recheck": 0
     },
     {
-      "id": "PRI_NEW_T9UB",
+      "id": "PRI_FEDERALPRE_T9UB",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "Federal Premium Gold Medal Match 210 Large Rifle Magnum Primer",
       "needs_recheck": 0
     },
     {
-      "id": "PRI_NEW_9NLQ",
+      "id": "PRI_FEDERALGM2_9NLQ",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "Federal GM210M Large Rifle Match Primer",
       "needs_recheck": 0
     },
     {
-      "id": "PRI_NEW_4KC6",
+      "id": "PRI_REMINGTON7_4KC6",
       "manufacturerId": "MAN_REMINGTON_R7M1",
       "name": "Remington 7 1/2",
       "needs_recheck": 0
     },
     {
-      "id": "PRI_NEW_C84Z",
+      "id": "PRI_CCIBR2LARG_C84Z",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "CCI BR-2 Large Rifle Benchrest",
       "needs_recheck": 0
