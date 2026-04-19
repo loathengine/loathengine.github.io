@@ -518,851 +518,9 @@
     }
   ],
   "firearms": [],
-  "loads": [],
   "impactData": [],
   "targetImages": [],
   "customTargets": [],
-  "manufacturers": [
-    {
-      "id": "MAN_ACCURATE_A6B8",
-      "name": "Accurate",
-      "type": [
-        "powder"
-      ]
-    },
-    {
-      "id": "MAN_ADG_A4D7",
-      "name": "ADG",
-      "type": [
-        "brass"
-      ]
-    },
-    {
-      "id": "MAN_ALLIANT_A5R2",
-      "name": "Alliant",
-      "type": [
-        "powder"
-      ]
-    },
-    {
-      "id": "MAN_ALPHA_A1L2",
-      "name": "Alpha Munitions",
-      "type": [
-        "brass"
-      ]
-    },
-    {
-      "id": "MAN_BARNES_B2N5",
-      "name": "Barnes",
-      "type": [
-        "bullet"
-      ]
-    },
-    {
-      "id": "MAN_BERGER_B9K2",
-      "name": "Berger",
-      "type": [
-        "bullet"
-      ]
-    },
-    {
-      "id": "MAN_CCI_C2W7",
-      "name": "CCI",
-      "type": [
-        "primer"
-      ]
-    },
-    {
-      "id": "MAN_FEDERAL_F4G7",
-      "name": "Federal",
-      "type": [
-        "primer",
-        "brass",
-        "ammo"
-      ]
-    },
-    {
-      "id": "MAN_HODGDON_H3V8",
-      "name": "Hodgdon",
-      "type": [
-        "powder"
-      ]
-    },
-    {
-      "id": "MAN_HORNADY_JGR4",
-      "name": "Hornady",
-      "type": [
-        "bullet",
-        "brass",
-        "ammo"
-      ]
-    },
-    {
-      "id": "MAN_LAPUA_L5X1",
-      "name": "Lapua",
-      "type": [
-        "bullet",
-        "brass",
-        "ammo"
-      ]
-    },
-    {
-      "id": "MAN_NORMA_N8R2",
-      "name": "Norma",
-      "type": [
-        "bullet",
-        "brass"
-      ]
-    },
-    {
-      "id": "MAN_NOSLER_N9K4",
-      "name": "Nosler",
-      "type": [
-        "brass",
-        "bullet"
-      ]
-    },
-    {
-      "id": "MAN_PETERSON_M7JT",
-      "name": "Peterson",
-      "type": [
-        "brass"
-      ]
-    },
-    {
-      "id": "MAN_RAMSHOT_R4P7",
-      "name": "Ramshot",
-      "type": [
-        "powder"
-      ]
-    },
-    {
-      "id": "MAN_REMINGTON_R7M1",
-      "name": "Remington",
-      "type": [
-        "primer"
-      ]
-    },
-    {
-      "id": "MAN_SIERRA_S6Y3",
-      "name": "Sierra",
-      "type": [
-        "bullet"
-      ]
-    },
-    {
-      "id": "MAN_SPEER_S3B9",
-      "name": "Speer",
-      "type": [
-        "bullet"
-      ]
-    },
-    {
-      "id": "MAN_STARLINE_S9Z5",
-      "name": "Starline",
-      "type": [
-        "brass"
-      ]
-    },
-    {
-      "id": "MAN_VIHTAVUORI_V8N1",
-      "name": "Vihtavuori",
-      "type": [
-        "powder"
-      ]
-    },
-    {
-      "id": "MAN_WINCHESTER_W2N4",
-      "name": "Winchester",
-      "type": [
-        "powder",
-        "primer",
-        "brass",
-        "ammo"
-      ]
-    }
-  ],
-  "diameters": [
-    {
-      "id": "DIA_172_QW2R",
-      "imperial": ".172",
-      "metric": "4.5mm"
-    },
-    {
-      "id": "DIA_204_M9K3",
-      "imperial": ".204",
-      "metric": "5mm"
-    },
-    {
-      "id": "DIA_224_L5X8",
-      "imperial": ".224",
-      "metric": "5.56"
-    },
-    {
-      "id": "DIA_243_B7V4",
-      "imperial": ".243",
-      "metric": "6mm"
-    },
-    {
-      "id": "DIA_257_N2M1",
-      "imperial": ".257",
-      "metric": "6.5mm Sav"
-    },
-    {
-      "id": "DIA_264_H8J4",
-      "imperial": ".264",
-      "metric": "6.5mm"
-    },
-    {
-      "id": "DIA_277_K9L0",
-      "imperial": ".277",
-      "metric": "6.8mm"
-    },
-    {
-      "id": "DIA_284_S3F6",
-      "imperial": ".284",
-      "metric": "7mm"
-    },
-    {
-      "id": "DIA_308_XBM7",
-      "imperial": ".308",
-      "metric": "7.62"
-    },
-    {
-      "id": "DIA_311_T1Y5",
-      "imperial": ".311",
-      "metric": "7.62 Rus/Brit"
-    },
-    {
-      "id": "DIA_323_V4B9",
-      "imperial": ".323",
-      "metric": "8mm"
-    },
-    {
-      "id": "DIA_338_R7E3",
-      "imperial": ".338",
-      "metric": "8.6mm"
-    },
-    {
-      "id": "DIA_UNK_0000",
-      "imperial": "Unknown",
-      "metric": "Unknown"
-    },
-    {
-      "id": "DIA_375_OMEC",
-      "imperial": ".375",
-      "metric": ""
-    },
-    {
-      "id": "DIA_25_MLK6",
-      "imperial": ".25",
-      "metric": ""
-    },
-    {
-      "id": "DIA_458_JYUH",
-      "imperial": ".458",
-      "metric": ""
-    },
-    {
-      "id": "DIA_355_UZPP",
-      "imperial": ".355",
-      "metric": ""
-    },
-    {
-      "id": "DIA_38_HIT9",
-      "imperial": ".38",
-      "metric": ""
-    },
-    {
-      "id": "DIA_357_VQGI",
-      "imperial": ".357",
-      "metric": ""
-    },
-    {
-      "id": "DIA_4_1FOO",
-      "imperial": ".4",
-      "metric": ""
-    },
-    {
-      "id": "DIA_429_RV3F",
-      "imperial": ".4295",
-      "metric": ""
-    },
-    {
-      "id": "DIA_41_IAPF",
-      "imperial": ".41",
-      "metric": ""
-    },
-    {
-      "id": "DIA_451_WONU",
-      "imperial": ".451",
-      "metric": ""
-    },
-    {
-      "id": "DIA_5_W5QJ",
-      "imperial": ".5",
-      "metric": ""
-    },
-    {
-      "id": "DIA_321_NVIW",
-      "imperial": ".321",
-      "metric": ""
-    },
-    {
-      "id": "DIA_408_60MH",
-      "imperial": ".408",
-      "metric": ""
-    },
-    {
-      "id": "DIA_22_4GDU",
-      "imperial": ".22",
-      "metric": ""
-    },
-    {
-      "id": "DIA_51_DLRX",
-      "imperial": ".51",
-      "metric": ""
-    },
-    {
-      "id": "DIA_366_QZSN",
-      "imperial": ".366",
-      "metric": ""
-    },
-    {
-      "id": "DIA_423_YV7D",
-      "imperial": ".423",
-      "metric": ""
-    },
-    {
-      "id": "DIA_437_XZ6U",
-      "imperial": ".437",
-      "metric": ""
-    },
-    {
-      "id": "DIA_313_U5FI",
-      "imperial": ".313",
-      "metric": ""
-    },
-    {
-      "id": "DIA_427_V1AU",
-      "imperial": ".427",
-      "metric": ""
-    },
-    {
-      "id": "DIA_454_JMVQ",
-      "imperial": ".454",
-      "metric": ""
-    },
-    {
-      "id": "DIA_475_2GRX",
-      "imperial": ".475",
-      "metric": ""
-    },
-    {
-      "id": "DIA_512_B9R7",
-      "imperial": ".512",
-      "metric": ""
-    },
-    {
-      "id": "DIA_505_QD2C",
-      "imperial": ".505",
-      "metric": ""
-    },
-    {
-      "id": "DIA_57_DD36",
-      "imperial": ".57",
-      "metric": ""
-    },
-    {
-      "id": "DIA_472_XBPV",
-      "imperial": ".472",
-      "metric": ""
-    }
-  ],
-  "powders": [
-    {
-      "id": "PWD_ACCU_2230_R1A6",
-      "manufacturerId": "MAN_ACCURATE_A6B8",
-      "name": "Accurate 2230"
-    },
-    {
-      "id": "PWD_ACCU_2520_R1A7",
-      "manufacturerId": "MAN_ACCURATE_A6B8",
-      "name": "Accurate 2520"
-    },
-    {
-      "id": "PWD_ACCU_4064_R1A8",
-      "manufacturerId": "MAN_ACCURATE_A6B8",
-      "name": "Accurate 4064"
-    },
-    {
-      "id": "PWD_ACCU_LT32_R1AA",
-      "manufacturerId": "MAN_ACCURATE_A6B8",
-      "name": "Accurate LT-32"
-    },
-    {
-      "id": "PWD_ACCU_MAGPRO_R1A9",
-      "manufacturerId": "MAN_ACCURATE_A6B8",
-      "name": "Accurate MagPro"
-    },
-    {
-      "id": "PWD_ACCU_NO9_R1A0",
-      "manufacturerId": "MAN_ACCURATE_A6B8",
-      "name": "Accurate No. 9"
-    },
-    {
-      "id": "PWD_ALLI_BULLSEYE_A1L7",
-      "manufacturerId": "MAN_ALLIANT_A5R2",
-      "name": "Bullseye"
-    },
-    {
-      "id": "PWD_ALLI_PPVARMINT_A1L6",
-      "manufacturerId": "MAN_ALLIANT_A5R2",
-      "name": "Power Pro Varmint"
-    },
-    {
-      "id": "PWD_ALLI_RL155TS_A1L5",
-      "manufacturerId": "MAN_ALLIANT_A5R2",
-      "name": "Reloder 15.5 TS"
-    },
-    {
-      "id": "PWD_ALLI_RL15_A1L1",
-      "manufacturerId": "MAN_ALLIANT_A5R2",
-      "name": "Reloder 15"
-    },
-    {
-      "id": "PWD_ALLI_RL16_A1L2",
-      "manufacturerId": "MAN_ALLIANT_A5R2",
-      "name": "Reloder 16"
-    },
-    {
-      "id": "PWD_ALLI_RL23_A1L3",
-      "manufacturerId": "MAN_ALLIANT_A5R2",
-      "name": "Reloder 23"
-    },
-    {
-      "id": "PWD_ALLI_RL26_A1L4",
-      "manufacturerId": "MAN_ALLIANT_A5R2",
-      "name": "Reloder 26"
-    },
-    {
-      "id": "PWD_ALLI_UNIQUE_A1L8",
-      "manufacturerId": "MAN_ALLIANT_A5R2",
-      "name": "Unique"
-    },
-    {
-      "id": "PWD_HODG_BLC2_H1G8",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "BL-C(2)"
-    },
-    {
-      "id": "PWD_HODG_CFE223_H1G6",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "CFE 223"
-    },
-    {
-      "id": "PWD_HODG_CFEPISTOL_H1GP",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "CFE Pistol"
-    },
-    {
-      "id": "PWD_HODG_H1000_H1G5",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H1000"
-    },
-    {
-      "id": "PWD_HODG_H110_H1GQ",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H110"
-    },
-    {
-      "id": "PWD_HODG_H335_H1GB",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H335"
-    },
-    {
-      "id": "PWD_HODG_H380_H1GC",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H380"
-    },
-    {
-      "id": "PWD_HODG_H414_H1GD",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H414"
-    },
-    {
-      "id": "PWD_HODG_H4350_H1G2",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H4350"
-    },
-    {
-      "id": "PWD_HODG_H4831SC_H1GF",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H4831SC"
-    },
-    {
-      "id": "PWD_HODG_H4831_H1GE",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H4831"
-    },
-    {
-      "id": "PWD_HODG_H4895_H1G3",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H4895"
-    },
-    {
-      "id": "PWD_HODG_H50BMG_H1GG",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H50BMG"
-    },
-    {
-      "id": "PWD_HODG_HP38_H1GT",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "HP-38"
-    },
-    {
-      "id": "PWD_HODG_IMR4064_H1G9",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 4064"
-    },
-    {
-      "id": "PWD_HODG_IMR4166_H1GK",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 4166"
-    },
-    {
-      "id": "PWD_HODG_IMR4198_H1GS",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 4198"
-    },
-    {
-      "id": "PWD_HODG_IMR4350_H1G0",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 4350"
-    },
-    {
-      "id": "PWD_HODG_IMR4451_H1GL",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 4451"
-    },
-    {
-      "id": "PWD_HODG_IMR4895_H1GM",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 4895"
-    },
-    {
-      "id": "PWD_HODG_IMR7828SSC_H1GO",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 7828SSC"
-    },
-    {
-      "id": "PWD_HODG_IMR7828_H1GN",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 7828"
-    },
-    {
-      "id": "PWD_HODG_IMR8208_H1GA",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 8208 XBR"
-    },
-    {
-      "id": "PWD_HODG_LILGUN_H1GR",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "Lil' Gun"
-    },
-    {
-      "id": "PWD_HODG_LONGSHOT_H1GJ",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "Longshot"
-    },
-    {
-      "id": "PWD_HODG_RETUMBO_H1G4",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "Retumbo"
-    },
-    {
-      "id": "PWD_HODG_TITEGROUP_H1G7",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "Titegroup"
-    },
-    {
-      "id": "PWD_HODG_TITEWAD_H1GI",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "Titewad"
-    },
-    {
-      "id": "PWD_HODG_US869_H1GH",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "US 869"
-    },
-    {
-      "id": "PWD_HODG_VARGET_H1G1",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "Varget"
-    },
-    {
-      "id": "PWD_RAMS_BIGGAME_R1A2",
-      "manufacturerId": "MAN_RAMSHOT_R4P7",
-      "name": "Big Game"
-    },
-    {
-      "id": "PWD_RAMS_HUNTER_R1A3",
-      "manufacturerId": "MAN_RAMSHOT_R4P7",
-      "name": "Hunter"
-    },
-    {
-      "id": "PWD_RAMS_MAGNUM_R1A4",
-      "manufacturerId": "MAN_RAMSHOT_R4P7",
-      "name": "Magnum"
-    },
-    {
-      "id": "PWD_RAMS_TAC_R1A1",
-      "manufacturerId": "MAN_RAMSHOT_R4P7",
-      "name": "TAC"
-    },
-    {
-      "id": "PWD_RAMS_XTERM_R1A5",
-      "manufacturerId": "MAN_RAMSHOT_R4P7",
-      "name": "X-Terminator"
-    },
-    {
-      "id": "PWD_VIHT_N110_V1H2",
-      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N110"
-    },
-    {
-      "id": "PWD_VIHT_N120_V1H3",
-      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N120"
-    },
-    {
-      "id": "PWD_VIHT_N130_V1H4",
-      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N130"
-    },
-    {
-      "id": "PWD_VIHT_N133_V1H5",
-      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N133"
-    },
-    {
-      "id": "PWD_VIHT_N135_V1H6",
-      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N135"
-    },
-    {
-      "id": "PWD_VIHT_N140_7Ih6",
-      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N140"
-    },
-    {
-      "id": "PWD_VIHT_N150_V1H7",
-      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N150"
-    },
-    {
-      "id": "PWD_VIHT_N160_V1H8",
-      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N160"
-    },
-    {
-      "id": "PWD_VIHT_N165_V1H9",
-      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N165"
-    },
-    {
-      "id": "PWD_VIHT_N170_V1HA",
-      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N170"
-    },
-    {
-      "id": "PWD_VIHT_N530_V5H1",
-      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N530"
-    },
-    {
-      "id": "PWD_VIHT_N540_V5H2",
-      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N540"
-    },
-    {
-      "id": "PWD_VIHT_N550_V5H3",
-      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N550"
-    },
-    {
-      "id": "PWD_VIHT_N555_V5H4",
-      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N555"
-    },
-    {
-      "id": "PWD_VIHT_N560_V5H5",
-      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N560"
-    },
-    {
-      "id": "PWD_VIHT_N565_V5H6",
-      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N565"
-    },
-    {
-      "id": "PWD_VIHT_N568_V5H7",
-      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N568"
-    },
-    {
-      "id": "PWD_VIHT_N570_V5H8",
-      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N570"
-    },
-    {
-      "id": "PWD_WINC_231_W1N4",
-      "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "231"
-    },
-    {
-      "id": "PWD_WINC_244_W1N5",
-      "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "244"
-    },
-    {
-      "id": "PWD_WINC_296_W1N6",
-      "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "296"
-    },
-    {
-      "id": "PWD_WINC_748_W1N7",
-      "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "748"
-    },
-    {
-      "id": "PWD_WINC_760_W1N8",
-      "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "760"
-    },
-    {
-      "id": "PWD_WINC_STABALL65_W1N1",
-      "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "StaBALL 6.5"
-    },
-    {
-      "id": "PWD_WINC_STABALLHD_W1N3",
-      "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "StaBALL HD"
-    },
-    {
-      "id": "PWD_WINC_STABALLMATCH_W1N2",
-      "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "StaBALL Match"
-    }
-  ],
-  "primers": [
-    {
-      "id": "PRI_CCI_200_C1R2",
-      "manufacturerId": "MAN_CCI_C2W7",
-      "name": "No. 200 Large Rifle"
-    },
-    {
-      "id": "PRI_CCI_250_PSFC",
-      "manufacturerId": "MAN_CCI_C2W7",
-      "name": "No. 250 Large Rifle Magnum"
-    },
-    {
-      "id": "PRI_CCI_400_C1R3",
-      "manufacturerId": "MAN_CCI_C2W7",
-      "name": "No. 400 Small Rifle"
-    },
-    {
-      "id": "PRI_CCI_450_C1R4",
-      "manufacturerId": "MAN_CCI_C2W7",
-      "name": "No. 450 Small Rifle Magnum"
-    },
-    {
-      "id": "PRI_CCI_BR2_C1R5",
-      "manufacturerId": "MAN_CCI_C2W7",
-      "name": "BR-2 Large Rifle Bench Rest"
-    },
-    {
-      "id": "PRI_CCI_BR4_C1R6",
-      "manufacturerId": "MAN_CCI_C2W7",
-      "name": "BR-4 Small Rifle Bench Rest"
-    },
-    {
-      "id": "PRI_CCI_NO34_C1R8",
-      "manufacturerId": "MAN_CCI_C2W7",
-      "name": "No. 34 Large Rifle (Military)"
-    },
-    {
-      "id": "PRI_CCI_NO41_C1R7",
-      "manufacturerId": "MAN_CCI_C2W7",
-      "name": "No. 41 Small Rifle (Military)"
-    },
-    {
-      "id": "PRI_FED_205M_F1D7",
-      "manufacturerId": "MAN_FEDERAL_F4G7",
-      "name": "205M Gold Medal Match Small Rifle"
-    },
-    {
-      "id": "PRI_FED_205_F1D6",
-      "manufacturerId": "MAN_FEDERAL_F4G7",
-      "name": "205 Small Rifle"
-    },
-    {
-      "id": "PRI_FED_210M_F1D3",
-      "manufacturerId": "MAN_FEDERAL_F4G7",
-      "name": "210M Gold Medal Match Large Rifle"
-    },
-    {
-      "id": "PRI_FED_210_F1D2",
-      "manufacturerId": "MAN_FEDERAL_F4G7",
-      "name": "210 Large Rifle"
-    },
-    {
-      "id": "PRI_FED_215M_F1D5",
-      "manufacturerId": "MAN_FEDERAL_F4G7",
-      "name": "215M Gold Medal Match Large Rifle Magnum"
-    },
-    {
-      "id": "PRI_FED_215_F1D4",
-      "manufacturerId": "MAN_FEDERAL_F4G7",
-      "name": "215 Large Rifle Magnum"
-    },
-    {
-      "id": "PRI_FED_AR_F1D8",
-      "manufacturerId": "MAN_FEDERAL_F4G7",
-      "name": "AR Match Small Rifle"
-    },
-    {
-      "id": "PRI_REM_7.5_R1E2",
-      "manufacturerId": "MAN_REMINGTON_R7M1",
-      "name": "7 1/2 Small Rifle Bench Rest"
-    },
-    {
-      "id": "PRI_REM_9.5M_R1E4",
-      "manufacturerId": "MAN_REMINGTON_R7M1",
-      "name": "9 1/2M Large Rifle Magnum"
-    },
-    {
-      "id": "PRI_REM_9.5_R1E3",
-      "manufacturerId": "MAN_REMINGTON_R7M1",
-      "name": "9 1/2 Large Rifle"
-    },
-    {
-      "id": "PRI_WINC_WLRM_W1N3",
-      "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "Large Rifle Magnum (WLRM)"
-    },
-    {
-      "id": "PRI_WINC_WLR_W1N2",
-      "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "Large Rifle (WLR)"
-    },
-    {
-      "id": "PRI_WINC_WSR_W1N4",
-      "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "Small Rifle (WSR)"
-    }
-  ],
   "bullets": [
     {
       "id": "BUL_BARNES_204_26_VG",
@@ -15263,6 +14421,1234 @@
         "iy": 1020.0,
         "cg_from_base": null
       }
+    }
+  ],
+  "loads": [
+    {
+      "id": "LOAD_COMM_VOIL",
+      "name": "Barnes 6.5 PRC 130gr LRX BT",
+      "loadType": "commercial",
+      "manufacturerId": "MAN_BARNES_B2N5",
+      "cartridgeId": "CTG_65PRC_cP02",
+      "bulletId": "BUL_BARNES_224_62_TTSX",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_L4K7",
+      "name": "Berger 6.5 Creedmoor 130gr Varmint Grenade FB",
+      "loadType": "commercial",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "cartridgeId": "CTG_65CM_cN72",
+      "bulletId": "BUL_BERGER_172_25_FBVAR",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_MGP4",
+      "name": "Hornady 6.5 PRC 130gr ELD-X BT",
+      "loadType": "commercial",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "cartridgeId": "CTG_65PRC_cP02",
+      "bulletId": "BUL_BARNES_224_62_TTSX",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_OKS1",
+      "name": "Lapua 6.5 Creedmoor 130gr Scenar BT",
+      "loadType": "commercial",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "cartridgeId": "CTG_65CM_cN72",
+      "bulletId": "BUL_BERGER_172_25_FBVAR",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_9ENE",
+      "name": "Nosler 6.5 PRC 130gr Ballistic Tip BT",
+      "loadType": "commercial",
+      "manufacturerId": "MAN_NOSLER_N9K4",
+      "cartridgeId": "CTG_65PRC_cP02",
+      "bulletId": "BUL_BARNES_224_62_TTSX",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_NQXN",
+      "name": "Black Hills 7mm PRC 162gr LRX BT",
+      "loadType": "commercial",
+      "manufacturerId": "MAN_BLAC_CS4B",
+      "cartridgeId": "CTG_7PRC_N7HE",
+      "bulletId": "BUL_BARNES_284_168_LRX",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_4JOX",
+      "name": "Accurate 6.8 Western 115gr TSX FB",
+      "loadType": "commercial",
+      "manufacturerId": "MAN_ACCURATE_A6B8",
+      "cartridgeId": "CTG_68WEST_N6HD",
+      "bulletId": "BUL_BARNES_224_62_TSX",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_S39E",
+      "name": "Barnes 7mm PRC 150gr LRX BT",
+      "loadType": "commercial",
+      "manufacturerId": "MAN_BARNES_B2N5",
+      "cartridgeId": "CTG_7PRC_N7HE",
+      "bulletId": "BUL_BARNES_284_145_LRX",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_086H",
+      "name": "Berger 6.5x55 Swedish 108gr FB Varmint",
+      "loadType": "commercial",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "cartridgeId": "CTG_65SWE_N6HA",
+      "bulletId": "BUL_BERGER_172_25_FBVAR",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_AEWJ",
+      "name": "Hornady 7mm PRC 140gr EL-X BT",
+      "loadType": "commercial",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "cartridgeId": "CTG_7PRC_N7HE",
+      "bulletId": "BUL_BARNES_284_139_LRX",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_RREV",
+      "name": "Black Hills 6.5 PRC 140gr LRX BT",
+      "loadType": "commercial",
+      "manufacturerId": "MAN_BLAC_CS4B",
+      "cartridgeId": "CTG_7PRC_N7HE",
+      "bulletId": "BUL_BARNES_224_77_LRX",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_WN96",
+      "name": "Barnes 7mm PRC 155gr TSX BT",
+      "loadType": "commercial",
+      "manufacturerId": "MAN_BARNES_B2N5",
+      "cartridgeId": "CTG_7PRC_N7HE",
+      "bulletId": "BUL_BARNES_264_130_TSX",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_0K3Q",
+      "name": "Federal 6.5 PRC 140gr GMM BT",
+      "loadType": "commercial",
+      "manufacturerId": "MAN_FEDERAL_F4G7",
+      "cartridgeId": "CTG_7PRC_N7HE",
+      "bulletId": "BUL_BERGER_224_30_FBVAR",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_RN2H",
+      "name": "Hornady 7mm PRC 145gr ELD-X BT",
+      "loadType": "commercial",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "cartridgeId": "CTG_7PRC_N7HE",
+      "bulletId": "BUL_BARNES_264_130_TSX",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_M58G",
+      "name": "Nosler 6.5 PRC 140gr Ballistic Tip BT",
+      "loadType": "commercial",
+      "manufacturerId": "MAN_NOSLER_N9K4",
+      "cartridgeId": "CTG_7PRC_N7HE",
+      "bulletId": "BUL_BARNES_224_69_MB",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_09RB",
+      "name": "Accurate 7mm Rem Mag 180gr GMM",
+      "loadType": "commercial",
+      "manufacturerId": "MAN_ACCURATE_A6B8",
+      "cartridgeId": "CTG_7REMMAG_cW92",
+      "bulletId": "BUL_BERGER_172_25_FBVAR",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_45TP",
+      "name": "ADG 338 Lapua Mag 250gr TSX BT",
+      "loadType": "commercial",
+      "manufacturerId": "MAN_ADG_A4D7",
+      "cartridgeId": "CTG_8MAU_N8HJ",
+      "bulletId": "BUL_BARNES_264_130_TSX",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_09BS",
+      "name": "Alliant 7mm PRC 150gr LRX BT",
+      "loadType": "commercial",
+      "manufacturerId": "MAN_ALLIANT_A5R2",
+      "cartridgeId": "CTG_7PRC_N7HE",
+      "bulletId": "BUL_BARNES_264_127_LRX",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_TQVB",
+      "name": "Alpha Munitions 8mm Mauser 180gr TSX BT",
+      "loadType": "commercial",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "cartridgeId": "CTG_8MAU_N8HJ",
+      "bulletId": "BUL_BARNES_264_130_TSX",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_9VOQ",
+      "name": "Berger 6.5x57 Mauser 120gr Varmint Grenade FB",
+      "loadType": "commercial",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "cartridgeId": "CTG_7MAU_N7HF",
+      "bulletId": "BUL_BERGER_172_25_FBVAR",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_3X58",
+      "name": "Berger 8mm Mauser 200gr FB Varmint",
+      "loadType": "commercial",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "cartridgeId": "CTG_8MAU_N8HJ",
+      "bulletId": "BUL_BERGER_172_25_FBVAR",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_XM52",
+      "name": "Berger 338 Lapua Mag 250gr FB Varmint",
+      "loadType": "commercial",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "cartridgeId": "CTG_8MAU_N8HJ",
+      "bulletId": "BUL_BERGER_204_40_BTVAR",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_IGPC",
+      "name": "Accurate 8mm Mauser 180gr TSX BT",
+      "loadType": "commercial",
+      "manufacturerId": "MAN_ACCURATE_A6B8",
+      "cartridgeId": "CTG_8MAU_N8HJ",
+      "bulletId": "BUL_BARNES_224_70_TACTX",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_EEWE",
+      "name": "Norma 8mm Mauser 180gr TSX BT",
+      "loadType": "commercial",
+      "manufacturerId": "MAN_NORMA_N8R2",
+      "cartridgeId": "CTG_8MAU_N8HJ",
+      "bulletId": "BUL_BARNES_224_62_TSX",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    }
+  ],
+  "manufacturers": [
+    {
+      "id": "MAN_PPU _KV0Z",
+      "name": "PPU (Prvi Partizan)",
+      "type": [
+        "cartridge"
+      ]
+    },
+    {
+      "id": "MAN_SIG _WOTU",
+      "name": "SIG Sauer",
+      "type": [
+        "firearm"
+      ]
+    },
+    {
+      "id": "MAN_BLAC_CS4B",
+      "name": "Black Hills",
+      "type": [
+        "powder"
+      ]
+    },
+    {
+      "id": "MAN_ACCURATE_A6B8",
+      "name": "Accurate",
+      "type": [
+        "powder"
+      ]
+    },
+    {
+      "id": "MAN_ADG_A4D7",
+      "name": "ADG",
+      "type": [
+        "brass"
+      ]
+    },
+    {
+      "id": "MAN_ALLIANT_A5R2",
+      "name": "Alliant",
+      "type": [
+        "powder"
+      ]
+    },
+    {
+      "id": "MAN_ALPHA_A1L2",
+      "name": "Alpha Munitions",
+      "type": [
+        "brass"
+      ]
+    },
+    {
+      "id": "MAN_BARNES_B2N5",
+      "name": "Barnes",
+      "type": [
+        "bullet"
+      ]
+    },
+    {
+      "id": "MAN_BERGER_B9K2",
+      "name": "Berger",
+      "type": [
+        "bullet"
+      ]
+    },
+    {
+      "id": "MAN_CCI_C2W7",
+      "name": "CCI",
+      "type": [
+        "primer"
+      ]
+    },
+    {
+      "id": "MAN_FEDERAL_F4G7",
+      "name": "Federal",
+      "type": [
+        "primer",
+        "brass",
+        "ammo"
+      ]
+    },
+    {
+      "id": "MAN_HODGDON_H3V8",
+      "name": "Hodgdon",
+      "type": [
+        "powder"
+      ]
+    },
+    {
+      "id": "MAN_HORNADY_JGR4",
+      "name": "Hornady",
+      "type": [
+        "bullet",
+        "brass",
+        "ammo"
+      ]
+    },
+    {
+      "id": "MAN_LAPUA_L5X1",
+      "name": "Lapua",
+      "type": [
+        "bullet",
+        "brass",
+        "ammo"
+      ]
+    },
+    {
+      "id": "MAN_NORMA_N8R2",
+      "name": "Norma",
+      "type": [
+        "bullet",
+        "brass"
+      ]
+    },
+    {
+      "id": "MAN_NOSLER_N9K4",
+      "name": "Nosler",
+      "type": [
+        "brass",
+        "bullet"
+      ]
+    },
+    {
+      "id": "MAN_PETERSON_M7JT",
+      "name": "Peterson",
+      "type": [
+        "brass"
+      ]
+    },
+    {
+      "id": "MAN_RAMSHOT_R4P7",
+      "name": "Ramshot",
+      "type": [
+        "powder"
+      ]
+    },
+    {
+      "id": "MAN_REMINGTON_R7M1",
+      "name": "Remington",
+      "type": [
+        "primer"
+      ]
+    },
+    {
+      "id": "MAN_SIERRA_S6Y3",
+      "name": "Sierra",
+      "type": [
+        "bullet"
+      ]
+    },
+    {
+      "id": "MAN_SPEER_S3B9",
+      "name": "Speer",
+      "type": [
+        "bullet"
+      ]
+    },
+    {
+      "id": "MAN_STARLINE_S9Z5",
+      "name": "Starline",
+      "type": [
+        "brass"
+      ]
+    },
+    {
+      "id": "MAN_VIHTAVUORI_V8N1",
+      "name": "Vihtavuori",
+      "type": [
+        "powder"
+      ]
+    },
+    {
+      "id": "MAN_WINCHESTER_W2N4",
+      "name": "Winchester",
+      "type": [
+        "powder",
+        "primer",
+        "brass",
+        "ammo"
+      ]
+    },
+    {
+      "id": "MAN_STEI_WRA4",
+      "name": "Steinel Ammunition Co.",
+      "type": [
+        "bullet"
+      ]
+    },
+    {
+      "id": "MAN_LUCK_7N6Z",
+      "name": "Lucky Ram",
+      "type": [
+        "ammo"
+      ]
+    },
+    {
+      "id": "MAN_MAXX_AS9A",
+      "name": "MaxxTech GH Ammuntions",
+      "type": [
+        "ammo"
+      ]
+    },
+    {
+      "id": "MAN_OUTL_7WX2",
+      "name": "Outlaw Cowboy Lead Bullets",
+      "type": [
+        "bullet"
+      ]
+    },
+    {
+      "id": "MAN_STAR_ZUZ1",
+      "name": "Starline Qualtity Brass Products",
+      "type": [
+        "brass"
+      ]
+    }
+  ],
+  "diameters": [
+    {
+      "id": "DIA_172_QW2R",
+      "imperial": ".172",
+      "metric": "4.5mm"
+    },
+    {
+      "id": "DIA_204_M9K3",
+      "imperial": ".204",
+      "metric": "5mm"
+    },
+    {
+      "id": "DIA_224_L5X8",
+      "imperial": ".224",
+      "metric": "5.56"
+    },
+    {
+      "id": "DIA_243_B7V4",
+      "imperial": ".243",
+      "metric": "6mm"
+    },
+    {
+      "id": "DIA_257_N2M1",
+      "imperial": ".257",
+      "metric": "6.5mm Sav"
+    },
+    {
+      "id": "DIA_264_H8J4",
+      "imperial": ".264",
+      "metric": "6.5mm"
+    },
+    {
+      "id": "DIA_277_K9L0",
+      "imperial": ".277",
+      "metric": "6.8mm"
+    },
+    {
+      "id": "DIA_284_S3F6",
+      "imperial": ".284",
+      "metric": "7mm"
+    },
+    {
+      "id": "DIA_308_XBM7",
+      "imperial": ".308",
+      "metric": "7.62"
+    },
+    {
+      "id": "DIA_311_T1Y5",
+      "imperial": ".311",
+      "metric": "7.62 Rus/Brit"
+    },
+    {
+      "id": "DIA_323_V4B9",
+      "imperial": ".323",
+      "metric": "8mm"
+    },
+    {
+      "id": "DIA_338_R7E3",
+      "imperial": ".338",
+      "metric": "8.6mm"
+    },
+    {
+      "id": "DIA_UNK_0000",
+      "imperial": "Unknown",
+      "metric": "Unknown"
+    },
+    {
+      "id": "DIA_375_OMEC",
+      "imperial": ".375",
+      "metric": ""
+    },
+    {
+      "id": "DIA_25_MLK6",
+      "imperial": ".25",
+      "metric": ""
+    },
+    {
+      "id": "DIA_458_JYUH",
+      "imperial": ".458",
+      "metric": ""
+    },
+    {
+      "id": "DIA_355_UZPP",
+      "imperial": ".355",
+      "metric": ""
+    },
+    {
+      "id": "DIA_38_HIT9",
+      "imperial": ".38",
+      "metric": ""
+    },
+    {
+      "id": "DIA_357_VQGI",
+      "imperial": ".357",
+      "metric": ""
+    },
+    {
+      "id": "DIA_4_1FOO",
+      "imperial": ".4",
+      "metric": ""
+    },
+    {
+      "id": "DIA_429_RV3F",
+      "imperial": ".4295",
+      "metric": ""
+    },
+    {
+      "id": "DIA_41_IAPF",
+      "imperial": ".41",
+      "metric": ""
+    },
+    {
+      "id": "DIA_451_WONU",
+      "imperial": ".451",
+      "metric": ""
+    },
+    {
+      "id": "DIA_5_W5QJ",
+      "imperial": ".5",
+      "metric": ""
+    },
+    {
+      "id": "DIA_321_NVIW",
+      "imperial": ".321",
+      "metric": ""
+    },
+    {
+      "id": "DIA_408_60MH",
+      "imperial": ".408",
+      "metric": ""
+    },
+    {
+      "id": "DIA_22_4GDU",
+      "imperial": ".22",
+      "metric": ""
+    },
+    {
+      "id": "DIA_51_DLRX",
+      "imperial": ".51",
+      "metric": ""
+    },
+    {
+      "id": "DIA_366_QZSN",
+      "imperial": ".366",
+      "metric": ""
+    },
+    {
+      "id": "DIA_423_YV7D",
+      "imperial": ".423",
+      "metric": ""
+    },
+    {
+      "id": "DIA_437_XZ6U",
+      "imperial": ".437",
+      "metric": ""
+    },
+    {
+      "id": "DIA_313_U5FI",
+      "imperial": ".313",
+      "metric": ""
+    },
+    {
+      "id": "DIA_427_V1AU",
+      "imperial": ".427",
+      "metric": ""
+    },
+    {
+      "id": "DIA_454_JMVQ",
+      "imperial": ".454",
+      "metric": ""
+    },
+    {
+      "id": "DIA_475_2GRX",
+      "imperial": ".475",
+      "metric": ""
+    },
+    {
+      "id": "DIA_512_B9R7",
+      "imperial": ".512",
+      "metric": ""
+    },
+    {
+      "id": "DIA_505_QD2C",
+      "imperial": ".505",
+      "metric": ""
+    },
+    {
+      "id": "DIA_57_DD36",
+      "imperial": ".57",
+      "metric": ""
+    },
+    {
+      "id": "DIA_472_XBPV",
+      "imperial": ".472",
+      "metric": ""
+    }
+  ],
+  "powders": [
+    {
+      "id": "PWD_NEW_MOMF",
+      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
+      "name": "Vihtavuori N170"
+    },
+    {
+      "id": "PWD_NEW_IRJS",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "name": "Hornady OAL"
+    },
+    {
+      "id": "PWD_ACCU_2230_R1A6",
+      "manufacturerId": "MAN_ACCURATE_A6B8",
+      "name": "Accurate 2230"
+    },
+    {
+      "id": "PWD_ACCU_2520_R1A7",
+      "manufacturerId": "MAN_ACCURATE_A6B8",
+      "name": "Accurate 2520"
+    },
+    {
+      "id": "PWD_ACCU_4064_R1A8",
+      "manufacturerId": "MAN_ACCURATE_A6B8",
+      "name": "Accurate 4064"
+    },
+    {
+      "id": "PWD_ACCU_LT32_R1AA",
+      "manufacturerId": "MAN_ACCURATE_A6B8",
+      "name": "Accurate LT-32"
+    },
+    {
+      "id": "PWD_ACCU_MAGPRO_R1A9",
+      "manufacturerId": "MAN_ACCURATE_A6B8",
+      "name": "Accurate MagPro"
+    },
+    {
+      "id": "PWD_ACCU_NO9_R1A0",
+      "manufacturerId": "MAN_ACCURATE_A6B8",
+      "name": "Accurate No. 9"
+    },
+    {
+      "id": "PWD_ALLI_BULLSEYE_A1L7",
+      "manufacturerId": "MAN_ALLIANT_A5R2",
+      "name": "Bullseye"
+    },
+    {
+      "id": "PWD_ALLI_PPVARMINT_A1L6",
+      "manufacturerId": "MAN_ALLIANT_A5R2",
+      "name": "Power Pro Varmint"
+    },
+    {
+      "id": "PWD_ALLI_RL155TS_A1L5",
+      "manufacturerId": "MAN_ALLIANT_A5R2",
+      "name": "Reloder 15.5 TS"
+    },
+    {
+      "id": "PWD_ALLI_RL15_A1L1",
+      "manufacturerId": "MAN_ALLIANT_A5R2",
+      "name": "Reloder 15"
+    },
+    {
+      "id": "PWD_ALLI_RL16_A1L2",
+      "manufacturerId": "MAN_ALLIANT_A5R2",
+      "name": "Reloder 16"
+    },
+    {
+      "id": "PWD_ALLI_RL23_A1L3",
+      "manufacturerId": "MAN_ALLIANT_A5R2",
+      "name": "Reloder 23"
+    },
+    {
+      "id": "PWD_ALLI_RL26_A1L4",
+      "manufacturerId": "MAN_ALLIANT_A5R2",
+      "name": "Reloder 26"
+    },
+    {
+      "id": "PWD_ALLI_UNIQUE_A1L8",
+      "manufacturerId": "MAN_ALLIANT_A5R2",
+      "name": "Unique"
+    },
+    {
+      "id": "PWD_HODG_BLC2_H1G8",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "BL-C(2)"
+    },
+    {
+      "id": "PWD_HODG_CFE223_H1G6",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "CFE 223"
+    },
+    {
+      "id": "PWD_HODG_CFEPISTOL_H1GP",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "CFE Pistol"
+    },
+    {
+      "id": "PWD_HODG_H1000_H1G5",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "H1000"
+    },
+    {
+      "id": "PWD_HODG_H110_H1GQ",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "H110"
+    },
+    {
+      "id": "PWD_HODG_H335_H1GB",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "H335"
+    },
+    {
+      "id": "PWD_HODG_H380_H1GC",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "H380"
+    },
+    {
+      "id": "PWD_HODG_H414_H1GD",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "H414"
+    },
+    {
+      "id": "PWD_HODG_H4350_H1G2",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "H4350"
+    },
+    {
+      "id": "PWD_HODG_H4831SC_H1GF",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "H4831SC"
+    },
+    {
+      "id": "PWD_HODG_H4831_H1GE",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "H4831"
+    },
+    {
+      "id": "PWD_HODG_H4895_H1G3",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "H4895"
+    },
+    {
+      "id": "PWD_HODG_H50BMG_H1GG",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "H50BMG"
+    },
+    {
+      "id": "PWD_HODG_HP38_H1GT",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "HP-38"
+    },
+    {
+      "id": "PWD_HODG_IMR4064_H1G9",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "IMR 4064"
+    },
+    {
+      "id": "PWD_HODG_IMR4166_H1GK",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "IMR 4166"
+    },
+    {
+      "id": "PWD_HODG_IMR4198_H1GS",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "IMR 4198"
+    },
+    {
+      "id": "PWD_HODG_IMR4350_H1G0",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "IMR 4350"
+    },
+    {
+      "id": "PWD_HODG_IMR4451_H1GL",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "IMR 4451"
+    },
+    {
+      "id": "PWD_HODG_IMR4895_H1GM",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "IMR 4895"
+    },
+    {
+      "id": "PWD_HODG_IMR7828SSC_H1GO",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "IMR 7828SSC"
+    },
+    {
+      "id": "PWD_HODG_IMR7828_H1GN",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "IMR 7828"
+    },
+    {
+      "id": "PWD_HODG_IMR8208_H1GA",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "IMR 8208 XBR"
+    },
+    {
+      "id": "PWD_HODG_LILGUN_H1GR",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "Lil' Gun"
+    },
+    {
+      "id": "PWD_HODG_LONGSHOT_H1GJ",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "Longshot"
+    },
+    {
+      "id": "PWD_HODG_RETUMBO_H1G4",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "Retumbo"
+    },
+    {
+      "id": "PWD_HODG_TITEGROUP_H1G7",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "Titegroup"
+    },
+    {
+      "id": "PWD_HODG_TITEWAD_H1GI",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "Titewad"
+    },
+    {
+      "id": "PWD_HODG_US869_H1GH",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "US 869"
+    },
+    {
+      "id": "PWD_HODG_VARGET_H1G1",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "Varget"
+    },
+    {
+      "id": "PWD_RAMS_BIGGAME_R1A2",
+      "manufacturerId": "MAN_RAMSHOT_R4P7",
+      "name": "Big Game"
+    },
+    {
+      "id": "PWD_RAMS_HUNTER_R1A3",
+      "manufacturerId": "MAN_RAMSHOT_R4P7",
+      "name": "Hunter"
+    },
+    {
+      "id": "PWD_RAMS_MAGNUM_R1A4",
+      "manufacturerId": "MAN_RAMSHOT_R4P7",
+      "name": "Magnum"
+    },
+    {
+      "id": "PWD_RAMS_TAC_R1A1",
+      "manufacturerId": "MAN_RAMSHOT_R4P7",
+      "name": "TAC"
+    },
+    {
+      "id": "PWD_RAMS_XTERM_R1A5",
+      "manufacturerId": "MAN_RAMSHOT_R4P7",
+      "name": "X-Terminator"
+    },
+    {
+      "id": "PWD_VIHT_N110_V1H2",
+      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
+      "name": "N110"
+    },
+    {
+      "id": "PWD_VIHT_N120_V1H3",
+      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
+      "name": "N120"
+    },
+    {
+      "id": "PWD_VIHT_N130_V1H4",
+      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
+      "name": "N130"
+    },
+    {
+      "id": "PWD_VIHT_N133_V1H5",
+      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
+      "name": "N133"
+    },
+    {
+      "id": "PWD_VIHT_N135_V1H6",
+      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
+      "name": "N135"
+    },
+    {
+      "id": "PWD_VIHT_N140_7Ih6",
+      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
+      "name": "N140"
+    },
+    {
+      "id": "PWD_VIHT_N150_V1H7",
+      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
+      "name": "N150"
+    },
+    {
+      "id": "PWD_VIHT_N160_V1H8",
+      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
+      "name": "N160"
+    },
+    {
+      "id": "PWD_VIHT_N165_V1H9",
+      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
+      "name": "N165"
+    },
+    {
+      "id": "PWD_VIHT_N170_V1HA",
+      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
+      "name": "N170"
+    },
+    {
+      "id": "PWD_VIHT_N530_V5H1",
+      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
+      "name": "N530"
+    },
+    {
+      "id": "PWD_VIHT_N540_V5H2",
+      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
+      "name": "N540"
+    },
+    {
+      "id": "PWD_VIHT_N550_V5H3",
+      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
+      "name": "N550"
+    },
+    {
+      "id": "PWD_VIHT_N555_V5H4",
+      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
+      "name": "N555"
+    },
+    {
+      "id": "PWD_VIHT_N560_V5H5",
+      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
+      "name": "N560"
+    },
+    {
+      "id": "PWD_VIHT_N565_V5H6",
+      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
+      "name": "N565"
+    },
+    {
+      "id": "PWD_VIHT_N568_V5H7",
+      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
+      "name": "N568"
+    },
+    {
+      "id": "PWD_VIHT_N570_V5H8",
+      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
+      "name": "N570"
+    },
+    {
+      "id": "PWD_WINC_231_W1N4",
+      "manufacturerId": "MAN_WINCHESTER_W2N4",
+      "name": "231"
+    },
+    {
+      "id": "PWD_WINC_244_W1N5",
+      "manufacturerId": "MAN_WINCHESTER_W2N4",
+      "name": "244"
+    },
+    {
+      "id": "PWD_WINC_296_W1N6",
+      "manufacturerId": "MAN_WINCHESTER_W2N4",
+      "name": "296"
+    },
+    {
+      "id": "PWD_WINC_748_W1N7",
+      "manufacturerId": "MAN_WINCHESTER_W2N4",
+      "name": "748"
+    },
+    {
+      "id": "PWD_WINC_760_W1N8",
+      "manufacturerId": "MAN_WINCHESTER_W2N4",
+      "name": "760"
+    },
+    {
+      "id": "PWD_WINC_STABALL65_W1N1",
+      "manufacturerId": "MAN_WINCHESTER_W2N4",
+      "name": "StaBALL 6.5"
+    },
+    {
+      "id": "PWD_WINC_STABALLHD_W1N3",
+      "manufacturerId": "MAN_WINCHESTER_W2N4",
+      "name": "StaBALL HD"
+    },
+    {
+      "id": "PWD_WINC_STABALLMATCH_W1N2",
+      "manufacturerId": "MAN_WINCHESTER_W2N4",
+      "name": "StaBALL Match"
+    }
+  ],
+  "primers": [
+    {
+      "id": "PRI_NEW_PBA3",
+      "manufacturerId": "MAN_CCI_C2W7",
+      "name": "CCI BR5 Large Rifle Magnum"
+    },
+    {
+      "id": "PRI_NEW_KAYM",
+      "manufacturerId": "MAN_CCI_C2W7",
+      "name": "CCI BR6 Match"
+    },
+    {
+      "id": "PRI_NEW_LJJV",
+      "manufacturerId": "MAN_CCI_C2W7",
+      "name": "CCI BR7 Benchrest"
+    },
+    {
+      "id": "PRI_NEW_G6T1",
+      "manufacturerId": "MAN_CCI_C2W7",
+      "name": "CCI BR2 Large Rifle"
+    },
+    {
+      "id": "PRI_NEW_U9R8",
+      "manufacturerId": "MAN_FEDERAL_F4G7",
+      "name": "Federal Gold Medal Match 215 Small Rifle Magnum Primer"
+    },
+    {
+      "id": "PRI_NEW_3WPA",
+      "manufacturerId": "MAN_CCI_C2W7",
+      "name": "CCI BR4 Small Rifle Benchrest"
+    },
+    {
+      "id": "PRI_NEW_IVW0",
+      "manufacturerId": "MAN_WINCHESTER_W2N4",
+      "name": "Winchester USA Ready Large Rifle Match Grade Primers"
+    },
+    {
+      "id": "PRI_NEW_T9UB",
+      "manufacturerId": "MAN_FEDERAL_F4G7",
+      "name": "Federal Premium Gold Medal Match 210 Large Rifle Magnum Primer"
+    },
+    {
+      "id": "PRI_NEW_9NLQ",
+      "manufacturerId": "MAN_FEDERAL_F4G7",
+      "name": "Federal GM210M Large Rifle Match Primer"
+    },
+    {
+      "id": "PRI_NEW_4KC6",
+      "manufacturerId": "MAN_REMINGTON_R7M1",
+      "name": "Remington 7 1/2"
+    },
+    {
+      "id": "PRI_NEW_C84Z",
+      "manufacturerId": "MAN_CCI_C2W7",
+      "name": "CCI BR-2 Large Rifle Benchrest"
+    },
+    {
+      "id": "PRI_CCI_200_C1R2",
+      "manufacturerId": "MAN_CCI_C2W7",
+      "name": "No. 200 Large Rifle"
+    },
+    {
+      "id": "PRI_CCI_250_PSFC",
+      "manufacturerId": "MAN_CCI_C2W7",
+      "name": "No. 250 Large Rifle Magnum"
+    },
+    {
+      "id": "PRI_CCI_400_C1R3",
+      "manufacturerId": "MAN_CCI_C2W7",
+      "name": "No. 400 Small Rifle"
+    },
+    {
+      "id": "PRI_CCI_450_C1R4",
+      "manufacturerId": "MAN_CCI_C2W7",
+      "name": "No. 450 Small Rifle Magnum"
+    },
+    {
+      "id": "PRI_CCI_BR2_C1R5",
+      "manufacturerId": "MAN_CCI_C2W7",
+      "name": "BR-2 Large Rifle Bench Rest"
+    },
+    {
+      "id": "PRI_CCI_BR4_C1R6",
+      "manufacturerId": "MAN_CCI_C2W7",
+      "name": "BR-4 Small Rifle Bench Rest"
+    },
+    {
+      "id": "PRI_CCI_NO34_C1R8",
+      "manufacturerId": "MAN_CCI_C2W7",
+      "name": "No. 34 Large Rifle (Military)"
+    },
+    {
+      "id": "PRI_CCI_NO41_C1R7",
+      "manufacturerId": "MAN_CCI_C2W7",
+      "name": "No. 41 Small Rifle (Military)"
+    },
+    {
+      "id": "PRI_FED_205M_F1D7",
+      "manufacturerId": "MAN_FEDERAL_F4G7",
+      "name": "205M Gold Medal Match Small Rifle"
+    },
+    {
+      "id": "PRI_FED_205_F1D6",
+      "manufacturerId": "MAN_FEDERAL_F4G7",
+      "name": "205 Small Rifle"
+    },
+    {
+      "id": "PRI_FED_210M_F1D3",
+      "manufacturerId": "MAN_FEDERAL_F4G7",
+      "name": "210M Gold Medal Match Large Rifle"
+    },
+    {
+      "id": "PRI_FED_210_F1D2",
+      "manufacturerId": "MAN_FEDERAL_F4G7",
+      "name": "210 Large Rifle"
+    },
+    {
+      "id": "PRI_FED_215M_F1D5",
+      "manufacturerId": "MAN_FEDERAL_F4G7",
+      "name": "215M Gold Medal Match Large Rifle Magnum"
+    },
+    {
+      "id": "PRI_FED_215_F1D4",
+      "manufacturerId": "MAN_FEDERAL_F4G7",
+      "name": "215 Large Rifle Magnum"
+    },
+    {
+      "id": "PRI_FED_AR_F1D8",
+      "manufacturerId": "MAN_FEDERAL_F4G7",
+      "name": "AR Match Small Rifle"
+    },
+    {
+      "id": "PRI_REM_7.5_R1E2",
+      "manufacturerId": "MAN_REMINGTON_R7M1",
+      "name": "7 1/2 Small Rifle Bench Rest"
+    },
+    {
+      "id": "PRI_REM_9.5M_R1E4",
+      "manufacturerId": "MAN_REMINGTON_R7M1",
+      "name": "9 1/2M Large Rifle Magnum"
+    },
+    {
+      "id": "PRI_REM_9.5_R1E3",
+      "manufacturerId": "MAN_REMINGTON_R7M1",
+      "name": "9 1/2 Large Rifle"
+    },
+    {
+      "id": "PRI_WINC_WLRM_W1N3",
+      "manufacturerId": "MAN_WINCHESTER_W2N4",
+      "name": "Large Rifle Magnum (WLRM)"
+    },
+    {
+      "id": "PRI_WINC_WLR_W1N2",
+      "manufacturerId": "MAN_WINCHESTER_W2N4",
+      "name": "Large Rifle (WLR)"
+    },
+    {
+      "id": "PRI_WINC_WSR_W1N4",
+      "manufacturerId": "MAN_WINCHESTER_W2N4",
+      "name": "Small Rifle (WSR)"
     }
   ]
 }
