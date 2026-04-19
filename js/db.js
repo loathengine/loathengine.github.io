@@ -19,7 +19,7 @@ function openDB() {
         };
         
         request.onblocked = (event) => {
-            alert("Please close all other browser tabs with this site open to allow the database to upgrade.");
+            alert("Please close all other browser tabs with this site open to allow the database to upgrade or reset.");
             reject("blocked");
         };
         
@@ -34,6 +34,16 @@ function openDB() {
         
         request.onsuccess = (event) => { 
             db = event.target.result; 
+            
+            // Handle version change (e.g. another tab deletes the DB)
+            db.onversionchange = () => {
+                db.close();
+                db = null;
+                console.warn("Database is being deleted or upgraded by another tab. Connection closed.");
+                // We dispatch an event so the UI can react if needed
+                window.dispatchEvent(new Event('db-version-change'));
+            };
+            
             console.log("Database opened successfully"); 
             resolve(db); 
         };
@@ -120,11 +130,17 @@ export function getAllItems(storeName) {
 
 export function deleteDatabase() {
     return new Promise((resolve, reject) => {
-        if(db) db.close();
+        if(db) {
+            db.close();
+            db = null;
+        }
         const req = indexedDB.deleteDatabase(DB_NAME);
         req.onsuccess = () => { resolve(); };
         req.onerror = (err) => { reject(err); };
-        req.onblocked = () => { reject('blocked'); };
+        req.onblocked = () => { 
+            console.warn("Database deletion blocked.");
+            reject('blocked'); 
+        };
     });
 }
 

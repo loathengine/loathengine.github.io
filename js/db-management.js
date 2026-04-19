@@ -107,27 +107,16 @@ async function handleUnifiedDelete() {
     if (scope === 'all') {
         if (confirm('Are you sure you want to permanently delete the entire database? This action cannot be undone.')) {
             try {
-                const db = await getDB();
-                const stores = Array.from(db.objectStoreNames);
-                const transaction = db.transaction(stores, 'readwrite');
-                
-                stores.forEach(storeName => {
-                    transaction.objectStore(storeName).clear();
-                });
-
-                transaction.oncomplete = () => {
-                    alert('Nuclear Reset complete. All data has been cleared.');
-                    window.dispatchEvent(new Event('app-refresh'));
-                    renderSelectedTable();
-                };
-
-                transaction.onerror = (err) => {
-                    console.error('Error clearing database:', err);
-                    alert('Could not clear the database.');
-                };
+                await deleteDatabase();
+                alert('Nuclear Reset complete. All data has been permanently deleted.');
+                window.location.reload(); // Force a full reload to re-initialize everything cleanly
             } catch (err) {
-                console.error('Error initiating database wipe:', err);
-                alert('An error occurred during database wipe.');
+                if (err === 'blocked') {
+                    alert('Database deletion is blocked. Please close all other tabs running this application and try again.');
+                } else {
+                    console.error('Error deleting database:', err);
+                    alert('Could not completely delete the database. Check console for details.');
+                }
             }
         }
     } else {
