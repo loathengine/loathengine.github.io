@@ -4,16 +4,16 @@ import { populateSelect, createSessionName } from '../utils.js';
 
 export function updateActiveButton(activeButton) {
     const toggleButtons = [
-        document.getElementById('setScale'), 
-        document.getElementById('setPoa'), 
-        document.getElementById('setPoi'), 
+        document.getElementById('setScale'),
+        document.getElementById('setPoa'),
+        document.getElementById('setPoi'),
         document.getElementById('deleteShot')
     ];
     toggleButtons.forEach(btn => btn && btn.classList.remove('active'));
     if (activeButton) {
         activeButton.classList.add('active');
     }
-    if(state.canvas) state.canvas.classList.toggle('delete-mode', state.settingState === 'delete_poi');
+    if (state.canvas) state.canvas.classList.toggle('delete-mode', state.settingState === 'delete_poi');
 }
 
 export function calculateGroupStats(pois) {
@@ -25,7 +25,7 @@ export function calculateGroupStats(pois) {
 
 export function updateStatsDisplay() {
     const statsOutput = document.getElementById('stats-output');
-    
+
     if (!state.groups) {
         statsOutput.innerHTML = '<p>Impact data will appear here once you mark points and set a scale.</p>';
         return;
@@ -34,14 +34,15 @@ export function updateStatsDisplay() {
     state.groups.forEach(group => {
         group.stats = calculateGroupStats(group.pois);
     });
-    
+
     let hasImpacts = state.groups.some(group => group.pois.length > 0);
-    
+
     let html = '';
-    
+    const statsOutput = document.getElementById('stats-output');
+
     if (hasImpacts) {
-         let impactText = '';
-         state.groups.forEach((group, groupIndex) => {
+        let impactText = '';
+        state.groups.forEach((group, groupIndex) => {
             if (group.pois.length > 0) {
                 const referencePoint = group.poa;
                 group.pois.forEach((poi, poiIndex) => {
@@ -56,8 +57,8 @@ export function updateStatsDisplay() {
                     impactText += `${coordText},${velocity}\n`;
                 });
             }
-         });
-         html += `<textarea readonly rows="10" style="width: 100%; resize: vertical; font-family: monospace;">${impactText.trim()}</textarea>`;
+        });
+        html += `<textarea readonly rows="10" style="width: 100%; resize: vertical; font-family: monospace;">${impactText.trim()}</textarea>`;
     }
 
     if (html === '') {
@@ -70,17 +71,17 @@ export function updateStatsDisplay() {
 export function renderSessionTargets() {
     const container = document.getElementById('sessionTargetsList');
     if (!container) return;
-    
+
     container.innerHTML = '';
-    
+
     if (state.targets.length === 0) {
         container.innerHTML = '<p style="font-size: 0.75rem; color: #9ca3af; text-align: center;">No targets in session.</p>';
         return;
     }
-    
+
     state.targets.forEach((target, index) => {
         const isActive = index === state.activeTargetIndex;
-        
+
         const div = document.createElement('div');
         div.className = `session-target-item ${isActive ? 'active' : ''}`;
         div.dataset.index = index;
@@ -92,19 +93,19 @@ export function renderSessionTargets() {
         div.style.border = isActive ? '1px solid #60a5fa' : '1px solid #374151';
         div.style.borderRadius = '0.3rem';
         div.style.cursor = 'pointer';
-        
+
         let targetName = `Target ${index + 1}`;
         const selectEl = document.getElementById('savedImageSelect');
         if (selectEl) {
             const option = Array.from(selectEl.options).find(o => o.value === target.targetImageId);
             if (option) targetName = option.textContent;
         }
-        
+
         div.innerHTML = `
             <span style="font-size: 0.8rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: ${isActive ? 'bold' : 'normal'};" title="${targetName}">${targetName}</span>
             <button data-action="remove" data-index="${index}" class="btn-red" style="padding: 0.1rem 0.4rem; font-size: 0.7rem; margin: 0; min-width: auto; width: auto; line-height: 1;">X</button>
         `;
-        
+
         container.appendChild(div);
     });
 }
@@ -113,7 +114,7 @@ export function renderGroupSelector() {
     const groupSelect = document.getElementById('groupSelect');
     if (!groupSelect) return;
     groupSelect.innerHTML = '';
-    
+
     if (state.groups) {
         state.groups.forEach((group, index) => {
             const option = document.createElement('option');
@@ -122,7 +123,7 @@ export function renderGroupSelector() {
             groupSelect.appendChild(option);
         });
     }
-    
+
     groupSelect.value = state.currentGroupIndex;
 }
 
@@ -132,7 +133,7 @@ export async function refreshImpactMarkingUI() {
 
     // Initial load population (will be filtered if a firearm is already selected)
     await updateLoadSelectBasedOnFirearm();
-    
+
     const savedImageSelect = document.getElementById('savedImageSelect');
     const targets = await getAllItems('targetImages');
     const currentTargetVal = savedImageSelect.value;
@@ -151,11 +152,11 @@ export async function updateLoadSelectBasedOnFirearm() {
     const firearmSelect = document.getElementById('firearmSelect');
     const selectedFirearmId = firearmSelect.value;
     const loadSelect = document.getElementById('loadSelect');
-    
+
     if (!loadSelect) return;
-    
+
     let loads = await getAllItems('loads');
-    
+
     // Filter by cartridge if firearm is selected
     if (selectedFirearmId) {
         const firearm = await getItem('firearms', selectedFirearmId);
@@ -166,28 +167,28 @@ export async function updateLoadSelectBasedOnFirearm() {
 
     const currentLoadVal = loadSelect.value;
     loadSelect.innerHTML = '<option value="">-- Associate Load (Optional) --</option>';
-    
+
     if (loads.length === 0 && selectedFirearmId) {
-         const option = document.createElement('option');
-         option.disabled = true;
-         option.textContent = "-- No compatible loads found --";
-         loadSelect.appendChild(option);
+        const option = document.createElement('option');
+        option.disabled = true;
+        option.textContent = "-- No compatible loads found --";
+        loadSelect.appendChild(option);
     }
 
     for (const load of loads) {
         const option = document.createElement('option');
         option.value = load.id;
-        
+
         if (load.loadType === 'commercial') {
             const mfg = await getItem('manufacturers', load.manufacturerId);
-            
+
             // Fetch bullet info if available
             let bulletInfo = '';
             if (load.bulletId) {
                 const bullet = await getItem('bullets', load.bulletId);
                 bulletInfo = bullet ? `${bullet.weight}gr ${bullet.name}` : '';
             } else if (load.bulletWeight) {
-                 bulletInfo = `${load.bulletWeight}gr`;
+                bulletInfo = `${load.bulletWeight}gr`;
             }
 
             option.textContent = `${mfg ? mfg.name : ''} ${load.name} ${bulletInfo}`.trim();
@@ -200,12 +201,12 @@ export async function updateLoadSelectBasedOnFirearm() {
                 bulletName = `${bullet.weight}gr ${bulletMfg ? bulletMfg.name : ''} ${bullet.name}`;
             }
             const powderName = powder ? powder.name : 'Unknown Powder';
-            
+
             let chargeVal = '---';
             if (Array.isArray(load.chargeWeight)) {
                 chargeVal = load.chargeWeight.join(', ');
             } else if (load.chargeWeight !== undefined) {
-                 chargeVal = load.chargeWeight;
+                chargeVal = load.chargeWeight;
             }
 
             option.textContent = `(HL) ${bulletName} | ${powderName} ${chargeVal}gr`;
@@ -224,10 +225,10 @@ export async function populateMarkingSessionSelect() {
     const markingSessionSelect = document.getElementById('markingSessionSelect');
     const sessions = await getAllItems('impactData');
     sessions.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
-    
+
     const currentVal = markingSessionSelect.value;
     markingSessionSelect.innerHTML = `<option value="">-- Select a Session to load/delete --</option>`;
-    for(const session of sessions) {
+    for (const session of sessions) {
         const option = document.createElement('option');
         option.value = session.id;
         option.textContent = await createSessionName(session);
