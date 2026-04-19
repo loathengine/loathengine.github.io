@@ -128,6 +128,28 @@ export function getAllItems(storeName) {
     });
 }
 
+export function clearDatabase() {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const dbInstance = await getDB();
+            const storeNames = Array.from(dbInstance.objectStoreNames);
+            if (storeNames.length === 0) {
+                return resolve();
+            }
+            const transaction = dbInstance.transaction(storeNames, 'readwrite');
+            
+            storeNames.forEach(storeName => {
+                transaction.objectStore(storeName).clear();
+            });
+            
+            transaction.oncomplete = () => resolve();
+            transaction.onerror = (event) => reject(event.target.error);
+        } catch (e) {
+            reject(e);
+        }
+    });
+}
+
 export function deleteDatabase() {
     return new Promise((resolve, reject) => {
         if(db) {

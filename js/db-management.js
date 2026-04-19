@@ -1,5 +1,5 @@
 // js/db-management.js
-import { getAllItems, getObjectStores, deleteDatabase, getDB, deleteItem } from './db.js';
+import { getAllItems, getObjectStores, deleteDatabase, clearDatabase, getDB, deleteItem } from './db.js';
 import { triggerDownload } from './utils.js';
 
 // All tables are treated equally.
@@ -107,16 +107,12 @@ async function handleUnifiedDelete() {
     if (scope === 'all') {
         if (confirm('Are you sure you want to permanently delete the entire database? This action cannot be undone.')) {
             try {
-                await deleteDatabase();
+                await clearDatabase();
                 alert('Nuclear Reset complete. All data has been permanently deleted.');
                 window.location.reload(); // Force a full reload to re-initialize everything cleanly
             } catch (err) {
-                if (err === 'blocked') {
-                    alert('Database deletion is blocked. Please close all other tabs running this application and try again.');
-                } else {
-                    console.error('Error deleting database:', err);
-                    alert('Could not completely delete the database. Check console for details.');
-                }
+                console.error('Error clearing database:', err);
+                alert('Could not completely clear the database. Check console for details.');
             }
         }
     } else {
