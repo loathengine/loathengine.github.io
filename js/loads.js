@@ -231,6 +231,8 @@ export async function refreshLoadsUI() {
     populateSelect('loadPrimer', allPrimers, 'name', 'id');
     const powderManufacturers = allManufacturers.filter(m => m.type && m.type.includes('powder'));
     populateSelect('loadPowderManufacturer', powderManufacturers, 'displayName', 'id');
+    const ammoManufacturers = allManufacturers.filter(m => m.type && m.type.includes('ammo'));
+    populateSelect('loadCommercialManufacturer', ammoManufacturers, 'displayName', 'id');
     
     document.getElementById('loadCartridge').innerHTML = '<option value="">-- Select --</option>';
     document.getElementById('loadBulletWeight').innerHTML = '<option value="">-- Select --</option>';
@@ -277,6 +279,7 @@ async function handleLoadSubmit(e) {
     };
     
     if (isCommercial) {
+        load.manufacturerId = document.getElementById('loadCommercialManufacturer').value;
         load.name = document.getElementById('loadCommercialName').value;
         load.partNumber = document.getElementById('loadCommercialPart').value;
         load.lot = document.getElementById('loadBulletLot').value; // mapping bullet lot to general lot
@@ -465,6 +468,7 @@ async function handleLoadTableClick(e) {
         document.getElementById('loadBullet').value = item.bulletId || '';
         
         if (isCommercial) {
+            document.getElementById('loadCommercialManufacturer').value = item.manufacturerId || '';
             document.getElementById('loadCommercialName').value = item.name || '';
             document.getElementById('loadCommercialPart').value = item.partNumber || '';
             document.getElementById('loadBulletLot').value = item.lot || '';
