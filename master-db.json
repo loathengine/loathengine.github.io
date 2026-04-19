@@ -15429,6 +15429,116 @@
       "partNumber": null,
       "lot": null,
       "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_JQOF",
+      "name": "Scenar-L",
+      "loadTypeId": "LT_COMM",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "cartridgeId": "CTG_NEW_Y7ND",
+      "bulletId": "BUL_BERGER_172_25_FBVAR",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_LFGL",
+      "name": "ELD-M",
+      "loadTypeId": "LT_COMM",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "cartridgeId": "CTG_NEW_LJM1",
+      "bulletId": "BUL_NEW_WSEN",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_GKX6",
+      "name": "Match Grade",
+      "loadTypeId": "LT_COMM",
+      "manufacturerId": "MAN_NOSLER_N9K4",
+      "cartridgeId": "CTG_NEW_S0TR",
+      "bulletId": "BUL_NEW_REZA",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_MUZW",
+      "name": "Match Burner BT",
+      "loadTypeId": "LT_COMM",
+      "manufacturerId": "MAN_BARNES_B2N5",
+      "cartridgeId": "CTG_NEW_A8UC",
+      "bulletId": "BUL_NEW_XK7B",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_7Q7Y",
+      "name": "TAC-TX BT (300 BLK)",
+      "loadTypeId": "LT_COMM",
+      "manufacturerId": "MAN_BARNES_B2N5",
+      "cartridgeId": "CTG_NEW_ZVII",
+      "bulletId": "BUL_BARNES_308_110_TACTX",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_VD0Q",
+      "name": "Match Burner BT (300 BLK)",
+      "loadTypeId": "LT_COMM",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "cartridgeId": "CTG_NEW_FHGO",
+      "bulletId": "BUL_BERGER_204_40_BTVAR",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_UCK7",
+      "name": "Match Burner BT (338)",
+      "loadTypeId": "LT_COMM",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "cartridgeId": "CTG_NEW_PNIK",
+      "bulletId": "BUL_BERGER_172_25_FBVAR",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_SXA3",
+      "name": "Match Burner BT (308)",
+      "loadTypeId": "LT_COMM",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "cartridgeId": "CTG_NEW_4Z6Z",
+      "bulletId": "BUL_BERGER_204_35_FBVAR",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_4YON",
+      "name": "Match Burner BT (224)",
+      "loadTypeId": "LT_COMM",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "cartridgeId": "CTG_NEW_KQ2L",
+      "bulletId": "BUL_BARNES_224_69_MB",
+      "partNumber": "MB224BT1",
+      "lot": null,
+      "needs_recheck": 0
+    },
+    {
+      "id": "LOAD_COMM_OVUA",
+      "name": "Match Burner BT 8mm Mauser",
+      "loadTypeId": "LT_COMM",
+      "manufacturerId": "MAN_ALLIANT_A5R2",
+      "cartridgeId": "CTG_NEW_48QY",
+      "bulletId": "BUL_BARNES_308_110_TACTX",
+      "partNumber": null,
+      "lot": null,
+      "needs_recheck": 0
     }
   ],
   "_metadata": {
