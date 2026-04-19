@@ -14485,7 +14485,7 @@
       "loadType": "commercial",
       "manufacturerId": "MAN_BLAC_CS4B",
       "cartridgeId": "CTG_7PRC_N7HE",
-      "bulletId": "BUL_BARNES_284_168_LRX",
+      "bulletId": "BUL_HORNADY_UNK_750_HORNAD_DFFC",
       "partNumber": null,
       "lot": null,
       "needs_recheck": 0
@@ -14496,7 +14496,7 @@
       "loadType": "commercial",
       "manufacturerId": "MAN_ACCURATE_A6B8",
       "cartridgeId": "CTG_68WEST_N6HD",
-      "bulletId": "BUL_BARNES_224_62_TSX",
+      "bulletId": "BUL_HORNADY_UNK_750_HORNAD_DFFC",
       "partNumber": null,
       "lot": null,
       "needs_recheck": 0
@@ -14507,7 +14507,7 @@
       "loadType": "commercial",
       "manufacturerId": "MAN_BARNES_B2N5",
       "cartridgeId": "CTG_7PRC_N7HE",
-      "bulletId": "BUL_BARNES_284_145_LRX",
+      "bulletId": "BUL_HORNADY_UNK_750_HORNAD_DFFC",
       "partNumber": null,
       "lot": null,
       "needs_recheck": 0
@@ -14529,7 +14529,7 @@
       "loadType": "commercial",
       "manufacturerId": "MAN_HORNADY_JGR4",
       "cartridgeId": "CTG_7PRC_N7HE",
-      "bulletId": "BUL_BARNES_284_139_LRX",
+      "bulletId": "BUL_HORNADY_UNK_750_HORNAD_DFFC",
       "partNumber": null,
       "lot": null,
       "needs_recheck": 0
@@ -14628,7 +14628,7 @@
       "loadType": "commercial",
       "manufacturerId": "MAN_ALPHA_A1L2",
       "cartridgeId": "CTG_8MAU_N8HJ",
-      "bulletId": "BUL_BARNES_264_130_TSX",
+      "bulletId": "BUL_HORNADY_UNK_750_HORNAD_DFFC",
       "partNumber": null,
       "lot": null,
       "needs_recheck": 0
@@ -14661,7 +14661,7 @@
       "loadType": "commercial",
       "manufacturerId": "MAN_BERGER_B9K2",
       "cartridgeId": "CTG_8MAU_N8HJ",
-      "bulletId": "BUL_BERGER_204_40_BTVAR",
+      "bulletId": "BUL_HORNADY_UNK_750_HORNAD_DFFC",
       "partNumber": null,
       "lot": null,
       "needs_recheck": 0
