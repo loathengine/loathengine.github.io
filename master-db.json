@@ -1226,18 +1226,18 @@
       "diameterId": "DIA_204_M9K3",
       "name": "Varmint Grenade FB",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 26,
+        "iy": 26,
+        "cg_from_base": 0.131,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.204,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": ".131",
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -1250,18 +1250,18 @@
       "diameterId": "DIA_224_L5X8",
       "name": "Tipped TSX FB",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 224,
+        "iy": 0.224,
+        "cg_from_base": 0.224,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.197,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.229,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -1274,18 +1274,18 @@
       "diameterId": "DIA_224_L5X8",
       "name": "Match Burner BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0065,
+        "iy": 0.00023,
+        "cg_from_base": 0.275,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.125,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.224,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.025,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -1298,17 +1298,17 @@
       "diameterId": "DIA_224_L5X8",
       "name": "TSX FB",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.224,
+        "iy": 0.224,
+        "cg_from_base": 0.224,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.209,
+        "g7_bc": 0.209,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -1322,16 +1322,16 @@
       "diameterId": "DIA_224_L5X8",
       "name": "TSX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 62.0,
+        "iy": 62.0,
+        "cg_from_base": 0.224,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.296,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -1346,18 +1346,18 @@
       "diameterId": "DIA_224_L5X8",
       "name": "Tipped TSX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 62.0,
+        "iy": 0.224,
+        "cg_from_base": 0.294,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.1,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.294,
+        "g7_bc": 0.224,
+        "g7_form_factor": 1.0,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -1370,9 +1370,9 @@
       "diameterId": "DIA_224_L5X8",
       "name": "LRX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 65.0,
+        "iy": 65.0,
+        "cg_from_base": 0.045,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -1394,17 +1394,17 @@
       "diameterId": "DIA_224_L5X8",
       "name": "Match Burner BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 69.0,
+        "iy": 0.224,
+        "cg_from_base": 0.196,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.339,
+        "g7_bc": 0.18,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -1418,18 +1418,18 @@
       "diameterId": "DIA_224_L5X8",
       "name": "TAC-TX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0038,
+        "iy": 0.0013,
+        "cg_from_base": 0.44,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.12,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.235,
+        "g7_bc": 0.175,
+        "g7_form_factor": 1.15,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -1442,18 +1442,18 @@
       "diameterId": "DIA_224_L5X8",
       "name": "LRX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 77.0,
+        "iy": 77.0,
+        "cg_from_base": 0.225,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.404,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.404,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -1466,18 +1466,18 @@
       "diameterId": "DIA_224_L5X8",
       "name": "Match Burner BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 224.0,
+        "iy": 224.0,
+        "cg_from_base": 0.224,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.41,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.876,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -1490,18 +1490,18 @@
       "diameterId": "DIA_243_B7V4",
       "name": "Match Burner BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.243,
+        "iy": 0.243,
+        "cg_from_base": 0.243,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.511,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.8775,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -1514,9 +1514,9 @@
       "diameterId": "DIA_243_B7V4",
       "name": "Tipped TSX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0083,
+        "iy": 0.0004,
+        "cg_from_base": 0.15,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -1524,8 +1524,8 @@
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_bc": 0.189,
+        "g7_form_factor": 2.049,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -1538,18 +1538,18 @@
       "diameterId": "DIA_243_B7V4",
       "name": "TSX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 3.55e-05,
+        "iy": 4.45e-06,
+        "cg_from_base": 0.65,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.15,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.333,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.0,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -1562,17 +1562,17 @@
       "diameterId": "DIA_243_B7V4",
       "name": "LRX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 95.0,
+        "iy": 0.243,
+        "cg_from_base": 0.243,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.436,
+        "g7_bc": 0.204,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -1586,11 +1586,11 @@
       "diameterId": "DIA_257_N2M1",
       "name": "TSX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.257,
+        "iy": 0.257,
+        "cg_from_base": 0.44,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.08,
         "meplat_diameter": null
       },
       "ballistics": {
@@ -1610,17 +1610,17 @@
       "diameterId": "DIA_257_N2M1",
       "name": "LRX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 101.0,
+        "iy": 101.0,
+        "cg_from_base": 0.4,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.4,
+        "g7_bc": 0.4,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -1634,16 +1634,16 @@
       "diameterId": "DIA_257_N2M1",
       "name": "TSX FB",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 25.0,
+        "iy": 115.0,
+        "cg_from_base": 0.249,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.525,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -1658,18 +1658,18 @@
       "diameterId": "DIA_257_N2M1",
       "name": "LRX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 117.0,
+        "iy": 117.0,
+        "cg_from_base": 0.055,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.53,
+        "g7_bc": 0.259,
+        "g7_form_factor": 0.259,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -1682,18 +1682,18 @@
       "diameterId": "DIA_264_H8J4",
       "name": "TAC-TX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.264,
+        "iy": 0.264,
+        "cg_from_base": 0.264,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.387,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.387,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -1706,17 +1706,17 @@
       "diameterId": "DIA_264_H8J4",
       "name": "Tipped TSX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 3.5e-05,
+        "iy": 1.75e-05,
+        "cg_from_base": 0.35,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.125,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
-        "g7_bc": null,
+        "g7_bc": 0.565,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -1730,16 +1730,16 @@
       "diameterId": "DIA_264_H8J4",
       "name": "LRX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 127.0,
+        "iy": 264.0,
+        "cg_from_base": 0.468,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.468,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -1754,18 +1754,18 @@
       "diameterId": "DIA_264_H8J4",
       "name": "TSX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0125,
+        "iy": 0.0025,
+        "cg_from_base": 0.6,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.125,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.411,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 2.0499,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -1778,18 +1778,18 @@
       "diameterId": "DIA_264_H8J4",
       "name": "Match Burner BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 3.34,
+        "iy": 5.66,
+        "cg_from_base": 0.8,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.15,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.586,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.9754,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -1802,18 +1802,18 @@
       "diameterId": "DIA_277_K9L0",
       "name": "Tipped TSX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.277,
+        "iy": 0.277,
+        "cg_from_base": 0.277,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.13,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.323,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.34,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -1826,17 +1826,17 @@
       "diameterId": "DIA_277_K9L0",
       "name": "LRX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.00032,
+        "iy": 0.00026,
+        "cg_from_base": 0.38,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.08,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.185,
+        "g7_bc": 0.245,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -1850,17 +1850,17 @@
       "diameterId": "DIA_277_K9L0",
       "name": "TSX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 130.0,
+        "iy": 130.0,
+        "cg_from_base": 0.277,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.01,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.374,
+        "g7_bc": 0.555,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -1874,16 +1874,16 @@
       "diameterId": "DIA_284_S3F6",
       "name": "LRX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 284.0,
+        "iy": 139.0,
+        "cg_from_base": 0.038,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.47,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -1898,16 +1898,16 @@
       "diameterId": "DIA_284_S3F6",
       "name": "Tipped TSX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.412,
+        "iy": 0.284,
+        "cg_from_base": 0.0112,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.412,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -1922,9 +1922,9 @@
       "diameterId": "DIA_284_S3F6",
       "name": "LRX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 284.0,
+        "iy": 284.0,
+        "cg_from_base": 0.486,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -1946,17 +1946,17 @@
       "diameterId": "DIA_284_S3F6",
       "name": "LRX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.284,
+        "iy": 0.284,
+        "cg_from_base": 0.55,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.55,
+        "g7_bc": 0.55,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -1970,18 +1970,18 @@
       "diameterId": "DIA_284_S3F6",
       "name": "Match Burner BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 171.0,
+        "iy": 0.284,
+        "cg_from_base": 0.05,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.645,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.645,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -1994,16 +1994,16 @@
       "diameterId": "DIA_308_XBM7",
       "name": "TAC-TX FB (300 BLK)",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 308.0,
+        "iy": 110.0,
+        "cg_from_base": 0.015,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.289,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -2018,16 +2018,16 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Tipped TSX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 130.0,
+        "iy": 0.308,
+        "cg_from_base": 0.35,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.34,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -2042,18 +2042,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Tipped TSX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 3.17,
+        "iy": 4.25,
+        "cg_from_base": 0.85,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.2,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_bc": 0.575,
+        "g7_form_factor": 0.15,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2066,18 +2066,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "TSX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 168.0,
+        "iy": 0.0251,
+        "cg_from_base": 0.55,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.16,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.404,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 2.049,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2091,17 +2091,17 @@
       "name": "LRX BT",
       "stability_vars": {
         "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "iy": 175.0,
+        "cg_from_base": 0.07,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 1.472,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.508,
+        "g7_bc": 0.4,
+        "g7_form_factor": 0.508,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2114,18 +2114,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Precision Match BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 175.0,
+        "iy": 175.0,
+        "cg_from_base": 0.521,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.19,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.45,
+        "g7_bc": 0.6,
+        "g7_form_factor": 2.0498,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2138,16 +2138,16 @@
       "diameterId": "DIA_308_XBM7",
       "name": "LRX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 200.0,
+        "iy": 200.0,
+        "cg_from_base": 0.045,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.546,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -2162,18 +2162,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "LRX BT Bore Rider",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.027,
+        "iy": 0.0018,
+        "cg_from_base": 0.64,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.16,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.705,
+        "g7_bc": 0.35,
+        "g7_form_factor": 2.0495,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2186,9 +2186,9 @@
       "diameterId": "DIA_338_R7E3",
       "name": "Tipped TSX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 210.0,
+        "iy": 210.0,
+        "cg_from_base": 0.263,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -2196,8 +2196,8 @@
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_bc": 0.404,
+        "g7_form_factor": 0.866,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2211,17 +2211,17 @@
       "name": "Tipped TSX BT",
       "stability_vars": {
         "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "iy": 0.338,
+        "cg_from_base": 0.338,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.514,
+        "g7_bc": 0.6,
+        "g7_form_factor": 0.87,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2234,16 +2234,16 @@
       "diameterId": "DIA_338_R7E3",
       "name": "LRX BT",
       "stability_vars": {
-        "ix": null,
+        "ix": 250.0,
         "iy": null,
-        "cg_from_base": null,
+        "cg_from_base": 0.602,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.602,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -2258,18 +2258,18 @@
       "diameterId": "DIA_338_R7E3",
       "name": "LRX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 4.45,
+        "iy": 11.6,
+        "cg_from_base": 1.2,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.3,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.575,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.195,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2282,16 +2282,16 @@
       "diameterId": "DIA_338_R7E3",
       "name": "LRX BT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 280.0,
+        "iy": 280.0,
+        "cg_from_base": 0.667,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.667,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -2306,9 +2306,9 @@
       "diameterId": "DIA_172_QW2R",
       "name": "FB Varmint",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.172,
+        "iy": 0.172,
+        "cg_from_base": 0.172,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -2316,7 +2316,7 @@
       "ballistics": {
         "preferred_model": "G1",
         "g1_bc": 0.152,
-        "g7_bc": null,
+        "g7_bc": 0.152,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -2330,9 +2330,9 @@
       "diameterId": "DIA_204_M9K3",
       "name": "FB Varmint",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 35.0,
+        "iy": 0.204,
+        "cg_from_base": 0.179,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -2354,18 +2354,18 @@
       "diameterId": "DIA_204_M9K3",
       "name": "BT Varmint",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 9.43e-08,
+        "iy": 2.32e-05,
+        "cg_from_base": 0.227,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.02,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G1",
         "g1_bc": 0.225,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_bc": 0.116,
+        "g7_form_factor": 1.0,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2378,18 +2378,18 @@
       "diameterId": "DIA_224_L5X8",
       "name": "FB Varmint",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 5.3e-13,
+        "iy": 2.8e-12,
+        "cg_from_base": 0.25,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.0254,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G1",
-        "g1_bc": 0.117,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.215,
+        "g7_bc": 0.225,
+        "g7_form_factor": 1.07,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2402,18 +2402,18 @@
       "diameterId": "DIA_224_L5X8",
       "name": "FB Varmint",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 4.52e-10,
+        "iy": 6.31e-11,
+        "cg_from_base": 0.41,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.03,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G1",
         "g1_bc": 0.151,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_bc": 0.151,
+        "g7_form_factor": 1.0,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2426,18 +2426,18 @@
       "diameterId": "DIA_224_L5X8",
       "name": "FB Varmint",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 50.0,
+        "iy": 50.0,
+        "cg_from_base": 0.014,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G1",
-        "g1_bc": 0.198,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.271,
+        "g7_bc": 0.215,
+        "g7_form_factor": 0.94,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2450,16 +2450,16 @@
       "diameterId": "DIA_224_L5X8",
       "name": "FB Target",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 1.0,
+        "iy": 0.224,
+        "cg_from_base": 0.476,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G1",
-        "g1_bc": 0.222,
+        "g1_bc": 0.194,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -2474,9 +2474,9 @@
       "diameterId": "DIA_224_L5X8",
       "name": "FB Varmint",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.224,
+        "iy": 224.0,
+        "cg_from_base": 0.367,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -2484,7 +2484,7 @@
       "ballistics": {
         "preferred_model": "G1",
         "g1_bc": 0.211,
-        "g7_bc": null,
+        "g7_bc": 0.5,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -2498,9 +2498,9 @@
       "diameterId": "DIA_224_L5X8",
       "name": "FB Target",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 55.0,
+        "iy": 0.224,
+        "cg_from_base": 0.033,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -2508,8 +2508,8 @@
       "ballistics": {
         "preferred_model": "G1",
         "g1_bc": 0.238,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_bc": 0.254,
+        "g7_form_factor": 1.042,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2522,9 +2522,9 @@
       "diameterId": "DIA_224_L5X8",
       "name": "FB Varmint",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 55.0,
+        "iy": 0.224,
+        "cg_from_base": 0.235,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -2532,7 +2532,7 @@
       "ballistics": {
         "preferred_model": "G1",
         "g1_bc": 0.227,
-        "g7_bc": null,
+        "g7_bc": 0.209,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -2546,16 +2546,16 @@
       "diameterId": "DIA_224_L5X8",
       "name": "FB Varmint",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.224,
+        "iy": 0.224,
+        "cg_from_base": 0.271,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G1",
-        "g1_bc": 0.254,
+        "g1_bc": 0.271,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -2570,9 +2570,9 @@
       "diameterId": "DIA_224_L5X8",
       "name": "FB Varmint",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 64.0,
+        "iy": 64.0,
+        "cg_from_base": 0.255,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -2594,9 +2594,9 @@
       "diameterId": "DIA_224_L5X8",
       "name": "VLD Target",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.224,
+        "iy": 0.224,
+        "cg_from_base": 0.068,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.05
@@ -2605,7 +2605,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.371,
         "g7_bc": 0.19,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.042,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2618,9 +2618,9 @@
       "diameterId": "DIA_224_L5X8",
       "name": "OTM Tactical",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 224.0,
+        "iy": 0.224,
+        "cg_from_base": 0.224,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.05
@@ -2629,7 +2629,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.374,
         "g7_bc": 0.192,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.142,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2642,18 +2642,18 @@
       "diameterId": "DIA_224_L5X8",
       "name": "LRBT Target",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0001,
+        "iy": 4.5e-06,
+        "cg_from_base": 0.41,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.025,
         "meplat_diameter": 0.05
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": 0.444,
         "g7_bc": 0.227,
-        "g7_form_factor": null,
+        "g7_form_factor": 2.049,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2666,9 +2666,9 @@
       "diameterId": "DIA_224_L5X8",
       "name": "VLD Target",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 100.0,
+        "iy": 224.0,
+        "cg_from_base": 0.622,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.05
@@ -2677,7 +2677,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.512,
         "g7_bc": 0.262,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.937,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2690,18 +2690,18 @@
       "diameterId": "DIA_243_B7V4",
       "name": "BT Target",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 2.5,
+        "iy": 3.5,
+        "cg_from_base": 0.55,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.06,
         "meplat_diameter": 0.055
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": 0.493,
         "g7_bc": 0.253,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.216,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2714,9 +2714,9 @@
       "diameterId": "DIA_243_B7V4",
       "name": "VLD Hunting",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 105.0,
+        "iy": 6.0,
+        "cg_from_base": 0.05,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -2725,7 +2725,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.532,
         "g7_bc": 0.272,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.915,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2738,9 +2738,9 @@
       "diameterId": "DIA_243_B7V4",
       "name": "VLD Target",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.243,
+        "iy": 105.0,
+        "cg_from_base": 0.042,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -2749,7 +2749,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.532,
         "g7_bc": 0.272,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.915,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2762,18 +2762,18 @@
       "diameterId": "DIA_243_B7V4",
       "name": "BT Target",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 3.84,
+        "iy": 2.14,
+        "cg_from_base": 0.63,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.25,
         "meplat_diameter": 0.055
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": 0.511,
         "g7_bc": 0.262,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.95,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2786,9 +2786,9 @@
       "diameterId": "DIA_243_B7V4",
       "name": "Elite Hunter",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.243,
+        "iy": 0.243,
+        "cg_from_base": 0.058,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -2797,7 +2797,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.536,
         "g7_bc": 0.275,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.912,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2810,9 +2810,9 @@
       "diameterId": "DIA_243_B7V4",
       "name": "LRHT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 109.0,
+        "iy": 0.243,
+        "cg_from_base": 0.292,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.045
@@ -2821,7 +2821,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.568,
         "g7_bc": 0.291,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.906,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2834,8 +2834,8 @@
       "diameterId": "DIA_243_B7V4",
       "name": "FB Varmint",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 60.0,
+        "iy": 60.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -2843,9 +2843,9 @@
       },
       "ballistics": {
         "preferred_model": "G1",
-        "g1_bc": 0.203,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.65,
+        "g7_bc": 0.28,
+        "g7_form_factor": 1.0,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2858,18 +2858,18 @@
       "diameterId": "DIA_243_B7V4",
       "name": "FB Varmint",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 64.0,
+        "iy": 64.0,
+        "cg_from_base": 0.044,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.06,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G1",
-        "g1_bc": 0.22,
+        "g1_bc": 0.271,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 2.049,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2882,18 +2882,18 @@
       "diameterId": "DIA_243_B7V4",
       "name": "BT Target",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 65.0,
+        "iy": 65.0,
+        "cg_from_base": 0.015,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G1",
-        "g1_bc": 0.275,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": null,
+        "g7_bc": 0.415,
+        "g7_form_factor": 1.092,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2906,16 +2906,16 @@
       "diameterId": "DIA_243_B7V4",
       "name": "FB Target",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 68.0,
+        "iy": 0.243,
+        "cg_from_base": 0.03,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G1",
-        "g1_bc": 0.265,
+        "g1_bc": 0.255,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -2930,9 +2930,9 @@
       "diameterId": "DIA_243_B7V4",
       "name": "FB Varmint",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 70.0,
+        "iy": 0.243,
+        "cg_from_base": 0.243,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -2954,18 +2954,18 @@
       "diameterId": "DIA_243_B7V4",
       "name": "BT Varmint",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 80.0,
+        "iy": 0.243,
+        "cg_from_base": 0.3,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G1",
-        "g1_bc": 0.316,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.3,
+        "g7_bc": 0.3,
+        "g7_form_factor": 1.0,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -2978,18 +2978,18 @@
       "diameterId": "DIA_243_B7V4",
       "name": "FB Varmint",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 243.0,
+        "iy": 80.0,
+        "cg_from_base": 0.05,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G1",
-        "g1_bc": 0.291,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.3,
+        "g7_bc": 0.29,
+        "g7_form_factor": 0.243,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3002,9 +3002,9 @@
       "diameterId": "DIA_243_B7V4",
       "name": "VLD Hunting",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 87.0,
+        "iy": 87.0,
+        "cg_from_base": 0.258,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -3013,7 +3013,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.412,
         "g7_bc": 0.211,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.26,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3026,9 +3026,9 @@
       "diameterId": "DIA_243_B7V4",
       "name": "FB Varmint",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 88.0,
+        "iy": 0.243,
+        "cg_from_base": 0.27,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -3051,8 +3051,8 @@
       "name": "BT Target",
       "stability_vars": {
         "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "iy": 90.0,
+        "cg_from_base": 0.04,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -3061,7 +3061,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.362,
         "g7_bc": 0.185,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.037,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3074,9 +3074,9 @@
       "diameterId": "DIA_243_B7V4",
       "name": "Classic Hunter",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 95.0,
+        "iy": 95.0,
+        "cg_from_base": 0.082,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -3085,7 +3085,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.418,
         "g7_bc": 0.214,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.032,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3098,9 +3098,9 @@
       "diameterId": "DIA_243_B7V4",
       "name": "VLD Hunting",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0125,
+        "iy": 0.00625,
+        "cg_from_base": 0.35,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -3109,7 +3109,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.473,
         "g7_bc": 0.242,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.962,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3122,9 +3122,9 @@
       "diameterId": "DIA_243_B7V4",
       "name": "VLD Target",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 95.0,
+        "iy": 0.243,
+        "cg_from_base": 0.245,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -3133,7 +3133,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.473,
         "g7_bc": 0.242,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.0,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3146,9 +3146,9 @@
       "diameterId": "DIA_257_N2M1",
       "name": "VLD Hunting",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 100.0,
+        "iy": 115.0,
+        "cg_from_base": 0.215,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -3157,7 +3157,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.466,
         "g7_bc": 0.239,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.006,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3170,8 +3170,8 @@
       "diameterId": "DIA_257_N2M1",
       "name": "VLD Target",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 115.0,
+        "iy": 257.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -3181,7 +3181,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.466,
         "g7_bc": 0.239,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.0,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3194,9 +3194,9 @@
       "diameterId": "DIA_257_N2M1",
       "name": "Elite Hunter",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 133.0,
+        "iy": 0.257,
+        "cg_from_base": 0.257,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -3205,7 +3205,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.514,
         "g7_bc": 0.263,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.914,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3219,17 +3219,17 @@
       "name": "FB Varmint",
       "stability_vars": {
         "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "iy": 0.257,
+        "cg_from_base": 0.235,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G1",
-        "g1_bc": 0.285,
+        "g1_bc": 0.271,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 2.0498,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3242,18 +3242,18 @@
       "diameterId": "DIA_264_H8J4",
       "name": "FB Varmint",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 3.6e-12,
+        "iy": 2.8e-11,
+        "cg_from_base": 0.4,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.04,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G1",
         "g1_bc": 0.296,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.2,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3266,9 +3266,9 @@
       "diameterId": "DIA_264_H8J4",
       "name": "BT Target",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.264,
+        "iy": 6.5,
+        "cg_from_base": 0.235,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -3290,9 +3290,9 @@
       "diameterId": "DIA_264_H8J4",
       "name": "VLD Hunting",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.264,
+        "iy": 264.0,
+        "cg_from_base": 0.282,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -3301,7 +3301,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.552,
         "g7_bc": 0.282,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.925,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3314,9 +3314,9 @@
       "diameterId": "DIA_264_H8J4",
       "name": "VLD Target",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 1.31,
+        "iy": 0.264,
+        "cg_from_base": 0.719,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -3325,7 +3325,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.552,
         "g7_bc": 0.282,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.926,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3338,9 +3338,9 @@
       "diameterId": "DIA_264_H8J4",
       "name": "Classic Hunter",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 264.0,
+        "iy": 264.0,
+        "cg_from_base": 0.264,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -3363,7 +3363,7 @@
       "name": "VLD Hunting",
       "stability_vars": {
         "ix": null,
-        "iy": null,
+        "iy": 0.264,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -3373,7 +3373,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.612,
         "g7_bc": 0.313,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.935,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3386,8 +3386,8 @@
       "diameterId": "DIA_264_H8J4",
       "name": "VLD Target",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 0.264,
+        "iy": 0.264,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -3397,7 +3397,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.612,
         "g7_bc": 0.313,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.945,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3410,11 +3410,11 @@
       "diameterId": "DIA_264_H8J4",
       "name": "LRHT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 2.34e-11,
+        "iy": 3.12e-13,
+        "cg_from_base": 1.16,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.125,
         "meplat_diameter": 0.045
       },
       "ballistics": {
@@ -3434,9 +3434,9 @@
       "diameterId": "DIA_264_H8J4",
       "name": "Elite Hunter",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 264.0,
+        "iy": 264.0,
+        "cg_from_base": 0.347,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -3445,7 +3445,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.679,
         "g7_bc": 0.347,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.921,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3458,8 +3458,8 @@
       "diameterId": "DIA_277_K9L0",
       "name": "Classic Hunter",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 130.0,
+        "iy": 0.277,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -3469,7 +3469,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.497,
         "g7_bc": 0.254,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.964,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3482,18 +3482,18 @@
       "diameterId": "DIA_277_K9L0",
       "name": "VLD Hunting",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 130.0,
+        "iy": 1.173,
+        "cg_from_base": 0.265,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.13,
         "meplat_diameter": 0.055
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": 0.452,
         "g7_bc": 0.231,
-        "g7_form_factor": null,
+        "g7_form_factor": 2.3,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3507,7 +3507,7 @@
       "name": "Classic Hunter",
       "stability_vars": {
         "ix": null,
-        "iy": null,
+        "iy": 0.277,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -3530,18 +3530,18 @@
       "diameterId": "DIA_277_K9L0",
       "name": "VLD Hunting",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0006,
+        "iy": 2.45e-05,
+        "cg_from_base": 0.64,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.19,
         "meplat_diameter": 0.055
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": 0.487,
         "g7_bc": 0.249,
-        "g7_form_factor": null,
+        "g7_form_factor": 3.6,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3554,9 +3554,9 @@
       "diameterId": "DIA_277_K9L0",
       "name": "VLD Hunting",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.15,
+        "iy": 0.277,
+        "cg_from_base": 0.265,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -3578,9 +3578,9 @@
       "diameterId": "DIA_277_K9L0",
       "name": "Elite Hunter",
       "stability_vars": {
-        "ix": null,
+        "ix": 277.0,
         "iy": null,
-        "cg_from_base": null,
+        "cg_from_base": 0.76,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -3589,7 +3589,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.662,
         "g7_bc": 0.339,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.935,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3603,7 +3603,7 @@
       "name": "VLD Hunting",
       "stability_vars": {
         "ix": null,
-        "iy": null,
+        "iy": 284.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -3613,7 +3613,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.487,
         "g7_bc": 0.249,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.969,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3628,7 +3628,7 @@
       "stability_vars": {
         "ix": null,
         "iy": null,
-        "cg_from_base": null,
+        "cg_from_base": 0.015,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -3637,7 +3637,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.603,
         "g7_bc": 0.308,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.026,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3650,9 +3650,9 @@
       "diameterId": "DIA_284_S3F6",
       "name": "VLD Hunting",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 168.0,
+        "iy": 284.0,
+        "cg_from_base": 0.62,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -3661,7 +3661,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.618,
         "g7_bc": 0.316,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.94,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3675,8 +3675,8 @@
       "name": "Elite Hunter",
       "stability_vars": {
         "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "iy": 0.284,
+        "cg_from_base": 0.03,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -3685,7 +3685,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.656,
         "g7_bc": 0.336,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.922,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3699,8 +3699,8 @@
       "name": "VLD Hunting",
       "stability_vars": {
         "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "iy": 284.0,
+        "cg_from_base": 0.05,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -3709,7 +3709,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.674,
         "g7_bc": 0.345,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.925,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3722,9 +3722,9 @@
       "diameterId": "DIA_284_S3F6",
       "name": "VLD Target",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 180.0,
+        "iy": 0.284,
+        "cg_from_base": 0.22,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -3733,7 +3733,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.674,
         "g7_bc": 0.345,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.911,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3746,11 +3746,11 @@
       "diameterId": "DIA_284_S3F6",
       "name": "LRHT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 0.284,
+        "iy": 190.0,
         "cg_from_base": null,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.284,
         "meplat_diameter": 0.045
       },
       "ballistics": {
@@ -3770,18 +3770,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "FB Varmint",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.22,
+        "iy": 0.45,
+        "cg_from_base": 0.12,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.5,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G1",
         "g1_bc": 0.285,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_bc": 0.215,
+        "g7_form_factor": 1.23,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3794,8 +3794,8 @@
       "diameterId": "DIA_308_XBM7",
       "name": "FB Target",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 115.0,
+        "iy": 115.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -3803,9 +3803,9 @@
       },
       "ballistics": {
         "preferred_model": "G1",
-        "g1_bc": 0.301,
+        "g1_bc": 0.289,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.0,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3822,14 +3822,14 @@
         "iy": null,
         "cg_from_base": null,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.06,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G1",
-        "g1_bc": 0.334,
+        "g1_bc": 0.271,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.076,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3842,9 +3842,9 @@
       "diameterId": "DIA_308_XBM7",
       "name": "FB Target",
       "stability_vars": {
-        "ix": null,
+        "ix": 135.0,
         "iy": null,
-        "cg_from_base": null,
+        "cg_from_base": 0.027,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -3852,7 +3852,7 @@
       "ballistics": {
         "preferred_model": "G1",
         "g1_bc": 0.356,
-        "g7_bc": null,
+        "g7_bc": 0.303,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -3866,9 +3866,9 @@
       "diameterId": "DIA_308_XBM7",
       "name": "FB Target",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 6.0,
+        "iy": 7.82,
+        "cg_from_base": 0.532,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -3877,7 +3877,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.428,
         "g7_bc": 0.219,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.855,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3890,9 +3890,9 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Fullbore",
       "stability_vars": {
-        "ix": null,
+        "ix": 155.5,
         "iy": null,
-        "cg_from_base": null,
+        "cg_from_base": 0.248,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -3901,7 +3901,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.464,
         "g7_bc": 0.238,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.968,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3914,18 +3914,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Hybrid Target",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0216,
+        "iy": 0.0153,
+        "cg_from_base": 0.63,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.14,
         "meplat_diameter": 0.055
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": 0.478,
         "g7_bc": 0.245,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.145,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3938,18 +3938,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "VLD Target",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 2.53,
+        "iy": 6.17,
+        "cg_from_base": 0.62,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.25,
         "meplat_diameter": 0.055
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": 0.461,
         "g7_bc": 0.236,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.23,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3962,18 +3962,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Classic Hunter",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 3.2325,
+        "iy": 4.1128,
+        "cg_from_base": 0.6457,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.0903,
         "meplat_diameter": 0.055
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": 0.452,
         "g7_bc": 0.231,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.0002,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -3986,9 +3986,9 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Hybrid Target",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 168.0,
+        "iy": 168.0,
+        "cg_from_base": 0.3,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -3997,7 +3997,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.519,
         "g7_bc": 0.266,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.96,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4010,9 +4010,9 @@
       "diameterId": "DIA_308_XBM7",
       "name": "OTM Tactical",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 175.0,
+        "iy": 175.0,
+        "cg_from_base": 0.075,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.06
@@ -4035,8 +4035,8 @@
       "name": "Classic Hunter",
       "stability_vars": {
         "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "iy": 7.62,
+        "cg_from_base": 0.28,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -4045,7 +4045,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.505,
         "g7_bc": 0.259,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.02,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4058,18 +4058,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "VLD Hunting",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 185.0,
+        "iy": 185.0,
+        "cg_from_base": 0.558,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.03,
         "meplat_diameter": 0.055
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": 0.549,
         "g7_bc": 0.281,
-        "g7_form_factor": null,
+        "g7_form_factor": 2.049,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4082,8 +4082,8 @@
       "diameterId": "DIA_308_XBM7",
       "name": "VLD Target",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 185.0,
+        "iy": 0.308,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -4093,7 +4093,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.549,
         "g7_bc": 0.281,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.29,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4106,8 +4106,8 @@
       "diameterId": "DIA_308_XBM7",
       "name": "VLD Hunting",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 190.0,
+        "iy": 11.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -4117,7 +4117,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.558,
         "g7_bc": 0.286,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.987,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4131,8 +4131,8 @@
       "name": "VLD Target",
       "stability_vars": {
         "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "iy": 0.308,
+        "cg_from_base": 0.065,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -4154,9 +4154,9 @@
       "diameterId": "DIA_308_XBM7",
       "name": "LRHT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.308,
+        "iy": 0.308,
+        "cg_from_base": 0.048,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.045
@@ -4165,7 +4165,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.669,
         "g7_bc": 0.342,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.835,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4178,18 +4178,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "LRHT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0176,
+        "iy": 0.0034,
+        "cg_from_base": 0.146,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.18,
         "meplat_diameter": 0.045
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": 0.73,
         "g7_bc": 0.373,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.1953,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4203,8 +4203,8 @@
       "name": "Hybrid OTM",
       "stability_vars": {
         "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "iy": 230.0,
+        "cg_from_base": 0.045,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -4213,7 +4213,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.718,
         "g7_bc": 0.368,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.953,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4227,8 +4227,8 @@
       "name": "LRHT",
       "stability_vars": {
         "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "iy": 0.308,
+        "cg_from_base": 0.433,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.045
@@ -4237,7 +4237,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.814,
         "g7_bc": 0.417,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.893,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4250,8 +4250,8 @@
       "diameterId": "DIA_338_R7E3",
       "name": "Elite Hunter",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 250.0,
+        "iy": 338.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -4261,7 +4261,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.685,
         "g7_bc": 0.351,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.1748,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4274,9 +4274,9 @@
       "diameterId": "DIA_338_R7E3",
       "name": "OTM Tactical",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 250.0,
+        "iy": 338.0,
+        "cg_from_base": 0.33,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.065
@@ -4285,7 +4285,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.685,
         "g7_bc": 0.351,
-        "g7_form_factor": null,
+        "g7_form_factor": 3.33,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4298,9 +4298,9 @@
       "diameterId": "DIA_338_R7E3",
       "name": "Elite Hunter",
       "stability_vars": {
-        "ix": null,
+        "ix": 300.0,
         "iy": null,
-        "cg_from_base": null,
+        "cg_from_base": 0.956,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.065
@@ -4309,7 +4309,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.822,
         "g7_bc": 0.421,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.417,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4322,9 +4322,9 @@
       "diameterId": "DIA_338_R7E3",
       "name": "OTM Tactical",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 33556.0,
+        "iy": 2725.0,
+        "cg_from_base": 0.31,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.065
@@ -4333,7 +4333,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.822,
         "g7_bc": 0.421,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.891,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4346,8 +4346,8 @@
       "diameterId": "DIA_224_L5X8",
       "name": "NTX",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 224.0,
+        "iy": 35.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -4370,11 +4370,11 @@
       "diameterId": "DIA_224_L5X8",
       "name": "V-MAX",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 40.0,
+        "iy": 40.0,
+        "cg_from_base": 0.015,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.25,
         "meplat_diameter": null
       },
       "ballistics": {
@@ -4395,17 +4395,17 @@
       "name": "V-MAX",
       "stability_vars": {
         "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "iy": 50.0,
+        "cg_from_base": 0.248,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.098,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.165,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 2.0494,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4418,18 +4418,18 @@
       "diameterId": "DIA_224_L5X8",
       "name": "BTHP Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 3.1,
+        "iy": 4.5,
+        "cg_from_base": 0.56,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.15,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.515,
+        "g7_bc": 0.248,
+        "g7_form_factor": 2.3,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4442,18 +4442,18 @@
       "diameterId": "DIA_224_L5X8",
       "name": "V-MAX",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0053,
+        "iy": 0.0005,
+        "cg_from_base": 0.35,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.175,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.5,
+        "g7_bc": 0.25,
+        "g7_form_factor": 0.85,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4466,16 +4466,16 @@
       "diameterId": "DIA_224_L5X8",
       "name": "V-MAX",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.035,
+        "iy": 0.0125,
+        "cg_from_base": 0.44,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.2,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.6,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -4490,18 +4490,18 @@
       "diameterId": "DIA_224_L5X8",
       "name": "V-MAX",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 60.0,
+        "iy": 0.224,
+        "cg_from_base": 0.224,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.08,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.02,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4514,17 +4514,17 @@
       "diameterId": "DIA_224_L5X8",
       "name": "ELD-VT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 62.0,
+        "iy": 62.0,
+        "cg_from_base": 0.02,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.395,
+        "g7_bc": 0.199,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -4538,9 +4538,9 @@
       "diameterId": "DIA_224_L5X8",
       "name": "ELD-Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.224,
+        "iy": 224.0,
+        "cg_from_base": 0.398,
         "is_tipped": true,
         "tip_length": 0.15,
         "meplat_diameter": null
@@ -4562,17 +4562,17 @@
       "diameterId": "DIA_224_L5X8",
       "name": "BTHP Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 75.0,
+        "iy": 224.0,
+        "cg_from_base": 0.14,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.395,
+        "g7_bc": 0.174,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -4586,18 +4586,18 @@
       "diameterId": "DIA_224_L5X8",
       "name": "ELD-Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.224,
+        "iy": 224.0,
+        "cg_from_base": 0.065,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.467,
+        "g7_bc": 0.235,
+        "g7_form_factor": 0.235,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4610,9 +4610,9 @@
       "diameterId": "DIA_224_L5X8",
       "name": "ELD-Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0018,
+        "iy": 0.0003,
+        "cg_from_base": 0.535,
         "is_tipped": true,
         "tip_length": 0.16,
         "meplat_diameter": null
@@ -4621,7 +4621,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.485,
         "g7_bc": 0.244,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.322,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4634,9 +4634,9 @@
       "diameterId": "DIA_224_L5X8",
       "name": "ELD-Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.224,
+        "iy": 88.0,
+        "cg_from_base": 0.013,
         "is_tipped": true,
         "tip_length": 0.165,
         "meplat_diameter": null
@@ -4658,9 +4658,9 @@
       "diameterId": "DIA_243_B7V4",
       "name": "ELD-X",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 103.0,
+        "iy": 103.0,
+        "cg_from_base": 0.512,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -4669,7 +4669,7 @@
         "preferred_model": "G7",
         "g1_bc": null,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.258,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4682,18 +4682,18 @@
       "diameterId": "DIA_243_B7V4",
       "name": "Match BTHP",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0036,
+        "iy": 0.0104,
+        "cg_from_base": 0.475,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.528,
+        "g7_bc": 0.245,
+        "g7_form_factor": 0.9658,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4706,7 +4706,7 @@
       "diameterId": "DIA_243_B7V4",
       "name": "ELD-Match",
       "stability_vars": {
-        "ix": null,
+        "ix": 24561.0,
         "iy": null,
         "cg_from_base": null,
         "is_tipped": false,
@@ -4715,9 +4715,9 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.536,
+        "g7_bc": 0.27,
+        "g7_form_factor": 0.264,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4730,18 +4730,18 @@
       "diameterId": "DIA_243_B7V4",
       "name": "A-Tip Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.243,
+        "iy": 110.0,
+        "cg_from_base": 0.046,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.604,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 3.56,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4754,18 +4754,18 @@
       "diameterId": "DIA_243_B7V4",
       "name": "V-MAX",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 8.44e-09,
+        "iy": 1.43e-07,
+        "cg_from_base": 0.38,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.12,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.92,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4778,18 +4778,18 @@
       "diameterId": "DIA_243_B7V4",
       "name": "V-MAX",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 75.0,
+        "iy": 75.0,
         "cg_from_base": null,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.115,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.33,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.9655,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4802,18 +4802,18 @@
       "diameterId": "DIA_243_B7V4",
       "name": "ELD-VT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 4.1,
+        "iy": 2.8,
+        "cg_from_base": 0.33,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.08,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.555,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.3,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4826,18 +4826,18 @@
       "diameterId": "DIA_243_B7V4",
       "name": "V-MAX",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.00523,
+        "iy": 0.00422,
+        "cg_from_base": 0.32,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.05,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.185,
+        "g7_bc": 0.184,
+        "g7_form_factor": 1.0,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4851,15 +4851,15 @@
       "name": "ELD-X",
       "stability_vars": {
         "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "iy": 0.243,
+        "cg_from_base": 0.066,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.409,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -4874,18 +4874,18 @@
       "diameterId": "DIA_264_H8J4",
       "name": "ELD-Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0144,
+        "iy": 0.00235,
+        "cg_from_base": 0.433,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.147,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.685,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 2.049,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4898,8 +4898,8 @@
       "diameterId": "DIA_264_H8J4",
       "name": "ELD-VT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 100.0,
+        "iy": 0.264,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -4909,7 +4909,7 @@
         "preferred_model": "G7",
         "g1_bc": null,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.226,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4922,16 +4922,16 @@
       "diameterId": "DIA_264_H8J4",
       "name": "ELD-Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 120.0,
+        "iy": 0.264,
+        "cg_from_base": 0.486,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.46,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -4946,9 +4946,9 @@
       "diameterId": "DIA_264_H8J4",
       "name": "ELD-Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 123.0,
+        "iy": 0.264,
+        "cg_from_base": 0.5,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -4970,18 +4970,18 @@
       "diameterId": "DIA_264_H8J4",
       "name": "ELD-Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 264.0,
+        "iy": 130.0,
+        "cg_from_base": 0.554,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.554,
+        "g7_bc": 0.279,
+        "g7_form_factor": 0.279,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -4994,9 +4994,9 @@
       "diameterId": "DIA_264_H8J4",
       "name": "ELD-Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.264,
+        "iy": 264.0,
+        "cg_from_base": 0.02,
         "is_tipped": true,
         "tip_length": 0.17,
         "meplat_diameter": null
@@ -5005,7 +5005,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.646,
         "g7_bc": 0.326,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.326,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5019,7 +5019,7 @@
       "name": "ELD-X",
       "stability_vars": {
         "ix": null,
-        "iy": null,
+        "iy": 143.0,
         "cg_from_base": null,
         "is_tipped": true,
         "tip_length": 0.165,
@@ -5029,7 +5029,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.625,
         "g7_bc": 0.315,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.325,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5042,8 +5042,8 @@
       "diameterId": "DIA_264_H8J4",
       "name": "ELD-Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 0.264,
+        "iy": 0.264,
         "cg_from_base": null,
         "is_tipped": true,
         "tip_length": 0.175,
@@ -5066,18 +5066,18 @@
       "diameterId": "DIA_264_H8J4",
       "name": "A-Tip Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 264.0,
+        "iy": 264.0,
         "cg_from_base": null,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.123,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.704,
+        "g7_bc": 0.544,
+        "g7_form_factor": 0.355,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5090,17 +5090,17 @@
       "diameterId": "DIA_284_S3F6",
       "name": "ELD-X",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 150.0,
+        "iy": 150.0,
+        "cg_from_base": 0.574,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.574,
+        "g7_bc": 0.289,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -5114,8 +5114,8 @@
       "diameterId": "DIA_284_S3F6",
       "name": "ELD-Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 0.0135,
+        "iy": 0.00704,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -5123,9 +5123,9 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.287,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.338,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5138,17 +5138,17 @@
       "diameterId": "DIA_284_S3F6",
       "name": "ELD-X",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.284,
+        "iy": 162.0,
+        "cg_from_base": 0.284,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.63,
+        "g7_bc": 0.315,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -5162,8 +5162,8 @@
       "diameterId": "DIA_284_S3F6",
       "name": "A-Tip Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 284.0,
+        "iy": 284.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -5171,9 +5171,9 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.664,
+        "g7_bc": 0.332,
+        "g7_form_factor": 0.332,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5187,17 +5187,17 @@
       "name": "ELD-X",
       "stability_vars": {
         "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "iy": 0.284,
+        "cg_from_base": 0.689,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.125,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.46,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.347,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5210,17 +5210,17 @@
       "diameterId": "DIA_284_S3F6",
       "name": "ELD-Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.284,
+        "iy": 180.0,
+        "cg_from_base": 0.401,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.796,
+        "g7_bc": 0.401,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -5243,7 +5243,7 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.418,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -5258,18 +5258,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "ELD-Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 308.0,
+        "iy": 155.0,
+        "cg_from_base": 0.07,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.16,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_bc": 0.314,
+        "g7_form_factor": 0.34,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5282,16 +5282,16 @@
       "diameterId": "DIA_308_XBM7",
       "name": "BTHP Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 168.0,
+        "iy": 168.0,
+        "cg_from_base": 0.21,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.45,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -5306,9 +5306,9 @@
       "diameterId": "DIA_308_XBM7",
       "name": "ELD-Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 168.0,
+        "iy": 168.0,
+        "cg_from_base": 0.048,
         "is_tipped": true,
         "tip_length": 0.16,
         "meplat_diameter": null
@@ -5317,7 +5317,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.523,
         "g7_bc": 0.263,
-        "g7_form_factor": null,
+        "g7_form_factor": 2.049,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5331,7 +5331,7 @@
       "name": "ELD-VT",
       "stability_vars": {
         "ix": null,
-        "iy": null,
+        "iy": 174.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -5339,9 +5339,9 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.573,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.289,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5354,9 +5354,9 @@
       "diameterId": "DIA_308_XBM7",
       "name": "ELD-Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 178.0,
+        "iy": 178.0,
+        "cg_from_base": 0.055,
         "is_tipped": true,
         "tip_length": 0.165,
         "meplat_diameter": null
@@ -5378,9 +5378,9 @@
       "diameterId": "DIA_308_XBM7",
       "name": "ELD-X",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 178.0,
+        "iy": 178.0,
+        "cg_from_base": 0.485,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -5389,7 +5389,7 @@
         "preferred_model": "G7",
         "g1_bc": null,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.278,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5402,18 +5402,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "ELD-Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.308,
+        "iy": 195.0,
+        "cg_from_base": 0.584,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.584,
+        "g7_bc": 0.294,
+        "g7_form_factor": 0.294,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5426,18 +5426,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "ELD-X",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 4.95,
+        "iy": 3.55,
+        "cg_from_base": 0.35,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.671,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 2.049,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5450,9 +5450,9 @@
       "diameterId": "DIA_308_XBM7",
       "name": "ELD-Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 208.0,
+        "iy": 0.308,
+        "cg_from_base": 0.69,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -5460,7 +5460,7 @@
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
-        "g7_bc": null,
+        "g7_bc": 0.335,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -5474,8 +5474,8 @@
       "diameterId": "DIA_308_XBM7",
       "name": "ELD-X",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 212.0,
+        "iy": 212.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -5483,9 +5483,9 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.663,
+        "g7_bc": 0.334,
+        "g7_form_factor": 0.336,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5498,18 +5498,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "ELD-Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.308,
+        "iy": 225.0,
+        "cg_from_base": 0.777,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.777,
+        "g7_bc": 0.391,
+        "g7_form_factor": 0.391,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5522,7 +5522,7 @@
       "diameterId": "DIA_308_XBM7",
       "name": "A-Tip Match",
       "stability_vars": {
-        "ix": null,
+        "ix": 3091.0,
         "iy": null,
         "cg_from_base": null,
         "is_tipped": false,
@@ -5531,9 +5531,9 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.823,
+        "g7_bc": 0.414,
+        "g7_form_factor": 0.414,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5546,18 +5546,18 @@
       "diameterId": "DIA_338_R7E3",
       "name": "ELD-Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.123,
+        "iy": 0.456,
+        "cg_from_base": 1.35,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.06,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.565,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.934,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5571,16 +5571,16 @@
       "name": "ELD-X",
       "stability_vars": {
         "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "iy": 230.0,
+        "cg_from_base": 0.135,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.08,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.616,
+        "g7_bc": 0.31,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -5594,17 +5594,17 @@
       "diameterId": "DIA_338_R7E3",
       "name": "ELD-Match",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 270.0,
+        "iy": 270.0,
+        "cg_from_base": 0.829,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.757,
+        "g7_bc": 0.381,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -5618,18 +5618,18 @@
       "diameterId": "DIA_338_R7E3",
       "name": "ELD-X",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 270.0,
+        "iy": 270.0,
+        "cg_from_base": 0.345,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.757,
+        "g7_bc": 0.381,
+        "g7_form_factor": 3.8415,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5642,18 +5642,18 @@
       "diameterId": "DIA_338_R7E3",
       "name": "ELD-Match",
       "stability_vars": {
-        "ix": null,
+        "ix": 285.0,
         "iy": null,
         "cg_from_base": null,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.1,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.829,
+        "g7_bc": 0.417,
+        "g7_form_factor": 0.417,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5666,16 +5666,16 @@
       "diameterId": "DIA_224_L5X8",
       "name": "Naturalis",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 224.0,
+        "iy": 224.0,
+        "cg_from_base": 0.2,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.197,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -5690,8 +5690,8 @@
       "diameterId": "DIA_224_L5X8",
       "name": "FMJBT",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 0.224,
+        "iy": 224.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -5699,9 +5699,9 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.306,
+        "g7_bc": 0.157,
+        "g7_form_factor": 0.157,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5714,18 +5714,18 @@
       "diameterId": "DIA_224_L5X8",
       "name": "Scenar",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.224,
+        "iy": 0.341,
+        "cg_from_base": 0.145,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.341,
+        "g7_bc": 0.171,
+        "g7_form_factor": 0.171,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5738,18 +5738,18 @@
       "diameterId": "DIA_224_L5X8",
       "name": "Scenar-L",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 77.0,
+        "iy": 0.224,
+        "cg_from_base": 0.215,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.386,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.193,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5762,18 +5762,18 @@
       "diameterId": "DIA_243_B7V4",
       "name": "Scenar-L",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 105.0,
+        "iy": 243.0,
+        "cg_from_base": 0.243,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.472,
+        "g7_bc": 0.236,
+        "g7_form_factor": 0.236,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5786,8 +5786,8 @@
       "diameterId": "DIA_243_B7V4",
       "name": "Naturalis",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 90.0,
+        "iy": 90.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -5810,18 +5810,18 @@
       "diameterId": "DIA_243_B7V4",
       "name": "Scenar-L",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 90.0,
+        "iy": 90.0,
+        "cg_from_base": 0.05,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.434,
+        "g7_bc": 0.216,
+        "g7_form_factor": 0.216,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5834,18 +5834,18 @@
       "diameterId": "DIA_264_H8J4",
       "name": "Scenar",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.264,
+        "iy": 0.264,
+        "cg_from_base": 0.264,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.578,
+        "g7_bc": 0.29,
+        "g7_form_factor": 1,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5858,8 +5858,8 @@
       "diameterId": "DIA_264_H8J4",
       "name": "Scenar-L",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 108.0,
+        "iy": 264.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -5867,9 +5867,9 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.515,
+        "g7_bc": 0.212,
+        "g7_form_factor": 0.212,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5882,8 +5882,8 @@
       "diameterId": "DIA_264_H8J4",
       "name": "TRX Tipped Solid",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 120.0,
+        "iy": 264.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -5891,9 +5891,9 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.625,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.212,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5906,16 +5906,16 @@
       "diameterId": "DIA_264_H8J4",
       "name": "Scenar",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 264.0,
+        "iy": 264.0,
+        "cg_from_base": 0.13,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.527,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -5930,7 +5930,7 @@
       "diameterId": "DIA_264_H8J4",
       "name": "Scenar-L",
       "stability_vars": {
-        "ix": null,
+        "ix": 136.0,
         "iy": null,
         "cg_from_base": null,
         "is_tipped": false,
@@ -5939,8 +5939,8 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.545,
+        "g7_bc": 0.274,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -5954,9 +5954,9 @@
       "diameterId": "DIA_264_H8J4",
       "name": "Scenar",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.264,
+        "iy": 0.264,
+        "cg_from_base": 0.7,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.05
@@ -5965,7 +5965,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.578,
         "g7_bc": 0.29,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.29,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -5979,8 +5979,8 @@
       "name": "Naturalis",
       "stability_vars": {
         "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "iy": 264.0,
+        "cg_from_base": 0.256,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -6002,8 +6002,8 @@
       "diameterId": "DIA_264_H8J4",
       "name": "MaxRange Target",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 144.0,
+        "iy": 0.264,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -6011,7 +6011,7 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.67,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -6026,9 +6026,9 @@
       "diameterId": "DIA_284_S3F6",
       "name": "Scenar-L",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 150.0,
+        "iy": 150.0,
+        "cg_from_base": 0.284,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -6036,8 +6036,8 @@
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_bc": 0.26,
+        "g7_form_factor": 0.26,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -6050,16 +6050,16 @@
       "diameterId": "DIA_284_S3F6",
       "name": "Scenar-L",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 180.0,
+        "iy": 7.0,
+        "cg_from_base": 0.284,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.661,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -6074,17 +6074,17 @@
       "diameterId": "DIA_308_XBM7",
       "name": "TRX Tipped Solid",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 150.0,
+        "iy": 150.0,
+        "cg_from_base": 0.19,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.384,
+        "g7_bc": 0.19,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -6099,7 +6099,7 @@
       "name": "Scenar-L",
       "stability_vars": {
         "ix": null,
-        "iy": null,
+        "iy": 155.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -6122,17 +6122,17 @@
       "diameterId": "DIA_308_XBM7",
       "name": "TRX Tipped Solid",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 165.0,
+        "iy": 165.0,
+        "cg_from_base": 0.49,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.49,
+        "g7_bc": 0.243,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -6146,8 +6146,8 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Scenar",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 167.0,
+        "iy": 167.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -6155,9 +6155,9 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.446,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.223,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -6170,8 +6170,8 @@
       "diameterId": "DIA_308_XBM7",
       "name": "MaxRange Target",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 175.0,
+        "iy": 175.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -6179,9 +6179,9 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.581,
+        "g7_bc": 0.286,
+        "g7_form_factor": 0.286,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -6194,18 +6194,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Scenar-L",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0595,
+        "iy": 0.0293,
+        "cg_from_base": 0.57,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.2,
         "meplat_diameter": 0.055
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": 0.49,
         "g7_bc": 0.247,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.0476,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -6218,18 +6218,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Scenar",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0273,
+        "iy": 0.00243,
+        "cg_from_base": 0.95,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.565,
+        "g7_bc": 0.242,
+        "g7_form_factor": 1.0,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -6243,7 +6243,7 @@
       "name": "Mega Hunting",
       "stability_vars": {
         "ix": null,
-        "iy": null,
+        "iy": 200.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -6251,7 +6251,7 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.344,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -6266,8 +6266,8 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Scenar-L",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 220.0,
+        "iy": 220.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -6275,8 +6275,8 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.647,
+        "g7_bc": 0.324,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -6290,18 +6290,18 @@
       "diameterId": "DIA_338_R7E3",
       "name": "LockBase B408",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 250.0,
+        "iy": 250.0,
+        "cg_from_base": 0.6,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 1,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_bc": 0.31,
+        "g7_form_factor": 0.9344,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -6314,11 +6314,11 @@
       "diameterId": "DIA_338_R7E3",
       "name": "Scenar",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0026,
+        "iy": 0.0015,
+        "cg_from_base": 0.45,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.2,
         "meplat_diameter": 0.065
       },
       "ballistics": {
@@ -6338,8 +6338,8 @@
       "diameterId": "DIA_338_R7E3",
       "name": "Scenar",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 300.0,
+        "iy": 300.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -6349,7 +6349,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.736,
         "g7_bc": 0.368,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.38,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -6362,8 +6362,8 @@
       "diameterId": "DIA_224_L5X8",
       "name": "V-MAX",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 224.0,
+        "iy": 50.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -6372,7 +6372,7 @@
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
-        "g7_bc": null,
+        "g7_bc": 0.215,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -6386,18 +6386,18 @@
       "diameterId": "DIA_224_L5X8",
       "name": "Full Metal Jacket",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0323,
+        "iy": 0.0208,
+        "cg_from_base": 0.56,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.14,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.0,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -6410,9 +6410,9 @@
       "diameterId": "DIA_224_L5X8",
       "name": "Oryx",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 224.0,
+        "iy": 55.0,
+        "cg_from_base": 0.085,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -6434,16 +6434,16 @@
       "diameterId": "DIA_243_B7V4",
       "name": "Oryx",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 100.0,
+        "iy": 100.0,
+        "cg_from_base": 0.215,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.261,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -6458,9 +6458,9 @@
       "diameterId": "DIA_243_B7V4",
       "name": "Tipstrike",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 6.0,
+        "iy": 76.0,
+        "cg_from_base": 0.246,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -6482,18 +6482,18 @@
       "diameterId": "DIA_264_H8J4",
       "name": "Ecostrike",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 2.24,
+        "iy": 1.44,
+        "cg_from_base": 0.75,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.15,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.94,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -6506,8 +6506,8 @@
       "diameterId": "DIA_264_H8J4",
       "name": "Golden Target GTX",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 264.0,
+        "iy": 0.264,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -6515,7 +6515,7 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.548,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -6530,9 +6530,9 @@
       "diameterId": "DIA_264_H8J4",
       "name": "Tipstrike",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 140.0,
+        "iy": 264.0,
+        "cg_from_base": 0.5,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -6554,9 +6554,9 @@
       "diameterId": "DIA_264_H8J4",
       "name": "Bondstrike Extreme",
       "stability_vars": {
-        "ix": null,
+        "ix": 143.0,
         "iy": null,
-        "cg_from_base": null,
+        "cg_from_base": 0.629,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -6578,9 +6578,9 @@
       "diameterId": "DIA_264_H8J4",
       "name": "Oryx",
       "stability_vars": {
-        "ix": null,
+        "ix": 0.264,
         "iy": null,
-        "cg_from_base": null,
+        "cg_from_base": 0.04,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -6602,18 +6602,18 @@
       "diameterId": "DIA_284_S3F6",
       "name": "Ecostrike",
       "stability_vars": {
-        "ix": null,
+        "ix": 284.0,
         "iy": null,
-        "cg_from_base": null,
+        "cg_from_base": 0.4,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.7,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.0,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -6626,8 +6626,8 @@
       "diameterId": "DIA_284_S3F6",
       "name": "Tipstrike",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 160.0,
+        "iy": 284.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -6635,9 +6635,9 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.32,
+        "g7_bc": 0.59,
+        "g7_form_factor": 0.93,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -6650,16 +6650,16 @@
       "diameterId": "DIA_284_S3F6",
       "name": "Bondstrike Extreme",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 284.0,
+        "iy": 165.0,
+        "cg_from_base": 0.055,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.632,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -6674,18 +6674,18 @@
       "diameterId": "DIA_284_S3F6",
       "name": "Oryx",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0014,
+        "iy": 0.0049,
+        "cg_from_base": 0.7,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.145,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 2.049,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -6698,9 +6698,9 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Ecostrike",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 150.0,
+        "iy": 0.308,
+        "cg_from_base": 0.5,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -6722,18 +6722,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Oryx",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0332,
+        "iy": 0.00943,
+        "cg_from_base": 0.395,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.05,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.075,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -6746,9 +6746,9 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Golden Target",
       "stability_vars": {
-        "ix": null,
+        "ix": 168.0,
         "iy": null,
-        "cg_from_base": null,
+        "cg_from_base": 0.424,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -6770,8 +6770,8 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Tipstrike",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 170.0,
+        "iy": 170.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -6779,9 +6779,9 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.454,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.85,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -6794,18 +6794,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Bondstrike Extreme",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 180.0,
+        "iy": 180.0,
+        "cg_from_base": 0.07,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.3,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.515,
+        "g7_bc": 0.24,
+        "g7_form_factor": 2.23,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -6819,7 +6819,7 @@
       "name": "Oryx",
       "stability_vars": {
         "ix": null,
-        "iy": null,
+        "iy": 2610.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -6827,7 +6827,7 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.354,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -6842,9 +6842,9 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Oryx",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 200.0,
+        "iy": 200.0,
+        "cg_from_base": 0.055,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -6866,18 +6866,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Oryx",
       "stability_vars": {
-        "ix": null,
+        "ix": 230.0,
         "iy": null,
-        "cg_from_base": null,
+        "cg_from_base": 0.047,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.19,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.5,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.3,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -6891,8 +6891,8 @@
       "name": "Oryx",
       "stability_vars": {
         "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "iy": 230.0,
+        "cg_from_base": 0.047,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -6914,9 +6914,9 @@
       "diameterId": "DIA_338_R7E3",
       "name": "HPBT Match",
       "stability_vars": {
-        "ix": null,
+        "ix": 300.0,
         "iy": null,
-        "cg_from_base": null,
+        "cg_from_base": 0.035,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -6924,7 +6924,7 @@
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
-        "g7_bc": null,
+        "g7_bc": 0.416,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -6938,18 +6938,18 @@
       "diameterId": "DIA_224_L5X8",
       "name": "Partition",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 60.0,
+        "iy": 60.0,
+        "cg_from_base": 0.23,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.52,
+        "g7_bc": 0.565,
+        "g7_form_factor": 1.18,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -6963,8 +6963,8 @@
       "name": "RDF",
       "stability_vars": {
         "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "iy": 224.0,
+        "cg_from_base": 0.185,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -6972,8 +6972,8 @@
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_bc": 0.416,
+        "g7_form_factor": 0.211,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -6986,8 +6986,8 @@
       "diameterId": "DIA_224_L5X8",
       "name": "Custom Competition",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 224.0,
+        "iy": 0.224,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -6995,7 +6995,7 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.34,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -7010,8 +7010,8 @@
       "diameterId": "DIA_224_L5X8",
       "name": "RDF",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 224.0,
+        "iy": 224.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -7019,8 +7019,8 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.498,
+        "g7_bc": 0.245,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -7034,18 +7034,18 @@
       "diameterId": "DIA_243_B7V4",
       "name": "RDF",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 105.0,
+        "iy": 243.0,
+        "cg_from_base": 0.243,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.25,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.571,
+        "g7_bc": 0.28,
+        "g7_form_factor": 4.26,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -7058,18 +7058,18 @@
       "diameterId": "DIA_243_B7V4",
       "name": "Custom Competition",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0215,
+        "iy": 0.00765,
+        "cg_from_base": 0.88,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.535,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.016,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -7082,9 +7082,9 @@
       "diameterId": "DIA_243_B7V4",
       "name": "Partition",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 85.0,
+        "iy": 85.0,
+        "cg_from_base": 0.25,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -7092,7 +7092,7 @@
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
-        "g7_bc": null,
+        "g7_bc": 0.554,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -7107,15 +7107,15 @@
       "name": "Partition",
       "stability_vars": {
         "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "iy": 95.0,
+        "cg_from_base": 0.35,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.365,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -7130,18 +7130,18 @@
       "diameterId": "DIA_264_H8J4",
       "name": "AccuBond Long Range",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.267,
+        "iy": 0.264,
+        "cg_from_base": 0.561,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.53,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.267,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -7154,8 +7154,8 @@
       "diameterId": "DIA_264_H8J4",
       "name": "RDF",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 0.264,
+        "iy": 0.264,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -7163,8 +7163,8 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.615,
+        "g7_bc": 0.307,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -7179,7 +7179,7 @@
       "name": "Partition",
       "stability_vars": {
         "ix": null,
-        "iy": null,
+        "iy": 0.264,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -7187,9 +7187,9 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.49,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.49,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -7202,8 +7202,8 @@
       "diameterId": "DIA_264_H8J4",
       "name": "RDF",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 0.264,
+        "iy": 264.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -7226,8 +7226,8 @@
       "diameterId": "DIA_264_H8J4",
       "name": "AccuBond Long Range",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 0.264,
+        "iy": 0.264,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -7235,8 +7235,8 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.625,
+        "g7_bc": 0.315,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -7250,16 +7250,16 @@
       "diameterId": "DIA_264_H8J4",
       "name": "AccuBond Long Range",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 150.0,
+        "iy": 264.0,
+        "cg_from_base": 0.264,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.264,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.53,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -7275,7 +7275,7 @@
       "name": "AccuBond Long Range",
       "stability_vars": {
         "ix": null,
-        "iy": null,
+        "iy": 0.284,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -7298,16 +7298,16 @@
       "diameterId": "DIA_284_S3F6",
       "name": "AccuBond Long Range",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.284,
+        "iy": 0.284,
+        "cg_from_base": 0.021,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 1.49,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.616,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -7323,7 +7323,7 @@
       "name": "AccuBond Long Range",
       "stability_vars": {
         "ix": null,
-        "iy": null,
+        "iy": 0.284,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -7331,8 +7331,8 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.648,
+        "g7_bc": 0.326,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -7346,18 +7346,18 @@
       "diameterId": "DIA_284_S3F6",
       "name": "RDF",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0086,
+        "iy": 0.0133,
+        "cg_from_base": 0.46,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.26,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.55,
+        "g7_bc": 0.357,
+        "g7_form_factor": 1.0,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -7370,9 +7370,9 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Custom Competition",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 7.82,
+        "iy": 155.0,
+        "cg_from_base": 0.0475,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -7403,8 +7403,8 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.525,
+        "g7_bc": 0.265,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -7418,17 +7418,17 @@
       "diameterId": "DIA_308_XBM7",
       "name": "RDF",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 168.0,
+        "iy": 168.0,
+        "cg_from_base": 0.03,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.505,
+        "g7_bc": 0.253,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -7442,18 +7442,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "RDF",
       "stability_vars": {
-        "ix": null,
+        "ix": 175.0,
         "iy": null,
-        "cg_from_base": null,
+        "cg_from_base": 0.55,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.56,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 2.049,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -7466,17 +7466,17 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Partition",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 308.0,
+        "iy": 180.0,
         "cg_from_base": null,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
-        "g7_bc": null,
+        "g7_bc": 0.301,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -7490,16 +7490,16 @@
       "diameterId": "DIA_308_XBM7",
       "name": "AccuBond Long Range",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 190.0,
+        "iy": 190.0,
+        "cg_from_base": 0.308,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.597,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -7514,8 +7514,8 @@
       "diameterId": "DIA_308_XBM7",
       "name": "AccuBond Long Range",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 210.0,
+        "iy": 210.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -7523,7 +7523,7 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.661,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -7538,16 +7538,16 @@
       "diameterId": "DIA_308_XBM7",
       "name": "RDF",
       "stability_vars": {
-        "ix": null,
+        "ix": 210.0,
         "iy": null,
-        "cg_from_base": null,
+        "cg_from_base": 0.707,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.725,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -7562,9 +7562,9 @@
       "diameterId": "DIA_338_R7E3",
       "name": "AccuBond Long Range",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 265.0,
+        "iy": 0.338,
+        "cg_from_base": 0.338,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -7587,15 +7587,15 @@
       "name": "AccuBond Long Range",
       "stability_vars": {
         "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "iy": 0.72,
+        "cg_from_base": 0.72,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.785,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -7611,17 +7611,17 @@
       "name": "Custom Competition",
       "stability_vars": {
         "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "iy": 300.0,
+        "cg_from_base": 0.75,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.375,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.55,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 2.049,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -7634,18 +7634,18 @@
       "diameterId": "DIA_338_R7E3",
       "name": "RDF",
       "stability_vars": {
-        "ix": null,
+        "ix": 338.0,
         "iy": null,
         "cg_from_base": null,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.3,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.826,
+        "g7_bc": 0.415,
+        "g7_form_factor": 0.3,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -7658,18 +7658,18 @@
       "diameterId": "DIA_224_L5X8",
       "name": "MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 52.0,
+        "iy": 52.0,
+        "cg_from_base": 0.39,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.03,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.225,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.0,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -7682,8 +7682,8 @@
       "diameterId": "DIA_224_L5X8",
       "name": "MatchKing FB",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 1400.0,
+        "iy": 224.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -7691,7 +7691,7 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.55,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -7706,9 +7706,9 @@
       "diameterId": "DIA_224_L5X8",
       "name": "GameKing",
       "stability_vars": {
-        "ix": null,
+        "ix": 55.0,
         "iy": null,
-        "cg_from_base": null,
+        "cg_from_base": 0.3,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -7716,7 +7716,7 @@
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
-        "g7_bc": null,
+        "g7_bc": 0.554,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -7730,18 +7730,18 @@
       "diameterId": "DIA_224_L5X8",
       "name": "Tipped MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 60.0,
+        "iy": 60.0,
         "cg_from_base": null,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.115,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.323,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.938,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -7755,8 +7755,8 @@
       "name": "Tipped MatchKing",
       "stability_vars": {
         "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "iy": 69.0,
+        "cg_from_base": 0.35,
         "is_tipped": true,
         "tip_length": 0.12,
         "meplat_diameter": null
@@ -7765,7 +7765,7 @@
         "preferred_model": "G7",
         "g1_bc": 0.375,
         "g7_bc": 0.19,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.0164,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -7778,9 +7778,9 @@
       "diameterId": "DIA_224_L5X8",
       "name": "Tipped MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.224,
+        "iy": 0.224,
+        "cg_from_base": 0.42,
         "is_tipped": true,
         "tip_length": 0.12,
         "meplat_diameter": null
@@ -7802,17 +7802,17 @@
       "diameterId": "DIA_224_L5X8",
       "name": "MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 224.0,
+        "iy": 2700.0,
+        "cg_from_base": 0.224,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.563,
+        "g7_bc": 0.274,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -7826,17 +7826,17 @@
       "diameterId": "DIA_224_L5X8",
       "name": "MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0482,
+        "iy": 0.00694,
+        "cg_from_base": 0.056,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.6,
+        "g7_bc": 0.6,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -7850,18 +7850,18 @@
       "diameterId": "DIA_243_B7V4",
       "name": "MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 4.26e-06,
+        "iy": 1.98e-05,
+        "cg_from_base": 0.42,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.105,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.6,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 2.049,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -7874,18 +7874,18 @@
       "diameterId": "DIA_243_B7V4",
       "name": "MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 5.88,
+        "iy": 4.44,
+        "cg_from_base": 0.42,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.617,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.0,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -7898,18 +7898,18 @@
       "diameterId": "DIA_243_B7V4",
       "name": "Tipped MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.243,
+        "iy": 95.0,
+        "cg_from_base": 0.075,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.49,
+        "g7_bc": 0.574,
+        "g7_form_factor": 0.655,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -7922,18 +7922,18 @@
       "diameterId": "DIA_264_H8J4",
       "name": "Tipped MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0213,
+        "iy": 0.0176,
+        "cg_from_base": 0.4,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.2,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.55,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.2955,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -7946,16 +7946,16 @@
       "diameterId": "DIA_264_H8J4",
       "name": "Tipped GameKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 130.0,
+        "iy": 0.264,
+        "cg_from_base": 0.264,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.51,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -7970,8 +7970,8 @@
       "diameterId": "DIA_264_H8J4",
       "name": "Tipped MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 130.0,
+        "iy": 0.264,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -7979,7 +7979,7 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.535,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -7994,9 +7994,9 @@
       "diameterId": "DIA_264_H8J4",
       "name": "MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 1740.0,
+        "iy": 0.264,
+        "cg_from_base": 0.283,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -8018,9 +8018,9 @@
       "diameterId": "DIA_264_H8J4",
       "name": "MatchKing",
       "stability_vars": {
-        "ix": null,
+        "ix": 142.0,
         "iy": null,
-        "cg_from_base": null,
+        "cg_from_base": 1.0,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": 0.055
@@ -8042,8 +8042,8 @@
       "diameterId": "DIA_264_H8J4",
       "name": "Tipped GameKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 1.0,
+        "iy": 6.5,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -8051,9 +8051,9 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.597,
+        "g7_bc": 0.291,
+        "g7_form_factor": 0.291,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -8066,18 +8066,18 @@
       "diameterId": "DIA_264_H8J4",
       "name": "MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.002,
+        "iy": 0.0017,
+        "cg_from_base": 0.445,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.02,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.655,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.887,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -8090,16 +8090,16 @@
       "diameterId": "DIA_284_S3F6",
       "name": "Tipped MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 160.0,
+        "iy": 0.284,
+        "cg_from_base": 0.515,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.6,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -8114,17 +8114,17 @@
       "diameterId": "DIA_284_S3F6",
       "name": "MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 168.0,
+        "iy": 0.3,
+        "cg_from_base": 0.028,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.488,
+        "g7_bc": 0.593,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -8138,16 +8138,16 @@
       "diameterId": "DIA_284_S3F6",
       "name": "MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.284,
+        "iy": 0.284,
+        "cg_from_base": 0.07,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.608,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -8162,18 +8162,18 @@
       "diameterId": "DIA_284_S3F6",
       "name": "Tipped GameKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 2.51e-06,
+        "iy": 4.33e-09,
+        "cg_from_base": 0.495,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.125,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.528,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.0,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -8186,18 +8186,18 @@
       "diameterId": "DIA_284_S3F6",
       "name": "MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.00167,
+        "iy": 0.00355,
+        "cg_from_base": 0.545,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.045,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.541,
+        "g7_bc": 0.285,
+        "g7_form_factor": 1.083,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -8210,18 +8210,18 @@
       "diameterId": "DIA_284_S3F6",
       "name": "MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 2.44,
+        "iy": 3.11,
+        "cg_from_base": 1.32,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.07,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.935,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -8234,17 +8234,17 @@
       "diameterId": "DIA_308_XBM7",
       "name": "MatchKing (300 BLK)",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 0.308,
+        "iy": 0.308,
         "cg_from_base": null,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.15,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.343,
+        "g7_bc": 0.55,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -8258,17 +8258,17 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Palma MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 155.0,
+        "iy": 0.308,
+        "cg_from_base": 0.22,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.504,
+        "g7_bc": 0.558,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -8282,17 +8282,17 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Tipped MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 155.0,
+        "iy": 155.0,
+        "cg_from_base": 0.055,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.519,
+        "g7_bc": 0.256,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -8306,18 +8306,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 168.0,
+        "iy": 168.0,
+        "cg_from_base": 0.03,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.28,
         "meplat_diameter": 0.06
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": 0.462,
         "g7_bc": 0.218,
-        "g7_form_factor": null,
+        "g7_form_factor": 4.26,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -8331,7 +8331,7 @@
       "name": "Tipped MatchKing",
       "stability_vars": {
         "ix": null,
-        "iy": null,
+        "iy": 1000.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -8339,7 +8339,7 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.536,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -8354,16 +8354,16 @@
       "diameterId": "DIA_308_XBM7",
       "name": "MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 169.0,
+        "iy": 308.0,
+        "cg_from_base": 0.01,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.527,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -8378,18 +8378,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Tipped MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0043,
+        "iy": 0.0024,
+        "cg_from_base": 0.75,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.17,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.545,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.2469,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -8402,16 +8402,16 @@
       "diameterId": "DIA_308_XBM7",
       "name": "MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 190.0,
+        "iy": 190.0,
+        "cg_from_base": 0.533,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.533,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -8426,18 +8426,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Tipped MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 195.0,
+        "iy": 0.308,
+        "cg_from_base": 0.045,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.125,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.61,
+        "g7_bc": 0.303,
+        "g7_form_factor": 0.935,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -8450,16 +8450,16 @@
       "diameterId": "DIA_308_XBM7",
       "name": "MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 200.0,
+        "iy": 0.308,
+        "cg_from_base": 0.04,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.565,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -8474,16 +8474,16 @@
       "diameterId": "DIA_308_XBM7",
       "name": "MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 210.0,
+        "iy": 210.0,
+        "cg_from_base": 0.308,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.67,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -8498,16 +8498,16 @@
       "diameterId": "DIA_308_XBM7",
       "name": "MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 220.0,
+        "iy": 220.0,
+        "cg_from_base": 0.02,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.545,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -8522,18 +8522,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Tipped MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0163,
+        "iy": 0.00825,
+        "cg_from_base": 0.6,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.35,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.629,
+        "g7_bc": 0.595,
+        "g7_form_factor": 0.95,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -8546,8 +8546,8 @@
       "diameterId": "DIA_308_XBM7",
       "name": "MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 1.5,
+        "iy": 230.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -8555,7 +8555,7 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.655,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -8570,18 +8570,18 @@
       "diameterId": "DIA_338_R7E3",
       "name": "GameKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0472,
+        "iy": 0.00496,
+        "cg_from_base": 0.46,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.25,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.9375,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -8594,8 +8594,8 @@
       "diameterId": "DIA_338_R7E3",
       "name": "MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 2950.0,
+        "iy": 250.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -8604,7 +8604,7 @@
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
-        "g7_bc": null,
+        "g7_bc": 0.318,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -8618,18 +8618,18 @@
       "diameterId": "DIA_338_R7E3",
       "name": "MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 300.0,
+        "iy": 300.0,
+        "cg_from_base": 1.41,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.58,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_bc": 0.304,
+        "g7_form_factor": 2.0499,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -8642,9 +8642,9 @@
       "diameterId": "DIA_204_M9K3",
       "name": "TNT HP",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0015,
+        "iy": 0.000115,
+        "cg_from_base": 0.45,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -8653,7 +8653,7 @@
         "preferred_model": "G7",
         "g1_bc": null,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 2.049,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -8666,8 +8666,8 @@
       "diameterId": "DIA_224_L5X8",
       "name": "TNT HP (Hornet)",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 33.0,
+        "iy": 224.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -8675,8 +8675,8 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.079,
+        "g7_bc": 0.079,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -8690,18 +8690,18 @@
       "diameterId": "DIA_224_L5X8",
       "name": "TNT HP",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0015,
+        "iy": 0.0023,
+        "cg_from_base": 0.28,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.135,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.145,
+        "g7_bc": 0.176,
+        "g7_form_factor": 1.1789,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -8714,16 +8714,16 @@
       "diameterId": "DIA_224_L5X8",
       "name": "Hollow Point",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 52.0,
+        "iy": 52.0,
+        "cg_from_base": 0.253,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.168,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -8738,18 +8738,18 @@
       "diameterId": "DIA_224_L5X8",
       "name": "Gold Dot Personal Protection",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 6.35e-08,
+        "iy": 3.24e-08,
+        "cg_from_base": 0.35,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.07,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_bc": 0.155,
+        "g7_form_factor": 0.875,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -8762,8 +8762,8 @@
       "diameterId": "DIA_224_L5X8",
       "name": "Gold Dot Personal Protection",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 62.0,
+        "iy": 62.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -8771,7 +8771,7 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.31,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -8786,18 +8786,18 @@
       "diameterId": "DIA_224_L5X8",
       "name": "Gold Dot Personal Protection",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 3.93e-06,
+        "iy": 2.24e-06,
+        "cg_from_base": 0.31,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.08,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_bc": 0.205,
+        "g7_form_factor": 1.092,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -8810,18 +8810,18 @@
       "diameterId": "DIA_243_B7V4",
       "name": "Grand Slam SP",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0139,
+        "iy": 0.00087,
+        "cg_from_base": 0.61,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.105,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.575,
+        "g7_bc": 0.285,
+        "g7_form_factor": 1.0,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -8834,8 +8834,8 @@
       "diameterId": "DIA_243_B7V4",
       "name": "Impact Tipped Plated",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 80.0,
+        "iy": 80.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -8858,16 +8858,16 @@
       "diameterId": "DIA_243_B7V4",
       "name": "Hot-Cor SP",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 90.0,
+        "iy": 0.243,
+        "cg_from_base": 0.035,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.365,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -8882,11 +8882,11 @@
       "diameterId": "DIA_243_B7V4",
       "name": "Impact Tipped Plated",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 243.0,
+        "iy": 950.0,
         "cg_from_base": null,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.08,
         "meplat_diameter": null
       },
       "ballistics": {
@@ -8906,9 +8906,9 @@
       "diameterId": "DIA_257_N2M1",
       "name": "Grand Slam SP",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 120.0,
+        "iy": 120.0,
+        "cg_from_base": 0.135,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -8917,7 +8917,7 @@
         "preferred_model": "G7",
         "g1_bc": null,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.1745,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -8930,16 +8930,16 @@
       "diameterId": "DIA_257_N2M1",
       "name": "TNT HP",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.257,
+        "iy": 0.257,
+        "cg_from_base": 0.257,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.31,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -8954,11 +8954,11 @@
       "diameterId": "DIA_264_H8J4",
       "name": "Gold Dot Personal Protection",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 1.3,
+        "iy": 4.5,
+        "cg_from_base": 0.25,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.08,
         "meplat_diameter": null
       },
       "ballistics": {
@@ -8980,9 +8980,9 @@
       "stability_vars": {
         "ix": null,
         "iy": null,
-        "cg_from_base": null,
+        "cg_from_base": 0.39,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.08,
         "meplat_diameter": null
       },
       "ballistics": {
@@ -9002,18 +9002,18 @@
       "diameterId": "DIA_264_H8J4",
       "name": "Impact Tipped Plated",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 140.0,
+        "iy": 0.264,
         "cg_from_base": null,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.2,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.545,
+        "g7_bc": 0.275,
+        "g7_form_factor": 0.8875,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -9026,18 +9026,18 @@
       "diameterId": "DIA_264_H8J4",
       "name": "Impact Tipped Plated",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0416,
+        "iy": 0.0212,
+        "cg_from_base": 0.52,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.15,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.545,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.076,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -9050,18 +9050,18 @@
       "diameterId": "DIA_277_K9L0",
       "name": "Gold Dot Personal Protection",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 4.5e-09,
+        "iy": 2.3e-09,
+        "cg_from_base": 0.15,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.02,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_bc": 0.195,
+        "g7_form_factor": 1.1958,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -9074,18 +9074,18 @@
       "diameterId": "DIA_277_K9L0",
       "name": "Grand Slam SP",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 130.0,
+        "iy": 277.0,
+        "cg_from_base": 0.07,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.15,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.345,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 2.5,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -9098,17 +9098,17 @@
       "diameterId": "DIA_277_K9L0",
       "name": "TNT HP",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 90.0,
+        "iy": 0.277,
+        "cg_from_base": 0.168,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.303,
+        "g7_bc": 0.143,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -9122,8 +9122,8 @@
       "diameterId": "DIA_284_S3F6",
       "name": "TNT HP",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 0.284,
+        "iy": 110.0,
         "cg_from_base": null,
         "is_tipped": false,
         "tip_length": null,
@@ -9131,7 +9131,7 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.5,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -9146,17 +9146,17 @@
       "diameterId": "DIA_284_S3F6",
       "name": "Hot-Cor SP",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 145.0,
+        "iy": 0.284,
+        "cg_from_base": 0.457,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
+        "g1_bc": 0.416,
+        "g7_bc": 0.57,
         "g7_form_factor": null,
         "bc_velocity_bands": []
       },
@@ -9170,18 +9170,18 @@
       "diameterId": "DIA_284_S3F6",
       "name": "Grand Slam SP",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 1.6,
+        "iy": 3.5,
+        "cg_from_base": 1.0,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.2,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.389,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.16,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -9194,16 +9194,16 @@
       "diameterId": "DIA_308_XBM7",
       "name": "TNT HP",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 125.0,
+        "iy": 125.0,
+        "cg_from_base": 0.341,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.341,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -9218,18 +9218,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Hollow Point",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 130.0,
+        "iy": 0.308,
+        "cg_from_base": 0.89,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.263,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 1.0,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -9242,9 +9242,9 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Gold Dot Personal Protection",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 150.0,
+        "iy": 2820.0,
+        "cg_from_base": 0.414,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -9267,15 +9267,15 @@
       "name": "Hot-Cor SP",
       "stability_vars": {
         "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "iy": 150.0,
+        "cg_from_base": 0.016,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.389,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -9290,7 +9290,7 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Grand Slam SP",
       "stability_vars": {
-        "ix": null,
+        "ix": 165.0,
         "iy": null,
         "cg_from_base": null,
         "is_tipped": false,
@@ -9299,7 +9299,7 @@
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.393,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -9314,11 +9314,11 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Gold Dot Personal Protection",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 5.2e-16,
+        "iy": 2.3e-17,
+        "cg_from_base": 0.7,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.1,
         "meplat_diameter": null
       },
       "ballistics": {
@@ -9338,18 +9338,18 @@
       "diameterId": "DIA_308_XBM7",
       "name": "Impact Tipped Plated",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
+        "ix": 172.0,
+        "iy": 2635.0,
         "cg_from_base": null,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g1_bc": 0.567,
+        "g7_bc": 0.284,
+        "g7_form_factor": 0.284,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -9364,7 +9364,7 @@
       "stability_vars": {
         "ix": null,
         "iy": null,
-        "cg_from_base": null,
+        "cg_from_base": 0.308,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
@@ -9373,7 +9373,7 @@
         "preferred_model": "G7",
         "g1_bc": null,
         "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.282,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -9386,16 +9386,16 @@
       "diameterId": "DIA_338_R7E3",
       "name": "Hot-Cor SP",
       "stability_vars": {
-        "ix": null,
+        "ix": 200.0,
         "iy": null,
-        "cg_from_base": null,
+        "cg_from_base": 1.0,
         "is_tipped": false,
         "tip_length": null,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
-        "g1_bc": null,
+        "g1_bc": 0.332,
         "g7_bc": null,
         "g7_form_factor": null,
         "bc_velocity_bands": []
@@ -9410,18 +9410,18 @@
       "diameterId": "DIA_338_R7E3",
       "name": "Grand Slam SP",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 6.95,
+        "iy": 0.85,
+        "cg_from_base": 0.9,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.3,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null,
+        "g7_bc": 0.525,
+        "g7_form_factor": 2.0498,
         "bc_velocity_bands": []
       },
       "drag_model": null,
@@ -9434,18 +9434,18 @@
       "diameterId": "DIA_224_L5X8",
       "name": "MatchKing",
       "stability_vars": {
-        "ix": null,
-        "iy": null,
-        "cg_from_base": null,
+        "ix": 0.0214,
+        "iy": 0.0033,
+        "cg_from_base": 0.456,
         "is_tipped": false,
-        "tip_length": null,
+        "tip_length": 0.113,
         "meplat_diameter": null
       },
       "ballistics": {
         "preferred_model": "G7",
         "g1_bc": 0.372,
         "g7_bc": 0.193,
-        "g7_form_factor": null,
+        "g7_form_factor": 0.91,
         "bc_velocity_bands": []
       },
       "drag_model": null,
