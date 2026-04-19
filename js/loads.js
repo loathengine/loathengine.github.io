@@ -84,7 +84,7 @@ async function refreshBrassDropdownForLoad() {
         option.value = brassItem.id;
         
         let label = manufacturer ? formatManufacturerName(manufacturer) : 'Unknown Mfg';
-        if (brassItem.primerPocket) label += ` (${brassItem.primerPocket})`;
+        if (brassItem.primerPocketId) label += ` (${brassItem.primerPocketId})`;
         
         option.textContent = label;
         brassSelect.appendChild(option);
@@ -271,7 +271,7 @@ async function handleLoadSubmit(e) {
     
     const load = {
         id: document.getElementById('loadId').value || generateUniqueId(),
-        loadType: isCommercial ? 'commercial' : 'handload',
+        loadTypeId: isCommercial ? 'LT_COMM' : 'LT_HAND',
         cartridgeId: document.getElementById('loadCartridge').value,
         diameterId: document.getElementById('loadDiameter').value,
         bulletId: document.getElementById('loadBullet').value,
@@ -324,8 +324,8 @@ async function renderLoadsTable() {
 
     loads = loads.filter(l => {
         if (showAll) return true;
-        if (showCommercial && l.loadType === 'commercial') return true;
-        if (showHandloads && l.loadType !== 'commercial') return true;
+        if (showCommercial && l.loadTypeId === 'LT_COMM') return true;
+        if (showHandloads && l.loadTypeId !== 'LT_COMM') return true;
         return false;
     });
 
@@ -363,7 +363,7 @@ async function renderLoadsTable() {
         if (cartA !== cartB) return cartA.localeCompare(cartB);
         
         // Secondary sort by load type then ID
-        if (a.loadType !== b.loadType) return (a.loadType || '').localeCompare(b.loadType || '');
+        if (a.loadTypeId !== b.loadType) return (a.loadTypeId || '').localeCompare(b.loadTypeId || '');
         return Number(a.id) - Number(b.id);
     });
 
@@ -377,7 +377,7 @@ async function renderLoadsTable() {
         let nameColumn, bulletColumn, powderColumn, chargeColumn, colColumn;
         const cartridgeName = cartridgeMap.get(load.cartridgeId) || 'N/A';
 
-        if (load.loadType === 'commercial') {
+        if (load.loadTypeId === 'LT_COMM') {
             type = 'Commercial';
             const mfgName = load.manufacturerId ? (manufacturerMap.get(load.manufacturerId) || '') : '';
             
@@ -459,7 +459,7 @@ async function handleLoadTableClick(e) {
         document.getElementById('loadForm').reset();
         document.getElementById('loadId').value = item.id;
         
-        const isCommercial = item.loadType === 'commercial';
+        const isCommercial = item.loadTypeId === 'LT_COMM';
         const checkbox = document.getElementById('loadIsCommercialCheckbox');
         checkbox.checked = isCommercial;
         toggleCommercialFields();

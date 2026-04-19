@@ -45,7 +45,7 @@ export function initStatisticalAnalysis() {
             const option = document.createElement('option');
             option.value = load.id;
             
-            if (load.loadType === 'commercial') {
+            if (load.loadTypeId === 'LT_COMM') {
                 const mfg = await getItem('manufacturers', load.manufacturerId);
                 let bulletInfo = '';
                 if (load.bulletId) {

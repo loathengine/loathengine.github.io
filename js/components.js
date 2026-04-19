@@ -693,8 +693,8 @@ async function handleBrassSubmit(e) {
         id: document.getElementById('brassId').value || generateUniqueId(),
         cartridgeId: document.getElementById('brassCartridge').value,
         manufacturerId: document.getElementById('brassManufacturer').value,
-        primerPocket: document.getElementById('brassPrimerPocket').value,
-        primerHole: document.getElementById('brassPrimerHole').value
+        primerPocketId: document.getElementById('brassPrimerPocket').value,
+        primerHoleId: document.getElementById('brassPrimerHole').value
     };
     await updateItem('brass', brass);
     e.target.reset();
@@ -741,8 +741,8 @@ async function renderBrassTable() {
             <tr>
                 <td>${cartridgeName}</td>
                 <td>${manufacturerName}</td>
-                <td>${brass.primerPocket}</td>
-                <td>${brass.primerHole}</td>
+                <td>${brass.primerPocketId}</td>
+                <td>${brass.primerHoleId}</td>
                 <td>
                     <div class="flex-container">
                         <button class="btn-yellow btn-small" data-id="${brass.id}" data-action="edit">Edit</button>
@@ -772,7 +772,7 @@ async function handleBrassTableClick(e) {
         }
         document.getElementById('brassId').value = item.id;
         document.getElementById('brassManufacturer').value = item.manufacturerId;
-        document.getElementById('brassPrimerPocket').value = item.primerPocket;
-        document.getElementById('brassPrimerHole').value = item.primerHole;
+        document.getElementById('brassPrimerPocket').value = item.primerPocketId;
+        document.getElementById('brassPrimerHole').value = item.primerHoleId;
     }
 }

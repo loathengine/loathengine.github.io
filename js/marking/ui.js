@@ -178,7 +178,7 @@ export async function updateLoadSelectBasedOnFirearm() {
         const option = document.createElement('option');
         option.value = load.id;
 
-        if (load.loadType === 'commercial') {
+        if (load.loadTypeId === 'LT_COMM') {
             const mfg = await getItem('manufacturers', load.manufacturerId);
 
             // Fetch bullet info if available

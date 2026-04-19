@@ -137,7 +137,7 @@ export async function initTargetGenerator() {
                 const cartridge = cartridges.find(c => c.id === l.cartridgeId);
                 const cartName = cartridge ? cartridge.name : "N/A";
 
-                if (l.loadType === 'commercial') {
+                if (l.loadTypeId === 'LT_COMM') {
                     const mfg = manufacturers.find(m => m.id === l.manufacturerId);
                     const mfgName = mfg ? formatManufacturerName(mfg) : '';
                     label = `${cartName} - ${mfgName} ${l.name}`;
@@ -184,7 +184,7 @@ export async function initTargetGenerator() {
                  const cartName = cartridge ? cartridge.name : "";
 
                  // Commercial Ammo
-                 if (load.loadType === 'commercial') {
+                 if (load.loadTypeId === 'LT_COMM') {
                     const mfg = await getItem('manufacturers', load.manufacturerId);
                     // Minimal check for bullet info if present
                     let bulletInfo = "";

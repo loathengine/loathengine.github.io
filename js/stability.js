@@ -134,7 +134,7 @@ export async function refreshStabilityUI() {
             const cartridge = cartridges.find(c => c.id === l.cartridgeId);
             const opt = document.createElement('option');
             opt.value = l.id;
-            if (l.loadType === 'commercial') {
+            if (l.loadTypeId === 'LT_COMM') {
                 opt.textContent = `${cartridge ? cartridge.name : 'N/A'}: ${l.name}`;
             } else {
                 const bullet = bullets.find(b => b.id === l.bulletId);

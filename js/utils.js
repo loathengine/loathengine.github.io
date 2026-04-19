@@ -98,7 +98,7 @@ export async function createSessionName(session) {
     if (session.loadId) {
         const load = await getItem('loads', session.loadId);
         if (load) {
-            if (load.loadType === 'commercial') {
+            if (load.loadTypeId === 'LT_COMM') {
                 const mfg = await getItem('manufacturers', load.manufacturerId);
                 loadText = `${mfg ? mfg.name : ''} ${load.name}`;
             } else {
@@ -143,4 +143,19 @@ export function formatManufacturerName(m) {
     if (!m.type || m.type.length === 0) return m.name;
     const typesStr = m.type.map(t => t.charAt(0).toUpperCase() + t.slice(1)).join(', ');
     return `${m.name} [${typesStr}]`;
+}
+
+export async function getLoadTypeName(id) {
+    const item = await getItem('loadTypes', id);
+    return item ? item.name : id;
+}
+
+export async function getPrimerPocketName(id) {
+    const item = await getItem('primerPockets', id);
+    return item ? item.name : id;
+}
+
+export async function getPrimerHoleName(id) {
+    const item = await getItem('primerHoles', id);
+    return item ? item.name : id;
 }
