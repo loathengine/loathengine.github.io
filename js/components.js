@@ -240,7 +240,6 @@ async function renderManufacturersTable() {
         const row = `
             <tr>
                 <td>${item.name}</td>
-                <td>${item.type ? item.type.join(', ') : 'N/A'}</td>
                 <td>
                     <div class="flex-container">
                         <button class="btn-yellow btn-small" data-id="${item.id}" data-action="edit">Edit</button>
