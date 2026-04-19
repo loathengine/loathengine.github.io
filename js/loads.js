@@ -288,7 +288,7 @@ async function handleLoadSubmit(e) {
         load.powderId = document.getElementById('loadPowder').value;
         load.powderLot = document.getElementById('loadPowderLot').value;
         load.chargeWeight = parseFloat(document.getElementById('loadChargeWeight').value);
-        load.col = parseFloat(document.getElementById('loadCol').value);
+        load.coal = parseFloat(document.getElementById('loadCol').value);
         load.cbto = parseFloat(document.getElementById('loadCbto').value) || null;
         load.cbtoComp = document.getElementById('loadCbtoComp').value || '';
         load.shoulder = parseFloat(document.getElementById('loadShoulder').value) || null;
@@ -410,10 +410,10 @@ async function renderLoadsTable() {
             }
 
             let colVal = '---';
-             if (Array.isArray(load.col)) {
-                colVal = load.col[0] || '---';
-            } else if (load.col !== undefined) {
-                 colVal = load.col;
+             if (Array.isArray(load.coal)) {
+                colVal = load.coal[0] || '---';
+            } else if (load.coal !== undefined) {
+                 colVal = load.coal;
             }
 
             powderColumn = powderMap.get(load.powderId) || '---';
@@ -494,8 +494,8 @@ async function handleLoadTableClick(e) {
             document.getElementById('loadPrimer').value = item.primerId;
             document.getElementById('loadPrimerLot').value = item.primerLot;
             
-            if (Array.isArray(item.col)) document.getElementById('loadCol').value = item.col[0] || '';
-            else document.getElementById('loadCol').value = item.col;
+            if (Array.isArray(item.coal)) document.getElementById('loadCol').value = item.coal[0] || '';
+            else document.getElementById('loadCol').value = item.coal || '';
 
             document.getElementById('loadCbto').value = item.cbto || '';
             document.getElementById('loadCbtoComp').value = item.cbtoComp || '';
@@ -538,8 +538,8 @@ async function generateRecipeSheet(loadId) {
     else if (load.chargeWeight !== undefined) { chargeVal = load.chargeWeight; }
     
     let colVal = '';
-    if (Array.isArray(load.col)) { colVal = load.col[0] || ''; } 
-    else if (load.col !== undefined) { colVal = load.col; }
+    if (Array.isArray(load.coal)) { colVal = load.coal[0] || ''; } 
+    else if (load.coal !== undefined) { colVal = load.coal; }
 
     const formatVal = (val, precision = 3) => {
         if (val === null || val === undefined || val === '') return '';

@@ -232,10 +232,10 @@ export async function initTargetGenerator() {
                     if (bulletStr) textToInsert += `Bullet: ${bulletStr}\n`;
                     if (powderStr) textToInsert += `Powder: ${powderStr} (${chargeStr}gr)\n`;
                     
-                    if (load.col) {
+                    if (load.coal) {
                          let colStr = '';
-                         if (Array.isArray(load.col)) colStr = load.col.join(', ');
-                         else colStr = load.col;
+                         if (Array.isArray(load.coal)) colStr = load.coal.join(', ');
+                         else colStr = load.coal;
                          textToInsert += `COAL: ${colStr}"\n`;
                     }
                     
