@@ -145,124 +145,136 @@ Go to the `DB Management` tab and click **"Export Entire Database"** regularly. 
 
 ## Database Schema Index
 
-This section serves as a technical reference for the standard JSON objects stored in the `master-db.json` and the local IndexedDB.
+This section serves as a technical reference for the standard JSON objects stored in the `master-db.json` and the local IndexedDB. The examples below use generic placeholder values (e.g. `<ID>`, `0.000`, `String`) so developers can easily reference the structural layout and data types.
 
 ### Cartridges
 ```json
 {
-  "id": "CTG_17HMR_N1H2",
-  "name": "17 HMR",
-  "diameterId": "DIA_172_QW2R",
-  "maxCaseLength": 1.058,
-  "trimLength": 1.048,
-  "oal": 1.075
+  "id": "CTG_<ID>",
+  "name": "Cartridge Name String",
+  "diameterId": "DIA_<ID>",
+  "maxCaseLength": 0.0,
+  "trimLength": 0.0,
+  "oal": 0.0
 }
 ```
 
 ### Brass
 ```json
 {
-  "id": "BRS_ADGB_22CM_NYXQ",
-  "cartridgeId": "CTG_22CM_cA72",
-  "manufacturerId": "MAN_ADG_A4D7",
-  "primerHole": "0.080 (2mm)",
-  "primerPocket": "SMALL"
+  "id": "BRS_<MAN_ID>_<CTG_ID>_<ID>",
+  "cartridgeId": "CTG_<ID>",
+  "manufacturerId": "MAN_<ID>",
+  "primerHole": "String (e.g. 0.080 (2mm))",
+  "primerPocket": "String (e.g. LARGE)"
 }
 ```
 
 ### Firearms
 ```json
 {
-  "id": "FIREARM_12345",
-  "name": "Custom R700",
-  "cartridgeId": "CTG_308WIN_cC82",
-  "barrelLength": 24,
-  "twistRate": 10,
-  "sightHeight": 2.0,
-  "notes": "Primary match rifle."
+  "id": "FIREARM_<ID>",
+  "name": "Firearm Name String",
+  "cartridgeId": "CTG_<ID>",
+  "barrelLength": 0.0,
+  "twistRate": 0.0,
+  "sightHeight": 0.0,
+  "notes": "Optional notes string"
 }
 ```
 
-### Loads
+### Loads (Handload)
 ```json
 {
-  "id": "LOAD_COMM_HORN_65CM_140_ELDM",
-  "name": "Hornady Match 140gr ELD-M",
+  "id": "LOAD_<ID>",
+  "loadType": "handload",
+  "cartridgeId": "CTG_<ID>",
+  "diameterId": "DIA_<ID>",
+  "bulletId": "BUL_<ID>",
+  "bulletLot": "String",
+  "powderId": "POW_<ID>",
+  "powderLot": "String",
+  "chargeWeight": 0.0,
+  "col": 0.0,
+  "cbto": 0.0,
+  "cbtoComp": "String",
+  "shoulder": 0.0,
+  "shoulderComp": "String",
+  "primerId": "PRI_<ID>",
+  "primerLot": "String",
+  "brassId": "BRS_<ID>",
+  "brassLot": "String",
+  "firings": 0
+}
+```
+
+### Loads (Commercial)
+```json
+{
+  "id": "LOAD_COMM_<ID>",
+  "name": "Commercial Load Name String",
   "loadType": "commercial",
-  "manufacturerId": "MAN_HORNADY_JGR4",
-  "cartridgeId": "CTG_65CM_cN72",
-  "bulletId": "BUL_HORNADY_264_140_ELDM",
-  "powderCharge": null,
-  "powderId": null,
-  "primerId": null,
-  "brassId": "BRS_HORN_65CM_drV7",
-  "notes": "Dominant commercial baseline for 6.5 Creedmoor."
+  "manufacturerId": "MAN_<ID>",
+  "cartridgeId": "CTG_<ID>",
+  "bulletId": "BUL_<ID>",
+  "partNumber": "String",
+  "lot": "String"
 }
 ```
 
-### Impactdata
+### ImpactData (Sessions)
 ```json
 {
-  "id": "SESS_12345",
-  "date": "2026-04-19T12:00:00.000Z",
-  "firearmId": "FIREARM_12345",
-  "loadId": "LOAD_COMM_HORN_65CM_140_ELDM",
-  "targetDistance": 100,
-  "distanceUnits": "yd",
+  "id": "SESS_<ID>",
+  "date": "ISO-8601 Date String",
+  "firearmId": "FIREARM_<ID>",
+  "loadId": "LOAD_<ID>",
+  "targetDistance": 0,
+  "distanceUnits": "String (e.g. yd, m)",
   "groups": [
     {
-      "id": "GRP_1",
+      "id": "GRP_<ID>",
       "pois": [
         {
-          "x": 0.5,
-          "y": 0.2,
-          "velocity": 2700
-        },
-        {
-          "x": 0.4,
-          "y": 0.3,
-          "velocity": 2710
-        },
-        {
-          "x": 0.6,
-          "y": 0.1,
-          "velocity": 2695
+          "x": 0.0,
+          "y": 0.0,
+          "velocity": 0
         }
       ],
       "poa": {
-        "x": 0,
-        "y": 0
+        "x": 0.0,
+        "y": 0.0
       }
     }
   ],
-  "targetImageId": "IMG_12345",
-  "notes": "Test session."
+  "targetImageId": "IMG_<ID>",
+  "notes": "Optional notes string"
 }
 ```
 
-### Targetimages
+### TargetImages
 ```json
 {
-  "id": "IMG_12345",
-  "name": "Grid Target",
-  "date": "2026-04-19T12:00:00.000Z",
-  "dataUrl": "data:image/webp;base64,UklGR...",
-  "thumbnailUrl": "data:image/webp;base64,UklGR...",
-  "notes": "Standard 1-inch grid."
+  "id": "IMG_<ID>",
+  "name": "Image Name String",
+  "date": "ISO-8601 Date String",
+  "dataUrl": "data:image/webp;base64,...",
+  "thumbnailUrl": "data:image/webp;base64,...",
+  "notes": "Optional notes string"
 }
 ```
 
-### Customtargets
+### CustomTargets
 ```json
 {
-  "id": "CTGT_12345",
-  "name": "My Custom Diamond",
+  "id": "CTGT_<ID>",
+  "name": "Target Template Name String",
   "config": {
-    "pageSize": "letter",
-    "gridType": "1in",
-    "bullseyeShape": "diamond",
-    "bullseyeSize": 1.0,
-    "layout": "5-diamond"
+    "pageSize": "String",
+    "gridType": "String",
+    "bullseyeShape": "String",
+    "bullseyeSize": 0.0,
+    "layout": "String"
   }
 }
 ```
@@ -270,10 +282,16 @@ This section serves as a technical reference for the standard JSON objects store
 ### Manufacturers
 ```json
 {
-  "id": "MAN_ACCURATE_A6B8",
-  "name": "Accurate",
+  "id": "MAN_<ID>",
+  "name": "Manufacturer Name String",
   "type": [
-    "powder"
+    "bullet",
+    "powder",
+    "primer",
+    "brass",
+    "firearm",
+    "cartridge",
+    "ammo"
   ]
 }
 ```
@@ -281,51 +299,49 @@ This section serves as a technical reference for the standard JSON objects store
 ### Diameters
 ```json
 {
-  "id": "DIA_172_QW2R",
-  "imperial": ".172",
-  "metric": "4.5mm"
+  "id": "DIA_<ID>",
+  "imperial": ".000",
+  "metric": "0.0mm"
 }
 ```
 
 ### Powders
 ```json
 {
-  "id": "PWD_ACCU_2230_R1A6",
-  "manufacturerId": "MAN_ACCURATE_A6B8",
-  "name": "Accurate 2230"
+  "id": "POW_<MAN_ID>_<NAME>_<ID>",
+  "manufacturerId": "MAN_<ID>",
+  "name": "Powder Name String"
 }
 ```
 
 ### Primers
 ```json
 {
-  "id": "PRI_CCI_200_C1R2",
-  "manufacturerId": "MAN_CCI_C2W7",
-  "name": "No. 200 Large Rifle"
+  "id": "PRI_<MAN_ID>_<NAME>_<ID>",
+  "manufacturerId": "MAN_<ID>",
+  "name": "Primer Name String"
 }
 ```
 
 ### Bullets
 ```json
 {
-  "id": "BUL_BARNES_204_26_VG",
-  "manufacturerId": "MAN_BARNES_B2N5",
-  "name": "Varmint Grenade FB",
-  "weight": 26.0,
-  "diameterId": "DIA_204_M9K3",
-  "length": 0.535,
-  "ballistics": {
-    "g1_bc": 0.204,
-    "g7_bc": null,
-    "g7_form_factor": 0.131
-  },
-  "stability_vars": {
-    "is_tipped": false,
-    "tip_length": null,
-    "ix": 26.0,
-    "iy": 26.0,
-    "cg_from_base": 0.131
-  }
+  "id": "BUL_<MAN_ID>_<DIA>_<WEIGHT>_<NAME>_<ID>",
+  "manufacturerId": "MAN_<ID>",
+  "diameterId": "DIA_<ID>",
+  "name": "Bullet Name String",
+  "weight": 0.0,
+  "length": 0.0,
+  "bcG1": 0.0,
+  "bcG7": 0.0,
+  "dragModel": "String (e.g. G1, G7)",
+  "ix": 0.0,
+  "iy": 0.0,
+  "cgFromBase": 0.0,
+  "meplat": 0.0,
+  "isTipped": false,
+  "tipLength": 0.0,
+  "formFactor": 0.0
 }
 ```
 
