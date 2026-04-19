@@ -18330,6 +18330,12 @@
       "manufacturerId": "MAN_WINCHESTER_W2N4",
       "name": "Small Rifle (WSR)",
       "needs_recheck": 0
+    },
+    {
+      "id": "PRI_MAN_FEDERAL_F4G7_FEDERAL210_VL42",
+      "manufacturerId": "MAN_FEDERAL_F4G7",
+      "name": "Federal 210M Large Rifle Match Primer",
+      "needs_recheck": 0
     }
   ]
 }
