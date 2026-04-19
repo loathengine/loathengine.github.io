@@ -38,7 +38,6 @@ export function updateStatsDisplay() {
     let hasImpacts = state.groups.some(group => group.pois.length > 0);
 
     let html = '';
-    const statsOutput = document.getElementById('stats-output');
 
     if (hasImpacts) {
         let impactText = '';
