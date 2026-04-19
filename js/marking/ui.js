@@ -1,5 +1,5 @@
 import { state } from './state.js';
-import { getAllItems, getItem } from '../db.js';
+import { getAllItems, getItem, getAllItemsMetadata } from '../db.js';
 import { populateSelect, createSessionName } from '../utils.js';
 
 export function updateActiveButton(activeButton) {
@@ -135,7 +135,7 @@ export async function refreshImpactMarkingUI() {
     await updateLoadSelectBasedOnFirearm();
 
     const savedImageSelect = document.getElementById('savedImageSelect');
-    const targets = await getAllItems('targetImages');
+    const targets = await getAllItemsMetadata('targetImages', ['dataUrl', 'data', 'thumbnailUrl']);
     const currentTargetVal = savedImageSelect.value;
     savedImageSelect.innerHTML = '<option value="">-- Select a Saved Target --</option>';
     targets.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));

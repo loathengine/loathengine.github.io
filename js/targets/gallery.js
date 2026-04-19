@@ -1,5 +1,5 @@
 // js/targets/gallery.js
-import { getAllItems, updateItem, deleteItem, getItem, generateUniqueId } from '../db.js';
+import { getAllItems, updateItem, deleteItem, getItem, generateUniqueId, getAllItemsMetadata } from '../db.js';
 import { convertToWebP } from '../utils.js';
 import { refreshImpactMarkingUI } from '../marking.js';
 
@@ -9,7 +9,7 @@ export async function renderTargetImages() {
     
     // In order to NOT crash the browser when getting all items, we must hope indexedDB handles it okay.
     // If it's a real issue we would need a cursor to fetch only metadata, but since we just need to iterate, it's fine as long as we don't inject base64 into the DOM.
-    const items = await getAllItems('targetImages');
+    const items = await getAllItemsMetadata('targetImages', ['dataUrl', 'data', 'thumbnailUrl']);
     items.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
     
     tableBody.innerHTML = '';
@@ -67,7 +67,7 @@ export function initGallery() {
             if (progressText) progressText.textContent = `Processing 1 of ${files.length}...`;
 
             try {
-                const existingTargets = await getAllItems('targetImages');
+                const existingTargets = await getAllItemsMetadata('targetImages', ['dataUrl', 'data', 'thumbnailUrl']);
                 const existingNames = new Set(existingTargets.map(t => t.name));
 
                 for (let i = 0; i < files.length; i++) {

@@ -128,6 +128,32 @@ export function getAllItems(storeName) {
     });
 }
 
+export function getAllItemsMetadata(storeName, excludeFields = []) {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const db = await getDB();
+            const transaction = db.transaction([storeName], 'readonly');
+            const store = transaction.objectStore(storeName);
+            const request = store.openCursor();
+            const results = [];
+            request.onsuccess = (event) => {
+                const cursor = event.target.result;
+                if (cursor) {
+                    const item = cursor.value;
+                    excludeFields.forEach(field => delete item[field]);
+                    results.push(item);
+                    cursor.continue();
+                } else {
+                    resolve(results);
+                }
+            };
+            request.onerror = (event) => reject(event.target.error);
+        } catch (e) {
+            reject(e);
+        }
+    });
+}
+
 export function clearDatabase() {
     return new Promise(async (resolve, reject) => {
         try {

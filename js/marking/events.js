@@ -1,7 +1,7 @@
 import { state, resetState, setCanvas, addTargetToSession, setActiveTarget, removeTargetFromSession } from './state.js';
 import { draw, updateCanvasSize, getCanvasCoords } from './canvas.js';
 import { updateActiveButton, updateStatsDisplay, renderGroupSelector, populateMarkingSessionSelect, updateLoadSelectBasedOnFirearm, renderSessionTargets } from './ui.js';
-import { getItem, updateItem, deleteItem, generateUniqueId, getAllItems } from '../db.js';
+import { getItem, updateItem, deleteItem, generateUniqueId, getAllItems, getAllItemsMetadata } from '../db.js';
 
 export function setupEventListeners() {
     // FIX: select the correct canvas element for the Marking tab
@@ -362,10 +362,8 @@ export function setupEventListeners() {
         
         if (data.targets && Array.isArray(data.targets)) {
             // New multi-target format
-            const allImages = await getAllItems('targetImages');
-            
             for (const tData of data.targets) {
-                const targetData = allImages.find(img => img.id === tData.targetImageId);
+                const targetData = await getItem('targetImages', tData.targetImageId);
                 if (targetData) {
                     await new Promise((resolve) => {
                         const newImg = new Image();
