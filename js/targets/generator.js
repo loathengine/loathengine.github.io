@@ -1,6 +1,6 @@
 // js/targets/generator.js
 import { getAllItems, updateItem, deleteItem, generateUniqueId, getItem } from '../db.js';
-import { generateThumbnail } from '../utils.js';
+import { generateThumbnail, formatManufacturerName } from '../utils.js';
 
 export async function initTargetGenerator() {
     console.log("Initializing Target Generator...");
@@ -139,7 +139,7 @@ export async function initTargetGenerator() {
 
                 if (l.loadType === 'commercial') {
                     const mfg = manufacturers.find(m => m.id === l.manufacturerId);
-                    const mfgName = mfg ? mfg.name : '';
+                    const mfgName = mfg ? formatManufacturerName(mfg) : '';
                     label = `${cartName} - ${mfgName} ${l.name}`;
                 } else {
                     const bullet = bullets.find(b => b.id === l.bulletId);
@@ -192,12 +192,12 @@ export async function initTargetGenerator() {
                         const bullet = await getItem('bullets', load.bulletId);
                         const bMfg = bullet ? await getItem('manufacturers', bullet.manufacturerId) : null;
                         if (bullet) {
-                            bulletInfo = `${bMfg ? bMfg.name : ''} ${bullet.name} ${bullet.weight}gr`.trim();
+                            bulletInfo = `${bMfg ? formatManufacturerName(bMfg) : ''} ${bullet.name} ${bullet.weight}gr`.trim();
                         }
                     }
 
                     textToInsert += `Cartridge: ${cartName}\n`;
-                    textToInsert += `Ammo: ${mfg ? mfg.name : ''} ${load.name}\n`;
+                    textToInsert += `Ammo: ${mfg ? formatManufacturerName(mfg) : ''} ${load.name}\n`;
                     if (bulletInfo) textToInsert += `Bullet: ${bulletInfo}\n`;
                  } 
                  // Handload
@@ -215,8 +215,8 @@ export async function initTargetGenerator() {
                     const brassMfg = brass ? await getItem('manufacturers', brass.manufacturerId) : null;
 
                     // Building Strings
-                    const bulletStr = bullet ? `${bulletMfg ? bulletMfg.name : ''} ${bullet.name} ${bullet.weight}gr` : '';
-                    const powderStr = powder ? `${powderMfg ? powderMfg.name : ''} ${powder.name}` : '';
+                    const bulletStr = bullet ? `${bulletMfg ? formatManufacturerName(bulletMfg) : ''} ${bullet.name} ${bullet.weight}gr` : '';
+                    const powderStr = powder ? `${powderMfg ? formatManufacturerName(powderMfg) : ''} ${powder.name}` : '';
                     
                     let chargeStr = '';
                     if (Array.isArray(load.chargeWeight)) chargeStr = load.chargeWeight.join(', ');

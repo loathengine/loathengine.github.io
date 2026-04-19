@@ -137,3 +137,10 @@ export async function createSessionName(session) {
 
     return `${firearmText} | ${loadText} | ${targetText} ${shotText}`.trim().replace(/  +/g, ' ');
 }
+
+export function formatManufacturerName(m) {
+    if (!m) return 'Unknown Manufacturer';
+    if (!m.type || m.type.length === 0) return m.name;
+    const typesStr = m.type.map(t => t.charAt(0).toUpperCase() + t.slice(1)).join(', ');
+    return `${m.name} [${typesStr}]`;
+}

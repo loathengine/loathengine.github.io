@@ -1,6 +1,6 @@
 // js/loads.js
 import { getAllItems, updateItem, deleteItem, getItem, generateUniqueId } from './db.js';
-import { populateSelect } from './utils.js';
+import { populateSelect, formatManufacturerName } from './utils.js';
 import { refreshImpactMarkingUI } from './marking.js';
 
 async function refreshLoadCartridgeDropdown() {
@@ -51,7 +51,7 @@ async function refreshBulletNameDropdown() {
         const manufacturer = allManufacturers.find(m => m.id === bullet.manufacturerId);
         const option = document.createElement('option');
         option.value = bullet.id;
-        option.textContent = `${manufacturer ? manufacturer.name : ''} ${bullet.name}`;
+        option.textContent = `${manufacturer ? formatManufacturerName(manufacturer) : ''} ${bullet.name}`;
         bulletSelect.appendChild(option);
     }
 }
@@ -83,7 +83,7 @@ async function refreshBrassDropdownForLoad() {
         const option = document.createElement('option');
         option.value = brassItem.id;
         
-        let label = manufacturer ? manufacturer.name : 'Unknown Mfg';
+        let label = manufacturer ? formatManufacturerName(manufacturer) : 'Unknown Mfg';
         if (brassItem.primerPocket) label += ` (${brassItem.primerPocket})`;
         
         option.textContent = label;
@@ -153,7 +153,7 @@ async function refreshLoadFilters() {
         const mfg = allManufacturers.find(m => m.id === bullet.manufacturerId);
         const opt = document.createElement('option');
         opt.value = bullet.id;
-        opt.textContent = `${bullet.weight}gr ${mfg ? mfg.name : 'Unknown'} ${bullet.name}`;
+        opt.textContent = `${bullet.weight}gr ${mfg ? formatManufacturerName(mfg) : 'Unknown'} ${bullet.name}`;
         filterBulletSelect.appendChild(opt);
     }
     filterBulletSelect.value = availableBulletIds.has(selectedBullet) ? selectedBullet : '';
@@ -225,11 +225,12 @@ export async function refreshLoadsUI() {
     const allDiameters = await getAllItems('diameters');
     const allPrimers = await getAllItems('primers');
     const allManufacturers = await getAllItems('manufacturers');
+    allManufacturers.forEach(m => m.displayName = formatManufacturerName(m));
     
     populateSelect('loadDiameter', allDiameters, 'imperial', 'id');
     populateSelect('loadPrimer', allPrimers, 'name', 'id');
     const powderManufacturers = allManufacturers.filter(m => m.type && m.type.includes('powder'));
-    populateSelect('loadPowderManufacturer', powderManufacturers, 'name', 'id');
+    populateSelect('loadPowderManufacturer', powderManufacturers, 'displayName', 'id');
     
     document.getElementById('loadCartridge').innerHTML = '<option value="">-- Select --</option>';
     document.getElementById('loadBulletWeight').innerHTML = '<option value="">-- Select --</option>';
@@ -333,7 +334,7 @@ async function renderLoadsTable() {
     if (filterPowder) loads = loads.filter(l => l.powderId === filterPowder);
 
     const cartridgeMap = new Map(cartridges.map(i => [i.id, i.name]));
-    const manufacturerMap = new Map(manufacturers.map(i => [i.id, i.name]));
+    const manufacturerMap = new Map(manufacturers.map(i => [i.id, formatManufacturerName(i)]));
     const powderMap = new Map(powders.map(i => [i.id, i.name]));
     
     const getBulletDescription = (bulletId) => {
@@ -516,7 +517,7 @@ async function generateRecipeSheet(loadId) {
     const primerMfg = primer ? await getItem('manufacturers', primer.manufacturerId) : null;
     const brassMfg = brass ? await getItem('manufacturers', brass.manufacturerId) : null;
 
-    const bulletNameStr = bullet ? `${bulletMfg ? bulletMfg.name : ''} ${bullet.name} ${bullet.weight}gr`.trim() : '';
+    const bulletNameStr = bullet ? `${bulletMfg ? formatManufacturerName(bulletMfg) : ''} ${bullet.name} ${bullet.weight}gr`.trim() : '';
     const date = new Date().toLocaleDateString();
     const recipeTitle = `${cartridge ? cartridge.name : ''} - ${bulletNameStr} - ${date}`;
 
@@ -584,7 +585,7 @@ async function generateRecipeSheet(loadId) {
                     <div>
                         <div class="section">
                             <h3>Projectile</h3>
-                            <div class="item"><span class="label">Manufacturer</span> <span class="value">${bulletMfg ? bulletMfg.name : ''}</span></div>
+                            <div class="item"><span class="label">Manufacturer</span> <span class="value">${bulletMfg ? formatManufacturerName(bulletMfg) : ''}</span></div>
                             <div class="item"><span class="label">Name</span> <span class="value">${bullet ? bullet.name : ''}</span></div>
                             <div class="item"><span class="label">Weight</span> <span class="value">${bullet ? bullet.weight + ' gr' : ''}</span></div>
                             <div class="item"><span class="label">Lot #</span> <span class="value">${load.bulletLot || ''}</span></div>
@@ -592,7 +593,7 @@ async function generateRecipeSheet(loadId) {
                         
                         <div class="section">
                             <h3>Powder</h3>
-                            <div class="item"><span class="label">Manufacturer</span> <span class="value">${powderMfg ? powderMfg.name : ''}</span></div>
+                            <div class="item"><span class="label">Manufacturer</span> <span class="value">${powderMfg ? formatManufacturerName(powderMfg) : ''}</span></div>
                             <div class="item"><span class="label">Name</span> <span class="value">${powder ? powder.name : ''}</span></div>
                             <div class="item"><span class="label">Charge Weight</span> <span class="value">${chargeVal} ${chargeVal ? 'gr' : ''}</span></div>
                             <div class="item"><span class="label">Lot #</span> <span class="value">${load.powderLot || ''}</span></div>
@@ -600,10 +601,10 @@ async function generateRecipeSheet(loadId) {
 
                         <div class="section">
                             <h3>Primer & Case</h3>
-                            <div class="item"><span class="label">Primer Mfg</span> <span class="value">${primerMfg ? primerMfg.name : ''}</span></div>
+                            <div class="item"><span class="label">Primer Mfg</span> <span class="value">${primerMfg ? formatManufacturerName(primerMfg) : ''}</span></div>
                             <div class="item"><span class="label">Primer Name</span> <span class="value">${primer ? primer.name : ''}</span></div>
                             <div class="item"><span class="label">Primer Lot</span> <span class="value">${load.primerLot || ''}</span></div>
-                            <div class="item"><span class="label">Brass Mfg</span> <span class="value">${brassMfg ? brassMfg.name : ''}</span></div>
+                            <div class="item"><span class="label">Brass Mfg</span> <span class="value">${brassMfg ? formatManufacturerName(brassMfg) : ''}</span></div>
                             <div class="item"><span class="label">Brass Lot</span> <span class="value">${load.brassLot || ''}</span></div>
                             <div class="item"><span class="label"># of Firings</span> <span class="value">${load.firings || ''}</span></div>
                         </div>

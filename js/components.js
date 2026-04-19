@@ -1,6 +1,6 @@
 // js/components.js
 import { getAllItems, updateItem, deleteItem, getItem, generateUniqueId } from './db.js';
-import { populateSelect } from './utils.js';
+import { populateSelect, formatManufacturerName } from './utils.js';
 import { refreshFirearmsUI } from './firearms.js';
 import { refreshLoadsUI } from './loads.js';
 
@@ -99,12 +99,13 @@ export function initComponentsManagement() {
 
 export async function refreshComponentUI() {
     const manufacturers = await getAllItems('manufacturers');
+    manufacturers.forEach(m => m.displayName = formatManufacturerName(m));
     const diameters = await getAllItems('diameters');
     
-    populateSelect('bulletManufacturer', manufacturers.filter(m => m.type && m.type.includes('bullet')), 'name', 'id');
-    populateSelect('powderManufacturer', manufacturers.filter(m => m.type && m.type.includes('powder')), 'name', 'id');
-    populateSelect('primerManufacturer', manufacturers.filter(m => m.type && m.type.includes('primer')), 'name', 'id');
-    populateSelect('brassManufacturer', manufacturers.filter(m => m.type && m.type.includes('brass')), 'name', 'id');
+    populateSelect('bulletManufacturer', manufacturers.filter(m => m.type && m.type.includes('bullet')), 'displayName', 'id');
+    populateSelect('powderManufacturer', manufacturers.filter(m => m.type && m.type.includes('powder')), 'displayName', 'id');
+    populateSelect('primerManufacturer', manufacturers.filter(m => m.type && m.type.includes('primer')), 'displayName', 'id');
+    populateSelect('brassManufacturer', manufacturers.filter(m => m.type && m.type.includes('brass')), 'displayName', 'id');
     populateSelect('bulletDiameter', diameters, 'imperial', 'id');
     populateSelect('cartridgeDiameter', diameters, 'imperial', 'id');
 
@@ -119,6 +120,7 @@ export async function refreshComponentUI() {
 
 export async function refreshComponentFilters() {
     const manufacturers = await getAllItems('manufacturers');
+    manufacturers.forEach(m => m.displayName = formatManufacturerName(m));
     const diameters = await getAllItems('diameters');
     const cartridges = await getAllItems('cartridges');
     const bullets = await getAllItems('bullets');
@@ -153,8 +155,8 @@ export async function refreshComponentFilters() {
     if (filterBulletDiameter.value) { validBulletsForMfg = validBulletsForMfg.filter(b => b.diameterId === filterBulletDiameter.value); }
     const availableBulletMfgs = new Set(validBulletsForMfg.map(b => b.manufacturerId).filter(Boolean));
     filterBulletManufacturer.innerHTML = '<option value="">All</option>';
-    manufacturers.filter(m => availableBulletMfgs.has(m.id)).sort((a,b)=>a.name.localeCompare(b.name)).forEach(m => {
-        let opt = document.createElement('option'); opt.value = m.id; opt.textContent = m.name;
+    manufacturers.filter(m => availableBulletMfgs.has(m.id)).sort((a,b)=>a.displayName.localeCompare(b.displayName)).forEach(m => {
+        let opt = document.createElement('option'); opt.value = m.id; opt.textContent = m.displayName;
         filterBulletManufacturer.appendChild(opt);
     });
     filterBulletManufacturer.value = availableBulletMfgs.has(oldBulMfg) ? oldBulMfg : '';
@@ -163,8 +165,8 @@ export async function refreshComponentFilters() {
     const availablePowderMfgs = new Set(powders.map(p => p.manufacturerId).filter(Boolean));
     const oldPowderMfg = filterPowderManufacturer.value;
     filterPowderManufacturer.innerHTML = '<option value="">All</option>';
-    manufacturers.filter(m => availablePowderMfgs.has(m.id)).sort((a,b)=>a.name.localeCompare(b.name)).forEach(m => {
-        let opt = document.createElement('option'); opt.value = m.id; opt.textContent = m.name;
+    manufacturers.filter(m => availablePowderMfgs.has(m.id)).sort((a,b)=>a.displayName.localeCompare(b.displayName)).forEach(m => {
+        let opt = document.createElement('option'); opt.value = m.id; opt.textContent = m.displayName;
         filterPowderManufacturer.appendChild(opt);
     });
     filterPowderManufacturer.value = availablePowderMfgs.has(oldPowderMfg) ? oldPowderMfg : '';
@@ -173,8 +175,8 @@ export async function refreshComponentFilters() {
     const availablePrimerMfgs = new Set(primers.map(p => p.manufacturerId).filter(Boolean));
     const oldPrimerMfg = filterPrimerManufacturer.value;
     filterPrimerManufacturer.innerHTML = '<option value="">All</option>';
-    manufacturers.filter(m => availablePrimerMfgs.has(m.id)).sort((a,b)=>a.name.localeCompare(b.name)).forEach(m => {
-        let opt = document.createElement('option'); opt.value = m.id; opt.textContent = m.name;
+    manufacturers.filter(m => availablePrimerMfgs.has(m.id)).sort((a,b)=>a.displayName.localeCompare(b.displayName)).forEach(m => {
+        let opt = document.createElement('option'); opt.value = m.id; opt.textContent = m.displayName;
         filterPrimerManufacturer.appendChild(opt);
     });
     filterPrimerManufacturer.value = availablePrimerMfgs.has(oldPrimerMfg) ? oldPrimerMfg : '';
@@ -196,8 +198,8 @@ export async function refreshComponentFilters() {
     if (filterBrassCartridge.value) { validBrassForMfg = validBrassForMfg.filter(b => b.cartridgeId === filterBrassCartridge.value); }
     const availableBrassMfgs = new Set(validBrassForMfg.map(b => b.manufacturerId).filter(Boolean));
     filterBrassManufacturer.innerHTML = '<option value="">All</option>';
-    manufacturers.filter(m => availableBrassMfgs.has(m.id)).sort((a,b)=>a.name.localeCompare(b.name)).forEach(m => {
-        let opt = document.createElement('option'); opt.value = m.id; opt.textContent = m.name;
+    manufacturers.filter(m => availableBrassMfgs.has(m.id)).sort((a,b)=>a.displayName.localeCompare(b.displayName)).forEach(m => {
+        let opt = document.createElement('option'); opt.value = m.id; opt.textContent = m.displayName;
         filterBrassManufacturer.appendChild(opt);
     });
     filterBrassManufacturer.value = availableBrassMfgs.has(oldBrassMfg) ? oldBrassMfg : '';
@@ -464,7 +466,7 @@ async function renderBulletsTable() {
         return a.name.localeCompare(b.name);
     });
 
-    const manufacturerMap = new Map(manufacturers.map(m => [m.id, m.name]));
+    const manufacturerMap = new Map(manufacturers.map(m => [m.id, formatManufacturerName(m)]));
     const diameterMap = new Map(diameters.map(d => [d.id, d.imperial]));
 
     const tableBody = document.getElementById('bulletsTableBody');
@@ -576,7 +578,7 @@ async function renderPowdersTable() {
     
     powders.sort((a, b) => a.name.localeCompare(b.name));
     
-    const manufacturerMap = new Map(manufacturers.map(m => [m.id, m.name]));
+    const manufacturerMap = new Map(manufacturers.map(m => [m.id, formatManufacturerName(m)]));
     const tableBody = document.getElementById('powdersTableBody');
     tableBody.innerHTML = '';
     
@@ -642,7 +644,7 @@ async function renderPrimersTable() {
     
     primers.sort((a, b) => a.name.localeCompare(b.name));
     
-    const manufacturerMap = new Map(manufacturers.map(m => [m.id, m.name]));
+    const manufacturerMap = new Map(manufacturers.map(m => [m.id, formatManufacturerName(m)]));
     const tableBody = document.getElementById('primersTableBody');
     tableBody.innerHTML = '';
     
@@ -715,7 +717,7 @@ async function renderBrassTable() {
     if (filterMfg) brassItems = brassItems.filter(b => b.manufacturerId === filterMfg);
 
     const cartridgeMap = new Map(cartridges.map(c => [c.id, c.name]));
-    const manufacturerMap = new Map(manufacturers.map(m => [m.id, m.name]));
+    const manufacturerMap = new Map(manufacturers.map(m => [m.id, formatManufacturerName(m)]));
 
     brassItems.sort((a, b) => {
         const cartA = cartridgeMap.get(a.cartridgeId) || '';
