@@ -1,6 +1,6 @@
 // js/targets/gallery.js
 import { getAllItems, updateItem, deleteItem, getItem, generateUniqueId, getAllItemsMetadata } from '../db.js';
-import { convertToWebP } from '../utils.js';
+import { convertToWebP, formatManufacturerName } from '../utils.js';
 import { refreshImpactMarkingUI } from '../marking.js';
 
 export async function renderTargetImages() {
@@ -27,6 +27,7 @@ export async function renderTargetImages() {
                 <td>
                     <div class="flex-container" style="justify-content: flex-start;">
                         <button class="btn-indigo btn-small" data-action="preview" data-name="${item.name}">Preview</button>
+                        <button class="btn-green btn-small" data-action="autoname" data-name="${item.name}">Auto Name</button>
                         <button class="btn-blue btn-small" data-action="download" data-name="${item.name}">Download</button>
                         <button class="btn-yellow btn-small" data-action="rename" data-name="${item.name}">Rename</button>
                         <button class="btn-red btn-small" data-action="delete">Delete</button>
@@ -43,10 +44,55 @@ export function initGallery() {
     const tableBody = document.getElementById('targetGalleryTableBody');
     const closePreviewBtn = document.getElementById('closePreviewBtn');
 
+    let currentAutoNameTargetId = null;
+    const autoNameModal = document.getElementById('autoNameModal');
+    const cancelAutoNameBtn = document.getElementById('cancelAutoNameBtn');
+    const saveAutoNameBtn = document.getElementById('saveAutoNameBtn');
+    const autoNameFirearm = document.getElementById('autoNameFirearm');
+    const autoNameLoad = document.getElementById('autoNameLoad');
+
     if (closePreviewBtn) {
         closePreviewBtn.addEventListener('click', () => {
             document.getElementById('targetPreviewArea').style.display = 'none';
             document.getElementById('previewTargetImg').src = '';
+        });
+    }
+
+    if (cancelAutoNameBtn) {
+        cancelAutoNameBtn.addEventListener('click', () => {
+            if (autoNameModal) autoNameModal.style.display = 'none';
+            currentAutoNameTargetId = null;
+        });
+    }
+
+    if (saveAutoNameBtn) {
+        saveAutoNameBtn.addEventListener('click', async () => {
+            if (!currentAutoNameTargetId) return;
+            const firearmId = autoNameFirearm.value;
+            const loadId = autoNameLoad.value;
+            
+            if (!firearmId || !loadId) {
+                alert("Please select both a Firearm and a Load.");
+                return;
+            }
+
+            const firearmOpt = autoNameFirearm.options[autoNameFirearm.selectedIndex].text;
+            const loadOpt = autoNameLoad.options[autoNameLoad.selectedIndex].text;
+            
+            // Generate a sensible base name without repeating information unnecessarily
+            // Load label already has Cartridge and Load Details. We just prepend Firearm.
+            let newName = `${firearmOpt} - ${loadOpt}`;
+
+            const item = await getItem('targetImages', currentAutoNameTargetId);
+            if (item) {
+                item.name = newName.trim();
+                await updateItem('targetImages', item);
+                await renderTargetImages();
+                await refreshImpactMarkingUI();
+                
+                if (autoNameModal) autoNameModal.style.display = 'none';
+                currentAutoNameTargetId = null;
+            }
         });
     }
 
@@ -150,6 +196,63 @@ export function initGallery() {
                         await updateItem('targetImages', item);
                         await renderTargetImages();
                         await refreshImpactMarkingUI();
+                    }
+                }
+            } else if (action === 'autoname') {
+                currentAutoNameTargetId = id;
+                if (autoNameModal) {
+                    autoNameModal.style.display = 'flex';
+                    // Populate dropdowns
+                    try {
+                        const firearms = await getAllItems('firearms');
+                        const loads = await getAllItems('loads');
+                        const cartridges = await getAllItems('cartridges');
+                        const bullets = await getAllItems('bullets');
+                        const powders = await getAllItems('powders');
+                        const manufacturers = await getAllItems('manufacturers');
+
+                        autoNameFirearm.innerHTML = '<option value="">-- Select Firearm --</option>';
+                        firearms.forEach(f => {
+                            const option = document.createElement('option');
+                            option.value = f.id;
+                            option.textContent = f.nickname;
+                            autoNameFirearm.appendChild(option);
+                        });
+
+                        autoNameLoad.innerHTML = '<option value="">-- Select Load --</option>';
+                        loads.forEach(l => {
+                            const option = document.createElement('option');
+                            option.value = l.id;
+
+                            let label = "Unknown Load";
+                            const cartridge = cartridges.find(c => c.id === l.cartridgeId);
+                            const cartName = cartridge ? cartridge.name : "N/A";
+
+                            if (l.loadTypeId === 'LT_COMM') {
+                                const mfg = manufacturers.find(m => m.id === l.manufacturerId);
+                                const mfgName = mfg ? formatManufacturerName(mfg) : '';
+                                label = `${cartName} - ${mfgName} ${l.name}`;
+                            } else {
+                                const bullet = bullets.find(b => b.id === l.bulletId);
+                                const powder = powders.find(p => p.id === l.powderId);
+                                const bulletStr = bullet ? `${bullet.weight}gr` : '';
+                                const powderStr = powder ? powder.name : '';
+                                let chargeStr = '';
+                                if (Array.isArray(l.chargeWeight)) chargeStr = l.chargeWeight.join(',');
+                                else if (l.chargeWeight) chargeStr = l.chargeWeight;
+                                
+                                if (l.name) {
+                                    label = `${cartName} - ${l.name}`;
+                                } else {
+                                    label = `${cartName} - ${bulletStr} ${chargeStr}gr ${powderStr}`;
+                                }
+                            }
+
+                            option.textContent = label;
+                            autoNameLoad.appendChild(option);
+                        });
+                    } catch (err) {
+                        console.error("Error loading data for auto name:", err);
                     }
                 }
             } else if (action === 'preview') {
