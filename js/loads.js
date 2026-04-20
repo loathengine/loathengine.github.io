@@ -11,14 +11,18 @@ async function refreshLoadCartridgeDropdown() {
 }
 
 async function refreshBulletWeightDropdown() {
-    const diameterId = document.getElementById('loadDiameter').value;
+    const cartridgeId = document.getElementById('loadCartridge').value;
     const bulletWeightSelect = document.getElementById('loadBulletWeight');
     const bulletSelect = document.getElementById('loadBullet');
 
     bulletWeightSelect.innerHTML = '<option value="">-- Select --</option>';
     bulletSelect.innerHTML = '<option value="">-- Select --</option>';
 
-    if (!diameterId) return;
+    if (!cartridgeId) return;
+    
+    const cartridge = await getItem('cartridges', cartridgeId);
+    if (!cartridge || !cartridge.diameterId) return;
+    const diameterId = cartridge.diameterId;
 
     const allBullets = await getAllItems('bullets');
     const filteredBullets = allBullets.filter(b => b.diameterId === diameterId);
@@ -191,9 +195,11 @@ export function initLoadsManagement() {
     document.getElementById('loadDiameter').addEventListener('change', async () => {
         await refreshLoadCartridgeDropdown();
         await refreshBrassDropdownForLoad();
+    });
+    document.getElementById('loadCartridge').addEventListener('change', async () => {
+        await refreshBrassDropdownForLoad();
         await refreshBulletWeightDropdown();
     });
-    document.getElementById('loadCartridge').addEventListener('change', refreshBrassDropdownForLoad);
     document.getElementById('loadBulletWeight').addEventListener('change', refreshBulletNameDropdown);
     document.getElementById('loadPowderManufacturer').addEventListener('change', refreshPowderNameDropdown);
 
