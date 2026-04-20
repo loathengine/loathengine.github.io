@@ -50,6 +50,7 @@ export function initGallery() {
     const saveAutoNameBtn = document.getElementById('saveAutoNameBtn');
     const autoNameFirearm = document.getElementById('autoNameFirearm');
     const autoNameLoad = document.getElementById('autoNameLoad');
+    const autoNameBullet = document.getElementById('autoNameBullet');
 
     if (closePreviewBtn) {
         closePreviewBtn.addEventListener('click', () => {
@@ -84,7 +85,19 @@ export function initGallery() {
                 if (l.loadTypeId === 'LT_COMM') {
                     const mfg = manufacturers.find(m => m.id === l.manufacturerId);
                     const mfgName = mfg ? formatManufacturerName(mfg) : '';
-                    label = `${mfgName} ${l.name}`.trim();
+                    let commLabel = `${mfgName} ${l.name}`.trim();
+                    
+                    if (l.bulletId) {
+                        const bullet = bullets.find(b => b.id === l.bulletId);
+                        if (bullet) {
+                            const bMfg = manufacturers.find(m => m.id === bullet.manufacturerId);
+                            const bMfgStr = bMfg ? formatManufacturerName(bMfg) : '';
+                            const bName = bullet.name || '';
+                            const bulletStr = `${bMfgStr} ${bName} ${bullet.weight}gr`.trim();
+                            commLabel += ` - ${bulletStr}`;
+                        }
+                    }
+                    label = commLabel;
                 } else {
                     const bullet = bullets.find(b => b.id === l.bulletId);
                     const powder = powders.find(p => p.id === l.powderId);
@@ -139,8 +152,8 @@ export function initGallery() {
             const firearmId = autoNameFirearm.value;
             const loadId = autoNameLoad.value;
             
-            if (!firearmId || !loadId) {
-                alert("Please select both a Firearm and a Load.");
+            if (!firearmId) {
+                alert("Please select a Firearm.");
                 return;
             }
 
@@ -281,9 +294,13 @@ export function initGallery() {
                         }
                         
                         await populateAutoNameLoads(autoNameFirearm.value);
+                        await populateAutoNameBullets(autoNameFirearm.value);
                         
                         if (item && item.loadId) {
                             autoNameLoad.value = item.loadId;
+                        }
+                        if (item && item.bulletId) {
+                            autoNameBullet.value = item.bulletId;
                         }
                     } catch (err) {
                         console.error("Error loading data for auto name:", err);
