@@ -104,11 +104,18 @@ export async function createSessionName(session) {
             } else {
                 const bullet = await getItem('bullets', load.bulletId);
                 const powder = await getItem('powders', load.powderId);
-                let bulletText = '?gr';
+                
+                let bulletMfgStr = 'Unknown Mfg';
+                let bulletNameStr = 'Unknown Bullet';
+                let bulletWeightStr = '?gr';
                 if (bullet) {
-                    bulletText = `${bullet.weight}gr`;
+                    const bMfg = await getItem('manufacturers', bullet.manufacturerId);
+                    bulletMfgStr = bMfg ? bMfg.name : 'Unknown Mfg';
+                    bulletNameStr = bullet.name || 'Unknown Bullet';
+                    bulletWeightStr = `${bullet.weight}gr`;
                 }
-                const powderName = powder ? powder.name : '?';
+
+                const powderName = powder ? powder.name : 'Unknown Powder';
                 
                 let chargeWeight = '?';
                 if (Array.isArray(load.chargeWeight)) {
@@ -118,7 +125,7 @@ export async function createSessionName(session) {
                 }
                 
                 const namePart = load.name ? `${load.name} - ` : '';
-                loadText = `${namePart}${bulletText} - ${powderName} ${chargeWeight}gr`;
+                loadText = `${namePart}${bulletMfgStr} - ${bulletNameStr} ${bulletWeightStr} - ${powderName} - ${chargeWeight}gr`;
             }
         }
     }

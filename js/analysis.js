@@ -58,11 +58,18 @@ export function initStatisticalAnalysis() {
             } else {
                 const bullet = await getItem('bullets', load.bulletId);
                 const powder = await getItem('powders', load.powderId);
-                let bulletName = '?gr';
+                
+                let bulletMfgStr = 'Unknown Mfg';
+                let bulletNameStr = 'Unknown Bullet';
+                let bulletWeightStr = '?gr';
                 if (bullet) {
-                    bulletName = `${bullet.weight}gr`;
+                    const bMfg = await getItem('manufacturers', bullet.manufacturerId);
+                    bulletMfgStr = bMfg ? bMfg.name : 'Unknown Mfg';
+                    bulletNameStr = bullet.name || 'Unknown Bullet';
+                    bulletWeightStr = `${bullet.weight}gr`;
                 }
-                const powderName = powder ? powder.name : '?';
+
+                const powderName = powder ? powder.name : 'Unknown Powder';
                 
                 let chargeVal = '?';
                 if (Array.isArray(load.chargeWeight)) {
@@ -72,7 +79,7 @@ export function initStatisticalAnalysis() {
                 }
                 
                 const namePart = load.name ? `${load.name} - ` : '';
-                option.textContent = `${namePart}${bulletName} - ${powderName} ${chargeVal}gr`;
+                option.textContent = `${namePart}${bulletMfgStr} - ${bulletNameStr} ${bulletWeightStr} - ${powderName} - ${chargeVal}gr`;
             }
             loadFilterSelect.appendChild(option);
         }

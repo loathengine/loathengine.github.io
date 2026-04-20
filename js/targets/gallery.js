@@ -233,14 +233,25 @@ export function initGallery() {
                             } else {
                                 const bullet = bullets.find(b => b.id === l.bulletId);
                                 const powder = powders.find(p => p.id === l.powderId);
-                                const bulletStr = bullet ? `${bullet.weight}gr` : '?gr';
-                                const powderStr = powder ? powder.name : '?';
+                                
+                                let bulletMfgStr = 'Unknown Mfg';
+                                let bulletNameStr = 'Unknown Bullet';
+                                let bulletWeightStr = '?gr';
+
+                                if (bullet) {
+                                    const bMfg = manufacturers.find(m => m.id === bullet.manufacturerId);
+                                    bulletMfgStr = bMfg ? formatManufacturerName(bMfg) : 'Unknown Mfg';
+                                    bulletNameStr = bullet.name || 'Unknown Bullet';
+                                    bulletWeightStr = `${bullet.weight}gr`;
+                                }
+
+                                const powderStr = powder ? powder.name : 'Unknown Powder';
                                 let chargeStr = '?';
                                 if (Array.isArray(l.chargeWeight)) chargeStr = l.chargeWeight.join(', ');
                                 else if (l.chargeWeight) chargeStr = l.chargeWeight;
                                 
                                 const namePart = l.name ? `${l.name} - ` : '';
-                                label = `${namePart}${bulletStr} - ${powderStr} ${chargeStr}gr`;
+                                label = `${namePart}${bulletMfgStr} - ${bulletNameStr} ${bulletWeightStr} - ${powderStr} - ${chargeStr}gr`;
                             }
 
                             option.textContent = label;
