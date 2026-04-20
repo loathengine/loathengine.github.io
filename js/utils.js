@@ -134,15 +134,33 @@ export async function createSessionName(session) {
     let targetText = 'No Target';
     if (session.targetImageId) {
         const target = await getItem('targetImages', session.targetImageId);
-        // Truncate long target names for display
-        targetText = target ? (target.name.length > 25 ? target.name.substring(0, 22) + '...' : target.name) : 'Deleted Target';
+        targetText = target ? target.name : 'Deleted Target';
     }
 
     // Shot Count
     const totalShots = session.shots ? session.shots.length : 0;
     const shotText = totalShots > 0 ? `(${totalShots} shots)` : '';
 
-    return `${firearmText} | ${loadText} | ${targetText} ${shotText}`.trim().replace(/  +/g, ' ');
+    // Date
+    let dateText = '';
+    if (session.timestamp) {
+        dateText = new Date(session.timestamp).toLocaleDateString();
+    }
+
+    let baseText = `${firearmText} - ${loadText}`;
+    
+    // If the target text contains the firearm or load name, it's likely auto-named.
+    // Use the target text as the primary identifier to avoid "Firearm - Load | Firearm - Load"
+    if (targetText !== 'No Target' && targetText !== 'Deleted Target') {
+        // Check if the target name already has the redundant info
+        if (targetText.includes(firearmText) || targetText.includes(' - ')) {
+            baseText = targetText;
+        } else {
+            baseText = `${baseText} | Target: ${targetText}`;
+        }
+    }
+
+    return `${dateText ? dateText + ' | ' : ''}${baseText} ${shotText}`.trim().replace(/  +/g, ' ');
 }
 
 export function formatManufacturerName(m) {

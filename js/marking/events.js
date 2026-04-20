@@ -44,7 +44,7 @@ export function setupEventListeners() {
         const targetData = await getItem('targetImages', targetId);
         if (targetData) {
             const newImg = new Image();
-            newImg.onload = () => { 
+            newImg.onload = async () => { 
                 const workingBaseWidth = 800;
                 const aspectRatio = newImg.naturalHeight / newImg.naturalWidth;
                 
@@ -56,6 +56,18 @@ export function setupEventListeners() {
                 renderSessionTargets();
                 renderGroupSelector();
                 updateStatsDisplay();
+
+                if (targetData.firearmId) {
+                    const fSelect = document.getElementById('firearmSelect');
+                    if (fSelect && fSelect.value !== targetData.firearmId) {
+                        fSelect.value = targetData.firearmId;
+                        await updateLoadSelectBasedOnFirearm();
+                    }
+                    if (targetData.loadId) {
+                        const lSelect = document.getElementById('loadSelect');
+                        if (lSelect) lSelect.value = targetData.loadId;
+                    }
+                }
             };
             newImg.src = targetData.dataUrl || targetData.data;
         }

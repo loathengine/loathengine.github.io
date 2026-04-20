@@ -27,7 +27,7 @@ export async function renderTargetImages() {
                 <td>
                     <div class="flex-container" style="justify-content: flex-start;">
                         <button class="btn-indigo btn-small" data-action="preview" data-name="${item.name}">Preview</button>
-                        <button class="btn-green btn-small" data-action="autoname" data-name="${item.name}">Auto Name</button>
+                        <button class="btn-green btn-small" data-action="autoname" data-name="${item.name}">Tag Target</button>
                         <button class="btn-blue btn-small" data-action="download" data-name="${item.name}">Download</button>
                         <button class="btn-yellow btn-small" data-action="rename" data-name="${item.name}">Rename</button>
                         <button class="btn-red btn-small" data-action="delete">Delete</button>
@@ -76,16 +76,10 @@ export function initGallery() {
                 return;
             }
 
-            const firearmOpt = autoNameFirearm.options[autoNameFirearm.selectedIndex].text;
-            const loadOpt = autoNameLoad.options[autoNameLoad.selectedIndex].text;
-            
-            // Generate a sensible base name without repeating information unnecessarily
-            // Load label already has Cartridge and Load Details. We just prepend Firearm.
-            let newName = `${firearmOpt} - ${loadOpt}`;
-
             const item = await getItem('targetImages', currentAutoNameTargetId);
             if (item) {
-                item.name = newName.trim();
+                item.firearmId = firearmId;
+                item.loadId = loadId;
                 await updateItem('targetImages', item);
                 await renderTargetImages();
                 await refreshImpactMarkingUI();
@@ -257,6 +251,12 @@ export function initGallery() {
                             option.textContent = label;
                             autoNameLoad.appendChild(option);
                         });
+                        
+                        const item = await getItem('targetImages', id);
+                        if (item) {
+                            if (item.firearmId) autoNameFirearm.value = item.firearmId;
+                            if (item.loadId) autoNameLoad.value = item.loadId;
+                        }
                     } catch (err) {
                         console.error("Error loading data for auto name:", err);
                     }
