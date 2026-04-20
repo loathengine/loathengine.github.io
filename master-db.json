@@ -295,9 +295,40 @@
       "needs_recheck": 0
     }
   ],
-  "loadTypes": [],
-  "primerPockets": [],
-  "primerHoles": [],
+  "loadTypes": [
+    {
+      "id": "LT_COMM",
+      "name": "commercial"
+    },
+    {
+      "id": "LT_HAND",
+      "name": "handload"
+    }
+  ],
+  "primerPockets": [
+    {
+      "id": "PKT_SML",
+      "name": "SMALL"
+    },
+    {
+      "id": "PKT_LRG",
+      "name": "LARGE"
+    }
+  ],
+  "primerHoles": [
+    {
+      "id": "HL_059",
+      "name": "0.059"
+    },
+    {
+      "id": "HL_060",
+      "name": "0.060"
+    },
+    {
+      "id": "HL_080",
+      "name": "0.080"
+    }
+  ],
   "powders": [
     {
       "id": "PWD_ACCU_2230_R1A6",
