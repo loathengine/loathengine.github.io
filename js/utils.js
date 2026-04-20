@@ -106,8 +106,7 @@ export async function createSessionName(session) {
                 const powder = await getItem('powders', load.powderId);
                 let bulletText = '?gr';
                 if (bullet) {
-                    const bulletMfg = await getItem('manufacturers', bullet.manufacturerId);
-                    bulletText = `${bulletMfg ? bulletMfg.name : ''} ${bullet.weight}gr`;
+                    bulletText = `${bullet.weight}gr`;
                 }
                 const powderName = powder ? powder.name : '?';
                 
@@ -118,7 +117,8 @@ export async function createSessionName(session) {
                      chargeWeight = load.chargeWeight;
                 }
                 
-                loadText = `HL: ${bulletText} / ${powderName} ${chargeWeight}gr`;
+                const namePart = load.name ? `${load.name} - ` : '';
+                loadText = `${namePart}${bulletText} - ${powderName} ${chargeWeight}gr`;
             }
         }
     }

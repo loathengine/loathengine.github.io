@@ -225,27 +225,22 @@ export function initGallery() {
                             option.value = l.id;
 
                             let label = "Unknown Load";
-                            const cartridge = cartridges.find(c => c.id === l.cartridgeId);
-                            const cartName = cartridge ? cartridge.name : "N/A";
 
                             if (l.loadTypeId === 'LT_COMM') {
                                 const mfg = manufacturers.find(m => m.id === l.manufacturerId);
                                 const mfgName = mfg ? formatManufacturerName(mfg) : '';
-                                label = `${cartName} - ${mfgName} ${l.name}`;
+                                label = `${mfgName} ${l.name}`.trim();
                             } else {
                                 const bullet = bullets.find(b => b.id === l.bulletId);
                                 const powder = powders.find(p => p.id === l.powderId);
-                                const bulletStr = bullet ? `${bullet.weight}gr` : '';
-                                const powderStr = powder ? powder.name : '';
-                                let chargeStr = '';
-                                if (Array.isArray(l.chargeWeight)) chargeStr = l.chargeWeight.join(',');
+                                const bulletStr = bullet ? `${bullet.weight}gr` : '?gr';
+                                const powderStr = powder ? powder.name : '?';
+                                let chargeStr = '?';
+                                if (Array.isArray(l.chargeWeight)) chargeStr = l.chargeWeight.join(', ');
                                 else if (l.chargeWeight) chargeStr = l.chargeWeight;
                                 
-                                if (l.name) {
-                                    label = `${cartName} - ${l.name}`;
-                                } else {
-                                    label = `${cartName} - ${bulletStr} ${chargeStr}gr ${powderStr}`;
-                                }
+                                const namePart = l.name ? `${l.name} - ` : '';
+                                label = `${namePart}${bulletStr} - ${powderStr} ${chargeStr}gr`;
                             }
 
                             option.textContent = label;
