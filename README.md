@@ -42,11 +42,12 @@ For the most efficient use of the application, follow this logical flow:
 3.  **Create Target:** Use the generator in the `Targets` tab to design your ideal target.
 4.  **Print Target:** Print your generated custom target.
 5.  **Range Session:** Take your target to the range and make impacts on it (shoot your groups).
-6.  **Import Target:** Take a photo of your shot target and import it into the app via the `Targets` or `Marking` tab.
-7.  **Mark Shots:** Go to the `Marking` tab, load your image, set the scale, and mark your shots to create a session.
-8.  **Analyze Session:** Switch to the `Analysis` tab and run statistical analysis on the range session target.
-9.  **Compare Sessions:** Select multiple sessions in the `Analysis` tab to easily composite and compare your data.
-10. **Check Stability:** If necessary, utilize the `Stability` tab to verify the gyroscopic stability of your bullet.
+6.  **Import Target:** Take a photo of your shot target and upload it into the `Targets` tab.
+7.  **Tag Target:** Click **"Tag Target"** on the uploaded image to explicitly link the target to a specific Firearm and Load in the database.
+8.  **Mark Shots:** Go to the `Marking` tab and load your tagged image. The system will automatically select the correct Firearm and Load. Set the scale, mark your shots, and save the session.
+9.  **Analyze Session:** Switch to the `Analysis` tab and run statistical analysis on the range session target. The analysis engine relies on these ID tags rather than string parsing, guaranteeing accurate load tracking.
+10. **Compare Sessions:** Select multiple sessions in the `Analysis` tab to easily composite and compare your data.
+11. **Check Stability:** If necessary, utilize the `Stability` tab to verify the gyroscopic stability of your bullet.
 
 ---
 
@@ -82,6 +83,7 @@ This tab lets you catalog your ammunition.
 This is your digital library of target images and a custom target generator.
 
 -   **Upload Targets:** Click **"Upload New Target Image(s)"** to select one or more image files. The images are automatically converted to `.webp` to save space.
+-   **Tag Targets:** Instead of relying on complex file names, click **"Tag Target"** on any uploaded image to invisibly bind it to a Firearm and Load ID. This streamlines the Marking and Analysis workflow by automatically syncing your equipment data when the target is analyzed.
 -   **Create Target:** A robust tool to generate custom printable targets. You can define page size, grid options, bullseye shapes (Circle, Square, Diamond, etc.), and layout. You can also import firearm and load data directly onto the target as a text label.
 
 ### Marking Tab (Core Functionality)
