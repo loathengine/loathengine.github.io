@@ -58,6 +58,74 @@ export function initGallery() {
         });
     }
 
+    async function populateAutoNameLoads(firearmId) {
+        if (!autoNameLoad) return;
+        const currentLoadId = autoNameLoad.value;
+        autoNameLoad.innerHTML = '<option value="">-- Select Load --</option>';
+        try {
+            let loads = await getAllItems('loads');
+            
+            if (firearmId) {
+                const firearm = await getItem('firearms', firearmId);
+                if (firearm && firearm.cartridgeId) {
+                    loads = loads.filter(l => l.cartridgeId === firearm.cartridgeId);
+                }
+            }
+
+            const bullets = await getAllItems('bullets');
+            const powders = await getAllItems('powders');
+            const manufacturers = await getAllItems('manufacturers');
+
+            loads.forEach(l => {
+                const option = document.createElement('option');
+                option.value = l.id;
+
+                let label = "Unknown Load";
+                if (l.loadTypeId === 'LT_COMM') {
+                    const mfg = manufacturers.find(m => m.id === l.manufacturerId);
+                    const mfgName = mfg ? formatManufacturerName(mfg) : '';
+                    label = `${mfgName} ${l.name}`.trim();
+                } else {
+                    const bullet = bullets.find(b => b.id === l.bulletId);
+                    const powder = powders.find(p => p.id === l.powderId);
+                    
+                    let bulletMfgStr = 'Unknown Mfg';
+                    let bulletNameStr = 'Unknown Bullet';
+                    let bulletWeightStr = '?gr';
+
+                    if (bullet) {
+                        const bMfg = manufacturers.find(m => m.id === bullet.manufacturerId);
+                        bulletMfgStr = bMfg ? formatManufacturerName(bMfg) : 'Unknown Mfg';
+                        bulletNameStr = bullet.name || 'Unknown Bullet';
+                        bulletWeightStr = `${bullet.weight}gr`;
+                    }
+
+                    const powderStr = powder ? powder.name : 'Unknown Powder';
+                    let chargeStr = '?';
+                    if (Array.isArray(l.chargeWeight)) chargeStr = l.chargeWeight.join(', ');
+                    else if (l.chargeWeight) chargeStr = l.chargeWeight;
+                    
+                    const namePart = l.name ? `${l.name} - ` : '';
+                    label = `${namePart}${bulletMfgStr} - ${bulletNameStr} ${bulletWeightStr} - ${powderStr} - ${chargeStr}gr`;
+                }
+
+                option.textContent = label;
+                autoNameLoad.appendChild(option);
+            });
+            if (currentLoadId) {
+                autoNameLoad.value = currentLoadId;
+            }
+        } catch (err) {
+            console.error("Error populating auto name loads:", err);
+        }
+    }
+
+    if (autoNameFirearm) {
+        autoNameFirearm.addEventListener('change', () => {
+            populateAutoNameLoads(autoNameFirearm.value);
+        });
+    }
+
     if (cancelAutoNameBtn) {
         cancelAutoNameBtn.addEventListener('click', () => {
             if (autoNameModal) autoNameModal.style.display = 'none';
@@ -199,12 +267,6 @@ export function initGallery() {
                     // Populate dropdowns
                     try {
                         const firearms = await getAllItems('firearms');
-                        const loads = await getAllItems('loads');
-                        const cartridges = await getAllItems('cartridges');
-                        const bullets = await getAllItems('bullets');
-                        const powders = await getAllItems('powders');
-                        const manufacturers = await getAllItems('manufacturers');
-
                         autoNameFirearm.innerHTML = '<option value="">-- Select Firearm --</option>';
                         firearms.forEach(f => {
                             const option = document.createElement('option');
@@ -213,49 +275,15 @@ export function initGallery() {
                             autoNameFirearm.appendChild(option);
                         });
 
-                        autoNameLoad.innerHTML = '<option value="">-- Select Load --</option>';
-                        loads.forEach(l => {
-                            const option = document.createElement('option');
-                            option.value = l.id;
-
-                            let label = "Unknown Load";
-
-                            if (l.loadTypeId === 'LT_COMM') {
-                                const mfg = manufacturers.find(m => m.id === l.manufacturerId);
-                                const mfgName = mfg ? formatManufacturerName(mfg) : '';
-                                label = `${mfgName} ${l.name}`.trim();
-                            } else {
-                                const bullet = bullets.find(b => b.id === l.bulletId);
-                                const powder = powders.find(p => p.id === l.powderId);
-                                
-                                let bulletMfgStr = 'Unknown Mfg';
-                                let bulletNameStr = 'Unknown Bullet';
-                                let bulletWeightStr = '?gr';
-
-                                if (bullet) {
-                                    const bMfg = manufacturers.find(m => m.id === bullet.manufacturerId);
-                                    bulletMfgStr = bMfg ? formatManufacturerName(bMfg) : 'Unknown Mfg';
-                                    bulletNameStr = bullet.name || 'Unknown Bullet';
-                                    bulletWeightStr = `${bullet.weight}gr`;
-                                }
-
-                                const powderStr = powder ? powder.name : 'Unknown Powder';
-                                let chargeStr = '?';
-                                if (Array.isArray(l.chargeWeight)) chargeStr = l.chargeWeight.join(', ');
-                                else if (l.chargeWeight) chargeStr = l.chargeWeight;
-                                
-                                const namePart = l.name ? `${l.name} - ` : '';
-                                label = `${namePart}${bulletMfgStr} - ${bulletNameStr} ${bulletWeightStr} - ${powderStr} - ${chargeStr}gr`;
-                            }
-
-                            option.textContent = label;
-                            autoNameLoad.appendChild(option);
-                        });
-                        
                         const item = await getItem('targetImages', id);
-                        if (item) {
-                            if (item.firearmId) autoNameFirearm.value = item.firearmId;
-                            if (item.loadId) autoNameLoad.value = item.loadId;
+                        if (item && item.firearmId) {
+                            autoNameFirearm.value = item.firearmId;
+                        }
+                        
+                        await populateAutoNameLoads(autoNameFirearm.value);
+                        
+                        if (item && item.loadId) {
+                            autoNameLoad.value = item.loadId;
                         }
                     } catch (err) {
                         console.error("Error loading data for auto name:", err);
