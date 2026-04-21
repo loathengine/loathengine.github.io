@@ -102,6 +102,7 @@ export async function refreshComponentUI() {
     manufacturers.forEach(m => m.displayName = formatManufacturerName(m));
     const diameters = await getAllItems('diameters');
     const primerPockets = await getAllItems('primerPockets');
+    const primerHoles = await getAllItems('primerHoles');
     
     populateSelect('bulletManufacturer', manufacturers.filter(m => m.type && m.type.includes('bullet')), 'displayName', 'id');
     populateSelect('powderManufacturer', manufacturers.filter(m => m.type && m.type.includes('powder')), 'displayName', 'id');
@@ -110,6 +111,8 @@ export async function refreshComponentUI() {
     populateSelect('bulletDiameter', diameters, 'imperial', 'id');
     populateSelect('cartridgeDiameter', diameters, 'imperial', 'id');
     populateSelect('primerPocket', primerPockets, 'name', 'id');
+    populateSelect('brassPrimerPocket', primerPockets, 'name', 'id');
+    populateSelect('brassPrimerHole', primerHoles, 'name', 'id');
 
 
     refreshBrassFormDropDowns();
@@ -710,10 +713,12 @@ async function handleBrassSubmit(e) {
 }
 
 async function renderBrassTable() {
-    const [allBrass, manufacturers, cartridges] = await Promise.all([
+    const [allBrass, manufacturers, cartridges, primerPockets, primerHoles] = await Promise.all([
         getAllItems('brass'),
         getAllItems('manufacturers'),
-        getAllItems('cartridges')
+        getAllItems('cartridges'),
+        getAllItems('primerPockets'),
+        getAllItems('primerHoles')
     ]);
 
     const filterCart = document.getElementById('filterBrassCartridge').value;
@@ -725,6 +730,8 @@ async function renderBrassTable() {
 
     const cartridgeMap = new Map(cartridges.map(c => [c.id, c.name]));
     const manufacturerMap = new Map(manufacturers.map(m => [m.id, formatManufacturerName(m)]));
+    const pocketMap = new Map(primerPockets.map(p => [p.id, p.name]));
+    const holeMap = new Map(primerHoles.map(h => [h.id, h.name]));
 
     brassItems.sort((a, b) => {
         const cartA = cartridgeMap.get(a.cartridgeId) || '';
@@ -744,12 +751,14 @@ async function renderBrassTable() {
     for (const brass of brassItems) {
         const manufacturerName = manufacturerMap.get(brass.manufacturerId) || 'N/A';
         const cartridgeName = cartridgeMap.get(brass.cartridgeId) || 'N/A';
+        const pocketName = pocketMap.get(brass.primerPocketId) || 'N/A';
+        const holeName = holeMap.get(brass.primerHoleId) || 'N/A';
         const row = `
             <tr>
                 <td>${cartridgeName}</td>
                 <td>${manufacturerName}</td>
-                <td>${brass.primerPocketId}</td>
-                <td>${brass.primerHoleId}</td>
+                <td>${pocketName}</td>
+                <td>${holeName}</td>
                 <td>
                     <div class="flex-container">
                         <button class="btn-yellow btn-small" data-id="${brass.id}" data-action="edit">Edit</button>
@@ -779,7 +788,7 @@ async function handleBrassTableClick(e) {
         }
         document.getElementById('brassId').value = item.id;
         document.getElementById('brassManufacturer').value = item.manufacturerId;
-        document.getElementById('brassPrimerPocket').value = item.primerPocketId;
-        document.getElementById('brassPrimerHole').value = item.primerHoleId;
+        document.getElementById('brassPrimerPocket').value = item.primerPocketId || '';
+        document.getElementById('brassPrimerHole').value = item.primerHoleId || '';
     }
 }
