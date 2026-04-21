@@ -24,7 +24,8 @@ export function initDbManagement() {
     document.getElementById('syncLocalMasterBtn').addEventListener('click', () => handleSyncMaster('./master-db.json'));
     document.getElementById('syncWebMasterBtn').addEventListener('click', () => handleSyncMaster('https://raw.githubusercontent.com/loathengine/loathengine.github.io/main/master-db.json'));
     
-    document.getElementById('unifiedMergeBtn').addEventListener('click', handleUnifiedMerge);
+    document.getElementById('unifiedMergeBtn').addEventListener('click', () => handleUnifiedRestore(false));
+    document.getElementById('unifiedOverwriteBtn').addEventListener('click', () => handleUnifiedRestore(true));
     document.getElementById('unifiedExportBtn').addEventListener('click', handleUnifiedExport);
     
     document.getElementById('unifiedDeleteBtn').addEventListener('click', handleUnifiedDelete);
@@ -41,17 +42,14 @@ function updateUnifiedButtonLabels() {
     const scope = document.getElementById('tableSelect').value;
     const exportBtn = document.getElementById('unifiedExportBtn');
     const deleteBtn = document.getElementById('unifiedDeleteBtn');
-    const mergeBtn = document.getElementById('unifiedMergeBtn');
     
     if (scope === 'all') {
         exportBtn.textContent = 'Export Entire Database';
         deleteBtn.textContent = 'Nuclear Reset (All Data)';
-        mergeBtn.textContent = 'Restore / Merge Data';
     } else {
         const formattedScope = scope.charAt(0).toUpperCase() + scope.slice(1);
         exportBtn.textContent = `Export Table: ${formattedScope}`;
         deleteBtn.textContent = `Clear Table: ${formattedScope}`;
-        mergeBtn.textContent = `Restore Table: ${formattedScope}`;
     }
 }
 
@@ -95,9 +93,9 @@ async function handleUnifiedExport() {
             return;
         }
         const data = await getAllItems(scope);
-        const jsonString = '[\n' +
-            data.map(item => '  ' + JSON.stringify(item)).join(',\n') +
-        '\n]';
+        const jsonString = '{\n  "' + scope + '": [\n' +
+            data.map(item => '    ' + JSON.stringify(item)).join(',\n') +
+        '\n  ]\n}';
         triggerDownload(jsonString, `${scope}-backup.json`);
     }
 }
@@ -144,20 +142,23 @@ async function handleUnifiedDelete() {
 
 // Removed specific HandleWipePersonal logic
 
-async function handleUnifiedMerge() {
+async function handleUnifiedRestore(isOverwrite) {
     clearMergeLog();
-    const scope = document.getElementById('tableSelect').value;
     const fileInput = document.getElementById('dbFileInput');
     const file = fileInput.files[0];
     
     if (!file) {
-        alert('Please select a JSON file to merge.');
+        alert('Please select a JSON file to restore from.');
         return;
     }
 
-    if (!confirm('Are you sure you want to merge this data? Existing records with matching IDs will be overwritten.')) return;
+    if (isOverwrite) {
+        if (!confirm('Are you sure you want to OVERWRITE data? Existing records in the imported tables will be completely erased and replaced.')) return;
+    } else {
+        if (!confirm('Are you sure you want to MERGE data? Existing records with matching IDs will be updated.')) return;
+    }
 
-    logMergeResult(`Starting Merge Process for ${scope === 'all' ? 'Entire Database' : 'Table: ' + scope}...`, false);
+    logMergeResult(`Starting ${isOverwrite ? 'Overwrite' : 'Merge'} Process...`, false);
 
     const reader = new FileReader();
     reader.onload = async (e) => {
@@ -165,76 +166,48 @@ async function handleUnifiedMerge() {
             const data = JSON.parse(e.target.result);
             const db = await getDB();
             
-            if (scope === 'all') {
-                if (typeof data !== 'object' || Array.isArray(data)) {
-                    logMergeResult('Error: Invalid JSON format for entire DB. Root must be an object.', true);
-                    return;
+            if (typeof data !== 'object' || Array.isArray(data)) {
+                logMergeResult('Error: Invalid JSON format. Expected an object with table names as keys.', true);
+                return;
+            }
+
+            const stores = getObjectStores();
+            const validStores = Object.keys(data).filter(s => stores.includes(s) && Array.isArray(data[s]));
+
+            if (validStores.length === 0) {
+                logMergeResult('Error: No valid tables found in the backup file.', true);
+                return;
+            }
+
+            const transaction = db.transaction(validStores, 'readwrite');
+            let successCount = 0;
+
+            for (const storeName of validStores) {
+                const store = transaction.objectStore(storeName);
+                if (isOverwrite) {
+                    store.clear();
                 }
-                const stores = getObjectStores();
-                const validStores = Object.keys(data).filter(s => stores.includes(s));
-
-                if (validStores.length === 0) {
-                    logMergeResult('Error: No valid tables found in merge file.', true);
-                    return;
-                }
-
-                const transaction = db.transaction(validStores, 'readwrite');
-                let successCount = 0;
-
-                for (const storeName of validStores) {
-                    const store = transaction.objectStore(storeName);
-                    const items = data[storeName];
-                    if (Array.isArray(items)) {
-                        items.forEach(item => {
-                            if (!item.id) {
-                                item.id = Date.now().toString(36) + Math.random().toString(36).substr(2);
-                            }
-                            store.put(item);
-                            successCount++;
-                        });
-                    }
-                }
-
-                transaction.oncomplete = () => {
-                    logMergeResult(`Merge Successful! Processed ${successCount} records.`);
-                    alert('Database merged successfully!');
-                    fileInput.value = '';
-                    window.dispatchEvent(new Event('app-refresh'));
-                    renderSelectedTable();
-                };
-
-                transaction.onerror = (err) => {
-                    logMergeResult(`Merge Failed: ${err.target.error.message}`, true);
-                };
-            } else {
-                if (!Array.isArray(data)) {
-                    logMergeResult('Error: Invalid JSON format. Expected an array for table merge.', true);
-                    return;
-                }
-                const transaction = db.transaction([scope], 'readwrite');
-                const store = transaction.objectStore(scope);
-                let successCount = 0;
-                
-                data.forEach(item => {
+                const items = data[storeName];
+                items.forEach(item => {
                     if (!item.id) {
                         item.id = Date.now().toString(36) + Math.random().toString(36).substr(2);
                     }
                     store.put(item);
                     successCount++;
                 });
-                
-                transaction.oncomplete = () => {
-                    logMergeResult(`Merge Successful! Processed ${successCount} records for table '${scope}'.`);
-                    alert(`Table '${scope}' merged successfully!`);
-                    fileInput.value = '';
-                    window.dispatchEvent(new Event('app-refresh'));
-                    renderSelectedTable();
-                };
-
-                transaction.onerror = (err) => {
-                    logMergeResult(`Merge Failed: ${err.target.error.message}`, true);
-                };
             }
+
+            transaction.oncomplete = () => {
+                logMergeResult(`Restore Successful! Processed ${successCount} records across ${validStores.length} tables.`);
+                alert(`Database ${isOverwrite ? 'overwritten' : 'merged'} successfully!`);
+                fileInput.value = '';
+                window.dispatchEvent(new Event('app-refresh'));
+                renderSelectedTable();
+            };
+
+            transaction.onerror = (err) => {
+                logMergeResult(`Restore Failed: ${err.target.error.message}`, true);
+            };
         } catch (error) {
             console.error(error);
             logMergeResult(`Critical Error: Invalid JSON file format.`, true);

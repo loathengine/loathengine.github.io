@@ -19,7 +19,10 @@
                     <div style="margin-bottom: 1rem;">
                         <label for="dbFileInput">Restore from JSON Backup</label>
                         <input type="file" id="dbFileInput" accept=".json">
-                        <button id="unifiedMergeBtn" class="btn-green" style="width: 100%; margin-top: 0.5rem;">Restore / Merge Data</button>
+                        <div class="button-group" style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+                            <button id="unifiedMergeBtn" class="btn-green" style="flex: 1;">Merge from Backup</button>
+                            <button id="unifiedOverwriteBtn" class="btn-red" style="flex: 1;">Overwrite from Backup</button>
+                        </div>
                     </div>
 
                     <div class="button-group" style="display: flex; flex-direction: column; gap: 0.5rem; border-top: 1px solid #374151; padding-top: 1rem;">
