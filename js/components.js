@@ -101,6 +101,7 @@ export async function refreshComponentUI() {
     const manufacturers = await getAllItems('manufacturers');
     manufacturers.forEach(m => m.displayName = formatManufacturerName(m));
     const diameters = await getAllItems('diameters');
+    const primerPockets = await getAllItems('primerPockets');
     
     populateSelect('bulletManufacturer', manufacturers.filter(m => m.type && m.type.includes('bullet')), 'displayName', 'id');
     populateSelect('powderManufacturer', manufacturers.filter(m => m.type && m.type.includes('powder')), 'displayName', 'id');
@@ -108,6 +109,7 @@ export async function refreshComponentUI() {
     populateSelect('brassManufacturer', manufacturers.filter(m => m.type && m.type.includes('brass')), 'displayName', 'id');
     populateSelect('bulletDiameter', diameters, 'imperial', 'id');
     populateSelect('cartridgeDiameter', diameters, 'imperial', 'id');
+    populateSelect('primerPocket', primerPockets, 'name', 'id');
 
 
     refreshBrassFormDropDowns();
@@ -625,6 +627,7 @@ async function handlePrimerSubmit(e) {
     const primer = {
         id: document.getElementById('primerId').value || generateUniqueId(),
         manufacturerId: document.getElementById('primerManufacturer').value,
+        primerPocketId: document.getElementById('primerPocket').value,
         name: document.getElementById('primerName').value
     };
     await updateItem('primers', primer);
@@ -634,9 +637,10 @@ async function handlePrimerSubmit(e) {
 }
 
 async function renderPrimersTable() {
-    const [allPrimers, manufacturers] = await Promise.all([
+    const [allPrimers, manufacturers, primerPockets] = await Promise.all([
         getAllItems('primers'),
-        getAllItems('manufacturers')
+        getAllItems('manufacturers'),
+        getAllItems('primerPockets')
     ]);
     const filterMfg = document.getElementById('filterPrimerManufacturer').value;
     let primers = filterMfg ? allPrimers.filter(p => p.manufacturerId === filterMfg) : allPrimers;
@@ -644,6 +648,7 @@ async function renderPrimersTable() {
     primers.sort((a, b) => a.name.localeCompare(b.name));
     
     const manufacturerMap = new Map(manufacturers.map(m => [m.id, formatManufacturerName(m)]));
+    const pocketMap = new Map(primerPockets.map(p => [p.id, p.name]));
     const tableBody = document.getElementById('primersTableBody');
     tableBody.innerHTML = '';
     
@@ -654,10 +659,12 @@ async function renderPrimersTable() {
 
     for (const primer of primers) {
         const manufacturerName = manufacturerMap.get(primer.manufacturerId) || 'N/A';
+        const pocketName = pocketMap.get(primer.primerPocketId) || 'N/A';
         const row = `
             <tr>
                 <td>${primer.name}</td>
                 <td>${manufacturerName}</td>
+                <td>${pocketName}</td>
                 <td>
                     <div class="flex-container">
                         <button class="btn-yellow btn-small" data-id="${primer.id}" data-action="edit">Edit</button>
@@ -682,6 +689,7 @@ async function handlePrimerTableClick(e) {
         const item = await getItem('primers', id);
         document.getElementById('primerId').value = item.id;
         document.getElementById('primerManufacturer').value = item.manufacturerId;
+        document.getElementById('primerPocket').value = item.primerPocketId || '';
         document.getElementById('primerName').value = item.name;
     }
 }

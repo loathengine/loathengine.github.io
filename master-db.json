@@ -798,199 +798,232 @@
       "id": "PRI_CCIBR2LARG_C84Z",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "CCI BR-2 Large Rifle Benchrest",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_CCIBR2LARG_G6T1",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "CCI BR2 Large Rifle",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_CCIBR4SMAL_3WPA",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "CCI BR4 Small Rifle Benchrest",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_CCIBR5LARG_PBA3",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "CCI BR5 Large Rifle Magnum",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_CCIBR6MATC_KAYM",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "CCI BR6 Match",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_CCIBR7BENC_LJJV",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "CCI BR7 Benchrest",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_CCI_200_C1R2",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "No. 200 Large Rifle",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_CCI_250_PSFC",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "No. 250 Large Rifle Magnum",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_CCI_400_C1R3",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "No. 400 Small Rifle",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_CCI_450_C1R4",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "No. 450 Small Rifle Magnum",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_CCI_BR2_C1R5",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "BR-2 Large Rifle Bench Rest",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_CCI_BR4_C1R6",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "BR-4 Small Rifle Bench Rest",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_CCI_NO34_C1R8",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "No. 34 Large Rifle (Military)",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_CCI_NO41_C1R7",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "No. 41 Small Rifle (Military)",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_FEDERALGM2_9NLQ",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "Federal GM210M Large Rifle Match Primer",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_FEDERALGOL_U9R8",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "Federal Gold Medal Match 215 Small Rifle Magnum Primer",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_FEDERALPRE_T9UB",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "Federal Premium Gold Medal Match 210 Large Rifle Magnum Primer",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_FED_205M_F1D7",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "205M Gold Medal Match Small Rifle",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_FED_205_F1D6",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "205 Small Rifle",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_FED_210M_F1D3",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "210M Gold Medal Match Large Rifle",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_FED_210_F1D2",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "210 Large Rifle",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_FED_215M_F1D5",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "215M Gold Medal Match Large Rifle Magnum",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_FED_215_F1D4",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "215 Large Rifle Magnum",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_FED_AR_F1D8",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "AR Match Small Rifle",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_MAN_FEDERAL_F4G7_FEDERAL210_VL42",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "Federal 210M Large Rifle Match Primer",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_REMINGTON7_4KC6",
       "manufacturerId": "MAN_REMINGTON_R7M1",
       "name": "Remington 7 1/2",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_REM_7.5_R1E2",
       "manufacturerId": "MAN_REMINGTON_R7M1",
       "name": "7 1/2 Small Rifle Bench Rest",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_REM_9.5M_R1E4",
       "manufacturerId": "MAN_REMINGTON_R7M1",
       "name": "9 1/2M Large Rifle Magnum",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_REM_9.5_R1E3",
       "manufacturerId": "MAN_REMINGTON_R7M1",
       "name": "9 1/2 Large Rifle",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_WINCHESTER_IVW0",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
       "name": "Winchester USA Ready Large Rifle Match Grade Primers",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_WINC_WLRM_W1N3",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
       "name": "Large Rifle Magnum (WLRM)",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_WINC_WLR_W1N2",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
       "name": "Large Rifle (WLR)",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_WINC_WSR_W1N4",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
       "name": "Small Rifle (WSR)",
-      "needs_recheck": 0
+      "needs_recheck": 0,
+      "primerPocketId": "PKT_SML"
     }
   ],
   "cartridges": [
@@ -2390,27 +2423,6 @@
       "needs_recheck": 0
     },
     {
-      "id": "BUL_BARNES_UNK_155_LRX_99B4",
-      "manufacturerId": "MAN_BARNES_B2N5",
-      "name": "LRX-",
-      "weight": 155.0,
-      "diameterId": "DIA_51_DLRX",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 0.505,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 0.51,
-        "iy": 51.0,
-        "cg_from_base": 0.051
-      },
-      "needs_recheck": 0
-    },
-    {
       "id": "BUL_BARNES_UNK_200_LX_C169",
       "manufacturerId": "MAN_BARNES_B2N5",
       "name": "LX",
@@ -2437,7 +2449,7 @@
       "name": "LRX-",
       "weight": 208.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.476,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": 0.316,
@@ -4259,27 +4271,6 @@
       "needs_recheck": 0
     },
     {
-      "id": "BUL_BERGER_UNK_410_HYBRID_066D",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "Hybrid Target",
-      "weight": 410.0,
-      "diameterId": "DIA_472_XBPV",
-      "length": 2.037,
-      "ballistics": {
-        "g1_bc": 0.625,
-        "g7_bc": null,
-        "g7_form_factor": 0.877
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": 472.0,
-        "iy": 0.472,
-        "cg_from_base": 0.472
-      },
-      "needs_recheck": 0
-    },
-    {
       "id": "BUL_HORNADY_224_35_NTX",
       "manufacturerId": "MAN_HORNADY_JGR4",
       "name": "NTX",
@@ -5729,27 +5720,6 @@
       "needs_recheck": 0
     },
     {
-      "id": "BUL_HORNADY_UNK_124_FLEXLO_1569",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "FlexLock",
-      "weight": 124.0,
-      "diameterId": "DIA_355_UZPP",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 0.165,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 355.0,
-        "iy": 124.0,
-        "cg_from_base": 0.085
-      },
-      "needs_recheck": 0
-    },
-    {
       "id": "BUL_HORNADY_UNK_125_FMJ_8B15",
       "manufacturerId": "MAN_HORNADY_JGR4",
       "name": "FMJ",
@@ -5767,27 +5737,6 @@
         "ix": 125.0,
         "iy": null,
         "cg_from_base": 0.308
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_125_FTX_658E",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "FTX",
-      "weight": 125.0,
-      "diameterId": "DIA_357_VQGI",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 0.15,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 125.0,
-        "iy": 0.15,
-        "cg_from_base": 0.04
       },
       "needs_recheck": 0
     },
@@ -5830,27 +5779,6 @@
         "ix": 125.0,
         "iy": null,
         "cg_from_base": 0.08
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_125_XTP_37D8",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "XTP",
-      "weight": 125.0,
-      "diameterId": "DIA_357_VQGI",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": 0.151,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 0.357,
-        "iy": 125.0,
-        "cg_from_base": 0.09
       },
       "needs_recheck": 0
     },
@@ -6086,27 +6014,6 @@
       "needs_recheck": 0
     },
     {
-      "id": "BUL_HORNADY_UNK_135_FLEXLO_0E8E",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "FlexLock",
-      "weight": 135.0,
-      "diameterId": "DIA_355_UZPP",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 135.0,
-        "iy": 135.0,
-        "cg_from_base": 0.155
-      },
-      "needs_recheck": 0
-    },
-    {
       "id": "BUL_HORNADY_UNK_135_FTX_CABB",
       "manufacturerId": "MAN_HORNADY_JGR4",
       "name": "FTX",
@@ -6124,27 +6031,6 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_138_DGH_BB01",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "DGH",
-      "weight": 138.0,
-      "diameterId": "DIA_355_UZPP",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 0.195,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": 138.0,
-        "iy": 0.355,
-        "cg_from_base": 0.115
       },
       "needs_recheck": 0
     },
@@ -6275,27 +6161,6 @@
       "needs_recheck": 0
     },
     {
-      "id": "BUL_HORNADY_UNK_140_FTX_630F",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "FTX",
-      "weight": 140.0,
-      "diameterId": "DIA_357_VQGI",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 0.16,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 140.0,
-        "iy": null,
-        "cg_from_base": 0.16
-      },
-      "needs_recheck": 0
-    },
-    {
       "id": "BUL_HORNADY_UNK_140_G_2F1C",
       "manufacturerId": "MAN_HORNADY_JGR4",
       "name": "G",
@@ -6418,27 +6283,6 @@
         "ix": 0.277,
         "iy": 0.277,
         "cg_from_base": 0.255
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_147_XTP_4027",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "XTP",
-      "weight": 147.0,
-      "diameterId": "DIA_355_UZPP",
-      "length": 0.875,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": 0.355,
-        "iy": 0.355,
-        "cg_from_base": 0.03
       },
       "needs_recheck": 0
     },
@@ -6716,48 +6560,6 @@
       "needs_recheck": 0
     },
     {
-      "id": "BUL_HORNADY_UNK_155_XTP_B5C5",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "XTP",
-      "weight": 155.0,
-      "diameterId": "DIA_4_1FOO",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": 0.191,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": null,
-        "iy": 4.0,
-        "cg_from_base": null
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_158_XTP_16B8",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "XTP",
-      "weight": 158.0,
-      "diameterId": "DIA_357_VQGI",
-      "length": 0.87,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": 1250.0,
-        "iy": 158.0,
-        "cg_from_base": null
-      },
-      "needs_recheck": 0
-    },
-    {
       "id": "BUL_HORNADY_UNK_160_CX_7633",
       "manufacturerId": "MAN_HORNADY_JGR4",
       "name": "CX",
@@ -6947,27 +6749,6 @@
       "needs_recheck": 0
     },
     {
-      "id": "BUL_HORNADY_UNK_170_INTERL_9F37",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "InterLock",
-      "weight": 170.0,
-      "diameterId": "DIA_321_NVIW",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 0.321,
-        "iy": 170.0,
-        "cg_from_base": 0.321
-      },
-      "needs_recheck": 0
-    },
-    {
       "id": "BUL_HORNADY_UNK_170_MONOFL_7A82",
       "manufacturerId": "MAN_HORNADY_JGR4",
       "name": "MonoFlex",
@@ -6985,27 +6766,6 @@
         "ix": 170.0,
         "iy": 170.0,
         "cg_from_base": 0.015
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_170_SEC_1DEE",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "Sec",
-      "weight": 170.0,
-      "diameterId": "DIA_355_UZPP",
-      "length": 0.885,
-      "ballistics": {
-        "g1_bc": 0.215,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": null,
-        "iy": 355.0,
-        "cg_from_base": null
       },
       "needs_recheck": 0
     },
@@ -7283,48 +7043,6 @@
       "needs_recheck": 0
     },
     {
-      "id": "BUL_HORNADY_UNK_180_XTP_ED7F",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "XTP",
-      "weight": 180.0,
-      "diameterId": "DIA_4_1FOO",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 0.205,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": 0.4,
-        "iy": 0.4,
-        "cg_from_base": 0.4
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_185_XTP_1ECC",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "XTP",
-      "weight": 185.0,
-      "diameterId": "DIA_451_WONU",
-      "length": 1.125,
-      "ballistics": {
-        "g1_bc": 0.139,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": 0.451,
-        "iy": 451.0,
-        "cg_from_base": 0.05
-      },
-      "needs_recheck": 0
-    },
-    {
       "id": "BUL_HORNADY_UNK_190_CX_7691",
       "manufacturerId": "MAN_HORNADY_JGR4",
       "name": "CX",
@@ -7388,27 +7106,6 @@
       "needs_recheck": 0
     },
     {
-      "id": "BUL_HORNADY_UNK_200_INTERL_0E2D",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "InterLock",
-      "weight": 200.0,
-      "diameterId": "DIA_357_VQGI",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 0.282,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 200.0,
-        "iy": null,
-        "cg_from_base": 0.223
-      },
-      "needs_recheck": 0
-    },
-    {
       "id": "BUL_HORNADY_UNK_200_MONOFL_94DD",
       "manufacturerId": "MAN_HORNADY_JGR4",
       "name": "MonoFlex",
@@ -7426,27 +7123,6 @@
         "ix": 200.0,
         "iy": 200.0,
         "cg_from_base": 0.085
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_205_COWBOY_0175",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "Cowboy",
-      "weight": 205.0,
-      "diameterId": "DIA_427_V1AU",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": 0.427,
-        "iy": 0.427,
-        "cg_from_base": null
       },
       "needs_recheck": 0
     },
@@ -7552,48 +7228,6 @@
         "ix": 20.0,
         "iy": 20.0,
         "cg_from_base": 0.095
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_210_INTERL_70D8",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "InterLock",
-      "weight": 210.0,
-      "diameterId": "DIA_408_60MH",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": 0.6,
-        "g7_form_factor": 0.84
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 210.0,
-        "iy": 210.0,
-        "cg_from_base": 0.045
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_210_SEC_B532",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "Sec",
-      "weight": 210.0,
-      "diameterId": "DIA_41_IAPF",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": null,
-        "iy": null,
-        "cg_from_base": 0.035
       },
       "needs_recheck": 0
     },
@@ -7724,27 +7358,6 @@
       "needs_recheck": 0
     },
     {
-      "id": "BUL_HORNADY_UNK_230_XTP_733E",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "XTP",
-      "weight": 230.0,
-      "diameterId": "DIA_451_WONU",
-      "length": 0.892,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": 0.451,
-        "iy": 0.451,
-        "cg_from_base": 0.451
-      },
-      "needs_recheck": 0
-    },
-    {
       "id": "BUL_HORNADY_UNK_240_CX_5D47",
       "manufacturerId": "MAN_HORNADY_JGR4",
       "name": "CX",
@@ -7783,27 +7396,6 @@
         "ix": null,
         "iy": null,
         "cg_from_base": 0.15
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_245_INTERL_D969",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "InterLock",
-      "weight": 245.0,
-      "diameterId": "DIA_451_WONU",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 0.451,
-        "iy": 451.0,
-        "cg_from_base": null
       },
       "needs_recheck": 0
     },
@@ -7871,132 +7463,6 @@
       "needs_recheck": 0
     },
     {
-      "id": "BUL_HORNADY_UNK_250_FTX_580F",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "FTX",
-      "weight": 250.0,
-      "diameterId": "DIA_451_WONU",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 0.21,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": null,
-        "iy": 0.451,
-        "cg_from_base": null
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_250_MONOFL_A10D",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "MonoFlex",
-      "weight": 250.0,
-      "diameterId": "DIA_451_WONU",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 0.175,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 451.0,
-        "iy": 451.0,
-        "cg_from_base": 0.035
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_250_SEC_B202",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "Sec",
-      "weight": 250.0,
-      "diameterId": "DIA_451_WONU",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 0.451,
-        "iy": 0.451,
-        "cg_from_base": 0.02
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_250_SST_BBEA",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "SST",
-      "weight": 250.0,
-      "diameterId": "DIA_451_WONU",
-      "length": 1.275,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 0.45,
-        "iy": 0.451,
-        "cg_from_base": null
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_250_SUBX_47FA",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "SUB-X",
-      "weight": 250.0,
-      "diameterId": "DIA_357_VQGI",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 0.265,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": 250.0,
-        "iy": 250.0,
-        "cg_from_base": null
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_255_COWBOY_B661",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "Cowboy",
-      "weight": 255.0,
-      "diameterId": "DIA_454_JMVQ",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": null,
-        "iy": 255.0,
-        "cg_from_base": 0.117
-      },
-      "needs_recheck": 0
-    },
-    {
       "id": "BUL_HORNADY_UNK_255_SUBX_51DA",
       "manufacturerId": "MAN_HORNADY_JGR4",
       "name": "SUB-X",
@@ -8056,69 +7522,6 @@
         "ix": 130.0,
         "iy": 270.0,
         "cg_from_base": 0.277
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_286_INTERL_DB8E",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "InterLock",
-      "weight": 286.0,
-      "diameterId": "DIA_366_QZSN",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 0.4,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": 286.0,
-        "iy": null,
-        "cg_from_base": null
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_300_DGH_A5EE",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "DGH",
-      "weight": 300.0,
-      "diameterId": "DIA_451_WONU",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 451.0,
-        "iy": 0.451,
-        "cg_from_base": 0.06
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_300_DGS_729E",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "DGS",
-      "weight": 300.0,
-      "diameterId": "DIA_366_QZSN",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": 0.366,
-        "iy": 300.0,
-        "cg_from_base": 1.5
       },
       "needs_recheck": 0
     },
@@ -8186,27 +7589,6 @@
       "needs_recheck": 0
     },
     {
-      "id": "BUL_HORNADY_UNK_300_SST_5710",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "SST",
-      "weight": 300.0,
-      "diameterId": "DIA_451_WONU",
-      "length": 1.15,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 0.451,
-        "iy": 0.45,
-        "cg_from_base": 0.25
-      },
-      "needs_recheck": 0
-    },
-    {
       "id": "BUL_HORNADY_UNK_30_VMAX_AA1E",
       "manufacturerId": "MAN_HORNADY_JGR4",
       "name": "V-MAX",
@@ -8249,69 +7631,6 @@
       "needs_recheck": 0
     },
     {
-      "id": "BUL_HORNADY_UNK_325_INTERL_EE50",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "InterLock HP",
-      "weight": 325.0,
-      "diameterId": "DIA_458_JYUH",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 0.23,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 0.458,
-        "iy": 458.0,
-        "cg_from_base": 0.23
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_325_SEC_7080",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "Sec",
-      "weight": 325.0,
-      "diameterId": "DIA_458_JYUH",
-      "length": 1.3,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": null,
-        "iy": 1.67,
-        "cg_from_base": null
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_325_XTP_A294",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "XTP",
-      "weight": 325.0,
-      "diameterId": "DIA_475_2GRX",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": 0.475,
-        "iy": 475.0,
-        "cg_from_base": 0.475
-      },
-      "needs_recheck": 0
-    },
-    {
       "id": "BUL_HORNADY_UNK_32_VMAX_9D3E",
       "manufacturerId": "MAN_HORNADY_JGR4",
       "name": "V-MAX",
@@ -8329,48 +7648,6 @@
         "ix": 32.0,
         "iy": 32.0,
         "cg_from_base": 0.038
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_350_SEC_5109",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "Sec",
-      "weight": 350.0,
-      "diameterId": "DIA_357_VQGI",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": 0.205,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": null,
-        "iy": null,
-        "cg_from_base": 0.06
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_35_SEC_5AE7",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "Sec",
-      "weight": 35.0,
-      "diameterId": "DIA_355_UZPP",
-      "length": 0.885,
-      "ballistics": {
-        "g1_bc": 0.25,
-        "g7_bc": null,
-        "g7_form_factor": 0.0
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 35.0,
-        "iy": 0.355,
-        "cg_from_base": 0.193
       },
       "needs_recheck": 0
     },
@@ -8480,90 +7757,6 @@
       "needs_recheck": 0
     },
     {
-      "id": "BUL_HORNADY_UNK_395_SUBX_83A0",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "SUB-X",
-      "weight": 395.0,
-      "diameterId": "DIA_451_WONU",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 0.3,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 451.0,
-        "iy": 451.0,
-        "cg_from_base": null
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_400_DGX_D57F",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "DGX",
-      "weight": 400.0,
-      "diameterId": "DIA_41_IAPF",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": 0.41,
-        "iy": 410.0,
-        "cg_from_base": 1.5
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_410_SUBX_1789",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "SUB-X",
-      "weight": 410.0,
-      "diameterId": "DIA_458_JYUH",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 410.0,
-        "iy": 410.0,
-        "cg_from_base": 0.458
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_45_FTX_6F25",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "FTX",
-      "weight": 45.0,
-      "diameterId": "DIA_451_WONU",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 0.145,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 45.0,
-        "iy": 0.451,
-        "cg_from_base": 0.451
-      },
-      "needs_recheck": 0
-    },
-    {
       "id": "BUL_HORNADY_UNK_45_HPMATC_849E",
       "manufacturerId": "MAN_HORNADY_JGR4",
       "name": "HP Match",
@@ -8580,132 +7773,6 @@
         "tip_length": null,
         "ix": 224.0,
         "iy": 45.0,
-        "cg_from_base": null
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_480_DGS_3B7E",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "DGS",
-      "weight": 480.0,
-      "diameterId": "DIA_458_JYUH",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 0.285,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": 0.458,
-        "iy": 480.0,
-        "cg_from_base": 480.0
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_480_DGX_78FE",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "DGX",
-      "weight": 480.0,
-      "diameterId": "DIA_458_JYUH",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 0.285,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": 480.0,
-        "iy": 0.458,
-        "cg_from_base": 0.458
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_500_DGH_4D03",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "DGH",
-      "weight": 500.0,
-      "diameterId": "DIA_5_W5QJ",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 5.0,
-        "iy": 500.0,
-        "cg_from_base": 0.05
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_500_DGS_B9FA",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "DGS",
-      "weight": 500.0,
-      "diameterId": "DIA_458_JYUH",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 0.295,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": 500.0,
-        "iy": 500.0,
-        "cg_from_base": 2.8
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_500_DGX_44D2",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "DGX",
-      "weight": 500.0,
-      "diameterId": "DIA_458_JYUH",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 458.0,
-        "iy": 0.458,
-        "cg_from_base": null
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_500_FPXTP_C514",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "FP-XTP",
-      "weight": 500.0,
-      "diameterId": "DIA_5_W5QJ",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": 5.0,
-        "iy": 500.0,
         "cg_from_base": null
       },
       "needs_recheck": 0
@@ -8728,27 +7795,6 @@
         "ix": 50.0,
         "iy": 0.224,
         "cg_from_base": 0.04
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_525_SEC_6C1A",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "Sec",
-      "weight": 525.0,
-      "diameterId": "DIA_505_QD2C",
-      "length": 1.55,
-      "ballistics": {
-        "g1_bc": 0.27,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 505.0,
-        "iy": 0.505,
-        "cg_from_base": 0.505
       },
       "needs_recheck": 0
     },
@@ -8896,48 +7942,6 @@
         "ix": 224.0,
         "iy": 224.0,
         "cg_from_base": 0.224
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_570_DGS_114C",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "DGS",
-      "weight": 570.0,
-      "diameterId": "DIA_51_DLRX",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": 0.51
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": 2120.0,
-        "iy": 0.51,
-        "cg_from_base": 0.51
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_570_DGX_261D",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "DGX",
-      "weight": 570.0,
-      "diameterId": "DIA_51_DLRX",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": 0.5,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 51.0,
-        "iy": 0.51,
-        "cg_from_base": 0.51
       },
       "needs_recheck": 0
     },
@@ -9106,48 +8110,6 @@
         "ix": 73.0,
         "iy": 73.0,
         "cg_from_base": 0.224
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_750_AMAX_CD4C",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "A-MAX",
-      "weight": 750.0,
-      "diameterId": "DIA_51_DLRX",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 51.0,
-        "iy": 0.51,
-        "cg_from_base": 0.412
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_HORNADY_UNK_750_ATIP_F6B4",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "A-Tip",
-      "weight": 750.0,
-      "diameterId": "DIA_51_DLRX",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 1.05,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 750.0,
-        "iy": 510.0,
-        "cg_from_base": 0.51
       },
       "needs_recheck": 0
     },
@@ -12218,69 +11180,6 @@
       "needs_recheck": 0
     },
     {
-      "id": "BUL_SIERRA_UNK_124_JHPSIG_2707",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "JHP Sig V-Crown",
-      "weight": 124.0,
-      "diameterId": "DIA_355_UZPP",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 355.0,
-        "iy": 0.355,
-        "cg_from_base": 0.12
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_SIERRA_UNK_124_JHPSM_28F7",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "JHP SM",
-      "weight": 124.0,
-      "diameterId": "DIA_355_UZPP",
-      "length": 0.56,
-      "ballistics": {
-        "g1_bc": 0.125,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": 124.0,
-        "iy": 124.0,
-        "cg_from_base": 0.12
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_SIERRA_UNK_125_FMJTM_7962",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "FMJ TM",
-      "weight": 125.0,
-      "diameterId": "DIA_355_UZPP",
-      "length": 0.875,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": 125.0,
-        "iy": 125.0,
-        "cg_from_base": null
-      },
-      "needs_recheck": 0
-    },
-    {
       "id": "BUL_SIERRA_UNK_125_HPCNMK_B63E",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "name": "HP-CN MK",
@@ -12319,48 +11218,6 @@
         "ix": 125.0,
         "iy": 0.308,
         "cg_from_base": 0.308
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_SIERRA_UNK_125_JHPSM_9976",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "JHP SM",
-      "weight": 125.0,
-      "diameterId": "DIA_355_UZPP",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 0.122,
-        "g7_bc": 0.124,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": 0.355,
-        "iy": 0.355,
-        "cg_from_base": 0.137
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_SIERRA_UNK_125_JSPSM_DAB5",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "JSP SM",
-      "weight": 125.0,
-      "diameterId": "DIA_38_HIT9",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 125.0,
-        "iy": null,
-        "cg_from_base": 0.055
       },
       "needs_recheck": 0
     },
@@ -12596,27 +11453,6 @@
       "needs_recheck": 0
     },
     {
-      "id": "BUL_SIERRA_UNK_147_JHPSM_D272",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "JHP SM",
-      "weight": 147.0,
-      "diameterId": "DIA_355_UZPP",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 147.0,
-        "iy": 0.157,
-        "cg_from_base": 0.355
-      },
-      "needs_recheck": 0
-    },
-    {
       "id": "BUL_SIERRA_UNK_150_FMJBTG_A180",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "name": "FMJBT GK",
@@ -12697,27 +11533,6 @@
         "ix": null,
         "iy": 150.0,
         "cg_from_base": 0.09
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_SIERRA_UNK_150_JHPSM_B267",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "JHP SM",
-      "weight": 150.0,
-      "diameterId": "DIA_4_1FOO",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 0.145,
-        "g7_bc": null,
-        "g7_form_factor": 0.4
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 4.0,
-        "iy": 4.0,
-        "cg_from_base": 0.4
       },
       "needs_recheck": 0
     },
@@ -12911,27 +11726,6 @@
       "needs_recheck": 0
     },
     {
-      "id": "BUL_SIERRA_UNK_158_JSPSM_E73B",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "JSP SM",
-      "weight": 158.0,
-      "diameterId": "DIA_357_VQGI",
-      "length": 1.29,
-      "ballistics": {
-        "g1_bc": 0.1,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": null,
-        "iy": 357.0,
-        "cg_from_base": null
-      },
-      "needs_recheck": 0
-    },
-    {
       "id": "BUL_SIERRA_UNK_160_HPBTGK_20F8",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "name": "HPBT GK",
@@ -13121,27 +11915,6 @@
       "needs_recheck": 0
     },
     {
-      "id": "BUL_SIERRA_UNK_170_JHCSM_481F",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "JHC SM",
-      "weight": 170.0,
-      "diameterId": "DIA_41_IAPF",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 0.123,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 0.41,
-        "iy": 0.41,
-        "cg_from_base": null
-      },
-      "needs_recheck": 0
-    },
-    {
       "id": "BUL_SIERRA_UNK_175_HPBTMK_9C74",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "name": "HPBT MK",
@@ -13247,48 +12020,6 @@
       "needs_recheck": 0
     },
     {
-      "id": "BUL_SIERRA_UNK_180_JHCSM_3734",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "JHC SM",
-      "weight": 180.0,
-      "diameterId": "DIA_429_RV3F",
-      "length": 3.55,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 4295.0,
-        "iy": 0.4295,
-        "cg_from_base": null
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_SIERRA_UNK_180_JHPSM_265B",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "JHP SM",
-      "weight": 180.0,
-      "diameterId": "DIA_429_RV3F",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": 0.125,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 0.4295,
-        "iy": 0.4295,
-        "cg_from_base": 0.125
-      },
-      "needs_recheck": 0
-    },
-    {
       "id": "BUL_SIERRA_UNK_180_RNPH_6323",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "name": "RN PH",
@@ -13390,27 +12121,6 @@
         "ix": null,
         "iy": 185.0,
         "cg_from_base": 0.135
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_SIERRA_UNK_185_JHPSM_3A73",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "JHP SM",
-      "weight": 185.0,
-      "diameterId": "DIA_451_WONU",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": 0.178,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": 185.0,
-        "iy": 0.451,
-        "cg_from_base": 0.001
       },
       "needs_recheck": 0
     },
@@ -13583,27 +12293,6 @@
       "needs_recheck": 0
     },
     {
-      "id": "BUL_SIERRA_UNK_210_JHCSM_14F0",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "JHC SM",
-      "weight": 210.0,
-      "diameterId": "DIA_429_RV3F",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 0.16,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 0.4295,
-        "iy": 4295.0,
-        "cg_from_base": 1.5
-      },
-      "needs_recheck": 0
-    },
-    {
       "id": "BUL_SIERRA_UNK_215_HPBTCN_21A5",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "name": "HPBT-CN MK",
@@ -13709,27 +12398,6 @@
       "needs_recheck": 0
     },
     {
-      "id": "BUL_SIERRA_UNK_230_FMJTM_BAD0",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "FMJ TM",
-      "weight": 230.0,
-      "diameterId": "DIA_451_WONU",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 0.14,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": 0.451,
-        "iy": 0.451,
-        "cg_from_base": 0.451
-      },
-      "needs_recheck": 0
-    },
-    {
       "id": "BUL_SIERRA_UNK_230_HPBTCN_5F7D",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "name": "HPBT-CN Mk",
@@ -13768,27 +12436,6 @@
         "ix": 0.308,
         "iy": 230.0,
         "cg_from_base": 0.8
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_SIERRA_UNK_240_JHCSM_DD45",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "JHC SM",
-      "weight": 240.0,
-      "diameterId": "DIA_451_WONU",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 0.15,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": null,
-        "iy": 0.4515,
-        "cg_from_base": null
       },
       "needs_recheck": 0
     },
@@ -13856,48 +12503,6 @@
       "needs_recheck": 0
     },
     {
-      "id": "BUL_SIERRA_UNK_300_HPFNPH_3DE2",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "HP/FN PH",
-      "weight": 300.0,
-      "diameterId": "DIA_458_JYUH",
-      "length": 1.275,
-      "ballistics": {
-        "g1_bc": 0.23,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": null,
-        "iy": 2500.0,
-        "cg_from_base": 1.0
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_SIERRA_UNK_300_JSPSM_264B",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "JSP SM",
-      "weight": 300.0,
-      "diameterId": "DIA_451_WONU",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": 0.451,
-        "iy": 0.451,
-        "cg_from_base": 0.051
-      },
-      "needs_recheck": 0
-    },
-    {
       "id": "BUL_SIERRA_UNK_300_SBTGK_B060",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "name": "SBT GK",
@@ -13957,48 +12562,6 @@
         "ix": null,
         "iy": 0.375,
         "cg_from_base": 0.23
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_SIERRA_UNK_350_JHPSM_2259",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "JHP SM",
-      "weight": 350.0,
-      "diameterId": "DIA_355_UZPP",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 350.0,
-        "iy": 350.0,
-        "cg_from_base": 0.02
-      },
-      "needs_recheck": 0
-    },
-    {
-      "id": "BUL_SIERRA_UNK_400_JSPSM_91A1",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "JSP SM",
-      "weight": 400.0,
-      "diameterId": "DIA_5_W5QJ",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 500.0,
-        "iy": 0.5,
-        "cg_from_base": 0.035
       },
       "needs_recheck": 0
     },
@@ -15076,23 +13639,12 @@
   ],
   "loads": [
     {
-      "id": "LOAD_COMM_ACCURATE_68WEST_HORNADY_750_HORNAD_4JOX",
-      "name": "Gold Dot",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_ACCURATE_A6B8",
-      "cartridgeId": "CTG_68WEST_N6HD",
-      "bulletId": "BUL_HORNADY_UNK_750_HORNAD_DFFC",
-      "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
       "id": "LOAD_COMM_ACCURATE_7REMMAG_SPEER_147_GOLDDO_09RB",
-      "name": "Gold Dot",
+      "name": "Gold Dot Personal Protection",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_ACCURATE_A6B8",
       "cartridgeId": "CTG_7REMMAG_cW92",
-      "bulletId": "BUL_SPEER_UNK_147_GOLDDO_9B00",
+      "bulletId": "BUL_SPEER_264_120_GDB",
       "partNumber": null,
       "lot": null,
       "needs_recheck": 0
@@ -15110,11 +13662,11 @@
     },
     {
       "id": "LOAD_COMM_ADG_8MAU_SPEER_147_GOLDDO_45TP",
-      "name": "Gold Dot",
+      "name": "Premium",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_ADG_A4D7",
       "cartridgeId": "CTG_8MAU_N8HJ",
-      "bulletId": "BUL_SPEER_UNK_147_GOLDDO_9B00",
+      "bulletId": "BUL_SIERRA_UNK_180_TGK_3E12",
       "partNumber": null,
       "lot": null,
       "needs_recheck": 0
@@ -15132,44 +13684,22 @@
     },
     {
       "id": "LOAD_COMM_ALPHA_8MAU_HORNADY_750_HORNAD_TQVB",
-      "name": "Hornady",
+      "name": "Grand Slam SP",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_ALPHA_A1L2",
       "cartridgeId": "CTG_8MAU_N8HJ",
-      "bulletId": "BUL_HORNADY_UNK_750_HORNAD_DFFC",
+      "bulletId": "BUL_SPEER_264_140_GS",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
-      "id": "LOAD_COMM_BARNES_223REM_NEW_0_UNK_TCSK",
-      "name": "Gold Dot",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_BARNES_B2N5",
-      "cartridgeId": "CTG_223REM_cR82",
-      "bulletId": "BUL_NEW_KUID",
-      "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
-      "id": "LOAD_COMM_BARNES_300WINMAG_NEW_0_UNK_527C",
-      "name": "Ballistic",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_BARNES_B2N5",
-      "cartridgeId": "CTG_300WINMAG_cG42",
-      "bulletId": "BUL_NEW_15Q4",
-      "partNumber": "30850",
       "lot": null,
       "needs_recheck": 0
     },
     {
       "id": "LOAD_COMM_BARNES_308WIN_NEW_0_UNK_K3SR",
-      "name": "Gold Dot G",
+      "name": "JHP SM",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BARNES_B2N5",
       "cartridgeId": "CTG_308WIN_cC82",
-      "bulletId": "BUL_NEW_PSEH",
+      "bulletId": "BUL_SIERRA_UNK_180_JHPSM_265B",
       "partNumber": "PM308M1",
       "lot": "Lot202",
       "needs_recheck": 0
@@ -15187,11 +13717,11 @@
     },
     {
       "id": "LOAD_COMM_BARNES_65CM_NEW_0_UNK_ORBH",
-      "name": "Gold Dot",
+      "name": "Grand Slam SP",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BARNES_B2N5",
       "cartridgeId": "CTG_65CM_cN72",
-      "bulletId": "BUL_NEW_Z8GG",
+      "bulletId": "BUL_SPEER_308_165_GS",
       "partNumber": "30848",
       "lot": null,
       "needs_recheck": 0
@@ -15214,50 +13744,6 @@
       "manufacturerId": "MAN_BARNES_B2N5",
       "cartridgeId": "CTG_7PRC_N7HE",
       "bulletId": "BUL_BARNES_264_130_TSX",
-      "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
-      "id": "LOAD_COMM_BARNES_7PRC_HORNADY_750_HORNAD_S39E",
-      "name": "X Marksman",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_BARNES_B2N5",
-      "cartridgeId": "CTG_7PRC_N7HE",
-      "bulletId": "BUL_HORNADY_UNK_750_HORNAD_DFFC",
-      "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
-      "id": "LOAD_COMM_BERGER_223REM_NEW_0_UNK_OCN2",
-      "name": "Hornady",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "cartridgeId": "CTG_223REM_cR82",
-      "bulletId": "BUL_NEW_4PK8",
-      "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
-      "id": "LOAD_COMM_BERGER_224VALK_NEW_0_UNK_DMXT",
-      "name": "Gold Dot",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "cartridgeId": "CTG_224VALK_N2H5",
-      "bulletId": "BUL_NEW_IYFI",
-      "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
-      "id": "LOAD_COMM_BERGER_308WIN_SPEER_147_GOLDDO_CHKR",
-      "name": "Gold Dot",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "cartridgeId": "CTG_308WIN_cC82",
-      "bulletId": "BUL_SPEER_UNK_147_GOLDDO_9B00",
       "partNumber": null,
       "lot": null,
       "needs_recheck": 0
@@ -15286,22 +13772,22 @@
     },
     {
       "id": "LOAD_COMM_BERGER_6CM_NEW_0_UNK_UKL9",
-      "name": "A-Tip",
+      "name": "Gold Dot Personal Protection",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BERGER_B9K2",
       "cartridgeId": "CTG_6CM_cG62",
-      "bulletId": "BUL_NEW_286H",
+      "bulletId": "BUL_SPEER_264_120_GDB",
       "partNumber": null,
       "lot": null,
       "needs_recheck": 0
     },
     {
       "id": "LOAD_COMM_BERGER_6CM_NEW_0_UNK_WVSG",
-      "name": "Hornady",
+      "name": "Varmint Hunter",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BERGER_B9K2",
       "cartridgeId": "CTG_6CM_cG62",
-      "bulletId": "BUL_NEW_82EQ",
+      "bulletId": "BUL_SIERRA_UNK_350_HPBTCN_196B",
       "partNumber": null,
       "lot": null,
       "needs_recheck": 0
@@ -15319,187 +13805,88 @@
     },
     {
       "id": "LOAD_COMM_BERGER_7PRC_NEW_0_UNK_6YU9",
-      "name": "Hornady",
+      "name": "Nosler Partition",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BERGER_B9K2",
       "cartridgeId": "CTG_7PRC_N7HE",
-      "bulletId": "BUL_NEW_TD56",
-      "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
-      "id": "LOAD_COMM_BERGER_8MAU_HORNADY_750_HORNAD_XM52",
-      "name": "Hornady",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "cartridgeId": "CTG_8MAU_N8HJ",
-      "bulletId": "BUL_HORNADY_UNK_750_HORNAD_DFFC",
+      "bulletId": "BUL_SPEER_277_130_GS",
       "partNumber": null,
       "lot": null,
       "needs_recheck": 0
     },
     {
       "id": "LOAD_COMM_BERGER_8MAU_SPEER_147_GOLDDO_3X58",
-      "name": "Gold Dot",
+      "name": "HPBT MK",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BERGER_B9K2",
       "cartridgeId": "CTG_8MAU_N8HJ",
-      "bulletId": "BUL_SPEER_UNK_147_GOLDDO_9B00",
+      "bulletId": "BUL_SIERRA_UNK_150_HPBTMK_ED11",
       "partNumber": null,
       "lot": null,
       "needs_recheck": 0
     },
     {
       "id": "LOAD_COMM_BLAC_223REM_NEW_0_UNK_SGT2",
-      "name": "Gold Dot",
+      "name": "American Eagle",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BLAC_CS4B",
       "cartridgeId": "CTG_223REM_cR82",
-      "bulletId": "BUL_NEW_PRVA",
+      "bulletId": "BUL_SIERRA_UNK_155_HPBTCN_9EC8",
       "partNumber": null,
       "lot": null,
       "needs_recheck": 0
     },
     {
       "id": "LOAD_COMM_BLAC_308WIN_NEW_0_UNK_3OBT",
-      "name": "Varmint",
+      "name": "Grand Slam SP",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BLAC_CS4B",
       "cartridgeId": "CTG_308WIN_cC82",
-      "bulletId": "BUL_NEW_HEO6",
+      "bulletId": "BUL_SPEER_264_140_GS",
       "partNumber": "BH-75MATCH2",
       "lot": null,
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_BLAC_308WIN_NEW_0_UNK_F3A2",
-      "name": "Supermax",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_BLAC_CS4B",
-      "cartridgeId": "CTG_308WIN_cC82",
-      "bulletId": "BUL_NEW_HF5X",
-      "partNumber": "BH308G2",
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
-      "id": "LOAD_COMM_BLAC_308WIN_NEW_0_UNK_JI35",
-      "name": "Gold Medal",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_BLAC_CS4B",
-      "cartridgeId": "CTG_308WIN_cC82",
-      "bulletId": "BUL_NEW_6ZYD",
-      "partNumber": "BGMP1",
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
       "id": "LOAD_COMM_BLAC_308WIN_NEW_0_UNK_T793",
-      "name": "Gold Dot",
+      "name": "Gold Dot Personal Protection",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BLAC_CS4B",
       "cartridgeId": "CTG_308WIN_cC82",
-      "bulletId": "BUL_NEW_L9W7",
+      "bulletId": "BUL_SPEER_224_55_GDB",
       "partNumber": "GM308M6",
       "lot": null,
       "needs_recheck": 0
     },
     {
       "id": "LOAD_COMM_BLAC_7PRC_HORNADY_750_HORNAD_NQXN",
-      "name": "Gold Dot",
+      "name": "Grand Slam SP",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_BLAC_CS4B",
       "cartridgeId": "CTG_7PRC_N7HE",
-      "bulletId": "BUL_HORNADY_UNK_750_HORNAD_DFFC",
-      "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
-      "id": "LOAD_COMM_BLAC_7PRC_HORNADY_750_HORNAD_RREV",
-      "name": "Hornady",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_BLAC_CS4B",
-      "cartridgeId": "CTG_7PRC_N7HE",
-      "bulletId": "BUL_HORNADY_UNK_750_HORNAD_DFFC",
-      "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
-      "id": "LOAD_COMM_FEDERAL_223REM_NEW_0_UNK_Q4ST",
-      "name": "Gold Dot",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_FEDERAL_F4G7",
-      "cartridgeId": "CTG_223REM_cR82",
-      "bulletId": "BUL_NEW_2R4S",
+      "bulletId": "BUL_SPEER_264_140_GS",
       "partNumber": null,
       "lot": null,
       "needs_recheck": 0
     },
     {
       "id": "LOAD_COMM_FEDERAL_308WIN_NEW_0_UNK_0EA3",
-      "name": "Gold Dot",
+      "name": "Sierra HPBT MK",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "cartridgeId": "CTG_308WIN_cC82",
-      "bulletId": "BUL_NEW_F4S0",
+      "bulletId": "BUL_SIERRA_UNK_150_HPBTMK_ED11",
       "partNumber": "AE308D",
       "lot": null,
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_FEDERAL_308WIN_NEW_0_UNK_20OD",
-      "name": "Hornady",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_FEDERAL_F4G7",
-      "cartridgeId": "CTG_308WIN_cC82",
-      "bulletId": "BUL_NEW_CKEV",
-      "partNumber": "Federal Gold Medal Match | 308 Win | 168gr | SMK - GM308M",
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
-      "id": "LOAD_COMM_FEDERAL_308WIN_NEW_0_UNK_38TI",
-      "name": "Gold Dot",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_FEDERAL_F4G7",
-      "cartridgeId": "CTG_308WIN_cC82",
-      "bulletId": "BUL_NEW_WXTH",
-      "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
-      "id": "LOAD_COMM_FEDERAL_308WIN_NEW_0_UNK_CR8H",
-      "name": "Gold Dot",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_FEDERAL_F4G7",
-      "cartridgeId": "CTG_308WIN_cC82",
-      "bulletId": "BUL_NEW_OT58",
-      "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
-      "id": "LOAD_COMM_FEDERAL_308WIN_NEW_0_UNK_FJA1",
-      "name": "Gold Dot",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_FEDERAL_F4G7",
-      "cartridgeId": "CTG_308WIN_cC82",
-      "bulletId": "BUL_NEW_0LVD",
-      "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
       "id": "LOAD_COMM_FEDERAL_308WIN_NEW_0_UNK_GMPV",
-      "name": "Hornady",
+      "name": "Grand Slam SP",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "cartridgeId": "CTG_308WIN_cC82",
-      "bulletId": "BUL_NEW_XD1P",
+      "bulletId": "BUL_SPEER_264_140_GS",
       "partNumber": "GM308M3",
       "lot": null,
       "needs_recheck": 0
@@ -15516,23 +13903,12 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_FEDERAL_308WIN_SPEER_147_GOLDDO_MCHI",
-      "name": "Gold Medal",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_FEDERAL_F4G7",
-      "cartridgeId": "CTG_308WIN_cC82",
-      "bulletId": "BUL_SPEER_UNK_147_GOLDDO_9B00",
-      "partNumber": "GM308M2",
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
       "id": "LOAD_COMM_FEDERAL_308WIN_SPEER_147_GOLDDO_YQKW",
-      "name": "Gold Dot",
+      "name": "Gold Dot Personal Protection",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "cartridgeId": "CTG_308WIN_cC82",
-      "bulletId": "BUL_SPEER_UNK_147_GOLDDO_9B00",
+      "bulletId": "BUL_SPEER_264_120_GDB",
       "partNumber": "GM308M3",
       "lot": null,
       "needs_recheck": 0
@@ -15550,88 +13926,44 @@
     },
     {
       "id": "LOAD_COMM_HORNADY_224VALK_NEW_0_UNK_59VH",
-      "name": "Hornady",
+      "name": "HPBT MK",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_HORNADY_JGR4",
       "cartridgeId": "CTG_224VALK_N2H5",
-      "bulletId": "BUL_NEW_DRNP",
+      "bulletId": "BUL_SIERRA_UNK_175_HPBTMK_9C74",
       "partNumber": null,
       "lot": null,
       "needs_recheck": 0
     },
     {
       "id": "LOAD_COMM_HORNADY_22CM_NEW_0_UNK_004Z",
-      "name": "Gold Dot",
+      "name": "HPBT MK",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_HORNADY_JGR4",
       "cartridgeId": "CTG_22CM_cA72",
-      "bulletId": "BUL_NEW_XDJA",
-      "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
-      "id": "LOAD_COMM_HORNADY_22CM_NEW_0_UNK_09UP",
-      "name": "Gold Dot",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "cartridgeId": "CTG_22CM_cA72",
-      "bulletId": "BUL_NEW_EUGL",
-      "partNumber": "82320",
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
-      "id": "LOAD_COMM_HORNADY_22CM_NEW_0_UNK_0DKB",
-      "name": "InterLock",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "cartridgeId": "CTG_22CM_cA72",
-      "bulletId": "BUL_NEW_O4ZU",
-      "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
-      "id": "LOAD_COMM_HORNADY_22CM_NEW_0_UNK_NAXJ",
-      "name": "A-Tip",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "cartridgeId": "CTG_22CM_cA72",
-      "bulletId": "BUL_NEW_T9V9",
-      "partNumber": "82320",
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
-      "id": "LOAD_COMM_HORNADY_22CM_NEW_0_UNK_NJ22",
-      "name": "Gold Medal Match",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "cartridgeId": "CTG_22CM_cA72",
-      "bulletId": "BUL_NEW_HSPY",
+      "bulletId": "BUL_SIERRA_UNK_175_HPBTMK_9C74",
       "partNumber": null,
       "lot": null,
       "needs_recheck": 0
     },
     {
       "id": "LOAD_COMM_HORNADY_308WIN_NEW_0_UNK_GA88",
-      "name": "Match",
+      "name": "Gold Dot Personal Protection",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_HORNADY_JGR4",
       "cartridgeId": "CTG_308WIN_cC82",
-      "bulletId": "BUL_NEW_WPII",
+      "bulletId": "BUL_SPEER_264_140_IMPACT",
       "partNumber": "GM308M4",
       "lot": null,
       "needs_recheck": 0
     },
     {
       "id": "LOAD_COMM_HORNADY_308WIN_SPEER_147_GOLDDO_OIS9",
-      "name": "Gold Dot",
+      "name": "Sierra HPBT",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_HORNADY_JGR4",
       "cartridgeId": "CTG_308WIN_cC82",
-      "bulletId": "BUL_SPEER_UNK_147_GOLDDO_9B00",
+      "bulletId": "BUL_SIERRA_UNK_100_HPBTMK_B6F6",
       "partNumber": null,
       "lot": null,
       "needs_recheck": 0
@@ -15649,11 +13981,11 @@
     },
     {
       "id": "LOAD_COMM_HORNADY_6ARC_SPEER_147_GOLDDO_660Z",
-      "name": "Gold Dot",
+      "name": "Bronco",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_HORNADY_JGR4",
       "cartridgeId": "CTG_6ARC_cH92",
-      "bulletId": "BUL_SPEER_UNK_147_GOLDDO_9B00",
+      "bulletId": "BUL_SIERRA_UNK_250_HPBTMK_50E6",
       "partNumber": "81541-PARENT",
       "lot": null,
       "needs_recheck": 0
@@ -15670,45 +14002,23 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_HORNADY_7PRC_SPEER_147_GOLDDO_RN2H",
-      "name": "Gold Dot",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "cartridgeId": "CTG_7PRC_N7HE",
-      "bulletId": "BUL_SPEER_UNK_147_GOLDDO_9B00",
-      "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
       "id": "LOAD_COMM_LAPUA_223REM_NEW_0_UNK_G9LD",
-      "name": "Hornady",
+      "name": "Sierra HPBT MK",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_LAPUA_L5X1",
       "cartridgeId": "CTG_223REM_cR82",
-      "bulletId": "BUL_NEW_5IME",
+      "bulletId": "BUL_SIERRA_UNK_150_HPBTMK_ED11",
       "partNumber": "MSC223L2",
       "lot": "Lot101",
       "needs_recheck": 0
     },
     {
       "id": "LOAD_COMM_LAPUA_224VALK_SPEER_147_GOLDDO_IA6B",
-      "name": "Gold Dot",
+      "name": "JHP SM",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_LAPUA_L5X1",
       "cartridgeId": "CTG_224VALK_N2H5",
-      "bulletId": "BUL_SPEER_UNK_147_GOLDDO_9B00",
-      "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
-      "id": "LOAD_COMM_LAPUA_308WIN_NEW_0_UNK_89B2",
-      "name": "Gold Dot",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_LAPUA_L5X1",
-      "cartridgeId": "CTG_308WIN_cC82",
-      "bulletId": "BUL_NEW_FC6C",
+      "bulletId": "BUL_SIERRA_UNK_180_JHPSM_265B",
       "partNumber": null,
       "lot": null,
       "needs_recheck": 0
@@ -15736,23 +14046,12 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_LAPUA_6CM_NEW_0_UNK_E9I4",
-      "name": "Gold Dot",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_LAPUA_L5X1",
-      "cartridgeId": "CTG_6CM_cG62",
-      "bulletId": "BUL_NEW_BKTW",
-      "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
       "id": "LOAD_COMM_NORMA_223REM_NEW_0_UNK_IX83",
-      "name": "Gold Dot",
+      "name": "HPBT MK",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_NORMA_N8R2",
       "cartridgeId": "CTG_223REM_cR82",
-      "bulletId": "BUL_NEW_NGZ2",
+      "bulletId": "BUL_SIERRA_UNK_175_HPBTMK_9C74",
       "partNumber": null,
       "lot": null,
       "needs_recheck": 0
@@ -15770,23 +14069,12 @@
     },
     {
       "id": "LOAD_COMM_NORMA_308WIN_SPEER_147_GOLDDO_0AOJ",
-      "name": "Gold Dot",
+      "name": "Gold Dot Personal Protection",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_NORMA_N8R2",
       "cartridgeId": "CTG_308WIN_cC82",
-      "bulletId": "BUL_SPEER_UNK_147_GOLDDO_9B00",
+      "bulletId": "BUL_SPEER_224_55_GDB",
       "partNumber": "NMGTL1",
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
-      "id": "LOAD_COMM_NORMA_308WIN_SPEER_147_GOLDDO_BP4X",
-      "name": "Gold Dot",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_NORMA_N8R2",
-      "cartridgeId": "CTG_308WIN_cC82",
-      "bulletId": "BUL_SPEER_UNK_147_GOLDDO_9B00",
-      "partNumber": "N430WWB",
       "lot": null,
       "needs_recheck": 0
     },
@@ -15802,34 +14090,23 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_NOSLER_223REM_NEW_0_UNK_S6BF",
-      "name": "Gold Dot",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_NOSLER_N9K4",
-      "cartridgeId": "CTG_223REM_cR82",
-      "bulletId": "BUL_NEW_HEO6",
-      "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
       "id": "LOAD_COMM_NOSLER_223REM_SPEER_147_GOLDDO_VA4T",
-      "name": "Ballistic Gold Dot",
+      "name": "Bronco",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_NOSLER_N9K4",
       "cartridgeId": "CTG_223REM_cR82",
-      "bulletId": "BUL_SPEER_UNK_147_GOLDDO_9B00",
+      "bulletId": "BUL_SIERRA_UNK_300_SBTGK_B060",
       "partNumber": "MGRDF223",
       "lot": "Lot123",
       "needs_recheck": 0
     },
     {
       "id": "LOAD_COMM_NOSLER_308WIN_NEW_0_UNK_7PR1",
-      "name": "Gold Medal",
+      "name": "HPBT MK",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_NOSLER_N9K4",
       "cartridgeId": "CTG_308WIN_cC82",
-      "bulletId": "BUL_NEW_ZVCI",
+      "bulletId": "BUL_SIERRA_UNK_150_HPBTMK_ED11",
       "partNumber": null,
       "lot": null,
       "needs_recheck": 0
@@ -15846,23 +14123,12 @@
       "needs_recheck": 0
     },
     {
-      "id": "LOAD_COMM_NOSLER_65PRC_HORNADY_750_HORNAD_9ENE",
-      "name": "Hornady",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_NOSLER_N9K4",
-      "cartridgeId": "CTG_65PRC_cP02",
-      "bulletId": "BUL_HORNADY_UNK_750_HORNAD_DFFC",
-      "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
-    },
-    {
       "id": "LOAD_COMM_NOSLER_6CM_NEW_0_UNK_VU7Z",
-      "name": "Gold Dot",
+      "name": "F414 Gold Dot Personal Protection",
       "loadTypeId": "LT_COMM",
       "manufacturerId": "MAN_NOSLER_N9K4",
       "cartridgeId": "CTG_6CM_cG62",
-      "bulletId": "BUL_NEW_T45B",
+      "bulletId": "BUL_SPEER_264_156_IMPACT",
       "partNumber": null,
       "lot": null,
       "needs_recheck": 0
