@@ -21,7 +21,7 @@ export function initStatisticalAnalysis() {
     async function populateFirearmFilter() {
         firearmFilterSelect.innerHTML = '<option value="">-- All Firearms --</option>';
         const firearms = await getAllItems('firearms');
-        firearms.sort((a,b) => a.nickname.localeCompare(b.nickname));
+        firearms.sort((a,b) => (a.nickname || '').localeCompare(b.nickname || ''));
         firearms.forEach(firearm => {
             const option = document.createElement('option');
             option.value = firearm.id;

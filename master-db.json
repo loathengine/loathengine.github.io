@@ -40,8 +40,9 @@
       "id": "MAN_BARNES_B2N5",
       "name": "Barnes",
       "type": [
-        "bullet",
-        "ammo"
+        "firearm",
+        "brass",
+        "bullet"
       ],
       "needs_recheck": 0
     },
@@ -57,7 +58,7 @@
       "id": "MAN_BLAC_CS4B",
       "name": "Black Hills",
       "type": [
-        "ammo"
+        "brass"
       ],
       "needs_recheck": 0
     },
@@ -73,9 +74,10 @@
       "id": "MAN_FEDERAL_F4G7",
       "name": "Federal",
       "type": [
-        "primer",
         "brass",
-        "ammo"
+        "bullet",
+        "powder",
+        "primer"
       ],
       "needs_recheck": 0
     },
@@ -91,9 +93,12 @@
       "id": "MAN_HORNADY_JGR4",
       "name": "Hornady",
       "type": [
-        "bullet",
+        "powder",
+        "primer",
+        "bullets are made from brass but not a cartridge",
         "brass",
-        "ammo"
+        "firearm",
+        "cartridge"
       ],
       "needs_recheck": 0
     },
@@ -101,9 +106,13 @@
       "id": "MAN_LAPUA_L5X1",
       "name": "Lapua",
       "type": [
-        "bullet",
-        "brass",
-        "ammo"
+        "bullets",
+        "prima powders",
+        "casing",
+        "firearms",
+        "ammunition",
+        "cases",
+        "primers"
       ],
       "needs_recheck": 0
     },
@@ -201,10 +210,15 @@
       "id": "MAN_WINCHESTER_W2N4",
       "name": "Winchester",
       "type": [
-        "powder",
-        "primer",
-        "brass",
-        "ammo"
+        "brass"
+      ],
+      "needs_recheck": 0
+    },
+    {
+      "id": "MAN_IVAT_8ZDV",
+      "name": "IVAT Coatings Srl",
+      "type": [
+        "powder"
       ],
       "needs_recheck": 0
     }
@@ -1748,6 +1762,741 @@
     }
   ],
   "bullets": [
+    {
+      "id": "BUL_B9K2_284_1740_174GRLRHT_3DV5",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "name": "174gr LRHT",
+      "weight": 174.0,
+      "diameterId": "DIA_284_S3F6",
+      "length": 1.5,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_B9K2_308_1680_168GRVLD_VOMA",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "name": "168gr VLD",
+      "weight": 168.0,
+      "diameterId": "DIA_308_XBM7",
+      "length": 1.45,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_B9K2_338_1240_124GRHYBRI_WG1H",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "name": "124gr Hybrid",
+      "weight": 124.0,
+      "diameterId": "DIA_338_R7E3",
+      "length": 1.35,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_B9K2_375_1400_140GRFLATB_HKIF",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "name": "140gr Flat Base",
+      "weight": 140.0,
+      "diameterId": "DIA_375_OMEC",
+      "length": 1.4,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_B9K2_308_1230_123GRBERGE_7KL6",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "name": "123gr Berger Hybrid",
+      "weight": 123.0,
+      "diameterId": "DIA_308_XBM7",
+      "length": 1.25,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_B9K2_308_1580_158GRBERGE_AP1N",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "name": "158gr Berger Flat Base Target",
+      "weight": 158.0,
+      "diameterId": "DIA_308_XBM7",
+      "length": 1.56,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_JGR4_308_1250_125GRHORNA_YYCV",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "name": "125gr Hornady ELD-Match",
+      "weight": 125.0,
+      "diameterId": "DIA_308_XBM7",
+      "length": 1.44,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_S6Y3_308_1680_168GRSIERR_6QJD",
+      "manufacturerId": "MAN_SIERRA_S6Y3",
+      "name": "168gr Sierra MatchKing",
+      "weight": 168.0,
+      "diameterId": "DIA_308_XBM7",
+      "length": 1.525,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_B9K2_308_1850_185GRBERGE_53KE",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "name": "185gr Berger Flat Base Target",
+      "weight": 185.0,
+      "diameterId": "DIA_308_XBM7",
+      "length": 1.65,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_JGR4_308_1420_142GRHORNA_3H8K",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "name": "142gr Hornady ELD-Match",
+      "weight": 142.0,
+      "diameterId": "DIA_308_XBM7",
+      "length": 1.405,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_B9K2_308_1280_128GRFLATB_3GNI",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "name": "128gr Flat Base Target",
+      "weight": 128.0,
+      "diameterId": "DIA_308_XBM7",
+      "length": 1.416,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_JGR4_308_1400_140GRELDMA_QZ3B",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "name": "140gr ELD Match",
+      "weight": 140.0,
+      "diameterId": "DIA_308_XBM7",
+      "length": 1.652,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_JGR4_375_2250_225GRELDMA_V0TE",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "name": "225gr ELD Match",
+      "weight": 225.0,
+      "diameterId": "DIA_375_OMEC",
+      "length": 2.689,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_B9K2_308_1090_109GRFLATB_D9F7",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "name": "109gr Flat Base Target",
+      "weight": 109.0,
+      "diameterId": "DIA_308_XBM7",
+      "length": 1.25,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_B9K2_308_1230_123GRFLATB_UDUA",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "name": "123gr Flat Base Target",
+      "weight": 123.0,
+      "diameterId": "DIA_308_XBM7",
+      "length": 1.45,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_B9K2_243_1230_123GRLRHT_EUCG",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "name": "123gr LRHT",
+      "weight": 123.0,
+      "diameterId": "DIA_243_B7V4",
+      "length": 1.25,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_JGR4_264_1450_145GRBT_ES72",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "name": "145gr BT",
+      "weight": 145.0,
+      "diameterId": "DIA_264_H8J4",
+      "length": 1.35,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_JGR4_308_1680_168GRVMAX_RFVS",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "name": "168gr V-MAX",
+      "weight": 168.0,
+      "diameterId": "DIA_308_XBM7",
+      "length": 1.55,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_B9K2_308_1800_180GRHPBT_1TDO",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "name": "180gr HPBT",
+      "weight": 180.0,
+      "diameterId": "DIA_308_XBM7",
+      "length": 1.6,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_JGR4_308_1750_175GRELDMA_FTH7",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "name": "175gr ELD-MAX",
+      "weight": 175.0,
+      "diameterId": "DIA_308_XBM7",
+      "length": 1.525,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_B9K2_308_1680_168GRFLATB_GJ3S",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "name": "168gr Flat Base Target",
+      "weight": 168.0,
+      "diameterId": "DIA_308_XBM7",
+      "length": 1.68,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_S6Y3_308_1250_125GRMATCH_RD7W",
+      "manufacturerId": "MAN_SIERRA_S6Y3",
+      "name": "125gr MatchKing",
+      "weight": 125.0,
+      "diameterId": "DIA_308_XBM7",
+      "length": 1.25,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_JGR4_277_1450_145GRELDMM_MGF2",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "name": "145gr ELD-M Match",
+      "weight": 145.0,
+      "diameterId": "DIA_277_K9L0",
+      "length": 1.438,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_B9K2_308_950_95GRFLATPO_8EZM",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "name": "95gr Flat Point",
+      "weight": 95.0,
+      "diameterId": "DIA_308_XBM7",
+      "length": 1.086,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_N9K4_308_1500_150GRSCOUR_VWFU",
+      "manufacturerId": "MAN_NOSLER_N9K4",
+      "name": "150gr Scourge",
+      "weight": 150.0,
+      "diameterId": "DIA_308_XBM7",
+      "length": 1.562,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_JGR4_308_1680_168GRFLATP_E3AV",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "name": "168gr Flat Point",
+      "weight": 168.0,
+      "diameterId": "DIA_308_XBM7",
+      "length": 1.953,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_JGR4_308_1450_145GRVMAX_TDV7",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "name": "145gr V-MAX",
+      "weight": 145.0,
+      "diameterId": "DIA_308_XBM7",
+      "length": 2.062,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_JGR4_308_1500_150GRELDX_ULO7",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "name": "150gr ELD-X",
+      "weight": 150.0,
+      "diameterId": "DIA_308_XBM7",
+      "length": 2.164,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_S6Y3_338_1750_175GRMATCH_G101",
+      "manufacturerId": "MAN_SIERRA_S6Y3",
+      "name": "175gr MatchKing",
+      "weight": 175.0,
+      "diameterId": "DIA_338_R7E3",
+      "length": 1.425,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_B9K2_277_1450_145GRFLATB_EH45",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "name": "145gr Flat Base Target",
+      "weight": 145.0,
+      "diameterId": "DIA_277_K9L0",
+      "length": 1.388,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_S6Y3_277_980_98GRMATCHK_50TK",
+      "manufacturerId": "MAN_SIERRA_S6Y3",
+      "name": "98gr MatchKing",
+      "weight": 98.0,
+      "diameterId": "DIA_277_K9L0",
+      "length": 1.4,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_JGR4_308_870_87GRELDMAX_WMNJ",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "name": "87gr ELD-Max",
+      "weight": 87.0,
+      "diameterId": "DIA_308_XBM7",
+      "length": 1.25,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_S6Y3_243_760_76GRMATCHK_98K2",
+      "manufacturerId": "MAN_SIERRA_S6Y3",
+      "name": "76gr MatchKing",
+      "weight": 76.0,
+      "diameterId": "DIA_243_B7V4",
+      "length": 1.15,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_B9K2_308_1390_139GRFLATB_A9B6",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "name": "139gr Flat Base Target",
+      "weight": 139.0,
+      "diameterId": "DIA_308_XBM7",
+      "length": 1.5,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_B9K2_243_1200_120GRFLATB_C0D1",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "name": "120gr Flat Base Target",
+      "weight": 120.0,
+      "diameterId": "DIA_243_B7V4",
+      "length": 1.25,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
     {
       "id": "BUL_BARNES_204_26_VG",
       "manufacturerId": "MAN_BARNES_B2N5",
@@ -13946,6 +14695,111 @@
         "ix": 6.95,
         "iy": 0.85,
         "cg_from_base": 0.9
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_B9K2_308_1250_125GRFLATB_GYBA",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "name": "125gr Flat Base Target",
+      "weight": 125.0,
+      "diameterId": "DIA_308_XBM7",
+      "length": 1.46,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_JGR4_264_950_95GRELDMAT_3LRC",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "name": "95gr ELD Match",
+      "weight": 95.0,
+      "diameterId": "DIA_264_H8J4",
+      "length": 1.37,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_N9K4_277_800_80GRPRECIS_R2WX",
+      "manufacturerId": "MAN_NOSLER_N9K4",
+      "name": "80gr Precision King",
+      "weight": 80.0,
+      "diameterId": "DIA_277_K9L0",
+      "length": 1.335,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_JGR4_224_750_75GRVMAX_RMFT",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "name": "75gr V-Max",
+      "weight": 75.0,
+      "diameterId": "DIA_224_L5X8",
+      "length": 1.315,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      },
+      "needs_recheck": 0
+    },
+    {
+      "id": "BUL_JGR4_308_1200_120GRVMAX_GUMY",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "name": "120gr V-Max",
+      "weight": 120.0,
+      "diameterId": "DIA_308_XBM7",
+      "length": 1.52,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
       },
       "needs_recheck": 0
     }

@@ -47,7 +47,7 @@ async function refreshFirearmFilters() {
     
     const availableCartridges = new Set(firearms.map(f => f.cartridgeId).filter(Boolean));
     filterCartridge.innerHTML = '<option value="">All</option>';
-    allCartridges.filter(c => availableCartridges.has(c.id)).sort((a,b) => a.name.localeCompare(b.name)).forEach(c => {
+    allCartridges.filter(c => availableCartridges.has(c.id)).sort((a,b) => (a.name || '').localeCompare(b.name || '')).forEach(c => {
         const opt = document.createElement('option');
         opt.value = c.id;
         opt.textContent = c.name;

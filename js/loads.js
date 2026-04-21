@@ -133,7 +133,7 @@ async function refreshLoadFilters() {
 
     const availableCartridgeIds = new Set(allLoads.map(l => l.cartridgeId).filter(Boolean));
     filterCartridgeSelect.innerHTML = '<option value="">All</option>';
-    allCartridges.filter(c => availableCartridgeIds.has(c.id)).sort((a,b) => a.name.localeCompare(b.name)).forEach(c => {
+    allCartridges.filter(c => availableCartridgeIds.has(c.id)).sort((a,b) => (a.name || '').localeCompare(b.name || '')).forEach(c => {
         const opt = document.createElement('option');
         opt.value = c.id;
         opt.textContent = c.name;
@@ -150,8 +150,10 @@ async function refreshLoadFilters() {
     filterBulletSelect.innerHTML = '<option value="">All</option>';
     const filteredBullets = allBullets.filter(b => availableBulletIds.has(b.id));
     filteredBullets.sort((a, b) => {
-        if (a.weight !== b.weight) return a.weight - b.weight;
-        return a.name.localeCompare(b.name);
+        const weightA = a.weight || 0;
+        const weightB = b.weight || 0;
+        if (weightA !== weightB) return weightA - weightB;
+        return (a.name || '').localeCompare(b.name || '');
     });
     for (const bullet of filteredBullets) {
         const mfg = allManufacturers.find(m => m.id === bullet.manufacturerId);
@@ -169,7 +171,7 @@ async function refreshLoadFilters() {
     const availablePowderIds = new Set(validLoadPowders.map(l => l.powderId).filter(Boolean));
 
     filterPowderSelect.innerHTML = '<option value="">All</option>';
-    allPowders.filter(p => availablePowderIds.has(p.id)).sort((a,b) => a.name.localeCompare(b.name)).forEach(p => {
+    allPowders.filter(p => availablePowderIds.has(p.id)).sort((a,b) => (a.name || '').localeCompare(b.name || '')).forEach(p => {
         const opt = document.createElement('option');
         opt.value = p.id;
         opt.textContent = p.name;

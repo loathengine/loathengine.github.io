@@ -104,7 +104,7 @@ export async function refreshStabilityUI() {
     if (caliberFilter) {
         const currentVal = caliberFilter.value;
         caliberFilter.innerHTML = '<option value="">-- All Calibers --</option>';
-        diameters.sort((a,b) => a.imperial.localeCompare(b.imperial)).forEach(d => {
+        diameters.sort((a,b) => (a.imperial || '').localeCompare(b.imperial || '')).forEach(d => {
             const opt = document.createElement('option');
             opt.value = d.id;
             opt.textContent = d.imperial;

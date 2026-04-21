@@ -137,7 +137,7 @@ export async function refreshComponentFilters() {
     const availableCartridgeDiameters = new Set(cartridges.map(c => c.diameterId).filter(Boolean));
     const oldCartDia = filterCartridgeDiameter.value;
     filterCartridgeDiameter.innerHTML = '<option value="">All</option>';
-    diameters.filter(d => availableCartridgeDiameters.has(d.id)).sort((a,b)=>a.imperial.localeCompare(b.imperial)).forEach(d => {
+    diameters.filter(d => availableCartridgeDiameters.has(d.id)).sort((a,b)=>(a.imperial || '').localeCompare(b.imperial || '')).forEach(d => {
         let opt = document.createElement('option'); opt.value = d.id; opt.textContent = d.imperial;
         filterCartridgeDiameter.appendChild(opt);
     });
@@ -150,7 +150,7 @@ export async function refreshComponentFilters() {
     
     const availableBulletDiameters = new Set(bullets.map(b => b.diameterId).filter(Boolean));
     filterBulletDiameter.innerHTML = '<option value="">All</option>';
-    diameters.filter(d => availableBulletDiameters.has(d.id)).sort((a,b)=>a.imperial.localeCompare(b.imperial)).forEach(d => {
+    diameters.filter(d => availableBulletDiameters.has(d.id)).sort((a,b)=>(a.imperial || '').localeCompare(b.imperial || '')).forEach(d => {
         let opt = document.createElement('option'); opt.value = d.id; opt.textContent = d.imperial;
         filterBulletDiameter.appendChild(opt);
     });
@@ -160,7 +160,7 @@ export async function refreshComponentFilters() {
     if (filterBulletDiameter.value) { validBulletsForMfg = validBulletsForMfg.filter(b => b.diameterId === filterBulletDiameter.value); }
     const availableBulletMfgs = new Set(validBulletsForMfg.map(b => b.manufacturerId).filter(Boolean));
     filterBulletManufacturer.innerHTML = '<option value="">All</option>';
-    manufacturers.filter(m => availableBulletMfgs.has(m.id)).sort((a,b)=>a.displayName.localeCompare(b.displayName)).forEach(m => {
+    manufacturers.filter(m => availableBulletMfgs.has(m.id)).sort((a,b)=>(a.displayName || '').localeCompare(b.displayName || '')).forEach(m => {
         let opt = document.createElement('option'); opt.value = m.id; opt.textContent = m.displayName;
         filterBulletManufacturer.appendChild(opt);
     });
@@ -170,7 +170,7 @@ export async function refreshComponentFilters() {
     const availablePowderMfgs = new Set(powders.map(p => p.manufacturerId).filter(Boolean));
     const oldPowderMfg = filterPowderManufacturer.value;
     filterPowderManufacturer.innerHTML = '<option value="">All</option>';
-    manufacturers.filter(m => availablePowderMfgs.has(m.id)).sort((a,b)=>a.displayName.localeCompare(b.displayName)).forEach(m => {
+    manufacturers.filter(m => availablePowderMfgs.has(m.id)).sort((a,b)=>(a.displayName || '').localeCompare(b.displayName || '')).forEach(m => {
         let opt = document.createElement('option'); opt.value = m.id; opt.textContent = m.displayName;
         filterPowderManufacturer.appendChild(opt);
     });
@@ -180,7 +180,7 @@ export async function refreshComponentFilters() {
     const availablePrimerMfgs = new Set(primers.map(p => p.manufacturerId).filter(Boolean));
     const oldPrimerMfg = filterPrimerManufacturer.value;
     filterPrimerManufacturer.innerHTML = '<option value="">All</option>';
-    manufacturers.filter(m => availablePrimerMfgs.has(m.id)).sort((a,b)=>a.displayName.localeCompare(b.displayName)).forEach(m => {
+    manufacturers.filter(m => availablePrimerMfgs.has(m.id)).sort((a,b)=>(a.displayName || '').localeCompare(b.displayName || '')).forEach(m => {
         let opt = document.createElement('option'); opt.value = m.id; opt.textContent = m.displayName;
         filterPrimerManufacturer.appendChild(opt);
     });
@@ -193,7 +193,7 @@ export async function refreshComponentFilters() {
 
     const availableBrassCartridges = new Set(brassItems.map(b => b.cartridgeId).filter(Boolean));
     filterBrassCartridge.innerHTML = '<option value="">All</option>';
-    cartridges.filter(c => availableBrassCartridges.has(c.id)).sort((a,b)=>a.name.localeCompare(b.name)).forEach(c => {
+    cartridges.filter(c => availableBrassCartridges.has(c.id)).sort((a,b)=>(a.name || '').localeCompare(b.name || '')).forEach(c => {
         let opt = document.createElement('option'); opt.value = c.id; opt.textContent = c.name;
         filterBrassCartridge.appendChild(opt);
     });
@@ -203,7 +203,7 @@ export async function refreshComponentFilters() {
     if (filterBrassCartridge.value) { validBrassForMfg = validBrassForMfg.filter(b => b.cartridgeId === filterBrassCartridge.value); }
     const availableBrassMfgs = new Set(validBrassForMfg.map(b => b.manufacturerId).filter(Boolean));
     filterBrassManufacturer.innerHTML = '<option value="">All</option>';
-    manufacturers.filter(m => availableBrassMfgs.has(m.id)).sort((a,b)=>a.displayName.localeCompare(b.displayName)).forEach(m => {
+    manufacturers.filter(m => availableBrassMfgs.has(m.id)).sort((a,b)=>(a.displayName || '').localeCompare(b.displayName || '')).forEach(m => {
         let opt = document.createElement('option'); opt.value = m.id; opt.textContent = m.displayName;
         filterBrassManufacturer.appendChild(opt);
     });
@@ -231,7 +231,7 @@ async function renderManufacturersTable() {
         items = items.filter(m => m.type && m.type.includes(filterType));
     }
     
-    items.sort((a, b) => a.name.localeCompare(b.name));
+    items.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
     
     const tableBody = document.getElementById('manufacturersTableBody');
     tableBody.innerHTML = '';
@@ -365,7 +365,7 @@ async function renderCartridgesTable() {
     const filterDiam = document.getElementById('filterCartridgeDiameter').value;
     let items = filterDiam ? allItems.filter(c => c.diameterId === filterDiam) : allItems;
     
-    items.sort((a, b) => a.name.localeCompare(b.name));
+    items.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
 
     const diameterMap = new Map(diameters.map(d => [d.id, d.imperial]));
     const tableBody = document.getElementById('cartridgesTableBody');
@@ -466,8 +466,13 @@ async function renderBulletsTable() {
     if (filterMfg) bullets = bullets.filter(b => b.manufacturerId === filterMfg);
 
     bullets.sort((a, b) => {
-        if (a.weight !== b.weight) return a.weight - b.weight;
-        return a.name.localeCompare(b.name);
+        const weightA = a.weight || 0;
+        const weightB = b.weight || 0;
+        if (weightA !== weightB) return weightA - weightB;
+        
+        const nameA = a.name || '';
+        const nameB = b.name || '';
+        return nameA.localeCompare(nameB);
     });
 
     const manufacturerMap = new Map(manufacturers.map(m => [m.id, formatManufacturerName(m)]));
@@ -580,7 +585,7 @@ async function renderPowdersTable() {
     const filterMfg = document.getElementById('filterPowderManufacturer').value;
     let powders = filterMfg ? allPowders.filter(p => p.manufacturerId === filterMfg) : allPowders;
     
-    powders.sort((a, b) => a.name.localeCompare(b.name));
+    powders.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
     
     const manufacturerMap = new Map(manufacturers.map(m => [m.id, formatManufacturerName(m)]));
     const tableBody = document.getElementById('powdersTableBody');
@@ -648,7 +653,7 @@ async function renderPrimersTable() {
     const filterMfg = document.getElementById('filterPrimerManufacturer').value;
     let primers = filterMfg ? allPrimers.filter(p => p.manufacturerId === filterMfg) : allPrimers;
     
-    primers.sort((a, b) => a.name.localeCompare(b.name));
+    primers.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
     
     const manufacturerMap = new Map(manufacturers.map(m => [m.id, formatManufacturerName(m)]));
     const pocketMap = new Map(primerPockets.map(p => [p.id, p.name]));
@@ -737,7 +742,7 @@ async function renderBrassTable() {
         const cartA = cartridgeMap.get(a.cartridgeId) || '';
         const cartB = cartridgeMap.get(b.cartridgeId) || '';
         if (cartA !== cartB) return cartA.localeCompare(cartB);
-        return a.manufacturerId.localeCompare(b.manufacturerId);
+        return (a.manufacturerId || '').localeCompare(b.manufacturerId || '');
     });
 
     const tableBody = document.getElementById('brassTableBody');
