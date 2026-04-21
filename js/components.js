@@ -104,10 +104,10 @@ export async function refreshComponentUI() {
     const primerPockets = await getAllItems('primerPockets');
     const primerHoles = await getAllItems('primerHoles');
     
-    populateSelect('bulletManufacturer', manufacturers.filter(m => m.type && m.type.includes('bullet')), 'displayName', 'id');
-    populateSelect('powderManufacturer', manufacturers.filter(m => m.type && m.type.includes('powder')), 'displayName', 'id');
-    populateSelect('primerManufacturer', manufacturers.filter(m => m.type && m.type.includes('primer')), 'displayName', 'id');
-    populateSelect('brassManufacturer', manufacturers.filter(m => m.type && m.type.includes('brass')), 'displayName', 'id');
+    populateSelect('bulletManufacturer', manufacturers.filter(m => m.type && m.type.includes && m.type.includes('bullet')), 'displayName', 'id');
+    populateSelect('powderManufacturer', manufacturers.filter(m => m.type && m.type.includes && m.type.includes('powder')), 'displayName', 'id');
+    populateSelect('primerManufacturer', manufacturers.filter(m => m.type && m.type.includes && m.type.includes('primer')), 'displayName', 'id');
+    populateSelect('brassManufacturer', manufacturers.filter(m => m.type && m.type.includes && m.type.includes('brass')), 'displayName', 'id');
     populateSelect('bulletDiameter', diameters, 'imperial', 'id');
     populateSelect('cartridgeDiameter', diameters, 'imperial', 'id');
     populateSelect('primerPocket', primerPockets, 'name', 'id');
@@ -228,7 +228,7 @@ async function renderManufacturersTable() {
     let items = await getAllItems('manufacturers');
     const filterType = document.getElementById('filterManufacturerType').value;
     if (filterType) {
-        items = items.filter(m => m.type && m.type.includes(filterType));
+        items = items.filter(m => m.type && m.type.includes && m.type.includes(filterType));
     }
     
     items.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
@@ -266,7 +266,7 @@ async function handleManufacturerTableClick(e) {
         document.getElementById('manufacturerId').value = item.id;
         document.getElementById('manufacturerName').value = item.name;
         document.querySelectorAll('input[name="manufacturerType"]').forEach(cb => {
-            cb.checked = item.type && item.type.includes(cb.value);
+            cb.checked = item.type && item.type.includes && item.type.includes(cb.value);
         });
     }
 }
@@ -291,8 +291,8 @@ async function renderDiametersTable() {
     const filterSearch = document.getElementById('filterDiameterSearch').value.toLowerCase();
     if (filterSearch) {
         items = items.filter(d => 
-            (d.imperial && d.imperial.toLowerCase().includes(filterSearch)) || 
-            (d.metric && d.metric.toLowerCase().includes(filterSearch))
+            (d.imperial && String(d.imperial).toLowerCase().includes(filterSearch)) || 
+            (d.metric && String(d.metric).toLowerCase().includes(filterSearch))
         );
     }
     

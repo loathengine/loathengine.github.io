@@ -237,9 +237,9 @@ export async function refreshLoadsUI() {
     
     populateSelect('loadDiameter', allDiameters, 'imperial', 'id');
     populateSelect('loadPrimer', allPrimers, 'name', 'id');
-    const powderManufacturers = allManufacturers.filter(m => m.type && m.type.includes('powder'));
+    const powderManufacturers = allManufacturers.filter(m => m.type && m.type.includes && m.type.includes('powder'));
     populateSelect('loadPowderManufacturer', powderManufacturers, 'displayName', 'id');
-    const ammoManufacturers = allManufacturers.filter(m => m.type && m.type.includes('ammo'));
+    const ammoManufacturers = allManufacturers.filter(m => m.type && m.type.includes && m.type.includes('ammo'));
     populateSelect('loadCommercialManufacturer', ammoManufacturers, 'displayName', 'id');
     
     document.getElementById('loadCartridge').innerHTML = '<option value="">-- Select --</option>';
