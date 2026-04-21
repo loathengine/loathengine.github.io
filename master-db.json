@@ -798,232 +798,232 @@
       "id": "PRI_CCIBR2LARG_C84Z",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "CCI BR-2 Large Rifle Benchrest",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_LRG"
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_CCIBR2LARG_G6T1",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "CCI BR2 Large Rifle",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_LRG"
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_CCIBR4SMAL_3WPA",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "CCI BR4 Small Rifle Benchrest",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_SML"
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_CCIBR5LARG_PBA3",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "CCI BR5 Large Rifle Magnum",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_LRG"
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_CCIBR6MATC_KAYM",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "CCI BR6 Match",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_SML"
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_CCIBR7BENC_LJJV",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "CCI BR7 Benchrest",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_SML"
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_CCI_200_C1R2",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "No. 200 Large Rifle",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_LRG"
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_CCI_250_PSFC",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "No. 250 Large Rifle Magnum",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_LRG"
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_CCI_400_C1R3",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "No. 400 Small Rifle",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_SML"
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_CCI_450_C1R4",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "No. 450 Small Rifle Magnum",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_SML"
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_CCI_BR2_C1R5",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "BR-2 Large Rifle Bench Rest",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_LRG"
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_CCI_BR4_C1R6",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "BR-4 Small Rifle Bench Rest",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_SML"
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_CCI_NO34_C1R8",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "No. 34 Large Rifle (Military)",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_LRG"
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_CCI_NO41_C1R7",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "No. 41 Small Rifle (Military)",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_SML"
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_FEDERALGM2_9NLQ",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "Federal GM210M Large Rifle Match Primer",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_LRG"
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_FEDERALGOL_U9R8",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "Federal Gold Medal Match 215 Small Rifle Magnum Primer",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_SML"
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_FEDERALPRE_T9UB",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "Federal Premium Gold Medal Match 210 Large Rifle Magnum Primer",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_LRG"
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_FED_205M_F1D7",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "205M Gold Medal Match Small Rifle",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_SML"
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_FED_205_F1D6",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "205 Small Rifle",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_SML"
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_FED_210M_F1D3",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "210M Gold Medal Match Large Rifle",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_LRG"
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_FED_210_F1D2",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "210 Large Rifle",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_LRG"
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_FED_215M_F1D5",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "215M Gold Medal Match Large Rifle Magnum",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_LRG"
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_FED_215_F1D4",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "215 Large Rifle Magnum",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_LRG"
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_FED_AR_F1D8",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "AR Match Small Rifle",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_SML"
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_MAN_FEDERAL_F4G7_FEDERAL210_VL42",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "Federal 210M Large Rifle Match Primer",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_LRG"
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_REMINGTON7_4KC6",
       "manufacturerId": "MAN_REMINGTON_R7M1",
       "name": "Remington 7 1/2",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_SML"
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_REM_7.5_R1E2",
       "manufacturerId": "MAN_REMINGTON_R7M1",
       "name": "7 1/2 Small Rifle Bench Rest",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_SML"
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_REM_9.5M_R1E4",
       "manufacturerId": "MAN_REMINGTON_R7M1",
       "name": "9 1/2M Large Rifle Magnum",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_LRG"
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_REM_9.5_R1E3",
       "manufacturerId": "MAN_REMINGTON_R7M1",
       "name": "9 1/2 Large Rifle",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_LRG"
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_WINCHESTER_IVW0",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
       "name": "Winchester USA Ready Large Rifle Match Grade Primers",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_LRG"
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_WINC_WLRM_W1N3",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
       "name": "Large Rifle Magnum (WLRM)",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_LRG"
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_WINC_WLR_W1N2",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
       "name": "Large Rifle (WLR)",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_LRG"
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
     },
     {
       "id": "PRI_WINC_WSR_W1N4",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
       "name": "Small Rifle (WSR)",
-      "needs_recheck": 0,
-      "primerPocketId": "PKT_SML"
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
     }
   ],
   "cartridges": [
@@ -1433,7 +1433,320 @@
       "needs_recheck": 0
     }
   ],
-  "brass": [],
+  "brass": [
+    {
+      "id": "BRS_MAN_ADG_A4D7_CTG_65PRC_cP02_XYJG",
+      "cartridgeId": "CTG_65PRC_cP02",
+      "manufacturerId": "MAN_ADG_A4D7",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_BERGER_B9K2_CTG_65CM_cN72_PBR2",
+      "cartridgeId": "CTG_65CM_cN72",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_HODGDON_H3V8_CTG_65PRC_cP02_H9I4",
+      "cartridgeId": "CTG_65PRC_cP02",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_65CM_cN72_D7K1",
+      "cartridgeId": "CTG_65CM_cN72",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_ADG_A4D7_CTG_65CM_cN72_TR53",
+      "cartridgeId": "CTG_65CM_cN72",
+      "manufacturerId": "MAN_ADG_A4D7",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_65CM_cN72_2GZI",
+      "cartridgeId": "CTG_65CM_cN72",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_22CM_cA72_N4G8",
+      "cartridgeId": "CTG_22CM_cA72",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_060",
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_6ARC_cH92_97TY",
+      "cartridgeId": "CTG_6ARC_cH92",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_65GRN_cS32_WESF",
+      "cartridgeId": "CTG_65GRN_cS32",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_060",
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_6DASH_N6H8_B7IA",
+      "cartridgeId": "CTG_6DASH_N6H8",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_BERGER_B9K2_CTG_65PRC_cP02_HQM5",
+      "cartridgeId": "CTG_65PRC_cP02",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_HORNADY_JGR4_CTG_65CM_cN72_6MQR",
+      "cartridgeId": "CTG_65CM_cN72",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_6CM_cG62_FJ8G",
+      "cartridgeId": "CTG_6CM_cG62",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_NOSLER_N9K4_CTG_65PRC_cP02_08JE",
+      "cartridgeId": "CTG_65PRC_cP02",
+      "manufacturerId": "MAN_NOSLER_N9K4",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_FEDERAL_F4G7_CTG_308WIN_cC82_ZTCC",
+      "cartridgeId": "CTG_308WIN_cC82",
+      "manufacturerId": "MAN_FEDERAL_F4G7",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_VIHTAVUORI_V8N1_CTG_65PRC_cP02_AZRG",
+      "cartridgeId": "CTG_65PRC_cP02",
+      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_BARNES_B2N5_CTG_65CM_cN72_3900",
+      "cartridgeId": "CTG_65CM_cN72",
+      "manufacturerId": "MAN_BARNES_B2N5",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_ALLIANT_A5R2_CTG_6DASH_N6H8_DQZH",
+      "cartridgeId": "CTG_6DASH_N6H8",
+      "manufacturerId": "MAN_ALLIANT_A5R2",
+      "primerHoleId": "HL_060",
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_HODGDON_H3V8_CTG_65CM_cN72_SID2",
+      "cartridgeId": "CTG_65CM_cN72",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_6ARC_cH92_T51T",
+      "cartridgeId": "CTG_6ARC_cH92",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_060",
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_65PRC_cP02_WCAZ",
+      "cartridgeId": "CTG_65PRC_cP02",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_65SWE_N6HA_E3FA",
+      "cartridgeId": "CTG_65SWE_N6HA",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_ALLIANT_A5R2_CTG_65CM_cN72_7W59",
+      "cartridgeId": "CTG_65CM_cN72",
+      "manufacturerId": "MAN_ALLIANT_A5R2",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_HORNADY_JGR4_CTG_65PRC_cP02_UC53",
+      "cartridgeId": "CTG_65PRC_cP02",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_NORMA_N8R2_CTG_65CM_cN72_W7T4",
+      "cartridgeId": "CTG_65CM_cN72",
+      "manufacturerId": "MAN_NORMA_N8R2",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_NORMA_N8R2_CTG_6CM_cG62_CJW0",
+      "cartridgeId": "CTG_6CM_cG62",
+      "manufacturerId": "MAN_NORMA_N8R2",
+      "primerHoleId": "HL_060",
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_NORMA_N8R2_CTG_6ARC_cH92_U37D",
+      "cartridgeId": "CTG_6ARC_cH92",
+      "manufacturerId": "MAN_NORMA_N8R2",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_NORMA_N8R2_CTG_65PRC_cP02_OUF1",
+      "cartridgeId": "CTG_65PRC_cP02",
+      "manufacturerId": "MAN_NORMA_N8R2",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_HORNADY_JGR4_CTG_6CM_cG62_1GOC",
+      "cartridgeId": "CTG_6CM_cG62",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_NOSLER_N9K4_CTG_65SWE_N6HA_KQT6",
+      "cartridgeId": "CTG_65SWE_N6HA",
+      "manufacturerId": "MAN_NOSLER_N9K4",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_NOSLER_N9K4_CTG_6DASH_N6H8_D4GH",
+      "cartridgeId": "CTG_6DASH_N6H8",
+      "manufacturerId": "MAN_NOSLER_N9K4",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_NOSLER_N9K4_CTG_6ARC_cH92_XLUD",
+      "cartridgeId": "CTG_6ARC_cH92",
+      "manufacturerId": "MAN_NOSLER_N9K4",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_NOSLER_N9K4_CTG_65CM_cN72_TZES",
+      "cartridgeId": "CTG_65CM_cN72",
+      "manufacturerId": "MAN_NOSLER_N9K4",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_HODGDON_H3V8_CTG_6CM_cG62_O6ZB",
+      "cartridgeId": "CTG_6CM_cG62",
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_65CM_cN72_GU79",
+      "cartridgeId": "CTG_65CM_cN72",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_6DASH_N6H8_8KJR",
+      "cartridgeId": "CTG_6DASH_N6H8",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_060",
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_6ARC_cH92_J5YV",
+      "cartridgeId": "CTG_6ARC_cH92",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_060",
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_STARLINE_S9Z5_CTG_65CM_cN72_ERHV",
+      "cartridgeId": "CTG_65CM_cN72",
+      "manufacturerId": "MAN_STARLINE_S9Z5",
+      "primerHoleId": "HL_060",
+      "primerPocketId": "PKT_SML",
+      "needs_recheck": 0
+    },
+    {
+      "id": "BRS_MAN_STARLINE_S9Z5_CTG_6ARC_cH92_A0PU",
+      "cartridgeId": "CTG_6ARC_cH92",
+      "manufacturerId": "MAN_STARLINE_S9Z5",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "needs_recheck": 0
+    }
+  ],
   "bullets": [
     {
       "id": "BUL_BARNES_204_26_VG",
