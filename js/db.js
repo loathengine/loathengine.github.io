@@ -1,12 +1,13 @@
 // js/db.js
 
 const DB_NAME = 'reloadingDB';
-const DB_VERSION = 5; // Incremented to ensure customTargets and targetImages schema exist
+const DB_VERSION = 6; // Incremented for primerPockets, primerHoles, loadTypes
 let db;
 
 const objectStores = [
     'manufacturers', 'diameters', 'bullets', 'powders', 'primers', 
-    'brass', 'cartridges', 'firearms', 'loads', 'impactData', 'targetImages', 'customTargets'
+    'brass', 'cartridges', 'firearms', 'loads', 'impactData', 'targetImages', 'customTargets',
+    'primerPockets', 'primerHoles', 'loadTypes'
 ];
 
 function openDB() {

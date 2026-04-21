@@ -9,32 +9,28 @@
       "name": "Accurate",
       "type": [
         "powder"
-      ],
-      "needs_recheck": 0
+      ]
     },
     {
       "id": "MAN_ADG_A4D7",
       "name": "ADG",
       "type": [
         "brass"
-      ],
-      "needs_recheck": 0
+      ]
     },
     {
       "id": "MAN_ALLIANT_A5R2",
       "name": "Alliant",
       "type": [
         "powder"
-      ],
-      "needs_recheck": 0
+      ]
     },
     {
       "id": "MAN_ALPHA_A1L2",
       "name": "Alpha Munitions",
       "type": [
         "brass"
-      ],
-      "needs_recheck": 0
+      ]
     },
     {
       "id": "MAN_BARNES_B2N5",
@@ -43,32 +39,28 @@
         "firearm",
         "brass",
         "bullet"
-      ],
-      "needs_recheck": 0
+      ]
     },
     {
       "id": "MAN_BERGER_B9K2",
       "name": "Berger",
       "type": [
         "bullet"
-      ],
-      "needs_recheck": 0
+      ]
     },
     {
       "id": "MAN_BLAC_CS4B",
       "name": "Black Hills",
       "type": [
         "brass"
-      ],
-      "needs_recheck": 0
+      ]
     },
     {
       "id": "MAN_CCI_C2W7",
       "name": "CCI",
       "type": [
         "primer"
-      ],
-      "needs_recheck": 0
+      ]
     },
     {
       "id": "MAN_FEDERAL_F4G7",
@@ -78,43 +70,31 @@
         "bullet",
         "powder",
         "primer"
-      ],
-      "needs_recheck": 0
+      ]
     },
     {
       "id": "MAN_HODGDON_H3V8",
       "name": "Hodgdon",
       "type": [
         "powder"
-      ],
-      "needs_recheck": 0
+      ]
     },
     {
       "id": "MAN_HORNADY_JGR4",
       "name": "Hornady",
       "type": [
-        "powder",
+        "bullet",
         "primer",
-        "bullets are made from brass but not a cartridge",
-        "brass",
-        "firearm",
-        "cartridge"
-      ],
-      "needs_recheck": 0
+        "powder"
+      ]
     },
     {
       "id": "MAN_LAPUA_L5X1",
       "name": "Lapua",
       "type": [
-        "bullets",
-        "prima powders",
-        "casing",
-        "firearms",
-        "ammunition",
-        "cases",
-        "primers"
-      ],
-      "needs_recheck": 0
+        "bullet",
+        "cartridge"
+      ]
     },
     {
       "id": "MAN_NORMA_N8R2",
@@ -122,8 +102,7 @@
       "type": [
         "bullet",
         "brass"
-      ],
-      "needs_recheck": 0
+      ]
     },
     {
       "id": "MAN_NOSLER_N9K4",
@@ -131,182 +110,156 @@
       "type": [
         "brass",
         "bullet"
-      ],
-      "needs_recheck": 0
+      ]
     },
     {
       "id": "MAN_PETERSON_M7JT",
       "name": "Peterson",
       "type": [
         "brass"
-      ],
-      "needs_recheck": 0
+      ]
     },
     {
       "id": "MAN_PPU _KV0Z",
       "name": "PPU (Prvi Partizan)",
       "type": [
         "cartridge"
-      ],
-      "needs_recheck": 0
+      ]
     },
     {
       "id": "MAN_RAMSHOT_R4P7",
       "name": "Ramshot",
       "type": [
         "powder"
-      ],
-      "needs_recheck": 0
+      ]
     },
     {
       "id": "MAN_REMINGTON_R7M1",
       "name": "Remington",
       "type": [
         "primer"
-      ],
-      "needs_recheck": 0
+      ]
     },
     {
       "id": "MAN_SIERRA_S6Y3",
       "name": "Sierra",
       "type": [
         "bullet"
-      ],
-      "needs_recheck": 0
+      ]
     },
     {
       "id": "MAN_SIG _WOTU",
       "name": "SIG Sauer",
       "type": [
         "firearm"
-      ],
-      "needs_recheck": 0
+      ]
     },
     {
       "id": "MAN_SPEER_S3B9",
       "name": "Speer",
       "type": [
         "bullet"
-      ],
-      "needs_recheck": 0
+      ]
     },
     {
       "id": "MAN_STARLINE_S9Z5",
       "name": "Starline",
       "type": [
         "brass"
-      ],
-      "needs_recheck": 0
+      ]
     },
     {
       "id": "MAN_VIHTAVUORI_V8N1",
       "name": "Vihtavuori",
       "type": [
         "powder"
-      ],
-      "needs_recheck": 0
+      ]
     },
     {
       "id": "MAN_WINCHESTER_W2N4",
       "name": "Winchester",
       "type": [
         "brass"
-      ],
-      "needs_recheck": 0
+      ]
     },
     {
       "id": "MAN_IVAT_8ZDV",
       "name": "IVAT Coatings Srl",
       "type": [
         "powder"
-      ],
-      "needs_recheck": 0
+      ]
     }
   ],
   "diameters": [
     {
       "id": "DIA_172_QW2R",
       "imperial": ".172",
-      "metric": "4.5mm",
-      "needs_recheck": 0
+      "metric": "4.5mm"
     },
     {
       "id": "DIA_204_M9K3",
       "imperial": ".204",
-      "metric": "5mm",
-      "needs_recheck": 0
+      "metric": "5mm"
     },
     {
       "id": "DIA_224_L5X8",
       "imperial": ".224",
-      "metric": "5.56",
-      "needs_recheck": 0
+      "metric": "5.56"
     },
     {
       "id": "DIA_22_4GDU",
       "imperial": ".22",
-      "metric": "",
-      "needs_recheck": 0
+      "metric": ""
     },
     {
       "id": "DIA_243_B7V4",
       "imperial": ".243",
-      "metric": "6mm",
-      "needs_recheck": 0
+      "metric": "6mm"
     },
     {
       "id": "DIA_257_N2M1",
       "imperial": ".257",
-      "metric": "6.5mm Sav",
-      "needs_recheck": 0
+      "metric": "6.5mm Sav"
     },
     {
       "id": "DIA_264_H8J4",
       "imperial": ".264",
-      "metric": "6.5mm",
-      "needs_recheck": 0
+      "metric": "6.5mm"
     },
     {
       "id": "DIA_277_K9L0",
       "imperial": ".277",
-      "metric": "6.8mm",
-      "needs_recheck": 0
+      "metric": "6.8mm"
     },
     {
       "id": "DIA_284_S3F6",
       "imperial": ".284",
-      "metric": "7mm",
-      "needs_recheck": 0
+      "metric": "7mm"
     },
     {
       "id": "DIA_308_XBM7",
       "imperial": ".308",
-      "metric": "7.62",
-      "needs_recheck": 0
+      "metric": "7.62"
     },
     {
       "id": "DIA_311_T1Y5",
       "imperial": ".311",
-      "metric": "7.62 Rus/Brit",
-      "needs_recheck": 0
+      "metric": "7.62 Rus/Brit"
     },
     {
       "id": "DIA_323_V4B9",
       "imperial": ".323",
-      "metric": "8mm",
-      "needs_recheck": 0
+      "metric": "8mm"
     },
     {
       "id": "DIA_338_R7E3",
       "imperial": ".338",
-      "metric": "8.6mm",
-      "needs_recheck": 0
+      "metric": "8.6mm"
     },
     {
       "id": "DIA_375_OMEC",
       "imperial": ".375",
-      "metric": "",
-      "needs_recheck": 0
+      "metric": ""
     }
   ],
   "loadTypes": [
@@ -347,464 +300,387 @@
     {
       "id": "PWD_ACCU_2230_R1A6",
       "manufacturerId": "MAN_ACCURATE_A6B8",
-      "name": "Accurate 2230",
-      "needs_recheck": 0
+      "name": "Accurate 2230"
     },
     {
       "id": "PWD_ACCU_2520_R1A7",
       "manufacturerId": "MAN_ACCURATE_A6B8",
-      "name": "Accurate 2520",
-      "needs_recheck": 0
+      "name": "Accurate 2520"
     },
     {
       "id": "PWD_ACCU_4064_R1A8",
       "manufacturerId": "MAN_ACCURATE_A6B8",
-      "name": "Accurate 4064",
-      "needs_recheck": 0
+      "name": "Accurate 4064"
     },
     {
       "id": "PWD_ACCU_LT32_R1AA",
       "manufacturerId": "MAN_ACCURATE_A6B8",
-      "name": "Accurate LT-32",
-      "needs_recheck": 0
+      "name": "Accurate LT-32"
     },
     {
       "id": "PWD_ACCU_MAGPRO_R1A9",
       "manufacturerId": "MAN_ACCURATE_A6B8",
-      "name": "Accurate MagPro",
-      "needs_recheck": 0
+      "name": "Accurate MagPro"
     },
     {
       "id": "PWD_ACCU_NO9_R1A0",
       "manufacturerId": "MAN_ACCURATE_A6B8",
-      "name": "Accurate No. 9",
-      "needs_recheck": 0
+      "name": "Accurate No. 9"
     },
     {
       "id": "PWD_ALLI_BULLSEYE_A1L7",
       "manufacturerId": "MAN_ALLIANT_A5R2",
-      "name": "Bullseye",
-      "needs_recheck": 0
+      "name": "Bullseye"
     },
     {
       "id": "PWD_ALLI_PPVARMINT_A1L6",
       "manufacturerId": "MAN_ALLIANT_A5R2",
-      "name": "Power Pro Varmint",
-      "needs_recheck": 0
+      "name": "Power Pro Varmint"
     },
     {
       "id": "PWD_ALLI_RL155TS_A1L5",
       "manufacturerId": "MAN_ALLIANT_A5R2",
-      "name": "Reloder 15.5 TS",
-      "needs_recheck": 0
+      "name": "Reloder 15.5 TS"
     },
     {
       "id": "PWD_ALLI_RL15_A1L1",
       "manufacturerId": "MAN_ALLIANT_A5R2",
-      "name": "Reloder 15",
-      "needs_recheck": 0
+      "name": "Reloder 15"
     },
     {
       "id": "PWD_ALLI_RL16_A1L2",
       "manufacturerId": "MAN_ALLIANT_A5R2",
-      "name": "Reloder 16",
-      "needs_recheck": 0
+      "name": "Reloder 16"
     },
     {
       "id": "PWD_ALLI_RL23_A1L3",
       "manufacturerId": "MAN_ALLIANT_A5R2",
-      "name": "Reloder 23",
-      "needs_recheck": 0
+      "name": "Reloder 23"
     },
     {
       "id": "PWD_ALLI_RL26_A1L4",
       "manufacturerId": "MAN_ALLIANT_A5R2",
-      "name": "Reloder 26",
-      "needs_recheck": 0
+      "name": "Reloder 26"
     },
     {
       "id": "PWD_ALLI_UNIQUE_A1L8",
       "manufacturerId": "MAN_ALLIANT_A5R2",
-      "name": "Unique",
-      "needs_recheck": 0
+      "name": "Unique"
     },
     {
       "id": "PWD_HODG_BLC2_H1G8",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "BL-C(2)",
-      "needs_recheck": 0
+      "name": "BL-C(2)"
     },
     {
       "id": "PWD_HODG_CFE223_H1G6",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "CFE 223",
-      "needs_recheck": 0
+      "name": "CFE 223"
     },
     {
       "id": "PWD_HODG_CFEPISTOL_H1GP",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "CFE Pistol",
-      "needs_recheck": 0
+      "name": "CFE Pistol"
     },
     {
       "id": "PWD_HODG_H1000_H1G5",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H1000",
-      "needs_recheck": 0
+      "name": "H1000"
     },
     {
       "id": "PWD_HODG_H110_H1GQ",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H110",
-      "needs_recheck": 0
+      "name": "H110"
     },
     {
       "id": "PWD_HODG_H335_H1GB",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H335",
-      "needs_recheck": 0
+      "name": "H335"
     },
     {
       "id": "PWD_HODG_H380_H1GC",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H380",
-      "needs_recheck": 0
+      "name": "H380"
     },
     {
       "id": "PWD_HODG_H414_H1GD",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H414",
-      "needs_recheck": 0
+      "name": "H414"
     },
     {
       "id": "PWD_HODG_H4350_H1G2",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H4350",
-      "needs_recheck": 0
+      "name": "H4350"
     },
     {
       "id": "PWD_HODG_H4831SC_H1GF",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H4831SC",
-      "needs_recheck": 0
+      "name": "H4831SC"
     },
     {
       "id": "PWD_HODG_H4831_H1GE",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H4831",
-      "needs_recheck": 0
+      "name": "H4831"
     },
     {
       "id": "PWD_HODG_H4895_H1G3",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H4895",
-      "needs_recheck": 0
+      "name": "H4895"
     },
     {
       "id": "PWD_HODG_H50BMG_H1GG",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H50BMG",
-      "needs_recheck": 0
+      "name": "H50BMG"
     },
     {
       "id": "PWD_HODG_HP38_H1GT",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "HP-38",
-      "needs_recheck": 0
+      "name": "HP-38"
     },
     {
       "id": "PWD_HODG_IMR4064_H1G9",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 4064",
-      "needs_recheck": 0
+      "name": "IMR 4064"
     },
     {
       "id": "PWD_HODG_IMR4166_H1GK",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 4166",
-      "needs_recheck": 0
+      "name": "IMR 4166"
     },
     {
       "id": "PWD_HODG_IMR4198_H1GS",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 4198",
-      "needs_recheck": 0
+      "name": "IMR 4198"
     },
     {
       "id": "PWD_HODG_IMR4350_H1G0",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 4350",
-      "needs_recheck": 0
+      "name": "IMR 4350"
     },
     {
       "id": "PWD_HODG_IMR4451_H1GL",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 4451",
-      "needs_recheck": 0
+      "name": "IMR 4451"
     },
     {
       "id": "PWD_HODG_IMR4895_H1GM",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 4895",
-      "needs_recheck": 0
+      "name": "IMR 4895"
     },
     {
       "id": "PWD_HODG_IMR7828SSC_H1GO",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 7828SSC",
-      "needs_recheck": 0
+      "name": "IMR 7828SSC"
     },
     {
       "id": "PWD_HODG_IMR7828_H1GN",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 7828",
-      "needs_recheck": 0
+      "name": "IMR 7828"
     },
     {
       "id": "PWD_HODG_IMR8208_H1GA",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 8208 XBR",
-      "needs_recheck": 0
+      "name": "IMR 8208 XBR"
     },
     {
       "id": "PWD_HODG_LILGUN_H1GR",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "Lil' Gun",
-      "needs_recheck": 0
+      "name": "Lil' Gun"
     },
     {
       "id": "PWD_HODG_LONGSHOT_H1GJ",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "Longshot",
-      "needs_recheck": 0
+      "name": "Longshot"
     },
     {
       "id": "PWD_HODG_RETUMBO_H1G4",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "Retumbo",
-      "needs_recheck": 0
+      "name": "Retumbo"
     },
     {
       "id": "PWD_HODG_TITEGROUP_H1G7",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "Titegroup",
-      "needs_recheck": 0
+      "name": "Titegroup"
     },
     {
       "id": "PWD_HODG_TITEWAD_H1GI",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "Titewad",
-      "needs_recheck": 0
+      "name": "Titewad"
     },
     {
       "id": "PWD_HODG_US869_H1GH",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "US 869",
-      "needs_recheck": 0
+      "name": "US 869"
     },
     {
       "id": "PWD_HODG_VARGET_H1G1",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "Varget",
-      "needs_recheck": 0
+      "name": "Varget"
     },
     {
       "id": "PWD_HORNADYOAL_IRJS",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "Hornady OAL",
-      "needs_recheck": 0
+      "name": "Hornady OAL"
     },
     {
       "id": "PWD_RAMS_BIGGAME_R1A2",
       "manufacturerId": "MAN_RAMSHOT_R4P7",
-      "name": "Big Game",
-      "needs_recheck": 0
+      "name": "Big Game"
     },
     {
       "id": "PWD_RAMS_HUNTER_R1A3",
       "manufacturerId": "MAN_RAMSHOT_R4P7",
-      "name": "Hunter",
-      "needs_recheck": 0
+      "name": "Hunter"
     },
     {
       "id": "PWD_RAMS_MAGNUM_R1A4",
       "manufacturerId": "MAN_RAMSHOT_R4P7",
-      "name": "Magnum",
-      "needs_recheck": 0
+      "name": "Magnum"
     },
     {
       "id": "PWD_RAMS_TAC_R1A1",
       "manufacturerId": "MAN_RAMSHOT_R4P7",
-      "name": "TAC",
-      "needs_recheck": 0
+      "name": "TAC"
     },
     {
       "id": "PWD_RAMS_XTERM_R1A5",
       "manufacturerId": "MAN_RAMSHOT_R4P7",
-      "name": "X-Terminator",
-      "needs_recheck": 0
+      "name": "X-Terminator"
     },
     {
       "id": "PWD_VIHTAVUORI_MOMF",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "Vihtavuori N170",
-      "needs_recheck": 0
+      "name": "Vihtavuori N170"
     },
     {
       "id": "PWD_VIHT_N110_V1H2",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N110",
-      "needs_recheck": 0
+      "name": "N110"
     },
     {
       "id": "PWD_VIHT_N120_V1H3",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N120",
-      "needs_recheck": 0
+      "name": "N120"
     },
     {
       "id": "PWD_VIHT_N130_V1H4",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N130",
-      "needs_recheck": 0
+      "name": "N130"
     },
     {
       "id": "PWD_VIHT_N133_V1H5",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N133",
-      "needs_recheck": 0
+      "name": "N133"
     },
     {
       "id": "PWD_VIHT_N135_V1H6",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N135",
-      "needs_recheck": 0
+      "name": "N135"
     },
     {
       "id": "PWD_VIHT_N140_7Ih6",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N140",
-      "needs_recheck": 0
+      "name": "N140"
     },
     {
       "id": "PWD_VIHT_N150_V1H7",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N150",
-      "needs_recheck": 0
+      "name": "N150"
     },
     {
       "id": "PWD_VIHT_N160_V1H8",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N160",
-      "needs_recheck": 0
+      "name": "N160"
     },
     {
       "id": "PWD_VIHT_N165_V1H9",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N165",
-      "needs_recheck": 0
+      "name": "N165"
     },
     {
       "id": "PWD_VIHT_N170_V1HA",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N170",
-      "needs_recheck": 0
+      "name": "N170"
     },
     {
       "id": "PWD_VIHT_N530_V5H1",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N530",
-      "needs_recheck": 0
+      "name": "N530"
     },
     {
       "id": "PWD_VIHT_N540_V5H2",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N540",
-      "needs_recheck": 0
+      "name": "N540"
     },
     {
       "id": "PWD_VIHT_N550_V5H3",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N550",
-      "needs_recheck": 0
+      "name": "N550"
     },
     {
       "id": "PWD_VIHT_N555_V5H4",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N555",
-      "needs_recheck": 0
+      "name": "N555"
     },
     {
       "id": "PWD_VIHT_N560_V5H5",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N560",
-      "needs_recheck": 0
+      "name": "N560"
     },
     {
       "id": "PWD_VIHT_N565_V5H6",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N565",
-      "needs_recheck": 0
+      "name": "N565"
     },
     {
       "id": "PWD_VIHT_N568_V5H7",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N568",
-      "needs_recheck": 0
+      "name": "N568"
     },
     {
       "id": "PWD_VIHT_N570_V5H8",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N570",
-      "needs_recheck": 0
+      "name": "N570"
     },
     {
       "id": "PWD_WINC_231_W1N4",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "231",
-      "needs_recheck": 0
+      "name": "231"
     },
     {
       "id": "PWD_WINC_244_W1N5",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "244",
-      "needs_recheck": 0
+      "name": "244"
     },
     {
       "id": "PWD_WINC_296_W1N6",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "296",
-      "needs_recheck": 0
+      "name": "296"
     },
     {
       "id": "PWD_WINC_748_W1N7",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "748",
-      "needs_recheck": 0
+      "name": "748"
     },
     {
       "id": "PWD_WINC_760_W1N8",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "760",
-      "needs_recheck": 0
+      "name": "760"
     },
     {
       "id": "PWD_WINC_STABALL65_W1N1",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "StaBALL 6.5",
-      "needs_recheck": 0
+      "name": "StaBALL 6.5"
     },
     {
       "id": "PWD_WINC_STABALLHD_W1N3",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "StaBALL HD",
-      "needs_recheck": 0
+      "name": "StaBALL HD"
     },
     {
       "id": "PWD_WINC_STABALLMATCH_W1N2",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "StaBALL Match",
-      "needs_recheck": 0
+      "name": "StaBALL Match"
     }
   ],
   "primers": [
@@ -812,232 +688,199 @@
       "id": "PRI_CCIBR2LARG_C84Z",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "CCI BR-2 Large Rifle Benchrest",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_CCIBR2LARG_G6T1",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "CCI BR2 Large Rifle",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_CCIBR4SMAL_3WPA",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "CCI BR4 Small Rifle Benchrest",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_CCIBR5LARG_PBA3",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "CCI BR5 Large Rifle Magnum",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_CCIBR6MATC_KAYM",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "CCI BR6 Match",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_CCIBR7BENC_LJJV",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "CCI BR7 Benchrest",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_CCI_200_C1R2",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "No. 200 Large Rifle",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_CCI_250_PSFC",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "No. 250 Large Rifle Magnum",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_CCI_400_C1R3",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "No. 400 Small Rifle",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_CCI_450_C1R4",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "No. 450 Small Rifle Magnum",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_CCI_BR2_C1R5",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "BR-2 Large Rifle Bench Rest",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_CCI_BR4_C1R6",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "BR-4 Small Rifle Bench Rest",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_CCI_NO34_C1R8",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "No. 34 Large Rifle (Military)",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_CCI_NO41_C1R7",
       "manufacturerId": "MAN_CCI_C2W7",
       "name": "No. 41 Small Rifle (Military)",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_FEDERALGM2_9NLQ",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "Federal GM210M Large Rifle Match Primer",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_FEDERALGOL_U9R8",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "Federal Gold Medal Match 215 Small Rifle Magnum Primer",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_FEDERALPRE_T9UB",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "Federal Premium Gold Medal Match 210 Large Rifle Magnum Primer",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_FED_205M_F1D7",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "205M Gold Medal Match Small Rifle",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_FED_205_F1D6",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "205 Small Rifle",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_FED_210M_F1D3",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "210M Gold Medal Match Large Rifle",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_FED_210_F1D2",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "210 Large Rifle",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_FED_215M_F1D5",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "215M Gold Medal Match Large Rifle Magnum",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_FED_215_F1D4",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "215 Large Rifle Magnum",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_FED_AR_F1D8",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "AR Match Small Rifle",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_MAN_FEDERAL_F4G7_FEDERAL210_VL42",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "name": "Federal 210M Large Rifle Match Primer",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_REMINGTON7_4KC6",
       "manufacturerId": "MAN_REMINGTON_R7M1",
       "name": "Remington 7 1/2",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_REM_7.5_R1E2",
       "manufacturerId": "MAN_REMINGTON_R7M1",
       "name": "7 1/2 Small Rifle Bench Rest",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "PRI_REM_9.5M_R1E4",
       "manufacturerId": "MAN_REMINGTON_R7M1",
       "name": "9 1/2M Large Rifle Magnum",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_REM_9.5_R1E3",
       "manufacturerId": "MAN_REMINGTON_R7M1",
       "name": "9 1/2 Large Rifle",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_WINCHESTER_IVW0",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
       "name": "Winchester USA Ready Large Rifle Match Grade Primers",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_WINC_WLRM_W1N3",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
       "name": "Large Rifle Magnum (WLRM)",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_WINC_WLR_W1N2",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
       "name": "Large Rifle (WLR)",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "PRI_WINC_WSR_W1N4",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
       "name": "Small Rifle (WSR)",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     }
   ],
   "cartridges": [
@@ -1047,8 +890,7 @@
       "diameterId": "DIA_172_QW2R",
       "maxCaseLength": 1.058,
       "trimLength": 1.048,
-      "oal": 1.075,
-      "needs_recheck": 0
+      "oal": 1.075
     },
     {
       "id": "CTG_17HRN_N1H3",
@@ -1056,8 +898,7 @@
       "diameterId": "DIA_172_QW2R",
       "maxCaseLength": 1.35,
       "trimLength": 1.34,
-      "oal": 1.723,
-      "needs_recheck": 0
+      "oal": 1.723
     },
     {
       "id": "CTG_204RUG_N2H4",
@@ -1065,8 +906,7 @@
       "diameterId": "DIA_204_M9K3",
       "maxCaseLength": 1.85,
       "trimLength": 1.84,
-      "oal": 2.26,
-      "needs_recheck": 0
+      "oal": 2.26
     },
     {
       "id": "CTG_220SWIFT_N2H6",
@@ -1074,8 +914,7 @@
       "diameterId": "DIA_224_L5X8",
       "maxCaseLength": 2.205,
       "trimLength": 2.195,
-      "oal": 2.68,
-      "needs_recheck": 0
+      "oal": 2.68
     },
     {
       "id": "CTG_22250_cK32",
@@ -1083,8 +922,7 @@
       "diameterId": "DIA_224_L5X8",
       "maxCaseLength": 1.912,
       "trimLength": 1.902,
-      "oal": 2.35,
-      "needs_recheck": 0
+      "oal": 2.35
     },
     {
       "id": "CTG_223AI_cT12",
@@ -1092,8 +930,7 @@
       "diameterId": "DIA_224_L5X8",
       "maxCaseLength": 1.76,
       "trimLength": 1.75,
-      "oal": 2.26,
-      "needs_recheck": 0
+      "oal": 2.26
     },
     {
       "id": "CTG_223REM_cR82",
@@ -1101,8 +938,7 @@
       "diameterId": "DIA_224_L5X8",
       "maxCaseLength": 1.76,
       "trimLength": 1.75,
-      "oal": 2.26,
-      "needs_recheck": 0
+      "oal": 2.26
     },
     {
       "id": "CTG_224VALK_N2H5",
@@ -1110,8 +946,7 @@
       "diameterId": "DIA_224_L5X8",
       "maxCaseLength": 1.6,
       "trimLength": 1.59,
-      "oal": 2.26,
-      "needs_recheck": 0
+      "oal": 2.26
     },
     {
       "id": "CTG_22CM_cA72",
@@ -1119,8 +954,7 @@
       "diameterId": "DIA_224_L5X8",
       "maxCaseLength": 1.92,
       "trimLength": 1.91,
-      "oal": 2.7,
-      "needs_recheck": 0
+      "oal": 2.7
     },
     {
       "id": "CTG_243WIN_cB42",
@@ -1128,8 +962,7 @@
       "diameterId": "DIA_243_B7V4",
       "maxCaseLength": 2.045,
       "trimLength": 2.035,
-      "oal": 2.71,
-      "needs_recheck": 0
+      "oal": 2.71
     },
     {
       "id": "CTG_2506_cL42",
@@ -1137,8 +970,7 @@
       "diameterId": "DIA_257_N2M1",
       "maxCaseLength": 2.494,
       "trimLength": 2.484,
-      "oal": 3.25,
-      "needs_recheck": 0
+      "oal": 3.25
     },
     {
       "id": "CTG_257ROB_N2H9",
@@ -1146,8 +978,7 @@
       "diameterId": "DIA_257_N2M1",
       "maxCaseLength": 2.233,
       "trimLength": 2.223,
-      "oal": 2.775,
-      "needs_recheck": 0
+      "oal": 2.775
     },
     {
       "id": "CTG_257WBY_N2H0",
@@ -1155,8 +986,7 @@
       "diameterId": "DIA_257_N2M1",
       "maxCaseLength": 2.549,
       "trimLength": 2.539,
-      "oal": 3.17,
-      "needs_recheck": 0
+      "oal": 3.17
     },
     {
       "id": "CTG_260REM_N2HB",
@@ -1164,8 +994,7 @@
       "diameterId": "DIA_264_H8J4",
       "maxCaseLength": 2.035,
       "trimLength": 2.025,
-      "oal": 2.8,
-      "needs_recheck": 0
+      "oal": 2.8
     },
     {
       "id": "CTG_270WIN_cU62",
@@ -1173,8 +1002,7 @@
       "diameterId": "DIA_277_K9L0",
       "maxCaseLength": 2.54,
       "trimLength": 2.53,
-      "oal": 3.34,
-      "needs_recheck": 0
+      "oal": 3.34
     },
     {
       "id": "CTG_270WSM_N2HC",
@@ -1182,8 +1010,7 @@
       "diameterId": "DIA_277_K9L0",
       "maxCaseLength": 2.1,
       "trimLength": 2.09,
-      "oal": 2.86,
-      "needs_recheck": 0
+      "oal": 2.86
     },
     {
       "id": "CTG_280AI_cA52",
@@ -1191,8 +1018,7 @@
       "diameterId": "DIA_284_S3F6",
       "maxCaseLength": 2.525,
       "trimLength": 2.515,
-      "oal": 3.33,
-      "needs_recheck": 0
+      "oal": 3.33
     },
     {
       "id": "CTG_3006_cE12",
@@ -1200,8 +1026,7 @@
       "diameterId": "DIA_308_XBM7",
       "maxCaseLength": 2.494,
       "trimLength": 2.484,
-      "oal": 3.34,
-      "needs_recheck": 0
+      "oal": 3.34
     },
     {
       "id": "CTG_300BLK_cI72",
@@ -1209,8 +1034,7 @@
       "diameterId": "DIA_308_XBM7",
       "maxCaseLength": 1.368,
       "trimLength": 1.358,
-      "oal": 2.26,
-      "needs_recheck": 0
+      "oal": 2.26
     },
     {
       "id": "CTG_300PRC_cK02",
@@ -1218,8 +1042,7 @@
       "diameterId": "DIA_308_XBM7",
       "maxCaseLength": 2.58,
       "trimLength": 2.57,
-      "oal": 3.7,
-      "needs_recheck": 0
+      "oal": 3.7
     },
     {
       "id": "CTG_300WINMAG_cG42",
@@ -1227,8 +1050,7 @@
       "diameterId": "DIA_308_XBM7",
       "maxCaseLength": 2.62,
       "trimLength": 2.61,
-      "oal": 3.34,
-      "needs_recheck": 0
+      "oal": 3.34
     },
     {
       "id": "CTG_300WSM_N3HH",
@@ -1236,8 +1058,7 @@
       "diameterId": "DIA_308_XBM7",
       "maxCaseLength": 2.1,
       "trimLength": 2.09,
-      "oal": 2.86,
-      "needs_recheck": 0
+      "oal": 2.86
     },
     {
       "id": "CTG_3030_N3HG",
@@ -1245,8 +1066,7 @@
       "diameterId": "DIA_308_XBM7",
       "maxCaseLength": 2.039,
       "trimLength": 2.029,
-      "oal": 2.55,
-      "needs_recheck": 0
+      "oal": 2.55
     },
     {
       "id": "CTG_303BRIT_N3HI",
@@ -1254,8 +1074,7 @@
       "diameterId": "DIA_311_T1Y5",
       "maxCaseLength": 2.222,
       "trimLength": 2.212,
-      "oal": 3.075,
-      "needs_recheck": 0
+      "oal": 3.075
     },
     {
       "id": "CTG_308WIN_cC82",
@@ -1263,8 +1082,7 @@
       "diameterId": "DIA_308_XBM7",
       "maxCaseLength": 2.015,
       "trimLength": 2.005,
-      "oal": 2.8,
-      "needs_recheck": 0
+      "oal": 2.8
     },
     {
       "id": "CTG_338FED_N3HK",
@@ -1272,8 +1090,7 @@
       "diameterId": "DIA_338_R7E3",
       "maxCaseLength": 2.015,
       "trimLength": 2.005,
-      "oal": 2.82,
-      "needs_recheck": 0
+      "oal": 2.82
     },
     {
       "id": "CTG_338LAP_cO62",
@@ -1281,8 +1098,7 @@
       "diameterId": "DIA_338_R7E3",
       "maxCaseLength": 2.724,
       "trimLength": 2.714,
-      "oal": 3.681,
-      "needs_recheck": 0
+      "oal": 3.681
     },
     {
       "id": "CTG_338WINMAG_cQ92",
@@ -1290,8 +1106,7 @@
       "diameterId": "DIA_338_R7E3",
       "maxCaseLength": 2.5,
       "trimLength": 2.49,
-      "oal": 3.34,
-      "needs_recheck": 0
+      "oal": 3.34
     },
     {
       "id": "CTG_65CM_cN72",
@@ -1299,8 +1114,7 @@
       "diameterId": "DIA_264_H8J4",
       "maxCaseLength": 1.92,
       "trimLength": 1.91,
-      "oal": 2.825,
-      "needs_recheck": 0
+      "oal": 2.825
     },
     {
       "id": "CTG_65GRN_cS32",
@@ -1308,8 +1122,7 @@
       "diameterId": "DIA_264_H8J4",
       "maxCaseLength": 1.52,
       "trimLength": 1.51,
-      "oal": 2.26,
-      "needs_recheck": 0
+      "oal": 2.26
     },
     {
       "id": "CTG_65PRC_cP02",
@@ -1317,8 +1130,7 @@
       "diameterId": "DIA_264_H8J4",
       "maxCaseLength": 2.03,
       "trimLength": 2.02,
-      "oal": 2.955,
-      "needs_recheck": 0
+      "oal": 2.955
     },
     {
       "id": "CTG_65SWE_N6HA",
@@ -1326,8 +1138,7 @@
       "diameterId": "DIA_264_H8J4",
       "maxCaseLength": 2.165,
       "trimLength": 2.155,
-      "oal": 3.15,
-      "needs_recheck": 0
+      "oal": 3.15
     },
     {
       "id": "CTG_68WEST_N6HD",
@@ -1335,8 +1146,7 @@
       "diameterId": "DIA_277_K9L0",
       "maxCaseLength": 2.02,
       "trimLength": 2.01,
-      "oal": 2.955,
-      "needs_recheck": 0
+      "oal": 2.955
     },
     {
       "id": "CTG_6ARC_cH92",
@@ -1344,8 +1154,7 @@
       "diameterId": "DIA_243_B7V4",
       "maxCaseLength": 1.49,
       "trimLength": 1.48,
-      "oal": 2.26,
-      "needs_recheck": 0
+      "oal": 2.26
     },
     {
       "id": "CTG_6BR_cJ12",
@@ -1353,8 +1162,7 @@
       "diameterId": "DIA_243_B7V4",
       "maxCaseLength": 1.56,
       "trimLength": 1.55,
-      "oal": 2.2,
-      "needs_recheck": 0
+      "oal": 2.2
     },
     {
       "id": "CTG_6CM_cG62",
@@ -1362,8 +1170,7 @@
       "diameterId": "DIA_243_B7V4",
       "maxCaseLength": 1.92,
       "trimLength": 1.91,
-      "oal": 2.8,
-      "needs_recheck": 0
+      "oal": 2.8
     },
     {
       "id": "CTG_6DASH_N6H8",
@@ -1371,8 +1178,7 @@
       "diameterId": "DIA_243_B7V4",
       "maxCaseLength": 1.55,
       "trimLength": 1.54,
-      "oal": 2.34,
-      "needs_recheck": 0
+      "oal": 2.34
     },
     {
       "id": "CTG_6REM_N6H7",
@@ -1380,8 +1186,7 @@
       "diameterId": "DIA_243_B7V4",
       "maxCaseLength": 2.233,
       "trimLength": 2.223,
-      "oal": 2.825,
-      "needs_recheck": 0
+      "oal": 2.825
     },
     {
       "id": "CTG_762X39_cM32",
@@ -1389,8 +1194,7 @@
       "diameterId": "DIA_311_T1Y5",
       "maxCaseLength": 1.528,
       "trimLength": 1.518,
-      "oal": 2.2,
-      "needs_recheck": 0
+      "oal": 2.2
     },
     {
       "id": "CTG_7MAU_N7HF",
@@ -1398,8 +1202,7 @@
       "diameterId": "DIA_284_S3F6",
       "maxCaseLength": 2.235,
       "trimLength": 2.225,
-      "oal": 3.065,
-      "needs_recheck": 0
+      "oal": 3.065
     },
     {
       "id": "CTG_7MM08_cZ22",
@@ -1407,8 +1210,7 @@
       "diameterId": "DIA_284_S3F6",
       "maxCaseLength": 2.035,
       "trimLength": 2.025,
-      "oal": 2.8,
-      "needs_recheck": 0
+      "oal": 2.8
     },
     {
       "id": "CTG_7PRC_N7HE",
@@ -1416,8 +1218,7 @@
       "diameterId": "DIA_284_S3F6",
       "maxCaseLength": 2.28,
       "trimLength": 2.27,
-      "oal": 3.34,
-      "needs_recheck": 0
+      "oal": 3.34
     },
     {
       "id": "CTG_7REMMAG_cW92",
@@ -1425,8 +1226,7 @@
       "diameterId": "DIA_284_S3F6",
       "maxCaseLength": 2.5,
       "trimLength": 2.49,
-      "oal": 3.29,
-      "needs_recheck": 0
+      "oal": 3.29
     },
     {
       "id": "CTG_86BLK_cS22",
@@ -1434,8 +1234,7 @@
       "diameterId": "DIA_338_R7E3",
       "maxCaseLength": 1.685,
       "trimLength": 1.675,
-      "oal": 2.26,
-      "needs_recheck": 0
+      "oal": 2.26
     },
     {
       "id": "CTG_8MAU_N8HJ",
@@ -1443,8 +1242,7 @@
       "diameterId": "DIA_323_V4B9",
       "maxCaseLength": 2.244,
       "trimLength": 2.234,
-      "oal": 3.25,
-      "needs_recheck": 0
+      "oal": 3.25
     }
   ],
   "brass": [
@@ -1453,312 +1251,203 @@
       "cartridgeId": "CTG_65PRC_cP02",
       "manufacturerId": "MAN_ADG_A4D7",
       "primerHoleId": "HL_059",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
-    },
-    {
-      "id": "BRS_MAN_BERGER_B9K2_CTG_65CM_cN72_PBR2",
-      "cartridgeId": "CTG_65CM_cN72",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "primerHoleId": "HL_080",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
-    },
-    {
-      "id": "BRS_MAN_HODGDON_H3V8_CTG_65PRC_cP02_H9I4",
-      "cartridgeId": "CTG_65PRC_cP02",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "primerHoleId": "HL_080",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "BRS_MAN_LAPUA_L5X1_CTG_65CM_cN72_D7K1",
       "cartridgeId": "CTG_65CM_cN72",
       "manufacturerId": "MAN_LAPUA_L5X1",
       "primerHoleId": "HL_080",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "BRS_MAN_ADG_A4D7_CTG_65CM_cN72_TR53",
       "cartridgeId": "CTG_65CM_cN72",
       "manufacturerId": "MAN_ADG_A4D7",
       "primerHoleId": "HL_059",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "BRS_MAN_ALPHA_A1L2_CTG_65CM_cN72_2GZI",
       "cartridgeId": "CTG_65CM_cN72",
       "manufacturerId": "MAN_ALPHA_A1L2",
       "primerHoleId": "HL_080",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
-    },
-    {
-      "id": "BRS_MAN_LAPUA_L5X1_CTG_22CM_cA72_N4G8",
-      "cartridgeId": "CTG_22CM_cA72",
-      "manufacturerId": "MAN_LAPUA_L5X1",
-      "primerHoleId": "HL_060",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "BRS_MAN_ALPHA_A1L2_CTG_6ARC_cH92_97TY",
       "cartridgeId": "CTG_6ARC_cH92",
       "manufacturerId": "MAN_ALPHA_A1L2",
       "primerHoleId": "HL_080",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
-    },
-    {
-      "id": "BRS_MAN_LAPUA_L5X1_CTG_65GRN_cS32_WESF",
-      "cartridgeId": "CTG_65GRN_cS32",
-      "manufacturerId": "MAN_LAPUA_L5X1",
-      "primerHoleId": "HL_060",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "BRS_MAN_ALPHA_A1L2_CTG_6DASH_N6H8_B7IA",
       "cartridgeId": "CTG_6DASH_N6H8",
       "manufacturerId": "MAN_ALPHA_A1L2",
       "primerHoleId": "HL_080",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
-    },
-    {
-      "id": "BRS_MAN_BERGER_B9K2_CTG_65PRC_cP02_HQM5",
-      "cartridgeId": "CTG_65PRC_cP02",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "primerHoleId": "HL_080",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "BRS_MAN_HORNADY_JGR4_CTG_65CM_cN72_6MQR",
       "cartridgeId": "CTG_65CM_cN72",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "primerHoleId": "HL_059",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "BRS_MAN_LAPUA_L5X1_CTG_6CM_cG62_FJ8G",
       "cartridgeId": "CTG_6CM_cG62",
       "manufacturerId": "MAN_LAPUA_L5X1",
       "primerHoleId": "HL_080",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "BRS_MAN_NOSLER_N9K4_CTG_65PRC_cP02_08JE",
       "cartridgeId": "CTG_65PRC_cP02",
       "manufacturerId": "MAN_NOSLER_N9K4",
       "primerHoleId": "HL_059",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "BRS_MAN_FEDERAL_F4G7_CTG_308WIN_cC82_ZTCC",
       "cartridgeId": "CTG_308WIN_cC82",
       "manufacturerId": "MAN_FEDERAL_F4G7",
       "primerHoleId": "HL_059",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
-    },
-    {
-      "id": "BRS_MAN_VIHTAVUORI_V8N1_CTG_65PRC_cP02_AZRG",
-      "cartridgeId": "CTG_65PRC_cP02",
-      "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "primerHoleId": "HL_080",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "BRS_MAN_BARNES_B2N5_CTG_65CM_cN72_3900",
       "cartridgeId": "CTG_65CM_cN72",
       "manufacturerId": "MAN_BARNES_B2N5",
       "primerHoleId": "HL_059",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
-    },
-    {
-      "id": "BRS_MAN_ALLIANT_A5R2_CTG_6DASH_N6H8_DQZH",
-      "cartridgeId": "CTG_6DASH_N6H8",
-      "manufacturerId": "MAN_ALLIANT_A5R2",
-      "primerHoleId": "HL_060",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
-    },
-    {
-      "id": "BRS_MAN_HODGDON_H3V8_CTG_65CM_cN72_SID2",
-      "cartridgeId": "CTG_65CM_cN72",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "primerHoleId": "HL_059",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
-    },
-    {
-      "id": "BRS_MAN_LAPUA_L5X1_CTG_6ARC_cH92_T51T",
-      "cartridgeId": "CTG_6ARC_cH92",
-      "manufacturerId": "MAN_LAPUA_L5X1",
-      "primerHoleId": "HL_060",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
-    },
-    {
-      "id": "BRS_MAN_LAPUA_L5X1_CTG_65PRC_cP02_WCAZ",
-      "cartridgeId": "CTG_65PRC_cP02",
-      "manufacturerId": "MAN_LAPUA_L5X1",
-      "primerHoleId": "HL_059",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "BRS_MAN_LAPUA_L5X1_CTG_65SWE_N6HA_E3FA",
       "cartridgeId": "CTG_65SWE_N6HA",
       "manufacturerId": "MAN_LAPUA_L5X1",
       "primerHoleId": "HL_080",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "BRS_MAN_ALLIANT_A5R2_CTG_65CM_cN72_7W59",
       "cartridgeId": "CTG_65CM_cN72",
       "manufacturerId": "MAN_ALLIANT_A5R2",
-      "primerHoleId": "HL_059",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
-    },
-    {
-      "id": "BRS_MAN_HORNADY_JGR4_CTG_65PRC_cP02_UC53",
-      "cartridgeId": "CTG_65PRC_cP02",
-      "manufacturerId": "MAN_HORNADY_JGR4",
       "primerHoleId": "HL_080",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "BRS_MAN_NORMA_N8R2_CTG_65CM_cN72_W7T4",
       "cartridgeId": "CTG_65CM_cN72",
       "manufacturerId": "MAN_NORMA_N8R2",
       "primerHoleId": "HL_059",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "BRS_MAN_NORMA_N8R2_CTG_6CM_cG62_CJW0",
       "cartridgeId": "CTG_6CM_cG62",
       "manufacturerId": "MAN_NORMA_N8R2",
       "primerHoleId": "HL_060",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "BRS_MAN_NORMA_N8R2_CTG_6ARC_cH92_U37D",
       "cartridgeId": "CTG_6ARC_cH92",
       "manufacturerId": "MAN_NORMA_N8R2",
       "primerHoleId": "HL_059",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "BRS_MAN_NORMA_N8R2_CTG_65PRC_cP02_OUF1",
       "cartridgeId": "CTG_65PRC_cP02",
       "manufacturerId": "MAN_NORMA_N8R2",
       "primerHoleId": "HL_080",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
-    },
-    {
-      "id": "BRS_MAN_HORNADY_JGR4_CTG_6CM_cG62_1GOC",
-      "cartridgeId": "CTG_6CM_cG62",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "primerHoleId": "HL_059",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "BRS_MAN_NOSLER_N9K4_CTG_65SWE_N6HA_KQT6",
       "cartridgeId": "CTG_65SWE_N6HA",
       "manufacturerId": "MAN_NOSLER_N9K4",
       "primerHoleId": "HL_080",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "BRS_MAN_NOSLER_N9K4_CTG_6DASH_N6H8_D4GH",
       "cartridgeId": "CTG_6DASH_N6H8",
       "manufacturerId": "MAN_NOSLER_N9K4",
       "primerHoleId": "HL_080",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "BRS_MAN_NOSLER_N9K4_CTG_6ARC_cH92_XLUD",
       "cartridgeId": "CTG_6ARC_cH92",
       "manufacturerId": "MAN_NOSLER_N9K4",
       "primerHoleId": "HL_080",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "BRS_MAN_NOSLER_N9K4_CTG_65CM_cN72_TZES",
       "cartridgeId": "CTG_65CM_cN72",
       "manufacturerId": "MAN_NOSLER_N9K4",
       "primerHoleId": "HL_080",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
-    },
-    {
-      "id": "BRS_MAN_HODGDON_H3V8_CTG_6CM_cG62_O6ZB",
-      "cartridgeId": "CTG_6CM_cG62",
-      "manufacturerId": "MAN_HODGDON_H3V8",
-      "primerHoleId": "HL_080",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "BRS_MAN_PETERSON_M7JT_CTG_65CM_cN72_GU79",
       "cartridgeId": "CTG_65CM_cN72",
       "manufacturerId": "MAN_PETERSON_M7JT",
       "primerHoleId": "HL_059",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "BRS_MAN_PETERSON_M7JT_CTG_6DASH_N6H8_8KJR",
       "cartridgeId": "CTG_6DASH_N6H8",
       "manufacturerId": "MAN_PETERSON_M7JT",
       "primerHoleId": "HL_060",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "BRS_MAN_PETERSON_M7JT_CTG_6ARC_cH92_J5YV",
       "cartridgeId": "CTG_6ARC_cH92",
       "manufacturerId": "MAN_PETERSON_M7JT",
       "primerHoleId": "HL_060",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "BRS_MAN_STARLINE_S9Z5_CTG_65CM_cN72_ERHV",
       "cartridgeId": "CTG_65CM_cN72",
       "manufacturerId": "MAN_STARLINE_S9Z5",
       "primerHoleId": "HL_060",
-      "primerPocketId": "PKT_SML",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "BRS_MAN_STARLINE_S9Z5_CTG_6ARC_cH92_A0PU",
       "cartridgeId": "CTG_6ARC_cH92",
       "manufacturerId": "MAN_STARLINE_S9Z5",
       "primerHoleId": "HL_080",
-      "primerPocketId": "PKT_LRG",
-      "needs_recheck": 0
+      "primerPocketId": "PKT_LRG"
+    },
+    {
+      "id": "BRS_MAN_NORMA_N8R2_CTG_300WSM_N3HH_H4Q4",
+      "cartridgeId": "CTG_300WSM_N3HH",
+      "manufacturerId": "MAN_NORMA_N8R2",
+      "primerHoleId": "HL_060",
+      "primerPocketId": "PKT_LRG"
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_224VALK_N2H5_LUXG",
+      "cartridgeId": "CTG_224VALK_N2H5",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML"
+    },
+    {
+      "id": "BRS_MAN_NOSLER_N9K4_CTG_223REM_cR82_6JRG",
+      "cartridgeId": "CTG_223REM_cR82",
+      "manufacturerId": "MAN_NOSLER_N9K4",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML"
     }
   ],
   "bullets": [
@@ -1780,8 +1469,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_B9K2_308_1680_168GRVLD_VOMA",
@@ -1801,8 +1489,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_B9K2_338_1240_124GRHYBRI_WG1H",
@@ -1822,8 +1509,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_B9K2_375_1400_140GRFLATB_HKIF",
@@ -1843,8 +1529,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_B9K2_308_1230_123GRBERGE_7KL6",
@@ -1864,8 +1549,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_B9K2_308_1580_158GRBERGE_AP1N",
@@ -1885,8 +1569,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_JGR4_308_1250_125GRHORNA_YYCV",
@@ -1906,8 +1589,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_S6Y3_308_1680_168GRSIERR_6QJD",
@@ -1927,8 +1609,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_B9K2_308_1850_185GRBERGE_53KE",
@@ -1948,8 +1629,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_JGR4_308_1420_142GRHORNA_3H8K",
@@ -1969,8 +1649,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_B9K2_308_1280_128GRFLATB_3GNI",
@@ -1990,8 +1669,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_JGR4_308_1400_140GRELDMA_QZ3B",
@@ -2011,8 +1689,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_JGR4_375_2250_225GRELDMA_V0TE",
@@ -2032,8 +1709,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_B9K2_308_1090_109GRFLATB_D9F7",
@@ -2053,8 +1729,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_B9K2_308_1230_123GRFLATB_UDUA",
@@ -2074,8 +1749,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_B9K2_243_1230_123GRLRHT_EUCG",
@@ -2095,8 +1769,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_JGR4_264_1450_145GRBT_ES72",
@@ -2116,8 +1789,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_JGR4_308_1680_168GRVMAX_RFVS",
@@ -2137,8 +1809,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_B9K2_308_1800_180GRHPBT_1TDO",
@@ -2158,8 +1829,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_JGR4_308_1750_175GRELDMA_FTH7",
@@ -2179,8 +1849,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_B9K2_308_1680_168GRFLATB_GJ3S",
@@ -2200,8 +1869,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_S6Y3_308_1250_125GRMATCH_RD7W",
@@ -2221,8 +1889,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_JGR4_277_1450_145GRELDMM_MGF2",
@@ -2242,8 +1909,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_B9K2_308_950_95GRFLATPO_8EZM",
@@ -2263,8 +1929,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_N9K4_308_1500_150GRSCOUR_VWFU",
@@ -2284,8 +1949,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_JGR4_308_1680_168GRFLATP_E3AV",
@@ -2305,8 +1969,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_JGR4_308_1450_145GRVMAX_TDV7",
@@ -2326,8 +1989,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_JGR4_308_1500_150GRELDX_ULO7",
@@ -2347,8 +2009,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_S6Y3_338_1750_175GRMATCH_G101",
@@ -2368,8 +2029,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_B9K2_277_1450_145GRFLATB_EH45",
@@ -2389,8 +2049,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_S6Y3_277_980_98GRMATCHK_50TK",
@@ -2410,8 +2069,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_JGR4_308_870_87GRELDMAX_WMNJ",
@@ -2431,8 +2089,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_S6Y3_243_760_76GRMATCHK_98K2",
@@ -2452,8 +2109,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_B9K2_308_1390_139GRFLATB_A9B6",
@@ -2473,8 +2129,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_B9K2_243_1200_120GRFLATB_C0D1",
@@ -2494,8 +2149,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_204_26_VG",
@@ -2515,8 +2169,7 @@
         "ix": 26.0,
         "iy": 26.0,
         "cg_from_base": 0.131
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_224_50_TTSX",
@@ -2536,8 +2189,7 @@
         "ix": 224.0,
         "iy": 0.224,
         "cg_from_base": 0.224
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_224_52_MB",
@@ -2557,8 +2209,7 @@
         "ix": 0.0065,
         "iy": 0.00023,
         "cg_from_base": 0.275
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_224_55_TSX",
@@ -2578,8 +2229,7 @@
         "ix": 0.224,
         "iy": 0.224,
         "cg_from_base": 0.224
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_224_62_TSX",
@@ -2599,8 +2249,7 @@
         "ix": 62.0,
         "iy": 62.0,
         "cg_from_base": 0.224
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_224_62_TTSX",
@@ -2620,8 +2269,7 @@
         "ix": 62.0,
         "iy": 0.224,
         "cg_from_base": 0.294
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_224_65_LRX",
@@ -2641,8 +2289,7 @@
         "ix": 65.0,
         "iy": 65.0,
         "cg_from_base": 0.045
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_224_69_MB",
@@ -2662,8 +2309,7 @@
         "ix": 69.0,
         "iy": 0.224,
         "cg_from_base": 0.196
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_224_70_TACTX",
@@ -2683,8 +2329,7 @@
         "ix": 0.0038,
         "iy": 0.0013,
         "cg_from_base": 0.44
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_224_77_LRX",
@@ -2704,8 +2349,7 @@
         "ix": 77.0,
         "iy": 77.0,
         "cg_from_base": 0.225
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_224_85_MB",
@@ -2725,8 +2369,7 @@
         "ix": 224.0,
         "iy": 224.0,
         "cg_from_base": 0.224
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_243_105_MB",
@@ -2746,8 +2389,7 @@
         "ix": 0.243,
         "iy": 0.243,
         "cg_from_base": 0.243
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_243_80_TTSX",
@@ -2767,8 +2409,7 @@
         "ix": 0.0083,
         "iy": 0.0004,
         "cg_from_base": 0.15
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_243_85_TSX",
@@ -2788,8 +2429,7 @@
         "ix": 3.55e-05,
         "iy": 4.45e-06,
         "cg_from_base": 0.65
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_243_95_LRX",
@@ -2809,8 +2449,7 @@
         "ix": 95.0,
         "iy": 0.243,
         "cg_from_base": 0.243
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_257_100_TSX",
@@ -2830,8 +2469,7 @@
         "ix": 0.257,
         "iy": 0.257,
         "cg_from_base": 0.44
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_257_101_LRX",
@@ -2851,8 +2489,7 @@
         "ix": 101.0,
         "iy": 101.0,
         "cg_from_base": 0.4
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_257_115_TSX",
@@ -2872,8 +2509,7 @@
         "ix": 25.0,
         "iy": 115.0,
         "cg_from_base": 0.249
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_257_117_LRX",
@@ -2893,8 +2529,7 @@
         "ix": 117.0,
         "iy": 117.0,
         "cg_from_base": 0.055
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_264_115_TACTX",
@@ -2914,8 +2549,7 @@
         "ix": 0.264,
         "iy": 0.264,
         "cg_from_base": 0.264
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_264_120_TTSX",
@@ -2935,8 +2569,7 @@
         "ix": 3.5e-05,
         "iy": 1.75e-05,
         "cg_from_base": 0.35
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_264_127_LRX",
@@ -2956,8 +2589,7 @@
         "ix": 127.0,
         "iy": 264.0,
         "cg_from_base": 0.468
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_264_130_TSX",
@@ -2977,8 +2609,7 @@
         "ix": 0.0125,
         "iy": 0.0025,
         "cg_from_base": 0.6
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_264_140_MB",
@@ -2998,8 +2629,7 @@
         "ix": 3.34,
         "iy": 5.66,
         "cg_from_base": 0.8
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_277_110_TTSX",
@@ -3019,8 +2649,7 @@
         "ix": 0.277,
         "iy": 0.277,
         "cg_from_base": 0.277
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_277_129_LRX",
@@ -3040,8 +2669,7 @@
         "ix": 0.00032,
         "iy": 0.00026,
         "cg_from_base": 0.38
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_277_130_TSX",
@@ -3061,8 +2689,7 @@
         "ix": 130.0,
         "iy": 130.0,
         "cg_from_base": 0.277
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_284_139_LRX",
@@ -3082,8 +2709,7 @@
         "ix": 284.0,
         "iy": 139.0,
         "cg_from_base": 0.038
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_284_140_TTSX",
@@ -3103,8 +2729,7 @@
         "ix": 0.412,
         "iy": 0.284,
         "cg_from_base": 0.0112
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_284_145_LRX",
@@ -3124,8 +2749,7 @@
         "ix": 284.0,
         "iy": 284.0,
         "cg_from_base": 0.486
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_284_168_LRX",
@@ -3145,8 +2769,7 @@
         "ix": 0.284,
         "iy": 0.284,
         "cg_from_base": 0.55
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_284_171_MB",
@@ -3166,8 +2789,7 @@
         "ix": 171.0,
         "iy": 0.284,
         "cg_from_base": 0.05
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_308_110_TACTX",
@@ -3187,8 +2809,7 @@
         "ix": 308.0,
         "iy": 110.0,
         "cg_from_base": 0.015
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_308_130_TTSX",
@@ -3208,8 +2829,7 @@
         "ix": 130.0,
         "iy": 0.308,
         "cg_from_base": 0.35
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_308_150_TTSX",
@@ -3229,8 +2849,7 @@
         "ix": 3.17,
         "iy": 4.25,
         "cg_from_base": 0.85
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_308_168_TSX",
@@ -3250,8 +2869,7 @@
         "ix": 168.0,
         "iy": 0.0251,
         "cg_from_base": 0.55
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_308_175_LRX",
@@ -3271,8 +2889,7 @@
         "ix": 175.0,
         "iy": 175.0,
         "cg_from_base": 0.07
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_308_175_PMR",
@@ -3292,8 +2909,7 @@
         "ix": 175.0,
         "iy": 175.0,
         "cg_from_base": 0.521
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_308_200_LRX",
@@ -3313,8 +2929,7 @@
         "ix": 200.0,
         "iy": 200.0,
         "cg_from_base": 0.045
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_308_212_LRXBR",
@@ -3334,8 +2949,7 @@
         "ix": 0.027,
         "iy": 0.0018,
         "cg_from_base": 0.64
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_338_210_TTSX",
@@ -3355,8 +2969,7 @@
         "ix": 210.0,
         "iy": 210.0,
         "cg_from_base": 0.263
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_338_225_TTSX",
@@ -3376,8 +2989,7 @@
         "ix": 0.514,
         "iy": 0.338,
         "cg_from_base": 0.338
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_338_250_LRX",
@@ -3397,8 +3009,7 @@
         "ix": 250.0,
         "iy": 250.0,
         "cg_from_base": 0.602
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_338_265_LRX",
@@ -3418,8 +3029,7 @@
         "ix": 4.45,
         "iy": 11.6,
         "cg_from_base": 1.2
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_338_280_LRX",
@@ -3439,8 +3049,7 @@
         "ix": 280.0,
         "iy": 280.0,
         "cg_from_base": 0.667
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_UNK_115_TSX_7709",
@@ -3460,8 +3069,7 @@
         "ix": 115.0,
         "iy": 0.257,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_UNK_145_MATCHB_3BE4",
@@ -3481,8 +3089,7 @@
         "ix": 0.264,
         "iy": 0.264,
         "cg_from_base": 0.264
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_UNK_200_LX_C169",
@@ -3502,8 +3109,7 @@
         "ix": 200.0,
         "iy": 0.546,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_UNK_208_LRX_C7D1",
@@ -3523,8 +3129,7 @@
         "ix": 208.0,
         "iy": 0.308,
         "cg_from_base": 0.633
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BARNES_UNK_260_VORTR_76D4",
@@ -3544,8 +3149,7 @@
         "ix": 260.0,
         "iy": null,
         "cg_from_base": 0.028
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_172_25_FBVAR",
@@ -3565,8 +3169,7 @@
         "ix": 0.172,
         "iy": 0.172,
         "cg_from_base": 0.172
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_204_35_FBVAR",
@@ -3586,8 +3189,7 @@
         "ix": 35.0,
         "iy": 0.204,
         "cg_from_base": 0.179
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_204_40_BTVAR",
@@ -3607,8 +3209,7 @@
         "ix": 9.43e-08,
         "iy": 2.32e-05,
         "cg_from_base": 0.227
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_224_30_FBVAR",
@@ -3628,8 +3229,7 @@
         "ix": 5.3e-13,
         "iy": 2.8e-12,
         "cg_from_base": 0.25
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_224_40_FBVAR",
@@ -3649,8 +3249,7 @@
         "ix": 4.52e-10,
         "iy": 6.31e-11,
         "cg_from_base": 0.41
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_224_50_FBVAR",
@@ -3670,8 +3269,7 @@
         "ix": 50.0,
         "iy": 50.0,
         "cg_from_base": 0.014
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_224_52_FBTGT",
@@ -3691,8 +3289,7 @@
         "ix": 1.0,
         "iy": 0.224,
         "cg_from_base": 0.476
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_224_52_FBVAR",
@@ -3712,8 +3309,7 @@
         "ix": 0.224,
         "iy": 224.0,
         "cg_from_base": 0.367
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_224_55_FBTGT",
@@ -3733,8 +3329,7 @@
         "ix": 55.0,
         "iy": 0.224,
         "cg_from_base": 0.033
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_224_55_FBVAR",
@@ -3754,8 +3349,7 @@
         "ix": 55.0,
         "iy": 0.224,
         "cg_from_base": 0.235
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_224_60_FBVAR",
@@ -3775,8 +3369,7 @@
         "ix": 0.224,
         "iy": 0.224,
         "cg_from_base": 0.271
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_224_64_FBVAR",
@@ -3796,8 +3389,7 @@
         "ix": 64.0,
         "iy": 64.0,
         "cg_from_base": 0.255
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_224_70_VLDT",
@@ -3817,8 +3409,7 @@
         "ix": 0.224,
         "iy": 0.224,
         "cg_from_base": 0.068
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_224_77_OTM",
@@ -3838,8 +3429,7 @@
         "ix": 224.0,
         "iy": 0.224,
         "cg_from_base": 0.224
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_224_82_LRBT",
@@ -3859,8 +3449,7 @@
         "ix": 0.0001,
         "iy": 4.5e-06,
         "cg_from_base": 0.41
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_224_90_VLDT",
@@ -3880,8 +3469,7 @@
         "ix": 100.0,
         "iy": 224.0,
         "cg_from_base": 0.622
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_243_105_BTGT",
@@ -3901,8 +3489,7 @@
         "ix": 2.5,
         "iy": 3.5,
         "cg_from_base": 0.55
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_243_105_VLDH",
@@ -3922,8 +3509,7 @@
         "ix": 105.0,
         "iy": 6.0,
         "cg_from_base": 0.05
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_243_105_VLDT",
@@ -3943,8 +3529,7 @@
         "ix": 0.243,
         "iy": 105.0,
         "cg_from_base": 0.042
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_243_108_BTGT",
@@ -3964,8 +3549,7 @@
         "ix": 3.84,
         "iy": 2.14,
         "cg_from_base": 0.63
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_243_108_EH",
@@ -3985,8 +3569,7 @@
         "ix": 0.243,
         "iy": 0.243,
         "cg_from_base": 0.058
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_243_109_LRHT",
@@ -4006,8 +3589,7 @@
         "ix": 109.0,
         "iy": 0.243,
         "cg_from_base": 0.292
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_243_60_FBVAR",
@@ -4027,8 +3609,7 @@
         "ix": 60.0,
         "iy": 60.0,
         "cg_from_base": 0.025
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_243_64_FBVAR",
@@ -4048,8 +3629,7 @@
         "ix": 64.0,
         "iy": 64.0,
         "cg_from_base": 0.044
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_243_65_BTGT",
@@ -4069,8 +3649,7 @@
         "ix": 65.0,
         "iy": 65.0,
         "cg_from_base": 0.015
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_243_68_FBTGT",
@@ -4090,8 +3669,7 @@
         "ix": 68.0,
         "iy": 0.243,
         "cg_from_base": 0.03
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_243_70_FBVAR",
@@ -4111,8 +3689,7 @@
         "ix": 70.0,
         "iy": 0.243,
         "cg_from_base": 0.243
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_243_80_BTVAR",
@@ -4132,8 +3709,7 @@
         "ix": 80.0,
         "iy": 0.243,
         "cg_from_base": 0.3
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_243_80_FBVAR",
@@ -4153,8 +3729,7 @@
         "ix": 243.0,
         "iy": 80.0,
         "cg_from_base": 0.05
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_243_87_VLDH",
@@ -4174,8 +3749,7 @@
         "ix": 87.0,
         "iy": 87.0,
         "cg_from_base": 0.258
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_243_88_FBVAR",
@@ -4195,8 +3769,7 @@
         "ix": 88.0,
         "iy": 0.243,
         "cg_from_base": 0.27
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_243_90_BTGT",
@@ -4216,8 +3789,7 @@
         "ix": null,
         "iy": 90.0,
         "cg_from_base": 0.04
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_243_95_CH",
@@ -4237,8 +3809,7 @@
         "ix": 95.0,
         "iy": 95.0,
         "cg_from_base": 0.082
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_243_95_VLDH",
@@ -4258,8 +3829,7 @@
         "ix": 0.0125,
         "iy": 0.00625,
         "cg_from_base": 0.35
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_243_95_VLDT",
@@ -4279,8 +3849,7 @@
         "ix": 95.0,
         "iy": 0.243,
         "cg_from_base": 0.245
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_257_115_VLDH",
@@ -4300,8 +3869,7 @@
         "ix": 100.0,
         "iy": 115.0,
         "cg_from_base": 0.215
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_257_115_VLDT",
@@ -4321,8 +3889,7 @@
         "ix": 115.0,
         "iy": 257.0,
         "cg_from_base": 0.065
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_257_133_EH",
@@ -4342,8 +3909,7 @@
         "ix": 133.0,
         "iy": 0.257,
         "cg_from_base": 0.257
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_257_87_FBVAR",
@@ -4363,8 +3929,7 @@
         "ix": 87.0,
         "iy": 0.257,
         "cg_from_base": 0.235
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_264_100_FBVAR",
@@ -4384,8 +3949,7 @@
         "ix": 3.6e-12,
         "iy": 2.8e-11,
         "cg_from_base": 0.4
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_264_120_BTGT",
@@ -4405,8 +3969,7 @@
         "ix": 0.264,
         "iy": 6.5,
         "cg_from_base": 0.235
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_264_130_VLDH",
@@ -4426,8 +3989,7 @@
         "ix": 0.264,
         "iy": 264.0,
         "cg_from_base": 0.282
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_264_130_VLDT",
@@ -4447,8 +4009,7 @@
         "ix": 1.31,
         "iy": 0.264,
         "cg_from_base": 0.719
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_264_135_CH",
@@ -4468,8 +4029,7 @@
         "ix": 264.0,
         "iy": 264.0,
         "cg_from_base": 0.264
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_264_140_VLDH",
@@ -4489,8 +4049,7 @@
         "ix": 140.0,
         "iy": 0.264,
         "cg_from_base": 0.313
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_264_140_VLDT",
@@ -4510,8 +4069,7 @@
         "ix": 0.264,
         "iy": 0.264,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_264_144_LRHT",
@@ -4531,8 +4089,7 @@
         "ix": 2.34e-11,
         "iy": 3.12e-13,
         "cg_from_base": 1.16
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_264_156_EH",
@@ -4552,8 +4109,7 @@
         "ix": 264.0,
         "iy": 264.0,
         "cg_from_base": 0.347
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_277_130_CH",
@@ -4573,8 +4129,7 @@
         "ix": 130.0,
         "iy": 0.277,
         "cg_from_base": 0.09
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_277_130_VLDH",
@@ -4594,8 +4149,7 @@
         "ix": 130.0,
         "iy": 1.173,
         "cg_from_base": 0.265
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_277_140_CH",
@@ -4615,8 +4169,7 @@
         "ix": null,
         "iy": 0.277,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_277_140_VLDH",
@@ -4636,8 +4189,7 @@
         "ix": 0.0006,
         "iy": 2.45e-05,
         "cg_from_base": 0.64
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_277_150_VLDH",
@@ -4657,8 +4209,7 @@
         "ix": 0.15,
         "iy": 0.277,
         "cg_from_base": 0.265
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_277_170_EH",
@@ -4678,8 +4229,7 @@
         "ix": 277.0,
         "iy": 0.277,
         "cg_from_base": 0.76
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_284_140_VLDH",
@@ -4699,8 +4249,7 @@
         "ix": null,
         "iy": 284.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_284_168_CH",
@@ -4720,8 +4269,7 @@
         "ix": 0.284,
         "iy": 284.0,
         "cg_from_base": 0.015
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_284_168_VLDH",
@@ -4741,8 +4289,7 @@
         "ix": 168.0,
         "iy": 284.0,
         "cg_from_base": 0.62
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_284_175_EH",
@@ -4762,8 +4309,7 @@
         "ix": null,
         "iy": 0.284,
         "cg_from_base": 0.03
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_284_180_VLDH",
@@ -4783,8 +4329,7 @@
         "ix": 180.0,
         "iy": 284.0,
         "cg_from_base": 0.05
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_284_180_VLDT",
@@ -4804,8 +4349,7 @@
         "ix": 180.0,
         "iy": 0.284,
         "cg_from_base": 0.22
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_284_190_LRHT",
@@ -4825,8 +4369,7 @@
         "ix": 0.284,
         "iy": 190.0,
         "cg_from_base": 0.284
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_308_110_FBVAR",
@@ -4846,8 +4389,7 @@
         "ix": 0.22,
         "iy": 0.45,
         "cg_from_base": 0.12
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_308_115_FBTGT",
@@ -4867,8 +4409,7 @@
         "ix": 115.0,
         "iy": 115.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_308_125_FBVAR",
@@ -4888,8 +4429,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": 0.085
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_308_135_FBTGT",
@@ -4909,8 +4449,7 @@
         "ix": 135.0,
         "iy": 135.0,
         "cg_from_base": 0.027
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_308_150_FBTGT",
@@ -4930,8 +4469,7 @@
         "ix": 6.0,
         "iy": 7.82,
         "cg_from_base": 0.532
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_308_155.5_FBT",
@@ -4951,8 +4489,7 @@
         "ix": 155.5,
         "iy": 155.5,
         "cg_from_base": 0.248
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_308_155_HYBT",
@@ -4972,8 +4509,7 @@
         "ix": 0.0216,
         "iy": 0.0153,
         "cg_from_base": 0.63
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_308_155_VLDT",
@@ -4993,8 +4529,7 @@
         "ix": 2.53,
         "iy": 6.17,
         "cg_from_base": 0.62
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_308_168_CH",
@@ -5014,8 +4549,7 @@
         "ix": 3.2325,
         "iy": 4.1128,
         "cg_from_base": 0.6457
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_308_168_HYBT",
@@ -5035,8 +4569,7 @@
         "ix": 168.0,
         "iy": 168.0,
         "cg_from_base": 0.3
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_308_175_OTM",
@@ -5056,8 +4589,7 @@
         "ix": 175.0,
         "iy": 175.0,
         "cg_from_base": 0.075
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_308_185_CH",
@@ -5077,8 +4609,7 @@
         "ix": null,
         "iy": 7.62,
         "cg_from_base": 0.28
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_308_185_VLDH",
@@ -5098,8 +4629,7 @@
         "ix": 185.0,
         "iy": 185.0,
         "cg_from_base": 0.558
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_308_185_VLDT",
@@ -5119,8 +4649,7 @@
         "ix": 185.0,
         "iy": 0.308,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_308_190_VLDH",
@@ -5140,8 +4669,7 @@
         "ix": 190.0,
         "iy": 11.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_308_190_VLDT",
@@ -5161,8 +4689,7 @@
         "ix": null,
         "iy": 0.308,
         "cg_from_base": 0.065
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_308_208_LRHT",
@@ -5182,8 +4709,7 @@
         "ix": 0.308,
         "iy": 0.308,
         "cg_from_base": 0.048
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_308_220_LRHT",
@@ -5203,8 +4729,7 @@
         "ix": 0.0176,
         "iy": 0.0034,
         "cg_from_base": 0.146
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_308_230_HYOTM",
@@ -5224,8 +4749,7 @@
         "ix": 230.0,
         "iy": 230.0,
         "cg_from_base": 0.045
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_308_245_LRHT",
@@ -5245,8 +4769,7 @@
         "ix": 245.0,
         "iy": 0.308,
         "cg_from_base": 0.433
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_338_250_EH",
@@ -5266,8 +4789,7 @@
         "ix": 250.0,
         "iy": 338.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_338_250_OTM",
@@ -5287,8 +4809,7 @@
         "ix": 250.0,
         "iy": 338.0,
         "cg_from_base": 0.33
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_338_300_EH",
@@ -5308,8 +4829,7 @@
         "ix": 300.0,
         "iy": 1.0,
         "cg_from_base": 0.956
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_BERGER_338_300_OTM",
@@ -5329,8 +4849,7 @@
         "ix": 33556.0,
         "iy": 2725.0,
         "cg_from_base": 0.31
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_224_35_NTX",
@@ -5350,8 +4869,7 @@
         "ix": 224.0,
         "iy": 35.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_224_40_VMAX",
@@ -5371,8 +4889,7 @@
         "ix": 40.0,
         "iy": 40.0,
         "cg_from_base": 0.015
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_224_50_VMAX",
@@ -5392,8 +4909,7 @@
         "ix": 50.0,
         "iy": 50.0,
         "cg_from_base": 0.248
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_224_52_BTHP",
@@ -5413,8 +4929,7 @@
         "ix": 3.1,
         "iy": 4.5,
         "cg_from_base": 0.56
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_224_53_VMAX",
@@ -5434,8 +4949,7 @@
         "ix": 0.0053,
         "iy": 0.0005,
         "cg_from_base": 0.35
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_224_55_VMAX",
@@ -5455,8 +4969,7 @@
         "ix": 0.035,
         "iy": 0.0125,
         "cg_from_base": 0.44
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_224_60_VMAX",
@@ -5476,8 +4989,7 @@
         "ix": 60.0,
         "iy": 0.224,
         "cg_from_base": 0.224
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_224_62_ELDVT",
@@ -5497,8 +5009,7 @@
         "ix": 62.0,
         "iy": 62.0,
         "cg_from_base": 0.02
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_224_73_ELDM",
@@ -5518,8 +5029,7 @@
         "ix": 0.224,
         "iy": 224.0,
         "cg_from_base": 0.398
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_224_75_BTHP",
@@ -5539,8 +5049,7 @@
         "ix": 75.0,
         "iy": 224.0,
         "cg_from_base": 0.14
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_224_75_ELDM",
@@ -5560,8 +5069,7 @@
         "ix": 0.224,
         "iy": 224.0,
         "cg_from_base": 0.065
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_224_80_ELDM",
@@ -5581,8 +5089,7 @@
         "ix": 0.0018,
         "iy": 0.0003,
         "cg_from_base": 0.535
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_224_88_ELDM",
@@ -5602,8 +5109,7 @@
         "ix": 0.224,
         "iy": 88.0,
         "cg_from_base": 0.013
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_243_103_ELDX",
@@ -5623,8 +5129,7 @@
         "ix": 103.0,
         "iy": 103.0,
         "cg_from_base": 0.512
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_243_105_BTHP",
@@ -5644,8 +5149,7 @@
         "ix": 0.0036,
         "iy": 0.0104,
         "cg_from_base": 0.475
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_243_108_ELDM",
@@ -5665,8 +5169,7 @@
         "ix": 24561.0,
         "iy": 108.0,
         "cg_from_base": 0.088
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_243_110_ATIP",
@@ -5686,8 +5189,7 @@
         "ix": 0.243,
         "iy": 110.0,
         "cg_from_base": 0.046
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_243_58_VMAX",
@@ -5707,8 +5209,7 @@
         "ix": 8.44e-09,
         "iy": 1.43e-07,
         "cg_from_base": 0.38
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_243_75_VMAX",
@@ -5728,8 +5229,7 @@
         "ix": 75.0,
         "iy": 75.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_243_80_ELDVT",
@@ -5749,8 +5249,7 @@
         "ix": 4.1,
         "iy": 2.8,
         "cg_from_base": 0.33
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_243_87_VMAX",
@@ -5770,8 +5269,7 @@
         "ix": 0.00523,
         "iy": 0.00422,
         "cg_from_base": 0.32
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_243_90_ELDX",
@@ -5791,8 +5289,7 @@
         "ix": 90.0,
         "iy": 0.243,
         "cg_from_base": 0.066
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_264_100_ELDM",
@@ -5812,8 +5309,7 @@
         "ix": 0.0144,
         "iy": 0.00235,
         "cg_from_base": 0.433
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_264_100_ELDVT",
@@ -5833,8 +5329,7 @@
         "ix": 100.0,
         "iy": 0.264,
         "cg_from_base": 0.045
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_264_120_ELDM",
@@ -5854,8 +5349,7 @@
         "ix": 120.0,
         "iy": 0.264,
         "cg_from_base": 0.486
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_264_123_ELDM",
@@ -5875,8 +5369,7 @@
         "ix": 123.0,
         "iy": 0.264,
         "cg_from_base": 0.5
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_264_130_ELDM",
@@ -5896,8 +5389,7 @@
         "ix": 264.0,
         "iy": 130.0,
         "cg_from_base": 0.554
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_264_140_ELDM",
@@ -5917,8 +5409,7 @@
         "ix": 0.264,
         "iy": 264.0,
         "cg_from_base": 0.02
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_264_143_ELDX",
@@ -5938,8 +5429,7 @@
         "ix": 143.0,
         "iy": 143.0,
         "cg_from_base": 0.545
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_264_147_ELDM",
@@ -5959,8 +5449,7 @@
         "ix": 0.264,
         "iy": 0.264,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_264_153_ATIP",
@@ -5980,8 +5469,7 @@
         "ix": 264.0,
         "iy": 264.0,
         "cg_from_base": 0.047
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_284_150_ELDX",
@@ -6001,8 +5489,7 @@
         "ix": 150.0,
         "iy": 150.0,
         "cg_from_base": 0.574
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_284_162_ELDM",
@@ -6022,8 +5509,7 @@
         "ix": 0.0135,
         "iy": 0.00704,
         "cg_from_base": 0.047
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_284_162_ELDX",
@@ -6043,8 +5529,7 @@
         "ix": 0.284,
         "iy": 162.0,
         "cg_from_base": 0.284
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_284_166_ATIP",
@@ -6064,8 +5549,7 @@
         "ix": 284.0,
         "iy": 284.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_284_175_ELDX",
@@ -6085,8 +5569,7 @@
         "ix": null,
         "iy": 0.284,
         "cg_from_base": 0.689
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_284_180_ELDM",
@@ -6106,8 +5589,7 @@
         "ix": 0.284,
         "iy": 180.0,
         "cg_from_base": 0.401
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_308_150_CX",
@@ -6127,8 +5609,7 @@
         "ix": 150.0,
         "iy": null,
         "cg_from_base": 0.043
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_308_155_ELDM",
@@ -6148,8 +5629,7 @@
         "ix": 308.0,
         "iy": 155.0,
         "cg_from_base": 0.07
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_308_168_BTHP",
@@ -6169,8 +5649,7 @@
         "ix": 168.0,
         "iy": 168.0,
         "cg_from_base": 0.21
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_308_168_ELDM",
@@ -6190,8 +5669,7 @@
         "ix": 168.0,
         "iy": 168.0,
         "cg_from_base": 0.048
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_308_174_ELDVT",
@@ -6211,8 +5689,7 @@
         "ix": 174.0,
         "iy": 174.0,
         "cg_from_base": 0.135
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_308_178_ELDM",
@@ -6232,8 +5709,7 @@
         "ix": 178.0,
         "iy": 178.0,
         "cg_from_base": 0.055
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_308_178_ELDX",
@@ -6253,8 +5729,7 @@
         "ix": 178.0,
         "iy": 178.0,
         "cg_from_base": 0.485
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_308_195_ELDM",
@@ -6274,8 +5749,7 @@
         "ix": 0.308,
         "iy": 195.0,
         "cg_from_base": 0.584
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_308_200_ELDX",
@@ -6295,8 +5769,7 @@
         "ix": 4.95,
         "iy": 3.55,
         "cg_from_base": 0.35
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_308_208_ELDM",
@@ -6316,8 +5789,7 @@
         "ix": 208.0,
         "iy": 0.308,
         "cg_from_base": 0.69
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_308_212_ELDX",
@@ -6337,8 +5809,7 @@
         "ix": 212.0,
         "iy": 212.0,
         "cg_from_base": 0.673
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_308_225_ELDM",
@@ -6358,8 +5829,7 @@
         "ix": 0.308,
         "iy": 225.0,
         "cg_from_base": 0.777
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_308_230_ATIP",
@@ -6379,8 +5849,7 @@
         "ix": 3091.0,
         "iy": 230.0,
         "cg_from_base": 0.823
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_338_230_ELDM",
@@ -6400,8 +5869,7 @@
         "ix": 0.123,
         "iy": 0.456,
         "cg_from_base": 1.35
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_338_230_ELDX",
@@ -6421,8 +5889,7 @@
         "ix": null,
         "iy": 230.0,
         "cg_from_base": 0.135
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_338_270_ELDM",
@@ -6442,8 +5909,7 @@
         "ix": 270.0,
         "iy": 270.0,
         "cg_from_base": 0.829
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_338_270_ELDX",
@@ -6463,8 +5929,7 @@
         "ix": 270.0,
         "iy": 270.0,
         "cg_from_base": 0.345
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_338_285_ELDM",
@@ -6484,8 +5949,7 @@
         "ix": 285.0,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_100_BTSP_0D3B",
@@ -6505,8 +5969,7 @@
         "ix": 100.0,
         "iy": null,
         "cg_from_base": 0.234
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_100_CX_84CB",
@@ -6526,8 +5989,7 @@
         "ix": 1.0,
         "iy": 0.264,
         "cg_from_base": 0.264
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_100_INTERL_6320",
@@ -6547,8 +6009,7 @@
         "ix": 100.0,
         "iy": 0.243,
         "cg_from_base": 0.015
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_105_FMJ_BF14",
@@ -6568,8 +6029,7 @@
         "ix": 105.0,
         "iy": null,
         "cg_from_base": 0.243
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_110_CX_A2C2",
@@ -6589,8 +6049,7 @@
         "ix": 110.0,
         "iy": 110.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_110_ELDX_349D",
@@ -6610,8 +6069,7 @@
         "ix": 110.0,
         "iy": 110.0,
         "cg_from_base": 0.028
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_110_FMJ_6C01",
@@ -6631,8 +6089,7 @@
         "ix": 110.0,
         "iy": 110.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_110_FTX_4AE4",
@@ -6652,8 +6109,7 @@
         "ix": 110.0,
         "iy": 110.0,
         "cg_from_base": 0.055
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_110_VMAX_DD92",
@@ -6673,8 +6129,7 @@
         "ix": 110.0,
         "iy": 0.308,
         "cg_from_base": 0.22
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_112_CX_AF45",
@@ -6694,8 +6149,7 @@
         "ix": 112.0,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_117_SST_804D",
@@ -6715,8 +6169,7 @@
         "ix": 117.0,
         "iy": 117.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_120_SST_1DBD",
@@ -6736,8 +6189,7 @@
         "ix": null,
         "iy": 0.277,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_123_FMJ_2BF3",
@@ -6757,8 +6209,7 @@
         "ix": 0.311,
         "iy": 0.311,
         "cg_from_base": 0.311
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_123_SST_A23C",
@@ -6778,8 +6229,7 @@
         "ix": 123.0,
         "iy": 0.264,
         "cg_from_base": 0.045
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_125_FMJ_8B15",
@@ -6799,8 +6249,7 @@
         "ix": 125.0,
         "iy": null,
         "cg_from_base": 0.308
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_125_HPMATC_B6D4",
@@ -6820,8 +6269,7 @@
         "ix": 125.0,
         "iy": 0.308,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_125_SST_11AE",
@@ -6841,8 +6289,7 @@
         "ix": 125.0,
         "iy": null,
         "cg_from_base": 0.08
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_128_BOXCOU_F2CF",
@@ -6862,8 +6309,7 @@
         "ix": 128.0,
         "iy": 128.0,
         "cg_from_base": 0.26
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_128_ELDX_AB6D",
@@ -6883,8 +6329,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": 0.257
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_129_INTERL_9A12",
@@ -6904,8 +6349,7 @@
         "ix": 129.0,
         "iy": 0.264,
         "cg_from_base": 0.247
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_129_SP_4B87",
@@ -6925,8 +6369,7 @@
         "ix": 264.0,
         "iy": 0.264,
         "cg_from_base": 0.046
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_129_SST_A3AA",
@@ -6946,8 +6389,7 @@
         "ix": 0.264,
         "iy": 0.264,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_130_CX_EF59",
@@ -6967,8 +6409,7 @@
         "ix": 130.0,
         "iy": 0.264,
         "cg_from_base": 0.489
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_130_INTERL_143A",
@@ -6988,8 +6429,7 @@
         "ix": 130.0,
         "iy": 0.277,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_130_MONOFL_E7D8",
@@ -7009,8 +6449,7 @@
         "ix": 130.0,
         "iy": 130.0,
         "cg_from_base": 0.128
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_130_SST_20B5",
@@ -7030,8 +6469,7 @@
         "ix": null,
         "iy": 130.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_134_ELDMAT_91F4",
@@ -7051,8 +6489,7 @@
         "ix": 0.257,
         "iy": null,
         "cg_from_base": 0.325
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_134_ELD_1748",
@@ -7072,8 +6509,7 @@
         "ix": 134.0,
         "iy": null,
         "cg_from_base": 0.265
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_135_FTX_CABB",
@@ -7093,8 +6529,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_139_BTSP_4627",
@@ -7114,8 +6549,7 @@
         "ix": 139.0,
         "iy": 139.0,
         "cg_from_base": 0.045
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_139_CX_C25E",
@@ -7135,8 +6569,7 @@
         "ix": 0.284,
         "iy": 7.0,
         "cg_from_base": 0.04
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_139_INTERL_D8F0",
@@ -7156,8 +6589,7 @@
         "ix": 0.284,
         "iy": 284.0,
         "cg_from_base": 0.045
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_139_SST_8942",
@@ -7177,8 +6609,7 @@
         "ix": 284.0,
         "iy": 284.0,
         "cg_from_base": 0.284
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_140_BTHPMA_5FF7",
@@ -7198,8 +6629,7 @@
         "ix": null,
         "iy": 0.264,
         "cg_from_base": 0.46
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_140_BTHP_6F8E",
@@ -7219,8 +6649,7 @@
         "ix": null,
         "iy": 264.0,
         "cg_from_base": 0.012
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_140_G_2F1C",
@@ -7240,8 +6669,7 @@
         "ix": 264.0,
         "iy": 0.264,
         "cg_from_base": 0.262
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_140_INTERL_3712",
@@ -7261,8 +6689,7 @@
         "ix": 0.277,
         "iy": 0.277,
         "cg_from_base": 0.487
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_140_ITEM_FCF3",
@@ -7282,8 +6709,7 @@
         "ix": null,
         "iy": 0.277,
         "cg_from_base": 0.032
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_140_MONOFL_AA80",
@@ -7303,8 +6729,7 @@
         "ix": 140.0,
         "iy": null,
         "cg_from_base": 0.23
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_140_SST_7953",
@@ -7324,8 +6749,7 @@
         "ix": 264.0,
         "iy": 264.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_145_ELDX_812E",
@@ -7345,8 +6769,7 @@
         "ix": 0.277,
         "iy": 0.277,
         "cg_from_base": 0.255
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_15.5_NTX_56F0",
@@ -7366,8 +6789,7 @@
         "ix": 15.5,
         "iy": 15.5,
         "cg_from_base": 0.172
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_150_FTX_B9D8",
@@ -7387,8 +6809,7 @@
         "ix": 150.0,
         "iy": 150.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_150_G_1E2A",
@@ -7408,8 +6829,7 @@
         "ix": 150.0,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_150_INTERL_4C9F",
@@ -7429,8 +6849,7 @@
         "ix": 150.0,
         "iy": null,
         "cg_from_base": 0.035
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_150_RN_D908",
@@ -7450,8 +6869,7 @@
         "ix": null,
         "iy": 0.308,
         "cg_from_base": 0.045
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_150_SEC_BC5C",
@@ -7471,8 +6889,7 @@
         "ix": null,
         "iy": 150.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_150_SP_C677",
@@ -7492,8 +6909,7 @@
         "ix": 150.0,
         "iy": 308.0,
         "cg_from_base": 0.23
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_150_SST_AEE5",
@@ -7513,8 +6929,7 @@
         "ix": 150.0,
         "iy": 150.0,
         "cg_from_base": 0.038
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_154_INTERL_4FB2",
@@ -7534,8 +6949,7 @@
         "ix": 284.0,
         "iy": 284.0,
         "cg_from_base": 0.015
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_154_SST_6F9B",
@@ -7555,8 +6969,7 @@
         "ix": 154.0,
         "iy": 154.0,
         "cg_from_base": 0.03
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_155_AMAX_21AE",
@@ -7576,8 +6989,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_155_BTHPMA_4ED2",
@@ -7597,8 +7009,7 @@
         "ix": 155.0,
         "iy": 1000.0,
         "cg_from_base": 0.055
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_155_FTX_C3C4",
@@ -7618,8 +7029,7 @@
         "ix": 7.82,
         "iy": 155.0,
         "cg_from_base": 0.033
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_160_CX_7633",
@@ -7639,8 +7049,7 @@
         "ix": 160.0,
         "iy": 160.0,
         "cg_from_base": 0.5
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_160_FTX_574E",
@@ -7660,8 +7069,7 @@
         "ix": 160.0,
         "iy": 160.0,
         "cg_from_base": 0.55
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_162_SEC_2577",
@@ -7681,8 +7089,7 @@
         "ix": 0.284,
         "iy": 284.0,
         "cg_from_base": 0.55
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_162_SST_D23B",
@@ -7702,8 +7109,7 @@
         "ix": 162.0,
         "iy": 162.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_165_CX_16B9",
@@ -7723,8 +7129,7 @@
         "ix": null,
         "iy": 5.0,
         "cg_from_base": 0.07
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_165_INTERL_1E18",
@@ -7744,8 +7149,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_165_SEC_19F5",
@@ -7765,8 +7169,7 @@
         "ix": 165.0,
         "iy": 165.0,
         "cg_from_base": 0.045
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_165_SST_5AB9",
@@ -7786,8 +7189,7 @@
         "ix": 0.308,
         "iy": 165.0,
         "cg_from_base": 0.248
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_168_AMAX_531E",
@@ -7807,8 +7209,7 @@
         "ix": 168.0,
         "iy": 168.0,
         "cg_from_base": 0.058
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_170_MONOFL_7A82",
@@ -7828,8 +7229,7 @@
         "ix": 170.0,
         "iy": 170.0,
         "cg_from_base": 0.015
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_174_G_E2CD",
@@ -7849,8 +7249,7 @@
         "ix": 174.0,
         "iy": null,
         "cg_from_base": 0.014
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_175_FLEXLO_BD59",
@@ -7870,8 +7269,7 @@
         "ix": null,
         "iy": 284.0,
         "cg_from_base": 0.33
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_175_HPMATC_3D4F",
@@ -7891,8 +7289,7 @@
         "ix": 175.0,
         "iy": 175.0,
         "cg_from_base": 0.036
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_175_HP_0EE8",
@@ -7912,8 +7309,7 @@
         "ix": null,
         "iy": 0.284,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_175_SUBX_E477",
@@ -7933,8 +7329,7 @@
         "ix": 175.0,
         "iy": 175.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_178_BTHPMA_7B22",
@@ -7954,8 +7349,7 @@
         "ix": 178.0,
         "iy": 2600.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_178_BTHP_DEED",
@@ -7975,8 +7369,7 @@
         "ix": null,
         "iy": 2600.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_178_SEC_F098",
@@ -7996,8 +7389,7 @@
         "ix": 178.0,
         "iy": 0.308,
         "cg_from_base": 0.056
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_17_VMAX_C339",
@@ -8017,8 +7409,7 @@
         "ix": 0.172,
         "iy": 17.0,
         "cg_from_base": 0.172
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_180_BTSP_48ED",
@@ -8038,8 +7429,7 @@
         "ix": 3072.0,
         "iy": 180.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_180_CX_FDEF",
@@ -8059,8 +7449,7 @@
         "ix": 180.0,
         "iy": 180.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_180_INTERL_16A1",
@@ -8080,8 +7469,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_180_SST_D161",
@@ -8101,8 +7489,7 @@
         "ix": 180.0,
         "iy": 308.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_190_CX_7691",
@@ -8122,8 +7509,7 @@
         "ix": 190.0,
         "iy": 190.0,
         "cg_from_base": 0.015
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_190_SUBX_7929",
@@ -8143,8 +7529,7 @@
         "ix": 190.0,
         "iy": 190.0,
         "cg_from_base": 0.033
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_196_BTHP_9C6F",
@@ -8164,8 +7549,7 @@
         "ix": 8.2,
         "iy": 0.323,
         "cg_from_base": 0.323
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_200_MONOFL_94DD",
@@ -8185,8 +7569,7 @@
         "ix": 200.0,
         "iy": 200.0,
         "cg_from_base": 0.085
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_208_AMAX_CA97",
@@ -8206,8 +7589,7 @@
         "ix": null,
         "iy": 990.0,
         "cg_from_base": 0.01
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_208_FMJ_9F02",
@@ -8227,8 +7609,7 @@
         "ix": null,
         "iy": 0.264,
         "cg_from_base": 0.264
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_20_SEC_4E02",
@@ -8248,8 +7629,7 @@
         "ix": 40.0,
         "iy": 0.204,
         "cg_from_base": 0.208
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_20_VMAX_69C0",
@@ -8269,8 +7649,7 @@
         "ix": 20.0,
         "iy": 20.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_20_XTP_26E2",
@@ -8290,8 +7669,7 @@
         "ix": 20.0,
         "iy": 20.0,
         "cg_from_base": 0.095
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_220_ELDX_4FE2",
@@ -8311,8 +7689,7 @@
         "ix": null,
         "iy": 220.0,
         "cg_from_base": 0.65
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_220_FLEXLO_1653",
@@ -8332,8 +7709,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_225_CX_DF59",
@@ -8353,8 +7729,7 @@
         "ix": 225.0,
         "iy": 225.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_225_FTX_AE3D",
@@ -8374,8 +7749,7 @@
         "ix": 225.0,
         "iy": 264.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_225_INTERL_ED18",
@@ -8395,8 +7769,7 @@
         "ix": 225.0,
         "iy": 225.0,
         "cg_from_base": 0.048
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_225_SEC_6BF6",
@@ -8416,8 +7789,7 @@
         "ix": 225.0,
         "iy": 225.0,
         "cg_from_base": 0.055
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_240_CX_5D47",
@@ -8437,8 +7809,7 @@
         "ix": 240.0,
         "iy": 0.264,
         "cg_from_base": 0.048
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_240_XTP_65C4",
@@ -8458,8 +7829,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": 0.15
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_24_NTX_9F31",
@@ -8479,8 +7849,7 @@
         "ix": 24.0,
         "iy": 24.0,
         "cg_from_base": 0.027
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_250_BTHPMA_1BAD",
@@ -8500,8 +7869,7 @@
         "ix": 250.0,
         "iy": 250.0,
         "cg_from_base": 250.0
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_250_CX_5438",
@@ -8521,8 +7889,7 @@
         "ix": 250.0,
         "iy": 250.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_255_SUBX_51DA",
@@ -8542,8 +7909,7 @@
         "ix": 0.3115,
         "iy": 900.0,
         "cg_from_base": 0.3115
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_270_G_8C61",
@@ -8563,8 +7929,7 @@
         "ix": 270.0,
         "iy": 270.0,
         "cg_from_base": 0.277
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_270_INTERL_1D6A",
@@ -8584,8 +7949,7 @@
         "ix": 130.0,
         "iy": 270.0,
         "cg_from_base": 0.277
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_300_DGXBON_98E8",
@@ -8605,8 +7969,7 @@
         "ix": 0.375,
         "iy": 375.0,
         "cg_from_base": 0.4
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_300_DGX_7C06",
@@ -8626,8 +7989,7 @@
         "ix": 300.0,
         "iy": 2660.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_300_SEC_1185",
@@ -8647,8 +8009,7 @@
         "ix": 300.0,
         "iy": 300.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_30_VMAX_AA1E",
@@ -8668,8 +8029,7 @@
         "ix": 30.0,
         "iy": null,
         "cg_from_base": 0.24
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_325_INTERL_D001",
@@ -8689,8 +8049,7 @@
         "ix": 325.0,
         "iy": 0.323,
         "cg_from_base": 0.032
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_32_VMAX_9D3E",
@@ -8710,8 +8069,7 @@
         "ix": 32.0,
         "iy": 32.0,
         "cg_from_base": 0.038
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_35_VMAX_C838",
@@ -8731,8 +8089,7 @@
         "ix": null,
         "iy": 35.0,
         "cg_from_base": 0.224
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_35_XTP_2628",
@@ -8752,8 +8109,7 @@
         "ix": 311.0,
         "iy": 0.311,
         "cg_from_base": 0.02
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_385_HOLLOW_9234",
@@ -8773,8 +8129,7 @@
         "ix": 308.0,
         "iy": 385.0,
         "cg_from_base": 0.5
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_38_VMAX_CDB9",
@@ -8794,8 +8149,7 @@
         "ix": 38.0,
         "iy": 38.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_390_ATIP_578F",
@@ -8815,8 +8169,7 @@
         "ix": 390.0,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_45_HPMATC_849E",
@@ -8836,8 +8189,7 @@
         "ix": 224.0,
         "iy": 45.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_50_CX_7129",
@@ -8857,8 +8209,7 @@
         "ix": 50.0,
         "iy": 0.224,
         "cg_from_base": 0.04
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_55_BTSPW_4AEB",
@@ -8878,8 +8229,7 @@
         "ix": 0.224,
         "iy": 55.0,
         "cg_from_base": 0.224
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_55_CX_856A",
@@ -8899,8 +8249,7 @@
         "ix": 55.0,
         "iy": 0.224,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_55_FTX_FF88",
@@ -8920,8 +8269,7 @@
         "ix": null,
         "iy": 55.0,
         "cg_from_base": 0.055
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_55_HPMATC_76F2",
@@ -8941,8 +8289,7 @@
         "ix": 224.0,
         "iy": 224.0,
         "cg_from_base": 0.055
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_55_SPIREP_4FD2",
@@ -8962,8 +8309,7 @@
         "ix": 224.0,
         "iy": 224.0,
         "cg_from_base": 0.07
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_55_SPMATC_1A13",
@@ -8983,8 +8329,7 @@
         "ix": 55.0,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_55_SP_E6F7",
@@ -9004,8 +8349,7 @@
         "ix": 224.0,
         "iy": 224.0,
         "cg_from_base": 0.224
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_62_BTHPMA_3E63",
@@ -9025,8 +8369,7 @@
         "ix": 0.224,
         "iy": 224.0,
         "cg_from_base": 0.08
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_62_FMJ_9CD3",
@@ -9046,8 +8389,7 @@
         "ix": 62.0,
         "iy": null,
         "cg_from_base": 0.025
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_62_SPIREP_6AFF",
@@ -9067,8 +8409,7 @@
         "ix": null,
         "iy": 62.0,
         "cg_from_base": 0.264
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_65_CX_4815",
@@ -9088,8 +8429,7 @@
         "ix": null,
         "iy": 65.0,
         "cg_from_base": 0.04
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_68_BTHPMA_04B5",
@@ -9109,8 +8449,7 @@
         "ix": 224.0,
         "iy": 68.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_68_SEC_5FA0",
@@ -9130,8 +8469,7 @@
         "ix": null,
         "iy": 68.0,
         "cg_from_base": 0.255
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_69_ELDVT_741E",
@@ -9151,8 +8489,7 @@
         "ix": 69.0,
         "iy": 224.0,
         "cg_from_base": 0.22772
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_73_FTX_BE5C",
@@ -9172,8 +8509,7 @@
         "ix": 73.0,
         "iy": 73.0,
         "cg_from_base": 0.224
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_75_INTERL_11A2",
@@ -9193,8 +8529,7 @@
         "ix": null,
         "iy": 224.0,
         "cg_from_base": 0.07
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_80_CX_91F5",
@@ -9214,8 +8549,7 @@
         "ix": null,
         "iy": 80.0,
         "cg_from_base": 0.0125
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_80_ELDX_52F5",
@@ -9235,8 +8569,7 @@
         "ix": 80.0,
         "iy": 0.224,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_87_SST_47C7",
@@ -9256,8 +8589,7 @@
         "ix": null,
         "iy": 87.0,
         "cg_from_base": 0.045
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_90_CX_2979",
@@ -9277,8 +8609,7 @@
         "ix": 90.0,
         "iy": null,
         "cg_from_base": 126.0
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_90_FTX_BAE3",
@@ -9298,8 +8629,7 @@
         "ix": null,
         "iy": 90.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_90_XTP_2B49",
@@ -9319,8 +8649,7 @@
         "ix": null,
         "iy": 0.309,
         "cg_from_base": 0.09
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_95_SST_7EB7",
@@ -9340,8 +8669,7 @@
         "ix": 95.0,
         "iy": 95.0,
         "cg_from_base": 0.04
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_HORNADY_UNK_95_VMAX_3D85",
@@ -9361,8 +8689,7 @@
         "ix": 95.0,
         "iy": 264.0,
         "cg_from_base": 0.255
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_224_50_NAT",
@@ -9382,8 +8709,7 @@
         "ix": 224.0,
         "iy": 224.0,
         "cg_from_base": 0.2
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_224_55_FMJ",
@@ -9403,8 +8729,7 @@
         "ix": 0.224,
         "iy": 224.0,
         "cg_from_base": 0.24
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_224_69_SCENAR",
@@ -9424,8 +8749,7 @@
         "ix": 0.224,
         "iy": 0.341,
         "cg_from_base": 0.145
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_224_77_SCENARL",
@@ -9445,8 +8769,7 @@
         "ix": 77.0,
         "iy": 0.224,
         "cg_from_base": 0.215
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_243_105_SCENARL",
@@ -9466,8 +8789,7 @@
         "ix": 105.0,
         "iy": 243.0,
         "cg_from_base": 0.243
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_243_90_NAT",
@@ -9487,8 +8809,7 @@
         "ix": 90.0,
         "iy": 90.0,
         "cg_from_base": 0.105
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_243_90_SCENARL",
@@ -9508,8 +8829,7 @@
         "ix": 90.0,
         "iy": 90.0,
         "cg_from_base": 0.05
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_264_100_SCENAR",
@@ -9529,8 +8849,7 @@
         "ix": 0.264,
         "iy": 0.264,
         "cg_from_base": 0.264
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_264_108_SCENARL",
@@ -9550,8 +8869,7 @@
         "ix": 108.0,
         "iy": 264.0,
         "cg_from_base": 0.106
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_264_120_TRX",
@@ -9571,8 +8889,7 @@
         "ix": 120.0,
         "iy": 264.0,
         "cg_from_base": 0.058
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_264_123_SCENAR",
@@ -9592,8 +8909,7 @@
         "ix": 264.0,
         "iy": 264.0,
         "cg_from_base": 0.13
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_264_136_SCENARL",
@@ -9613,8 +8929,7 @@
         "ix": 136.0,
         "iy": 136.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_264_139_SCENAR",
@@ -9634,8 +8949,7 @@
         "ix": 0.264,
         "iy": 0.264,
         "cg_from_base": 0.7
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_264_140_NAT",
@@ -9655,8 +8969,7 @@
         "ix": 140.0,
         "iy": 264.0,
         "cg_from_base": 0.256
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_264_144_MAXRANGE",
@@ -9676,8 +8989,7 @@
         "ix": 144.0,
         "iy": 0.264,
         "cg_from_base": 0.264
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_284_150_SCENARL",
@@ -9697,8 +9009,7 @@
         "ix": 150.0,
         "iy": 150.0,
         "cg_from_base": 0.284
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_284_180_SCENARL",
@@ -9718,8 +9029,7 @@
         "ix": 180.0,
         "iy": 7.0,
         "cg_from_base": 0.284
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_308_150_TRX",
@@ -9739,8 +9049,7 @@
         "ix": 150.0,
         "iy": 150.0,
         "cg_from_base": 0.19
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_308_155_SCENARL",
@@ -9760,8 +9069,7 @@
         "ix": 155.0,
         "iy": 155.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_308_165_TRX",
@@ -9781,8 +9089,7 @@
         "ix": 165.0,
         "iy": 165.0,
         "cg_from_base": 0.49
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_308_167_SCENAR",
@@ -9802,8 +9109,7 @@
         "ix": 167.0,
         "iy": 167.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_308_175_MAXRANGE",
@@ -9823,8 +9129,7 @@
         "ix": 175.0,
         "iy": 175.0,
         "cg_from_base": 0.308
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_308_175_SCENARL",
@@ -9844,8 +9149,7 @@
         "ix": 0.0595,
         "iy": 0.0293,
         "cg_from_base": 0.57
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_308_185_SCENAR",
@@ -9865,8 +9169,7 @@
         "ix": 0.0273,
         "iy": 0.00243,
         "cg_from_base": 0.95
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_308_200_MEGA",
@@ -9886,8 +9189,7 @@
         "ix": 0.344,
         "iy": 200.0,
         "cg_from_base": 0.344
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_308_220_SCENARL",
@@ -9907,8 +9209,7 @@
         "ix": 220.0,
         "iy": 220.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_338_250_LOCKBASE",
@@ -9928,8 +9229,7 @@
         "ix": 250.0,
         "iy": 250.0,
         "cg_from_base": 0.6
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_338_250_SCENAR",
@@ -9949,8 +9249,7 @@
         "ix": 0.0026,
         "iy": 0.0015,
         "cg_from_base": 0.45
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_LAPUA_338_300_SCENAR",
@@ -9970,8 +9269,7 @@
         "ix": 300.0,
         "iy": 300.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NORMA_224_50_VMAX",
@@ -9991,8 +9289,7 @@
         "ix": 224.0,
         "iy": 50.0,
         "cg_from_base": 0.045
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NORMA_224_55_FMJ",
@@ -10012,8 +9309,7 @@
         "ix": 0.0323,
         "iy": 0.0208,
         "cg_from_base": 0.56
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NORMA_224_55_ORYX",
@@ -10033,8 +9329,7 @@
         "ix": 224.0,
         "iy": 55.0,
         "cg_from_base": 0.085
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NORMA_243_100_ORYX",
@@ -10054,8 +9349,7 @@
         "ix": 100.0,
         "iy": 100.0,
         "cg_from_base": 0.215
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NORMA_243_76_TIPSTR",
@@ -10075,8 +9369,7 @@
         "ix": 6.0,
         "iy": 76.0,
         "cg_from_base": 0.246
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NORMA_264_120_ECOSTR",
@@ -10096,8 +9389,7 @@
         "ix": 2.24,
         "iy": 1.44,
         "cg_from_base": 0.75
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NORMA_264_130_GOLDGT",
@@ -10117,8 +9409,7 @@
         "ix": 264.0,
         "iy": 0.264,
         "cg_from_base": 0.548
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NORMA_264_140_TIPSTR",
@@ -10138,8 +9429,7 @@
         "ix": 140.0,
         "iy": 264.0,
         "cg_from_base": 0.5
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NORMA_264_143_BONDSTR",
@@ -10159,8 +9449,7 @@
         "ix": 143.0,
         "iy": 0.264,
         "cg_from_base": 0.629
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NORMA_264_156_ORYX",
@@ -10180,8 +9469,7 @@
         "ix": 0.264,
         "iy": 156.0,
         "cg_from_base": 0.04
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NORMA_284_150_ECOSTR",
@@ -10201,8 +9489,7 @@
         "ix": 284.0,
         "iy": 150.0,
         "cg_from_base": 0.4
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NORMA_284_160_TIPSTR",
@@ -10222,8 +9509,7 @@
         "ix": 160.0,
         "iy": 284.0,
         "cg_from_base": 0.048
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NORMA_284_165_BONDSTR",
@@ -10243,8 +9529,7 @@
         "ix": 284.0,
         "iy": 165.0,
         "cg_from_base": 0.055
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NORMA_284_170_ORYX",
@@ -10264,8 +9549,7 @@
         "ix": 0.0014,
         "iy": 0.0049,
         "cg_from_base": 0.7
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NORMA_308_150_ECOSTR",
@@ -10285,8 +9569,7 @@
         "ix": 150.0,
         "iy": 0.308,
         "cg_from_base": 0.5
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NORMA_308_165_ORYX",
@@ -10306,8 +9589,7 @@
         "ix": 0.0332,
         "iy": 0.00943,
         "cg_from_base": 0.395
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NORMA_308_168_GOLDGT",
@@ -10327,8 +9609,7 @@
         "ix": 168.0,
         "iy": 168.0,
         "cg_from_base": 0.424
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NORMA_308_170_TIPSTR",
@@ -10348,8 +9629,7 @@
         "ix": 170.0,
         "iy": 170.0,
         "cg_from_base": 0.04
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NORMA_308_180_BONDSTR",
@@ -10369,8 +9649,7 @@
         "ix": 180.0,
         "iy": 180.0,
         "cg_from_base": 0.07
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NORMA_308_180_ORYX",
@@ -10390,8 +9669,7 @@
         "ix": null,
         "iy": 2610.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NORMA_308_200_ORYX",
@@ -10411,8 +9689,7 @@
         "ix": 200.0,
         "iy": 200.0,
         "cg_from_base": 0.055
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NORMA_308_230_ORYX",
@@ -10432,8 +9709,7 @@
         "ix": 230.0,
         "iy": 230.0,
         "cg_from_base": 0.047
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NORMA_338_230_ORYX",
@@ -10453,8 +9729,7 @@
         "ix": null,
         "iy": 230.0,
         "cg_from_base": 0.047
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NORMA_338_300_HPBT",
@@ -10474,8 +9749,7 @@
         "ix": 300.0,
         "iy": 4.713,
         "cg_from_base": 0.035
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NORMA_UNK_100_BALLIS_22DA",
@@ -10495,8 +9769,7 @@
         "ix": 264.0,
         "iy": 264.0,
         "cg_from_base": 0.07
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_224_60_PART",
@@ -10516,8 +9789,7 @@
         "ix": 60.0,
         "iy": 60.0,
         "cg_from_base": 0.23
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_224_70_RDF",
@@ -10537,8 +9809,7 @@
         "ix": null,
         "iy": 224.0,
         "cg_from_base": 0.185
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_224_77_CC",
@@ -10558,8 +9829,7 @@
         "ix": 224.0,
         "iy": 0.224,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_224_85_RDF",
@@ -10579,8 +9849,7 @@
         "ix": 224.0,
         "iy": 224.0,
         "cg_from_base": 0.15
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_243_105_RDF",
@@ -10600,8 +9869,7 @@
         "ix": 105.0,
         "iy": 243.0,
         "cg_from_base": 0.243
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_243_107_CC",
@@ -10621,8 +9889,7 @@
         "ix": 0.0215,
         "iy": 0.00765,
         "cg_from_base": 0.88
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_243_85_PART",
@@ -10642,8 +9909,7 @@
         "ix": 85.0,
         "iy": 85.0,
         "cg_from_base": 0.25
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_243_95_PART",
@@ -10663,8 +9929,7 @@
         "ix": 95.0,
         "iy": 95.0,
         "cg_from_base": 0.35
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_264_129_ABLR",
@@ -10684,8 +9949,7 @@
         "ix": 0.267,
         "iy": 0.264,
         "cg_from_base": 0.561
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_264_130_RDF",
@@ -10705,8 +9969,7 @@
         "ix": 0.264,
         "iy": 0.264,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_264_140_PART",
@@ -10726,8 +9989,7 @@
         "ix": 6.5,
         "iy": 0.264,
         "cg_from_base": 0.264
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_264_140_RDF",
@@ -10747,8 +10009,7 @@
         "ix": 0.264,
         "iy": 264.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_264_142_ABLR",
@@ -10768,8 +10029,7 @@
         "ix": 0.264,
         "iy": 0.264,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_264_150_ABLR",
@@ -10789,8 +10049,7 @@
         "ix": 150.0,
         "iy": 264.0,
         "cg_from_base": 0.264
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_284_150_ABLR",
@@ -10810,8 +10069,7 @@
         "ix": 0.284,
         "iy": 0.284,
         "cg_from_base": 0.284
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_284_168_ABLR",
@@ -10831,8 +10089,7 @@
         "ix": 0.284,
         "iy": 0.284,
         "cg_from_base": 0.021
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_284_175_ABLR",
@@ -10852,8 +10109,7 @@
         "ix": 175.0,
         "iy": 0.284,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_284_185_RDF",
@@ -10873,8 +10129,7 @@
         "ix": 0.0086,
         "iy": 0.0133,
         "cg_from_base": 0.46
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_308_155_CC",
@@ -10894,8 +10149,7 @@
         "ix": 7.82,
         "iy": 155.0,
         "cg_from_base": 0.0475
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_308_168_ABLR",
@@ -10915,8 +10169,7 @@
         "ix": 168.0,
         "iy": 0.308,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_308_168_RDF",
@@ -10936,8 +10189,7 @@
         "ix": 168.0,
         "iy": 168.0,
         "cg_from_base": 0.03
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_308_175_RDF",
@@ -10957,8 +10209,7 @@
         "ix": 175.0,
         "iy": 2650.0,
         "cg_from_base": 0.55
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_308_180_PART",
@@ -10978,8 +10229,7 @@
         "ix": 308.0,
         "iy": 180.0,
         "cg_from_base": 0.474
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_308_190_ABLR",
@@ -10999,8 +10249,7 @@
         "ix": 190.0,
         "iy": 190.0,
         "cg_from_base": 0.308
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_308_210_ABLR",
@@ -11020,8 +10269,7 @@
         "ix": 210.0,
         "iy": 210.0,
         "cg_from_base": 0.661
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_308_210_RDF",
@@ -11041,8 +10289,7 @@
         "ix": 210.0,
         "iy": 210.0,
         "cg_from_base": 0.707
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_338_265_ABLR",
@@ -11062,8 +10309,7 @@
         "ix": 265.0,
         "iy": 0.338,
         "cg_from_base": 0.338
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_338_300_ABLR",
@@ -11083,8 +10329,7 @@
         "ix": 300.0,
         "iy": 0.72,
         "cg_from_base": 0.72
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_338_300_CC",
@@ -11104,8 +10349,7 @@
         "ix": 338.0,
         "iy": 300.0,
         "cg_from_base": 0.75
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_NOSLER_338_300_RDF",
@@ -11125,8 +10369,7 @@
         "ix": 338.0,
         "iy": 338.0,
         "cg_from_base": 0.482
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_224_52_SMK",
@@ -11146,8 +10389,7 @@
         "ix": 52.0,
         "iy": 52.0,
         "cg_from_base": 0.39
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_224_53_SMK",
@@ -11167,8 +10409,7 @@
         "ix": 1400.0,
         "iy": 224.0,
         "cg_from_base": 0.224
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_224_55_SBT",
@@ -11188,8 +10429,7 @@
         "ix": 55.0,
         "iy": 55.0,
         "cg_from_base": 0.3
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_224_60_TMK",
@@ -11209,8 +10449,7 @@
         "ix": 60.0,
         "iy": 60.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_224_69_TMK",
@@ -11230,8 +10469,7 @@
         "ix": 69.0,
         "iy": 69.0,
         "cg_from_base": 0.35
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_224_77_SMK",
@@ -11251,8 +10489,7 @@
         "ix": 0.0214,
         "iy": 0.0033,
         "cg_from_base": 0.456
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_224_77_TMK",
@@ -11272,8 +10509,7 @@
         "ix": 0.224,
         "iy": 0.224,
         "cg_from_base": 0.42
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_224_90_SMK",
@@ -11293,8 +10529,7 @@
         "ix": 224.0,
         "iy": 2700.0,
         "cg_from_base": 0.224
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_224_95_SMK",
@@ -11314,8 +10549,7 @@
         "ix": 0.0482,
         "iy": 0.00694,
         "cg_from_base": 0.056
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_243_107_SMK",
@@ -11335,8 +10569,7 @@
         "ix": 4.26e-06,
         "iy": 1.98e-05,
         "cg_from_base": 0.42
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_243_110_SMK",
@@ -11356,8 +10589,7 @@
         "ix": 5.88,
         "iy": 4.44,
         "cg_from_base": 0.42
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_243_95_TMK",
@@ -11377,8 +10609,7 @@
         "ix": 0.243,
         "iy": 95.0,
         "cg_from_base": 0.075
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_264_107_TMK",
@@ -11398,8 +10629,7 @@
         "ix": 0.0213,
         "iy": 0.0176,
         "cg_from_base": 0.4
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_264_130_TGK",
@@ -11419,8 +10649,7 @@
         "ix": 130.0,
         "iy": 0.264,
         "cg_from_base": 0.264
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_264_130_TMK",
@@ -11440,8 +10669,7 @@
         "ix": 130.0,
         "iy": 0.264,
         "cg_from_base": 0.518
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_264_140_SMK",
@@ -11461,8 +10689,7 @@
         "ix": 1740.0,
         "iy": 0.264,
         "cg_from_base": 0.283
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_264_142_SMK",
@@ -11482,8 +10709,7 @@
         "ix": 142.0,
         "iy": 264.0,
         "cg_from_base": 1.0
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_264_145_TGK",
@@ -11503,8 +10729,7 @@
         "ix": 1.0,
         "iy": 6.5,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_264_150_SMK",
@@ -11524,8 +10749,7 @@
         "ix": 0.002,
         "iy": 0.0017,
         "cg_from_base": 0.445
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_284_160_TMK",
@@ -11545,8 +10769,7 @@
         "ix": 160.0,
         "iy": 0.284,
         "cg_from_base": 0.515
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_284_168_SMK",
@@ -11566,8 +10789,7 @@
         "ix": 168.0,
         "iy": 0.3,
         "cg_from_base": 0.028
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_284_175_SMK",
@@ -11587,8 +10809,7 @@
         "ix": 0.284,
         "iy": 0.284,
         "cg_from_base": 0.07
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_284_175_TGK",
@@ -11608,8 +10829,7 @@
         "ix": 2.51e-06,
         "iy": 4.33e-09,
         "cg_from_base": 0.495
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_284_180_SMK",
@@ -11629,8 +10849,7 @@
         "ix": 0.00167,
         "iy": 0.00355,
         "cg_from_base": 0.545
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_284_197_SMK",
@@ -11650,8 +10869,7 @@
         "ix": 2.44,
         "iy": 3.11,
         "cg_from_base": 1.32
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_308_125_SMK",
@@ -11671,8 +10889,7 @@
         "ix": 0.308,
         "iy": 0.308,
         "cg_from_base": 0.265
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_308_155_SMK",
@@ -11692,8 +10909,7 @@
         "ix": 155.0,
         "iy": 0.308,
         "cg_from_base": 0.22
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_308_155_TMK",
@@ -11713,8 +10929,7 @@
         "ix": 155.0,
         "iy": 155.0,
         "cg_from_base": 0.055
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_308_168_SMK",
@@ -11734,8 +10949,7 @@
         "ix": 168.0,
         "iy": 168.0,
         "cg_from_base": 0.03
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_308_168_TMK",
@@ -11755,8 +10969,7 @@
         "ix": 168.0,
         "iy": 1000.0,
         "cg_from_base": 0.075
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_308_169_SMK",
@@ -11776,8 +10989,7 @@
         "ix": 169.0,
         "iy": 308.0,
         "cg_from_base": 0.01
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_308_175_TMK",
@@ -11797,8 +11009,7 @@
         "ix": 0.0043,
         "iy": 0.0024,
         "cg_from_base": 0.75
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_308_190_SMK",
@@ -11818,8 +11029,7 @@
         "ix": 190.0,
         "iy": 190.0,
         "cg_from_base": 0.533
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_308_195_TMK",
@@ -11839,8 +11049,7 @@
         "ix": 195.0,
         "iy": 0.308,
         "cg_from_base": 0.045
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_308_200_SMK",
@@ -11860,8 +11069,7 @@
         "ix": 200.0,
         "iy": 0.308,
         "cg_from_base": 0.04
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_308_210_SMK",
@@ -11881,8 +11089,7 @@
         "ix": 210.0,
         "iy": 210.0,
         "cg_from_base": 0.308
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_308_220_SMK",
@@ -11902,8 +11109,7 @@
         "ix": 220.0,
         "iy": 220.0,
         "cg_from_base": 0.02
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_308_220_TMK",
@@ -11923,8 +11129,7 @@
         "ix": 0.0163,
         "iy": 0.00825,
         "cg_from_base": 0.6
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_308_230_SMK",
@@ -11944,8 +11149,7 @@
         "ix": 1.5,
         "iy": 230.0,
         "cg_from_base": 0.3
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_338_215_SBT",
@@ -11965,8 +11169,7 @@
         "ix": 0.0472,
         "iy": 0.00496,
         "cg_from_base": 0.46
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_338_250_SMK",
@@ -11986,8 +11189,7 @@
         "ix": 2950.0,
         "iy": 250.0,
         "cg_from_base": 1.0
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_338_300_SMK",
@@ -12007,8 +11209,7 @@
         "ix": 300.0,
         "iy": 300.0,
         "cg_from_base": 1.41
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_100_HPBTMK_B6F6",
@@ -12028,8 +11229,7 @@
         "ix": 257.0,
         "iy": 100.0,
         "cg_from_base": 0.238
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_105_TVK_C7D5",
@@ -12049,8 +11249,7 @@
         "ix": 105.0,
         "iy": 264.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_107_HPBTCN_168B",
@@ -12070,8 +11269,7 @@
         "ix": 243.0,
         "iy": 0.243,
         "cg_from_base": 0.125
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_107_HPBTMK_8F83",
@@ -12091,8 +11289,7 @@
         "ix": null,
         "iy": 0.243,
         "cg_from_base": 0.243
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_107_TMK_3BE5",
@@ -12112,8 +11309,7 @@
         "ix": 107.0,
         "iy": 107.0,
         "cg_from_base": 0.455
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_110_RNPH_EAEF",
@@ -12133,8 +11329,7 @@
         "ix": 110.0,
         "iy": 0.308,
         "cg_from_base": 0.035
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_115_HPBTMK_381A",
@@ -12154,8 +11349,7 @@
         "ix": 115.0,
         "iy": 115.0,
         "cg_from_base": 0.065
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_115_HPVK_7A88",
@@ -12175,8 +11369,7 @@
         "ix": 115.0,
         "iy": 7.82,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_117_SBTGK_42DC",
@@ -12196,8 +11389,7 @@
         "ix": 0.257,
         "iy": 0.257,
         "cg_from_base": 0.042
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_120_SPITZE_D46B",
@@ -12217,8 +11409,7 @@
         "ix": 1720.0,
         "iy": 0.264,
         "cg_from_base": 0.368
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_123_HPBTCN_8F14",
@@ -12238,8 +11429,7 @@
         "ix": 123.0,
         "iy": 6.5,
         "cg_from_base": 0.262
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_125_HPCNMK_B63E",
@@ -12259,8 +11449,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": 0.349
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_125_HPFNPH_2907",
@@ -12280,8 +11469,7 @@
         "ix": 125.0,
         "iy": 0.308,
         "cg_from_base": 0.308
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_125_SPITZE_999E",
@@ -12301,8 +11489,7 @@
         "ix": 749003549.0,
         "iy": 0.308,
         "cg_from_base": 0.279
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_125_TMK_ACEE",
@@ -12322,8 +11509,7 @@
         "ix": null,
         "iy": 125.0,
         "cg_from_base": 0.308
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_130_SPITZE_64F2",
@@ -12343,8 +11529,7 @@
         "ix": 0.277,
         "iy": 0.277,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_135_HPVK_635E",
@@ -12364,8 +11549,7 @@
         "ix": 135.0,
         "iy": 3200.0,
         "cg_from_base": 0.04
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_135_TMK_6DA9",
@@ -12385,8 +11569,7 @@
         "ix": 135.0,
         "iy": 135.0,
         "cg_from_base": 0.047
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_140_HPBTGK_E920",
@@ -12406,8 +11589,7 @@
         "ix": 0.277,
         "iy": 0.277,
         "cg_from_base": 0.323
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_140_JHPSM_028A",
@@ -12427,8 +11609,7 @@
         "ix": 0.264,
         "iy": 0.264,
         "cg_from_base": 0.264
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_140_SBTGK_503B",
@@ -12448,8 +11629,7 @@
         "ix": 140.0,
         "iy": 0.264,
         "cg_from_base": 0.045
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_140_SPITZE_58F4",
@@ -12469,8 +11649,7 @@
         "ix": 0.284,
         "iy": 140.0,
         "cg_from_base": 0.377
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_140_TGK_9B57",
@@ -12490,8 +11669,7 @@
         "ix": 0.284,
         "iy": 0.284,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_142_HPBTCN_9098",
@@ -12511,8 +11689,7 @@
         "ix": 142.0,
         "iy": 0.264,
         "cg_from_base": 0.258
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_150_FMJBTG_A180",
@@ -12532,8 +11709,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_150_FNPH_0E89",
@@ -12553,8 +11729,7 @@
         "ix": 150.0,
         "iy": 125.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_150_HPBTMK_ED11",
@@ -12574,8 +11749,7 @@
         "ix": 1915.0,
         "iy": 284.0,
         "cg_from_base": 0.085
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_150_HPVK_2766",
@@ -12595,8 +11769,7 @@
         "ix": null,
         "iy": 150.0,
         "cg_from_base": 0.09
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_150_RNPH_BF65",
@@ -12616,8 +11789,7 @@
         "ix": 150.0,
         "iy": 0.308,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_150_SBTGK_E0AD",
@@ -12637,8 +11809,7 @@
         "ix": 150.0,
         "iy": 150.0,
         "cg_from_base": 0.06
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_150_SPITZE_493B",
@@ -12658,8 +11829,7 @@
         "ix": 150.0,
         "iy": null,
         "cg_from_base": 0.01
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_150_T6K_B6EA",
@@ -12679,8 +11849,7 @@
         "ix": 6.0,
         "iy": 150.0,
         "cg_from_base": 0.04
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_153_TMK_90E4",
@@ -12700,8 +11869,7 @@
         "ix": 153.0,
         "iy": 153.0,
         "cg_from_base": 0.014
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_155_HPBTCN_9EC8",
@@ -12721,8 +11889,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": 0.03
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_155_HPBTMK_012D",
@@ -12742,8 +11909,7 @@
         "ix": null,
         "iy": 155.0,
         "cg_from_base": 0.235
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_155_TMK_6003",
@@ -12763,8 +11929,7 @@
         "ix": 155.0,
         "iy": 155.0,
         "cg_from_base": 0.343
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_158_JHCSM_6EE9",
@@ -12784,8 +11949,7 @@
         "ix": 158.0,
         "iy": null,
         "cg_from_base": 0.033
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_160_HPBTGK_20F8",
@@ -12805,8 +11969,7 @@
         "ix": 284.0,
         "iy": 0.284,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_160_SBTGK_A1B5",
@@ -12826,8 +11989,7 @@
         "ix": 160.0,
         "iy": 284.0,
         "cg_from_base": 0.045
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_160_TMK_A417",
@@ -12847,8 +12009,7 @@
         "ix": null,
         "iy": 0.284,
         "cg_from_base": 0.47
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_165_SBTGK_2148",
@@ -12868,8 +12029,7 @@
         "ix": 165.0,
         "iy": 165.0,
         "cg_from_base": 0.046
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_165_TGK_52E9",
@@ -12889,8 +12049,7 @@
         "ix": 165.0,
         "iy": null,
         "cg_from_base": 0.308
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_168_HPBTMK_9B3D",
@@ -12910,8 +12069,7 @@
         "ix": null,
         "iy": 168.0,
         "cg_from_base": 0.555
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_168_TMK_1D43",
@@ -12931,8 +12089,7 @@
         "ix": 168.0,
         "iy": 1000.0,
         "cg_from_base": 1.65
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_169_HPBTCN_67BD",
@@ -12952,8 +12109,7 @@
         "ix": 0.527,
         "iy": 1000.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_170_FNPH_D73B",
@@ -12973,8 +12129,7 @@
         "ix": 170.0,
         "iy": null,
         "cg_from_base": 0.256
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_175_HPBTMK_9C74",
@@ -12994,8 +12149,7 @@
         "ix": 0.308,
         "iy": 2600.0,
         "cg_from_base": 0.308
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_175_SBTGK_2A1B",
@@ -13015,8 +12169,7 @@
         "ix": 175.0,
         "iy": 2300.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_175_SPITZE_2E18",
@@ -13036,8 +12189,7 @@
         "ix": 0.323,
         "iy": 0.323,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_175_TMK_D088",
@@ -13057,8 +12209,7 @@
         "ix": 175.0,
         "iy": 1000.0,
         "cg_from_base": 0.5
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_180_HPBTMK_DEB6",
@@ -13078,8 +12229,7 @@
         "ix": 0.284,
         "iy": 180.0,
         "cg_from_base": 0.1
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_180_RNPH_6323",
@@ -13099,8 +12249,7 @@
         "ix": 2170.0,
         "iy": 180.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_180_SBTGK_0018",
@@ -13120,8 +12269,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": 0.048
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_180_TGK_3E12",
@@ -13141,8 +12289,7 @@
         "ix": null,
         "iy": 0.264,
         "cg_from_base": 0.415
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_183_HPBTCN_463E",
@@ -13162,8 +12309,7 @@
         "ix": 183.0,
         "iy": 0.284,
         "cg_from_base": 0.285
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_185_HPBTMK_2621",
@@ -13183,8 +12329,7 @@
         "ix": null,
         "iy": 185.0,
         "cg_from_base": 0.135
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_190_HPBTMK_039A",
@@ -13204,8 +12349,7 @@
         "ix": 190.0,
         "iy": 0.308,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_195_TGK_FF2A",
@@ -13225,8 +12369,7 @@
         "ix": 195.0,
         "iy": 195.0,
         "cg_from_base": 0.308
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_195_TMK_C37D",
@@ -13246,8 +12389,7 @@
         "ix": null,
         "iy": 195.0,
         "cg_from_base": 0.354
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_197_HPBTCN_235E",
@@ -13267,8 +12409,7 @@
         "ix": 284.0,
         "iy": 0.284,
         "cg_from_base": 0.006
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_200_FNPH_5B97",
@@ -13288,8 +12429,7 @@
         "ix": 200.0,
         "iy": 2200.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_200_HPBTCN_86B6",
@@ -13309,8 +12449,7 @@
         "ix": 200.0,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_200_SBTGK_8EE1",
@@ -13330,8 +12469,7 @@
         "ix": null,
         "iy": 12.97,
         "cg_from_base": 0.242
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_210_HPBTCN_DDF9",
@@ -13351,8 +12489,7 @@
         "ix": 1.0,
         "iy": 210.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_215_HPBTCN_21A5",
@@ -13372,8 +12509,7 @@
         "ix": null,
         "iy": 215.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_215_SBTGK_F74A",
@@ -13393,8 +12529,7 @@
         "ix": 215.0,
         "iy": 215.0,
         "cg_from_base": 0.285
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_220_HPBTMK_C3F6",
@@ -13414,8 +12549,7 @@
         "ix": 220.0,
         "iy": 220.0,
         "cg_from_base": 0.629
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_220_RNPH_EC48",
@@ -13435,8 +12569,7 @@
         "ix": 0.308,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_220_TMK_717A",
@@ -13456,8 +12589,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": 0.625
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_230_HPBTCN_5F7D",
@@ -13477,8 +12609,7 @@
         "ix": 1.0,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_230_JHPSM_5527",
@@ -13498,8 +12629,7 @@
         "ix": 0.308,
         "iy": 230.0,
         "cg_from_base": 0.8
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_250_HPBTMK_50E6",
@@ -13519,8 +12649,7 @@
         "ix": 250.0,
         "iy": null,
         "cg_from_base": 0.225
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_250_SBTGK_3F2E",
@@ -13540,8 +12669,7 @@
         "ix": 0.308,
         "iy": null,
         "cg_from_base": 0.085
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_260_FNPH_FE46",
@@ -13561,8 +12689,7 @@
         "ix": 260.0,
         "iy": 260.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_300_SBTGK_B060",
@@ -13582,8 +12709,7 @@
         "ix": 300.0,
         "iy": 300.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_300_USPSM_FB92",
@@ -13603,8 +12729,7 @@
         "ix": 300.0,
         "iy": 300.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_350_HPBTCN_196B",
@@ -13624,8 +12749,7 @@
         "ix": null,
         "iy": 0.375,
         "cg_from_base": 0.23
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_40_HORNET_D395",
@@ -13645,8 +12769,7 @@
         "ix": 224.0,
         "iy": 2600.0,
         "cg_from_base": 0.065
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_45_HORNET_9FB7",
@@ -13666,8 +12789,7 @@
         "ix": 224.0,
         "iy": 224.0,
         "cg_from_base": 0.215
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_45_SPITZE_B328",
@@ -13687,8 +12809,7 @@
         "ix": 0.224,
         "iy": 45.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_50_SPITZE_12B6",
@@ -13708,8 +12829,7 @@
         "ix": 50.0,
         "iy": 0.217,
         "cg_from_base": 0.224
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_52_HPBTMK_B5DA",
@@ -13729,8 +12849,7 @@
         "ix": 0.224,
         "iy": 224.0,
         "cg_from_base": 0.21
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_53_HPMK_5651",
@@ -13750,8 +12869,7 @@
         "ix": 0.224,
         "iy": 224.0,
         "cg_from_base": 0.224
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_55_HPBTGK_D9D7",
@@ -13771,8 +12889,7 @@
         "ix": 55.0,
         "iy": 55.0,
         "cg_from_base": 0.224
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_55_SPITZE_4BB0",
@@ -13792,8 +12909,7 @@
         "ix": 55.0,
         "iy": 55.0,
         "cg_from_base": 0.237
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_55_SPITZE_57C0",
@@ -13813,8 +12929,7 @@
         "ix": 0.224,
         "iy": 0.224,
         "cg_from_base": 0.1
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_60_HPVK_DAC7",
@@ -13834,8 +12949,7 @@
         "ix": 7.0,
         "iy": 60.0,
         "cg_from_base": 0.243
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_77_HPBTMK_D149",
@@ -13855,8 +12969,7 @@
         "ix": 77.0,
         "iy": 224.0,
         "cg_from_base": 0.224
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_77_HPBTMK_F4F2",
@@ -13876,8 +12989,7 @@
         "ix": 224.0,
         "iy": 0.224,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_80_HPBTCN_4842",
@@ -13897,8 +13009,7 @@
         "ix": 80.0,
         "iy": 80.0,
         "cg_from_base": 0.23
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_80_SBTBLI_D1C9",
@@ -13918,8 +13029,7 @@
         "ix": 80.0,
         "iy": 80.0,
         "cg_from_base": 0.04
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_85_HPBTGK_5983",
@@ -13939,8 +13049,7 @@
         "ix": 85.0,
         "iy": 0.243,
         "cg_from_base": 0.234
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_85_RNSM_228B",
@@ -13960,8 +13069,7 @@
         "ix": 0.308,
         "iy": 308.0,
         "cg_from_base": 0.027
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_95_FMJTM_2EFF",
@@ -13981,8 +13089,7 @@
         "ix": 95.0,
         "iy": 0.308,
         "cg_from_base": 0.015
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SIERRA_UNK_95_HPBTCN_9EA3",
@@ -14002,8 +13109,7 @@
         "ix": 95.0,
         "iy": 224.0,
         "cg_from_base": 0.155
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_204_39_TNT",
@@ -14023,8 +13129,7 @@
         "ix": 0.0015,
         "iy": 0.000115,
         "cg_from_base": 0.45
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_224_33_TNT",
@@ -14044,8 +13149,7 @@
         "ix": 33.0,
         "iy": 224.0,
         "cg_from_base": 0.08
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_224_50_TNT",
@@ -14065,8 +13169,7 @@
         "ix": 0.0015,
         "iy": 0.0023,
         "cg_from_base": 0.28
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_224_52_HP",
@@ -14086,8 +13189,7 @@
         "ix": 52.0,
         "iy": 52.0,
         "cg_from_base": 0.253
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_224_55_GDB",
@@ -14107,8 +13209,7 @@
         "ix": 6.35e-08,
         "iy": 3.24e-08,
         "cg_from_base": 0.35
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_224_62_GDB",
@@ -14128,8 +13229,7 @@
         "ix": 62.0,
         "iy": 62.0,
         "cg_from_base": 0.175
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_224_75_GDB",
@@ -14149,8 +13249,7 @@
         "ix": 3.93e-06,
         "iy": 2.24e-06,
         "cg_from_base": 0.31
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_243_100_GS",
@@ -14170,8 +13269,7 @@
         "ix": 0.0139,
         "iy": 0.00087,
         "cg_from_base": 0.61
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_243_80_IMPACT",
@@ -14191,8 +13289,7 @@
         "ix": 80.0,
         "iy": 80.0,
         "cg_from_base": 0.048
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_243_90_HOTCOR",
@@ -14212,8 +13309,7 @@
         "ix": 90.0,
         "iy": 0.243,
         "cg_from_base": 0.035
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_243_95_IMPACT",
@@ -14233,8 +13329,7 @@
         "ix": 243.0,
         "iy": 950.0,
         "cg_from_base": 0.22
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_257_120_GS",
@@ -14254,8 +13349,7 @@
         "ix": 120.0,
         "iy": 120.0,
         "cg_from_base": 0.135
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_257_87_TNT",
@@ -14275,8 +13369,7 @@
         "ix": 0.257,
         "iy": 0.257,
         "cg_from_base": 0.257
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_264_120_GDB",
@@ -14296,8 +13389,7 @@
         "ix": 1.3,
         "iy": 4.5,
         "cg_from_base": 0.25
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_264_140_GS",
@@ -14317,8 +13409,7 @@
         "ix": 264.0,
         "iy": 264.0,
         "cg_from_base": 0.39
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_264_140_IMPACT",
@@ -14338,8 +13429,7 @@
         "ix": 140.0,
         "iy": 0.264,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_264_156_IMPACT",
@@ -14359,8 +13449,7 @@
         "ix": 0.0416,
         "iy": 0.0212,
         "cg_from_base": 0.52
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_277_115_GDB",
@@ -14380,8 +13469,7 @@
         "ix": 4.5e-09,
         "iy": 2.3e-09,
         "cg_from_base": 0.15
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_277_130_GS",
@@ -14401,8 +13489,7 @@
         "ix": 130.0,
         "iy": 277.0,
         "cg_from_base": 0.07
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_277_90_TNT",
@@ -14422,8 +13509,7 @@
         "ix": 90.0,
         "iy": 0.277,
         "cg_from_base": 0.168
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_284_110_TNT",
@@ -14443,8 +13529,7 @@
         "ix": 0.284,
         "iy": 110.0,
         "cg_from_base": 0.025
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_284_145_HOTCOR",
@@ -14464,8 +13549,7 @@
         "ix": 145.0,
         "iy": 0.284,
         "cg_from_base": 0.457
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_284_160_GS",
@@ -14485,8 +13569,7 @@
         "ix": 1.6,
         "iy": 3.5,
         "cg_from_base": 1.0
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_308_125_TNT",
@@ -14506,8 +13589,7 @@
         "ix": 125.0,
         "iy": 125.0,
         "cg_from_base": 0.341
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_308_130_HP",
@@ -14527,8 +13609,7 @@
         "ix": 130.0,
         "iy": 0.308,
         "cg_from_base": 0.89
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_308_150_GDB",
@@ -14548,8 +13629,7 @@
         "ix": 150.0,
         "iy": 2820.0,
         "cg_from_base": 0.414
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_308_150_HOTCOR",
@@ -14569,8 +13649,7 @@
         "ix": null,
         "iy": 150.0,
         "cg_from_base": 0.016
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_308_165_GS",
@@ -14590,8 +13669,7 @@
         "ix": 165.0,
         "iy": 165.0,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_308_168_GDB",
@@ -14611,8 +13689,7 @@
         "ix": 5.2e-16,
         "iy": 2.3e-17,
         "cg_from_base": 0.7
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_308_172_IMPACT",
@@ -14632,8 +13709,7 @@
         "ix": 172.0,
         "iy": 2635.0,
         "cg_from_base": 0.308
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_308_190_IMPACT",
@@ -14653,8 +13729,7 @@
         "ix": 190.0,
         "iy": 2885.0,
         "cg_from_base": 0.308
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_338_200_HOTCOR",
@@ -14674,8 +13749,7 @@
         "ix": 200.0,
         "iy": 0.338,
         "cg_from_base": 1.0
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_SPEER_338_225_GS",
@@ -14695,8 +13769,7 @@
         "ix": 6.95,
         "iy": 0.85,
         "cg_from_base": 0.9
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_B9K2_308_1250_125GRFLATB_GYBA",
@@ -14716,8 +13789,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_JGR4_264_950_95GRELDMAT_3LRC",
@@ -14737,8 +13809,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_N9K4_277_800_80GRPRECIS_R2WX",
@@ -14758,8 +13829,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_JGR4_224_750_75GRVMAX_RMFT",
@@ -14779,8 +13849,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     },
     {
       "id": "BUL_JGR4_308_1200_120GRVMAX_GUMY",
@@ -14800,8 +13869,7 @@
         "ix": null,
         "iy": null,
         "cg_from_base": null
-      },
-      "needs_recheck": 0
+      }
     }
   ],
   "loads": [
@@ -14813,8 +13881,7 @@
       "cartridgeId": "CTG_7REMMAG_cW92",
       "bulletId": "BUL_SPEER_264_120_GDB",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_ACCURATE_8MAU_BARNES_70_TACTX_IGPC",
@@ -14824,8 +13891,7 @@
       "cartridgeId": "CTG_8MAU_N8HJ",
       "bulletId": "BUL_BARNES_224_70_TACTX",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_ADG_8MAU_SPEER_147_GOLDDO_45TP",
@@ -14835,8 +13901,7 @@
       "cartridgeId": "CTG_8MAU_N8HJ",
       "bulletId": "BUL_SIERRA_UNK_180_TGK_3E12",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_ALLIANT_7PRC_BARNES_127_LRX_09BS",
@@ -14846,8 +13911,7 @@
       "cartridgeId": "CTG_7PRC_N7HE",
       "bulletId": "BUL_BARNES_264_127_LRX",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_ALPHA_8MAU_HORNADY_750_HORNAD_TQVB",
@@ -14857,8 +13921,7 @@
       "cartridgeId": "CTG_8MAU_N8HJ",
       "bulletId": "BUL_SPEER_264_140_GS",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_BARNES_308WIN_NEW_0_UNK_K3SR",
@@ -14868,8 +13931,7 @@
       "cartridgeId": "CTG_308WIN_cC82",
       "bulletId": "BUL_SIERRA_UNK_180_JHPSM_265B",
       "partNumber": "PM308M1",
-      "lot": "Lot202",
-      "needs_recheck": 0
+      "lot": "Lot202"
     },
     {
       "id": "LOAD_COMM_BARNES_308WIN_NORMA_100_BALLIS_N1DA",
@@ -14879,8 +13941,7 @@
       "cartridgeId": "CTG_308WIN_cC82",
       "bulletId": "BUL_NORMA_UNK_100_BALLIS_22DA",
       "partNumber": "30849",
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_BARNES_65CM_NEW_0_UNK_ORBH",
@@ -14890,8 +13951,7 @@
       "cartridgeId": "CTG_65CM_cN72",
       "bulletId": "BUL_SPEER_308_165_GS",
       "partNumber": "30848",
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_BARNES_65PRC_BARNES_62_TTSX_VOIL",
@@ -14901,8 +13961,7 @@
       "cartridgeId": "CTG_65PRC_cP02",
       "bulletId": "BUL_BARNES_224_62_TTSX",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_BARNES_7PRC_BARNES_130_TSX_WN96",
@@ -14912,8 +13971,7 @@
       "cartridgeId": "CTG_7PRC_N7HE",
       "bulletId": "BUL_BARNES_264_130_TSX",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_BERGER_65CM_BERGER_25_FBVAR_L4K7",
@@ -14923,8 +13981,7 @@
       "cartridgeId": "CTG_65CM_cN72",
       "bulletId": "BUL_BERGER_172_25_FBVAR",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_BERGER_65SWE_BERGER_25_FBVAR_086H",
@@ -14934,8 +13991,7 @@
       "cartridgeId": "CTG_65SWE_N6HA",
       "bulletId": "BUL_BERGER_172_25_FBVAR",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_BERGER_6CM_NEW_0_UNK_UKL9",
@@ -14945,8 +14001,7 @@
       "cartridgeId": "CTG_6CM_cG62",
       "bulletId": "BUL_SPEER_264_120_GDB",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_BERGER_6CM_NEW_0_UNK_WVSG",
@@ -14956,8 +14011,7 @@
       "cartridgeId": "CTG_6CM_cG62",
       "bulletId": "BUL_SIERRA_UNK_350_HPBTCN_196B",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_BERGER_7MAU_BERGER_25_FBVAR_9VOQ",
@@ -14967,8 +14021,7 @@
       "cartridgeId": "CTG_7MAU_N7HF",
       "bulletId": "BUL_BERGER_172_25_FBVAR",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_BERGER_7PRC_NEW_0_UNK_6YU9",
@@ -14978,8 +14031,7 @@
       "cartridgeId": "CTG_7PRC_N7HE",
       "bulletId": "BUL_SPEER_277_130_GS",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_BERGER_8MAU_SPEER_147_GOLDDO_3X58",
@@ -14989,8 +14041,7 @@
       "cartridgeId": "CTG_8MAU_N8HJ",
       "bulletId": "BUL_SIERRA_UNK_150_HPBTMK_ED11",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_BLAC_223REM_NEW_0_UNK_SGT2",
@@ -15000,8 +14051,7 @@
       "cartridgeId": "CTG_223REM_cR82",
       "bulletId": "BUL_SIERRA_UNK_155_HPBTCN_9EC8",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_BLAC_308WIN_NEW_0_UNK_3OBT",
@@ -15011,8 +14061,7 @@
       "cartridgeId": "CTG_308WIN_cC82",
       "bulletId": "BUL_SPEER_264_140_GS",
       "partNumber": "BH-75MATCH2",
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_BLAC_308WIN_NEW_0_UNK_T793",
@@ -15022,8 +14071,7 @@
       "cartridgeId": "CTG_308WIN_cC82",
       "bulletId": "BUL_SPEER_224_55_GDB",
       "partNumber": "GM308M6",
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_BLAC_7PRC_HORNADY_750_HORNAD_NQXN",
@@ -15033,8 +14081,7 @@
       "cartridgeId": "CTG_7PRC_N7HE",
       "bulletId": "BUL_SPEER_264_140_GS",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_FEDERAL_308WIN_NEW_0_UNK_0EA3",
@@ -15044,8 +14091,7 @@
       "cartridgeId": "CTG_308WIN_cC82",
       "bulletId": "BUL_SIERRA_UNK_150_HPBTMK_ED11",
       "partNumber": "AE308D",
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_FEDERAL_308WIN_NEW_0_UNK_GMPV",
@@ -15055,8 +14101,7 @@
       "cartridgeId": "CTG_308WIN_cC82",
       "bulletId": "BUL_SPEER_264_140_GS",
       "partNumber": "GM308M3",
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_FEDERAL_308WIN_NORMA_100_BALLIS_SKIT",
@@ -15066,8 +14111,7 @@
       "cartridgeId": "CTG_308WIN_cC82",
       "bulletId": "BUL_NORMA_UNK_100_BALLIS_22DA",
       "partNumber": "GM308M2",
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_FEDERAL_308WIN_SPEER_147_GOLDDO_YQKW",
@@ -15077,8 +14121,7 @@
       "cartridgeId": "CTG_308WIN_cC82",
       "bulletId": "BUL_SPEER_264_120_GDB",
       "partNumber": "GM308M3",
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_FEDERAL_7PRC_NORMA_100_BALLIS_0K3Q",
@@ -15088,8 +14131,7 @@
       "cartridgeId": "CTG_7PRC_N7HE",
       "bulletId": "BUL_NORMA_UNK_100_BALLIS_22DA",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_HORNADY_224VALK_NEW_0_UNK_59VH",
@@ -15099,8 +14141,7 @@
       "cartridgeId": "CTG_224VALK_N2H5",
       "bulletId": "BUL_SIERRA_UNK_175_HPBTMK_9C74",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_HORNADY_22CM_NEW_0_UNK_004Z",
@@ -15110,8 +14151,7 @@
       "cartridgeId": "CTG_22CM_cA72",
       "bulletId": "BUL_SIERRA_UNK_175_HPBTMK_9C74",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_HORNADY_308WIN_NEW_0_UNK_GA88",
@@ -15121,8 +14161,7 @@
       "cartridgeId": "CTG_308WIN_cC82",
       "bulletId": "BUL_SPEER_264_140_IMPACT",
       "partNumber": "GM308M4",
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_HORNADY_308WIN_SPEER_147_GOLDDO_OIS9",
@@ -15132,8 +14171,7 @@
       "cartridgeId": "CTG_308WIN_cC82",
       "bulletId": "BUL_SIERRA_UNK_100_HPBTMK_B6F6",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_HORNADY_65PRC_BARNES_62_TTSX_MGP4",
@@ -15143,8 +14181,7 @@
       "cartridgeId": "CTG_65PRC_cP02",
       "bulletId": "BUL_BARNES_224_62_TTSX",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_HORNADY_6ARC_SPEER_147_GOLDDO_660Z",
@@ -15154,8 +14191,7 @@
       "cartridgeId": "CTG_6ARC_cH92",
       "bulletId": "BUL_SIERRA_UNK_250_HPBTMK_50E6",
       "partNumber": "81541-PARENT",
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_HORNADY_7PRC_BARNES_208_LRX_AEWJ",
@@ -15165,8 +14201,7 @@
       "cartridgeId": "CTG_7PRC_N7HE",
       "bulletId": "BUL_BARNES_UNK_208_LRX_C7D1",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_LAPUA_223REM_NEW_0_UNK_G9LD",
@@ -15176,8 +14211,7 @@
       "cartridgeId": "CTG_223REM_cR82",
       "bulletId": "BUL_SIERRA_UNK_150_HPBTMK_ED11",
       "partNumber": "MSC223L2",
-      "lot": "Lot101",
-      "needs_recheck": 0
+      "lot": "Lot101"
     },
     {
       "id": "LOAD_COMM_LAPUA_224VALK_SPEER_147_GOLDDO_IA6B",
@@ -15187,8 +14221,7 @@
       "cartridgeId": "CTG_224VALK_N2H5",
       "bulletId": "BUL_SIERRA_UNK_180_JHPSM_265B",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_LAPUA_308WIN_NORMA_100_BALLIS_MOQ9",
@@ -15198,8 +14231,7 @@
       "cartridgeId": "CTG_308WIN_cC82",
       "bulletId": "BUL_NORMA_UNK_100_BALLIS_22DA",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_LAPUA_65CM_BERGER_25_FBVAR_OKS1",
@@ -15209,8 +14241,7 @@
       "cartridgeId": "CTG_65CM_cN72",
       "bulletId": "BUL_BERGER_172_25_FBVAR",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_NORMA_223REM_NEW_0_UNK_IX83",
@@ -15220,8 +14251,7 @@
       "cartridgeId": "CTG_223REM_cR82",
       "bulletId": "BUL_SIERRA_UNK_175_HPBTMK_9C74",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_NORMA_223REM_NORMA_100_BALLIS_5894",
@@ -15231,8 +14261,7 @@
       "cartridgeId": "CTG_223REM_cR82",
       "bulletId": "BUL_NORMA_UNK_100_BALLIS_22DA",
       "partNumber": "AVWJJ474519",
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_NORMA_308WIN_SPEER_147_GOLDDO_0AOJ",
@@ -15242,8 +14271,7 @@
       "cartridgeId": "CTG_308WIN_cC82",
       "bulletId": "BUL_SPEER_224_55_GDB",
       "partNumber": "NMGTL1",
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_NORMA_8MAU_BARNES_62_TSX_EEWE",
@@ -15253,8 +14281,7 @@
       "cartridgeId": "CTG_8MAU_N8HJ",
       "bulletId": "BUL_BARNES_224_62_TSX",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_NOSLER_223REM_SPEER_147_GOLDDO_VA4T",
@@ -15264,8 +14291,7 @@
       "cartridgeId": "CTG_223REM_cR82",
       "bulletId": "BUL_SIERRA_UNK_300_SBTGK_B060",
       "partNumber": "MGRDF223",
-      "lot": "Lot123",
-      "needs_recheck": 0
+      "lot": "Lot123"
     },
     {
       "id": "LOAD_COMM_NOSLER_308WIN_NEW_0_UNK_7PR1",
@@ -15275,8 +14301,7 @@
       "cartridgeId": "CTG_308WIN_cC82",
       "bulletId": "BUL_SIERRA_UNK_150_HPBTMK_ED11",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_NOSLER_308WIN_NORMA_100_BALLIS_0X1S",
@@ -15286,8 +14311,7 @@
       "cartridgeId": "CTG_308WIN_cC82",
       "bulletId": "BUL_NORMA_UNK_100_BALLIS_22DA",
       "partNumber": "MGC308CC",
-      "lot": "Lot456",
-      "needs_recheck": 0
+      "lot": "Lot456"
     },
     {
       "id": "LOAD_COMM_NOSLER_6CM_NEW_0_UNK_VU7Z",
@@ -15297,8 +14321,7 @@
       "cartridgeId": "CTG_6CM_cG62",
       "bulletId": "BUL_SPEER_264_156_IMPACT",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     },
     {
       "id": "LOAD_COMM_NOSLER_7PRC_BARNES_69_MB_M58G",
@@ -15308,8 +14331,7 @@
       "cartridgeId": "CTG_7PRC_N7HE",
       "bulletId": "BUL_BARNES_224_69_MB",
       "partNumber": null,
-      "lot": null,
-      "needs_recheck": 0
+      "lot": null
     }
   ]
 }
