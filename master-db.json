@@ -201,7 +201,7 @@
     {
       "id": "DIA_224_L5X8",
       "imperial": ".224",
-      "metric": "5.56"
+      "metric": "5.56mm"
     },
     {
       "id": "DIA_243_B7V4",
@@ -211,7 +211,7 @@
     {
       "id": "DIA_257_N2M1",
       "imperial": ".257",
-      "metric": ""
+      "metric": "6.35mm"
     },
     {
       "id": "DIA_264_H8J4",
@@ -231,7 +231,7 @@
     {
       "id": "DIA_308_XBM7",
       "imperial": ".308",
-      "metric": "7.62"
+      "metric": "7.62mm"
     },
     {
       "id": "DIA_338_R7E3",
@@ -241,7 +241,7 @@
     {
       "id": "DIA_375_OMEC",
       "imperial": ".375",
-      "metric": ""
+      "metric": "9.5mm"
     }
   ],
   "loadTypes": [
