@@ -13831,7 +13831,7 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "25 Grain FB Varmint",
       "weight": 25.0,
-      "diameterId": "DIA_172_XXX",
+      "diameterId": "DIA_172_QW2R",
       "length": null,
       "ballistics": {
         "g1_bc": null,
@@ -13851,7 +13851,7 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "35 Grain FB Varmint",
       "weight": 35.0,
-      "diameterId": "DIA_204_XXX",
+      "diameterId": "DIA_204_M9K3",
       "length": null,
       "ballistics": {
         "g1_bc": null,
@@ -13871,7 +13871,7 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "40 Grain BT Varmint",
       "weight": 40.0,
-      "diameterId": "DIA_204_XXX",
+      "diameterId": "DIA_204_M9K3",
       "length": null,
       "ballistics": {
         "g1_bc": null,
@@ -13891,7 +13891,7 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "52 Grain FB Target",
       "weight": 52.0,
-      "diameterId": "DIA_224_XXX",
+      "diameterId": "DIA_224_L5X8",
       "length": null,
       "ballistics": {
         "g1_bc": null,
@@ -13951,7 +13951,7 @@
       "manufacturerId": "MAN_HORNADY_JGR4",
       "name": "108gr ELD Match",
       "weight": 108.0,
-      "diameterId": "DIA_243_L5X8",
+      "diameterId": "DIA_243_B7V4",
       "length": 1.17,
       "ballistics": {
         "g1_bc": null,
@@ -13971,7 +13971,7 @@
       "manufacturerId": "MAN_HORNADY_JGR4",
       "name": "103gr ELDX",
       "weight": 103.0,
-      "diameterId": "DIA_243_L5X8",
+      "diameterId": "DIA_243_B7V4",
       "length": 1.165,
       "ballistics": {
         "g1_bc": null,
@@ -13991,7 +13991,7 @@
       "manufacturerId": "MAN_LAPUA_L5X1",
       "name": "109gr Lapua",
       "weight": 109.0,
-      "diameterId": "DIA_243_L5X8",
+      "diameterId": "DIA_243_B7V4",
       "length": 1.165,
       "ballistics": {
         "g1_bc": null,
@@ -14191,7 +14191,7 @@
       "manufacturerId": "MAN_NOSLER_N9K4",
       "name": "140gr RDF",
       "weight": 140.0,
-      "diameterId": "DIA_264_L5X8",
+      "diameterId": "DIA_264_H8J4",
       "length": 1.325,
       "ballistics": {
         "g1_bc": null,
