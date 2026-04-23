@@ -1204,7 +1204,7 @@
     },
     {
       "id": "CTG_NEW_751L",
-      "name": ".22 ARC",
+      "name": "22 ARC",
       "diameterId": "DIA_224_L5X8",
       "maxCaseLength": 1.525,
       "trimLength": 1.495,
@@ -15965,16 +15965,6 @@
       "manufacturerId": "MAN_BLAC_CS4B",
       "cartridgeId": "CTG_86BLK_cS22",
       "bulletId": "BUL_S6Y3_338_1750_175GRMATCH_G101",
-      "partNumber": null,
-      "lot": null
-    },
-    {
-      "id": "LOAD_COMM_BLAC_MTCR",
-      "name": "Match HPBT",
-      "loadTypeId": "LT_COMM",
-      "manufacturerId": "MAN_BLAC_CS4B",
-      "cartridgeId": "CTG_NEW_751L",
-      "bulletId": "BUL_SIERRA_224_52_SMK",
       "partNumber": null,
       "lot": null
     },
