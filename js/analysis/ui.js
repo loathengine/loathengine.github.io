@@ -109,11 +109,13 @@ export async function renderAnalysisPlot(sessionResults, canvas, bounds = null) 
 
     let maxOffset = 0;
     sessionResults.forEach(res => {
-        const sessionMPI = res.stats.raw.mpi;
         res.shots.forEach(shot => {
-            const offset = Math.hypot(shot.x - sessionMPI.x, shot.y - sessionMPI.y);
+            const offset = Math.hypot(shot.x, shot.y);
             if (offset > maxOffset) maxOffset = offset;
         });
+        const sessionMPI = res.stats.raw.mpi;
+        const mpiOffset = Math.hypot(sessionMPI.x, sessionMPI.y) + res.stats.raw.meanRadius;
+        if (mpiOffset > maxOffset) maxOffset = mpiOffset;
     });
 
     const units = sessionResults[0].stats.raw.units;
@@ -145,20 +147,29 @@ export async function renderAnalysisPlot(sessionResults, canvas, bounds = null) 
         const sessionMPI = res.stats.raw.mpi;
         const sessionMR = res.stats.raw.meanRadius;
 
+        const mpiPx = sessionMPI.x * pixelsPerUnit;
+        const mpiPy = sessionMPI.y * pixelsPerUnit * -1; // Flip Y
         const radius = sessionMR * pixelsPerUnit;
+
         ctx.strokeStyle = color;
         ctx.lineWidth = Math.max(2, renderBounds.width / 400);
         ctx.globalAlpha = 0.5;
         ctx.beginPath();
-        ctx.arc(0, 0, radius, 0, 2 * Math.PI);
+        ctx.arc(mpiPx, mpiPy, radius, 0, 2 * Math.PI);
         ctx.stroke();
         ctx.globalAlpha = 1.0;
+        
+        // Draw MPI center cross
+        ctx.beginPath();
+        ctx.moveTo(mpiPx - 6, mpiPy); ctx.lineTo(mpiPx + 6, mpiPy);
+        ctx.moveTo(mpiPx, mpiPy - 6); ctx.lineTo(mpiPx, mpiPy + 6);
+        ctx.stroke();
 
         ctx.fillStyle = color;
         const shotRadius = Math.max(3, renderBounds.width / 250);
         res.shots.forEach(shot => {
-            const px = (shot.x - sessionMPI.x) * pixelsPerUnit;
-            const py = (shot.y - sessionMPI.y) * pixelsPerUnit * -1; // Flip Y for standard plot
+            const px = shot.x * pixelsPerUnit;
+            const py = shot.y * pixelsPerUnit * -1; // Flip Y for standard plot
             ctx.beginPath();
             ctx.arc(px, py, shotRadius, 0, 2 * Math.PI);
             ctx.fill();

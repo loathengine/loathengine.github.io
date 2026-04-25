@@ -84,13 +84,16 @@ export function draw() {
         ctx.stroke();
     }
 
-    state.groups.forEach((group) => {
-        if (group.poa) { drawPOA(ctx, group.poa, group.color); }
-        group.pois.forEach(poi => drawCircle(ctx, poi, group.color));
-        if (group.stats && group.stats.mpi && group.pois.length > 0) {
-            drawMPI(ctx, group.stats.mpi, group.color);
-        }
-    });
+    const activeTarget = state.targets[state.activeTargetIndex];
+    if (activeTarget) {
+        state.groups.filter(g => g.targetId === activeTarget.id).forEach((group) => {
+            if (group.poa) { drawPOA(ctx, group.poa, group.color); }
+            group.pois.forEach(poi => drawCircle(ctx, poi, group.color));
+            if (group.stats && group.stats.mpi && group.pois.length > 0) {
+                drawMPI(ctx, group.stats.mpi, group.color);
+            }
+        });
+    }
 
     ctx.restore();
 }

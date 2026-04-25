@@ -1,7 +1,8 @@
 import { generateUniqueId } from '../db.js';
 
 export const state = {
-    targets: [], // Array of { id, targetImageId, img, scale, groups, transform }
+    targets: [], // Array of { id, targetImageId, img, scale, transform }
+    groups: [], // Global array of { id, targetId, pois, poa, color, stats }
     activeTargetIndex: -1,
     
     // Global session properties
@@ -17,7 +18,6 @@ export const state = {
     // Properties that alias the active target for easier refactoring
     get img() { return this.activeTargetIndex >= 0 ? this.targets[this.activeTargetIndex].img : null; },
     get scale() { return this.activeTargetIndex >= 0 ? this.targets[this.activeTargetIndex].scale : null; },
-    get groups() { return this.activeTargetIndex >= 0 ? this.targets[this.activeTargetIndex].groups : null; },
     get transform() { return this.activeTargetIndex >= 0 ? this.targets[this.activeTargetIndex].transform : null; },
     get currentTargetId() { return this.activeTargetIndex >= 0 ? this.targets[this.activeTargetIndex].targetImageId : null; },
     
@@ -26,6 +26,7 @@ export const state = {
 
 export function resetState() {
     state.targets = [];
+    state.groups = [];
     state.activeTargetIndex = -1;
     state.currentGroupIndex = -1;
     state.settingState = null;
@@ -38,7 +39,6 @@ export function addTargetToSession(targetImageId, newImg) {
         targetImageId: targetImageId,
         img: newImg,
         scale: { p1: null, p2: null, distance: null, units: 'in', pixelsPerUnit: null },
-        groups: [],
         transform: { scale: 1 }
     });
     state.activeTargetIndex = state.targets.length - 1;

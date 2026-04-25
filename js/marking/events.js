@@ -162,7 +162,9 @@ export function setupEventListeners() {
         } else if (state.settingState === 'delete_poi') {
             const clickRadius = 10 / state.transform.scale;
             let deleted = false;
+            const currentTargetId = state.targets[state.activeTargetIndex].id;
             for (const group of state.groups) {
+                if (group.targetId !== currentTargetId) continue;
                 const pois = group.pois;
                 for (let i = pois.length - 1; i >= 0; i--) {
                     const dist = Math.hypot(coords.x - pois[i].x, coords.y - pois[i].y);
@@ -201,9 +203,16 @@ export function setupEventListeners() {
     });
 
     addGroupBtn.addEventListener('click', () => {
-        if (!state.img) { alert('Please load a saved image first.'); return; }
+        if (!state.img || state.activeTargetIndex === -1) { alert('Please load a saved image first.'); return; }
         const colors = ['#36A2EB', '#FFCE56', '#9966FF', '#FF9F40', '#f472b6', '#6b7280'];
-        state.groups.push({ pois: [], poa: null, color: colors[state.groups.length % colors.length], stats: {} });
+        const currentTargetId = state.targets[state.activeTargetIndex].id;
+        state.groups.push({ 
+            targetId: currentTargetId,
+            pois: [], 
+            poa: null, 
+            color: colors[state.groups.length % colors.length], 
+            stats: {} 
+        });
         state.currentGroupIndex = state.groups.length - 1;
         renderGroupSelector();
         state.settingState = 'poa'; 
@@ -284,32 +293,30 @@ export function setupEventListeners() {
         let shotCounter = 0;
         let globalGroupCounter = 0;
         
-        for (const target of state.targets) {
-            if (!target.scale.pixelsPerUnit) {
-                alert("One or more targets is missing a scale. Please set a scale on every target before saving.");
-                return;
-            }
-            
-            target.groups.forEach((group) => {
-                globalGroupCounter++;
-                if (group.pois.length > 0 && group.poa) {
-                    group.pois.forEach((poi) => {
-                        shotCounter++;
-                        const x_coord = (poi.x - group.poa.x) / target.scale.pixelsPerUnit;
-                        const y_coord = (group.poa.y - poi.y) / target.scale.pixelsPerUnit;
-                        shotsForAnalysis.push({
-                            shotNumber: shotCounter,
-                            group: globalGroupCounter,
-                            x: parseFloat(x_coord.toFixed(4)), 
-                            y: parseFloat(y_coord.toFixed(4)),
-                            units: target.scale.units, 
-                            velocity: poi.velocity,
-                            targetId: target.id
-                        });
-                    });
+        state.groups.forEach((group) => {
+            globalGroupCounter++;
+            if (group.pois.length > 0 && group.poa) {
+                const target = state.targets.find(t => t.id === group.targetId);
+                if (!target || !target.scale.pixelsPerUnit) {
+                    console.warn(`Group ${globalGroupCounter} belongs to a target without a scale.`);
+                    return;
                 }
-            });
-        }
+                group.pois.forEach((poi) => {
+                    shotCounter++;
+                    const x_coord = (poi.x - group.poa.x) / target.scale.pixelsPerUnit;
+                    const y_coord = (group.poa.y - poi.y) / target.scale.pixelsPerUnit;
+                    shotsForAnalysis.push({
+                        shotNumber: shotCounter,
+                        group: globalGroupCounter,
+                        x: parseFloat(x_coord.toFixed(4)), 
+                        y: parseFloat(y_coord.toFixed(4)),
+                        units: target.scale.units, 
+                        velocity: poi.velocity,
+                        targetId: target.id
+                    });
+                });
+            }
+        });
         
         if (shotsForAnalysis.length === 0) {
             alert("No impacts have been marked. Nothing to save.");
@@ -332,9 +339,9 @@ export function setupEventListeners() {
                 id: t.id,
                 targetImageId: t.targetImageId,
                 scale: t.scale,
-                groups: t.groups,
                 transform: t.transform
             })),
+            groups: state.groups,
             shots: shotsForAnalysis 
         };
         
@@ -372,6 +379,27 @@ export function setupEventListeners() {
         // Wait briefly for UI transitions if needed
         await new Promise(resolve => setTimeout(resolve, 50));
         
+        if (data.groups && Array.isArray(data.groups)) {
+            // New global groups format
+            state.groups = data.groups;
+        } else if (data.targets && Array.isArray(data.targets)) {
+            // Legacy multi-target format (groups inside targets)
+            for (const tData of data.targets) {
+                if (tData.groups) {
+                    tData.groups.forEach(g => {
+                        g.targetId = tData.id;
+                        state.groups.push(g);
+                    });
+                }
+            }
+        } else if (data.groups) {
+             // Legacy single target where groups was at root but no targetId
+             data.groups.forEach(g => {
+                 g.targetId = state.targets[0]?.id;
+                 state.groups.push(g);
+             });
+        }
+
         if (data.targets && Array.isArray(data.targets)) {
             // New multi-target format
             for (const tData of data.targets) {
@@ -390,7 +418,6 @@ export function setupEventListeners() {
                                 targetImageId: tData.targetImageId,
                                 img: newImg,
                                 scale: tData.scale || { p1: null, p2: null, distance: null, units: 'in', pixelsPerUnit: null },
-                                groups: tData.groups || [],
                                 transform: tData.transform || { scale: 1 }
                             });
                             resolve();
@@ -414,14 +441,17 @@ export function setupEventListeners() {
                         newImg.baseWidth = workingBaseWidth;
                         newImg.baseHeight = workingBaseWidth * aspectRatio;
                         
+                        const newTargetId = generateUniqueId();
                         state.targets.push({
-                            id: generateUniqueId(),
+                            id: newTargetId,
                             targetImageId: data.targetImageId,
                             img: newImg,
                             scale: data.scale || { p1: null, p2: null, distance: null, units: 'in', pixelsPerUnit: null },
-                            groups: data.groups || [],
                             transform: { scale: 1 }
                         });
+                        
+                        // Assign targetId to all groups since this is a legacy load
+                        state.groups.forEach(g => g.targetId = newTargetId);
                         resolve();
                     };
                     newImg.src = targetData.dataUrl || targetData.data;

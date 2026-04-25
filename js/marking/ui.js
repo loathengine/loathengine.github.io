@@ -46,9 +46,12 @@ export function updateStatsDisplay() {
                 const referencePoint = group.poa;
                 group.pois.forEach((poi, poiIndex) => {
                     let coordText = 'N/A,N/A';
-                    if (referencePoint && state.scale.pixelsPerUnit) {
-                        const x_coord = (poi.x - referencePoint.x) / state.scale.pixelsPerUnit;
-                        const y_coord = (poi.y - referencePoint.y) / state.scale.pixelsPerUnit;
+                    const target = state.targets.find(t => t.id === group.targetId);
+                    const pixelsPerUnit = target && target.scale ? target.scale.pixelsPerUnit : null;
+                    
+                    if (referencePoint && pixelsPerUnit) {
+                        const x_coord = (poi.x - referencePoint.x) / pixelsPerUnit;
+                        const y_coord = (poi.y - referencePoint.y) / pixelsPerUnit;
                         // Invert Y coordinate so up is positive
                         coordText = `${x_coord.toFixed(3)},${(-y_coord).toFixed(3)}`;
                     }
