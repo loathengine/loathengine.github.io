@@ -132,7 +132,7 @@ export async function renderAnalysisPlot(sessionResults, canvas, bounds = null) 
     ctx.translate(renderBounds.x + renderBounds.width / 2, renderBounds.y + renderBounds.height / 2);
 
     const gridSpacingPx = gridSpacing * pixelsPerUnit;
-    ctx.strokeStyle = '#374151';
+    ctx.strokeStyle = '#4b5563'; // Slightly brighter grid lines
     ctx.lineWidth = Math.max(1, renderBounds.width / 1000);
     ctx.setLineDash([4, 4]); // Subtle dashed line for MOA grid
 
@@ -188,6 +188,13 @@ export async function renderAnalysisPlot(sessionResults, canvas, bounds = null) 
     ctx.moveTo(0, -renderBounds.height / 2); ctx.lineTo(0, renderBounds.height / 2);
     ctx.moveTo(-renderBounds.width / 2, 0); ctx.lineTo(renderBounds.width / 2, 0);
     ctx.stroke();
+
+    // Add Grid Label
+    ctx.fillStyle = '#9ca3af';
+    ctx.font = '12px sans-serif';
+    ctx.textAlign = 'right';
+    const gridLabel = (factors && factors.moa > 0) ? 'Grid = 1 MOA' : `Grid = 1 ${units}`;
+    ctx.fillText(gridLabel, renderBounds.width / 2 - 10, renderBounds.height / 2 - 10);
 
     ctx.restore();
 }
