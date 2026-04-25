@@ -289,6 +289,14 @@ export function setupEventListeners() {
             return;
         }
         
+        const targetDistInput = document.getElementById('tmTargetDistance');
+        const targetDistance = parseFloat(targetDistInput.value);
+        if (!targetDistance || targetDistance <= 0) {
+            alert("Please enter a valid Target Distance before saving the session. This is required for accurate dispersion analysis.");
+            targetDistInput.focus();
+            return;
+        }
+        
         const shotsForAnalysis = [];
         let shotCounter = 0;
         let globalGroupCounter = 0;

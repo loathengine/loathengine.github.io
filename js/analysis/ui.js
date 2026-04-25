@@ -109,17 +109,22 @@ export async function renderAnalysisPlot(sessionResults, canvas, bounds = null) 
 
     let maxOffset = 0;
     sessionResults.forEach(res => {
+        const sessionMPI = res.stats.raw.mpi;
         res.shots.forEach(shot => {
-            const offset = Math.hypot(shot.x, shot.y);
+            const offset = Math.hypot(shot.x - sessionMPI.x, shot.y - sessionMPI.y);
             if (offset > maxOffset) maxOffset = offset;
         });
-        const sessionMPI = res.stats.raw.mpi;
-        const mpiOffset = Math.hypot(sessionMPI.x, sessionMPI.y) + res.stats.raw.meanRadius;
-        if (mpiOffset > maxOffset) maxOffset = mpiOffset;
     });
 
     const units = sessionResults[0].stats.raw.units;
-    const gridSpacing = (units === 'in') ? 1.0 : 25.0;
+    let gridSpacing = (units === 'in') ? 1.0 : 25.0;
+    
+    // If we have distance factors, use 1 MOA for the grid spacing
+    const factors = sessionResults[0].stats.factors;
+    if (factors && factors.moa > 0) {
+        gridSpacing = 1.0 / factors.moa; // linear units per 1 MOA
+    }
+
     let viewSpan = Math.ceil(maxOffset * 2 * 1.2 / gridSpacing) * gridSpacing;
     if (viewSpan === 0) viewSpan = gridSpacing * 4;
 
@@ -129,47 +134,48 @@ export async function renderAnalysisPlot(sessionResults, canvas, bounds = null) 
     const gridSpacingPx = gridSpacing * pixelsPerUnit;
     ctx.strokeStyle = '#374151';
     ctx.lineWidth = Math.max(1, renderBounds.width / 1000);
+    ctx.setLineDash([4, 4]); // Subtle dashed line for MOA grid
+
     for (let i = gridSpacingPx; i < renderBounds.width / 2; i += gridSpacingPx) {
         ctx.beginPath();
         ctx.moveTo(i, -renderBounds.height / 2); ctx.lineTo(i, renderBounds.height / 2);
         ctx.moveTo(-i, -renderBounds.height / 2); ctx.lineTo(-i, renderBounds.height / 2);
         ctx.stroke();
     }
-        for (let i = gridSpacingPx; i < renderBounds.height / 2; i += gridSpacingPx) {
+    for (let i = gridSpacingPx; i < renderBounds.height / 2; i += gridSpacingPx) {
         ctx.beginPath();
         ctx.moveTo(-renderBounds.width / 2, i); ctx.lineTo(renderBounds.width / 2, i);
         ctx.moveTo(-renderBounds.width / 2, -i); ctx.lineTo(renderBounds.width / 2, -i);
         ctx.stroke();
     }
+    
+    ctx.setLineDash([]); // Reset for rest of the plot
 
     sessionResults.forEach((res, index) => {
         const color = colors[index % colors.length];
         const sessionMPI = res.stats.raw.mpi;
         const sessionMR = res.stats.raw.meanRadius;
-
-        const mpiPx = sessionMPI.x * pixelsPerUnit;
-        const mpiPy = sessionMPI.y * pixelsPerUnit * -1; // Flip Y
         const radius = sessionMR * pixelsPerUnit;
 
         ctx.strokeStyle = color;
         ctx.lineWidth = Math.max(2, renderBounds.width / 400);
         ctx.globalAlpha = 0.5;
         ctx.beginPath();
-        ctx.arc(mpiPx, mpiPy, radius, 0, 2 * Math.PI);
+        ctx.arc(0, 0, radius, 0, 2 * Math.PI);
         ctx.stroke();
         ctx.globalAlpha = 1.0;
         
-        // Draw MPI center cross
+        // Draw MPI center cross (which is now at 0,0)
         ctx.beginPath();
-        ctx.moveTo(mpiPx - 6, mpiPy); ctx.lineTo(mpiPx + 6, mpiPy);
-        ctx.moveTo(mpiPx, mpiPy - 6); ctx.lineTo(mpiPx, mpiPy + 6);
+        ctx.moveTo(-6, 0); ctx.lineTo(6, 0);
+        ctx.moveTo(0, -6); ctx.lineTo(0, 6);
         ctx.stroke();
 
         ctx.fillStyle = color;
         const shotRadius = Math.max(3, renderBounds.width / 250);
         res.shots.forEach(shot => {
-            const px = shot.x * pixelsPerUnit;
-            const py = shot.y * pixelsPerUnit * -1; // Flip Y for standard plot
+            const px = (shot.x - sessionMPI.x) * pixelsPerUnit;
+            const py = (shot.y - sessionMPI.y) * pixelsPerUnit * -1; // Flip Y for standard plot
             ctx.beginPath();
             ctx.arc(px, py, shotRadius, 0, 2 * Math.PI);
             ctx.fill();

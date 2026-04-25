@@ -4,23 +4,51 @@ export function calculateStatsForSession(shots, targetDistance = null, distanceU
     if (!shots || shots.length < 2) return null;
 
     const n = shots.length;
-    const df = n - 1; 
     const dataUnits = shots[0].units || 'units';
 
-    const all_x = shots.map(s => s.x);
-    const all_y = shots.map(s => s.y);
+    // Group shots by their group ID
+    const groups = {};
+    shots.forEach(s => {
+        const gid = s.group || 1;
+        if (!groups[gid]) groups[gid] = [];
+        groups[gid].push(s);
+    });
+
+    const numGroups = Object.keys(groups).length;
+    // Adjusted degrees of freedom for pooled groups (n - k)
+    const df = (n > numGroups) ? (n - numGroups) : (n > 1 ? n - 1 : 1);
+
+    // Normalize shots by centering each group to its own MPI
+    const normalizedShots = [];
+    Object.values(groups).forEach(groupShots => {
+        const g_n = groupShots.length;
+        if (g_n === 0) return;
+        const g_mean_x = groupShots.reduce((sum, s) => sum + s.x, 0) / g_n;
+        const g_mean_y = groupShots.reduce((sum, s) => sum + s.y, 0) / g_n;
+        
+        groupShots.forEach(s => {
+            normalizedShots.push({
+                ...s,
+                x: s.x - g_mean_x,
+                y: s.y - g_mean_y
+            });
+        });
+    });
+
+    const all_x = normalizedShots.map(s => s.x);
+    const all_y = normalizedShots.map(s => s.y);
     const mean_x = all_x.reduce((a, b) => a + b, 0) / n;
     const mean_y = all_y.reduce((a, b) => a + b, 0) / n;
     const sd_x = Math.sqrt(all_x.reduce((sum, x) => sum + Math.pow(x - mean_x, 2), 0) / df);
     const sd_y = Math.sqrt(all_y.reduce((sum, y) => sum + Math.pow(y - mean_y, 2), 0) / df);
-    const meanRadius = shots.reduce((sum, s) => sum + Math.hypot(s.x - mean_x, s.y - mean_y), 0) / n;
+    const meanRadius = normalizedShots.reduce((sum, s) => sum + Math.hypot(s.x - mean_x, s.y - mean_y), 0) / n;
     
     // Calculate Group Size (Extreme Spread)
     let maxSpread = 0;
     if (n >= 2) {
         for (let i = 0; i < n; i++) {
             for (let j = i + 1; j < n; j++) {
-                const dist = Math.hypot(shots[i].x - shots[j].x, shots[i].y - shots[j].y);
+                const dist = Math.hypot(normalizedShots[i].x - normalizedShots[j].x, normalizedShots[i].y - normalizedShots[j].y);
                 if (dist > maxSpread) maxSpread = dist;
             }
         }
@@ -33,7 +61,7 @@ export function calculateStatsForSession(shots, targetDistance = null, distanceU
     const hasVerticalDispersion = sd_y > sd_x * 1.5;
 
     // Velocity Stats
-    const velocityShots = shots.filter(s => s.velocity !== null && typeof s.velocity === 'number' && !isNaN(s.velocity));
+    const velocityShots = normalizedShots.filter(s => s.velocity !== null && typeof s.velocity === 'number' && !isNaN(s.velocity));
     let vel_es = null, vel_sd = null, vel_vert_r2 = null;
 
     if (velocityShots.length >= 2) {
@@ -50,7 +78,7 @@ export function calculateStatsForSession(shots, targetDistance = null, distanceU
         vel_vert_r2 = regressionResult.r2;
     }
 
-    const ci_mr = calculateReliabilityCI(shots);
+    const ci_mr = calculateReliabilityCI(normalizedShots);
     const relativeWidth = meanRadius > 0 ? (ci_mr.upper - ci_mr.lower) / meanRadius : 0;
     
     let reliability_rating = 'Acceptable';
@@ -131,6 +159,7 @@ export function calculateStatsForSession(shots, targetDistance = null, distanceU
 
     return {
         n: n,
+        normalizedShots: normalizedShots,
         // Keep linear units for Plotting logic only
         raw: {
             meanRadius, 
@@ -146,6 +175,7 @@ export function calculateStatsForSession(shots, targetDistance = null, distanceU
         hasVerticalDispersion: hasVerticalDispersion,
         reliability_rating: reliability_rating,
         reliability_color: reliability_color,
-        distanceUnits: distanceUnits
+        distanceUnits: distanceUnits,
+        factors: factors
     };
 }

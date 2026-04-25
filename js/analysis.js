@@ -186,7 +186,7 @@ export function initStatisticalAnalysis() {
                         sessionId: id,
                         sessionName: sessionName,
                         stats: stats,
-                        shots: sessionData.shots 
+                        shots: stats.normalizedShots || sessionData.shots 
                     });
                 }
             }
