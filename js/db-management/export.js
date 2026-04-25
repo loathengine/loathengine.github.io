@@ -188,7 +188,7 @@ export async function handleSessionExport() {
 
     // Generate Plot Canvas and embed as Base64 string
     if (stats) {
-        const canvas = await generateAnalysisCanvas([{ session, stats, sessionName }]);
+        const canvas = await generateAnalysisCanvas([{ session, shots: session.shots, stats, sessionName }]);
         if (canvas) {
             const dataUrl = canvas.toDataURL("image/png");
             exportData.analysis_plot_base64 = dataUrl;
