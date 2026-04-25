@@ -1,9 +1,8 @@
 import { renderAnalysisPlot, colors } from './ui.js';
 
-export async function handleAnalysisExport(lastAnalysisResults) {
+export async function generateAnalysisCanvas(lastAnalysisResults) {
     if (lastAnalysisResults.length === 0) {
-        alert("Please run an analysis first before exporting.");
-        return;
+        return null;
     }
 
     const DPI = 300;
@@ -83,6 +82,18 @@ export async function handleAnalysisExport(lastAnalysisResults) {
 
         currentY += rowHeight;
     });
+
+    return canvas;
+}
+
+export async function handleAnalysisExport(lastAnalysisResults) {
+    if (lastAnalysisResults.length === 0) {
+        alert("Please run an analysis first before exporting.");
+        return;
+    }
+
+    const canvas = await generateAnalysisCanvas(lastAnalysisResults);
+    if (!canvas) return;
 
     const a = document.createElement('a');
     a.href = canvas.toDataURL('image/png');

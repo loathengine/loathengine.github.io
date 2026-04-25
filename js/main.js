@@ -7,7 +7,7 @@ import { initTargetsManagement, renderTargetImages } from './targets.js';
 import { initImpactMarking, refreshImpactMarkingUI } from './marking.js';
 import { initStatisticalAnalysis } from './analysis.js';
 import { initStabilityCalculator, refreshStabilityUI } from './stability.js';
-import { initDbManagement, renderSelectedTable } from './db-management.js';
+import { initDbManagement, renderSelectedTable } from './db-management/index.js';
 
 async function loadTabContent() {
     const tabContainer = document.getElementById('tab-content-container');

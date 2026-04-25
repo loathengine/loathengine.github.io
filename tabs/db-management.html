@@ -31,9 +31,22 @@
                     </div>
                 </div>
 
-                <!-- 4. Danger Zone -->
+                <!-- 4. Session Download Export -->
+                <div class="card db-actions" style="border: 1px solid #8b5cf6;">
+                    <h3 style="color: #8b5cf6;">4. Session Download Export</h3>
+                    <p style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 1rem;">Export a comprehensive zip file containing readable session data (JSON), database migration objects, and an Analysis plot image.</p>
+                    <div>
+                        <label for="aiExportSessionSelect">Select Session to Export</label>
+                        <select id="aiExportSessionSelect" style="margin-top: 0.5rem; margin-bottom: 0.5rem; width: 100%;">
+                            <option value="">-- Loading Sessions... --</option>
+                        </select>
+                        <button id="aiExportBtn" class="btn-indigo" style="width: 100%;">Export Session Package</button>
+                    </div>
+                </div>
+
+                <!-- 5. Danger Zone -->
                 <div class="card db-actions" style="border: 1px solid #ef4444;">
-                    <h3 style="color: #ef4444;">4. Danger Zone</h3>
+                    <h3 style="color: #ef4444;">5. Danger Zone</h3>
                     <p style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 1rem;">Irreversible operations.</p>
                     <div class="button-group" style="display: flex; gap: 0.5rem;">
                         <button id="unifiedDeleteBtn" class="btn-red" style="flex: 1;">Nuclear Reset (All Data)</button>
