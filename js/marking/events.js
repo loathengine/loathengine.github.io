@@ -289,6 +289,18 @@ export function setupEventListeners() {
             return;
         }
         
+        const missingScaleTarget = state.targets.find(t => !t.scale || !t.scale.pixelsPerUnit);
+        if (missingScaleTarget) {
+            alert("Please set the scale for all targets in the session before saving.");
+            // Optionally, switch to the target missing the scale
+            const missingIndex = state.targets.indexOf(missingScaleTarget);
+            if (missingIndex !== -1 && missingIndex !== state.activeTargetIndex) {
+                document.getElementById('sessionTargetsList').querySelectorAll('.session-target-item')[missingIndex]?.scrollIntoView();
+                // We don't auto-switch, just alert the user.
+            }
+            return;
+        }
+        
         const targetDistInput = document.getElementById('tmTargetDistance');
         const targetDistance = parseFloat(targetDistInput.value);
         if (!targetDistance || targetDistance <= 0) {
