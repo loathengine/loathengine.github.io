@@ -141,26 +141,33 @@ export async function createSessionName(session) {
     const totalShots = session.shots ? session.shots.length : 0;
     const shotText = totalShots > 0 ? `(${totalShots} shots)` : '';
 
-    // Date
-    let dateText = '';
-    if (session.timestamp) {
-        dateText = new Date(session.timestamp).toLocaleDateString();
-    }
+    // Date has been removed to save space in Analysis view
 
-    let baseText = `${firearmText} - ${loadText}`;
+    let baseParts = [];
+    if (firearmText !== 'No Firearm') baseParts.push(firearmText);
+    if (loadText !== 'No Load') baseParts.push(loadText);
     
-    // If the target text contains the firearm or load name, it's likely auto-named.
-    // Use the target text as the primary identifier to avoid "Firearm - Load | Firearm - Load"
+    // If no firearm and no load, fallback to target image name.
+    // If they exist, optionally append target name if it's not redundant.
     if (targetText !== 'No Target' && targetText !== 'Deleted Target') {
-        // Check if the target name already has the redundant info
-        if (targetText.includes(firearmText) || targetText.includes(' - ')) {
-            baseText = targetText;
+        if (baseParts.length === 0) {
+            baseParts.push(targetText);
         } else {
-            baseText = `${baseText} | Target: ${targetText}`;
+            // Only append image name if it's not already the auto-generated name 
+            // (preventing "My Rifle - My Load - My Rifle - My Load")
+            if (!targetText.includes(firearmText)) {
+                baseParts.push(`[${targetText}]`);
+            }
         }
     }
 
-    return `${dateText ? dateText + ' | ' : ''}${baseText} ${shotText}`.trim().replace(/  +/g, ' ');
+    if (baseParts.length === 0) {
+        baseParts.push('Unnamed Session');
+    }
+
+    let baseText = baseParts.join(' - ');
+
+    return `${baseText} ${shotText}`.trim().replace(/  +/g, ' ');
 }
 
 export function formatManufacturerName(m) {

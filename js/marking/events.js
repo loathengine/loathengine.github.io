@@ -15,7 +15,7 @@ export function setupEventListeners() {
     const markingSessionSelect = document.getElementById('markingSessionSelect');
     const loadMarkingSessionBtn = document.getElementById('loadMarkingSessionBtn');
     const deleteMarkingSessionBtn = document.getElementById('deleteMarkingSessionBtn');
-    const removeImageBtn = document.getElementById('removeImage');
+    const newSessionBtn = document.getElementById('newSessionBtn');
     const zoomInBtn = document.getElementById('zoomIn');
     const zoomOutBtn = document.getElementById('zoomOut');
     const setScaleBtn = document.getElementById('setScale');
@@ -99,7 +99,7 @@ export function setupEventListeners() {
         }
     });
 
-    removeImageBtn.addEventListener('click', () => {
+    newSessionBtn.addEventListener('click', () => {
         resetState();
         renderSessionTargets();
         renderGroupSelector();
@@ -390,7 +390,7 @@ export function setupEventListeners() {
             return;
         }
 
-        removeImageBtn.click(); 
+        newSessionBtn.click(); 
         await new Promise(resolve => setTimeout(resolve, 50));
 
         resetState();
@@ -513,7 +513,7 @@ export function setupEventListeners() {
             await deleteItem('impactData', sessionIdToDelete);
             
             if (state.sessionID === sessionIdToDelete) {
-                removeImageBtn.click();
+                newSessionBtn.click();
             }
 
             await populateMarkingSessionSelect();

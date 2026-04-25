@@ -33,12 +33,10 @@ export async function handleAnalysisExport(lastAnalysisResults) {
 
     let currentY = plotHeight + padding;
     const columns = [
-        { header: 'Session Details', x: padding, width: (canvasWidth - padding * 2) * 0.32 },
-        { header: 'Shots', x: padding + (canvasWidth - padding * 2) * 0.32, width: (canvasWidth - padding * 2) * 0.08 },
-        { header: 'Mean Radius', x: padding + (canvasWidth - padding * 2) * 0.40, width: (canvasWidth - padding * 2) * 0.15 },
-        { header: '95% Radius', x: padding + (canvasWidth - padding * 2) * 0.55, width: (canvasWidth - padding * 2) * 0.15 },
-        { header: 'MR CI (95%)', x: padding + (canvasWidth - padding * 2) * 0.70, width: (canvasWidth - padding * 2) * 0.18 },
-        { header: 'Vel. SD', x: padding + (canvasWidth - padding * 2) * 0.88, width: (canvasWidth - padding * 2) * 0.12 }
+        { header: 'Session Details', x: padding, width: (canvasWidth - padding * 2) * 0.45 },
+        { header: 'Shots', x: padding + (canvasWidth - padding * 2) * 0.45, width: (canvasWidth - padding * 2) * 0.10 },
+        { header: 'Mean Radius', x: padding + (canvasWidth - padding * 2) * 0.55, width: (canvasWidth - padding * 2) * 0.225 },
+        { header: 'Group Size', x: padding + (canvasWidth - padding * 2) * 0.775, width: (canvasWidth - padding * 2) * 0.225 }
     ];
 
     ctx.font = `bold ${FONT_SIZE_PT * 2.5}px Inter`;
@@ -68,29 +66,21 @@ export async function handleAnalysisExport(lastAnalysisResults) {
         ctx.fillText(sessionText, columns[0].x + 50, currentY + rowHeight / 2);
         ctx.fillText(stats.n, columns[1].x, currentY + rowHeight / 2);
 
-        let mrText, r95Text, mrCiText;
+        let mrText, gsText;
 
         if (stats.hasDistance) {
-            mrText = `${stats.ang.mr.moa.toFixed(2)} moa`;
-            r95Text = `${stats.ang.spread95.moa.toFixed(2)} moa`;
-            mrCiText = `[${stats.ang.ci.moa[0].toFixed(2)}, ${stats.ang.ci.moa[1].toFixed(2)}]`;
+            mrText = `${stats.ang.mr.moa.toFixed(2)} moa / ${stats.ang.mr.mrad.toFixed(2)} mrad`;
+            gsText = `${stats.ang.gs.moa.toFixed(2)} moa / ${stats.ang.gs.mrad.toFixed(2)} mrad`;
             
-            // Add mrad below or next to it (Doing next to it for export legibility)
-            const mrTextSub = ` / ${stats.ang.mr.mrad.toFixed(2)} mrad`;
-            const r95TextSub = ` / ${stats.ang.spread95.mrad.toFixed(2)} mrad`;
-            
-            ctx.fillText(mrText + mrTextSub, columns[2].x, currentY + rowHeight / 2);
-            ctx.fillText(r95Text + r95TextSub, columns[3].x, currentY + rowHeight / 2);
-            ctx.fillText(mrCiText, columns[4].x, currentY + rowHeight / 2);
+            ctx.fillText(mrText, columns[2].x, currentY + rowHeight / 2);
+            ctx.fillText(gsText, columns[3].x, currentY + rowHeight / 2);
         } else {
             ctx.fillStyle = '#9ca3af';
             ctx.fillText("Set Dist.", columns[2].x, currentY + rowHeight / 2);
             ctx.fillText("Set Dist.", columns[3].x, currentY + rowHeight / 2);
-            ctx.fillText("-", columns[4].x, currentY + rowHeight / 2);
             ctx.fillStyle = '#f3f4f6';
         }
 
-        ctx.fillText(`${stats.vel_sd !== null ? stats.vel_sd.toFixed(2) : 'N/A'}`, columns[5].x, currentY + rowHeight / 2);
         currentY += rowHeight;
     });
 

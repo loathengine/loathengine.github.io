@@ -1,37 +1,39 @@
 
             <div class="db-grid" style="display: flex; flex-direction: column; max-width: 800px; margin: 0 auto; gap: 1.5rem;">
                 
-                <!-- 1. System Sync -->
+                <!-- 1. Export Backup -->
+                <div class="card db-actions" style="border: 1px solid #10b981;">
+                    <h3 style="color: #10b981;">1. Export Backup</h3>
+                    <p style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 1rem;">Export your entire database to a local JSON file. It is highly recommended to do this before running a Sync or Reset.</p>
+                    <button id="unifiedExportBtn" class="btn-green" style="width: 100%;">Export Entire Database</button>
+                </div>
+
+                <!-- 2. System Sync -->
                 <div class="card db-actions" style="border: 1px solid #3b82f6;">
-                    <h3 style="color: #3b82f6;">Database Sync</h3>
-                    <p style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 1rem;">Pull down the latest components, firearms, loads, and targets from a master database. <strong>This will overwrite your existing records with the data from the master file.</strong></p>
+                    <h3 style="color: #3b82f6;">2. Database Sync</h3>
+                    <p style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 1rem;">Pull down the latest components, firearms, loads, and targets from the master database. <strong>This will overwrite your existing records with the data from the master file.</strong></p>
                     <div class="button-group" style="display: flex; gap: 0.5rem;">
                         <button id="syncWebMasterBtn" class="btn-blue" style="flex: 1;">Sync Database</button>
                     </div>
                 </div>
 
-                <!-- 2. Backup & Restore -->
-                <div class="card db-actions" style="border: 1px solid #10b981;">
-                    <h3 style="color: #10b981;">Backup & Restore</h3>
-                    <p style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 1rem;">Export your files safely. Restoring from a backup will merge records by ID without destroying unrelated items.</p>
-                    
-                    <div style="margin-bottom: 1rem;">
-                        <label for="dbFileInput">Restore from JSON Backup</label>
-                        <input type="file" id="dbFileInput" accept=".json">
-                        <div class="button-group" style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
-                            <button id="unifiedMergeBtn" class="btn-green" style="flex: 1;">Merge from Backup</button>
-                            <button id="unifiedOverwriteBtn" class="btn-red" style="flex: 1;">Overwrite from Backup</button>
+                <!-- 3. Restore from Backup -->
+                <div class="card db-actions" style="border: 1px solid #f59e0b;">
+                    <h3 style="color: #f59e0b;">3. Restore from Backup</h3>
+                    <p style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 1rem;">Restore from a previous backup file. Merging will keep your existing data and only add/update records. Overwriting will wipe everything and replace it with the backup.</p>
+                    <div>
+                        <label for="dbFileInput">Select JSON Backup File</label>
+                        <input type="file" id="dbFileInput" accept=".json" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
+                        <div class="button-group" style="display: flex; gap: 0.5rem;">
+                            <button id="unifiedMergeBtn" class="btn-yellow" style="flex: 1;">Merge Data</button>
+                            <button id="unifiedOverwriteBtn" class="btn-red" style="flex: 1;">Overwrite Data</button>
                         </div>
-                    </div>
-
-                    <div class="button-group" style="display: flex; flex-direction: column; gap: 0.5rem; border-top: 1px solid #374151; padding-top: 1rem;">
-                        <button id="unifiedExportBtn" class="btn-gray" style="width: 100%;">Export Entire Database</button>
                     </div>
                 </div>
 
-                <!-- 3. Danger Zone -->
+                <!-- 4. Danger Zone -->
                 <div class="card db-actions" style="border: 1px solid #ef4444;">
-                    <h3 style="color: #ef4444;">Danger Zone</h3>
+                    <h3 style="color: #ef4444;">4. Danger Zone</h3>
                     <p style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 1rem;">Irreversible operations.</p>
                     <div class="button-group" style="display: flex; gap: 0.5rem;">
                         <button id="unifiedDeleteBtn" class="btn-red" style="flex: 1;">Nuclear Reset (All Data)</button>

@@ -78,14 +78,21 @@ async function handleUnifiedExport() {
         for (const storeName of stores) { 
             allData[storeName] = await getAllItems(storeName); 
         }
-        const dateString = new Date().toISOString().slice(0, 10);
+        const now = new Date();
+        const timestamp = now.getFullYear() + '-' +
+            String(now.getMonth() + 1).padStart(2, '0') + '-' +
+            String(now.getDate()).padStart(2, '0') + '_' +
+            String(now.getHours()).padStart(2, '0') + '-' +
+            String(now.getMinutes()).padStart(2, '0') + '-' +
+            String(now.getSeconds()).padStart(2, '0');
+            
         const jsonString = '{\n' +
             Object.keys(allData).map(storeName => {
                 const items = allData[storeName].map(item => '    ' + JSON.stringify(item));
                 return `  "${storeName}": [\n${items.join(',\n')}\n  ]`;
             }).join(',\n') +
         '\n}';
-        triggerDownload(jsonString, `master-db-backup-${dateString}.json`);
+        triggerDownload(jsonString, `MDB_${timestamp}.json`);
     } else {
         if (!scope) {
             alert('Please select a target scope to export.');
