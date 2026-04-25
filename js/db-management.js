@@ -21,7 +21,6 @@ export function initDbManagement() {
         tableSelect.appendChild(option);
     });
 
-    document.getElementById('syncLocalMasterBtn').addEventListener('click', () => handleSyncMaster('./master-db.json'));
     document.getElementById('syncWebMasterBtn').addEventListener('click', () => handleSyncMaster('https://raw.githubusercontent.com/loathengine/loathengine.github.io/main/master-db.json'));
     
     document.getElementById('unifiedMergeBtn').addEventListener('click', () => handleUnifiedRestore(false));
