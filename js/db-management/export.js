@@ -181,7 +181,7 @@ export async function handleSessionExport() {
         const stats = calculateStatsForSession(session.shots, session.targetDistance, session.distanceUnits);
         if (stats) {
             readableData.stats = stats;
-            plotPayload.push({ session, shots: session.shots, stats, sessionName });
+            plotPayload.push({ session, shots: stats.normalizedShots || session.shots, stats, sessionName });
         }
         
         readableDataArray.push(readableData);
