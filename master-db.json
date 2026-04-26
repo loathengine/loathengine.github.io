@@ -15987,6 +15987,36 @@
       "bulletId": "BUL_SIERRA_UNK_100_HPBTMK_B6F6",
       "partNumber": null,
       "lot": null
+    },
+    {
+      "id": "LOAD_COMM_HORNADY_22ARC_62_ELDVT",
+      "name": "V-Match",
+      "loadTypeId": "LT_COMM",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "cartridgeId": "CTG_NEW_751L",
+      "bulletId": "BUL_HORNADY_224_62_ELDVT",
+      "partNumber": "81541",
+      "lot": null
+    },
+    {
+      "id": "LOAD_COMM_HORNADY_22ARC_75_ELDM",
+      "name": "BLACK",
+      "loadTypeId": "LT_COMM",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "cartridgeId": "CTG_NEW_751L",
+      "bulletId": "BUL_HORNADY_224_75_ELDM",
+      "partNumber": "81544",
+      "lot": null
+    },
+    {
+      "id": "LOAD_COMM_HORNADY_22ARC_88_ELDM",
+      "name": "Match",
+      "loadTypeId": "LT_COMM",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "cartridgeId": "CTG_NEW_751L",
+      "bulletId": "BUL_HORNADY_224_88_ELDM",
+      "partNumber": "81546",
+      "lot": null
     }
   ]
 }
