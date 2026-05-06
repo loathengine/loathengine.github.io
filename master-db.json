@@ -1501,7 +1501,7 @@
     {
       "id": "BUL_B9K2_284_1740_174GRLRHT_3DV5",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "174gr LRHT",
+      "name": "LRHT",
       "weight": 174.0,
       "diameterId": "DIA_284_S3F6",
       "length": 1.5,
@@ -1521,7 +1521,7 @@
     {
       "id": "BUL_B9K2_338_1240_124GRHYBRI_WG1H",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "124gr Hybrid",
+      "name": "Hybrid",
       "weight": 124.0,
       "diameterId": "DIA_338_R7E3",
       "length": 1.35,
@@ -1541,7 +1541,7 @@
     {
       "id": "BUL_B9K2_375_1400_140GRFLATB_HKIF",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "140gr Flat Base",
+      "name": "Flat Base",
       "weight": 140.0,
       "diameterId": "DIA_375_OMEC",
       "length": 1.4,
@@ -1561,7 +1561,7 @@
     {
       "id": "BUL_JGR4_375_2250_225GRELDMA_V0TE",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "225gr ELD Match",
+      "name": "ELD Match",
       "weight": 225.0,
       "diameterId": "DIA_375_OMEC",
       "length": 2.689,
@@ -1581,7 +1581,7 @@
     {
       "id": "BUL_B9K2_243_1230_123GRLRHT_EUCG",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "123gr LRHT",
+      "name": "LRHT",
       "weight": 123.0,
       "diameterId": "DIA_243_B7V4",
       "length": 1.25,
@@ -1601,7 +1601,7 @@
     {
       "id": "BUL_JGR4_264_1450_145GRBT_ES72",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "145gr BT",
+      "name": "BT",
       "weight": 145.0,
       "diameterId": "DIA_264_H8J4",
       "length": 1.35,
@@ -1621,7 +1621,7 @@
     {
       "id": "BUL_JGR4_277_1450_145GRELDMM_MGF2",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "145gr ELD-M Match",
+      "name": "ELD-M Match",
       "weight": 145.0,
       "diameterId": "DIA_277_K9L0",
       "length": 1.438,
@@ -1641,7 +1641,7 @@
     {
       "id": "BUL_S6Y3_338_1750_175GRMATCH_G101",
       "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "175gr MatchKing",
+      "name": "MatchKing",
       "weight": 175.0,
       "diameterId": "DIA_338_R7E3",
       "length": 1.425,
@@ -1661,7 +1661,7 @@
     {
       "id": "BUL_B9K2_277_1450_145GRFLATB_EH45",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "145gr Flat Base Target",
+      "name": "Flat Base Target",
       "weight": 145.0,
       "diameterId": "DIA_277_K9L0",
       "length": 1.388,
@@ -1681,7 +1681,7 @@
     {
       "id": "BUL_S6Y3_277_980_98GRMATCHK_50TK",
       "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "98gr MatchKing",
+      "name": "MatchKing",
       "weight": 98.0,
       "diameterId": "DIA_277_K9L0",
       "length": 1.4,
@@ -1701,7 +1701,7 @@
     {
       "id": "BUL_S6Y3_243_760_76GRMATCHK_98K2",
       "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "76gr MatchKing",
+      "name": "MatchKing",
       "weight": 76.0,
       "diameterId": "DIA_243_B7V4",
       "length": 1.15,
@@ -1721,7 +1721,7 @@
     {
       "id": "BUL_B9K2_243_1200_120GRFLATB_C0D1",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "120gr Flat Base Target",
+      "name": "Flat Base Target",
       "weight": 120.0,
       "diameterId": "DIA_243_B7V4",
       "length": 1.25,
@@ -7801,7 +7801,7 @@
     {
       "id": "BUL_JGR4_264_950_95GRELDMAT_3LRC",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "95gr ELD Match",
+      "name": "ELD Match",
       "weight": 95.0,
       "diameterId": "DIA_264_H8J4",
       "length": 1.37,
@@ -7821,7 +7821,7 @@
     {
       "id": "BUL_N9K4_277_800_80GRPRECIS_R2WX",
       "manufacturerId": "MAN_NOSLER_N9K4",
-      "name": "80gr Precision King",
+      "name": "Precision King",
       "weight": 80.0,
       "diameterId": "DIA_277_K9L0",
       "length": 1.335,
@@ -7841,7 +7841,7 @@
     {
       "id": "BUL_B9K2_308_1680_168GRVLD_VOMA",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "168gr VLD",
+      "name": "VLD",
       "weight": 168.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.45,
@@ -7861,7 +7861,7 @@
     {
       "id": "BUL_B9K2_308_1230_123GRBERGE_7KL6",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "123gr Berger Hybrid",
+      "name": "Berger Hybrid",
       "weight": 123.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.25,
@@ -7881,7 +7881,7 @@
     {
       "id": "BUL_B9K2_308_1580_158GRBERGE_AP1N",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "158gr Berger Flat Base Target",
+      "name": "Berger Flat Base Target",
       "weight": 158.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.56,
@@ -7901,7 +7901,7 @@
     {
       "id": "BUL_JGR4_308_1250_125GRHORNA_YYCV",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "125gr Hornady ELD-Match",
+      "name": "Hornady ELD-Match",
       "weight": 125.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.44,
@@ -7921,7 +7921,7 @@
     {
       "id": "BUL_S6Y3_308_1680_168GRSIERR_6QJD",
       "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "168gr Sierra MatchKing",
+      "name": "Sierra MatchKing",
       "weight": 168.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.525,
@@ -7941,7 +7941,7 @@
     {
       "id": "BUL_B9K2_308_1850_185GRBERGE_53KE",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "185gr Berger Flat Base Target",
+      "name": "Berger Flat Base Target",
       "weight": 185.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.65,
@@ -7961,7 +7961,7 @@
     {
       "id": "BUL_JGR4_308_1420_142GRHORNA_3H8K",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "142gr Hornady ELD-Match",
+      "name": "Hornady ELD-Match",
       "weight": 142.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.405,
@@ -7981,7 +7981,7 @@
     {
       "id": "BUL_B9K2_308_1280_128GRFLATB_3GNI",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "128gr Flat Base Target",
+      "name": "Flat Base Target",
       "weight": 128.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.416,
@@ -8001,7 +8001,7 @@
     {
       "id": "BUL_JGR4_308_1400_140GRELDMA_QZ3B",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "140gr ELD Match",
+      "name": "ELD Match",
       "weight": 140.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.652,
@@ -8021,7 +8021,7 @@
     {
       "id": "BUL_B9K2_308_1090_109GRFLATB_D9F7",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "109gr Flat Base Target",
+      "name": "Flat Base Target",
       "weight": 109.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.25,
@@ -8041,7 +8041,7 @@
     {
       "id": "BUL_B9K2_308_1230_123GRFLATB_UDUA",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "123gr Flat Base Target",
+      "name": "Flat Base Target",
       "weight": 123.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.45,
@@ -8061,7 +8061,7 @@
     {
       "id": "BUL_JGR4_308_1680_168GRVMAX_RFVS",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "168gr V-MAX",
+      "name": "V-MAX",
       "weight": 168.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.55,
@@ -8081,7 +8081,7 @@
     {
       "id": "BUL_B9K2_308_1800_180GRHPBT_1TDO",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "180gr HPBT",
+      "name": "HPBT",
       "weight": 180.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.6,
@@ -8101,7 +8101,7 @@
     {
       "id": "BUL_JGR4_308_1750_175GRELDMA_FTH7",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "175gr ELD-MAX",
+      "name": "ELD-MAX",
       "weight": 175.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.525,
@@ -8121,7 +8121,7 @@
     {
       "id": "BUL_B9K2_308_1680_168GRFLATB_GJ3S",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "168gr Flat Base Target",
+      "name": "Flat Base Target",
       "weight": 168.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.68,
@@ -8141,7 +8141,7 @@
     {
       "id": "BUL_S6Y3_308_1250_125GRMATCH_RD7W",
       "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "125gr MatchKing",
+      "name": "MatchKing",
       "weight": 125.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.25,
@@ -8161,7 +8161,7 @@
     {
       "id": "BUL_B9K2_308_950_95GRFLATPO_8EZM",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "95gr Flat Point",
+      "name": "Flat Point",
       "weight": 95.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.086,
@@ -8181,7 +8181,7 @@
     {
       "id": "BUL_N9K4_308_1500_150GRSCOUR_VWFU",
       "manufacturerId": "MAN_NOSLER_N9K4",
-      "name": "150gr Scourge",
+      "name": "Scourge",
       "weight": 150.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.562,
@@ -8201,7 +8201,7 @@
     {
       "id": "BUL_JGR4_308_1680_168GRFLATP_E3AV",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "168gr Flat Point",
+      "name": "Flat Point",
       "weight": 168.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.953,
@@ -8221,7 +8221,7 @@
     {
       "id": "BUL_JGR4_308_1450_145GRVMAX_TDV7",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "145gr V-MAX",
+      "name": "V-MAX",
       "weight": 145.0,
       "diameterId": "DIA_308_XBM7",
       "length": 2.062,
@@ -8241,7 +8241,7 @@
     {
       "id": "BUL_JGR4_308_1500_150GRELDX_ULO7",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "150gr ELD-X",
+      "name": "ELD-X",
       "weight": 150.0,
       "diameterId": "DIA_308_XBM7",
       "length": 2.164,
@@ -8261,7 +8261,7 @@
     {
       "id": "BUL_JGR4_308_870_87GRELDMAX_WMNJ",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "87gr ELD-Max",
+      "name": "ELD-Max",
       "weight": 87.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.25,
@@ -8281,7 +8281,7 @@
     {
       "id": "BUL_B9K2_308_1390_139GRFLATB_A9B6",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "139gr Flat Base Target",
+      "name": "Flat Base Target",
       "weight": 139.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.5,
@@ -13741,7 +13741,7 @@
     {
       "id": "BUL_B9K2_308_1250_125GRFLATB_GYBA",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "125gr Flat Base Target",
+      "name": "Flat Base Target",
       "weight": 125.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.46,
@@ -13761,7 +13761,7 @@
     {
       "id": "BUL_JGR4_224_750_75GRVMAX_RMFT",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "75gr V-Max",
+      "name": "V-Max",
       "weight": 75.0,
       "diameterId": "DIA_224_L5X8",
       "length": 1.315,
@@ -13781,7 +13781,7 @@
     {
       "id": "BUL_JGR4_308_1200_120GRVMAX_GUMY",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "120gr V-Max",
+      "name": "V-Max",
       "weight": 120.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.52,
@@ -13801,7 +13801,7 @@
     {
       "id": "BUL_B2N5_308_12712_127GRLRX_IWUF",
       "manufacturerId": "MAN_BARNES_B2N5",
-      "name": "127gr LRX",
+      "name": "LRX",
       "weight": 127.12,
       "diameterId": "DIA_308_XBM7",
       "length": 1.4034,
@@ -13821,7 +13821,7 @@
     {
       "id": "BUL_JGR4_308_1650_165GRSST_02T3",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "165gr SST",
+      "name": "SST",
       "weight": 165.0,
       "diameterId": "DIA_308_XBM7",
       "length": null,
@@ -13841,7 +13841,7 @@
     {
       "id": "BUL_N9K4_308_1650_165GRACCUB_4N88",
       "manufacturerId": "MAN_NOSLER_N9K4",
-      "name": "165gr AccuBond",
+      "name": "AccuBond",
       "weight": 165.0,
       "diameterId": "DIA_308_XBM7",
       "length": null,
@@ -13861,7 +13861,7 @@
     {
       "id": "BUL_S6Y3_308_1650_165GRGAMEK_Z4V0",
       "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "165gr GameKing",
+      "name": "GameKing",
       "weight": 165.0,
       "diameterId": "DIA_308_XBM7",
       "length": null,
@@ -13881,7 +13881,7 @@
     {
       "id": "BUL_B9K2_308_1400_140GRSECAN_AGJQ",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "140gr Secant Very Low Drag",
+      "name": "Secant Very Low Drag",
       "weight": 140.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.265,
@@ -13901,7 +13901,7 @@
     {
       "id": "BUL_B9K2_172_250_25GRAINFBV_8UJX",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "25 Grain FB Varmint",
+      "name": "FB Varmint",
       "weight": 25.0,
       "diameterId": "DIA_172_QW2R",
       "length": null,
@@ -13921,7 +13921,7 @@
     {
       "id": "BUL_B9K2_204_350_35GRAINFBV_DBGJ",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "35 Grain FB Varmint",
+      "name": "FB Varmint",
       "weight": 35.0,
       "diameterId": "DIA_204_M9K3",
       "length": null,
@@ -13941,7 +13941,7 @@
     {
       "id": "BUL_B9K2_204_400_40GRAINBTV_D4XC",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "40 Grain BT Varmint",
+      "name": "BT Varmint",
       "weight": 40.0,
       "diameterId": "DIA_204_M9K3",
       "length": null,
@@ -13961,7 +13961,7 @@
     {
       "id": "BUL_B9K2_224_520_52GRAINFBT_KO2M",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "52 Grain FB Target",
+      "name": "Berger FB Target",
       "weight": 52.0,
       "diameterId": "DIA_224_L5X8",
       "length": null,
@@ -13981,7 +13981,7 @@
     {
       "id": "BUL_JGR4_224_760_76GRPTHORN_FVW6",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "76gr PT Hornady A-Tip Match",
+      "name": "PT Hornady A-Tip Match",
       "weight": 76.0,
       "diameterId": "DIA_224_L5X8",
       "length": null,
@@ -14001,7 +14001,7 @@
     {
       "id": "BUL_JGR4_224_400_40GRAINSP_2MVR",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "40 Grain SP",
+      "name": "SP",
       "weight": 40.0,
       "diameterId": "DIA_224_L5X8",
       "length": null,
@@ -14021,7 +14021,7 @@
     {
       "id": "BUL_JGR4_243_1080_108GRELDMA_YUMQ",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "108gr ELD Match",
+      "name": "ELD Match",
       "weight": 108.0,
       "diameterId": "DIA_243_B7V4",
       "length": 1.17,
@@ -14041,7 +14041,7 @@
     {
       "id": "BUL_JGR4_243_1030_103GRELDX_6XMI",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "103gr ELDX",
+      "name": "ELDX",
       "weight": 103.0,
       "diameterId": "DIA_243_B7V4",
       "length": 1.165,
@@ -14061,7 +14061,7 @@
     {
       "id": "BUL_L5X1_243_1090_109GRLAPUA_G9K4",
       "manufacturerId": "MAN_LAPUA_L5X1",
-      "name": "109gr Lapua",
+      "name": "Lapua",
       "weight": 109.0,
       "diameterId": "DIA_243_B7V4",
       "length": 1.165,
@@ -14081,7 +14081,7 @@
     {
       "id": "BUL_S6Y3_308_1500_150GRSIERR_AUKV",
       "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "150gr Sierra MatchKing",
+      "name": "Sierra MatchKing",
       "weight": 150.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.294,
@@ -14101,7 +14101,7 @@
     {
       "id": "BUL_JGR4_308_1550_155GRHORNA_O85L",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "155gr Hornady ELD-M",
+      "name": "Hornady ELD-M",
       "weight": 155.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.296,
@@ -14121,7 +14121,7 @@
     {
       "id": "BUL_B9K2_308_1740_174GRBERGE_ZKJ1",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "174gr Berger Hybrid",
+      "name": "Berger Hybrid",
       "weight": 174.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.365,
@@ -14141,7 +14141,7 @@
     {
       "id": "BUL_B9K2_308_1750_175GRBERGE_0JJW",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "175gr Berger Flat Base Target",
+      "name": "Berger Flat Base Target",
       "weight": 175.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.46,
@@ -14161,9 +14161,9 @@
     {
       "id": "BUL_B9K2_224_1550_155GRBERGE_Z5D3",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "155gr Berger Hybrid Varmint",
+      "name": "Berger Hybrid Varmint",
       "weight": 155.0,
-      "diameterId": "DIA_224_L5X8",
+      "diameterId": "DIA_308_XBM7",
       "length": 1.367,
       "ballistics": {
         "g1_bc": null,
@@ -14181,7 +14181,7 @@
     {
       "id": "BUL_B9K2_308_1750_175GRBERGE_SVGN",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "175gr Berger VLD Target Hybrid",
+      "name": "Berger VLD Target Hybrid",
       "weight": 175.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.436,
@@ -14201,7 +14201,7 @@
     {
       "id": "BUL_B9K2_308_1780_178GRBERGE_NU87",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "178gr Berger VLD Target Hybrid",
+      "name": "Berger VLD Target Hybrid",
       "weight": 178.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.456,
@@ -14221,7 +14221,7 @@
     {
       "id": "BUL_B9K2_308_1500_150GRBERGE_2C7P",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "150gr Berger Hollow Point Boat Tail Target",
+      "name": "Berger Hollow Point Boat Tail Target",
       "weight": 150.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.46,
@@ -14241,7 +14241,7 @@
     {
       "id": "BUL_B9K2_308_1550_155GRBERGE_D6UL",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "155gr Berger VLD Target",
+      "name": "Berger VLD Target",
       "weight": 155.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.465,
@@ -14261,7 +14261,7 @@
     {
       "id": "BUL_N9K4_264_1400_140GRRDF_M5RV",
       "manufacturerId": "MAN_NOSLER_N9K4",
-      "name": "140gr RDF",
+      "name": "RDF",
       "weight": 140.0,
       "diameterId": "DIA_264_H8J4",
       "length": 1.325,
@@ -14281,7 +14281,7 @@
     {
       "id": "BUL_JGR4_308_2400_240GRHORNA_ELA6",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "240gr Hornady ELD-M",
+      "name": "Hornady ELD-M",
       "weight": 240.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.56,
@@ -14301,7 +14301,7 @@
     {
       "id": "BUL_S6Y3_224_950_95GRSIERRA_B4E0",
       "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "95gr Sierra MatchKing",
+      "name": "Sierra MatchKing",
       "weight": 95.0,
       "diameterId": "DIA_224_L5X8",
       "length": 1.12,
@@ -14321,7 +14321,7 @@
     {
       "id": "BUL_B9K2_224_770_77GRBERGER_MF2U",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "77gr Berger VLD",
+      "name": "Berger VLD Target",
       "weight": 77.0,
       "diameterId": "DIA_224_L5X8",
       "length": 0.93,
@@ -14341,7 +14341,7 @@
     {
       "id": "BUL_JGR4_224_680_68GRHORNAD_OLZG",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "68gr Hornady A-Tip VMax",
+      "name": "Hornady A-Tip VMax",
       "weight": 68.0,
       "diameterId": "DIA_224_L5X8",
       "length": 0.91,
@@ -14361,7 +14361,7 @@
     {
       "id": "BUL_JGR4_308_1230_123GRHORNA_XLXW",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "123gr Hornady ELD-M",
+      "name": "Hornady ELD-M",
       "weight": 123.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.565,
@@ -14381,7 +14381,7 @@
     {
       "id": "BUL_S6Y3_308_1200_120GRSIERR_IZMB",
       "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "120gr Sierra MatchKing",
+      "name": "Sierra MatchKing",
       "weight": 120.0,
       "diameterId": "DIA_308_XBM7",
       "length": 1.499,
@@ -14401,7 +14401,7 @@
     {
       "id": "BUL_JGR4_224_1030_103GRHORNA_7IKA",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "103gr Hornady ELD-M",
+      "name": "Hornady ELD-M",
       "weight": 103.0,
       "diameterId": "DIA_224_L5X8",
       "length": 1.367,
@@ -14421,10 +14421,30 @@
     {
       "id": "BUL_B9K2_224_900_90GRBERGER_QIQU",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "90gr Berger VLD",
+      "name": "Berger VLD Target",
       "weight": 90.0,
       "diameterId": "DIA_224_L5X8",
       "length": 1.368,
+      "ballistics": {
+        "g1_bc": null,
+        "g7_bc": null,
+        "g7_form_factor": null
+      },
+      "stability_vars": {
+        "is_tipped": false,
+        "tip_length": null,
+        "ix": null,
+        "iy": null,
+        "cg_from_base": null
+      }
+    },
+    {
+      "id": "BUL_B9K2_224_730_73GRBTTARG_H2L3",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "name": "Berger Boat Tail Target",
+      "weight": 73.0,
+      "diameterId": "DIA_224_L5X8",
+      "length": null,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
