@@ -143,6 +143,13 @@
       ]
     },
     {
+      "id": "MAN_SHOOTERS_S9W4",
+      "name": "Shooters World",
+      "type": [
+        "powder"
+      ]
+    },
+    {
       "id": "MAN_SIERRA_S6Y3",
       "name": "Sierra",
       "type": [
@@ -528,6 +535,71 @@
       "id": "PWD_RAMS_XTERM_R1A5",
       "manufacturerId": "MAN_RAMSHOT_R4P7",
       "name": "X-Terminator"
+    },
+    {
+      "id": "PWD_SW_ARPLUS_S9W1",
+      "manufacturerId": "MAN_SHOOTERS_S9W4",
+      "name": "AR Plus"
+    },
+    {
+      "id": "PWD_SW_AUTOPISTOL_S9W2",
+      "manufacturerId": "MAN_SHOOTERS_S9W4",
+      "name": "Auto Pistol"
+    },
+    {
+      "id": "PWD_SW_BLACKOUT_S9W3",
+      "manufacturerId": "MAN_SHOOTERS_S9W4",
+      "name": "Blackout"
+    },
+    {
+      "id": "PWD_SW_CLEANSHOT_S9W4",
+      "manufacturerId": "MAN_SHOOTERS_S9W4",
+      "name": "Clean Shot"
+    },
+    {
+      "id": "PWD_SW_HEAVYPISTOL_S9W5",
+      "manufacturerId": "MAN_SHOOTERS_S9W4",
+      "name": "Heavy Pistol"
+    },
+    {
+      "id": "PWD_SW_LONGRIFLE_S9W6",
+      "manufacturerId": "MAN_SHOOTERS_S9W4",
+      "name": "Long Rifle"
+    },
+    {
+      "id": "PWD_SW_MAJORPISTOL_S9W7",
+      "manufacturerId": "MAN_SHOOTERS_S9W4",
+      "name": "Major Pistol"
+    },
+    {
+      "id": "PWD_SW_MATCHRIFLE_S9W8",
+      "manufacturerId": "MAN_SHOOTERS_S9W4",
+      "name": "Match Rifle"
+    },
+    {
+      "id": "PWD_SW_PRECISION_S9W9",
+      "manufacturerId": "MAN_SHOOTERS_S9W4",
+      "name": "Precision Rifle"
+    },
+    {
+      "id": "PWD_SW_SBRSOCOM_S9W0",
+      "manufacturerId": "MAN_SHOOTERS_S9W4",
+      "name": "SBR-SOCOM"
+    },
+    {
+      "id": "PWD_SW_SW4350_S9WA",
+      "manufacturerId": "MAN_SHOOTERS_S9W4",
+      "name": "SW4350"
+    },
+    {
+      "id": "PWD_SW_TACTICAL_S9WB",
+      "manufacturerId": "MAN_SHOOTERS_S9W4",
+      "name": "Tactical Rifle"
+    },
+    {
+      "id": "PWD_SW_ULTIMATE_S9WC",
+      "manufacturerId": "MAN_SHOOTERS_S9W4",
+      "name": "Ultimate Pistol"
     },
     {
       "id": "PWD_VIHTAVUORI_MOMF",
