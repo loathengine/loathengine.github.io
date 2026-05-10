@@ -502,9 +502,10 @@ export async function initTargetGenerator() {
                     if (currR <= 0) continue;
                     
                     let fillCol;
+                    const ringIndexFromCenter = (numRings - 1) - i;
                     
-                    if (i === numRings - 1) fillCol = colBull;
-                    else fillCol = (i % 2 === 0) ? colA : colB;
+                    if (ringIndexFromCenter === 0) fillCol = colBull;
+                    else fillCol = (ringIndexFromCenter % 2 === 1) ? colA : colB;
                     
                     ctx.fillStyle = fillCol;
                     ctx.strokeStyle = "black";
