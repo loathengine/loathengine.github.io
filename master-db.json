@@ -8703,7 +8703,7 @@
       "manufacturerId": "MAN_BARNES_B2N5",
       "name": "VORTR-",
       "weight": 260.0,
-      "diameterId": "DIA_308_XBM7",
+      "diameterId": "DIA_375_OMEC",
       "length": null,
       "ballistics": {
         "g1_bc": 0.193,
@@ -9904,7 +9904,7 @@
       "name": "CX",
       "weight": 110.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.19,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -9924,7 +9924,7 @@
       "name": "FMJ",
       "weight": 110.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 0.668,
       "ballistics": {
         "g1_bc": 0.178,
         "g7_bc": null,
@@ -9964,7 +9964,7 @@
       "name": "FMJ",
       "weight": 125.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 0.942,
       "ballistics": {
         "g1_bc": 0.25,
         "g7_bc": null,
@@ -10004,7 +10004,7 @@
       "name": "SST",
       "weight": 125.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.029,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -10024,7 +10024,7 @@
       "name": "MonoFlex",
       "weight": 130.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.074,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -10044,7 +10044,7 @@
       "name": "FTX",
       "weight": 135.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 0.999,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -10104,7 +10104,7 @@
       "name": "G",
       "weight": 150.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.327,
       "ballistics": {
         "g1_bc": 0.398,
         "g7_bc": 0.545,
@@ -10124,7 +10124,7 @@
       "name": "InterLock",
       "weight": 150.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.071,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -10144,7 +10144,7 @@
       "name": "RN",
       "weight": 150.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 0.905,
       "ballistics": {
         "g1_bc": 0.186,
         "g7_bc": null,
@@ -10164,7 +10164,7 @@
       "name": "Sec",
       "weight": 150.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.096,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -10184,7 +10184,7 @@
       "name": "SP",
       "weight": 150.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.096,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -10204,7 +10204,7 @@
       "name": "SST",
       "weight": 150.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.203,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -10264,7 +10264,7 @@
       "name": "FTX",
       "weight": 155.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.218,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": 0.595,
@@ -10344,7 +10344,7 @@
       "name": "SST",
       "weight": 165.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.274,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -10364,7 +10364,7 @@
       "name": "A-MAX",
       "weight": 168.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.282,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -10404,7 +10404,7 @@
       "name": "BTHP Match",
       "weight": 178.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.345,
       "ballistics": {
         "g1_bc": 0.53,
         "g7_bc": null,
@@ -10444,7 +10444,7 @@
       "name": "Sec",
       "weight": 178.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.345,
       "ballistics": {
         "g1_bc": 0.547,
         "g7_bc": 0.547,
@@ -10504,7 +10504,7 @@
       "name": "InterLock",
       "weight": 180.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.267,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -10524,7 +10524,7 @@
       "name": "SST",
       "weight": 180.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.356,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -10564,7 +10564,7 @@
       "name": "A-MAX",
       "weight": 208.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.488,
       "ballistics": {
         "g1_bc": 0.545,
         "g7_bc": null,
@@ -10583,8 +10583,8 @@
       "manufacturerId": "MAN_HORNADY_JGR4",
       "name": "XTP",
       "weight": 20.0,
-      "diameterId": "DIA_224_L5X8",
-      "length": null,
+      "diameterId": "DIA_172_QW2R",
+      "length": 0.35,
       "ballistics": {
         "g1_bc": 0.185,
         "g7_bc": null,
@@ -10604,7 +10604,7 @@
       "name": "ELD-X",
       "weight": 220.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.63,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": 0.331,
@@ -10624,7 +10624,7 @@
       "name": "FlexLock",
       "weight": 220.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.63,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -10663,8 +10663,8 @@
       "manufacturerId": "MAN_HORNADY_JGR4",
       "name": "Sec",
       "weight": 300.0,
-      "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "diameterId": "DIA_338_R7E3",
+      "length": 1.87,
       "ballistics": {
         "g1_bc": 0.5,
         "g7_bc": 0.525,
@@ -10684,7 +10684,7 @@
       "name": "V-MAX",
       "weight": 30.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 0.517,
       "ballistics": {
         "g1_bc": 0.29,
         "g7_bc": null,
@@ -10704,7 +10704,7 @@
       "name": "V-MAX",
       "weight": 35.0,
       "diameterId": "DIA_224_L5X8",
-      "length": null,
+      "length": 0.517,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": 0.198,
@@ -10744,7 +10744,7 @@
       "name": "HP Match",
       "weight": 45.0,
       "diameterId": "DIA_224_L5X8",
-      "length": null,
+      "length": 0.507,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": 0.215,
@@ -10764,7 +10764,7 @@
       "name": "CX",
       "weight": 50.0,
       "diameterId": "DIA_224_L5X8",
-      "length": null,
+      "length": 0.817,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -10804,7 +10804,7 @@
       "name": "CX",
       "weight": 55.0,
       "diameterId": "DIA_224_L5X8",
-      "length": null,
+      "length": 0.865,
       "ballistics": {
         "g1_bc": 0.243,
         "g7_bc": null,
@@ -10824,7 +10824,7 @@
       "name": "FTX",
       "weight": 55.0,
       "diameterId": "DIA_224_L5X8",
-      "length": null,
+      "length": 0.735,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -10844,7 +10844,7 @@
       "name": "HP Match",
       "weight": 55.0,
       "diameterId": "DIA_224_L5X8",
-      "length": null,
+      "length": 0.735,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -10864,7 +10864,7 @@
       "name": "Spire Point",
       "weight": 55.0,
       "diameterId": "DIA_224_L5X8",
-      "length": null,
+      "length": 0.715,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": 0.235,
@@ -10884,7 +10884,7 @@
       "name": "SP Match",
       "weight": 55.0,
       "diameterId": "DIA_224_L5X8",
-      "length": null,
+      "length": 0.735,
       "ballistics": {
         "g1_bc": 0.235,
         "g7_bc": null,
@@ -10944,7 +10944,7 @@
       "name": "FMJ",
       "weight": 62.0,
       "diameterId": "DIA_224_L5X8",
-      "length": null,
+      "length": 0.813,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -10964,7 +10964,7 @@
       "name": "Spire Point",
       "weight": 62.0,
       "diameterId": "DIA_224_L5X8",
-      "length": null,
+      "length": 0.862,
       "ballistics": {
         "g1_bc": 0.27,
         "g7_bc": 0.199,
@@ -11004,7 +11004,7 @@
       "name": "Sec",
       "weight": 68.0,
       "diameterId": "DIA_224_L5X8",
-      "length": null,
+      "length": 0.98,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -11044,7 +11044,7 @@
       "name": "FTX",
       "weight": 73.0,
       "diameterId": "DIA_224_L5X8",
-      "length": null,
+      "length": 1.046,
       "ballistics": {
         "g1_bc": 0.26,
         "g7_bc": null,
@@ -11084,7 +11084,7 @@
       "name": "ELD-X",
       "weight": 80.0,
       "diameterId": "DIA_224_L5X8",
-      "length": null,
+      "length": 1.045,
       "ballistics": {
         "g1_bc": 0.7,
         "g7_bc": null,
@@ -11144,7 +11144,7 @@
       "name": "XTP",
       "weight": 90.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 0.518,
       "ballistics": {
         "g1_bc": 0.247,
         "g7_bc": null,
@@ -12359,32 +12359,12 @@
       }
     },
     {
-      "id": "BUL_SIERRA_UNK_115_HPVK_7A88",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "HP VK",
-      "weight": 115.0,
-      "diameterId": "DIA_308_XBM7",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 0.267,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": 115.0,
-        "iy": 7.82,
-        "cg_from_base": null
-      }
-    },
-    {
       "id": "BUL_SIERRA_UNK_125_HPCNMK_B63E",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "name": "MatchKing Cannelure",
       "weight": 125.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.153,
       "ballistics": {
         "g1_bc": 0.349,
         "g7_bc": null,
@@ -12424,7 +12404,7 @@
       "name": "Spitzer PH",
       "weight": 125.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 0.879,
       "ballistics": {
         "g1_bc": 0.279,
         "g7_bc": null,
@@ -12464,7 +12444,7 @@
       "name": "HPVK",
       "weight": 135.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 0.895,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -12544,7 +12524,7 @@
       "name": "RN PH",
       "weight": 150.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 0.895,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -12564,7 +12544,7 @@
       "name": "GameKing SBT",
       "weight": 150.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.11,
       "ballistics": {
         "g1_bc": 0.38,
         "g7_bc": null,
@@ -12584,7 +12564,7 @@
       "name": "Spitzer PH",
       "weight": 150.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.065,
       "ballistics": {
         "g1_bc": 0.336,
         "g7_bc": null,
@@ -12604,7 +12584,7 @@
       "name": "MatchKing Palma Cannelure",
       "weight": 155.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.133,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -12624,7 +12604,7 @@
       "name": "MatchKing",
       "weight": 155.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.133,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -12639,32 +12619,12 @@
       }
     },
     {
-      "id": "BUL_SIERRA_UNK_158_JHCSM_6EE9",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "JHC SM",
-      "weight": 158.0,
-      "diameterId": "DIA_308_XBM7",
-      "length": null,
-      "ballistics": {
-        "g1_bc": null,
-        "g7_bc": 0.535,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": true,
-        "tip_length": null,
-        "ix": 158.0,
-        "iy": null,
-        "cg_from_base": 0.033
-      }
-    },
-    {
       "id": "BUL_SIERRA_UNK_165_SBTGK_2148",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "name": "GameKing SBT",
       "weight": 165.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.186,
       "ballistics": {
         "g1_bc": 0.404,
         "g7_bc": null,
@@ -12684,7 +12644,7 @@
       "name": "Tipped GameKing",
       "weight": 165.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.398,
       "ballistics": {
         "g1_bc": 0.53,
         "g7_bc": 0.53,
@@ -12704,7 +12664,7 @@
       "name": "MatchKing",
       "weight": 168.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.215,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": 0.462,
@@ -12724,7 +12684,7 @@
       "name": "Tipped MatchKing",
       "weight": 168.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.357,
       "ballistics": {
         "g1_bc": 0.55,
         "g7_bc": null,
@@ -12784,7 +12744,7 @@
       "name": "MatchKing",
       "weight": 175.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.24,
       "ballistics": {
         "g1_bc": 0.505,
         "g7_bc": null,
@@ -12844,7 +12804,7 @@
       "name": "GameKing SBT",
       "weight": 180.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.288,
       "ballistics": {
         "g1_bc": 0.501,
         "g7_bc": null,
@@ -12859,32 +12819,12 @@
       }
     },
     {
-      "id": "BUL_SIERRA_UNK_185_HPBTMK_2621",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "MatchKing",
-      "weight": 185.0,
-      "diameterId": "DIA_308_XBM7",
-      "length": null,
-      "ballistics": {
-        "g1_bc": 0.547,
-        "g7_bc": null,
-        "g7_form_factor": null
-      },
-      "stability_vars": {
-        "is_tipped": false,
-        "tip_length": null,
-        "ix": null,
-        "iy": 185.0,
-        "cg_from_base": 0.135
-      }
-    },
-    {
       "id": "BUL_SIERRA_UNK_190_HPBTMK_039A",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "name": "MatchKing",
       "weight": 190.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.353,
       "ballistics": {
         "g1_bc": 0.533,
         "g7_bc": null,
@@ -12924,7 +12864,7 @@
       "name": "Tipped MatchKing",
       "weight": 195.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.475,
       "ballistics": {
         "g1_bc": 0.61,
         "g7_bc": null,
@@ -12964,7 +12904,7 @@
       "name": "GameKing SBT",
       "weight": 200.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.4,
       "ballistics": {
         "g1_bc": 0.56,
         "g7_bc": 0.279,
@@ -13004,7 +12944,7 @@
       "name": "MatchKing Cannelure",
       "weight": 215.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.489,
       "ballistics": {
         "g1_bc": 0.68,
         "g7_bc": null,
@@ -13044,7 +12984,7 @@
       "name": "RN PH",
       "weight": 220.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.303,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -13064,7 +13004,7 @@
       "name": "Tipped MatchKing",
       "weight": 220.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.489,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -13084,7 +13024,7 @@
       "name": "MatchKing Cannelure",
       "weight": 230.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.775,
       "ballistics": {
         "g1_bc": 0.55,
         "g7_bc": 0.545,
@@ -13104,7 +13044,7 @@
       "name": "JHP SM",
       "weight": 230.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.775,
       "ballistics": {
         "g1_bc": 0.8,
         "g7_bc": null,
@@ -13123,8 +13063,8 @@
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "name": "GameKing SBT",
       "weight": 250.0,
-      "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "diameterId": "DIA_338_R7E3",
+      "length": 1.55,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -13184,7 +13124,7 @@
       "name": "Hornet VK",
       "weight": 45.0,
       "diameterId": "DIA_224_L5X8",
-      "length": null,
+      "length": 0.537,
       "ballistics": {
         "g1_bc": 0.131,
         "g7_bc": 0.145,
@@ -13204,7 +13144,7 @@
       "name": "Spitzer VK",
       "weight": 45.0,
       "diameterId": "DIA_224_L5X8",
-      "length": null,
+      "length": 0.625,
       "ballistics": {
         "g1_bc": 0.21,
         "g7_bc": null,
@@ -13224,7 +13164,7 @@
       "name": "Spitzer VK",
       "weight": 50.0,
       "diameterId": "DIA_224_L5X8",
-      "length": null,
+      "length": 0.682,
       "ballistics": {
         "g1_bc": 0.222,
         "g7_bc": null,
@@ -13264,7 +13204,7 @@
       "name": "MatchKing",
       "weight": 53.0,
       "diameterId": "DIA_224_L5X8",
-      "length": null,
+      "length": 0.701,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -13284,7 +13224,7 @@
       "name": "GameKing HPBT",
       "weight": 55.0,
       "diameterId": "DIA_224_L5X8",
-      "length": null,
+      "length": 0.715,
       "ballistics": {
         "g1_bc": 0.185,
         "g7_bc": null,
@@ -13304,7 +13244,7 @@
       "name": "Spitzer VK",
       "weight": 55.0,
       "diameterId": "DIA_224_L5X8",
-      "length": null,
+      "length": 0.695,
       "ballistics": {
         "g1_bc": 0.237,
         "g7_bc": null,
@@ -13324,7 +13264,7 @@
       "name": "Spitzer Blitz VK",
       "weight": 55.0,
       "diameterId": "DIA_224_L5X8",
-      "length": null,
+      "length": 0.722,
       "ballistics": {
         "g1_bc": 0.271,
         "g7_bc": null,
@@ -13404,7 +13344,7 @@
       "name": "RN SM",
       "weight": 85.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 0.535,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -13824,7 +13764,7 @@
       "name": "SST",
       "weight": 165.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.274,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -13844,7 +13784,7 @@
       "name": "AccuBond",
       "weight": 165.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.321,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -13864,7 +13804,7 @@
       "name": "GameKing",
       "weight": 165.0,
       "diameterId": "DIA_308_XBM7",
-      "length": null,
+      "length": 1.195,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -13964,7 +13904,7 @@
       "name": "Flat Base Target",
       "weight": 52.0,
       "diameterId": "DIA_224_L5X8",
-      "length": null,
+      "length": 0.714,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -13984,7 +13924,7 @@
       "name": "A-Tip Match",
       "weight": 76.0,
       "diameterId": "DIA_224_L5X8",
-      "length": null,
+      "length": 1.06,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -14004,7 +13944,7 @@
       "name": "SP",
       "weight": 40.0,
       "diameterId": "DIA_224_L5X8",
-      "length": null,
+      "length": 0.686,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
@@ -14444,7 +14384,7 @@
       "name": "Boat Tail Target",
       "weight": 73.0,
       "diameterId": "DIA_224_L5X8",
-      "length": null,
+      "length": 0.963,
       "ballistics": {
         "g1_bc": null,
         "g7_bc": null,
