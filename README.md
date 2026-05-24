@@ -63,7 +63,7 @@ This tab is the foundation of the application. Populating it first will make cre
 -   **Manufacturers:** Add the names of companies that make bullets, powder, etc.
 -   **Diameters:** Define the calibers you use (e.g., `.223`, `.308`).
 -   **Cartridges:** Define the specific cartridges you use (e.g., `308 Winchester`), linking them to a diameter.
--   **Inventory (Bullets, Powder, Primers, Brass):** Create a detailed inventory of your reloading components. The manufacturers and diameters you added previously will be available in these forms.
+-   **Inventory (Bullets, Powder, Primers, Brass):** Create a detailed inventory of your reloading components. The manufacturers and diameters you added previously will be available in these forms. The Bullets database surfaces advanced ballistic coefficients (G1 BC, G7 BC) and length metrics to support high-fidelity reloading data.
 
 ### Firearms Tab
 Here, you can manage your collection of firearms.
@@ -80,11 +80,11 @@ This tab lets you catalog your ammunition.
 -   **Recipe Sheet:** Click the **"Recipe"** button in the table to generate a printable summary of a specific handload.
 
 ### Targets Tab
-This is your digital library of target images and a custom target generator.
+This is your digital library of target images and a custom target generator. It is designed around an optimized, data-centric workflow without date dependencies.
 
--   **Upload Targets:** Click **"Upload New Target Image(s)"** to select one or more image files. The images are automatically converted to `.webp` to save space.
+-   **Upload Targets:** Click **"Upload New Target Image(s)"** to select one or more image files. The images are automatically converted to `.webp` to save space and standardize formatting.
 -   **Tag Targets:** Instead of relying on complex file names, click **"Tag Target"** on any uploaded image to invisibly bind it to a Firearm and Load ID. This streamlines the Marking and Analysis workflow by automatically syncing your equipment data when the target is analyzed.
--   **Create Target:** A robust tool to generate custom printable targets. You can define page size, grid options, bullseye shapes (Circle, Square, Diamond, etc.), and layout. You can also import firearm and load data directly onto the target as a text label.
+-   **Create Target:** A robust tool to generate custom printable targets. You can define page size, grid options, bullseye shapes (Circle, Square, Diamond, etc.), and layout. You can also import firearm and load data directly onto the target as a text label. When saving custom targets to your gallery, the application efficiently stores the configuration settings rather than static image data, allowing for seamless reconstruction and management of your target designs.
 
 ### Marking Tab (Core Functionality)
 This is where you turn a target image into analyzable data.
@@ -105,14 +105,17 @@ This is where you turn a target image into analyzable data.
 ### Analysis Tab (Composite & Compare)
 Analyze individual sessions or **composite multiple sessions** for better statistical data.
 
-1.  **Select Sessions:** Use the list to select sessions. Hold `Ctrl` or `Cmd` to select multiple.
-2.  **Analyze:** Click **"Analyze Selected Session(s)"**.
-3.  **Review the Results:**
+1.  **Session Filters:** Use the intelligent, chained filter system (Firearm, Cartridge, Bullet, Powder) in the setup panel to dynamically constrain options and quickly discover relevant datasets.
+2.  **Select Sessions:** Check the boxes next to the filtered sessions you want to analyze or click **"All"** to select the entire filtered list.
+3.  **Analyze:** Click **"Analyze Selected"**.
+4.  **Review the Results:**
     -   **Statistics Table:** View robust statistical metrics including **Mean Radius (MR)**, Group Size (Extreme Spread), **Circular Error Probable (CEP)** at 90%, and A-ZED.
         - *Note: CEP 90% mathematically models an impact radius where 90% of your shots are expected to land, making it an excellent predictor of field capability compared to highly-variable Extreme Spread.*
     -   **Dispersion Analysis:** Checks for vertical stringing and velocity correlations.
     -   **Composite Plot:** A visual representation of all selected groups overlaid, aligned by their Mean Point of Impact (MPI). This effectively builds a much larger, statistically significant dataset that accurately illustrates the true dispersion capabilities of the system.
-4.  **Export:** Click **"Export as Image"** to save the plot and stats.
+5.  **Export Data:**
+    -   **Export as Image:** Generates and downloads a professional-grade 16:9 HUD report of your analysis, integrating accurate multi-line load metadata dynamically scaled to accommodate your sessions.
+    -   **Export Data (JSON):** Generates a comprehensive dataset for advanced processing or LLM analysis. This export intelligently embeds the visual 16:9 HUD report directly into the JSON file as base64 data, ensuring your numerical analysis and its graphical counterpart are unified in a single export.
 
 ### Stability Tab (Miller Twist Calculator)
 Estimate the gyroscopic stability ($S_g$) of your projectiles.
