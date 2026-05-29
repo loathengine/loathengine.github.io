@@ -300,47 +300,56 @@
     {
       "id": "PWD_ACCU_2230_R1A6",
       "manufacturerId": "MAN_ACCURATE_A6B8",
-      "name": "Accurate 2230"
+      "name": "Accurate 2230",
+      "ba_coeff": 0.0000042
     },
     {
       "id": "PWD_ACCU_2520_R1A7",
       "manufacturerId": "MAN_ACCURATE_A6B8",
-      "name": "Accurate 2520"
+      "name": "Accurate 2520",
+      "ba_coeff": 0.0000029
     },
     {
       "id": "PWD_ACCU_4064_R1A8",
       "manufacturerId": "MAN_ACCURATE_A6B8",
-      "name": "Accurate 4064"
+      "name": "Accurate 4064",
+      "ba_coeff": 0.00000265
     },
     {
       "id": "PWD_ACCU_LT32_R1AA",
       "manufacturerId": "MAN_ACCURATE_A6B8",
-      "name": "Accurate LT-32"
+      "name": "Accurate LT-32",
+      "ba_coeff": 0.0000055
     },
     {
       "id": "PWD_ACCU_MAGPRO_R1A9",
       "manufacturerId": "MAN_ACCURATE_A6B8",
-      "name": "Accurate MagPro"
+      "name": "Accurate MagPro",
+      "ba_coeff": 0.0000013
     },
     {
       "id": "PWD_ACCU_NO9_R1A0",
       "manufacturerId": "MAN_ACCURATE_A6B8",
-      "name": "Accurate No. 9"
+      "name": "Accurate No. 9",
+      "ba_coeff": 0.000006
     },
     {
       "id": "PWD_ALLI_BULLSEYE_A1L7",
       "manufacturerId": "MAN_ALLIANT_A5R2",
-      "name": "Bullseye"
+      "name": "Bullseye",
+      "ba_coeff": 0.0000085
     },
     {
       "id": "PWD_ALLI_PPVARMINT_A1L6",
       "manufacturerId": "MAN_ALLIANT_A5R2",
-      "name": "Power Pro Varmint"
+      "name": "Power Pro Varmint",
+      "ba_coeff": 0.0000047
     },
     {
       "id": "PWD_ALLI_RL155TS_A1L5",
       "manufacturerId": "MAN_ALLIANT_A5R2",
-      "name": "Reloder 15.5 TS"
+      "name": "Reloder 15.5 TS",
+      "ba_coeff": 0.0000026
     },
     {
       "id": "PWD_ALLI_RL15_A1L1",
@@ -351,12 +360,14 @@
     {
       "id": "PWD_ALLI_RL16_A1L2",
       "manufacturerId": "MAN_ALLIANT_A5R2",
-      "name": "Reloder 16"
+      "name": "Reloder 16",
+      "ba_coeff": 0.0000022
     },
     {
       "id": "PWD_ALLI_RL23_A1L3",
       "manufacturerId": "MAN_ALLIANT_A5R2",
-      "name": "Reloder 23"
+      "name": "Reloder 23",
+      "ba_coeff": 0.0000014
     },
     {
       "id": "PWD_ALLI_RL26_A1L4",
@@ -367,7 +378,8 @@
     {
       "id": "PWD_ALLI_UNIQUE_A1L8",
       "manufacturerId": "MAN_ALLIANT_A5R2",
-      "name": "Unique"
+      "name": "Unique",
+      "ba_coeff": 0.000007
     },
     {
       "id": "PWD_HODG_BLC2_H1G8",
@@ -384,7 +396,8 @@
     {
       "id": "PWD_HODG_CFEPISTOL_H1GP",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "CFE Pistol"
+      "name": "CFE Pistol",
+      "ba_coeff": 0.0000068
     },
     {
       "id": "PWD_HODG_H1000_H1G5",
@@ -395,7 +408,8 @@
     {
       "id": "PWD_HODG_H110_H1GQ",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H110"
+      "name": "H110",
+      "ba_coeff": 0.0000054
     },
     {
       "id": "PWD_HODG_H335_H1GB",
@@ -406,12 +420,14 @@
     {
       "id": "PWD_HODG_H380_H1GC",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H380"
+      "name": "H380",
+      "ba_coeff": 0.00000275
     },
     {
       "id": "PWD_HODG_H414_H1GD",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H414"
+      "name": "H414",
+      "ba_coeff": 0.0000021
     },
     {
       "id": "PWD_HODG_H4350_H1G2",
@@ -428,7 +444,8 @@
     {
       "id": "PWD_HODG_H4831_H1GE",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H4831"
+      "name": "H4831",
+      "ba_coeff": 0.0000011
     },
     {
       "id": "PWD_HODG_H4895_H1G3",
@@ -439,12 +456,14 @@
     {
       "id": "PWD_HODG_H50BMG_H1GG",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H50BMG"
+      "name": "H50BMG",
+      "ba_coeff": 8e-7
     },
     {
       "id": "PWD_HODG_HP38_H1GT",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "HP-38"
+      "name": "HP-38",
+      "ba_coeff": 0.0000065
     },
     {
       "id": "PWD_HODG_IMR4064_H1G9",
@@ -455,12 +474,14 @@
     {
       "id": "PWD_HODG_IMR4166_H1GK",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 4166"
+      "name": "IMR 4166",
+      "ba_coeff": 0.0000024
     },
     {
       "id": "PWD_HODG_IMR4198_H1GS",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 4198"
+      "name": "IMR 4198",
+      "ba_coeff": 0.0000046
     },
     {
       "id": "PWD_HODG_IMR4350_H1G0",
@@ -471,7 +492,8 @@
     {
       "id": "PWD_HODG_IMR4451_H1GL",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 4451"
+      "name": "IMR 4451",
+      "ba_coeff": 0.0000023
     },
     {
       "id": "PWD_HODG_IMR4895_H1GM",
@@ -482,12 +504,14 @@
     {
       "id": "PWD_HODG_IMR7828SSC_H1GO",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 7828SSC"
+      "name": "IMR 7828SSC",
+      "ba_coeff": 0.00000105
     },
     {
       "id": "PWD_HODG_IMR7828_H1GN",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 7828"
+      "name": "IMR 7828",
+      "ba_coeff": 0.000001
     },
     {
       "id": "PWD_HODG_IMR8208_H1GA",
@@ -498,12 +522,14 @@
     {
       "id": "PWD_HODG_LILGUN_H1GR",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "Lil' Gun"
+      "name": "Lil' Gun",
+      "ba_coeff": 0.0000058
     },
     {
       "id": "PWD_HODG_LONGSHOT_H1GJ",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "Longshot"
+      "name": "Longshot",
+      "ba_coeff": 0.0000052
     },
     {
       "id": "PWD_HODG_RETUMBO_H1G4",
@@ -514,17 +540,20 @@
     {
       "id": "PWD_HODG_TITEGROUP_H1G7",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "Titegroup"
+      "name": "Titegroup",
+      "ba_coeff": 0.0000075
     },
     {
       "id": "PWD_HODG_TITEWAD_H1GI",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "Titewad"
+      "name": "Titewad",
+      "ba_coeff": 0.000009
     },
     {
       "id": "PWD_HODG_US869_H1GH",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "US 869"
+      "name": "US 869",
+      "ba_coeff": 8.5e-7
     },
     {
       "id": "PWD_HODG_VARGET_H1G1",
@@ -540,17 +569,20 @@
     {
       "id": "PWD_RAMS_BIGGAME_R1A2",
       "manufacturerId": "MAN_RAMSHOT_R4P7",
-      "name": "Big Game"
+      "name": "Big Game",
+      "ba_coeff": 0.0000028
     },
     {
       "id": "PWD_RAMS_HUNTER_R1A3",
       "manufacturerId": "MAN_RAMSHOT_R4P7",
-      "name": "Hunter"
+      "name": "Hunter",
+      "ba_coeff": 0.0000026
     },
     {
       "id": "PWD_RAMS_MAGNUM_R1A4",
       "manufacturerId": "MAN_RAMSHOT_R4P7",
-      "name": "Magnum"
+      "name": "Magnum",
+      "ba_coeff": 0.0000014
     },
     {
       "id": "PWD_RAMS_TAC_R1A1",
@@ -561,57 +593,68 @@
     {
       "id": "PWD_RAMS_XTERM_R1A5",
       "manufacturerId": "MAN_RAMSHOT_R4P7",
-      "name": "X-Terminator"
+      "name": "X-Terminator",
+      "ba_coeff": 0.0000044
     },
     {
       "id": "PWD_VIHTAVUORI_MOMF",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "Vihtavuori N170"
+      "name": "Vihtavuori N170",
+      "ba_coeff": 9e-7
     },
     {
       "id": "PWD_VIHT_N110_V1H2",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N110"
+      "name": "N110",
+      "ba_coeff": 0.0000068
     },
     {
       "id": "PWD_VIHT_N120_V1H3",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N120"
+      "name": "N120",
+      "ba_coeff": 0.0000051
     },
     {
       "id": "PWD_VIHT_N130_V1H4",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N130"
+      "name": "N130",
+      "ba_coeff": 0.0000049
     },
     {
       "id": "PWD_VIHT_N133_V1H5",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N133"
+      "name": "N133",
+      "ba_coeff": 0.0000047
     },
     {
       "id": "PWD_VIHT_N135_V1H6",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N135"
+      "name": "N135",
+      "ba_coeff": 0.0000038
     },
     {
       "id": "PWD_VIHT_N140_7Ih6",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N140"
+      "name": "N140",
+      "ba_coeff": 0.0000035
     },
     {
       "id": "PWD_VIHT_N150_V1H7",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N150"
+      "name": "N150",
+      "ba_coeff": 0.0000032
     },
     {
       "id": "PWD_VIHT_N160_V1H8",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N160"
+      "name": "N160",
+      "ba_coeff": 0.0000018
     },
     {
       "id": "PWD_VIHT_N165_V1H9",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N165"
+      "name": "N165",
+      "ba_coeff": 0.0000016
     },
     {
       "id": "PWD_VIHT_N170_V1HA",
@@ -621,82 +664,98 @@
     {
       "id": "PWD_VIHT_N530_V5H1",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N530"
+      "name": "N530",
+      "ba_coeff": 0.000005
     },
     {
       "id": "PWD_VIHT_N540_V5H2",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N540"
+      "name": "N540",
+      "ba_coeff": 0.0000036
     },
     {
       "id": "PWD_VIHT_N550_V5H3",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N550"
+      "name": "N550",
+      "ba_coeff": 0.0000029
     },
     {
       "id": "PWD_VIHT_N555_V5H4",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N555"
+      "name": "N555",
+      "ba_coeff": 0.0000021
     },
     {
       "id": "PWD_VIHT_N560_V5H5",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N560"
+      "name": "N560",
+      "ba_coeff": 0.00000155
     },
     {
       "id": "PWD_VIHT_N565_V5H6",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N565"
+      "name": "N565",
+      "ba_coeff": 0.0000014
     },
     {
       "id": "PWD_VIHT_N568_V5H7",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N568"
+      "name": "N568",
+      "ba_coeff": 0.00000135
     },
     {
       "id": "PWD_VIHT_N570_V5H8",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
-      "name": "N570"
+      "name": "N570",
+      "ba_coeff": 0.0000011
     },
     {
       "id": "PWD_WINC_231_W1N4",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "231"
+      "name": "231",
+      "ba_coeff": 0.0000062
     },
     {
       "id": "PWD_WINC_244_W1N5",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "244"
+      "name": "244",
+      "ba_coeff": 0.000006
     },
     {
       "id": "PWD_WINC_296_W1N6",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "296"
+      "name": "296",
+      "ba_coeff": 0.0000055
     },
     {
       "id": "PWD_WINC_748_W1N7",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "748"
+      "name": "748",
+      "ba_coeff": 0.000003
     },
     {
       "id": "PWD_WINC_760_W1N8",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "760"
+      "name": "760",
+      "ba_coeff": 0.0000024
     },
     {
       "id": "PWD_WINC_STABALL65_W1N1",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "StaBALL 6.5"
+      "name": "StaBALL 6.5",
+      "ba_coeff": 0.0000027
     },
     {
       "id": "PWD_WINC_STABALLHD_W1N3",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "StaBALL HD"
+      "name": "StaBALL HD",
+      "ba_coeff": 0.0000017
     },
     {
       "id": "PWD_WINC_STABALLMATCH_W1N2",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
-      "name": "StaBALL Match"
+      "name": "StaBALL Match",
+      "ba_coeff": 0.00000285
     }
   ],
   "primers": [
