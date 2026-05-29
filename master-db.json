@@ -1942,7 +1942,7 @@
         "overallLength": 1.44,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -2017,7 +2017,7 @@
         "overallLength": 1.405,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -2067,7 +2067,7 @@
         "overallLength": 1.652,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -2092,7 +2092,7 @@
         "overallLength": 2.689,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -2217,7 +2217,7 @@
         "overallLength": 1.55,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.142,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -2267,7 +2267,7 @@
         "overallLength": 1.525,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -2342,7 +2342,7 @@
         "overallLength": 1.438,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -2442,7 +2442,7 @@
         "overallLength": 2.062,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.142,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -2467,7 +2467,7 @@
         "overallLength": 2.164,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -2567,7 +2567,7 @@
         "overallLength": 1.25,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -2692,7 +2692,7 @@
         "overallLength": 0.816,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.181,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -2792,7 +2792,7 @@
         "overallLength": 0.957,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.181,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -2817,7 +2817,7 @@
         "overallLength": 1.012,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.135,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -2867,7 +2867,7 @@
         "overallLength": 1.06,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -2892,7 +2892,7 @@
         "overallLength": 1.135,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.135,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -2967,7 +2967,7 @@
         "overallLength": 1.045,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.181,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -3017,7 +3017,7 @@
         "overallLength": 1.185,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.135,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -3067,7 +3067,7 @@
         "overallLength": 1.235,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.135,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -3117,7 +3117,7 @@
         "overallLength": 1.34,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.135,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -3142,7 +3142,7 @@
         "overallLength": 1.265,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -3167,7 +3167,7 @@
         "overallLength": 1.315,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.181,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -3192,7 +3192,7 @@
         "overallLength": 1.378,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.135,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -3267,7 +3267,7 @@
         "overallLength": 1.155,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.181,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -3292,7 +3292,7 @@
         "overallLength": 1.35,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.135,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -3342,7 +3342,7 @@
         "overallLength": 1.375,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.135,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -3367,7 +3367,7 @@
         "overallLength": 1.365,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.181,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -3392,7 +3392,7 @@
         "overallLength": 1.445,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.135,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -3417,7 +3417,7 @@
         "overallLength": 1.585,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.135,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -3467,7 +3467,7 @@
         "overallLength": 1.09,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -3492,7 +3492,7 @@
         "overallLength": 1.185,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.181,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -3517,7 +3517,7 @@
         "overallLength": 1.33,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.181,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -3567,7 +3567,7 @@
         "overallLength": 1.485,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.135,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -3617,7 +3617,7 @@
         "overallLength": 1.635,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.135,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -3642,7 +3642,7 @@
         "overallLength": 1.765,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.135,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -3667,7 +3667,7 @@
         "overallLength": 1.545,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.181,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -3692,7 +3692,7 @@
         "overallLength": 1.645,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.181,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -3717,7 +3717,7 @@
         "overallLength": 1.775,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.135,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -3742,7 +3742,7 @@
         "overallLength": 1.745,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.135,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -3767,7 +3767,7 @@
         "overallLength": 1.835,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.135,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -3867,7 +3867,7 @@
         "overallLength": 1.476,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.135,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6042,7 +6042,7 @@
         "overallLength": 0.69,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6067,7 +6067,7 @@
         "overallLength": 0.694,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.142,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6092,7 +6092,7 @@
         "overallLength": 0.771,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.142,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6142,7 +6142,7 @@
         "overallLength": 0.83,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.142,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6167,7 +6167,7 @@
         "overallLength": 0.811,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.142,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6192,7 +6192,7 @@
         "overallLength": 0.875,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.142,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6217,7 +6217,7 @@
         "overallLength": 1.05,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6242,7 +6242,7 @@
         "overallLength": 1.045,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6292,7 +6292,7 @@
         "overallLength": 1.115,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6317,7 +6317,7 @@
         "overallLength": 1.17,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6342,7 +6342,7 @@
         "overallLength": 1.235,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6367,7 +6367,7 @@
         "overallLength": 1.256,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6417,7 +6417,7 @@
         "overallLength": 1.288,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6442,7 +6442,7 @@
         "overallLength": 1.4,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.16,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6467,7 +6467,7 @@
         "overallLength": 0.815,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.142,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6492,7 +6492,7 @@
         "overallLength": 0.942,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.142,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6517,7 +6517,7 @@
         "overallLength": 1.15,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6542,7 +6542,7 @@
         "overallLength": 1.05,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.142,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6567,7 +6567,7 @@
         "overallLength": 1.14,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6592,7 +6592,7 @@
         "overallLength": 1.075,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6617,7 +6617,7 @@
         "overallLength": 1.28,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6642,7 +6642,7 @@
         "overallLength": 1.2,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6667,7 +6667,7 @@
         "overallLength": 1.24,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6692,7 +6692,7 @@
         "overallLength": 1.305,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6717,7 +6717,7 @@
         "overallLength": 1.365,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6742,7 +6742,7 @@
         "overallLength": 1.444,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6767,7 +6767,7 @@
         "overallLength": 1.442,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6792,7 +6792,7 @@
         "overallLength": 1.62,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.16,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6817,7 +6817,7 @@
         "overallLength": 1.39,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6842,7 +6842,7 @@
         "overallLength": 1.47,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6867,7 +6867,7 @@
         "overallLength": 1.48,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6892,7 +6892,7 @@
         "overallLength": 1.63,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.16,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6917,7 +6917,7 @@
         "overallLength": 1.554,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6942,7 +6942,7 @@
         "overallLength": 1.542,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6967,7 +6967,7 @@
         "overallLength": 1.285,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -6992,7 +6992,7 @@
         "overallLength": 1.214,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7042,7 +7042,7 @@
         "overallLength": 1.275,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7067,7 +7067,7 @@
         "overallLength": 1.43,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7092,7 +7092,7 @@
         "overallLength": 1.335,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7117,7 +7117,7 @@
         "overallLength": 1.383,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7142,7 +7142,7 @@
         "overallLength": 1.455,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7167,7 +7167,7 @@
         "overallLength": 1.487,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7192,7 +7192,7 @@
         "overallLength": 1.536,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7217,7 +7217,7 @@
         "overallLength": 1.6,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7242,7 +7242,7 @@
         "overallLength": 1.649,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7267,7 +7267,7 @@
         "overallLength": 1.78,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.16,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7292,7 +7292,7 @@
         "overallLength": 1.456,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7317,7 +7317,7 @@
         "overallLength": 1.5,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7342,7 +7342,7 @@
         "overallLength": 1.635,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7367,7 +7367,7 @@
         "overallLength": 1.72,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7392,7 +7392,7 @@
         "overallLength": 1.67,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7442,7 +7442,7 @@
         "overallLength": 1.055,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7517,7 +7517,7 @@
         "overallLength": 1.19,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7542,7 +7542,7 @@
         "overallLength": 0.92,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7592,7 +7592,7 @@
         "overallLength": 1.07,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7617,7 +7617,7 @@
         "overallLength": 2.015,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.142,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7642,7 +7642,7 @@
         "overallLength": 1.25,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7667,7 +7667,7 @@
         "overallLength": 1.204,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.138,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7692,7 +7692,7 @@
         "overallLength": 1,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.138,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7742,7 +7742,7 @@
         "overallLength": 1.248,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.138,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7817,7 +7817,7 @@
         "overallLength": 1.029,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.138,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7867,7 +7867,7 @@
         "overallLength": 1.33,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7942,7 +7942,7 @@
         "overallLength": 1.322,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.138,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -7967,7 +7967,7 @@
         "overallLength": 1.493,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -8017,7 +8017,7 @@
         "overallLength": 1.074,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.102,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -8042,7 +8042,7 @@
         "overallLength": 1.226,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.138,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -8067,7 +8067,7 @@
         "overallLength": 0.89,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -8092,7 +8092,7 @@
         "overallLength": 1.42,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -8117,7 +8117,7 @@
         "overallLength": 0.999,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -8167,7 +8167,7 @@
         "overallLength": 0.486,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -8217,7 +8217,7 @@
         "overallLength": 1.275,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.138,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -8367,7 +8367,7 @@
         "overallLength": 1.09,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.102,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -8392,7 +8392,7 @@
         "overallLength": 1.41,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.138,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -8417,7 +8417,7 @@
         "overallLength": 1.367,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -8442,7 +8442,7 @@
         "overallLength": 0.625,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -8467,7 +8467,7 @@
         "overallLength": 1.015,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -8617,7 +8617,7 @@
         "overallLength": 1.203,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.138,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -8667,7 +8667,7 @@
         "overallLength": 1.34,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.138,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -8692,7 +8692,7 @@
         "overallLength": 1.2,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.142,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -8742,7 +8742,7 @@
         "overallLength": 1.218,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -8767,7 +8767,7 @@
         "overallLength": 1.15,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -8792,7 +8792,7 @@
         "overallLength": 1.14,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -8842,7 +8842,7 @@
         "overallLength": 1.25,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.138,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -8867,7 +8867,7 @@
         "overallLength": 1.412,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -8942,7 +8942,7 @@
         "overallLength": 1.274,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.138,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -8967,7 +8967,7 @@
         "overallLength": 1.282,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.142,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -8992,7 +8992,7 @@
         "overallLength": 1.15,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.102,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -9042,7 +9042,7 @@
         "overallLength": 1.567,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -9117,7 +9117,7 @@
         "overallLength": 0.875,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.034,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -9217,7 +9217,7 @@
         "overallLength": 0.538,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.142,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -9267,7 +9267,7 @@
         "overallLength": 0.918,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -9317,7 +9317,7 @@
         "overallLength": 1.356,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.138,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -9342,7 +9342,7 @@
         "overallLength": 1.1,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -9367,7 +9367,7 @@
         "overallLength": 1.66,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.034,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -9417,7 +9417,7 @@
         "overallLength": 1.425,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.102,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -9442,7 +9442,7 @@
         "overallLength": 1.488,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.142,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -9517,7 +9517,7 @@
         "overallLength": 0.204,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.142,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -9567,7 +9567,7 @@
         "overallLength": 1.63,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -9592,7 +9592,7 @@
         "overallLength": 1.63,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -9617,7 +9617,7 @@
         "overallLength": 1.405,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -9642,7 +9642,7 @@
         "overallLength": 1.39,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -9717,7 +9717,7 @@
         "overallLength": 1.62,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -9767,7 +9767,7 @@
         "overallLength": 0.204,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -9817,7 +9817,7 @@
         "overallLength": 1.41,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -9842,7 +9842,7 @@
         "overallLength": 1.575,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.034,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -9867,7 +9867,7 @@
         "overallLength": 1.425,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.134,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -9992,7 +9992,7 @@
         "overallLength": 0.517,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.142,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -10042,7 +10042,7 @@
         "overallLength": 0.638,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.142,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -10067,7 +10067,7 @@
         "overallLength": 0.517,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.142,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -10142,7 +10142,7 @@
         "overallLength": 1.22,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.142,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -10167,7 +10167,7 @@
         "overallLength": 1,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.16,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -10217,7 +10217,7 @@
         "overallLength": 0.751,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -10267,7 +10267,7 @@
         "overallLength": 0.735,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -10292,7 +10292,7 @@
         "overallLength": 0.735,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -10492,7 +10492,7 @@
         "overallLength": 0.65,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -10567,7 +10567,7 @@
         "overallLength": 0.88,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -10592,7 +10592,7 @@
         "overallLength": 1.046,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -10642,7 +10642,7 @@
         "overallLength": 0.875,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -10667,7 +10667,7 @@
         "overallLength": 1.162,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -10692,7 +10692,7 @@
         "overallLength": 1.052,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.138,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -10717,7 +10717,7 @@
         "overallLength": 1.26,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -10742,7 +10742,7 @@
         "overallLength": 0.866,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -10792,7 +10792,7 @@
         "overallLength": 1.102,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.138,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -10817,7 +10817,7 @@
         "overallLength": 1.015,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.142,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -10842,7 +10842,7 @@
         "overallLength": 0.9,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -10967,7 +10967,7 @@
         "overallLength": 1.122,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -11067,7 +11067,7 @@
         "overallLength": 1.35,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -11167,7 +11167,7 @@
         "overallLength": 1.35,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -11267,7 +11267,7 @@
         "overallLength": 1.25,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -11317,7 +11317,7 @@
         "overallLength": 1.35,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -11567,7 +11567,7 @@
         "overallLength": 0.771,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.142,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -11667,7 +11667,7 @@
         "overallLength": 0.95,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -11692,7 +11692,7 @@
         "overallLength": 1.35,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -11742,7 +11742,7 @@
         "overallLength": 1.25,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -11767,7 +11767,7 @@
         "overallLength": 1.45,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -11817,7 +11817,7 @@
         "overallLength": 1.48,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -11842,7 +11842,7 @@
         "overallLength": 1.32,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -11867,7 +11867,7 @@
         "overallLength": 1.55,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -11917,7 +11917,7 @@
         "overallLength": 1.34,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -11992,7 +11992,7 @@
         "overallLength": 1.28,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -12017,7 +12017,7 @@
         "overallLength": 1.51,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -12167,7 +12167,7 @@
         "overallLength": 1.03,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.12,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -12392,7 +12392,7 @@
         "overallLength": 1.35,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -12492,7 +12492,7 @@
         "overallLength": 1.45,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -12517,7 +12517,7 @@
         "overallLength": 1.5,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -12542,7 +12542,7 @@
         "overallLength": 1.39,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -12567,7 +12567,7 @@
         "overallLength": 1.5,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -12592,7 +12592,7 @@
         "overallLength": 1.58,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -12667,7 +12667,7 @@
         "overallLength": 1.32,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -12767,7 +12767,7 @@
         "overallLength": 1.48,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -12792,7 +12792,7 @@
         "overallLength": 1.6,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -12842,7 +12842,7 @@
         "overallLength": 1.68,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -12867,7 +12867,7 @@
         "overallLength": 1.83,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -13017,7 +13017,7 @@
         "overallLength": 0.885,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -13042,7 +13042,7 @@
         "overallLength": 1.065,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -13092,7 +13092,7 @@
         "overallLength": 1.065,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -13217,7 +13217,7 @@
         "overallLength": 1.185,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -13242,7 +13242,7 @@
         "overallLength": 1.252,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -13267,7 +13267,7 @@
         "overallLength": 1.235,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -13292,7 +13292,7 @@
         "overallLength": 1.285,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -13367,7 +13367,7 @@
         "overallLength": 1.44,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -13417,7 +13417,7 @@
         "overallLength": 1.35,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -13492,7 +13492,7 @@
         "overallLength": 1.485,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -13617,7 +13617,7 @@
         "overallLength": 1.185,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -13667,7 +13667,7 @@
         "overallLength": 1.285,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -13717,7 +13717,7 @@
         "overallLength": 1.345,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -13767,7 +13767,7 @@
         "overallLength": 1.485,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -13867,7 +13867,7 @@
         "overallLength": 1.56,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -13992,7 +13992,7 @@
         "overallLength": 1.12,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -14017,7 +14017,7 @@
         "overallLength": 1.155,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.146,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -14067,7 +14067,7 @@
         "overallLength": 1.055,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -14092,7 +14092,7 @@
         "overallLength": 1.005,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -14142,7 +14142,7 @@
         "overallLength": 0.959,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -14192,7 +14192,7 @@
         "overallLength": 1.08,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -14342,7 +14342,7 @@
         "overallLength": 1.108,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -14417,7 +14417,7 @@
         "overallLength": 1.05,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -14442,7 +14442,7 @@
         "overallLength": 1.19,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -14492,7 +14492,7 @@
         "overallLength": 0.9,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -14542,7 +14542,7 @@
         "overallLength": 1.16,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -14642,7 +14642,7 @@
         "overallLength": 1.28,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -14717,7 +14717,7 @@
         "overallLength": 0.907,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -14761,13 +14761,13 @@
       "id": "BUL_SIERRA_UNK_150_T6K_B6EA",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "diameterId": "DIA_264_H8J4",
-      "name": "T6K",
+      "name": "TGK",
       "physis": {
         "weightGrains": 150,
         "overallLength": 1.487,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -14792,7 +14792,7 @@
         "overallLength": 1.53,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -14842,7 +14842,7 @@
         "overallLength": 1.133,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -14867,7 +14867,7 @@
         "overallLength": 1.39,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -14917,7 +14917,7 @@
         "overallLength": 1.08,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -14942,7 +14942,7 @@
         "overallLength": 1.31,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -14967,7 +14967,7 @@
         "overallLength": 1.31,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -14992,7 +14992,7 @@
         "overallLength": 1.195,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -15017,7 +15017,7 @@
         "overallLength": 1.195,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -15042,7 +15042,7 @@
         "overallLength": 1.215,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -15067,7 +15067,7 @@
         "overallLength": 1.215,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -15142,7 +15142,7 @@
         "overallLength": 1.24,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -15167,7 +15167,7 @@
         "overallLength": 1.403,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -15217,7 +15217,7 @@
         "overallLength": 1.28,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -15242,7 +15242,7 @@
         "overallLength": 0.64,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -15292,7 +15292,7 @@
         "overallLength": 1.287,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -15317,7 +15317,7 @@
         "overallLength": 1.46,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -15367,7 +15367,7 @@
         "overallLength": 1.343,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -15392,7 +15392,7 @@
         "overallLength": 1.353,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -15417,7 +15417,7 @@
         "overallLength": 1.285,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -15442,7 +15442,7 @@
         "overallLength": 1.475,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -15542,7 +15542,7 @@
         "overallLength": 1.297,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -15617,7 +15617,7 @@
         "overallLength": 1.4,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -15642,7 +15642,7 @@
         "overallLength": 1.25,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -15692,7 +15692,7 @@
         "overallLength": 1.489,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -15767,7 +15767,7 @@
         "overallLength": 1.636,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -15792,7 +15792,7 @@
         "overallLength": 1.34,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -15842,7 +15842,7 @@
         "overallLength": 1.378,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -16017,7 +16017,7 @@
         "overallLength": 0.78,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -16067,7 +16067,7 @@
         "overallLength": 0.715,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -16167,7 +16167,7 @@
         "overallLength": 1.7,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -16192,7 +16192,7 @@
         "overallLength": 0.905,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -16267,7 +16267,7 @@
         "overallLength": 0.934,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.18,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -16567,7 +16567,7 @@
         "overallLength": 1.15,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -16617,7 +16617,7 @@
         "overallLength": 1.256,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -16742,7 +16742,7 @@
         "overallLength": 1.45,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -16767,7 +16767,7 @@
         "overallLength": 1.54,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -17092,7 +17092,7 @@
         "overallLength": 1.45,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -17117,7 +17117,7 @@
         "overallLength": 1.55,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.15,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -17217,7 +17217,7 @@
         "overallLength": 1.37,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.145,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -17267,7 +17267,7 @@
         "overallLength": 1.315,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.142,
         "meplatDiameter": null
       },
       "ballistics": {
@@ -17292,7 +17292,7 @@
         "overallLength": 1.52,
         "ogiveLength": null,
         "boatTailLength": null,
-        "tipLength": null,
+        "tipLength": 0.142,
         "meplatDiameter": null
       },
       "ballistics": {
