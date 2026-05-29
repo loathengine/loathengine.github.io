@@ -260,6 +260,16 @@
       "id": "DIA_375_OMEC",
       "imperial": ".375",
       "metric": ""
+    },
+    {
+      "id": "DIA_458_XBM8",
+      "imperial": ".458",
+      "metric": "11.63mm"
+    },
+    {
+      "id": "DIA_357_MAGN",
+      "imperial": ".357",
+      "metric": "9.07mm"
     }
   ],
   "loadTypes": [
@@ -3875,11 +3885,11 @@
     {
       "id": "BUL_BARNES_UNK_260_VORTR_76D4",
       "manufacturerId": "MAN_BARNES_B2N5",
-      "diameterId": "DIA_308_XBM7",
-      "name": "VORTR-",
+      "diameterId": "DIA_375_OMEC",
+      "name": "VOR-TX TSX",
       "physis": {
-        "weightGrains": 260,
-        "overallLength": null,
+        "weightGrains": 270,
+        "overallLength": 1.372,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -7404,7 +7414,7 @@
       "name": "BTSP",
       "physis": {
         "weightGrains": 100,
-        "overallLength": null,
+        "overallLength": 1.066,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -7429,7 +7439,7 @@
       "name": "CX",
       "physis": {
         "weightGrains": 100,
-        "overallLength": null,
+        "overallLength": 1.055,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -7454,7 +7464,7 @@
       "name": "InterLock",
       "physis": {
         "weightGrains": 100,
-        "overallLength": null,
+        "overallLength": 1.066,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -7479,7 +7489,7 @@
       "name": "FMJ",
       "physis": {
         "weightGrains": 105,
-        "overallLength": null,
+        "overallLength": 1.237,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -7504,7 +7514,7 @@
       "name": "CX",
       "physis": {
         "weightGrains": 110,
-        "overallLength": null,
+        "overallLength": 1.19,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -7554,7 +7564,7 @@
       "name": "FMJ",
       "physis": {
         "weightGrains": 110,
-        "overallLength": null,
+        "overallLength": 1.19,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -7629,7 +7639,7 @@
       "name": "CX",
       "physis": {
         "weightGrains": 112,
-        "overallLength": null,
+        "overallLength": 1.25,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -7654,7 +7664,7 @@
       "name": "SST",
       "physis": {
         "weightGrains": 117,
-        "overallLength": null,
+        "overallLength": 1.204,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -7729,7 +7739,7 @@
       "name": "SST",
       "physis": {
         "weightGrains": 123,
-        "overallLength": null,
+        "overallLength": 1.248,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -7754,7 +7764,7 @@
       "name": "FMJ",
       "physis": {
         "weightGrains": 125,
-        "overallLength": null,
+        "overallLength": 0.942,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -7804,7 +7814,7 @@
       "name": "SST",
       "physis": {
         "weightGrains": 125,
-        "overallLength": null,
+        "overallLength": 1.029,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -7829,7 +7839,7 @@
       "name": "Box Count",
       "physis": {
         "weightGrains": 128,
-        "overallLength": null,
+        "overallLength": 1.33,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -7854,7 +7864,7 @@
       "name": "ELD-X",
       "physis": {
         "weightGrains": 128,
-        "overallLength": null,
+        "overallLength": 1.33,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -7879,7 +7889,7 @@
       "name": "InterLock",
       "physis": {
         "weightGrains": 129,
-        "overallLength": null,
+        "overallLength": 1.169,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -7929,7 +7939,7 @@
       "name": "SST",
       "physis": {
         "weightGrains": 129,
-        "overallLength": null,
+        "overallLength": 1.322,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -7954,7 +7964,7 @@
       "name": "CX",
       "physis": {
         "weightGrains": 130,
-        "overallLength": null,
+        "overallLength": 1.493,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -7979,7 +7989,7 @@
       "name": "InterLock",
       "physis": {
         "weightGrains": 130,
-        "overallLength": null,
+        "overallLength": 1.378,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -8004,7 +8014,7 @@
       "name": "MonoFlex",
       "physis": {
         "weightGrains": 130,
-        "overallLength": null,
+        "overallLength": 1.074,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -8029,7 +8039,7 @@
       "name": "SST",
       "physis": {
         "weightGrains": 130,
-        "overallLength": null,
+        "overallLength": 1.226,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -8075,11 +8085,11 @@
     {
       "id": "BUL_HORNADY_UNK_134_ELD_1748",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "diameterId": "DIA_264_H8J4",
-      "name": "ELD",
+      "diameterId": "DIA_257_N2M1",
+      "name": "ELD Match",
       "physis": {
         "weightGrains": 134,
-        "overallLength": null,
+        "overallLength": 1.42,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -8104,7 +8114,7 @@
       "name": "FTX",
       "physis": {
         "weightGrains": 135,
-        "overallLength": null,
+        "overallLength": 0.999,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -8129,7 +8139,7 @@
       "name": "BTSP",
       "physis": {
         "weightGrains": 139,
-        "overallLength": null,
+        "overallLength": 1.153,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -8179,7 +8189,7 @@
       "name": "InterLock",
       "physis": {
         "weightGrains": 139,
-        "overallLength": null,
+        "overallLength": 1.153,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -8204,7 +8214,7 @@
       "name": "SST",
       "physis": {
         "weightGrains": 139,
-        "overallLength": null,
+        "overallLength": 1.275,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -8254,7 +8264,7 @@
       "name": "BTHP",
       "physis": {
         "weightGrains": 140,
-        "overallLength": null,
+        "overallLength": 1.338,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -8304,7 +8314,7 @@
       "name": "InterLock",
       "physis": {
         "weightGrains": 140,
-        "overallLength": null,
+        "overallLength": 1.215,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -8379,7 +8389,7 @@
       "name": "SST",
       "physis": {
         "weightGrains": 140,
-        "overallLength": null,
+        "overallLength": 1.41,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -8404,7 +8414,7 @@
       "name": "ELD-X",
       "physis": {
         "weightGrains": 145,
-        "overallLength": null,
+        "overallLength": 1.367,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -8479,7 +8489,7 @@
       "name": "G",
       "physis": {
         "weightGrains": 150,
-        "overallLength": null,
+        "overallLength": 1.096,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -8504,7 +8514,7 @@
       "name": "InterLock",
       "physis": {
         "weightGrains": 150,
-        "overallLength": null,
+        "overallLength": 1.071,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -8529,7 +8539,7 @@
       "name": "RN",
       "physis": {
         "weightGrains": 150,
-        "overallLength": null,
+        "overallLength": 1.096,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -8554,7 +8564,7 @@
       "name": "Sec",
       "physis": {
         "weightGrains": 150,
-        "overallLength": null,
+        "overallLength": 1.096,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -8579,7 +8589,7 @@
       "name": "SP",
       "physis": {
         "weightGrains": 150,
-        "overallLength": null,
+        "overallLength": 1.096,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -8604,7 +8614,7 @@
       "name": "SST",
       "physis": {
         "weightGrains": 150,
-        "overallLength": null,
+        "overallLength": 1.203,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -8629,7 +8639,7 @@
       "name": "InterLock",
       "physis": {
         "weightGrains": 154,
-        "overallLength": null,
+        "overallLength": 1.22,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -8654,7 +8664,7 @@
       "name": "SST",
       "physis": {
         "weightGrains": 154,
-        "overallLength": null,
+        "overallLength": 1.34,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -8729,7 +8739,7 @@
       "name": "FTX",
       "physis": {
         "weightGrains": 155,
-        "overallLength": null,
+        "overallLength": 1.218,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -8850,11 +8860,11 @@
     {
       "id": "BUL_HORNADY_UNK_165_CX_16B9",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "diameterId": "DIA_264_H8J4",
+      "diameterId": "DIA_308_XBM7",
       "name": "CX",
       "physis": {
         "weightGrains": 165,
-        "overallLength": null,
+        "overallLength": 1.412,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -8929,7 +8939,7 @@
       "name": "SST",
       "physis": {
         "weightGrains": 165,
-        "overallLength": null,
+        "overallLength": 1.274,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -8954,7 +8964,7 @@
       "name": "A-MAX",
       "physis": {
         "weightGrains": 168,
-        "overallLength": null,
+        "overallLength": 1.282,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -8979,7 +8989,7 @@
       "name": "MonoFlex",
       "physis": {
         "weightGrains": 170,
-        "overallLength": null,
+        "overallLength": 1.15,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9000,11 +9010,11 @@
     {
       "id": "BUL_HORNADY_UNK_174_G_E2CD",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "diameterId": "DIA_243_B7V4",
-      "name": "G",
+      "diameterId": "DIA_311_T1Y5",
+      "name": "FMJ-BT",
       "physis": {
         "weightGrains": 174,
-        "overallLength": null,
+        "overallLength": 1.34,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9029,7 +9039,7 @@
       "name": "FlexLock",
       "physis": {
         "weightGrains": 175,
-        "overallLength": null,
+        "overallLength": 1.567,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9079,7 +9089,7 @@
       "name": "HP",
       "physis": {
         "weightGrains": 175,
-        "overallLength": null,
+        "overallLength": 1.567,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9129,7 +9139,7 @@
       "name": "BTHP Match",
       "physis": {
         "weightGrains": 178,
-        "overallLength": null,
+        "overallLength": 1.345,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9179,7 +9189,7 @@
       "name": "Sec",
       "physis": {
         "weightGrains": 178,
-        "overallLength": null,
+        "overallLength": 1.318,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9204,7 +9214,7 @@
       "name": "V-MAX",
       "physis": {
         "weightGrains": 17,
-        "overallLength": null,
+        "overallLength": 0.538,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9279,7 +9289,7 @@
       "name": "InterLock",
       "physis": {
         "weightGrains": 180,
-        "overallLength": null,
+        "overallLength": 1.267,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9304,7 +9314,7 @@
       "name": "SST",
       "physis": {
         "weightGrains": 180,
-        "overallLength": null,
+        "overallLength": 1.356,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9354,7 +9364,7 @@
       "name": "SUB-X",
       "physis": {
         "weightGrains": 190,
-        "overallLength": null,
+        "overallLength": 1.66,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9379,7 +9389,7 @@
       "name": "BTHP",
       "physis": {
         "weightGrains": 196,
-        "overallLength": null,
+        "overallLength": 1.375,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9400,11 +9410,11 @@
     {
       "id": "BUL_HORNADY_UNK_200_MONOFL_94DD",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "diameterId": "DIA_264_H8J4",
+      "diameterId": "DIA_338_R7E3",
       "name": "MonoFlex",
       "physis": {
         "weightGrains": 200,
-        "overallLength": null,
+        "overallLength": 1.425,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9429,7 +9439,7 @@
       "name": "A-MAX",
       "physis": {
         "weightGrains": 208,
-        "overallLength": null,
+        "overallLength": 1.488,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9525,11 +9535,11 @@
     {
       "id": "BUL_HORNADY_UNK_20_XTP_26E2",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "diameterId": "DIA_224_L5X8",
+      "diameterId": "DIA_172_QW2R",
       "name": "XTP",
       "physis": {
         "weightGrains": 20,
-        "overallLength": null,
+        "overallLength": 0.44,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9554,7 +9564,7 @@
       "name": "ELD-X",
       "physis": {
         "weightGrains": 220,
-        "overallLength": null,
+        "overallLength": 1.63,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9579,7 +9589,7 @@
       "name": "FlexLock",
       "physis": {
         "weightGrains": 220,
-        "overallLength": null,
+        "overallLength": 1.63,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9604,7 +9614,7 @@
       "name": "CX",
       "physis": {
         "weightGrains": 225,
-        "overallLength": null,
+        "overallLength": 1.405,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9625,11 +9635,11 @@
     {
       "id": "BUL_HORNADY_UNK_225_FTX_AE3D",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "diameterId": "DIA_264_H8J4",
+      "diameterId": "DIA_338_R7E3",
       "name": "FTX",
       "physis": {
         "weightGrains": 225,
-        "overallLength": null,
+        "overallLength": 1.39,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9654,7 +9664,7 @@
       "name": "InterLock",
       "physis": {
         "weightGrains": 225,
-        "overallLength": null,
+        "overallLength": 1.14,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9700,11 +9710,11 @@
     {
       "id": "BUL_HORNADY_UNK_240_CX_5D47",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "diameterId": "DIA_264_H8J4",
+      "diameterId": "DIA_338_R7E3",
       "name": "CX",
       "physis": {
         "weightGrains": 240,
-        "overallLength": null,
+        "overallLength": 1.62,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9779,7 +9789,7 @@
       "name": "BTHP Match",
       "physis": {
         "weightGrains": 250,
-        "overallLength": null,
+        "overallLength": 1.567,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9804,7 +9814,7 @@
       "name": "CX",
       "physis": {
         "weightGrains": 250,
-        "overallLength": null,
+        "overallLength": 1.41,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9829,7 +9839,7 @@
       "name": "SUB-X",
       "physis": {
         "weightGrains": 255,
-        "overallLength": null,
+        "overallLength": 1.575,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9850,11 +9860,11 @@
     {
       "id": "BUL_HORNADY_UNK_270_G_8C61",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "diameterId": "DIA_277_K9L0",
-      "name": "G",
+      "diameterId": "DIA_375_OMEC",
+      "name": "GMX",
       "physis": {
         "weightGrains": 270,
-        "overallLength": null,
+        "overallLength": 1.425,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9875,11 +9885,11 @@
     {
       "id": "BUL_HORNADY_UNK_270_INTERL_1D6A",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "diameterId": "DIA_277_K9L0",
+      "diameterId": "DIA_375_OMEC",
       "name": "InterLock",
       "physis": {
         "weightGrains": 270,
-        "overallLength": null,
+        "overallLength": 1.154,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9904,7 +9914,7 @@
       "name": "DGX Bonded",
       "physis": {
         "weightGrains": 300,
-        "overallLength": null,
+        "overallLength": 1.283,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9950,11 +9960,11 @@
     {
       "id": "BUL_HORNADY_UNK_300_SEC_1185",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "diameterId": "DIA_308_XBM7",
+      "diameterId": "DIA_375_OMEC",
       "name": "Sec",
       "physis": {
         "weightGrains": 300,
-        "overallLength": null,
+        "overallLength": 1.34,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -9975,11 +9985,11 @@
     {
       "id": "BUL_HORNADY_UNK_30_VMAX_AA1E",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "diameterId": "DIA_308_XBM7",
+      "diameterId": "DIA_224_L5X8",
       "name": "V-MAX",
       "physis": {
         "weightGrains": 30,
-        "overallLength": null,
+        "overallLength": 0.517,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -10000,11 +10010,11 @@
     {
       "id": "BUL_HORNADY_UNK_325_INTERL_D001",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "diameterId": "DIA_323_V4B9",
+      "diameterId": "DIA_458_XBM8",
       "name": "InterLock",
       "physis": {
         "weightGrains": 325,
-        "overallLength": null,
+        "overallLength": 0.92,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -10029,7 +10039,7 @@
       "name": "V-MAX",
       "physis": {
         "weightGrains": 32,
-        "overallLength": null,
+        "overallLength": 0.638,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -10054,7 +10064,7 @@
       "name": "V-MAX",
       "physis": {
         "weightGrains": 35,
-        "overallLength": null,
+        "overallLength": 0.517,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -10179,7 +10189,7 @@
       "name": "HP Match",
       "physis": {
         "weightGrains": 45,
-        "overallLength": null,
+        "overallLength": 0.61,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -10204,7 +10214,7 @@
       "name": "CX",
       "physis": {
         "weightGrains": 50,
-        "overallLength": null,
+        "overallLength": 0.751,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -10254,7 +10264,7 @@
       "name": "CX",
       "physis": {
         "weightGrains": 55,
-        "overallLength": null,
+        "overallLength": 0.735,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -10279,7 +10289,7 @@
       "name": "FTX",
       "physis": {
         "weightGrains": 55,
-        "overallLength": null,
+        "overallLength": 0.735,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -10304,7 +10314,7 @@
       "name": "HP Match",
       "physis": {
         "weightGrains": 55,
-        "overallLength": null,
+        "overallLength": 0.735,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -10329,7 +10339,7 @@
       "name": "Spire Point",
       "physis": {
         "weightGrains": 55,
-        "overallLength": null,
+        "overallLength": 0.715,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -10354,7 +10364,7 @@
       "name": "SP Match",
       "physis": {
         "weightGrains": 55,
-        "overallLength": null,
+        "overallLength": 0.735,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -10429,7 +10439,7 @@
       "name": "FMJ",
       "physis": {
         "weightGrains": 62,
-        "overallLength": null,
+        "overallLength": 0.862,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -10454,7 +10464,7 @@
       "name": "Spire Point",
       "physis": {
         "weightGrains": 62,
-        "overallLength": null,
+        "overallLength": 0.862,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -10529,7 +10539,7 @@
       "name": "Sec",
       "physis": {
         "weightGrains": 68,
-        "overallLength": null,
+        "overallLength": 0.98,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -10579,7 +10589,7 @@
       "name": "FTX",
       "physis": {
         "weightGrains": 73,
-        "overallLength": null,
+        "overallLength": 1.046,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -10654,7 +10664,7 @@
       "name": "ELD-X",
       "physis": {
         "weightGrains": 80,
-        "overallLength": null,
+        "overallLength": 1.162,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -10704,7 +10714,7 @@
       "name": "CX",
       "physis": {
         "weightGrains": 90,
-        "overallLength": null,
+        "overallLength": 1.26,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -10754,7 +10764,7 @@
       "name": "XTP",
       "physis": {
         "weightGrains": 90,
-        "overallLength": null,
+        "overallLength": 0.518,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -10779,7 +10789,7 @@
       "name": "SST",
       "physis": {
         "weightGrains": 95,
-        "overallLength": null,
+        "overallLength": 1.102,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -10804,7 +10814,7 @@
       "name": "V-MAX",
       "physis": {
         "weightGrains": 95,
-        "overallLength": null,
+        "overallLength": 1.015,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -12154,7 +12164,7 @@
       "name": "BALLISTIC",
       "physis": {
         "weightGrains": 100,
-        "overallLength": null,
+        "overallLength": 1.03,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14004,7 +14014,7 @@
       "name": "TVK",
       "physis": {
         "weightGrains": 105,
-        "overallLength": null,
+        "overallLength": 1.155,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14129,7 +14139,7 @@
       "name": "HPBT Mk",
       "physis": {
         "weightGrains": 115,
-        "overallLength": null,
+        "overallLength": 0.959,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14150,11 +14160,11 @@
     {
       "id": "BUL_SIERRA_UNK_115_HPVK_7A88",
       "manufacturerId": "MAN_SIERRA_S6Y3",
-      "diameterId": "DIA_308_XBM7",
+      "diameterId": "DIA_257_N2M1",
       "name": "HP VK",
       "physis": {
         "weightGrains": 115,
-        "overallLength": null,
+        "overallLength": 1.035,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14179,7 +14189,7 @@
       "name": "SBT GK",
       "physis": {
         "weightGrains": 117,
-        "overallLength": null,
+        "overallLength": 1.08,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14204,7 +14214,7 @@
       "name": "Spitzer PH",
       "physis": {
         "weightGrains": 120,
-        "overallLength": null,
+        "overallLength": 1.079,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14229,7 +14239,7 @@
       "name": "HPBT-CN MK",
       "physis": {
         "weightGrains": 123,
-        "overallLength": null,
+        "overallLength": 1.295,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14254,7 +14264,7 @@
       "name": "HP-CN MK",
       "physis": {
         "weightGrains": 125,
-        "overallLength": null,
+        "overallLength": 0.725,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14304,7 +14314,7 @@
       "name": "Spitzer PH",
       "physis": {
         "weightGrains": 125,
-        "overallLength": null,
+        "overallLength": 0.879,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14354,7 +14364,7 @@
       "name": "Spitzer PH",
       "physis": {
         "weightGrains": 130,
-        "overallLength": null,
+        "overallLength": 1.07,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14379,7 +14389,7 @@
       "name": "HPVK",
       "physis": {
         "weightGrains": 135,
-        "overallLength": null,
+        "overallLength": 0.895,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14429,7 +14439,7 @@
       "name": "HPBT GK",
       "physis": {
         "weightGrains": 140,
-        "overallLength": null,
+        "overallLength": 1.19,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14454,7 +14464,7 @@
       "name": "JHP SM",
       "physis": {
         "weightGrains": 140,
-        "overallLength": null,
+        "overallLength": 1.31,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14504,7 +14514,7 @@
       "name": "Spitzer PH",
       "physis": {
         "weightGrains": 140,
-        "overallLength": null,
+        "overallLength": 1.12,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14529,7 +14539,7 @@
       "name": "TGK",
       "physis": {
         "weightGrains": 140,
-        "overallLength": null,
+        "overallLength": 1.16,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14554,7 +14564,7 @@
       "name": "HPBT-CN Mk",
       "physis": {
         "weightGrains": 142,
-        "overallLength": null,
+        "overallLength": 1.375,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14679,7 +14689,7 @@
       "name": "RN PH",
       "physis": {
         "weightGrains": 150,
-        "overallLength": null,
+        "overallLength": 0.907,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14704,7 +14714,7 @@
       "name": "SBT GK",
       "physis": {
         "weightGrains": 150,
-        "overallLength": null,
+        "overallLength": 0.907,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14729,7 +14739,7 @@
       "name": "Spitzer PH",
       "physis": {
         "weightGrains": 150,
-        "overallLength": null,
+        "overallLength": 1.065,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14754,7 +14764,7 @@
       "name": "T6K",
       "physis": {
         "weightGrains": 150,
-        "overallLength": null,
+        "overallLength": 1.487,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14779,7 +14789,7 @@
       "name": "TMK",
       "physis": {
         "weightGrains": 153,
-        "overallLength": null,
+        "overallLength": 1.53,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14804,7 +14814,7 @@
       "name": "HPBT-CN MK PALMA?",
       "physis": {
         "weightGrains": 155,
-        "overallLength": null,
+        "overallLength": 1.194,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14829,7 +14839,7 @@
       "name": "HPBT MK",
       "physis": {
         "weightGrains": 155,
-        "overallLength": null,
+        "overallLength": 1.133,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14851,10 +14861,10 @@
       "id": "BUL_SIERRA_UNK_155_TMK_6003",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "diameterId": "DIA_284_S3F6",
-      "name": "TMK",
+      "name": "TGK",
       "physis": {
         "weightGrains": 155,
-        "overallLength": null,
+        "overallLength": 1.39,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14875,11 +14885,11 @@
     {
       "id": "BUL_SIERRA_UNK_158_JHCSM_6EE9",
       "manufacturerId": "MAN_SIERRA_S6Y3",
-      "diameterId": "DIA_308_XBM7",
+      "diameterId": "DIA_357_MAGN",
       "name": "JHC SM",
       "physis": {
         "weightGrains": 158,
-        "overallLength": null,
+        "overallLength": 0.64,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14929,7 +14939,7 @@
       "name": "SBT GK",
       "physis": {
         "weightGrains": 160,
-        "overallLength": null,
+        "overallLength": 1.31,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14954,7 +14964,7 @@
       "name": "TMK",
       "physis": {
         "weightGrains": 160,
-        "overallLength": null,
+        "overallLength": 1.31,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -14979,7 +14989,7 @@
       "name": "SBT GK",
       "physis": {
         "weightGrains": 165,
-        "overallLength": null,
+        "overallLength": 1.195,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15004,7 +15014,7 @@
       "name": "TGK",
       "physis": {
         "weightGrains": 165,
-        "overallLength": null,
+        "overallLength": 1.195,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15029,7 +15039,7 @@
       "name": "HPBT MK",
       "physis": {
         "weightGrains": 168,
-        "overallLength": null,
+        "overallLength": 1.215,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15054,7 +15064,7 @@
       "name": "TMK",
       "physis": {
         "weightGrains": 168,
-        "overallLength": null,
+        "overallLength": 1.215,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15129,7 +15139,7 @@
       "name": "HPBT MK",
       "physis": {
         "weightGrains": 175,
-        "overallLength": null,
+        "overallLength": 1.24,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15154,7 +15164,7 @@
       "name": "SBT GK",
       "physis": {
         "weightGrains": 175,
-        "overallLength": null,
+        "overallLength": 1.403,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15179,7 +15189,7 @@
       "name": "Spitzer PH",
       "physis": {
         "weightGrains": 175,
-        "overallLength": null,
+        "overallLength": 1.12,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15279,7 +15289,7 @@
       "name": "SBT GK",
       "physis": {
         "weightGrains": 180,
-        "overallLength": null,
+        "overallLength": 1.287,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15300,11 +15310,11 @@
     {
       "id": "BUL_SIERRA_UNK_180_TGK_3E12",
       "manufacturerId": "MAN_SIERRA_S6Y3",
-      "diameterId": "DIA_264_H8J4",
+      "diameterId": "DIA_308_XBM7",
       "name": "TGK",
       "physis": {
         "weightGrains": 180,
-        "overallLength": null,
+        "overallLength": 1.46,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15329,7 +15339,7 @@
       "name": "HPBT-CN MK",
       "physis": {
         "weightGrains": 183,
-        "overallLength": null,
+        "overallLength": 1.62,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15354,7 +15364,7 @@
       "name": "HPBT MK",
       "physis": {
         "weightGrains": 185,
-        "overallLength": null,
+        "overallLength": 1.343,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15379,7 +15389,7 @@
       "name": "HPBT MK",
       "physis": {
         "weightGrains": 190,
-        "overallLength": null,
+        "overallLength": 1.353,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15429,7 +15439,7 @@
       "name": "TMK",
       "physis": {
         "weightGrains": 195,
-        "overallLength": null,
+        "overallLength": 1.475,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15454,7 +15464,7 @@
       "name": "HPBT-CN Mk",
       "physis": {
         "weightGrains": 197,
-        "overallLength": null,
+        "overallLength": 1.692,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15479,7 +15489,7 @@
       "name": "FN PH",
       "physis": {
         "weightGrains": 200,
-        "overallLength": null,
+        "overallLength": 0.831,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15529,7 +15539,7 @@
       "name": "SBT GK",
       "physis": {
         "weightGrains": 200,
-        "overallLength": null,
+        "overallLength": 1.297,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15579,7 +15589,7 @@
       "name": "HPBT-CN MK",
       "physis": {
         "weightGrains": 215,
-        "overallLength": null,
+        "overallLength": 1.57,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15654,7 +15664,7 @@
       "name": "RN PH",
       "physis": {
         "weightGrains": 220,
-        "overallLength": null,
+        "overallLength": 1.489,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15679,7 +15689,7 @@
       "name": "TMK",
       "physis": {
         "weightGrains": 220,
-        "overallLength": null,
+        "overallLength": 1.489,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15704,7 +15714,7 @@
       "name": "HPBT-CN Mk",
       "physis": {
         "weightGrains": 230,
-        "overallLength": null,
+        "overallLength": 1.775,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15729,7 +15739,7 @@
       "name": "JHP SM",
       "physis": {
         "weightGrains": 230,
-        "overallLength": null,
+        "overallLength": 1.775,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15750,11 +15760,11 @@
     {
       "id": "BUL_SIERRA_UNK_250_HPBTMK_50E6",
       "manufacturerId": "MAN_SIERRA_S6Y3",
-      "diameterId": "DIA_257_N2M1",
+      "diameterId": "DIA_338_R7E3",
       "name": "HPBT MK",
       "physis": {
         "weightGrains": 250,
-        "overallLength": null,
+        "overallLength": 1.636,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15775,11 +15785,11 @@
     {
       "id": "BUL_SIERRA_UNK_250_SBTGK_3F2E",
       "manufacturerId": "MAN_SIERRA_S6Y3",
-      "diameterId": "DIA_308_XBM7",
+      "diameterId": "DIA_338_R7E3",
       "name": "SBT GK",
       "physis": {
         "weightGrains": 250,
-        "overallLength": null,
+        "overallLength": 1.34,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15829,7 +15839,7 @@
       "name": "SBT GK",
       "physis": {
         "weightGrains": 300,
-        "overallLength": null,
+        "overallLength": 1.378,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15879,7 +15889,7 @@
       "name": "HPBT-CN MK",
       "physis": {
         "weightGrains": 350,
-        "overallLength": null,
+        "overallLength": 1.783,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15929,7 +15939,7 @@
       "name": "Hornet VK",
       "physis": {
         "weightGrains": 45,
-        "overallLength": null,
+        "overallLength": 0.535,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15954,7 +15964,7 @@
       "name": "Spitzer VK",
       "physis": {
         "weightGrains": 45,
-        "overallLength": null,
+        "overallLength": 0.625,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -15979,7 +15989,7 @@
       "name": "Spitzer VK",
       "physis": {
         "weightGrains": 50,
-        "overallLength": null,
+        "overallLength": 0.682,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -16029,7 +16039,7 @@
       "name": "HP MK",
       "physis": {
         "weightGrains": 53,
-        "overallLength": null,
+        "overallLength": 0.701,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -16054,7 +16064,7 @@
       "name": "HPBT GK",
       "physis": {
         "weightGrains": 55,
-        "overallLength": null,
+        "overallLength": 0.715,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -16079,7 +16089,7 @@
       "name": "Spitzer VK",
       "physis": {
         "weightGrains": 55,
-        "overallLength": null,
+        "overallLength": 0.695,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -16104,7 +16114,7 @@
       "name": "Spitzer Blitz VK",
       "physis": {
         "weightGrains": 55,
-        "overallLength": null,
+        "overallLength": 0.722,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -16229,7 +16239,7 @@
       "name": "SBT Blitz VK",
       "physis": {
         "weightGrains": 80,
-        "overallLength": null,
+        "overallLength": 0.894,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -16254,7 +16264,7 @@
       "name": "HPBT Gk",
       "physis": {
         "weightGrains": 85,
-        "overallLength": null,
+        "overallLength": 0.934,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
@@ -16279,7 +16289,7 @@
       "name": "RN SM",
       "physis": {
         "weightGrains": 85,
-        "overallLength": null,
+        "overallLength": 0.535,
         "ogiveLength": null,
         "boatTailLength": null,
         "tipLength": null,
