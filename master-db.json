@@ -891,7 +891,8 @@
       "maxCaseLength": 1.058,
       "trimLength": 1.048,
       "oal": 1.075,
-      "max_saami_psi": 26000
+      "max_saami_psi": 26000,
+      "base_capacity_h2o": 4.3
     },
     {
       "id": "CTG_17HRN_N1H3",
@@ -900,7 +901,8 @@
       "maxCaseLength": 1.35,
       "trimLength": 1.34,
       "oal": 1.723,
-      "max_saami_psi": 50000
+      "max_saami_psi": 50000,
+      "base_capacity_h2o": 12
     },
     {
       "id": "CTG_204RUG_N2H4",
@@ -909,7 +911,8 @@
       "maxCaseLength": 1.85,
       "trimLength": 1.84,
       "oal": 2.26,
-      "max_saami_psi": 57900
+      "max_saami_psi": 57900,
+      "base_capacity_h2o": 32.5
     },
     {
       "id": "CTG_220SWIFT_N2H6",
@@ -918,7 +921,8 @@
       "maxCaseLength": 2.205,
       "trimLength": 2.195,
       "oal": 2.68,
-      "max_saami_psi": 62000
+      "max_saami_psi": 62000,
+      "base_capacity_h2o": 47
     },
     {
       "id": "CTG_22250_cK32",
@@ -927,7 +931,8 @@
       "maxCaseLength": 1.912,
       "trimLength": 1.902,
       "oal": 2.35,
-      "max_saami_psi": 65000
+      "max_saami_psi": 65000,
+      "base_capacity_h2o": 43
     },
     {
       "id": "CTG_223AI_cT12",
@@ -936,7 +941,8 @@
       "maxCaseLength": 1.76,
       "trimLength": 1.75,
       "oal": 2.26,
-      "max_saami_psi": 55000
+      "max_saami_psi": 55000,
+      "base_capacity_h2o": 31
     },
     {
       "id": "CTG_223REM_cR82",
@@ -945,7 +951,8 @@
       "maxCaseLength": 1.76,
       "trimLength": 1.75,
       "oal": 2.26,
-      "max_saami_psi": 55000
+      "max_saami_psi": 55000,
+      "base_capacity_h2o": 28.8
     },
     {
       "id": "CTG_224VALK_N2H5",
@@ -954,7 +961,8 @@
       "maxCaseLength": 1.6,
       "trimLength": 1.59,
       "oal": 2.26,
-      "max_saami_psi": 55000
+      "max_saami_psi": 55000,
+      "base_capacity_h2o": 34.5
     },
     {
       "id": "CTG_22CM_cA72",
@@ -963,7 +971,8 @@
       "maxCaseLength": 1.92,
       "trimLength": 1.91,
       "oal": 2.7,
-      "max_saami_psi": 62000
+      "max_saami_psi": 62000,
+      "base_capacity_h2o": 52.5
     },
     {
       "id": "CTG_243WIN_cB42",
@@ -972,7 +981,8 @@
       "maxCaseLength": 2.045,
       "trimLength": 2.035,
       "oal": 2.71,
-      "max_saami_psi": 60000
+      "max_saami_psi": 60000,
+      "base_capacity_h2o": 54
     },
     {
       "id": "CTG_2506_cL42",
@@ -981,7 +991,8 @@
       "maxCaseLength": 2.494,
       "trimLength": 2.484,
       "oal": 3.25,
-      "max_saami_psi": 63000
+      "max_saami_psi": 63000,
+      "base_capacity_h2o": 65
     },
     {
       "id": "CTG_257ROB_N2H9",
@@ -990,7 +1001,8 @@
       "maxCaseLength": 2.233,
       "trimLength": 2.223,
       "oal": 2.775,
-      "max_saami_psi": 54000
+      "max_saami_psi": 54000,
+      "base_capacity_h2o": 56
     },
     {
       "id": "CTG_257WBY_N2H0",
@@ -999,7 +1011,8 @@
       "maxCaseLength": 2.549,
       "trimLength": 2.539,
       "oal": 3.17,
-      "max_saami_psi": 62500
+      "max_saami_psi": 62500,
+      "base_capacity_h2o": 84
     },
     {
       "id": "CTG_260REM_N2HB",
@@ -1008,7 +1021,8 @@
       "maxCaseLength": 2.035,
       "trimLength": 2.025,
       "oal": 2.8,
-      "max_saami_psi": 60000
+      "max_saami_psi": 60000,
+      "base_capacity_h2o": 53.5
     },
     {
       "id": "CTG_270WIN_cU62",
@@ -1017,7 +1031,8 @@
       "maxCaseLength": 2.54,
       "trimLength": 2.53,
       "oal": 3.34,
-      "max_saami_psi": 65000
+      "max_saami_psi": 65000,
+      "base_capacity_h2o": 67
     },
     {
       "id": "CTG_270WSM_N2HC",
@@ -1026,7 +1041,8 @@
       "maxCaseLength": 2.1,
       "trimLength": 2.09,
       "oal": 2.86,
-      "max_saami_psi": 65000
+      "max_saami_psi": 65000,
+      "base_capacity_h2o": 79
     },
     {
       "id": "CTG_280AI_cA52",
@@ -1035,7 +1051,8 @@
       "maxCaseLength": 2.525,
       "trimLength": 2.515,
       "oal": 3.33,
-      "max_saami_psi": 65000
+      "max_saami_psi": 65000,
+      "base_capacity_h2o": 71
     },
     {
       "id": "CTG_3006_cE12",
@@ -1044,7 +1061,8 @@
       "maxCaseLength": 2.494,
       "trimLength": 2.484,
       "oal": 3.34,
-      "max_saami_psi": 60000
+      "max_saami_psi": 60000,
+      "base_capacity_h2o": 68
     },
     {
       "id": "CTG_300BLK_cI72",
@@ -1053,7 +1071,8 @@
       "maxCaseLength": 1.368,
       "trimLength": 1.358,
       "oal": 2.26,
-      "max_saami_psi": 55000
+      "max_saami_psi": 55000,
+      "base_capacity_h2o": 24
     },
     {
       "id": "CTG_300PRC_cK02",
@@ -1062,7 +1081,8 @@
       "maxCaseLength": 2.58,
       "trimLength": 2.57,
       "oal": 3.7,
-      "max_saami_psi": 65000
+      "max_saami_psi": 65000,
+      "base_capacity_h2o": 95
     },
     {
       "id": "CTG_300WINMAG_cG42",
@@ -1071,7 +1091,8 @@
       "maxCaseLength": 2.62,
       "trimLength": 2.61,
       "oal": 3.34,
-      "max_saami_psi": 64000
+      "max_saami_psi": 64000,
+      "base_capacity_h2o": 93.8
     },
     {
       "id": "CTG_300WSM_N3HH",
@@ -1080,7 +1101,8 @@
       "maxCaseLength": 2.1,
       "trimLength": 2.09,
       "oal": 2.86,
-      "max_saami_psi": 65000
+      "max_saami_psi": 65000,
+      "base_capacity_h2o": 80
     },
     {
       "id": "CTG_3030_N3HG",
@@ -1089,7 +1111,8 @@
       "maxCaseLength": 2.039,
       "trimLength": 2.029,
       "oal": 2.55,
-      "max_saami_psi": 42000
+      "max_saami_psi": 42000,
+      "base_capacity_h2o": 45
     },
     {
       "id": "CTG_303BRIT_N3HI",
@@ -1098,7 +1121,8 @@
       "maxCaseLength": 2.222,
       "trimLength": 2.212,
       "oal": 3.075,
-      "max_saami_psi": 49000
+      "max_saami_psi": 49000,
+      "base_capacity_h2o": 56
     },
     {
       "id": "CTG_308WIN_cC82",
@@ -1107,7 +1131,8 @@
       "maxCaseLength": 2.015,
       "trimLength": 2.005,
       "oal": 2.8,
-      "max_saami_psi": 62000
+      "max_saami_psi": 62000,
+      "base_capacity_h2o": 56
     },
     {
       "id": "CTG_338FED_N3HK",
@@ -1116,7 +1141,8 @@
       "maxCaseLength": 2.015,
       "trimLength": 2.005,
       "oal": 2.82,
-      "max_saami_psi": 62000
+      "max_saami_psi": 62000,
+      "base_capacity_h2o": 55.5
     },
     {
       "id": "CTG_338LAP_cO62",
@@ -1125,7 +1151,8 @@
       "maxCaseLength": 2.724,
       "trimLength": 2.714,
       "oal": 3.681,
-      "max_saami_psi": 68167
+      "max_saami_psi": 68167,
+      "base_capacity_h2o": 114
     },
     {
       "id": "CTG_338WINMAG_cQ92",
@@ -1134,7 +1161,8 @@
       "maxCaseLength": 2.5,
       "trimLength": 2.49,
       "oal": 3.34,
-      "max_saami_psi": 64000
+      "max_saami_psi": 64000,
+      "base_capacity_h2o": 86
     },
     {
       "id": "CTG_65CM_cN72",
@@ -1143,7 +1171,8 @@
       "maxCaseLength": 1.92,
       "trimLength": 1.91,
       "oal": 2.825,
-      "max_saami_psi": 62000
+      "max_saami_psi": 62000,
+      "base_capacity_h2o": 52.5
     },
     {
       "id": "CTG_65GRN_cS32",
@@ -1152,7 +1181,8 @@
       "maxCaseLength": 1.52,
       "trimLength": 1.51,
       "oal": 2.26,
-      "max_saami_psi": 52000
+      "max_saami_psi": 52000,
+      "base_capacity_h2o": 35
     },
     {
       "id": "CTG_65PRC_cP02",
@@ -1161,7 +1191,8 @@
       "maxCaseLength": 2.03,
       "trimLength": 2.02,
       "oal": 2.955,
-      "max_saami_psi": 65000
+      "max_saami_psi": 65000,
+      "base_capacity_h2o": 62
     },
     {
       "id": "CTG_65SWE_N6HA",
@@ -1170,7 +1201,8 @@
       "maxCaseLength": 2.165,
       "trimLength": 2.155,
       "oal": 3.15,
-      "max_saami_psi": 51000
+      "max_saami_psi": 51000,
+      "base_capacity_h2o": 57
     },
     {
       "id": "CTG_68WEST_N6HD",
@@ -1179,7 +1211,8 @@
       "maxCaseLength": 2.02,
       "trimLength": 2.01,
       "oal": 2.955,
-      "max_saami_psi": 65000
+      "max_saami_psi": 65000,
+      "base_capacity_h2o": 74
     },
     {
       "id": "CTG_6ARC_cH92",
@@ -1188,7 +1221,8 @@
       "maxCaseLength": 1.49,
       "trimLength": 1.48,
       "oal": 2.26,
-      "max_saami_psi": 52000
+      "max_saami_psi": 52000,
+      "base_capacity_h2o": 34
     },
     {
       "id": "CTG_6BR_cJ12",
@@ -1197,7 +1231,8 @@
       "maxCaseLength": 1.56,
       "trimLength": 1.55,
       "oal": 2.2,
-      "max_saami_psi": 60000
+      "max_saami_psi": 60000,
+      "base_capacity_h2o": 39.5
     },
     {
       "id": "CTG_6CM_cG62",
@@ -1206,7 +1241,8 @@
       "maxCaseLength": 1.92,
       "trimLength": 1.91,
       "oal": 2.8,
-      "max_saami_psi": 62000
+      "max_saami_psi": 62000,
+      "base_capacity_h2o": 52.5
     },
     {
       "id": "CTG_6DASH_N6H8",
@@ -1215,7 +1251,8 @@
       "maxCaseLength": 1.55,
       "trimLength": 1.54,
       "oal": 2.34,
-      "max_saami_psi": 62000
+      "max_saami_psi": 62000,
+      "base_capacity_h2o": 41
     },
     {
       "id": "CTG_6REM_N6H7",
@@ -1224,7 +1261,8 @@
       "maxCaseLength": 2.233,
       "trimLength": 2.223,
       "oal": 2.825,
-      "max_saami_psi": 65000
+      "max_saami_psi": 65000,
+      "base_capacity_h2o": 55
     },
     {
       "id": "CTG_762X39_cM32",
@@ -1233,7 +1271,8 @@
       "maxCaseLength": 1.528,
       "trimLength": 1.518,
       "oal": 2.2,
-      "max_saami_psi": 45000
+      "max_saami_psi": 45000,
+      "base_capacity_h2o": 35.5
     },
     {
       "id": "CTG_7MAU_N7HF",
@@ -1242,7 +1281,8 @@
       "maxCaseLength": 2.235,
       "trimLength": 2.225,
       "oal": 3.065,
-      "max_saami_psi": 51000
+      "max_saami_psi": 51000,
+      "base_capacity_h2o": 57
     },
     {
       "id": "CTG_7MM08_cZ22",
@@ -1251,7 +1291,8 @@
       "maxCaseLength": 2.035,
       "trimLength": 2.025,
       "oal": 2.8,
-      "max_saami_psi": 61000
+      "max_saami_psi": 61000,
+      "base_capacity_h2o": 54
     },
     {
       "id": "CTG_7PRC_N7HE",
@@ -1260,7 +1301,8 @@
       "maxCaseLength": 2.28,
       "trimLength": 2.27,
       "oal": 3.34,
-      "max_saami_psi": 65000
+      "max_saami_psi": 65000,
+      "base_capacity_h2o": 81
     },
     {
       "id": "CTG_7REMMAG_cW92",
@@ -1269,7 +1311,8 @@
       "maxCaseLength": 2.5,
       "trimLength": 2.49,
       "oal": 3.29,
-      "max_saami_psi": 61000
+      "max_saami_psi": 61000,
+      "base_capacity_h2o": 82
     },
     {
       "id": "CTG_86BLK_cS22",
@@ -1278,7 +1321,8 @@
       "maxCaseLength": 1.685,
       "trimLength": 1.675,
       "oal": 2.26,
-      "max_saami_psi": 60000
+      "max_saami_psi": 60000,
+      "base_capacity_h2o": 45
     },
     {
       "id": "CTG_8MAU_N8HJ",
@@ -1287,7 +1331,8 @@
       "maxCaseLength": 2.244,
       "trimLength": 2.234,
       "oal": 3.25,
-      "max_saami_psi": 35000
+      "max_saami_psi": 35000,
+      "base_capacity_h2o": 63
     }
   ],
   "brass": [
