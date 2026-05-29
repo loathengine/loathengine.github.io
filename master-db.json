@@ -345,7 +345,8 @@
     {
       "id": "PWD_ALLI_RL15_A1L1",
       "manufacturerId": "MAN_ALLIANT_A5R2",
-      "name": "Reloder 15"
+      "name": "Reloder 15",
+      "ba_coeff": 0.0000026
     },
     {
       "id": "PWD_ALLI_RL16_A1L2",
@@ -360,7 +361,8 @@
     {
       "id": "PWD_ALLI_RL26_A1L4",
       "manufacturerId": "MAN_ALLIANT_A5R2",
-      "name": "Reloder 26"
+      "name": "Reloder 26",
+      "ba_coeff": 0.00000125
     },
     {
       "id": "PWD_ALLI_UNIQUE_A1L8",
@@ -370,12 +372,14 @@
     {
       "id": "PWD_HODG_BLC2_H1G8",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "BL-C(2)"
+      "name": "BL-C(2)",
+      "ba_coeff": 0.00000295
     },
     {
       "id": "PWD_HODG_CFE223_H1G6",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "CFE 223"
+      "name": "CFE 223",
+      "ba_coeff": 0.0000039
     },
     {
       "id": "PWD_HODG_CFEPISTOL_H1GP",
@@ -385,7 +389,8 @@
     {
       "id": "PWD_HODG_H1000_H1G5",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H1000"
+      "name": "H1000",
+      "ba_coeff": 0.00000105
     },
     {
       "id": "PWD_HODG_H110_H1GQ",
@@ -395,7 +400,8 @@
     {
       "id": "PWD_HODG_H335_H1GB",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H335"
+      "name": "H335",
+      "ba_coeff": 0.0000034
     },
     {
       "id": "PWD_HODG_H380_H1GC",
@@ -410,12 +416,14 @@
     {
       "id": "PWD_HODG_H4350_H1G2",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H4350"
+      "name": "H4350",
+      "ba_coeff": 0.00000145
     },
     {
       "id": "PWD_HODG_H4831SC_H1GF",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H4831SC"
+      "name": "H4831SC",
+      "ba_coeff": 0.00000115
     },
     {
       "id": "PWD_HODG_H4831_H1GE",
@@ -425,7 +433,8 @@
     {
       "id": "PWD_HODG_H4895_H1G3",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "H4895"
+      "name": "H4895",
+      "ba_coeff": 0.0000031
     },
     {
       "id": "PWD_HODG_H50BMG_H1GG",
@@ -440,7 +449,8 @@
     {
       "id": "PWD_HODG_IMR4064_H1G9",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 4064"
+      "name": "IMR 4064",
+      "ba_coeff": 0.0000027
     },
     {
       "id": "PWD_HODG_IMR4166_H1GK",
@@ -455,7 +465,8 @@
     {
       "id": "PWD_HODG_IMR4350_H1G0",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 4350"
+      "name": "IMR 4350",
+      "ba_coeff": 0.0000015
     },
     {
       "id": "PWD_HODG_IMR4451_H1GL",
@@ -465,7 +476,8 @@
     {
       "id": "PWD_HODG_IMR4895_H1GM",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 4895"
+      "name": "IMR 4895",
+      "ba_coeff": 0.00000305
     },
     {
       "id": "PWD_HODG_IMR7828SSC_H1GO",
@@ -480,7 +492,8 @@
     {
       "id": "PWD_HODG_IMR8208_H1GA",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 8208 XBR"
+      "name": "IMR 8208 XBR",
+      "ba_coeff": 0.0000043
     },
     {
       "id": "PWD_HODG_LILGUN_H1GR",
@@ -495,7 +508,8 @@
     {
       "id": "PWD_HODG_RETUMBO_H1G4",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "Retumbo"
+      "name": "Retumbo",
+      "ba_coeff": 9.2e-7
     },
     {
       "id": "PWD_HODG_TITEGROUP_H1G7",
@@ -515,7 +529,8 @@
     {
       "id": "PWD_HODG_VARGET_H1G1",
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "Varget"
+      "name": "Varget",
+      "ba_coeff": 0.0000028
     },
     {
       "id": "PWD_HORNADYOAL_IRJS",
@@ -540,7 +555,8 @@
     {
       "id": "PWD_RAMS_TAC_R1A1",
       "manufacturerId": "MAN_RAMSHOT_R4P7",
-      "name": "TAC"
+      "name": "TAC",
+      "ba_coeff": 0.0000041
     },
     {
       "id": "PWD_RAMS_XTERM_R1A5",
