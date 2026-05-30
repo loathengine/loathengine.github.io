@@ -17306,6 +17306,31 @@
         "ix": null,
         "iy": null
       }
+    },
+    {
+      "id": "BUL_BERGER_224_73_BTGT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_224_L5X8",
+      "name": "BT Target",
+      "physis": {
+        "weightGrains": 73,
+        "overallLength": 0.963,
+        "ogiveLength": null,
+        "boatTailLength": null,
+        "tipLength": null,
+        "meplatDiameter": null
+      },
+      "ballistics": {
+        "preferred_model": "G7",
+        "g1BC": null,
+        "g7BC": null,
+        "g1FF": null,
+        "g7FF": null
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
     }
   ],
   "loads": [
