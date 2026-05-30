@@ -1,355 +1,331 @@
-# Empirical Precision - User Guide
+# Empirical Precision — User Guide
 
-## Table of Contents
-1.  [Introduction](#introduction)
-2.  [Core Concepts: Data & Privacy](#core-concepts-data--privacy)
-3.  [Recommended Workflow](#recommended-workflow)
-4.  [Tab-by-Tab Guide](#tab-by-tab-guide)
-    - [About Us](#about-us)
-    - [Firearms](#firearms)
-    - [Load Data](#load-data)
-    - [Targets](#targets)
-    - [Marking](#marking)
-    - [Analysis](#analysis)
-    - [Stability](#stability)
-    - [Components](#components)
-    - [DB Management](#db-management)
-5.  [Data Backup and Management](#data-backup-and-management)
+## What Is This App?
+
+Empirical Precision is a browser-based shooting journal and analysis tool. It lets you:
+
+- **Catalog** your firearms, reloading components, and ammunition
+- **Photograph** your range targets and mark each bullet impact
+- **Analyze** your groups statistically — across one session or many
+- **Simulate** hit probability at range using a physics-based ballistic engine
+
+Everything runs in your browser. No account, no server, no internet connection required after the first page load. Your data never leaves your device.
 
 ---
 
-## Introduction
+## Table of Contents
 
-Welcome to Empirical Precision! This application is a powerful, all-in-one tool for shooting enthusiasts to manage every aspect of their hobby. From cataloging reloading components and firearms to performing in-depth statistical analysis of target performance, this app helps you make data-driven decisions to improve your precision.
+1. [Key Concepts & Terms](#key-concepts--terms)
+2. [Privacy & Data Storage](#privacy--data-storage)
+3. [Recommended Workflow](#recommended-workflow)
+4. [Tab-by-Tab Guide](#tab-by-tab-guide)
+5. [Troubleshooting](#troubleshooting)
+6. [Data Backup](#data-backup)
 
-**Key Feature: Statistical Composite Group Analysis**
-One of the primary functions of this application is to allow you to shoot multiple smaller groups (e.g., 3-shot or 5-shot groups) on different targets or on different days, and then **composite** them into a single large-sample analysis. By aligning the groups around their Centers of Impact or Points of Aim, this provides an aggregated, statistically significant dataset focused on **Mean Radius (MR)**, mitigating the unreliability of Extreme Spread measurements on small sample batches.
+---
 
-### Core Concepts: Data & Privacy
+## Key Concepts & Terms
 
--   **Offline First:** The application works entirely within your web browser. It does not require an internet connection after the initial page load.
--   **100% Private:** All data you enter—firearms, load recipes, targets, and analysis—is stored locally on your computer in your browser's IndexedDB storage. **No data is ever uploaded to a server.**
--   **Data Persistence:** Your data will remain available as long as you do not clear your browser's site data for this application. It is **highly recommended** that you regularly back up your database using the features on the `DB Management` tab.
+| Term | Meaning |
+|------|---------|
+| **Session** | One range visit: a target, one or more groups, and metadata (firearm, load, distance) |
+| **Group** | A set of shots fired at a single point of aim within a session |
+| **MR (Mean Radius)** | Average distance of all shots from their collective center. More reliable than Extreme Spread on small groups |
+| **CEP 90%** | Radius of a circle containing 90% of your shots. A strong predictor of real-world capability |
+| **Extreme Spread** | Distance between the two widest shots. Unreliable on groups fewer than ~20 shots |
+| **MPI** | Mean Point of Impact — the geometric center of all shots in a group |
+| **POA** | Point of Aim — where you were aiming when firing |
+| **Composite Analysis** | Combining multiple sessions aligned by MPI to build meaningful sample sizes from small groups |
+| **Scale** | A calibration you set in the Marking tool so the app knows how many pixels equal one inch |
+
+---
+
+## Privacy & Data Storage
+
+- **Offline first.** The app requires internet only for the initial page load.
+- **100% local.** All data is stored in your browser's IndexedDB. Nothing is transmitted to any server.
+- **Vulnerable to browser resets.** Clearing your browser's site data deletes all local data permanently. Back up regularly.
 
 ---
 
 ## Recommended Workflow
 
-For the most efficient use of the application, follow this logical flow:
+### First-Time Setup
 
-1.  **Components:**
-    - Merge master database to local database
-    - Add components
-2.  **Add personal firearms and load recipes (only saved locally):**
-    - Add firearm
-    - Add factory load
-    - Add custom load
-3.  **Target Management:**
-    - Design target and print
-    - Upload target from range day
-4.  **Mark the target:**
-    - Import a target from the range and mark the points of impact and save as a session
-5.  **Analyze:**
-    - Analyze a session or compare multiple sessions
-6.  **Save your data:**
-    - Save a backup of your local database as a json file.
+**1. Sync the master database**
+
+Go to **DB Management → Sync Database**. This imports ~600 bullet profiles, 77 powders, 45 cartridges, primers, brass, and commercial loads from the built-in open-source library — no manual entry needed. Safe to run multiple times; it only adds or updates records without deleting your personal data.
+
+**2. Add your firearm**
+
+Go to **Firearms** and enter your rifle's nickname, cartridge, barrel length, twist rate, and scope height over bore.
+
+**3. Add your load**
+
+Go to **Load Data** and create a handload recipe or log a factory cartridge.
+
+### Range Day
+
+**4. Upload your target**
+
+Go to **Targets** and upload a photo of your range target, or design one with the built-in generator before you go.
+
+**5. Mark your impacts**
+
+Go to **Marking**. Select your target, set the scale, mark each bullet hole, associate the session with your firearm and load, and save.
+
+**6. Analyze**
+
+Go to **Analysis**, select your sessions, and review statistical results and the composite group plot.
+
+**7. Back up**
+
+Go to **DB Management → Export Entire Database** and save the `.json` file somewhere safe.
 
 ---
 
 ## Tab-by-Tab Guide
 
 ### About Us
-This is the landing page. It provides a general overview of the application's purpose, scientific methodology, and privacy architecture.
 
-### Firearms
-Here, you can manage your collection of firearms.
-
--   **To Add a Firearm:** Fill out the form with a nickname, cartridge, barrel length, and other details. Click **"Save Firearm"**.
--   **To Edit a Firearm:** Click the **"Edit"** button next to an entry in the table. The form will be populated with its data. Make your changes and click **"Save Firearm"** again.
-
-### Load Data
-This tab lets you catalog your ammunition.
-
--   **Hand Load vs. Commercial Ammo:** Use the sub-tabs to switch between creating a custom handload recipe and logging factory ammunition.
--   **Creating a Hand Load:** The form uses a series of dependent dropdowns. Fill in all known details for your recipe. You can enter multiple charge weights or COALs separated by commas.
--   **Creating Commercial Ammo:** A simpler form to log factory ammunition by diameter, cartridge, name, and lot number.
--   **Recipe Sheet:** Click the **"Recipe"** button in the table to generate a printable summary of a specific handload.
-
-### Targets
-This is your digital library of target images and a custom target generator. It is designed around an optimized, data-centric workflow without date dependencies.
-
--   **Range targets:** Click **"Upload New Target Image(s)"** to select one or more image files. The images are automatically converted to `.webp` to save space and standardize formatting. Click **"Tag Target"** on any uploaded image to invisibly bind it to a Firearm and Load ID. This streamlines the Marking and Analysis workflow.
--   **Create custom targets:** A robust tool to generate custom printable targets. You can define page size, grid options, bullseye shapes (Circle, Square, Diamond, etc.), and layout. You can also import firearm and load data directly onto the target as a text label. When saving custom targets to your gallery, the application efficiently stores the configuration settings rather than static image data, allowing for seamless reconstruction and management of your target designs.
-
-### Marking
-This is where you turn a target image into analyzable data.
-
-1.  **Load a Target:** Use the **"Load Saved Image"** dropdown to select a target.
-2.  **Set the Scale (CRITICAL STEP):** 
-    -   Enter a known distance and units (e.g., `1` and `Inches (in)`).
-    -   Click **"Set Scale"**.
-    -   Click two points on the canvas that correspond to that distance.
-3.  **Create a Group:** Click **"New Group"**.
-4.  **Mark Points:**
-    -   Click **"Set POA"** (Point of Aim) and click where you were aiming.
-    -   Click **"Mark Impacts"** and click on each bullet hole.
-5.  **Enter Range Session Info:** Associate the group with a Firearm, Load, and Target Distance.
-6.  **Enter Velocity Data (Optional):** You can type the muzzle velocity for each shot in the list below the canvas.
-7.  **Save the Session:** Click **"Save / Update Session"**.
-
-### Analysis
-Analyze individual sessions or **composite multiple sessions** for better statistical data.
-
-1.  **Session Filters:** Use the intelligent, chained filter system (Firearm, Cartridge, Bullet, Powder) in the setup panel to dynamically constrain options and quickly discover relevant datasets.
-2.  **Select Sessions:** Check the boxes next to the filtered sessions you want to analyze or click **"All"** to select the entire filtered list.
-3.  **Analyze:** Click **"Analyze Selected"**.
-4.  **Review the Results:**
-    -   **Statistics Table:** View robust statistical metrics including **Mean Radius (MR)**, Group Size (Extreme Spread), **Circular Error Probable (CEP)** at 90%, and A-ZED.
-        - *Note: CEP 90% mathematically models an impact radius where 90% of your shots are expected to land, making it an excellent predictor of field capability compared to highly-variable Extreme Spread.*
-    -   **Dispersion Analysis:** Checks for vertical stringing and velocity correlations.
-    -   **Composite Plot:** A visual representation of all selected groups overlaid, aligned by their Mean Point of Impact (MPI). This effectively builds a much larger, statistically significant dataset that accurately illustrates the true dispersion capabilities of the system.
-5.  **Export Data:**
-    -   **Export as Image:** Generates and downloads a professional-grade 16:9 HUD report of your analysis, integrating accurate multi-line load metadata dynamically scaled to accommodate your sessions.
-    -   **Export Data (JSON):** Generates a comprehensive dataset for advanced processing or LLM analysis. This export intelligently embeds the visual 16:9 HUD report directly into the JSON file as base64 data, ensuring your numerical analysis and its graphical counterpart are unified in a single export.
-
-### Stability
-Estimate the gyroscopic stability ($S_g$) of your projectiles.
-
--   **Firearm Selection:** Automatically pulls twist rate from your firearms database.
--   **Bullet Selection:** Pulls bullet specifications (weight, diameter, length) from your load data or bullet inventory.
--   **Environmental Correction:** Models the Air Density Ratio (ADR) relative to Standard Sea Level by accounting for temperature, altitude, and station pressure. 
--   **Refined Miller Twist Formula:** Incorporates real-time velocity corrections and plastic tip length logic (effective metal length vs overall length) to provide an incredibly precise $S_g$ value. An $S_g \ge 1.5$ corresponds to optimum stability and maximum ballistic coefficient retention.
-
-### Components
-This tab is the foundation of the application. Populating it first will make creating firearms and loads much easier. It is divided into several sub-tabs:
-
--   **Manufacturers:** Add the names of companies that make bullets, powder, etc.
--   **Diameters:** Define the calibers you use (e.g., `.223`, `.308`).
--   **Cartridges:** Define the specific cartridges you use (e.g., `308 Winchester`), linking them to a diameter.
--   **Inventory (Bullets, Powder, Primers, Brass):** Create a detailed inventory of your reloading components. The manufacturers and diameters you added previously will be available in these forms. The Bullets database surfaces advanced ballistic coefficients (G1 BC, G7 BC) and length metrics to support high-fidelity reloading data.
-
-### DB Management
-Advanced data management for your local IndexedDB.
-
--   **Unified Database:** The application manages all your firearms, targets, sessions, and load data within a centralized IndexedDB architecture.
--   **Sync Tools:**
-    -   `Sync Database`: Merges hundreds of standard bullet profiles, powders, brass makes, and commercial loads directly from the Open-Source `master-db.json` into your application. **Note:** This explicitly overwrites matching records within all tables seamlessly!
--   **Management Actions:** (Action labels dynamically adapt based on the scope selected in the Advanced Table Browser)
-    -   `Nuclear Reset`: Aggressively clears all data from the entire database to initialize a completely clean session using schema-agnostic clearing routines.
-    -   `Clear Table`: Replaces the Nuclear Reset button when a specific table is singled out in the browser, allowing surgically precise clearing of individual tables without touching others.
-    -   `Export Data`: Generates a fully compliant JSON backup of whatever context (entire database or table scope) is currently selected.
-    -   `Restore / Merge Data`: Safely restores data from a JSON backup by parsing records and mapping them into the correct tables, seamlessly overwriting matching IDs.
+The landing page. Provides an overview of the app's purpose and privacy architecture. No data entry here.
 
 ---
 
-## Data Backup and Management
-
-Because all data is stored within your browser, it is vulnerable to being deleted if you clear your browser's cache or site data.
-
-**It is critical that you regularly back up your database.**
-
-Go to the `DB Management` tab and click **"Export Entire Database"** regularly. Save the `.json` file safely.
-
-
-## Database Schema Index
-
-This section serves as a technical reference for the standard JSON objects stored in the `master-db.json` and the local IndexedDB. The examples below use generic placeholder values (e.g. `<ID>`, `0.000`, `String`) so developers can easily reference the structural layout and data types.
-
-### Cartridges
-```json
-{
-  "id": "CTG_<ID>",
-  "name": "Cartridge Name String",
-  "diameterId": "DIA_<ID>",
-  "maxCaseLength": 0.0,
-  "trimLength": 0.0,
-  "oal": 0.0
-}
-```
-
-### Brass
-```json
-{
-  "id": "BRS_<MAN_ID>_<CTG_ID>_<ID>",
-  "cartridgeId": "CTG_<ID>",
-  "manufacturerId": "MAN_<ID>",
-  "primerHole": "String (e.g. 0.080 (2mm))",
-  "primerPocket": "String (e.g. LARGE)"
-}
-```
-
 ### Firearms
-```json
-{
-  "id": "FIREARM_<ID>",
-  "name": "Firearm Name String",
-  "cartridgeId": "CTG_<ID>",
-  "barrelLength": 0.0,
-  "twistRate": 0.0,
-  "sightHeight": 0.0,
-  "notes": "Optional notes string"
-}
-```
 
-### Loads (Handload)
-```json
-{
-  "id": "LOAD_<ID>",
-  "loadType": "handload",
-  "cartridgeId": "CTG_<ID>",
-  "diameterId": "DIA_<ID>",
-  "bulletId": "BUL_<ID>",
-  "bulletLot": "String",
-  "powderId": "POW_<ID>",
-  "powderLot": "String",
-  "chargeWeight": 0.0,
-  "col": 0.0,
-  "cbto": 0.0,
-  "cbtoComp": "String",
-  "shoulder": 0.0,
-  "shoulderComp": "String",
-  "primerId": "PRI_<ID>",
-  "primerLot": "String",
-  "brassId": "BRS_<ID>",
-  "brassLot": "String",
-  "firings": 0
-}
-```
+**Adding a firearm:**
+1. Enter a **Nickname** (e.g., `6.5 PRC Hunting Rifle`)
+2. Select the **Cartridge** it's chambered in
+3. Enter **Barrel Length**, **Twist Rate** (e.g., `8` for 1-in-8"), and **Sight Over Bore** (scope centerline height above bore, in inches)
+4. Click **Save Firearm**
 
-### Loads (Commercial)
-```json
-{
-  "id": "LOAD_COMM_<ID>",
-  "name": "Commercial Load Name String",
-  "loadType": "commercial",
-  "manufacturerId": "MAN_<ID>",
-  "cartridgeId": "CTG_<ID>",
-  "bulletId": "BUL_<ID>",
-  "partNumber": "String",
-  "lot": "String"
-}
-```
+**Editing:** Click **Edit** next to any entry, make changes, then click **Save Firearm** again.
 
-### ImpactData (Sessions)
-```json
-{
-  "id": "SESS_<ID>",
-  "date": "ISO-8601 Date String",
-  "firearmId": "FIREARM_<ID>",
-  "loadId": "LOAD_<ID>",
-  "targetDistance": 0,
-  "distanceUnits": "String (e.g. yd, m)",
-  "groups": [
-    {
-      "id": "GRP_<ID>",
-      "pois": [
-        {
-          "x": 0.0,
-          "y": 0.0,
-          "velocity": 0
-        }
-      ],
-      "poa": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    }
-  ],
-  "targetImageId": "IMG_<ID>",
-  "notes": "Optional notes string"
-}
-```
+> **Why twist rate matters:** The ballistic simulator uses twist rate to calculate gyroscopic stability (Sg) and spin drift, which directly affect long-range predictions.
 
-### TargetImages
-```json
-{
-  "id": "IMG_<ID>",
-  "name": "Image Name String",
-  "date": "ISO-8601 Date String",
-  "dataUrl": "data:image/webp;base64,...",
-  "thumbnailUrl": "data:image/webp;base64,...",
-  "notes": "Optional notes string"
-}
-```
+---
 
-### CustomTargets
-```json
-{
-  "id": "CTGT_<ID>",
-  "name": "Target Template Name String",
-  "config": {
-    "pageSize": "String",
-    "gridType": "String",
-    "bullseyeShape": "String",
-    "bullseyeSize": 0.0,
-    "layout": "String"
-  }
-}
-```
+### Load Data
 
-### Manufacturers
-```json
-{
-  "id": "MAN_<ID>",
-  "name": "Manufacturer Name String",
-  "type": [
-    "bullet",
-    "powder",
-    "primer",
-    "brass",
-    "firearm",
-    "cartridge",
-    "ammo"
-  ]
-}
-```
+**Handloads vs. Commercial Ammo:** Use the sub-tabs to switch modes.
 
-### Diameters
-```json
-{
-  "id": "DIA_<ID>",
-  "imperial": ".000",
-  "metric": "0.0mm"
-}
-```
+**Creating a Handload:**
+- Select Cartridge → Bullet → Powder in order (dropdowns are chained)
+- Enter **Charge Weight** (grains), **COAL**, and **CBTO** if you measure it
+- Click **Save Load**
 
-### Powders
-```json
-{
-  "id": "POW_<MAN_ID>_<NAME>_<ID>",
-  "manufacturerId": "MAN_<ID>",
-  "name": "Powder Name String"
-}
-```
+**Creating Commercial Ammo:**
+- Select the cartridge and bullet
+- Enter the product name, manufacturer, part number, and lot number
+- Click **Save Load**
 
-### Primers
-```json
-{
-  "id": "PRI_<MAN_ID>_<NAME>_<ID>",
-  "manufacturerId": "MAN_<ID>",
-  "name": "Primer Name String"
-}
-```
+**Recipe Sheet:** Click **Recipe** on any handload to generate a printable summary card.
 
-### Bullets
-```json
-{
-  "id": "BUL_<MAN_ID>_<DIA>_<WEIGHT>_<NAME>_<ID>",
-  "manufacturerId": "MAN_<ID>",
-  "diameterId": "DIA_<ID>",
-  "name": "Bullet Name String",
-  "weight": 0.0,
-  "length": 0.0,
-  "bcG1": 0.0,
-  "bcG7": 0.0,
-  "dragModel": "String (e.g. G1, G7)",
-  "ix": 0.0,
-  "iy": 0.0,
-  "cgFromBase": 0.0,
-  "meplat": 0.0,
-  "isTipped": false,
-  "tipLength": 0.0,
-  "formFactor": 0.0
-}
-```
+---
 
+### Targets
+
+#### Range Targets (Upload)
+
+1. Click **"Upload New Target Image(s)"** and select image files from your device
+2. Images are automatically converted to `.webp` and stored as efficient binary data
+3. Use **Preview**, **Rename**, **Download**, or **Delete** from the gallery
+
+> **Tip:** Name your targets descriptively before going to the Marking tab — e.g., `100yd 5-shot Jun-2026`. The name appears in session dropdowns.
+
+#### Custom Targets (Generator)
+
+Design and print targets before your range trip:
+- Set paper size, orientation, and grid options
+- Choose bullseye shape (Circle, Square, Diamond, Cross, etc.), ring count, and colors
+- Add a label that can pull firearm and load data automatically
+- Use **Download PNG** or **Print** to output the design
+
+---
+
+### Marking
+
+> **The golden rule:** Always set the scale before marking any shots. Without it, all measurements will be in raw pixels — scientifically meaningless.
+
+#### Step-by-Step
+
+**1. Select your target image** using the **Load Saved Image** dropdown.
+
+**2. Set the Scale**
+
+The scale tells the app how many pixels equal one inch on your specific image.
+
+- Enter a **known distance** (e.g., `2`)
+- Select **units** (e.g., `Inches`)
+- Click **Set Scale**
+- Click two points on the canvas exactly that distance apart
+
+*Example: If your target has a 2-inch bullseye ring, type `2`, select `Inches`, click Set Scale, then click the left edge and right edge of that ring.*
+
+**3. Create a Group** — Click **New Group**. Each group is one set of shots at a single aiming point. You can have multiple groups per session (e.g., a ladder test with different charge weights).
+
+**4. Set POA** — Click **Set POA**, then click the exact spot on the target you were aiming at.
+
+**5. Mark Impacts** — Click **Mark Impacts**, then click each bullet hole. A numbered dot appears per shot. Click **Undo** if you misclick.
+
+**6. Enter Shot Velocities (Optional)** — If you used a chronograph, enter each shot's velocity in the list below the canvas. This enables velocity-dispersion correlation analysis.
+
+**7. Enter Session Details** — Select the Firearm, Load, Target Distance, and environmental conditions (temperature, altitude, pressure) in the right panel.
+
+**8. Save** — Click **Save / Update Session**. Always do this before navigating away — the canvas is not auto-saved.
+
+---
+
+### Analysis
+
+> **Why composite?** A 5-shot group gives a rough picture. Ten 5-shot groups composited around their centers give a 50-shot dataset that reveals the true capability of your rifle and load. Mean Radius on 50 shots is far more meaningful than Extreme Spread on 5.
+
+#### Metric Reference
+
+| Metric | What It Tells You |
+|--------|-------------------|
+| **MR** | Typical shot-to-shot consistency. Lower = better |
+| **CEP 90%** | "90% of my shots will land within this radius" |
+| **Extreme Spread** | Worst-case spread — highly variable on small groups |
+| **MPI** | Center of your group — where your rifle actually shoots |
+
+#### Step-by-Step
+
+1. **Filter** using the chained panel (Firearm → Cartridge → Bullet → Powder) to narrow the session list
+2. **Select** sessions with checkboxes, or click **All**
+3. **Click Analyze Selected**
+4. **Review:**
+   - **Statistics Table** — MR, ES, CEP 90%, shot count per session and in aggregate
+   - **Dispersion Analysis** — checks for vertical stringing and velocity-spread correlation
+   - **Composite Plot** — all groups overlaid and aligned by MPI
+5. **Export:**
+   - **Export as Image** — downloads a 16:9 HUD report
+   - **Export Data (JSON)** — full data export including the visual report embedded as base64
+
+---
+
+### Heureticoi (Monte Carlo Simulator)
+
+Heureticoi is the app's internal name for its hit-probability simulator. "Heureticoi" refers to heuristic ballistic modeling — using empirical data to make forward-looking performance predictions. It uses a physics-based engine seeded with your real measured dispersion data to predict field performance at range.
+
+#### Ballistic Engine Capabilities
+
+- **High-resolution drag tables** — 79-point G1 and 87-point G7 (BRL/McCoy research)
+- **Iterative 3-pass solver** — sub-0.001" zero precision
+- **Altitude-dependent gravity** — inverse-square law correction
+- **Humidity-corrected speed of sound**
+- **Miller stability formula** — Sg from twist rate, bullet dimensions, and velocity
+- **Spin drift** — predicted from Sg and range
+- **Aerodynamic jump** — crosswind-induced vertical deflection
+
+#### Using the Simulator
+
+1. Select a session — imports your real-world MR as the dispersion seed
+2. Configure firearm — barrel length, twist rate, and sight height pull from your database
+3. Configure load — BC, bullet weight, and velocity pull from your database
+4. Set environmental conditions — temperature, altitude, wind
+5. Set target — shape and size
+6. Run — generates P(Hit) vs Range curves
+
+> **Interpreting results:** P(Hit) = 0.90 at 500 yards means your rifle/load/shooter system is expected to hit a target of that size 9 times out of 10 at that distance, accounting for measured dispersion and atmospheric ballistics.
+
+---
+
+### Components
+
+The foundation of the application. The master database sync fills most of this automatically. Only add components not already in the library.
+
+| Sub-tab | What It Stores |
+|---------|---------------|
+| **Manufacturers** | Companies producing bullets, powder, primers, brass, or ammo |
+| **Diameters** | Caliber definitions (e.g., `.308`, `.264`) |
+| **Cartridges** | Specific chamberings linked to a diameter, with SAAMI specs |
+| **Bullets** | Full profiles: weight, length, ogive, BC, form factors |
+| **Powders** | Propellant profiles including ballistic simulator coefficients |
+| **Primers** | Primer inventory linked to primer pocket size |
+| **Brass** | Brass inventory with water capacity and primer data |
+
+> Not all fields need to be filled. Optional fields improve ballistic simulation accuracy but the app functions without them.
+
+---
+
+### DB Management
+
+#### Sync Database
+
+Imports the built-in `master-db.json` library into your local database. Uses `put()` semantics — existing records are overwritten by ID, your personal data is unaffected.
+
+**What gets synced:** ~600 bullet profiles, 77 powders, 45 cartridges, 29 brass entries, 33 primers, 44 commercial loads.
+
+#### Nuclear Reset
+
+⚠️ **Destructive.** Clears every record from every table. Export a backup first.
+
+#### Clear Table
+
+Clears one specific table without touching others.
+
+#### Export Data
+
+Downloads a `.json` backup. Target images are automatically converted from binary Blob to Base64 strings for JSON compatibility.
+
+#### Restore / Merge Data
+
+Imports a `.json` backup. Records are merged by ID. Base64 image data is automatically converted back to binary Blob storage on import.
+
+#### Table Browser
+
+Raw view of every table and record. Useful for inspecting or debugging specific entries.
+
+---
+
+## Troubleshooting
+
+**My measurements are huge/wrong numbers**
+You didn't set the scale before marking. The app is measuring in raw pixels. Start a new session, set the scale first, then re-mark your shots.
+
+**My groups disappeared after closing the browser**
+You didn't save the session. Always click **Save / Update Session** before navigating away. The canvas is not auto-saved.
+
+**Sync Database didn't seem to do anything**
+The records were already there from a previous sync and were silently overwritten. Your database is up to date.
+
+**I cleared my browser history and lost all my data**
+Clearing browser site data permanently deletes IndexedDB. There is no recovery without a JSON backup. Back up after every session.
+
+**My scale looks wrong / measurements don't match reality**
+Common causes: scale points weren't placed precisely; the target image was cropped or resized after printing; or the wrong units were entered. Re-set the scale by clicking **Set Scale** again and re-clicking the reference points carefully.
+
+**The ballistic simulator gives unexpected results**
+Check: Firearm has twist rate and sight over bore set. Bullet has G7 BC entered with `Preferred Model` = `G7`. Muzzle velocity is correct. Environmental conditions are realistic.
+
+---
+
+## Data Backup
+
+> ⚠️ **Your data exists only in your browser. Clearing browser site data deletes it permanently with no recovery.**
+
+### How to Back Up
+
+1. Go to **DB Management**
+2. Ensure **"Entire Database"** scope is selected
+3. Click **Export Data**
+4. Save the `.json` file to cloud storage, an external drive, or both
+
+### How to Restore
+
+1. Go to **DB Management**
+2. Click **Restore / Merge Data**
+3. Select your backup `.json` file
+4. Records are merged — existing records overwritten, personal records preserved
+
+### Recommended Backup Schedule
+
+- After every range session
+- After adding new firearms or loads
+- After running a master database sync
+
+---
+
+*For technical database schema documentation, see [SCHEMA.md](SCHEMA.md).*
