@@ -52,13 +52,17 @@ Dexie index: `id`
   "trimLength": 2.005,
   "oal": 2.810,
   "maxSaamiPsi": 62000,
-  "baseCapacityH2o": 56.0
+  "baseCapacityH2o": 56.0,
+  "boreDiameter": 0.300,
+  "primerPocketId": "PKT_LRG"
 }
 ```
 
 - All length fields are in inches
 - `maxSaamiPsi` — SAAMI maximum average pressure in PSI
 - `baseCapacityH2o` — case water capacity in grains
+- `boreDiameter` — land-to-land bore diameter in inches (NOT groove/bullet diameter). Source: SAAMI spec sheets
+- `primerPocketId` — references `primerPockets` collection. `"PKT_SML"` for small rifle, `"PKT_LRG"` for large rifle, `null` for rimfire
 
 Dexie index: `id, diameterId`
 
@@ -112,14 +116,16 @@ Dexie index: `id, manufacturerId, diameterId`
   "manufacturerId": "MAN_<ID>",
   "name": "Hodgdon H4350",
   "baCoeff": 0.0476,
-  "kCoeff": 1.235,
-  "heatOfExplosionKjKg": 3750
+  "kCoeff": 1.23,
+  "heatOfExplosionKjKg": 3580,
+  "grainType": "extrudedSinglePerf"
 }
 ```
 
 - `baCoeff` — ballistic action coefficient (internal ballistics simulator)
-- `kCoeff` — burn rate shape coefficient (internal ballistics simulator)
-- `heatOfExplosionKjKg` — heat of explosion in kJ/kg
+- `kCoeff` — burn rate shape coefficient. Single-base (nitrocellulose only): `1.23`. Double-base (NC + nitroglycerin): `1.255`
+- `heatOfExplosionKjKg` — heat of explosion in kJ/kg. Single-base: `3580`. Double-base: `3950`
+- `grainType` — powder grain geometry. Allowed values: `"ball"`, `"flake"`, `"extrudedSinglePerf"`, `"extrudedMultiPerf"`, `"extruded"`
 
 Dexie index: `id, manufacturerId`
 

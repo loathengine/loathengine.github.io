@@ -308,616 +308,693 @@
       "manufacturerId": "MAN_ACCURATE_A6B8",
       "name": "Accurate 2230",
       "baCoeff": 0.2175,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_ACCU_2520_R1A7",
       "manufacturerId": "MAN_ACCURATE_A6B8",
       "name": "Accurate 2520",
       "baCoeff": 0.1502,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_ACCU_4064_R1A8",
       "manufacturerId": "MAN_ACCURATE_A6B8",
       "name": "Accurate 4064",
       "baCoeff": 0.1372,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_ACCU_LT32_R1AA",
       "manufacturerId": "MAN_ACCURATE_A6B8",
       "name": "Accurate LT-32",
       "baCoeff": 0.2848,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_ACCU_MAGPRO_R1A9",
       "manufacturerId": "MAN_ACCURATE_A6B8",
       "name": "Accurate MagPro",
       "baCoeff": 0.0673,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_ACCU_NO9_R1A0",
       "manufacturerId": "MAN_ACCURATE_A6B8",
       "name": "Accurate No. 9",
       "baCoeff": 0.3107,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_ALLI_BULLSEYE_A1L7",
       "manufacturerId": "MAN_ALLIANT_A5R2",
       "name": "Bullseye",
       "baCoeff": 0.4402,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "flake"
     },
     {
       "id": "PWD_ALLI_PPVARMINT_A1L6",
       "manufacturerId": "MAN_ALLIANT_A5R2",
       "name": "Power Pro Varmint",
       "baCoeff": 0.2434,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_ALLI_RL155TS_A1L5",
       "manufacturerId": "MAN_ALLIANT_A5R2",
       "name": "Reloder 15.5 TS",
       "baCoeff": 0.1346,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_ALLI_RL15_A1L1",
       "manufacturerId": "MAN_ALLIANT_A5R2",
       "name": "Reloder 15",
       "baCoeff": 0.1346,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_ALLI_RL16_A1L2",
       "manufacturerId": "MAN_ALLIANT_A5R2",
       "name": "Reloder 16",
       "baCoeff": 0.1139,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_ALLI_RL23_A1L3",
       "manufacturerId": "MAN_ALLIANT_A5R2",
       "name": "Reloder 23",
       "baCoeff": 0.0725,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "extrudedMultiPerf"
     },
     {
       "id": "PWD_ALLI_RL26_A1L4",
       "manufacturerId": "MAN_ALLIANT_A5R2",
       "name": "Reloder 26",
       "baCoeff": 0.0647,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "extrudedMultiPerf"
     },
     {
       "id": "PWD_ALLI_UNIQUE_A1L8",
       "manufacturerId": "MAN_ALLIANT_A5R2",
       "name": "Unique",
       "baCoeff": 0.3625,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "flake"
     },
     {
       "id": "PWD_HODG_BLC2_H1G8",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "BL-C(2)",
       "baCoeff": 0.1528,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_HODG_CFE223_H1G6",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "CFE 223",
       "baCoeff": 0.202,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_HODG_CFEPISTOL_H1GP",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "CFE Pistol",
       "baCoeff": 0.3521,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_HODG_H1000_H1G5",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "H1000",
       "baCoeff": 0.0544,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_HODG_H110_H1GQ",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "H110",
       "baCoeff": 0.2796,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_HODG_H335_H1GB",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "H335",
       "baCoeff": 0.1761,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_HODG_H380_H1GC",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "H380",
       "baCoeff": 0.1424,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_HODG_H414_H1GD",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "H414",
       "baCoeff": 0.1087,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_HODG_H4350_H1G2",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "H4350",
       "baCoeff": 0.0751,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_HODG_H4831SC_H1GF",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "H4831SC",
       "baCoeff": 0.0596,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_HODG_H4831_H1GE",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "H4831",
       "baCoeff": 0.057,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_HODG_H4895_H1G3",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "H4895",
       "baCoeff": 0.1605,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_HODG_H50BMG_H1GG",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "H50BMG",
       "baCoeff": 0.0414,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_HODG_HP38_H1GT",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "HP-38",
       "baCoeff": 0.3366,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_HODG_IMR4064_H1G9",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "IMR 4064",
       "baCoeff": 0.1398,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_HODG_IMR4166_H1GK",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "IMR 4166",
       "baCoeff": 0.1243,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_HODG_IMR4198_H1GS",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "IMR 4198",
       "baCoeff": 0.2382,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_HODG_IMR4350_H1G0",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "IMR 4350",
       "baCoeff": 0.0777,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_HODG_IMR4451_H1GL",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "IMR 4451",
       "baCoeff": 0.1191,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_HODG_IMR4895_H1GM",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "IMR 4895",
       "baCoeff": 0.1579,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_HODG_IMR7828SSC_H1GO",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "IMR 7828SSC",
       "baCoeff": 0.0544,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_HODG_IMR7828_H1GN",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "IMR 7828",
       "baCoeff": 0.0518,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_HODG_IMR8208_H1GA",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "IMR 8208 XBR",
       "baCoeff": 0.2227,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_HODG_LILGUN_H1GR",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "Lil' Gun",
       "baCoeff": 0.3004,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_HODG_LONGSHOT_H1GJ",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "Longshot",
       "baCoeff": 0.2693,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_HODG_RETUMBO_H1G4",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "Retumbo",
       "baCoeff": 0.0476,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedMultiPerf"
     },
     {
       "id": "PWD_HODG_TITEGROUP_H1G7",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "Titegroup",
       "baCoeff": 0.3884,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "flake"
     },
     {
       "id": "PWD_HODG_TITEWAD_H1GI",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "Titewad",
       "baCoeff": 0.4661,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "flake"
     },
     {
       "id": "PWD_HODG_US869_H1GH",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "US 869",
       "baCoeff": 0.044,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedMultiPerf"
     },
     {
       "id": "PWD_HODG_VARGET_H1G1",
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "Varget",
       "baCoeff": 0.145,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_HORNADYOAL_IRJS",
       "manufacturerId": "MAN_HORNADY_JGR4",
       "name": "Hornady OAL",
       "baCoeff": 0.5,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_RAMS_BIGGAME_R1A2",
       "manufacturerId": "MAN_RAMSHOT_R4P7",
       "name": "Big Game",
       "baCoeff": 0.145,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_RAMS_HUNTER_R1A3",
       "manufacturerId": "MAN_RAMSHOT_R4P7",
       "name": "Hunter",
       "baCoeff": 0.1346,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_RAMS_MAGNUM_R1A4",
       "manufacturerId": "MAN_RAMSHOT_R4P7",
       "name": "Magnum",
       "baCoeff": 0.0725,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_RAMS_TAC_R1A1",
       "manufacturerId": "MAN_RAMSHOT_R4P7",
       "name": "TAC",
       "baCoeff": 0.2123,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_RAMS_XTERM_R1A5",
       "manufacturerId": "MAN_RAMSHOT_R4P7",
       "name": "X-Terminator",
       "baCoeff": 0.2279,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_VIHTAVUORI_MOMF",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
       "name": "Vihtavuori N170",
       "baCoeff": 0.0466,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_VIHT_N110_V1H2",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
       "name": "N110",
       "baCoeff": 0.3521,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_VIHT_N120_V1H3",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
       "name": "N120",
       "baCoeff": 0.2641,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_VIHT_N130_V1H4",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
       "name": "N130",
       "baCoeff": 0.2537,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_VIHT_N133_V1H5",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
       "name": "N133",
       "baCoeff": 0.2434,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_VIHT_N135_V1H6",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
       "name": "N135",
       "baCoeff": 0.1968,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_VIHT_N140_7Ih6",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
       "name": "N140",
       "baCoeff": 0.1812,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_VIHT_N150_V1H7",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
       "name": "N150",
       "baCoeff": 0.1657,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_VIHT_N160_V1H8",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
       "name": "N160",
       "baCoeff": 0.0932,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_VIHT_N165_V1H9",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
       "name": "N165",
       "baCoeff": 0.0829,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_VIHT_N170_V1HA",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
       "name": "N170",
       "baCoeff": 0.5,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedSinglePerf"
     },
     {
       "id": "PWD_VIHT_N530_V5H1",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
       "name": "N530",
       "baCoeff": 0.2589,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedMultiPerf"
     },
     {
       "id": "PWD_VIHT_N540_V5H2",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
       "name": "N540",
       "baCoeff": 0.1864,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedMultiPerf"
     },
     {
       "id": "PWD_VIHT_N550_V5H3",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
       "name": "N550",
       "baCoeff": 0.1502,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedMultiPerf"
     },
     {
       "id": "PWD_VIHT_N555_V5H4",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
       "name": "N555",
       "baCoeff": 0.1087,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedMultiPerf"
     },
     {
       "id": "PWD_VIHT_N560_V5H5",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
       "name": "N560",
       "baCoeff": 0.0803,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedMultiPerf"
     },
     {
       "id": "PWD_VIHT_N565_V5H6",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
       "name": "N565",
       "baCoeff": 0.0725,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedMultiPerf"
     },
     {
       "id": "PWD_VIHT_N568_V5H7",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
       "name": "N568",
       "baCoeff": 0.0699,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedMultiPerf"
     },
     {
       "id": "PWD_VIHT_N570_V5H8",
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
       "name": "N570",
       "baCoeff": 0.057,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.23,
+      "heatOfExplosionKjKg": 3580,
+      "grainType": "extrudedMultiPerf"
     },
     {
       "id": "PWD_WINC_231_W1N4",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
       "name": "231",
       "baCoeff": 0.3211,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_WINC_244_W1N5",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
       "name": "244",
       "baCoeff": 0.3107,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_WINC_296_W1N6",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
       "name": "296",
       "baCoeff": 0.2848,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_WINC_748_W1N7",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
       "name": "748",
       "baCoeff": 0.1554,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_WINC_760_W1N8",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
       "name": "760",
       "baCoeff": 0.1243,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_WINC_STABALL65_W1N1",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
       "name": "StaBALL 6.5",
       "baCoeff": 0.1398,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_WINC_STABALLHD_W1N3",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
       "name": "StaBALL HD",
       "baCoeff": 0.088,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     },
     {
       "id": "PWD_WINC_STABALLMATCH_W1N2",
       "manufacturerId": "MAN_WINCHESTER_W2N4",
       "name": "StaBALL Match",
       "baCoeff": 0.1476,
-      "kCoeff": 1.235,
-      "heatOfExplosionKjKg": 3750
+      "kCoeff": 1.255,
+      "heatOfExplosionKjKg": 3950,
+      "grainType": "ball"
     }
   ],
   "primers": [
@@ -1129,7 +1206,8 @@
       "trimLength": 1.048,
       "oal": 1.075,
       "maxSaamiPsi": 26000,
-      "baseCapacityH2o": 4.3
+      "baseCapacityH2o": 4.3,
+      "boreDiameter": 0.168
     },
     {
       "id": "CTG_17HRN_N1H3",
@@ -1139,7 +1217,9 @@
       "trimLength": 1.34,
       "oal": 1.723,
       "maxSaamiPsi": 50000,
-      "baseCapacityH2o": 12
+      "baseCapacityH2o": 12,
+      "boreDiameter": 0.168,
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "CTG_204RUG_N2H4",
@@ -1149,7 +1229,9 @@
       "trimLength": 1.84,
       "oal": 2.26,
       "maxSaamiPsi": 57900,
-      "baseCapacityH2o": 32.5
+      "baseCapacityH2o": 32.5,
+      "boreDiameter": 0.2,
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "CTG_220SWIFT_N2H6",
@@ -1159,7 +1241,9 @@
       "trimLength": 2.195,
       "oal": 2.68,
       "maxSaamiPsi": 62000,
-      "baseCapacityH2o": 47
+      "baseCapacityH2o": 47,
+      "boreDiameter": 0.219,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_22250_cK32",
@@ -1169,7 +1253,9 @@
       "trimLength": 1.902,
       "oal": 2.35,
       "maxSaamiPsi": 65000,
-      "baseCapacityH2o": 43
+      "baseCapacityH2o": 43,
+      "boreDiameter": 0.219,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_223AI_cT12",
@@ -1179,7 +1265,9 @@
       "trimLength": 1.75,
       "oal": 2.26,
       "maxSaamiPsi": 55000,
-      "baseCapacityH2o": 31
+      "baseCapacityH2o": 31,
+      "boreDiameter": 0.219,
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "CTG_223REM_cR82",
@@ -1189,7 +1277,9 @@
       "trimLength": 1.75,
       "oal": 2.26,
       "maxSaamiPsi": 55000,
-      "baseCapacityH2o": 28.8
+      "baseCapacityH2o": 28.8,
+      "boreDiameter": 0.219,
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "CTG_224VALK_N2H5",
@@ -1199,7 +1289,9 @@
       "trimLength": 1.59,
       "oal": 2.26,
       "maxSaamiPsi": 55000,
-      "baseCapacityH2o": 34.5
+      "baseCapacityH2o": 34.5,
+      "boreDiameter": 0.219,
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "CTG_22CM_cA72",
@@ -1209,7 +1301,9 @@
       "trimLength": 1.91,
       "oal": 2.7,
       "maxSaamiPsi": 62000,
-      "baseCapacityH2o": 52.5
+      "baseCapacityH2o": 52.5,
+      "boreDiameter": 0.219,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_243WIN_cB42",
@@ -1219,7 +1313,9 @@
       "trimLength": 2.035,
       "oal": 2.71,
       "maxSaamiPsi": 60000,
-      "baseCapacityH2o": 54
+      "baseCapacityH2o": 54,
+      "boreDiameter": 0.237,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_2506_cL42",
@@ -1229,7 +1325,9 @@
       "trimLength": 2.484,
       "oal": 3.25,
       "maxSaamiPsi": 63000,
-      "baseCapacityH2o": 65
+      "baseCapacityH2o": 65,
+      "boreDiameter": 0.25,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_257ROB_N2H9",
@@ -1239,7 +1337,9 @@
       "trimLength": 2.223,
       "oal": 2.775,
       "maxSaamiPsi": 54000,
-      "baseCapacityH2o": 56
+      "baseCapacityH2o": 56,
+      "boreDiameter": 0.25,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_257WBY_N2H0",
@@ -1249,7 +1349,9 @@
       "trimLength": 2.539,
       "oal": 3.17,
       "maxSaamiPsi": 62500,
-      "baseCapacityH2o": 84
+      "baseCapacityH2o": 84,
+      "boreDiameter": 0.25,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_260REM_N2HB",
@@ -1259,7 +1361,9 @@
       "trimLength": 2.025,
       "oal": 2.8,
       "maxSaamiPsi": 60000,
-      "baseCapacityH2o": 53.5
+      "baseCapacityH2o": 53.5,
+      "boreDiameter": 0.256,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_270WIN_cU62",
@@ -1269,7 +1373,9 @@
       "trimLength": 2.53,
       "oal": 3.34,
       "maxSaamiPsi": 65000,
-      "baseCapacityH2o": 67
+      "baseCapacityH2o": 67,
+      "boreDiameter": 0.27,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_270WSM_N2HC",
@@ -1279,7 +1385,9 @@
       "trimLength": 2.09,
       "oal": 2.86,
       "maxSaamiPsi": 65000,
-      "baseCapacityH2o": 79
+      "baseCapacityH2o": 79,
+      "boreDiameter": 0.27,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_280AI_cA52",
@@ -1289,7 +1397,9 @@
       "trimLength": 2.515,
       "oal": 3.33,
       "maxSaamiPsi": 65000,
-      "baseCapacityH2o": 71
+      "baseCapacityH2o": 71,
+      "boreDiameter": 0.277,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_3006_cE12",
@@ -1299,7 +1409,9 @@
       "trimLength": 2.484,
       "oal": 3.34,
       "maxSaamiPsi": 60000,
-      "baseCapacityH2o": 68
+      "baseCapacityH2o": 68,
+      "boreDiameter": 0.3,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_300BLK_cI72",
@@ -1309,7 +1421,9 @@
       "trimLength": 1.358,
       "oal": 2.26,
       "maxSaamiPsi": 55000,
-      "baseCapacityH2o": 24
+      "baseCapacityH2o": 24,
+      "boreDiameter": 0.3,
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "CTG_300PRC_cK02",
@@ -1319,7 +1433,9 @@
       "trimLength": 2.57,
       "oal": 3.7,
       "maxSaamiPsi": 65000,
-      "baseCapacityH2o": 95
+      "baseCapacityH2o": 95,
+      "boreDiameter": 0.3,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_300WINMAG_cG42",
@@ -1329,7 +1445,9 @@
       "trimLength": 2.61,
       "oal": 3.34,
       "maxSaamiPsi": 64000,
-      "baseCapacityH2o": 93.8
+      "baseCapacityH2o": 93.8,
+      "boreDiameter": 0.3,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_300WSM_N3HH",
@@ -1339,7 +1457,9 @@
       "trimLength": 2.09,
       "oal": 2.86,
       "maxSaamiPsi": 65000,
-      "baseCapacityH2o": 80
+      "baseCapacityH2o": 80,
+      "boreDiameter": 0.3,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_3030_N3HG",
@@ -1349,7 +1469,9 @@
       "trimLength": 2.029,
       "oal": 2.55,
       "maxSaamiPsi": 42000,
-      "baseCapacityH2o": 45
+      "baseCapacityH2o": 45,
+      "boreDiameter": 0.3,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_303BRIT_N3HI",
@@ -1359,7 +1481,9 @@
       "trimLength": 2.212,
       "oal": 3.075,
       "maxSaamiPsi": 49000,
-      "baseCapacityH2o": 56
+      "baseCapacityH2o": 56,
+      "boreDiameter": 0.303,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_308WIN_cC82",
@@ -1369,7 +1493,9 @@
       "trimLength": 2.005,
       "oal": 2.8,
       "maxSaamiPsi": 62000,
-      "baseCapacityH2o": 56
+      "baseCapacityH2o": 56,
+      "boreDiameter": 0.3,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_338FED_N3HK",
@@ -1379,7 +1505,9 @@
       "trimLength": 2.005,
       "oal": 2.82,
       "maxSaamiPsi": 62000,
-      "baseCapacityH2o": 55.5
+      "baseCapacityH2o": 55.5,
+      "boreDiameter": 0.33,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_338LAP_cO62",
@@ -1389,7 +1517,9 @@
       "trimLength": 2.714,
       "oal": 3.681,
       "maxSaamiPsi": 68167,
-      "baseCapacityH2o": 114
+      "baseCapacityH2o": 114,
+      "boreDiameter": 0.33,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_338WINMAG_cQ92",
@@ -1399,7 +1529,9 @@
       "trimLength": 2.49,
       "oal": 3.34,
       "maxSaamiPsi": 64000,
-      "baseCapacityH2o": 86
+      "baseCapacityH2o": 86,
+      "boreDiameter": 0.33,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_65CM_cN72",
@@ -1409,7 +1541,9 @@
       "trimLength": 1.91,
       "oal": 2.825,
       "maxSaamiPsi": 62000,
-      "baseCapacityH2o": 52.5
+      "baseCapacityH2o": 52.5,
+      "boreDiameter": 0.256,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_65GRN_cS32",
@@ -1419,7 +1553,9 @@
       "trimLength": 1.51,
       "oal": 2.26,
       "maxSaamiPsi": 52000,
-      "baseCapacityH2o": 35
+      "baseCapacityH2o": 35,
+      "boreDiameter": 0.256,
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "CTG_65PRC_cP02",
@@ -1429,7 +1565,9 @@
       "trimLength": 2.02,
       "oal": 2.955,
       "maxSaamiPsi": 65000,
-      "baseCapacityH2o": 62
+      "baseCapacityH2o": 62,
+      "boreDiameter": 0.256,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_65SWE_N6HA",
@@ -1439,7 +1577,9 @@
       "trimLength": 2.155,
       "oal": 3.15,
       "maxSaamiPsi": 51000,
-      "baseCapacityH2o": 57
+      "baseCapacityH2o": 57,
+      "boreDiameter": 0.256,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_68WEST_N6HD",
@@ -1449,7 +1589,9 @@
       "trimLength": 2.01,
       "oal": 2.955,
       "maxSaamiPsi": 65000,
-      "baseCapacityH2o": 74
+      "baseCapacityH2o": 74,
+      "boreDiameter": 0.27,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_6ARC_cH92",
@@ -1459,7 +1601,9 @@
       "trimLength": 1.48,
       "oal": 2.26,
       "maxSaamiPsi": 52000,
-      "baseCapacityH2o": 34
+      "baseCapacityH2o": 34,
+      "boreDiameter": 0.237,
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "CTG_6BR_cJ12",
@@ -1469,7 +1613,9 @@
       "trimLength": 1.55,
       "oal": 2.2,
       "maxSaamiPsi": 60000,
-      "baseCapacityH2o": 39.5
+      "baseCapacityH2o": 39.5,
+      "boreDiameter": 0.237,
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "CTG_6CM_cG62",
@@ -1479,7 +1625,9 @@
       "trimLength": 1.91,
       "oal": 2.8,
       "maxSaamiPsi": 62000,
-      "baseCapacityH2o": 52.5
+      "baseCapacityH2o": 52.5,
+      "boreDiameter": 0.237,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_6DASH_N6H8",
@@ -1489,7 +1637,9 @@
       "trimLength": 1.54,
       "oal": 2.34,
       "maxSaamiPsi": 62000,
-      "baseCapacityH2o": 41
+      "baseCapacityH2o": 41,
+      "boreDiameter": 0.237,
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "CTG_6REM_N6H7",
@@ -1499,7 +1649,9 @@
       "trimLength": 2.223,
       "oal": 2.825,
       "maxSaamiPsi": 65000,
-      "baseCapacityH2o": 55
+      "baseCapacityH2o": 55,
+      "boreDiameter": 0.237,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_762X39_cM32",
@@ -1509,7 +1661,9 @@
       "trimLength": 1.518,
       "oal": 2.2,
       "maxSaamiPsi": 45000,
-      "baseCapacityH2o": 35.5
+      "baseCapacityH2o": 35.5,
+      "boreDiameter": 0.3,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_7MAU_N7HF",
@@ -1519,7 +1673,9 @@
       "trimLength": 2.225,
       "oal": 3.065,
       "maxSaamiPsi": 51000,
-      "baseCapacityH2o": 57
+      "baseCapacityH2o": 57,
+      "boreDiameter": 0.277,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_7MM08_cZ22",
@@ -1529,7 +1685,9 @@
       "trimLength": 2.025,
       "oal": 2.8,
       "maxSaamiPsi": 61000,
-      "baseCapacityH2o": 54
+      "baseCapacityH2o": 54,
+      "boreDiameter": 0.277,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_7PRC_N7HE",
@@ -1539,7 +1697,9 @@
       "trimLength": 2.27,
       "oal": 3.34,
       "maxSaamiPsi": 65000,
-      "baseCapacityH2o": 81
+      "baseCapacityH2o": 81,
+      "boreDiameter": 0.277,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_7REMMAG_cW92",
@@ -1549,7 +1709,9 @@
       "trimLength": 2.49,
       "oal": 3.29,
       "maxSaamiPsi": 61000,
-      "baseCapacityH2o": 82
+      "baseCapacityH2o": 82,
+      "boreDiameter": 0.277,
+      "primerPocketId": "PKT_LRG"
     },
     {
       "id": "CTG_86BLK_cS22",
@@ -1559,7 +1721,9 @@
       "trimLength": 1.675,
       "oal": 2.26,
       "maxSaamiPsi": 60000,
-      "baseCapacityH2o": 45
+      "baseCapacityH2o": 45,
+      "boreDiameter": 0.33,
+      "primerPocketId": "PKT_SML"
     },
     {
       "id": "CTG_8MAU_N8HJ",
@@ -1569,7 +1733,81 @@
       "trimLength": 2.234,
       "oal": 3.25,
       "maxSaamiPsi": 35000,
-      "baseCapacityH2o": 63
+      "baseCapacityH2o": 63,
+      "boreDiameter": 0.311,
+      "primerPocketId": "PKT_LRG"
+    },
+    {
+      "id": "CTG_221FIREBALL_cR83",
+      "name": "221 Remington Fireball",
+      "diameterId": "DIA_224_L5X8",
+      "maxCaseLength": 1.400,
+      "trimLength": 1.390,
+      "oal": 1.830,
+      "maxSaamiPsi": 52000,
+      "baseCapacityH2o": 20.4,
+      "boreDiameter": 0.219,
+      "primerPocketId": "PKT_SML"
+    },
+    {
+      "id": "CTG_6XC_cK12",
+      "name": "6mm XC",
+      "diameterId": "DIA_243_B7V4",
+      "maxCaseLength": 1.900,
+      "trimLength": 1.890,
+      "oal": 2.450,
+      "maxSaamiPsi": 62000,
+      "baseCapacityH2o": 49.3,
+      "boreDiameter": 0.237,
+      "primerPocketId": "PKT_SML"
+    },
+    {
+      "id": "CTG_65X47_cK12",
+      "name": "6.5x47 Lapua",
+      "diameterId": "DIA_264_H8J4",
+      "maxCaseLength": 1.850,
+      "trimLength": 1.840,
+      "oal": 2.800,
+      "maxSaamiPsi": 63000,
+      "baseCapacityH2o": 48.0,
+      "boreDiameter": 0.256,
+      "primerPocketId": "PKT_SML"
+    },
+    {
+      "id": "CTG_65284_cN73",
+      "name": "6.5-284 Norma",
+      "diameterId": "DIA_264_H8J4",
+      "maxCaseLength": 2.170,
+      "trimLength": 2.160,
+      "oal": 3.228,
+      "maxSaamiPsi": 65000,
+      "baseCapacityH2o": 67.9,
+      "boreDiameter": 0.256,
+      "primerPocketId": "PKT_LRG"
+    },
+    {
+      "id": "CTG_300NORMAMAG_cN73",
+      "name": "300 Norma Magnum",
+      "diameterId": "DIA_308_XBM7",
+      "maxCaseLength": 2.492,
+      "trimLength": 2.482,
+      "oal": 3.681,
+      "maxSaamiPsi": 64000,
+      "baseCapacityH2o": 104.0,
+      "boreDiameter": 0.300,
+      "primerPocketId": "PKT_LRG"
+    },
+    {
+      "id": "CTG_338NORMAMAG_cN74",
+      "name": "338 Norma Magnum",
+      "diameterId": "DIA_338_R7E3",
+      "maxCaseLength": 2.492,
+      "trimLength": 2.482,
+      "oal": 3.681,
+      "maxSaamiPsi": 64000,
+      "baseCapacityH2o": 107.5,
+      "boreDiameter": 0.330,
+      "primerPocketId": "PKT_LRG"
     }
   ],
   "brass": [
@@ -1585,7 +1823,232 @@
       "cartridgeId": "CTG_65CM_cN72",
       "manufacturerId": "MAN_LAPUA_L5X1",
       "primerHoleId": "HL_080",
-      "primerPocketId": "PKT_LRG"
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 51.5
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_65CM_cN72_SRP",
+      "cartridgeId": "CTG_65CM_cN72",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 51.3
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_223REM_cR82_E4G2",
+      "cartridgeId": "CTG_223REM_cR82",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 30.1
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_223REM_cR82_STD",
+      "cartridgeId": "CTG_223REM_cR82",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 30.2
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_308WIN_cC82_B8E2",
+      "cartridgeId": "CTG_308WIN_cC82",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 56.0
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_308WIN_cC82_PLMA",
+      "cartridgeId": "CTG_308WIN_cC82",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 55.8
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_220SWIFT_N2H6_STD",
+      "cartridgeId": "CTG_220SWIFT_N2H6",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 47.0
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_221FIREBALL_cR83_STD",
+      "cartridgeId": "CTG_221FIREBALL_cR83",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 19.6
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_22250_cK32_STD",
+      "cartridgeId": "CTG_22250_cK32",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 45.1
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_6BR_cJ12_STD",
+      "cartridgeId": "CTG_6BR_cJ12",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 38.5
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_6DASH_N6H8_STD",
+      "cartridgeId": "CTG_6DASH_N6H8",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 41.3
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_6CM_cG62_FJ8G",
+      "cartridgeId": "CTG_6CM_cG62",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 50.8
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_6XC_cK12_STD",
+      "cartridgeId": "CTG_6XC_cK12",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 48.0
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_243WIN_cB42_STD",
+      "cartridgeId": "CTG_243WIN_cB42",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 54.4
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_65GRN_cS32_STD",
+      "cartridgeId": "CTG_65GRN_cS32",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 35.0
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_65X47_cK12_STD",
+      "cartridgeId": "CTG_65X47_cK12",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 48.0
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_65SWE_N6HA_E3FA",
+      "cartridgeId": "CTG_65SWE_N6HA",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 57.5
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_65284_cN73_STD",
+      "cartridgeId": "CTG_65284_cN73",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 66.0
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_7MM08_cZ22_STD",
+      "cartridgeId": "CTG_7MM08_cZ22",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 52.2
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_7PRC_N7HE_STD",
+      "cartridgeId": "CTG_7PRC_N7HE",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 81.0
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_300BLK_cI72_STD",
+      "cartridgeId": "CTG_300BLK_cI72",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 24.5
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_762X39_cM32_STD",
+      "cartridgeId": "CTG_762X39_cM32",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 33.7
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_3006_cE12_STD",
+      "cartridgeId": "CTG_3006_cE12",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 68.5
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_300WINMAG_cG42_STD",
+      "cartridgeId": "CTG_300WINMAG_cG42",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 93.0
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_300PRC_cK02_STD",
+      "cartridgeId": "CTG_300PRC_cK02",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 96.9
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_300NORMAMAG_cN73_STD",
+      "cartridgeId": "CTG_300NORMAMAG_cN73",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 104.0
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_8MAU_N8HJ_STD",
+      "cartridgeId": "CTG_8MAU_N8HJ",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 62.0
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_338LAP_cO62_STD",
+      "cartridgeId": "CTG_338LAP_cO62",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 114.0
+    },
+    {
+      "id": "BRS_MAN_LAPUA_L5X1_CTG_338NORMAMAG_cN74_STD",
+      "cartridgeId": "CTG_338NORMAMAG_cN74",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 107.5
     },
     {
       "id": "BRS_MAN_ADG_A4D7_CTG_65CM_cN72_TR53",
@@ -1622,13 +2085,7 @@
       "primerHoleId": "HL_080",
       "primerPocketId": "PKT_LRG"
     },
-    {
-      "id": "BRS_MAN_LAPUA_L5X1_CTG_6CM_cG62_FJ8G",
-      "cartridgeId": "CTG_6CM_cG62",
-      "manufacturerId": "MAN_LAPUA_L5X1",
-      "primerHoleId": "HL_080",
-      "primerPocketId": "PKT_LRG"
-    },
+
     {
       "id": "BRS_MAN_NOSLER_N9K4_CTG_65PRC_cP02_08JE",
       "cartridgeId": "CTG_65PRC_cP02",
@@ -1650,13 +2107,7 @@
       "primerHoleId": "HL_059",
       "primerPocketId": "PKT_SML"
     },
-    {
-      "id": "BRS_MAN_LAPUA_L5X1_CTG_65SWE_N6HA_E3FA",
-      "cartridgeId": "CTG_65SWE_N6HA",
-      "manufacturerId": "MAN_LAPUA_L5X1",
-      "primerHoleId": "HL_080",
-      "primerPocketId": "PKT_LRG"
-    },
+
     {
       "id": "BRS_MAN_ALLIANT_A5R2_CTG_65CM_cN72_7W59",
       "cartridgeId": "CTG_65CM_cN72",
