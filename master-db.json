@@ -266,6 +266,16 @@
       "id": "DIA_357_MAGN",
       "imperial": ".357",
       "metric": "9.07mm"
+    },
+    {
+      "id": "DIA_400_cO62",
+      "imperial": ".400",
+      "metric": "10.1mm"
+    },
+    {
+      "id": "DIA_408_cO62",
+      "imperial": ".408",
+      "metric": "10.36mm"
     }
   ],
   "loadTypes": [
@@ -1808,6 +1818,318 @@
       "baseCapacityH2o": 107.5,
       "boreDiameter": 0.330,
       "primerPocketId": "PKT_LRG"
+    },
+    {
+      "id": "CTG_22ARC_cK12",
+      "name": "22 ARC",
+      "diameterId": "DIA_224_L5X8",
+      "maxCaseLength": 1.525,
+      "trimLength": 1.515,
+      "oal": 2.260,
+      "maxSaamiPsi": 52000,
+      "baseCapacityH2o": 34.6,
+      "boreDiameter": 0.219,
+      "primerPocketId": "PKT_SML"
+    },
+    {
+      "id": "CTG_6GT_cG82",
+      "name": "6mm GT",
+      "diameterId": "DIA_243_B7V4",
+      "maxCaseLength": 1.780,
+      "trimLength": 1.770,
+      "oal": 2.440,
+      "maxSaamiPsi": 62000,
+      "baseCapacityH2o": 38.0,
+      "boreDiameter": 0.237,
+      "primerPocketId": "PKT_SML"
+    },
+    {
+      "id": "CTG_6X47_cK12",
+      "name": "6x47 Lapua",
+      "diameterId": "DIA_243_B7V4",
+      "maxCaseLength": 1.850,
+      "trimLength": 1.840,
+      "oal": 2.800,
+      "maxSaamiPsi": 63000,
+      "baseCapacityH2o": 47.5,
+      "boreDiameter": 0.237,
+      "primerPocketId": "PKT_SML"
+    },
+    {
+      "id": "CTG_25CM_cN72",
+      "name": "25 Creedmoor",
+      "diameterId": "DIA_257_N2M1",
+      "maxCaseLength": 1.920,
+      "trimLength": 1.910,
+      "oal": 2.825,
+      "maxSaamiPsi": 62000,
+      "baseCapacityH2o": 52.5,
+      "boreDiameter": 0.250,
+      "primerPocketId": "PKT_SML"
+    },
+    {
+      "id": "CTG_25WBYRPM_cN73",
+      "name": "25 Weatherby RPM",
+      "diameterId": "DIA_257_N2M1",
+      "maxCaseLength": 2.570,
+      "trimLength": 2.560,
+      "oal": 3.170,
+      "maxSaamiPsi": 65000,
+      "baseCapacityH2o": 72.6,
+      "boreDiameter": 0.250,
+      "primerPocketId": "PKT_LRG"
+    },
+    {
+      "id": "CTG_65WBYRPM_cN73",
+      "name": "6.5 Weatherby RPM",
+      "diameterId": "DIA_264_H8J4",
+      "maxCaseLength": 2.570,
+      "trimLength": 2.560,
+      "oal": 3.170,
+      "maxSaamiPsi": 65000,
+      "baseCapacityH2o": 81.5,
+      "boreDiameter": 0.256,
+      "primerPocketId": "PKT_LRG"
+    },
+    {
+      "id": "CTG_65300WBYMAG_cN73",
+      "name": "6.5-300 Weatherby Magnum",
+      "diameterId": "DIA_264_H8J4",
+      "maxCaseLength": 2.825,
+      "trimLength": 2.815,
+      "oal": 3.600,
+      "maxSaamiPsi": 65000,
+      "baseCapacityH2o": 97.5,
+      "boreDiameter": 0.256,
+      "primerPocketId": "PKT_LRG"
+    },
+    {
+      "id": "CTG_7BR_cZ22",
+      "name": "7mm BR Remington",
+      "diameterId": "DIA_284_S3F6",
+      "maxCaseLength": 1.520,
+      "trimLength": 1.510,
+      "oal": 2.250,
+      "maxSaamiPsi": 52000,
+      "baseCapacityH2o": 36.5,
+      "boreDiameter": 0.277,
+      "primerPocketId": "PKT_SML"
+    },
+    {
+      "id": "CTG_284WIN_cW92",
+      "name": "284 Winchester",
+      "diameterId": "DIA_284_S3F6",
+      "maxCaseLength": 2.170,
+      "trimLength": 2.160,
+      "oal": 2.800,
+      "maxSaamiPsi": 56000,
+      "baseCapacityH2o": 65.8,
+      "boreDiameter": 0.277,
+      "primerPocketId": "PKT_LRG"
+    },
+    {
+      "id": "CTG_7STW_cW92",
+      "name": "7mm STW",
+      "diameterId": "DIA_284_S3F6",
+      "maxCaseLength": 2.850,
+      "trimLength": 2.840,
+      "oal": 3.600,
+      "maxSaamiPsi": 65000,
+      "baseCapacityH2o": 97.4,
+      "boreDiameter": 0.277,
+      "primerPocketId": "PKT_LRG"
+    },
+    {
+      "id": "CTG_7RUM_cW92",
+      "name": "7mm RUM",
+      "diameterId": "DIA_284_S3F6",
+      "maxCaseLength": 2.850,
+      "trimLength": 2.840,
+      "oal": 3.600,
+      "maxSaamiPsi": 65000,
+      "baseCapacityH2o": 109.9,
+      "boreDiameter": 0.277,
+      "primerPocketId": "PKT_LRG"
+    },
+    {
+      "id": "CTG_762X54R_cM32",
+      "name": "7.62x54R",
+      "diameterId": "DIA_311_T1Y5",
+      "maxCaseLength": 2.114,
+      "trimLength": 2.104,
+      "oal": 3.038,
+      "maxSaamiPsi": 56500,
+      "baseCapacityH2o": 59.7,
+      "boreDiameter": 0.300,
+      "primerPocketId": "PKT_LRG"
+    },
+    {
+      "id": "CTG_338WBYRPM_cN73",
+      "name": "338 Weatherby RPM",
+      "diameterId": "DIA_338_R7E3",
+      "maxCaseLength": 2.570,
+      "trimLength": 2.560,
+      "oal": 3.170,
+      "maxSaamiPsi": 65000,
+      "baseCapacityH2o": 82.5,
+      "boreDiameter": 0.330,
+      "primerPocketId": "PKT_LRG"
+    },
+    {
+      "id": "CTG_33XC_cK12",
+      "name": "33XC",
+      "diameterId": "DIA_338_R7E3",
+      "maxCaseLength": 2.810,
+      "trimLength": 2.800,
+      "oal": 3.900,
+      "maxSaamiPsi": 65000,
+      "baseCapacityH2o": 138.0,
+      "boreDiameter": 0.330,
+      "primerPocketId": "PKT_LRG"
+    },
+    {
+      "id": "CTG_37XC_cK12",
+      "name": "37XC",
+      "diameterId": "DIA_375_OMEC",
+      "maxCaseLength": 2.810,
+      "trimLength": 2.800,
+      "oal": 3.900,
+      "maxSaamiPsi": 65000,
+      "baseCapacityH2o": 139.0,
+      "boreDiameter": 0.366,
+      "primerPocketId": "PKT_LRG"
+    },
+    {
+      "id": "CTG_375CHEYTAC_cO62",
+      "name": "375 CheyTac",
+      "diameterId": "DIA_375_OMEC",
+      "maxCaseLength": 3.040,
+      "trimLength": 3.030,
+      "oal": 4.300,
+      "maxSaamiPsi": 64000,
+      "baseCapacityH2o": 164.0,
+      "boreDiameter": 0.366,
+      "primerPocketId": "PKT_LRG"
+    },
+    {
+      "id": "CTG_375ENABELR_cO62",
+      "name": "375 EnABELR",
+      "diameterId": "DIA_375_OMEC",
+      "maxCaseLength": 2.950,
+      "trimLength": 2.940,
+      "oal": 4.300,
+      "maxSaamiPsi": 65000,
+      "baseCapacityH2o": 160.0,
+      "boreDiameter": 0.366,
+      "primerPocketId": "PKT_LRG"
+    },
+    {
+      "id": "CTG_408CHEYTAC_cO62",
+      "name": "408 CheyTac",
+      "diameterId": "DIA_408_cO62",
+      "maxCaseLength": 3.040,
+      "trimLength": 3.030,
+      "oal": 4.300,
+      "maxSaamiPsi": 64000,
+      "baseCapacityH2o": 159.0,
+      "boreDiameter": 0.400,
+      "primerPocketId": "PKT_LRG"
+    },
+    {
+      "id": "CTG_400LEGEND_cO62",
+      "name": "400 Legend",
+      "diameterId": "DIA_400_cO62",
+      "maxCaseLength": 2.260,
+      "trimLength": 2.250,
+      "oal": 2.260,
+      "maxSaamiPsi": 45000,
+      "baseCapacityH2o": 44.0,
+      "boreDiameter": 0.400,
+      "primerPocketId": "PKT_SML"
+    },
+    {
+      "id": "CTG_22GT_cG82",
+      "name": "22 GT",
+      "diameterId": "DIA_224_L5X8",
+      "maxCaseLength": 1.780,
+      "trimLength": 1.770,
+      "oal": 2.440,
+      "maxSaamiPsi": 62000,
+      "baseCapacityH2o": 42.0,
+      "boreDiameter": 0.219,
+      "primerPocketId": "PKT_SML"
+    },
+    {
+      "id": "CTG_6BRA_cJ12",
+      "name": "6mm BRA",
+      "diameterId": "DIA_243_B7V4",
+      "maxCaseLength": 1.560,
+      "trimLength": 1.550,
+      "oal": 2.200,
+      "maxSaamiPsi": 62000,
+      "baseCapacityH2o": 39.0,
+      "boreDiameter": 0.237,
+      "primerPocketId": "PKT_SML"
+    },
+    {
+      "id": "CTG_6PPC_cJ12",
+      "name": "6mm PPC",
+      "diameterId": "DIA_243_B7V4",
+      "maxCaseLength": 1.515,
+      "trimLength": 1.505,
+      "oal": 2.200,
+      "maxSaamiPsi": 58000,
+      "baseCapacityH2o": 32.0,
+      "boreDiameter": 0.237,
+      "primerPocketId": "PKT_SML"
+    },
+    {
+      "id": "CTG_25ARC_cK12",
+      "name": "25 ARC",
+      "diameterId": "DIA_257_N2M1",
+      "maxCaseLength": 1.525,
+      "trimLength": 1.515,
+      "oal": 2.260,
+      "maxSaamiPsi": 52000,
+      "baseCapacityH2o": 34.5,
+      "boreDiameter": 0.250,
+      "primerPocketId": "PKT_SML"
+    },
+    {
+      "id": "CTG_25GT_cG82",
+      "name": "25 GT",
+      "diameterId": "DIA_257_N2M1",
+      "maxCaseLength": 1.780,
+      "trimLength": 1.770,
+      "oal": 2.440,
+      "maxSaamiPsi": 62000,
+      "baseCapacityH2o": 39.5,
+      "boreDiameter": 0.250,
+      "primerPocketId": "PKT_SML"
+    },
+    {
+      "id": "CTG_25X47_cK12",
+      "name": "25x47",
+      "diameterId": "DIA_257_N2M1",
+      "maxCaseLength": 1.850,
+      "trimLength": 1.840,
+      "oal": 2.800,
+      "maxSaamiPsi": 63000,
+      "baseCapacityH2o": 47.5,
+      "boreDiameter": 0.250,
+      "primerPocketId": "PKT_SML"
+    },
+    {
+      "id": "CTG_7SAW_cK32",
+      "name": "7mm SAW",
+      "diameterId": "DIA_284_S3F6",
+      "maxCaseLength": 2.015,
+      "trimLength": 2.005,
+      "oal": 2.800,
+      "maxSaamiPsi": 62000,
+      "baseCapacityH2o": 53.4,
+      "boreDiameter": 0.277,
+      "primerPocketId": "PKT_LRG"
     }
   ],
   "brass": [
@@ -2058,25 +2380,212 @@
       "primerPocketId": "PKT_SML"
     },
     {
-      "id": "BRS_MAN_ALPHA_A1L2_CTG_65CM_cN72_2GZI",
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_22ARC_cK12_SRP_OCD",
+      "cartridgeId": "CTG_22ARC_cK12",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 34.6
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_22CM_cA72_SRP_OCD",
+      "cartridgeId": "CTG_22CM_cA72",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 49.3
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_22CM_cA72_LRP_OCD",
+      "cartridgeId": "CTG_22CM_cA72",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 49.5
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_22GT_cG82_SRP_OCD",
+      "cartridgeId": "CTG_22GT_cG82",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 42.0
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_6ARC_cH92_SRP_OCD",
+      "cartridgeId": "CTG_6ARC_cH92",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 34.6
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_6BR_cJ12_SRP_OCD",
+      "cartridgeId": "CTG_6BR_cJ12",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 38.0
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_6BRA_cJ12_SRP_OCD",
+      "cartridgeId": "CTG_6BRA_cJ12",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 39.0
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_6DASH_N6H8_SRP_OCD",
+      "cartridgeId": "CTG_6DASH_N6H8",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 41.3
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_6GT_cG82_SRP_OCD",
+      "cartridgeId": "CTG_6GT_cG82",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 39.7
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_6CM_cG62_SRP_OCD",
+      "cartridgeId": "CTG_6CM_cG62",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 50.6
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_6CM_cG62_LRP_OCD",
+      "cartridgeId": "CTG_6CM_cG62",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 50.8
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_6PPC_cJ12_SRP_STD",
+      "cartridgeId": "CTG_6PPC_cJ12",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 32.0
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_25ARC_cK12_SRP_OCD",
+      "cartridgeId": "CTG_25ARC_cK12",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 34.5
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_25GT_cG82_SRP_OCD",
+      "cartridgeId": "CTG_25GT_cG82",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 39.5
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_25CM_cN72_SRP_OCD",
+      "cartridgeId": "CTG_25CM_cN72",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 52.5
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_25X47_cK12_SRP_OCD",
+      "cartridgeId": "CTG_25X47_cK12",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 47.5
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_260REM_cR92_SRP_STD",
+      "cartridgeId": "CTG_260REM_cR92",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 53.5
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_65X47_cK12_SRP_STD",
+      "cartridgeId": "CTG_65X47_cK12",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 48.0
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_65CM_cN72_SRP_OCD",
+      "cartridgeId": "CTG_65CM_cN72",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 49.5
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_65CM_cN72_LRP_OCD",
       "cartridgeId": "CTG_65CM_cN72",
       "manufacturerId": "MAN_ALPHA_A1L2",
       "primerHoleId": "HL_080",
-      "primerPocketId": "PKT_SML"
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 49.7
     },
     {
-      "id": "BRS_MAN_ALPHA_A1L2_CTG_6ARC_cH92_97TY",
-      "cartridgeId": "CTG_6ARC_cH92",
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_65PRC_cP02_LRP_OCD",
+      "cartridgeId": "CTG_65PRC_cP02",
       "manufacturerId": "MAN_ALPHA_A1L2",
       "primerHoleId": "HL_080",
-      "primerPocketId": "PKT_SML"
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 62.0
     },
     {
-      "id": "BRS_MAN_ALPHA_A1L2_CTG_6DASH_N6H8_B7IA",
-      "cartridgeId": "CTG_6DASH_N6H8",
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_7SAW_cK32_LRP_STD",
+      "cartridgeId": "CTG_7SAW_cK32",
       "manufacturerId": "MAN_ALPHA_A1L2",
       "primerHoleId": "HL_080",
-      "primerPocketId": "PKT_SML"
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 53.4
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_7MM08_cK32_LRP_STD",
+      "cartridgeId": "CTG_7MM08_cK32",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 52.2
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_308WIN_cK32_SRP_OCD",
+      "cartridgeId": "CTG_308WIN_cK32",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 55.8
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_308WIN_cK32_LRP_OCD",
+      "cartridgeId": "CTG_308WIN_cK32",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 56.0
+    },
+    {
+      "id": "BRS_MAN_ALPHA_A1L2_CTG_86BLK_cS22_LRP_STD",
+      "cartridgeId": "CTG_86BLK_cS22",
+      "manufacturerId": "MAN_ALPHA_A1L2",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 45.0
     },
     {
       "id": "BRS_MAN_HORNADY_JGR4_CTG_65CM_cN72_6MQR",
@@ -2172,25 +2681,428 @@
       "primerPocketId": "PKT_LRG"
     },
     {
-      "id": "BRS_MAN_PETERSON_M7JT_CTG_65CM_cN72_GU79",
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_22ARC_cK12_STD",
+      "cartridgeId": "CTG_22ARC_cK12",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 34.6
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_22CM_cA72_LRP",
+      "cartridgeId": "CTG_22CM_cA72",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 49.5
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_22CM_cA72_SRP",
+      "cartridgeId": "CTG_22CM_cA72",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 49.3
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_22250_cK32_LRP",
+      "cartridgeId": "CTG_22250_cK32",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 45.3
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_22250_cK32_SRP",
+      "cartridgeId": "CTG_22250_cK32",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 45.1
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_224VALK_N2H5_LUXG",
+      "cartridgeId": "CTG_224VALK_N2H5",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 31.0
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_6ARC_cH92_STD",
+      "cartridgeId": "CTG_6ARC_cH92",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 34.6
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_6BR_cJ12_STD",
+      "cartridgeId": "CTG_6BR_cJ12",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 38.0
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_6CM_cG62_LRP",
+      "cartridgeId": "CTG_6CM_cG62",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 50.8
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_6CM_cG62_SRP",
+      "cartridgeId": "CTG_6CM_cG62",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 50.6
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_6DASH_N6H8_STD",
+      "cartridgeId": "CTG_6DASH_N6H8",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 41.3
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_6GT_cG82_STD",
+      "cartridgeId": "CTG_6GT_cG82",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 38.0
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_6X47_cK12_STD",
+      "cartridgeId": "CTG_6X47_cK12",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 47.5
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_6XC_cK12_STD",
+      "cartridgeId": "CTG_6XC_cK12",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 47.0
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_25CM_cN72_STD",
+      "cartridgeId": "CTG_25CM_cN72",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 52.5
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_25WBYRPM_cN73_STD",
+      "cartridgeId": "CTG_25WBYRPM_cN73",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 72.6
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_260REM_cR92_LRP",
+      "cartridgeId": "CTG_260REM_cR92",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 53.5
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_260REM_cR92_SRP",
+      "cartridgeId": "CTG_260REM_cR92",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 53.3
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_65CM_cN72_LRP",
+      "cartridgeId": "CTG_65CM_cN72",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 51.5
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_65CM_cN72_SRP",
       "cartridgeId": "CTG_65CM_cN72",
       "manufacturerId": "MAN_PETERSON_M7JT",
       "primerHoleId": "HL_059",
-      "primerPocketId": "PKT_SML"
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 51.3
     },
     {
-      "id": "BRS_MAN_PETERSON_M7JT_CTG_6DASH_N6H8_8KJR",
-      "cartridgeId": "CTG_6DASH_N6H8",
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_65PRC_cP02_STD",
+      "cartridgeId": "CTG_65PRC_cP02",
       "manufacturerId": "MAN_PETERSON_M7JT",
-      "primerHoleId": "HL_060",
-      "primerPocketId": "PKT_LRG"
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 62.0
     },
     {
-      "id": "BRS_MAN_PETERSON_M7JT_CTG_6ARC_cH92_J5YV",
-      "cartridgeId": "CTG_6ARC_cH92",
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_65WBYRPM_cN73_STD",
+      "cartridgeId": "CTG_65WBYRPM_cN73",
       "manufacturerId": "MAN_PETERSON_M7JT",
-      "primerHoleId": "HL_060",
-      "primerPocketId": "PKT_LRG"
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 81.5
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_65284_cN73_STD",
+      "cartridgeId": "CTG_65284_cN73",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 65.5
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_65300WBYMAG_cN73_STD",
+      "cartridgeId": "CTG_65300WBYMAG_cN73",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 97.5
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_65X47_cK12_STD",
+      "cartridgeId": "CTG_65X47_cK12",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 48.0
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_270WSM_cK12_STD",
+      "cartridgeId": "CTG_270WSM_cK12",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 72.8
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_68WESTERN_cK12_STD",
+      "cartridgeId": "CTG_68WESTERN_cK12",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 73.5
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_7BR_cZ22_STD",
+      "cartridgeId": "CTG_7BR_cZ22",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 36.5
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_7MM08_cK32_LRP",
+      "cartridgeId": "CTG_7MM08_cK32",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 52.2
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_7MM08_cK32_SRP",
+      "cartridgeId": "CTG_7MM08_cK32",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 52.0
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_284WIN_cW92_STD",
+      "cartridgeId": "CTG_284WIN_cW92",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 65.8
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_280AI_cK32_STD",
+      "cartridgeId": "CTG_280AI_cK32",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 70.5
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_7PRC_cP02_STD",
+      "cartridgeId": "CTG_7PRC_cP02",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 80.8
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_7REMMAG_cK32_STD",
+      "cartridgeId": "CTG_7REMMAG_cK32",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 82.0
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_7STW_cW92_STD",
+      "cartridgeId": "CTG_7STW_cW92",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 97.4
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_7RUM_cW92_STD",
+      "cartridgeId": "CTG_7RUM_cW92",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 109.9
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_308WIN_cK32_LRP",
+      "cartridgeId": "CTG_308WIN_cK32",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 56.0
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_308WIN_cK32_SRP",
+      "cartridgeId": "CTG_308WIN_cK32",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_059",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 55.8
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_300WSM_N3HH_STD",
+      "cartridgeId": "CTG_300WSM_N3HH",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 78.5
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_300WINMAG_cK32_STD",
+      "cartridgeId": "CTG_300WINMAG_cK32",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 92.5
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_300PRC_cP02_STD",
+      "cartridgeId": "CTG_300PRC_cP02",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 96.0
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_300NORMAMAG_cN73_STD",
+      "cartridgeId": "CTG_300NORMAMAG_cN73",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 103.5
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_762X54R_cM32_STD",
+      "cartridgeId": "CTG_762X54R_cM32",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 59.7
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_338WINMAG_cK32_STD",
+      "cartridgeId": "CTG_338WINMAG_cK32",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 85.5
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_338WBYRPM_cN73_STD",
+      "cartridgeId": "CTG_338WBYRPM_cN73",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 82.5
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_338LAPUAMAG_cK32_STD",
+      "cartridgeId": "CTG_338LAPUAMAG_cK32",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 113.0
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_338NORMAMAG_cN74_STD",
+      "cartridgeId": "CTG_338NORMAMAG_cN74",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 107.0
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_33XC_cK12_STD",
+      "cartridgeId": "CTG_33XC_cK12",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 138.0
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_37XC_cK12_STD",
+      "cartridgeId": "CTG_37XC_cK12",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 139.0
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_375CHEYTAC_cO62_STD",
+      "cartridgeId": "CTG_375CHEYTAC_cO62",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 164.0
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_375ENABELR_cO62_STD",
+      "cartridgeId": "CTG_375ENABELR_cO62",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 160.0
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_408CHEYTAC_cO62_STD",
+      "cartridgeId": "CTG_408CHEYTAC_cO62",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_LRG",
+      "capacityH2o": 159.0
+    },
+    {
+      "id": "BRS_MAN_PETERSON_M7JT_CTG_400LEGEND_cO62_STD",
+      "cartridgeId": "CTG_400LEGEND_cO62",
+      "manufacturerId": "MAN_PETERSON_M7JT",
+      "primerHoleId": "HL_080",
+      "primerPocketId": "PKT_SML",
+      "capacityH2o": 44.0
     },
     {
       "id": "BRS_MAN_STARLINE_S9Z5_CTG_65CM_cN72_ERHV",
