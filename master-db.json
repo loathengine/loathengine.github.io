@@ -18079,7 +18079,7 @@
       "oal": 2.8,
       "primerPocketId": "PKT_LRG",
       "trimLength": 2.025,
-      "throatFrictionMultiplier": 0.0123
+      "throatFrictionMultiplier": 0.85
     },
     {
       "baseCapacityH2o": 81,
@@ -20511,13 +20511,17 @@
       "name": "IMR 4198"
     },
     {
-      "baCoeff": 0.0516,
+      "baCoeff": 0.0145,
       "grainType": "extrudedSinglePerf",
-      "heatOfExplosionKjKg": 4012.0,
+      "heatOfExplosionKjKg": 4793.0,
       "id": "PWD_HODG_IMR4350_H1G0",
       "kCoeff": 1.23,
       "manufacturerId": "MAN_HODGDON_H3V8",
-      "name": "IMR 4350"
+      "name": "IMR 4350",
+      "grtBa": 0.4857,
+      "grtBp": 0.1489,
+      "grtZ1": 0.5175,
+      "grtZ2": 0.8298
     },
     {
       "baCoeff": 0.03,
@@ -20777,9 +20781,9 @@
       "name": "N160"
     },
     {
-      "baCoeff": 0.0232,
+      "baCoeff": 0.0237,
       "grainType": "extrudedSinglePerf",
-      "heatOfExplosionKjKg": 3800.0,
+      "heatOfExplosionKjKg": 3917.0,
       "id": "PWD_VIHT_N165_V1H9",
       "kCoeff": 1.23,
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
