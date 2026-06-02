@@ -19426,16 +19426,6 @@
       "partNumber": null
     },
     {
-      "bulletId": "BUL_BERGER_172_25_FBVAR",
-      "cartridgeId": "CTG_17HRN_N1H3",
-      "id": "LOAD_COMM_JARG",
-      "loadTypeId": "LT_COMM",
-      "lot": null,
-      "manufacturerId": "MAN_LAPUA_L5X1",
-      "name": "Varmint Express",
-      "partNumber": null
-    },
-    {
       "bulletId": "BUL_HORNADY_UNK_134_ELDMAT_91F4",
       "cartridgeId": "CTG_25CM_cN72",
       "id": "LOAD_COMM_JJVB",
