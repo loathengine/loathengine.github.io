@@ -6778,32 +6778,6 @@
         "g7FF": null,
         "preferredModel": "G7"
       },
-      "diameterId": "DIA_311_T1Y5",
-      "id": "BUL_HORNADY_UNK_123_FMJ_2BF3",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "FMJ",
-      "physis": {
-        "bearingSurface": null,
-        "boatTailLength": null,
-        "meplatDiameter": null,
-        "ogiveLength": null,
-        "overallLength": 0.91,
-        "tipLength": null,
-        "weightGrains": 123
-      },
-      "stability": {
-        "ix": null,
-        "iy": null
-      }
-    },
-    {
-      "ballistics": {
-        "g1BC": null,
-        "g1FF": null,
-        "g7BC": null,
-        "g7FF": null,
-        "preferredModel": "G7"
-      },
       "diameterId": "DIA_264_H8J4",
       "id": "BUL_HORNADY_UNK_123_SST_A23C",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -8130,32 +8104,6 @@
         "g7FF": null,
         "preferredModel": "G7"
       },
-      "diameterId": "DIA_311_T1Y5",
-      "id": "BUL_HORNADY_UNK_174_G_E2CD",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "FMJ-BT",
-      "physis": {
-        "bearingSurface": null,
-        "boatTailLength": null,
-        "meplatDiameter": null,
-        "ogiveLength": null,
-        "overallLength": 1.34,
-        "tipLength": null,
-        "weightGrains": 174
-      },
-      "stability": {
-        "ix": null,
-        "iy": null
-      }
-    },
-    {
-      "ballistics": {
-        "g1BC": null,
-        "g1FF": null,
-        "g7BC": null,
-        "g7FF": null,
-        "preferredModel": "G7"
-      },
       "diameterId": "DIA_284_S3F6",
       "id": "BUL_HORNADY_UNK_175_FLEXLO_BD59",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -8506,32 +8454,6 @@
         "overallLength": 1.66,
         "tipLength": 0.034,
         "weightGrains": 190
-      },
-      "stability": {
-        "ix": null,
-        "iy": null
-      }
-    },
-    {
-      "ballistics": {
-        "g1BC": null,
-        "g1FF": null,
-        "g7BC": null,
-        "g7FF": null,
-        "preferredModel": "G7"
-      },
-      "diameterId": "DIA_323_V4B9",
-      "id": "BUL_HORNADY_UNK_196_BTHP_9C6F",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "BTHP",
-      "physis": {
-        "bearingSurface": null,
-        "boatTailLength": null,
-        "meplatDiameter": null,
-        "ogiveLength": null,
-        "overallLength": 1.375,
-        "tipLength": null,
-        "weightGrains": 196
       },
       "stability": {
         "ix": null,
@@ -8988,32 +8910,6 @@
         "g7FF": null,
         "preferredModel": "G7"
       },
-      "diameterId": "DIA_311_T1Y5",
-      "id": "BUL_HORNADY_UNK_255_SUBX_51DA",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "SUB-X",
-      "physis": {
-        "bearingSurface": null,
-        "boatTailLength": null,
-        "meplatDiameter": null,
-        "ogiveLength": null,
-        "overallLength": 1.575,
-        "tipLength": 0.034,
-        "weightGrains": 255
-      },
-      "stability": {
-        "ix": null,
-        "iy": null
-      }
-    },
-    {
-      "ballistics": {
-        "g1BC": null,
-        "g1FF": null,
-        "g7BC": null,
-        "g7FF": null,
-        "preferredModel": "G7"
-      },
       "diameterId": "DIA_375_OMEC",
       "id": "BUL_HORNADY_UNK_270_G_8C61",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -9233,32 +9129,6 @@
         "ogiveLength": null,
         "overallLength": 0.517,
         "tipLength": 0.142,
-        "weightGrains": 35
-      },
-      "stability": {
-        "ix": null,
-        "iy": null
-      }
-    },
-    {
-      "ballistics": {
-        "g1BC": null,
-        "g1FF": null,
-        "g7BC": null,
-        "g7FF": null,
-        "preferredModel": "G7"
-      },
-      "diameterId": "DIA_311_T1Y5",
-      "id": "BUL_HORNADY_UNK_35_XTP_2628",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "XTP",
-      "physis": {
-        "bearingSurface": null,
-        "boatTailLength": null,
-        "meplatDiameter": null,
-        "ogiveLength": null,
-        "overallLength": 0.311,
-        "tipLength": null,
         "weightGrains": 35
       },
       "stability": {
@@ -15124,32 +14994,6 @@
         "g7FF": null,
         "preferredModel": "G7"
       },
-      "diameterId": "DIA_323_V4B9",
-      "id": "BUL_SIERRA_UNK_175_SPITZE_2E18",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "Spitzer PH",
-      "physis": {
-        "bearingSurface": null,
-        "boatTailLength": null,
-        "meplatDiameter": null,
-        "ogiveLength": null,
-        "overallLength": 1.12,
-        "tipLength": null,
-        "weightGrains": 175
-      },
-      "stability": {
-        "ix": null,
-        "iy": null
-      }
-    },
-    {
-      "ballistics": {
-        "g1BC": null,
-        "g1FF": null,
-        "g7BC": null,
-        "g7FF": null,
-        "preferredModel": "G7"
-      },
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_SIERRA_UNK_175_TMK_D088",
       "manufacturerId": "MAN_SIERRA_S6Y3",
@@ -17628,19 +17472,6 @@
     },
     {
       "baseCapacityH2o": 56,
-      "boreDiameter": 0.303,
-      "diameterId": "DIA_311_T1Y5",
-      "id": "CTG_303BRIT_N3HI",
-      "maxCaseLength": 2.222,
-      "maxSaamiPsi": 49000,
-      "name": "303 British",
-      "oal": 3.075,
-      "primerPocketId": "PKT_LRG",
-      "trimLength": 2.212,
-      "burnRateMultiplier": 0.5215
-    },
-    {
-      "baseCapacityH2o": 56,
       "boreDiameter": 0.3,
       "diameterId": "DIA_308_XBM7",
       "id": "CTG_308WIN_cC82",
@@ -18043,32 +17874,6 @@
       "burnRateMultiplier": 0.6244
     },
     {
-      "baseCapacityH2o": 35.5,
-      "boreDiameter": 0.3,
-      "diameterId": "DIA_311_T1Y5",
-      "id": "CTG_762X39_cM32",
-      "maxCaseLength": 1.528,
-      "maxSaamiPsi": 45000,
-      "name": "7.62x39mm",
-      "oal": 2.2,
-      "primerPocketId": "PKT_LRG",
-      "trimLength": 1.518,
-      "burnRateMultiplier": 0.4473
-    },
-    {
-      "baseCapacityH2o": 59.7,
-      "boreDiameter": 0.3,
-      "diameterId": "DIA_311_T1Y5",
-      "id": "CTG_762X54R_cM32",
-      "maxCaseLength": 2.114,
-      "maxSaamiPsi": 56500,
-      "name": "7.62x54R",
-      "oal": 3.038,
-      "primerPocketId": "PKT_LRG",
-      "trimLength": 2.104,
-      "burnRateMultiplier": 0.6272
-    },
-    {
       "baseCapacityH2o": 36.5,
       "boreDiameter": 0.277,
       "diameterId": "DIA_284_S3F6",
@@ -18186,19 +17991,6 @@
       "burnRateMultiplier": 0.5784
     },
     {
-      "baseCapacityH2o": 63,
-      "boreDiameter": 0.311,
-      "diameterId": "DIA_323_V4B9",
-      "id": "CTG_8MAU_N8HJ",
-      "maxCaseLength": 2.244,
-      "maxSaamiPsi": 56565,
-      "name": "8mm Mauser",
-      "oal": 3.25,
-      "primerPocketId": "PKT_LRG",
-      "trimLength": 2.234,
-      "burnRateMultiplier": 0.6243
-    },
-    {
       "baseCapacityH2o": 28.8,
       "boreDiameter": 0.219,
       "diameterId": "DIA_224_L5X8",
@@ -18262,16 +18054,6 @@
       "id": "DIA_308_XBM7",
       "imperial": ".308",
       "metric": "7.62"
-    },
-    {
-      "id": "DIA_311_T1Y5",
-      "imperial": ".311",
-      "metric": "7.62 Rus/Brit"
-    },
-    {
-      "id": "DIA_323_V4B9",
-      "imperial": ".323",
-      "metric": "8mm"
     },
     {
       "id": "DIA_338_R7E3",
