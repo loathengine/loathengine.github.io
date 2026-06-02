@@ -1009,7 +1009,7 @@
       "diameterId": "DIA_243_B7V4",
       "id": "BUL_B9K2_243_1200_120GRFLATB_C0D1",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "120gr Flat Base Target",
+      "name": "Flat Base Target",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -1035,7 +1035,7 @@
       "diameterId": "DIA_243_B7V4",
       "id": "BUL_B9K2_243_1230_123GRLRHT_EUCG",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "123gr LRHT",
+      "name": "LRHT",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -1061,7 +1061,7 @@
       "diameterId": "DIA_277_K9L0",
       "id": "BUL_B9K2_277_1450_145GRFLATB_EH45",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "145gr Flat Base Target",
+      "name": "Flat Base Target",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -1087,7 +1087,7 @@
       "diameterId": "DIA_284_S3F6",
       "id": "BUL_B9K2_284_1740_174GRLRHT_3DV5",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "174gr LRHT",
+      "name": "LRHT",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -1113,7 +1113,7 @@
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_B9K2_308_1090_109GRFLATB_D9F7",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "109gr Flat Base Target",
+      "name": "Flat Base Target",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -1139,7 +1139,7 @@
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_B9K2_308_1230_123GRBERGE_7KL6",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "123gr Berger Hybrid",
+      "name": "Berger Hybrid",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -1165,7 +1165,7 @@
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_B9K2_308_1230_123GRFLATB_UDUA",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "123gr Flat Base Target",
+      "name": "Flat Base Target",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -1191,7 +1191,7 @@
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_B9K2_308_1250_125GRFLATB_GYBA",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "125gr Flat Base Target",
+      "name": "Flat Base Target",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -1217,7 +1217,7 @@
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_B9K2_308_1280_128GRFLATB_3GNI",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "128gr Flat Base Target",
+      "name": "Flat Base Target",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -1243,7 +1243,7 @@
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_B9K2_308_1390_139GRFLATB_A9B6",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "139gr Flat Base Target",
+      "name": "Flat Base Target",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -1269,7 +1269,7 @@
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_B9K2_308_1580_158GRBERGE_AP1N",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "158gr Berger Flat Base Target",
+      "name": "Berger Flat Base Target",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -1295,7 +1295,7 @@
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_B9K2_308_1680_168GRFLATB_GJ3S",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "168gr Flat Base Target",
+      "name": "Flat Base Target",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -1321,7 +1321,7 @@
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_B9K2_308_1680_168GRVLD_VOMA",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "168gr VLD",
+      "name": "VLD",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -1347,7 +1347,7 @@
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_B9K2_308_1800_180GRHPBT_1TDO",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "180gr HPBT",
+      "name": "HPBT",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -1373,7 +1373,7 @@
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_B9K2_308_1850_185GRBERGE_53KE",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "185gr Berger Flat Base Target",
+      "name": "Berger Flat Base Target",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -1399,7 +1399,7 @@
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_B9K2_308_950_95GRFLATPO_8EZM",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "95gr Flat Point",
+      "name": "Flat Point",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -1425,7 +1425,7 @@
       "diameterId": "DIA_338_R7E3",
       "id": "BUL_B9K2_338_1240_124GRHYBRI_WG1H",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "124gr Hybrid",
+      "name": "Hybrid",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -1451,7 +1451,7 @@
       "diameterId": "DIA_375_OMEC",
       "id": "BUL_B9K2_375_1400_140GRFLATB_HKIF",
       "manufacturerId": "MAN_BERGER_B9K2",
-      "name": "140gr Flat Base",
+      "name": "Flat Base",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -10031,7 +10031,7 @@
       "diameterId": "DIA_224_L5X8",
       "id": "BUL_JGR4_224_750_75GRVMAX_RMFT",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "75gr V-Max",
+      "name": "V-Max",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -10057,7 +10057,7 @@
       "diameterId": "DIA_264_H8J4",
       "id": "BUL_JGR4_264_1450_145GRBT_ES72",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "145gr BT",
+      "name": "BT",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -10083,7 +10083,7 @@
       "diameterId": "DIA_264_H8J4",
       "id": "BUL_JGR4_264_950_95GRELDMAT_3LRC",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "95gr ELD Match",
+      "name": "ELD Match",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -10109,7 +10109,7 @@
       "diameterId": "DIA_277_K9L0",
       "id": "BUL_JGR4_277_1450_145GRELDMM_MGF2",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "145gr ELD-M Match",
+      "name": "ELD-M Match",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -10135,7 +10135,7 @@
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_JGR4_308_1200_120GRVMAX_GUMY",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "120gr V-Max",
+      "name": "V-Max",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -10161,7 +10161,7 @@
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_JGR4_308_1250_125GRHORNA_YYCV",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "125gr Hornady ELD-Match",
+      "name": "Hornady ELD-Match",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -10187,7 +10187,7 @@
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_JGR4_308_1400_140GRELDMA_QZ3B",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "140gr ELD Match",
+      "name": "ELD Match",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -10213,7 +10213,7 @@
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_JGR4_308_1420_142GRHORNA_3H8K",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "142gr Hornady ELD-Match",
+      "name": "Hornady ELD-Match",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -10239,7 +10239,7 @@
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_JGR4_308_1450_145GRVMAX_TDV7",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "145gr V-MAX",
+      "name": "V-MAX",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -10265,7 +10265,7 @@
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_JGR4_308_1500_150GRELDX_ULO7",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "150gr ELD-X",
+      "name": "ELD-X",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -10291,7 +10291,7 @@
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_JGR4_308_1680_168GRFLATP_E3AV",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "168gr Flat Point",
+      "name": "Flat Point",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -10317,7 +10317,7 @@
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_JGR4_308_1680_168GRVMAX_RFVS",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "168gr V-MAX",
+      "name": "V-MAX",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -10343,7 +10343,7 @@
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_JGR4_308_1750_175GRELDMA_FTH7",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "175gr ELD-MAX",
+      "name": "ELD-MAX",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -10369,7 +10369,7 @@
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_JGR4_308_870_87GRELDMAX_WMNJ",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "87gr ELD-Max",
+      "name": "ELD-Max",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -10395,7 +10395,7 @@
       "diameterId": "DIA_375_OMEC",
       "id": "BUL_JGR4_375_2250_225GRELDMA_V0TE",
       "manufacturerId": "MAN_HORNADY_JGR4",
-      "name": "225gr ELD Match",
+      "name": "ELD Match",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -11175,7 +11175,7 @@
       "diameterId": "DIA_277_K9L0",
       "id": "BUL_N9K4_277_800_80GRPRECIS_R2WX",
       "manufacturerId": "MAN_NOSLER_N9K4",
-      "name": "80gr Precision King",
+      "name": "Precision King",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -11201,7 +11201,7 @@
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_N9K4_308_1500_150GRSCOUR_VWFU",
       "manufacturerId": "MAN_NOSLER_N9K4",
-      "name": "150gr Scourge",
+      "name": "Scourge",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -12657,7 +12657,7 @@
       "diameterId": "DIA_243_B7V4",
       "id": "BUL_S6Y3_243_760_76GRMATCHK_98K2",
       "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "76gr MatchKing",
+      "name": "MatchKing",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -12683,7 +12683,7 @@
       "diameterId": "DIA_277_K9L0",
       "id": "BUL_S6Y3_277_980_98GRMATCHK_50TK",
       "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "98gr MatchKing",
+      "name": "MatchKing",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -12709,7 +12709,7 @@
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_S6Y3_308_1250_125GRMATCH_RD7W",
       "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "125gr MatchKing",
+      "name": "MatchKing",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -12735,7 +12735,7 @@
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_S6Y3_308_1680_168GRSIERR_6QJD",
       "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "168gr Sierra MatchKing",
+      "name": "Sierra MatchKing",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -12761,7 +12761,7 @@
       "diameterId": "DIA_338_R7E3",
       "id": "BUL_S6Y3_338_1750_175GRMATCH_G101",
       "manufacturerId": "MAN_SIERRA_S6Y3",
-      "name": "175gr MatchKing",
+      "name": "MatchKing",
       "physis": {
         "bearingSurface": null,
         "boatTailLength": null,
@@ -20315,10 +20315,10 @@
       "kCoeff": 1.2148,
       "manufacturerId": "MAN_ALLIANT_A5R2",
       "name": "Reloder 15",
-      "grtBa": 0.5889,
-      "grtBp": 0.1782,
-      "grtZ1": 0.4072,
-      "grtZ2": 0.8059
+      "ignitionBa": 0.5889,
+      "ignitionBp": 0.1782,
+      "ignitionZ1": 0.4072,
+      "ignitionZ2": 0.8059
     },
     {
       "baCoeff": 0.0194,
@@ -20374,10 +20374,10 @@
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "CFE 223",
       "tempSensFactor": 0.002,
-      "grtBa": 0.5389,
-      "grtBp": 0.1555,
-      "grtZ1": 0.4941,
-      "grtZ2": 0.7913
+      "ignitionBa": 0.5389,
+      "ignitionBp": 0.1555,
+      "ignitionZ1": 0.4941,
+      "ignitionZ2": 0.7913
     },
     {
       "baCoeff": 0.3521,
@@ -20396,10 +20396,10 @@
       "kCoeff": 1.2384,
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "H1000",
-      "grtBa": 0.3704,
-      "grtBp": 0.1142,
-      "grtZ1": 0.6263,
-      "grtZ2": 0.8544
+      "ignitionBa": 0.3704,
+      "ignitionBp": 0.1142,
+      "ignitionZ1": 0.6263,
+      "ignitionZ2": 0.8544
     },
     {
       "baCoeff": 0.3943,
@@ -20418,10 +20418,10 @@
       "kCoeff": 1.2289,
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "H335",
-      "grtBa": 0.6478,
-      "grtBp": 0.1825,
-      "grtZ1": 0.3638,
-      "grtZ2": 0.7677
+      "ignitionBa": 0.6478,
+      "ignitionBp": 0.1825,
+      "ignitionZ1": 0.3638,
+      "ignitionZ2": 0.7677
     },
     {
       "baCoeff": 0.0394,
@@ -20450,10 +20450,10 @@
       "kCoeff": 1.2311,
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "H4350",
-      "grtBa": 0.4857,
-      "grtBp": 0.1489,
-      "grtZ1": 0.5175,
-      "grtZ2": 0.8298
+      "ignitionBa": 0.4857,
+      "ignitionBp": 0.1489,
+      "ignitionZ1": 0.5175,
+      "ignitionZ2": 0.8298
     },
     {
       "baCoeff": 0.0138,
@@ -20463,10 +20463,10 @@
       "kCoeff": 1.2301,
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "H4831SC",
-      "grtBa": 0.4369,
-      "grtBp": 0.1219,
-      "grtZ1": 0.5063,
-      "grtZ2": 0.8091
+      "ignitionBa": 0.4369,
+      "ignitionBp": 0.1219,
+      "ignitionZ1": 0.5063,
+      "ignitionZ2": 0.8091
     },
     {
       "baCoeff": 0.013,
@@ -20485,10 +20485,10 @@
       "kCoeff": 1.2393,
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "H4895",
-      "grtBa": 0.5779,
-      "grtBp": 0.1915,
-      "grtZ1": 0.4695,
-      "grtZ2": 0.8183
+      "ignitionBa": 0.5779,
+      "ignitionBp": 0.1915,
+      "ignitionZ1": 0.4695,
+      "ignitionZ2": 0.8183
     },
     {
       "baCoeff": 0.3366,
@@ -20507,10 +20507,10 @@
       "kCoeff": 1.2218,
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "IMR 4064",
-      "grtBa": 0.6289,
-      "grtBp": 0.1854,
-      "grtZ1": 0.4094,
-      "grtZ2": 0.8282
+      "ignitionBa": 0.6289,
+      "ignitionBp": 0.1854,
+      "ignitionZ1": 0.4094,
+      "ignitionZ2": 0.8282
     },
     {
       "baCoeff": 0.0616,
@@ -20538,10 +20538,10 @@
       "kCoeff": 1.23,
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "IMR 4350",
-      "grtBa": 0.4857,
-      "grtBp": 0.1489,
-      "grtZ1": 0.5175,
-      "grtZ2": 0.8298
+      "ignitionBa": 0.4857,
+      "ignitionBp": 0.1489,
+      "ignitionZ1": 0.5175,
+      "ignitionZ2": 0.8298
     },
     {
       "baCoeff": 0.0183,
@@ -20569,10 +20569,10 @@
       "kCoeff": 1.2444,
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "IMR 7828SSC",
-      "grtBa": 0.3871,
-      "grtBp": 0.1238,
-      "grtZ1": 0.5224,
-      "grtZ2": 0.8169
+      "ignitionBa": 0.3871,
+      "ignitionBp": 0.1238,
+      "ignitionZ1": 0.5224,
+      "ignitionZ2": 0.8169
     },
     {
       "baCoeff": 0.0119,
@@ -20619,10 +20619,10 @@
       "kCoeff": 1.2302,
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "Retumbo",
-      "grtBa": 0.3391,
-      "grtBp": 0.1114,
-      "grtZ1": 0.6613,
-      "grtZ2": 0.8577
+      "ignitionBa": 0.3391,
+      "ignitionBp": 0.1114,
+      "ignitionZ1": 0.6613,
+      "ignitionZ2": 0.8577
     },
     {
       "baCoeff": 0.0631,
@@ -20651,10 +20651,10 @@
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "Varget",
       "tempSensFactor": 0.0003,
-      "grtBa": 0.5773,
-      "grtBp": 0.1727,
-      "grtZ1": 0.4431,
-      "grtZ2": 0.7908
+      "ignitionBa": 0.5773,
+      "ignitionBp": 0.1727,
+      "ignitionZ1": 0.4431,
+      "ignitionZ2": 0.7908
     },
     {
       "baCoeff": 0.5,
@@ -20700,10 +20700,10 @@
       "kCoeff": 1.2364,
       "manufacturerId": "MAN_RAMSHOT_R4P7",
       "name": "TAC",
-      "grtBa": 0.6232,
-      "grtBp": 0.1692,
-      "grtZ1": 0.4725,
-      "grtZ2": 0.7564
+      "ignitionBa": 0.6232,
+      "ignitionBp": 0.1692,
+      "ignitionZ1": 0.4725,
+      "ignitionZ2": 0.7564
     },
     {
       "baCoeff": 0.058,
@@ -20776,10 +20776,10 @@
       "kCoeff": 1.2201,
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
       "name": "N140",
-      "grtBa": 0.6521,
-      "grtBp": 0.176,
-      "grtZ1": 0.4278,
-      "grtZ2": 0.7901
+      "ignitionBa": 0.6521,
+      "ignitionBp": 0.176,
+      "ignitionZ1": 0.4278,
+      "ignitionZ2": 0.7901
     },
     {
       "baCoeff": 0.0144,
@@ -20789,10 +20789,10 @@
       "kCoeff": 1.2214,
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
       "name": "N150",
-      "grtBa": 0.5814,
-      "grtBp": 0.1707,
-      "grtZ1": 0.4697,
-      "grtZ2": 0.8169
+      "ignitionBa": 0.5814,
+      "ignitionBp": 0.1707,
+      "ignitionZ1": 0.4697,
+      "ignitionZ2": 0.8169
     },
     {
       "baCoeff": 0.0156,
@@ -20838,10 +20838,10 @@
       "kCoeff": 1.2171,
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
       "name": "N540",
-      "grtBa": 0.5728,
-      "grtBp": 0.182,
-      "grtZ1": 0.4882,
-      "grtZ2": 0.8341
+      "ignitionBa": 0.5728,
+      "ignitionBp": 0.182,
+      "ignitionZ1": 0.4882,
+      "ignitionZ2": 0.8341
     },
     {
       "baCoeff": 0.0201,
@@ -20887,10 +20887,10 @@
       "kCoeff": 1.2397,
       "manufacturerId": "MAN_VIHTAVUORI_V8N1",
       "name": "N568",
-      "grtBa": 0.3233,
-      "grtBp": 0.119,
-      "grtZ1": 0.4912,
-      "grtZ2": 0.8375
+      "ignitionBa": 0.3233,
+      "ignitionBp": 0.119,
+      "ignitionZ1": 0.4912,
+      "ignitionZ2": 0.8375
     },
     {
       "baCoeff": 0.01,
@@ -20954,10 +20954,10 @@
       "kCoeff": 1.2122,
       "manufacturerId": "MAN_WINCHESTER_W2N4",
       "name": "StaBALL 6.5",
-      "grtBa": 0.5511,
-      "grtBp": 0.1435,
-      "grtZ1": 0.6301,
-      "grtZ2": 0.9135
+      "ignitionBa": 0.5511,
+      "ignitionBp": 0.1435,
+      "ignitionZ1": 0.6301,
+      "ignitionZ2": 0.9135
     },
     {
       "baCoeff": 0.0104,
@@ -20977,10 +20977,10 @@
       "manufacturerId": "MAN_WINCHESTER_W2N4",
       "name": "StaBALL Match",
       "solidDensity": 1600,
-      "grtBa": 0.56,
-      "grtBp": 0.1995,
-      "grtZ1": 0.4296,
-      "grtZ2": 0.8867
+      "ignitionBa": 0.56,
+      "ignitionBp": 0.1995,
+      "ignitionZ1": 0.4296,
+      "ignitionZ2": 0.8867
     }
   ],
   "primerHoles": [
