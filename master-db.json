@@ -3158,6 +3158,32 @@
     },
     {
       "ballistics": {
+        "g1BC": 0.441,
+        "g1FF": null,
+        "g7BC": 0.226,
+        "g7FF": 1.014,
+        "preferredModel": "G7"
+      },
+      "diameterId": "DIA_224_L5X8",
+      "id": "BUL_BERGER_224_80.5_FBT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "name": "Fullbore Target",
+      "physis": {
+        "bearingSurface": 0.317,
+        "boatTailLength": 0.185,
+        "meplatDiameter": null,
+        "ogiveLength": 0.589,
+        "overallLength": 1.091,
+        "tipLength": null,
+        "weightGrains": 80.5
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "ballistics": {
         "g1BC": null,
         "g1FF": null,
         "g7BC": null,
