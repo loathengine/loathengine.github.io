@@ -22558,5 +22558,538 @@
       "name": "CCI 450 Mag",
       "primerPocketId": "PKT_SML"
     }
+  ],
+  "firearms": [
+    {
+      "id": "FA_TEST",
+      "nickname": "Test Bolt Rifle",
+      "cartridgeId": "CTG_65CM_cN72",
+      "barrelLengthMm": 610,
+      "twistRateMm": 203,
+      "sightOverBoreMm": 38
+    }
+  ],
+  "loads": [
+    {
+      "id": "LD_TEST",
+      "name": "Test Load - H4350 41.5gr - 140gr Barnes",
+      "cartridgeId": "CTG_65CM_cN72",
+      "bulletId": "BUL_BARNES_264_140_MB",
+      "powderId": "PWD_HODG_H4350_H1G2",
+      "primerId": "PRI_CCI_BR2_C1R5",
+      "chargeWeightGrams": 2.689,
+      "coalMm": 71.1,
+      "velocityMps": 829
+    }
+  ],
+  "targetImages": [
+    {
+      "id": "TGT_TEST_1",
+      "name": "Test Target 1 (1 inch POA offset)",
+      "timestamp": "2026-06-03T19:30:00.000Z",
+      "dataUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiB2aWV3Qm94PSIwIDAgODAwIDgwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI4MDAiIGZpbGw9IndoaXRlIi8+PGNpcmNsZSBjeD0iNDAwIiBjeT0iNDAwIiByPSIzMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS13aWR0aD0iNSIvPjxjaXJjbGUgY3g9IjQwMCIgY3k9IjQwMCIgcj0iMjAwIiBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBzdHJva2Utd2lkdGg9IjUiLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSI0MDAiIHI9IjEwMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgc3Ryb2tlLXdpZHRoPSI1Ii8+PGNpcmNsZSBjeD0iNDAwIiBjeT0iNDAwIiByPSI1MCIgZmlsbD0iYmxhY2siLz48Y2lyY2xlIGN4PSI0MDAiIGN5PSI0MDAiIHI9IjEwIiBmaWxsPSJyZWQiLz48L3N2Zz4=",
+      "size": "800x800",
+      "firearmId": "FA_TEST",
+      "loadId": "LD_TEST"
+    },
+    {
+      "id": "TGT_TEST_2",
+      "name": "Test Target 2 (1.5 inch POA offset)",
+      "timestamp": "2026-06-03T19:32:00.000Z",
+      "dataUrl": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iODAwIiB2aWV3Qm94PSIwIDAgODAwIDgwMCI+PHJlY3Qgd2lkdGg9IjgwMCIgaGVpZ2h0PSI4MDAiIGZpbGw9IndoaXRlIi8+PGNpcmNsZSBjeD0iNDAwIiBjeT0iNDAwIiByPSIzMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmx1ZSIgc3Ryb2tlLXdpZHRoPSI1Ii8+PGNpcmNsZSBjeD0iNDAwIiBjeT0iNDAwIiByPSIyMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmx1ZSIgc3Ryb2tlLXdpZHRoPSI1Ii8+PGNpcmNsZSBjeD0iNDAwIiBjeT0iNDAwIiByPSIxMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmx1ZSIgc3Ryb2tlLXdpZHRoPSI1Ii8+PGNpcmNsZSBjeD0iNDAwIiBjeT0iNDAwIiByPSI1MCIgZmlsbD0iYmx1ZSIvPjxjaXJjbGUgY3g9IjQwMCIgY3k9IjQwMCIgcj0iMTAiIGZpbGw9Im9yYW5nZSIvPjwvc3ZnPg==",
+      "size": "800x800",
+      "firearmId": "FA_TEST",
+      "loadId": "LD_TEST"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "SESS_TEST_1",
+      "name": "Test Range Session 1 (1 inch POA)",
+      "timestamp": "2026-06-03T19:30:00.000Z",
+      "firearmId": "FA_TEST",
+      "loadId": "LD_TEST",
+      "targetDistance": 100,
+      "distanceUnits": "yards"
+    },
+    {
+      "id": "SESS_TEST_2",
+      "name": "Test Range Session 2 (1.5 inch POA)",
+      "timestamp": "2026-06-03T19:32:00.000Z",
+      "firearmId": "FA_TEST",
+      "loadId": "LD_TEST",
+      "targetDistance": 100,
+      "distanceUnits": "yards"
+    }
+  ],
+  "sessionTargets": [
+    {
+      "id": "ST_TEST_1",
+      "sessionId": "SESS_TEST_1",
+      "targetImageId": "TGT_TEST_1",
+      "scale": {
+        "p1": { "x": 100, "y": 100 },
+        "p2": { "x": 200, "y": 100 },
+        "distance": 2,
+        "units": "in",
+        "pixelsPerUnit": 50
+      },
+      "transform": { "scale": 1 }
+    },
+    {
+      "id": "ST_TEST_2",
+      "sessionId": "SESS_TEST_2",
+      "targetImageId": "TGT_TEST_2",
+      "scale": {
+        "p1": { "x": 100, "y": 100 },
+        "p2": { "x": 200, "y": 100 },
+        "distance": 2,
+        "units": "in",
+        "pixelsPerUnit": 50
+      },
+      "transform": { "scale": 1 }
+    }
+  ],
+  "groups": [
+    {
+      "id": "GRP_TEST_1_1",
+      "sessionId": "SESS_TEST_1",
+      "targetId": "ST_TEST_1",
+      "groupNum": 1,
+      "poa": { "x": 400, "y": 450 },
+      "color": "#3b82f6"
+    },
+    {
+      "id": "GRP_TEST_1_2",
+      "sessionId": "SESS_TEST_1",
+      "targetId": "ST_TEST_1",
+      "groupNum": 2,
+      "poa": { "x": 400, "y": 450 },
+      "color": "#22c55e"
+    },
+    {
+      "id": "GRP_TEST_1_3",
+      "sessionId": "SESS_TEST_1",
+      "targetId": "ST_TEST_1",
+      "groupNum": 3,
+      "poa": { "x": 400, "y": 450 },
+      "color": "#ef4444"
+    },
+    {
+      "id": "GRP_TEST_2_1",
+      "sessionId": "SESS_TEST_2",
+      "targetId": "ST_TEST_2",
+      "groupNum": 1,
+      "poa": { "x": 400, "y": 475 },
+      "color": "#3b82f6"
+    },
+    {
+      "id": "GRP_TEST_2_2",
+      "sessionId": "SESS_TEST_2",
+      "targetId": "ST_TEST_2",
+      "groupNum": 2,
+      "poa": { "x": 400, "y": 475 },
+      "color": "#22c55e"
+    },
+    {
+      "id": "GRP_TEST_2_3",
+      "sessionId": "SESS_TEST_2",
+      "targetId": "ST_TEST_2",
+      "groupNum": 3,
+      "poa": { "x": 400, "y": 475 },
+      "color": "#ef4444"
+    }
+  ],
+  "shots": [
+    {
+      "id": "SHOT_TEST_1_1_1",
+      "groupId": "GRP_TEST_1_1",
+      "sessionId": "SESS_TEST_1",
+      "targetId": "ST_TEST_1",
+      "shotNumber": 1,
+      "x": 0.1,
+      "y": 1.1,
+      "units": "in",
+      "velocity": 2750,
+      "px": 405,
+      "py": 395
+    },
+    {
+      "id": "SHOT_TEST_1_1_2",
+      "groupId": "GRP_TEST_1_1",
+      "sessionId": "SESS_TEST_1",
+      "targetId": "ST_TEST_1",
+      "shotNumber": 2,
+      "x": -0.2,
+      "y": 0.8,
+      "units": "in",
+      "velocity": 2740,
+      "px": 390,
+      "py": 410
+    },
+    {
+      "id": "SHOT_TEST_1_1_3",
+      "groupId": "GRP_TEST_1_1",
+      "sessionId": "SESS_TEST_1",
+      "targetId": "ST_TEST_1",
+      "shotNumber": 3,
+      "x": 0.3,
+      "y": 0.9,
+      "units": "in",
+      "velocity": 2760,
+      "px": 415,
+      "py": 405
+    },
+    {
+      "id": "SHOT_TEST_1_1_4",
+      "groupId": "GRP_TEST_1_1",
+      "sessionId": "SESS_TEST_1",
+      "targetId": "ST_TEST_1",
+      "shotNumber": 4,
+      "x": -0.1,
+      "y": 1.2,
+      "units": "in",
+      "velocity": 2745,
+      "px": 395,
+      "py": 390
+    },
+    {
+      "id": "SHOT_TEST_1_1_5",
+      "groupId": "GRP_TEST_1_1",
+      "sessionId": "SESS_TEST_1",
+      "targetId": "ST_TEST_1",
+      "shotNumber": 5,
+      "x": 0.0,
+      "y": 1.0,
+      "units": "in",
+      "velocity": 2755,
+      "px": 400,
+      "py": 400
+    },
+    {
+      "id": "SHOT_TEST_1_2_1",
+      "groupId": "GRP_TEST_1_2",
+      "sessionId": "SESS_TEST_1",
+      "targetId": "ST_TEST_1",
+      "shotNumber": 1,
+      "x": -0.3,
+      "y": 1.1,
+      "units": "in",
+      "velocity": 2760,
+      "px": 385,
+      "py": 395
+    },
+    {
+      "id": "SHOT_TEST_1_2_2",
+      "groupId": "GRP_TEST_1_2",
+      "sessionId": "SESS_TEST_1",
+      "targetId": "ST_TEST_1",
+      "shotNumber": 2,
+      "x": -0.6,
+      "y": 0.8,
+      "units": "in",
+      "velocity": 2750,
+      "px": 370,
+      "py": 410
+    },
+    {
+      "id": "SHOT_TEST_1_2_3",
+      "groupId": "GRP_TEST_1_2",
+      "sessionId": "SESS_TEST_1",
+      "targetId": "ST_TEST_1",
+      "shotNumber": 3,
+      "x": -0.1,
+      "y": 0.9,
+      "units": "in",
+      "velocity": 2770,
+      "px": 395,
+      "py": 405
+    },
+    {
+      "id": "SHOT_TEST_1_2_4",
+      "groupId": "GRP_TEST_1_2",
+      "sessionId": "SESS_TEST_1",
+      "targetId": "ST_TEST_1",
+      "shotNumber": 4,
+      "x": -0.5,
+      "y": 1.2,
+      "units": "in",
+      "velocity": 2755,
+      "px": 375,
+      "py": 390
+    },
+    {
+      "id": "SHOT_TEST_1_2_5",
+      "groupId": "GRP_TEST_1_2",
+      "sessionId": "SESS_TEST_1",
+      "targetId": "ST_TEST_1",
+      "shotNumber": 5,
+      "x": -0.4,
+      "y": 1.0,
+      "units": "in",
+      "velocity": 2765,
+      "px": 380,
+      "py": 400
+    },
+    {
+      "id": "SHOT_TEST_1_3_1",
+      "groupId": "GRP_TEST_1_3",
+      "sessionId": "SESS_TEST_1",
+      "targetId": "ST_TEST_1",
+      "shotNumber": 1,
+      "x": 0.5,
+      "y": 1.1,
+      "units": "in",
+      "velocity": 2740,
+      "px": 425,
+      "py": 395
+    },
+    {
+      "id": "SHOT_TEST_1_3_2",
+      "groupId": "GRP_TEST_1_3",
+      "sessionId": "SESS_TEST_1",
+      "targetId": "ST_TEST_1",
+      "shotNumber": 2,
+      "x": 0.2,
+      "y": 0.8,
+      "units": "in",
+      "velocity": 2730,
+      "px": 410,
+      "py": 410
+    },
+    {
+      "id": "SHOT_TEST_1_3_3",
+      "groupId": "GRP_TEST_1_3",
+      "sessionId": "SESS_TEST_1",
+      "targetId": "ST_TEST_1",
+      "shotNumber": 3,
+      "x": 0.7,
+      "y": 0.9,
+      "units": "in",
+      "velocity": 2750,
+      "px": 435,
+      "py": 405
+    },
+    {
+      "id": "SHOT_TEST_1_3_4",
+      "groupId": "GRP_TEST_1_3",
+      "sessionId": "SESS_TEST_1",
+      "targetId": "ST_TEST_1",
+      "shotNumber": 4,
+      "x": 0.3,
+      "y": 1.2,
+      "units": "in",
+      "velocity": 2735,
+      "px": 415,
+      "py": 390
+    },
+    {
+      "id": "SHOT_TEST_1_3_5",
+      "groupId": "GRP_TEST_1_3",
+      "sessionId": "SESS_TEST_1",
+      "targetId": "ST_TEST_1",
+      "shotNumber": 5,
+      "x": 0.4,
+      "y": 1.0,
+      "units": "in",
+      "velocity": 2745,
+      "px": 420,
+      "py": 400
+    },
+    {
+      "id": "SHOT_TEST_2_1_1",
+      "groupId": "GRP_TEST_2_1",
+      "sessionId": "SESS_TEST_2",
+      "targetId": "ST_TEST_2",
+      "shotNumber": 1,
+      "x": 0.1,
+      "y": 1.6,
+      "units": "in",
+      "velocity": 2780,
+      "px": 405,
+      "py": 395
+    },
+    {
+      "id": "SHOT_TEST_2_1_2",
+      "groupId": "GRP_TEST_2_1",
+      "sessionId": "SESS_TEST_2",
+      "targetId": "ST_TEST_2",
+      "shotNumber": 2,
+      "x": -0.2,
+      "y": 1.3,
+      "units": "in",
+      "velocity": 2770,
+      "px": 390,
+      "py": 410
+    },
+    {
+      "id": "SHOT_TEST_2_1_3",
+      "groupId": "GRP_TEST_2_1",
+      "sessionId": "SESS_TEST_2",
+      "targetId": "ST_TEST_2",
+      "shotNumber": 3,
+      "x": 0.3,
+      "y": 1.4,
+      "units": "in",
+      "velocity": 2790,
+      "px": 415,
+      "py": 405
+    },
+    {
+      "id": "SHOT_TEST_2_1_4",
+      "groupId": "GRP_TEST_2_1",
+      "sessionId": "SESS_TEST_2",
+      "targetId": "ST_TEST_2",
+      "shotNumber": 4,
+      "x": -0.1,
+      "y": 1.7,
+      "units": "in",
+      "velocity": 2775,
+      "px": 395,
+      "py": 390
+    },
+    {
+      "id": "SHOT_TEST_2_1_5",
+      "groupId": "GRP_TEST_2_1",
+      "sessionId": "SESS_TEST_2",
+      "targetId": "ST_TEST_2",
+      "shotNumber": 5,
+      "x": 0.0,
+      "y": 1.5,
+      "units": "in",
+      "velocity": 2785,
+      "px": 400,
+      "py": 400
+    },
+    {
+      "id": "SHOT_TEST_2_2_1",
+      "groupId": "GRP_TEST_2_2",
+      "sessionId": "SESS_TEST_2",
+      "targetId": "ST_TEST_2",
+      "shotNumber": 1,
+      "x": 0.1,
+      "y": 2.0,
+      "units": "in",
+      "velocity": 2790,
+      "px": 405,
+      "py": 375
+    },
+    {
+      "id": "SHOT_TEST_2_2_2",
+      "groupId": "GRP_TEST_2_2",
+      "sessionId": "SESS_TEST_2",
+      "targetId": "ST_TEST_2",
+      "shotNumber": 2,
+      "x": -0.2,
+      "y": 1.7,
+      "units": "in",
+      "velocity": 2780,
+      "px": 390,
+      "py": 390
+    },
+    {
+      "id": "SHOT_TEST_2_2_3",
+      "groupId": "GRP_TEST_2_2",
+      "sessionId": "SESS_TEST_2",
+      "targetId": "ST_TEST_2",
+      "shotNumber": 3,
+      "x": 0.3,
+      "y": 1.8,
+      "units": "in",
+      "velocity": 2800,
+      "px": 415,
+      "py": 385
+    },
+    {
+      "id": "SHOT_TEST_2_2_4",
+      "groupId": "GRP_TEST_2_2",
+      "sessionId": "SESS_TEST_2",
+      "targetId": "ST_TEST_2",
+      "shotNumber": 4,
+      "x": -0.1,
+      "y": 2.1,
+      "units": "in",
+      "velocity": 2785,
+      "px": 395,
+      "py": 370
+    },
+    {
+      "id": "SHOT_TEST_2_2_5",
+      "groupId": "GRP_TEST_2_2",
+      "sessionId": "SESS_TEST_2",
+      "targetId": "ST_TEST_2",
+      "shotNumber": 5,
+      "x": 0.0,
+      "y": 1.9,
+      "units": "in",
+      "velocity": 2795,
+      "px": 400,
+      "py": 380
+    },
+    {
+      "id": "SHOT_TEST_2_3_1",
+      "groupId": "GRP_TEST_2_3",
+      "sessionId": "SESS_TEST_2",
+      "targetId": "ST_TEST_2",
+      "shotNumber": 1,
+      "x": 0.1,
+      "y": 1.2,
+      "units": "in",
+      "velocity": 2770,
+      "px": 405,
+      "py": 415
+    },
+    {
+      "id": "SHOT_TEST_2_3_2",
+      "groupId": "GRP_TEST_2_3",
+      "sessionId": "SESS_TEST_2",
+      "targetId": "ST_TEST_2",
+      "shotNumber": 2,
+      "x": -0.2,
+      "y": 0.9,
+      "units": "in",
+      "velocity": 2760,
+      "px": 390,
+      "py": 430
+    },
+    {
+      "id": "SHOT_TEST_2_3_3",
+      "groupId": "GRP_TEST_2_3",
+      "sessionId": "SESS_TEST_2",
+      "targetId": "ST_TEST_2",
+      "shotNumber": 3,
+      "x": 0.3,
+      "y": 1.0,
+      "units": "in",
+      "velocity": 2780,
+      "px": 415,
+      "py": 425
+    },
+    {
+      "id": "SHOT_TEST_2_3_4",
+      "groupId": "GRP_TEST_2_3",
+      "sessionId": "SESS_TEST_2",
+      "targetId": "ST_TEST_2",
+      "shotNumber": 4,
+      "x": -0.1,
+      "y": 1.3,
+      "units": "in",
+      "velocity": 2765,
+      "px": 395,
+      "py": 410
+    },
+    {
+      "id": "SHOT_TEST_2_3_5",
+      "groupId": "GRP_TEST_2_3",
+      "sessionId": "SESS_TEST_2",
+      "targetId": "ST_TEST_2",
+      "shotNumber": 5,
+      "x": 0.0,
+      "y": 1.1,
+      "units": "in",
+      "velocity": 2775,
+      "px": 400,
+      "py": 420
+    }
   ]
 }

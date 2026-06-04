@@ -205,9 +205,9 @@ The scale tells the app how many pixels equal one inch on your specific image.
 
 ---
 
-### Heureticoi (Monte Carlo Simulator)
+### Heureticoi (Ballistics & Simulation Suite)
 
-Heureticoi is the app's internal name for its hit-probability simulator. "Heureticoi" refers to heuristic ballistic modeling — using empirical data to make forward-looking performance predictions. It uses a physics-based engine seeded with your real measured dispersion data to predict field performance at range.
+Heureticoi is the app's internal scientific suite. "Heureticoi" refers to heuristic ballistic modeling — using empirical data to make forward-looking performance predictions and thermodynamic simulation sweeps. The suite contains four tabs: **Stability**, **Monte Carlo**, **Ignition**, and **DOPE**.
 
 #### Ballistic Engine Capabilities
 
@@ -216,21 +216,66 @@ Heureticoi is the app's internal name for its hit-probability simulator. "Heuret
 - **Altitude-dependent gravity** — inverse-square law correction
 - **Humidity-corrected speed of sound**
 - **Miller stability formula** — Sg from twist rate, bullet dimensions, and velocity
+- **Propellant thermodynamic solver** — internal ballistics solver modeling combustion curves
 - **Spin drift** — predicted from Sg and range
 - **Aerodynamic jump** — crosswind-induced vertical deflection
 
-#### Using the Simulator
+---
 
+#### 1. Stability Analysis (Gyroscopic Stability)
+
+This calculator implements the **Refined Miller Twist Rule** to compute the gyroscopic stability factor ($S_g$) of a bullet. It corrects for muzzle velocity and local atmospheric density (based on altitude, temperature, and station pressure).
+
+**Key Features:**
+- **Plastic Tip Compensation:** If a bullet has a plastic tip, check **Bullet has Plastic Tip** and enter the tip length. The calculator adjusts bullet core length to model the gyroscopic stability of the metal body.
+- **Stability Thresholds:**
+  - **Stable ($S_g \ge 1.5$):** Optimum stability. Projectiles maintain drag efficiency and dynamic stability.
+  - **Marginally Stable ($1.0 \le S_g < 1.5$):** Bullet is stable but experiences yaw, which reduces the effective BC by up to 10–15% and increases group dispersion.
+  - **Unstable ($S_g < 1.0$):** Bullet lacks spin to counteract aerodynamic forces and will tumble, causing keyholing.
+
+---
+
+#### 2. Monte Carlo Simulation (Hit Probability)
+
+Uses a physics-based external ballistics engine seeded with your real measured session dispersion (Mean Radius) to predict field performance.
+
+**Using the Simulator:**
 1. Select a session — imports your real-world MR as the dispersion seed
 2. Configure firearm — barrel length, twist rate, and sight height pull from your database
 3. Configure load — BC, bullet weight, and velocity pull from your database
 4. Set environmental conditions — temperature, altitude, wind
-5. Set target — shape and size
+5. Set target — shape (IPSC, Circle, Square) and size
 6. Run — generates P(Hit) vs Range curves
 
 > **Interpreting results:** P(Hit) = 0.90 at 500 yards means your rifle/load/shooter system is expected to hit a target of that size 9 times out of 10 at that distance, accounting for measured dispersion and atmospheric ballistics.
 
 ---
+
+#### 3. Propellant Ignition Simulator (Internal Ballistics)
+
+This tab simulates thermodynamic propellant combustion and bullet acceleration down the barrel using a physics solver. It outputs pressure-time curves (P-V curves) and burned percentage along the barrel.
+
+**Inputs & Features:**
+- **Auto-Fill from database:** Pulls case capacity ($H_2O$ grains), bullet diameter, weight, length, powder burn rates ($Ba$), heat of explosion, grain geometry, and solid density from loads and components.
+- **Diagnostics & Safety Audits:**
+  - **Chamber Pressure:** Compares peak simulated pressure against the SAAMI maximum limit. Triggers critical warnings if overpressure is predicted.
+  - **Loading Density (Case Fill):** Flags low-fill hazards ($< 80\%$) which can cause erratic ignition/secondary detonation, and compressed loads ($> 100\%$, with critical alerts for excessive compression $> 105\%$).
+  - **Neck Tension (Seating Depth):** Ensures bullet seating depth is at least one bullet diameter (1-caliber rule) for optimal neck tension and concentricity.
+  - **OAL Boundaries:** Compares your COAL against the SAAMI maximum cartridge OAL to ensure magazine compatibility and chamber clearance.
+- **Diagnostic Reports:** Generates a complete structured report with thermodynamic and safety recommendations that can be copied/downloaded.
+
+---
+
+#### 4. Ballistic DOPE Card & Point Blank Zero (MPBR)
+
+Generates pocket-sized ballistic reference cards using the 4th-Order Runge-Kutta exterior ballistics engine.
+
+**Key Features:**
+- **MIL & MOA Support:** Supports turret click values of 0.1, 0.2, or 0.05 MIL, and 1/4, 1/8, 1/2, or 1 MOA.
+- **Range Increments:** Choose regular distance steps (e.g., every 50 or 100 yards/meters) or comma-separated specific stops (e.g., custom target distances: `123, 400, 527, 750`).
+- **Maximum Point Blank Range (MPBR):** Activates a solver that finds the optimal zero range (Point Blank Zero) keeping bullet impacts within a defined target vital zone (e.g., 8 inches) without any elevation adjustments, maximizing the range at which you can aim dead-center.
+- **Visual Styles:** Multiple themes (Pocket Card size, Tactical Dark, Classic White, Hi-Viz Yellow, Military Green) optimized for direct high-resolution PNG image download.
+
 
 ### Components
 
