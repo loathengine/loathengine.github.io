@@ -2192,10 +2192,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.516,
-        "g1FF": 0.49,
-        "g7BC": 0.258,
-        "g7FF": 0.98,
+        "g1BC": 0.507,
+        "g1FF": null,
+        "g7BC": 0.26,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_308_XBM7",
@@ -2203,13 +2203,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "VLD",
       "physis": {
-        "bearingSurfaceMm": 0.78232,
-        "boatTailLengthMm": 3.9115999999999995,
+        "bearingSurfaceMm": 8.382,
+        "boatTailLengthMm": 4.3434,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 35.98672,
-        "overallLengthMm": 36.83,
+        "ogiveLengthMm": 19.049999999999997,
+        "overallLengthMm": 31.775399999999994,
         "tipLengthMm": null,
-        "weightGrams": 10.88621688
+        "weightGrams": 10.886216880000001
       },
       "stability": {
         "ix": null,
@@ -3648,8 +3648,8 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.117,
-        "g1FF": 1.032,
+        "g1BC": 0.152,
+        "g1FF": null,
         "g7BC": null,
         "g7FF": null,
         "preferredModel": "G1"
@@ -3659,13 +3659,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "FB Varmint",
       "physis": {
-        "bearingSurfaceMm": 4.521199999999999,
+        "bearingSurfaceMm": 6.5786,
         "boatTailLengthMm": 0.0,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 9.8298,
+        "ogiveLengthMm": 7.772399999999999,
         "overallLengthMm": 14.350999999999997,
         "tipLengthMm": null,
-        "weightGrams": 1.6199727499999999
+        "weightGrams": 1.61997275
       },
       "stability": {
         "ix": null,
@@ -3674,8 +3674,8 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.18,
-        "g1FF": 0.667,
+        "g1BC": 0.179,
+        "g1FF": null,
         "g7BC": null,
         "g7FF": null,
         "preferredModel": "G1"
@@ -3685,10 +3685,10 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "FB Varmint",
       "physis": {
-        "bearingSurfaceMm": 3.4798,
+        "bearingSurfaceMm": 5.460999999999999,
         "boatTailLengthMm": 0.0,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 11.6586,
+        "ogiveLengthMm": 9.6774,
         "overallLengthMm": 15.138399999999999,
         "tipLengthMm": null,
         "weightGrams": 2.26796185
@@ -3700,10 +3700,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.225,
-        "g1FF": 0.61,
-        "g7BC": 0.115,
-        "g7FF": 1.194,
+        "g1BC": 0.227,
+        "g1FF": null,
+        "g7BC": 0.116,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_204_M9K3",
@@ -3711,13 +3711,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "BT Varmint",
       "physis": {
-        "bearingSurfaceMm": 5.6133999999999995,
-        "boatTailLengthMm": 0.0,
+        "bearingSurfaceMm": 4.0386,
+        "boatTailLengthMm": 2.794,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 11.6586,
+        "ogiveLengthMm": 10.4394,
         "overallLengthMm": 17.272000000000002,
         "tipLengthMm": null,
-        "weightGrams": 2.5919563999999995
+        "weightGrams": 2.5919564
       },
       "stability": {
         "ix": null,
@@ -3752,8 +3752,8 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.098,
-        "g1FF": 1.162,
+        "g1BC": 0.151,
+        "g1FF": null,
         "g7BC": null,
         "g7FF": null,
         "preferredModel": "G1"
@@ -3763,13 +3763,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "FB Varmint",
       "physis": {
-        "bearingSurfaceMm": 2.667,
+        "bearingSurfaceMm": 4.9276,
         "boatTailLengthMm": 0.0,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 12.801599999999999,
+        "ogiveLengthMm": 10.540999999999999,
         "overallLengthMm": 15.468599999999999,
         "tipLengthMm": null,
-        "weightGrams": 2.5919563999999995
+        "weightGrams": 2.5919564
       },
       "stability": {
         "ix": null,
@@ -3804,24 +3804,24 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.285,
-        "g1FF": 0.519,
-        "g7BC": 0.143,
-        "g7FF": 1.039,
-        "preferredModel": "G7"
+        "g1BC": 0.235,
+        "g1FF": null,
+        "g7BC": null,
+        "g7FF": null,
+        "preferredModel": "G1"
       },
       "diameterId": "DIA_224_L5X8",
       "id": "BUL_BERGER_224_52_FBTGT",
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "FB Target",
       "physis": {
-        "bearingSurfaceMm": 5.334,
+        "bearingSurfaceMm": 6.0451999999999995,
         "boatTailLengthMm": 0.0,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 12.801599999999999,
+        "ogiveLengthMm": 12.090399999999999,
         "overallLengthMm": 18.135599999999997,
         "tipLengthMm": null,
-        "weightGrams": 3.3695433199999996
+        "weightGrams": 3.36954332
       },
       "stability": {
         "ix": null,
@@ -3830,8 +3830,8 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.127,
-        "g1FF": 1.162,
+        "g1BC": 0.201,
+        "g1FF": null,
         "g7BC": null,
         "g7FF": null,
         "preferredModel": "G1"
@@ -3841,13 +3841,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "FB Varmint",
       "physis": {
-        "bearingSurfaceMm": 5.4102,
+        "bearingSurfaceMm": 7.1374,
         "boatTailLengthMm": 0.0,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 12.801599999999999,
+        "ogiveLengthMm": 11.074399999999999,
         "overallLengthMm": 18.211799999999997,
         "tipLengthMm": null,
-        "weightGrams": 3.3695433199999996
+        "weightGrams": 3.36954332
       },
       "stability": {
         "ix": null,
@@ -3856,24 +3856,24 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.302,
-        "g1FF": 0.519,
-        "g7BC": 0.151,
-        "g7FF": 1.039,
-        "preferredModel": "G7"
+        "g1BC": 0.254,
+        "g1FF": null,
+        "g7BC": null,
+        "g7FF": null,
+        "preferredModel": "G1"
       },
       "diameterId": "DIA_224_L5X8",
       "id": "BUL_BERGER_224_55_FBTGT",
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "FB Target",
       "physis": {
-        "bearingSurfaceMm": 6.223,
+        "bearingSurfaceMm": 6.095999999999999,
         "boatTailLengthMm": 0.0,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 12.801599999999999,
+        "ogiveLengthMm": 12.9286,
         "overallLengthMm": 19.0246,
         "tipLengthMm": null,
-        "weightGrams": 3.56394005
+        "weightGrams": 3.5639400500000002
       },
       "stability": {
         "ix": null,
@@ -3882,8 +3882,8 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.135,
-        "g1FF": 1.162,
+        "g1BC": 0.209,
+        "g1FF": null,
         "g7BC": null,
         "g7FF": null,
         "preferredModel": "G1"
@@ -3893,13 +3893,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "FB Varmint",
       "physis": {
-        "bearingSurfaceMm": 6.324599999999999,
+        "bearingSurfaceMm": 7.518399999999999,
         "boatTailLengthMm": 0.0,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 12.801599999999999,
+        "ogiveLengthMm": 11.6078,
         "overallLengthMm": 19.1262,
         "tipLengthMm": null,
-        "weightGrams": 3.56394005
+        "weightGrams": 3.5639400500000002
       },
       "stability": {
         "ix": null,
@@ -3908,21 +3908,21 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.31,
-        "g1FF": 0.551,
-        "g7BC": 0.155,
-        "g7FF": 1.103,
-        "preferredModel": "G7"
+        "g1BC": 0.271,
+        "g1FF": null,
+        "g7BC": null,
+        "g7FF": null,
+        "preferredModel": "G1"
       },
       "diameterId": "DIA_224_L5X8",
       "id": "BUL_BERGER_224_60_FBVAR",
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "FB Varmint",
       "physis": {
-        "bearingSurfaceMm": 2.0827999999999998,
-        "boatTailLengthMm": 1.4223999999999999,
+        "bearingSurfaceMm": 7.9756,
+        "boatTailLengthMm": 0.0,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 17.0688,
+        "ogiveLengthMm": 12.5984,
         "overallLengthMm": 20.574,
         "tipLengthMm": null,
         "weightGrams": 3.8879346
@@ -3934,21 +3934,21 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.347,
-        "g1FF": 0.525,
-        "g7BC": 0.174,
-        "g7FF": 1.05,
-        "preferredModel": "G7"
+        "g1BC": 0.287,
+        "g1FF": null,
+        "g7BC": null,
+        "g7FF": null,
+        "preferredModel": "G1"
       },
       "diameterId": "DIA_224_L5X8",
       "id": "BUL_BERGER_224_64_FBVAR",
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "FB Varmint",
       "physis": {
-        "bearingSurfaceMm": 0.5689599999999999,
-        "boatTailLengthMm": 2.8447999999999998,
+        "bearingSurfaceMm": 7.9502,
+        "boatTailLengthMm": 0.0,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 26.172159999999998,
+        "ogiveLengthMm": 12.8524,
         "overallLengthMm": 20.802599999999998,
         "tipLengthMm": null,
         "weightGrams": 4.14713024
@@ -3960,10 +3960,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.407,
-        "g1FF": 0.49,
-        "g7BC": 0.203,
-        "g7FF": 0.98,
+        "g1BC": 0.374,
+        "g1FF": null,
+        "g7BC": 0.191,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_224_L5X8",
@@ -3971,10 +3971,10 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "VLD Target",
       "physis": {
-        "bearingSurfaceMm": 0.5689599999999999,
-        "boatTailLengthMm": 2.8447999999999998,
+        "bearingSurfaceMm": 7.162799999999999,
+        "boatTailLengthMm": 4.8768,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 26.172159999999998,
+        "ogiveLengthMm": 12.3698,
         "overallLengthMm": 24.409399999999998,
         "tipLengthMm": null,
         "weightGrams": 4.5359237
@@ -3986,10 +3986,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.424,
-        "g1FF": 0.49,
-        "g7BC": 0.212,
-        "g7FF": 0.98,
+        "g1BC": 0.348,
+        "g1FF": null,
+        "g7BC": 0.178,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_224_L5X8",
@@ -3997,10 +3997,10 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "BT Target",
       "physis": {
-        "bearingSurfaceMm": 0.5689599999999999,
-        "boatTailLengthMm": 2.8447999999999998,
+        "bearingSurfaceMm": 7.315199999999999,
+        "boatTailLengthMm": 3.556,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 26.172159999999998,
+        "ogiveLengthMm": 13.589,
         "overallLengthMm": 24.460199999999997,
         "tipLengthMm": null,
         "weightGrams": 4.73032043
@@ -4012,10 +4012,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.447,
-        "g1FF": 0.49,
-        "g7BC": 0.224,
-        "g7FF": 0.98,
+        "g1BC": 0.374,
+        "g1FF": null,
+        "g7BC": 0.192,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_224_L5X8",
@@ -4023,13 +4023,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "OTM Tactical",
       "physis": {
-        "bearingSurfaceMm": 0.5689599999999999,
-        "boatTailLengthMm": 2.8447999999999998,
+        "bearingSurfaceMm": 9.398,
+        "boatTailLengthMm": 3.3782,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 26.172159999999998,
+        "ogiveLengthMm": 13.030199999999999,
         "overallLengthMm": 25.780999999999995,
         "tipLengthMm": null,
-        "weightGrams": 4.98951607
+        "weightGrams": 4.9895160700000005
       },
       "stability": {
         "ix": null,
@@ -4038,10 +4038,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.453,
-        "g1FF": 0.506,
+        "g1BC": 0.441,
+        "g1FF": null,
         "g7BC": 0.226,
-        "g7FF": 1.013,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_224_L5X8",
@@ -4055,7 +4055,7 @@
         "ogiveLengthMm": 14.960599999999998,
         "overallLengthMm": 27.711399999999998,
         "tipLengthMm": null,
-        "weightGrams": 5.216312254999999
+        "weightGrams": 5.216312255
       },
       "stability": {
         "ix": null,
@@ -4090,10 +4090,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.523,
-        "g1FF": 0.49,
-        "g7BC": 0.261,
-        "g7FF": 0.98,
+        "g1BC": 0.534,
+        "g1FF": null,
+        "g7BC": 0.274,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_224_L5X8",
@@ -4101,13 +4101,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "VLD Target",
       "physis": {
-        "bearingSurfaceMm": 2.83464,
-        "boatTailLengthMm": 2.8447999999999998,
+        "bearingSurfaceMm": 9.296399999999998,
+        "boatTailLengthMm": 4.9784,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 26.172159999999998,
+        "ogiveLengthMm": 17.5768,
         "overallLengthMm": 31.851599999999998,
         "tipLengthMm": null,
-        "weightGrams": 5.831901899999999
+        "weightGrams": 5.8319019
       },
       "stability": {
         "ix": null,
@@ -4116,10 +4116,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.518,
-        "g1FF": 0.49,
-        "g7BC": 0.259,
-        "g7FF": 0.98,
+        "g1BC": 0.494,
+        "g1FF": null,
+        "g7BC": 0.253,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_243_B7V4",
@@ -4127,13 +4127,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "BT Target",
       "physis": {
-        "bearingSurfaceMm": 0.6172199999999999,
-        "boatTailLengthMm": 3.0860999999999996,
+        "bearingSurfaceMm": 8.6868,
+        "boatTailLengthMm": 5.4864,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 28.392119999999995,
+        "ogiveLengthMm": 16.0274,
         "overallLengthMm": 30.2006,
         "tipLengthMm": null,
-        "weightGrams": 6.8038855499999995
+        "weightGrams": 6.80388555
       },
       "stability": {
         "ix": null,
@@ -4142,10 +4142,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.518,
-        "g1FF": 0.49,
-        "g7BC": 0.259,
-        "g7FF": 0.98,
+        "g1BC": 0.545,
+        "g1FF": null,
+        "g7BC": 0.278,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_243_B7V4",
@@ -4153,13 +4153,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "VLD Hunting",
       "physis": {
-        "bearingSurfaceMm": 0.6172199999999999,
-        "boatTailLengthMm": 3.0860999999999996,
+        "bearingSurfaceMm": 8.509,
+        "boatTailLengthMm": 4.826,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 28.392119999999995,
+        "ogiveLengthMm": 17.7292,
         "overallLengthMm": 31.0642,
         "tipLengthMm": null,
-        "weightGrams": 6.8038855499999995
+        "weightGrams": 6.80388555
       },
       "stability": {
         "ix": null,
@@ -4168,10 +4168,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.518,
-        "g1FF": 0.49,
-        "g7BC": 0.259,
-        "g7FF": 0.98,
+        "g1BC": 0.517,
+        "g1FF": null,
+        "g7BC": 0.265,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_243_B7V4",
@@ -4179,13 +4179,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "VLD Target",
       "physis": {
-        "bearingSurfaceMm": 0.6172199999999999,
-        "boatTailLengthMm": 3.0860999999999996,
+        "bearingSurfaceMm": 8.2804,
+        "boatTailLengthMm": 5.4864,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 28.392119999999995,
+        "ogiveLengthMm": 17.272000000000002,
         "overallLengthMm": 31.0388,
         "tipLengthMm": null,
-        "weightGrams": 6.8038855499999995
+        "weightGrams": 6.80388555
       },
       "stability": {
         "ix": null,
@@ -4194,10 +4194,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.533,
-        "g1FF": 0.49,
-        "g7BC": 0.267,
-        "g7FF": 0.98,
+        "g1BC": 0.522,
+        "g1FF": null,
+        "g7BC": 0.268,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_243_B7V4",
@@ -4205,10 +4205,10 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "BT Target",
       "physis": {
-        "bearingSurfaceMm": 0.6172199999999999,
-        "boatTailLengthMm": 3.0860999999999996,
+        "bearingSurfaceMm": 8.737599999999999,
+        "boatTailLengthMm": 5.5118,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 28.392119999999995,
+        "ogiveLengthMm": 16.662399999999998,
         "overallLengthMm": 30.9118,
         "tipLengthMm": null,
         "weightGrams": 6.99828228
@@ -4220,10 +4220,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.498,
-        "g1FF": 0.525,
-        "g7BC": 0.249,
-        "g7FF": 1.05,
+        "g1BC": 0.559,
+        "g1FF": null,
+        "g7BC": 0.287,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_243_B7V4",
@@ -4231,10 +4231,10 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "Elite Hunter",
       "physis": {
-        "bearingSurfaceMm": 0.6172199999999999,
-        "boatTailLengthMm": 3.0860999999999996,
+        "bearingSurfaceMm": 10.363199999999999,
+        "boatTailLengthMm": 4.699,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 28.392119999999995,
+        "ogiveLengthMm": 16.5354,
         "overallLengthMm": 32.004,
         "tipLengthMm": null,
         "weightGrams": 6.99828228
@@ -4324,10 +4324,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.303,
-        "g1FF": 0.519,
-        "g7BC": 0.151,
-        "g7FF": 1.039,
+        "g1BC": 0.281,
+        "g1FF": null,
+        "g7BC": 0.144,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_243_B7V4",
@@ -4335,13 +4335,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "BT Target",
       "physis": {
-        "bearingSurfaceMm": 7.2720199999999995,
-        "boatTailLengthMm": 0.0,
+        "bearingSurfaceMm": 5.1308,
+        "boatTailLengthMm": 2.921,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 13.886179999999998,
+        "ogiveLengthMm": 13.106399999999999,
         "overallLengthMm": 21.158199999999997,
         "tipLengthMm": null,
-        "weightGrams": 4.21192915
+        "weightGrams": 4.2119291500000005
       },
       "stability": {
         "ix": null,
@@ -4350,21 +4350,21 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.319,
-        "g1FF": 0.516,
-        "g7BC": 0.159,
-        "g7FF": 1.033,
-        "preferredModel": "G7"
+        "g1BC": 0.255,
+        "g1FF": null,
+        "g7BC": null,
+        "g7FF": null,
+        "preferredModel": "G1"
       },
       "diameterId": "DIA_243_B7V4",
       "id": "BUL_BERGER_243_68_FBTGT",
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "FB Target",
       "physis": {
-        "bearingSurfaceMm": 1.0998199999999998,
-        "boatTailLengthMm": 1.54178,
+        "bearingSurfaceMm": 7.670799999999999,
+        "boatTailLengthMm": 0.0,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 18.516599999999997,
+        "ogiveLengthMm": 13.4874,
         "overallLengthMm": 21.158199999999997,
         "tipLengthMm": null,
         "weightGrams": 4.40632588
@@ -4428,24 +4428,24 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.369,
-        "g1FF": 0.525,
-        "g7BC": 0.184,
-        "g7FF": 1.05,
-        "preferredModel": "G7"
+        "g1BC": 0.3,
+        "g1FF": null,
+        "g7BC": null,
+        "g7FF": null,
+        "preferredModel": "G1"
       },
       "diameterId": "DIA_243_B7V4",
       "id": "BUL_BERGER_243_80_FBVAR",
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "FB Varmint",
       "physis": {
-        "bearingSurfaceMm": 0.6172199999999999,
-        "boatTailLengthMm": 3.0860999999999996,
+        "bearingSurfaceMm": 9.448799999999999,
+        "boatTailLengthMm": 0.0,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 28.392119999999995,
+        "ogiveLengthMm": 13.7414,
         "overallLengthMm": 23.1902,
         "tipLengthMm": null,
-        "weightGrams": 5.183912799999999
+        "weightGrams": 5.1839128
       },
       "stability": {
         "ix": null,
@@ -4454,10 +4454,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.43,
-        "g1FF": 0.49,
-        "g7BC": 0.215,
-        "g7FF": 0.98,
+        "g1BC": 0.427,
+        "g1FF": null,
+        "g7BC": 0.219,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_243_B7V4",
@@ -4465,10 +4465,10 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "VLD Hunting",
       "physis": {
-        "bearingSurfaceMm": 0.6172199999999999,
-        "boatTailLengthMm": 3.0860999999999996,
+        "bearingSurfaceMm": 7.1374,
+        "boatTailLengthMm": 3.9623999999999997,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 28.392119999999995,
+        "ogiveLengthMm": 15.366999999999999,
         "overallLengthMm": 26.4668,
         "tipLengthMm": null,
         "weightGrams": 5.63750517
@@ -4480,24 +4480,24 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.406,
-        "g1FF": 0.525,
-        "g7BC": 0.203,
-        "g7FF": 1.05,
-        "preferredModel": "G7"
+        "g1BC": 0.38,
+        "g1FF": null,
+        "g7BC": null,
+        "g7FF": null,
+        "preferredModel": "G1"
       },
       "diameterId": "DIA_243_B7V4",
       "id": "BUL_BERGER_243_88_FBVAR",
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "FB Varmint",
       "physis": {
-        "bearingSurfaceMm": 0.6172199999999999,
-        "boatTailLengthMm": 3.0860999999999996,
+        "bearingSurfaceMm": 9.8298,
+        "boatTailLengthMm": 0.0,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 28.392119999999995,
-        "overallLengthMm": 24.13,
+        "ogiveLengthMm": 17.0688,
+        "overallLengthMm": 26.8986,
         "tipLengthMm": null,
-        "weightGrams": 5.702304079999999
+        "weightGrams": 5.70230408
       },
       "stability": {
         "ix": null,
@@ -4506,10 +4506,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.444,
-        "g1FF": 0.49,
-        "g7BC": 0.222,
-        "g7FF": 0.98,
+        "g1BC": 0.409,
+        "g1FF": null,
+        "g7BC": 0.21,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_243_B7V4",
@@ -4517,13 +4517,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "BT Target",
       "physis": {
-        "bearingSurfaceMm": 0.6172199999999999,
-        "boatTailLengthMm": 3.0860999999999996,
+        "bearingSurfaceMm": 7.467599999999999,
+        "boatTailLengthMm": 2.8447999999999998,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 28.392119999999995,
+        "ogiveLengthMm": 16.357599999999998,
         "overallLengthMm": 26.669999999999998,
         "tipLengthMm": null,
-        "weightGrams": 5.831901899999999
+        "weightGrams": 5.8319019
       },
       "stability": {
         "ix": null,
@@ -4532,10 +4532,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.438,
-        "g1FF": 0.525,
-        "g7BC": 0.219,
-        "g7FF": 1.05,
+        "g1BC": 0.434,
+        "g1FF": null,
+        "g7BC": 0.223,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_243_B7V4",
@@ -4543,13 +4543,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "Classic Hunter",
       "physis": {
-        "bearingSurfaceMm": 0.6172199999999999,
-        "boatTailLengthMm": 3.0860999999999996,
+        "bearingSurfaceMm": 9.143999999999998,
+        "boatTailLengthMm": 4.191,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 28.392119999999995,
+        "ogiveLengthMm": 13.8176,
         "overallLengthMm": 27.152599999999996,
         "tipLengthMm": null,
-        "weightGrams": 6.155896449999999
+        "weightGrams": 6.15589645
       },
       "stability": {
         "ix": null,
@@ -4558,10 +4558,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.469,
-        "g1FF": 0.49,
-        "g7BC": 0.235,
-        "g7FF": 0.98,
+        "g1BC": 0.467,
+        "g1FF": null,
+        "g7BC": 0.239,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_243_B7V4",
@@ -4569,13 +4569,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "VLD Hunting",
       "physis": {
-        "bearingSurfaceMm": 0.6172199999999999,
-        "boatTailLengthMm": 3.0860999999999996,
+        "bearingSurfaceMm": 6.2992,
+        "boatTailLengthMm": 5.334,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 28.392119999999995,
+        "ogiveLengthMm": 17.0688,
         "overallLengthMm": 28.701999999999995,
         "tipLengthMm": null,
-        "weightGrams": 6.155896449999999
+        "weightGrams": 6.15589645
       },
       "stability": {
         "ix": null,
@@ -4584,10 +4584,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.469,
-        "g1FF": 0.49,
-        "g7BC": 0.235,
-        "g7FF": 0.98,
+        "g1BC": 0.467,
+        "g1FF": null,
+        "g7BC": 0.24,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_243_B7V4",
@@ -4595,13 +4595,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "VLD Target",
       "physis": {
-        "bearingSurfaceMm": 0.6172199999999999,
-        "boatTailLengthMm": 3.0860999999999996,
+        "bearingSurfaceMm": 6.5786,
+        "boatTailLengthMm": 5.2578,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 28.392119999999995,
+        "ogiveLengthMm": 16.8656,
         "overallLengthMm": 28.701999999999995,
         "tipLengthMm": null,
-        "weightGrams": 6.155896449999999
+        "weightGrams": 6.15589645
       },
       "stability": {
         "ix": null,
@@ -4610,10 +4610,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.508,
-        "g1FF": 0.49,
-        "g7BC": 0.254,
-        "g7FF": 0.98,
+        "g1BC": 0.483,
+        "g1FF": null,
+        "g7BC": 0.247,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_257_N2M1",
@@ -4621,13 +4621,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "VLD Hunting",
       "physis": {
-        "bearingSurfaceMm": 0.65278,
-        "boatTailLengthMm": 3.2639,
+        "bearingSurfaceMm": 9.067799999999998,
+        "boatTailLengthMm": 3.8099999999999996,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 30.027879999999996,
+        "ogiveLengthMm": 17.2974,
         "overallLengthMm": 30.175199999999997,
         "tipLengthMm": null,
-        "weightGrams": 7.451874649999999
+        "weightGrams": 7.45187465
       },
       "stability": {
         "ix": null,
@@ -4740,10 +4740,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.502,
-        "g1FF": 0.49,
-        "g7BC": 0.251,
-        "g7FF": 0.98,
+        "g1BC": 0.468,
+        "g1FF": null,
+        "g7BC": 0.24,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_264_H8J4",
@@ -4751,11 +4751,11 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "BT Target",
       "physis": {
-        "bearingSurfaceMm": 0.6705599999999999,
-        "boatTailLengthMm": 3.3528,
+        "bearingSurfaceMm": 9.9822,
+        "boatTailLengthMm": 3.5052000000000003,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 30.845759999999995,
-        "overallLengthMm": 30.479999999999997,
+        "ogiveLengthMm": 17.475199999999997,
+        "overallLengthMm": 30.962600000000002,
         "tipLengthMm": null,
         "weightGrams": 7.7758692
       },
@@ -4766,10 +4766,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.544,
-        "g1FF": 0.49,
-        "g7BC": 0.272,
-        "g7FF": 0.98,
+        "g1BC": 0.562,
+        "g1FF": null,
+        "g7BC": 0.288,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_264_H8J4",
@@ -4777,13 +4777,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "VLD Hunting",
       "physis": {
-        "bearingSurfaceMm": 0.6705599999999999,
-        "boatTailLengthMm": 3.3528,
+        "bearingSurfaceMm": 9.6012,
+        "boatTailLengthMm": 5.6642,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 30.845759999999995,
-        "overallLengthMm": 33.019999999999996,
+        "ogiveLengthMm": 18.364199999999997,
+        "overallLengthMm": 33.629599999999996,
         "tipLengthMm": null,
-        "weightGrams": 8.4238583
+        "weightGrams": 8.423858300000001
       },
       "stability": {
         "ix": null,
@@ -4792,10 +4792,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.544,
-        "g1FF": 0.49,
-        "g7BC": 0.272,
-        "g7FF": 0.98,
+        "g1BC": 0.562,
+        "g1FF": null,
+        "g7BC": 0.288,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_264_H8J4",
@@ -4803,13 +4803,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "VLD Target",
       "physis": {
-        "bearingSurfaceMm": 0.6705599999999999,
-        "boatTailLengthMm": 3.3528,
+        "bearingSurfaceMm": 11.302999999999999,
+        "boatTailLengthMm": 5.6642,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 30.845759999999995,
-        "overallLengthMm": 33.019999999999996,
+        "ogiveLengthMm": 18.668999999999997,
+        "overallLengthMm": 33.274,
         "tipLengthMm": null,
-        "weightGrams": 8.4238583
+        "weightGrams": 8.423858300000001
       },
       "stability": {
         "ix": null,
@@ -4818,10 +4818,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.527,
-        "g1FF": 0.525,
-        "g7BC": 0.264,
-        "g7FF": 1.05,
+        "g1BC": 0.584,
+        "g1FF": null,
+        "g7BC": 0.303,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_264_H8J4",
@@ -4829,13 +4829,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "Classic Hunter",
       "physis": {
-        "bearingSurfaceMm": 0.6705599999999999,
-        "boatTailLengthMm": 3.3528,
+        "bearingSurfaceMm": 11.6332,
+        "boatTailLengthMm": 4.826,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 30.845759999999995,
-        "overallLengthMm": 34.29,
+        "ogiveLengthMm": 16.637,
+        "overallLengthMm": 33.654999999999994,
         "tipLengthMm": null,
-        "weightGrams": 8.74785285
+        "weightGrams": 8.747852850000001
       },
       "stability": {
         "ix": null,
@@ -4844,10 +4844,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.586,
-        "g1FF": 0.49,
-        "g7BC": 0.293,
-        "g7FF": 0.98,
+        "g1BC": 0.6,
+        "g1FF": null,
+        "g7BC": 0.307,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_264_H8J4",
@@ -4855,11 +4855,11 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "VLD Hunting",
       "physis": {
-        "bearingSurfaceMm": 1.36144,
-        "boatTailLengthMm": 3.3528,
+        "bearingSurfaceMm": 11.049,
+        "boatTailLengthMm": 5.6895999999999995,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 30.845759999999995,
-        "overallLengthMm": 35.559999999999995,
+        "ogiveLengthMm": 18.5674,
+        "overallLengthMm": 35.306,
         "tipLengthMm": null,
         "weightGrams": 9.0718474
       },
@@ -4870,10 +4870,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.586,
-        "g1FF": 0.49,
-        "g7BC": 0.293,
-        "g7FF": 0.98,
+        "g1BC": 0.593,
+        "g1FF": null,
+        "g7BC": 0.304,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_264_H8J4",
@@ -4881,11 +4881,11 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "VLD Target",
       "physis": {
-        "bearingSurfaceMm": 1.36144,
-        "boatTailLengthMm": 3.3528,
+        "bearingSurfaceMm": 10.769599999999999,
+        "boatTailLengthMm": 5.8928,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 30.845759999999995,
-        "overallLengthMm": 35.559999999999995,
+        "ogiveLengthMm": 18.5674,
+        "overallLengthMm": 35.2298,
         "tipLengthMm": null,
         "weightGrams": 9.0718474
       },
@@ -4922,10 +4922,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.609,
-        "g1FF": 0.525,
-        "g7BC": 0.305,
-        "g7FF": 1.05,
+        "g1BC": 0.679,
+        "g1FF": null,
+        "g7BC": 0.347,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_264_H8J4",
@@ -4933,13 +4933,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "Elite Hunter",
       "physis": {
-        "bearingSurfaceMm": 5.42544,
-        "boatTailLengthMm": 3.3528,
+        "bearingSurfaceMm": 13.843,
+        "boatTailLengthMm": 4.8006,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 30.845759999999995,
-        "overallLengthMm": 39.624,
+        "ogiveLengthMm": 19.431,
+        "overallLengthMm": 38.4048,
         "tipLengthMm": null,
-        "weightGrams": 10.108629959999998
+        "weightGrams": 10.10862996
       },
       "stability": {
         "ix": null,
@@ -4948,10 +4948,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.461,
-        "g1FF": 0.525,
-        "g7BC": 0.231,
-        "g7FF": 1.05,
+        "g1BC": 0.49,
+        "g1FF": null,
+        "g7BC": 0.251,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_277_K9L0",
@@ -4959,13 +4959,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "Classic Hunter",
       "physis": {
-        "bearingSurfaceMm": 0.70358,
-        "boatTailLengthMm": 3.5179,
+        "bearingSurfaceMm": 7.086600000000001,
+        "boatTailLengthMm": 6.223,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 32.36468,
-        "overallLengthMm": 33.019999999999996,
+        "ogiveLengthMm": 17.424400000000002,
+        "overallLengthMm": 30.733999999999998,
         "tipLengthMm": null,
-        "weightGrams": 8.4238583
+        "weightGrams": 8.423858300000001
       },
       "stability": {
         "ix": null,
@@ -4974,10 +4974,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.494,
-        "g1FF": 0.49,
-        "g7BC": 0.247,
-        "g7FF": 0.98,
+        "g1BC": 0.462,
+        "g1FF": null,
+        "g7BC": 0.236,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_277_K9L0",
@@ -4985,13 +4985,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "VLD Hunting",
       "physis": {
-        "bearingSurfaceMm": 0.70358,
-        "boatTailLengthMm": 3.5179,
+        "bearingSurfaceMm": 7.924799999999999,
+        "boatTailLengthMm": 6.172199999999999,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 32.36468,
-        "overallLengthMm": 33.019999999999996,
+        "ogiveLengthMm": 15.697199999999999,
+        "overallLengthMm": 29.7942,
         "tipLengthMm": null,
-        "weightGrams": 8.4238583
+        "weightGrams": 8.423858300000001
       },
       "stability": {
         "ix": null,
@@ -5000,10 +5000,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.496,
-        "g1FF": 0.525,
-        "g7BC": 0.248,
-        "g7FF": 1.05,
+        "g1BC": 0.528,
+        "g1FF": null,
+        "g7BC": 0.271,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_277_K9L0",
@@ -5011,11 +5011,11 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "Classic Hunter",
       "physis": {
-        "bearingSurfaceMm": 0.70358,
-        "boatTailLengthMm": 3.5179,
+        "bearingSurfaceMm": 10.413999999999998,
+        "boatTailLengthMm": 5.1562,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 32.36468,
-        "overallLengthMm": 35.559999999999995,
+        "ogiveLengthMm": 16.383,
+        "overallLengthMm": 32.3596,
         "tipLengthMm": null,
         "weightGrams": 9.0718474
       },
@@ -5026,10 +5026,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.532,
-        "g1FF": 0.49,
-        "g7BC": 0.266,
-        "g7FF": 0.98,
+        "g1BC": 0.504,
+        "g1FF": null,
+        "g7BC": 0.258,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_277_K9L0",
@@ -5037,11 +5037,11 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "VLD Hunting",
       "physis": {
-        "bearingSurfaceMm": 0.70358,
-        "boatTailLengthMm": 3.5179,
+        "bearingSurfaceMm": 10.1854,
+        "boatTailLengthMm": 5.968999999999999,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 32.36468,
-        "overallLengthMm": 35.559999999999995,
+        "ogiveLengthMm": 15.6718,
+        "overallLengthMm": 31.826199999999996,
         "tipLengthMm": null,
         "weightGrams": 9.0718474
       },
@@ -5052,10 +5052,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.57,
-        "g1FF": 0.49,
-        "g7BC": 0.285,
-        "g7FF": 0.98,
+        "g1BC": 0.518,
+        "g1FF": null,
+        "g7BC": 0.265,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_277_K9L0",
@@ -5063,11 +5063,11 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "VLD Hunting",
       "physis": {
-        "bearingSurfaceMm": 2.2174199999999997,
-        "boatTailLengthMm": 3.5179,
+        "bearingSurfaceMm": 11.150599999999999,
+        "boatTailLengthMm": 5.842,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 32.36468,
-        "overallLengthMm": 38.099999999999994,
+        "ogiveLengthMm": 15.875,
+        "overallLengthMm": 32.867599999999996,
         "tipLengthMm": null,
         "weightGrams": 9.7198365
       },
@@ -5078,10 +5078,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.603,
-        "g1FF": 0.525,
-        "g7BC": 0.301,
-        "g7FF": 1.05,
+        "g1BC": 0.662,
+        "g1FF": null,
+        "g7BC": 0.339,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_277_K9L0",
@@ -5089,11 +5089,11 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "Elite Hunter",
       "physis": {
-        "bearingSurfaceMm": 7.29742,
-        "boatTailLengthMm": 3.5179,
+        "bearingSurfaceMm": 10.337799999999998,
+        "boatTailLengthMm": 6.4516,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 32.36468,
-        "overallLengthMm": 43.18,
+        "ogiveLengthMm": 21.0566,
+        "overallLengthMm": 37.846,
         "tipLengthMm": null,
         "weightGrams": 11.0158147
       },
@@ -5104,10 +5104,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.506,
-        "g1FF": 0.49,
-        "g7BC": 0.253,
-        "g7FF": 0.98,
+        "g1BC": 0.5,
+        "g1FF": null,
+        "g7BC": 0.256,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_284_S3F6",
@@ -5115,11 +5115,11 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "VLD Hunting",
       "physis": {
-        "bearingSurfaceMm": 0.72136,
-        "boatTailLengthMm": 3.6067999999999993,
+        "bearingSurfaceMm": 8.2296,
+        "boatTailLengthMm": 6.172199999999999,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 33.182559999999995,
-        "overallLengthMm": 35.559999999999995,
+        "ogiveLengthMm": 17.779999999999998,
+        "overallLengthMm": 32.181799999999996,
         "tipLengthMm": null,
         "weightGrams": 9.0718474
       },
@@ -5130,10 +5130,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.567,
-        "g1FF": 0.525,
-        "g7BC": 0.283,
-        "g7FF": 1.05,
+        "g1BC": 0.566,
+        "g1FF": null,
+        "g7BC": 0.29,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_284_S3F6",
@@ -5141,13 +5141,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "Classic Hunter",
       "physis": {
-        "bearingSurfaceMm": 5.882639999999999,
-        "boatTailLengthMm": 3.6067999999999993,
+        "bearingSurfaceMm": 12.268199999999998,
+        "boatTailLengthMm": 6.4262,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 33.182559999999995,
-        "overallLengthMm": 42.672,
+        "ogiveLengthMm": 16.1544,
+        "overallLengthMm": 34.848800000000004,
         "tipLengthMm": null,
-        "weightGrams": 10.88621688
+        "weightGrams": 10.886216880000001
       },
       "stability": {
         "ix": null,
@@ -5156,10 +5156,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.607,
-        "g1FF": 0.49,
-        "g7BC": 0.304,
-        "g7FF": 0.98,
+        "g1BC": 0.618,
+        "g1FF": null,
+        "g7BC": 0.316,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_284_S3F6",
@@ -5167,13 +5167,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "VLD Hunting",
       "physis": {
-        "bearingSurfaceMm": 5.882639999999999,
-        "boatTailLengthMm": 3.6067999999999993,
+        "bearingSurfaceMm": 10.5918,
+        "boatTailLengthMm": 6.223,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 33.182559999999995,
-        "overallLengthMm": 42.672,
+        "ogiveLengthMm": 19.5834,
+        "overallLengthMm": 36.3982,
         "tipLengthMm": null,
-        "weightGrams": 10.88621688
+        "weightGrams": 10.886216880000001
       },
       "stability": {
         "ix": null,
@@ -5182,10 +5182,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.59,
-        "g1FF": 0.525,
-        "g7BC": 0.295,
-        "g7FF": 1.05,
+        "g1BC": 0.656,
+        "g1FF": null,
+        "g7BC": 0.336,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_284_S3F6",
@@ -5193,13 +5193,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "Elite Hunter",
       "physis": {
-        "bearingSurfaceMm": 7.660639999999999,
-        "boatTailLengthMm": 3.6067999999999993,
+        "bearingSurfaceMm": 12.1412,
+        "boatTailLengthMm": 5.2578,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 33.182559999999995,
-        "overallLengthMm": 44.449999999999996,
+        "ogiveLengthMm": 20.3454,
+        "overallLengthMm": 38.1508,
         "tipLengthMm": null,
-        "weightGrams": 11.339809249999998
+        "weightGrams": 11.33980925
       },
       "stability": {
         "ix": null,
@@ -5208,10 +5208,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.651,
-        "g1FF": 0.49,
-        "g7BC": 0.325,
-        "g7FF": 0.98,
+        "g1BC": 0.673,
+        "g1FF": null,
+        "g7BC": 0.345,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_284_S3F6",
@@ -5219,13 +5219,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "VLD Hunting",
       "physis": {
-        "bearingSurfaceMm": 8.93064,
-        "boatTailLengthMm": 3.6067999999999993,
+        "bearingSurfaceMm": 12.4714,
+        "boatTailLengthMm": 6.172199999999999,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 33.182559999999995,
-        "overallLengthMm": 45.72,
+        "ogiveLengthMm": 19.6088,
+        "overallLengthMm": 38.2524,
         "tipLengthMm": null,
-        "weightGrams": 11.663803799999998
+        "weightGrams": 11.6638038
       },
       "stability": {
         "ix": null,
@@ -5234,10 +5234,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.651,
-        "g1FF": 0.49,
-        "g7BC": 0.325,
-        "g7FF": 0.98,
+        "g1BC": 0.683,
+        "g1FF": null,
+        "g7BC": 0.35,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_284_S3F6",
@@ -5245,13 +5245,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "VLD Target",
       "physis": {
-        "bearingSurfaceMm": 8.93064,
-        "boatTailLengthMm": 3.6067999999999993,
+        "bearingSurfaceMm": 12.7,
+        "boatTailLengthMm": 6.172199999999999,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 33.182559999999995,
-        "overallLengthMm": 45.72,
+        "ogiveLengthMm": 19.7358,
+        "overallLengthMm": 38.608,
         "tipLengthMm": null,
-        "weightGrams": 11.663803799999998
+        "weightGrams": 11.6638038
       },
       "stability": {
         "ix": null,
@@ -5312,24 +5312,24 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.335,
-        "g1FF": 0.516,
-        "g7BC": 0.168,
-        "g7FF": 1.032,
-        "preferredModel": "G7"
+        "g1BC": 0.289,
+        "g1FF": null,
+        "g7BC": null,
+        "g7FF": null,
+        "preferredModel": "G1"
       },
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_BERGER_308_115_FBTGT",
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "FB Target",
       "physis": {
-        "bearingSurfaceMm": 0.78232,
-        "boatTailLengthMm": 1.9557999999999998,
+        "bearingSurfaceMm": 6.1213999999999995,
+        "boatTailLengthMm": 0.0,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 23.4696,
-        "overallLengthMm": 24.13,
+        "ogiveLengthMm": 17.754599999999996,
+        "overallLengthMm": 23.875999999999998,
         "tipLengthMm": null,
-        "weightGrams": 7.451874649999999
+        "weightGrams": 7.45187465
       },
       "stability": {
         "ix": null,
@@ -5390,22 +5390,22 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.461,
-        "g1FF": 0.49,
-        "g7BC": 0.23,
-        "g7FF": 0.98,
-        "preferredModel": "G7"
+        "g1BC": 0.393,
+        "g1FF": null,
+        "g7BC": null,
+        "g7FF": null,
+        "preferredModel": "G1"
       },
       "diameterId": "DIA_308_XBM7",
       "id": "BUL_BERGER_308_150_FBTGT",
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "FB Target",
       "physis": {
-        "bearingSurfaceMm": 0.78232,
-        "boatTailLengthMm": 3.9115999999999995,
+        "bearingSurfaceMm": 9.9822,
+        "boatTailLengthMm": 0.0,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 35.98672,
-        "overallLengthMm": 30.479999999999997,
+        "ogiveLengthMm": 19.3548,
+        "overallLengthMm": 29.337,
         "tipLengthMm": null,
         "weightGrams": 9.7198365
       },
@@ -5416,10 +5416,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.464,
-        "g1FF": 0.505,
-        "g7BC": 0.237,
-        "g7FF": 0.988,
+        "g1BC": 0.473,
+        "g1FF": null,
+        "g7BC": 0.242,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_308_XBM7",
@@ -5427,13 +5427,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "Fullbore",
       "physis": {
-        "bearingSurfaceMm": 0.78232,
-        "boatTailLengthMm": 3.9115999999999995,
+        "bearingSurfaceMm": 5.8166,
+        "boatTailLengthMm": 4.5973999999999995,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 35.98672,
-        "overallLengthMm": 31.876999999999995,
+        "ogiveLengthMm": 20.726399999999998,
+        "overallLengthMm": 31.140399999999996,
         "tipLengthMm": null,
-        "weightGrams": 10.076230504999998
+        "weightGrams": 10.076230505
       },
       "stability": {
         "ix": null,
@@ -5442,10 +5442,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.476,
-        "g1FF": 0.49,
-        "g7BC": 0.238,
-        "g7FF": 0.98,
+        "g1BC": 0.478,
+        "g1FF": null,
+        "g7BC": 0.245,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_308_XBM7",
@@ -5453,13 +5453,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "Hybrid Target",
       "physis": {
-        "bearingSurfaceMm": 0.78232,
-        "boatTailLengthMm": 3.9115999999999995,
+        "bearingSurfaceMm": 6.400799999999999,
+        "boatTailLengthMm": 5.6133999999999995,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 35.98672,
-        "overallLengthMm": 31.75,
+        "ogiveLengthMm": 20.2692,
+        "overallLengthMm": 32.28339999999999,
         "tipLengthMm": null,
-        "weightGrams": 10.043831049999998
+        "weightGrams": 10.04383105
       },
       "stability": {
         "ix": null,
@@ -5468,10 +5468,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.476,
-        "g1FF": 0.49,
+        "g1BC": 0.464,
+        "g1FF": null,
         "g7BC": 0.238,
-        "g7FF": 0.98,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_308_XBM7",
@@ -5479,13 +5479,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "VLD Target",
       "physis": {
-        "bearingSurfaceMm": 0.78232,
-        "boatTailLengthMm": 3.9115999999999995,
+        "bearingSurfaceMm": 8.382,
+        "boatTailLengthMm": 4.3942,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 35.98672,
-        "overallLengthMm": 31.75,
+        "ogiveLengthMm": 18.9484,
+        "overallLengthMm": 31.724600000000002,
         "tipLengthMm": null,
-        "weightGrams": 10.043831049999998
+        "weightGrams": 10.04383105
       },
       "stability": {
         "ix": null,
@@ -5494,10 +5494,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.482,
-        "g1FF": 0.525,
-        "g7BC": 0.241,
-        "g7FF": 1.05,
+        "g1BC": 0.489,
+        "g1FF": null,
+        "g7BC": 0.251,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_308_XBM7",
@@ -5505,13 +5505,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "Classic Hunter",
       "physis": {
-        "bearingSurfaceMm": 0.78232,
-        "boatTailLengthMm": 3.9115999999999995,
+        "bearingSurfaceMm": 7.696199999999999,
+        "boatTailLengthMm": 5.5371999999999995,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 35.98672,
-        "overallLengthMm": 33.019999999999996,
+        "ogiveLengthMm": 17.9578,
+        "overallLengthMm": 31.1912,
         "tipLengthMm": null,
-        "weightGrams": 10.88621688
+        "weightGrams": 10.886216880000001
       },
       "stability": {
         "ix": null,
@@ -5520,10 +5520,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.516,
-        "g1FF": 0.49,
-        "g7BC": 0.258,
-        "g7FF": 0.98,
+        "g1BC": 0.515,
+        "g1FF": null,
+        "g7BC": 0.264,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_308_XBM7",
@@ -5531,13 +5531,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "Hybrid Target",
       "physis": {
-        "bearingSurfaceMm": 0.78232,
-        "boatTailLengthMm": 3.9115999999999995,
+        "bearingSurfaceMm": 6.8326,
+        "boatTailLengthMm": 5.6642,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 35.98672,
-        "overallLengthMm": 33.019999999999996,
+        "ogiveLengthMm": 20.193,
+        "overallLengthMm": 32.6898,
         "tipLengthMm": null,
-        "weightGrams": 10.88621688
+        "weightGrams": 10.886216880000001
       },
       "stability": {
         "ix": null,
@@ -5546,10 +5546,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.538,
-        "g1FF": 0.49,
-        "g7BC": 0.269,
-        "g7FF": 0.98,
+        "g1BC": 0.512,
+        "g1FF": null,
+        "g7BC": 0.263,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_308_XBM7",
@@ -5557,13 +5557,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "OTM Tactical",
       "physis": {
-        "bearingSurfaceMm": 0.78232,
-        "boatTailLengthMm": 3.9115999999999995,
+        "bearingSurfaceMm": 7.416799999999999,
+        "boatTailLengthMm": 5.460999999999999,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 35.98672,
-        "overallLengthMm": 34.29,
+        "ogiveLengthMm": 19.177,
+        "overallLengthMm": 32.029399999999995,
         "tipLengthMm": null,
-        "weightGrams": 11.339809249999998
+        "weightGrams": 11.33980925
       },
       "stability": {
         "ix": null,
@@ -5572,10 +5572,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.531,
-        "g1FF": 0.525,
-        "g7BC": 0.265,
-        "g7FF": 1.05,
+        "g1BC": 0.533,
+        "g1FF": null,
+        "g7BC": 0.273,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_308_XBM7",
@@ -5583,13 +5583,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "Classic Hunter",
       "physis": {
-        "bearingSurfaceMm": 0.78232,
-        "boatTailLengthMm": 3.9115999999999995,
+        "bearingSurfaceMm": 9.652,
+        "boatTailLengthMm": 6.1468,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 35.98672,
-        "overallLengthMm": 36.83,
+        "ogiveLengthMm": 17.5768,
+        "overallLengthMm": 33.3756,
         "tipLengthMm": null,
-        "weightGrams": 11.987798349999998
+        "weightGrams": 11.98779835
       },
       "stability": {
         "ix": null,
@@ -5598,10 +5598,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.569,
-        "g1FF": 0.49,
-        "g7BC": 0.284,
-        "g7FF": 0.98,
+        "g1BC": 0.558,
+        "g1FF": null,
+        "g7BC": 0.286,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_308_XBM7",
@@ -5609,13 +5609,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "VLD Hunting",
       "physis": {
-        "bearingSurfaceMm": 0.78232,
-        "boatTailLengthMm": 3.9115999999999995,
+        "bearingSurfaceMm": 9.9822,
+        "boatTailLengthMm": 5.4356,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 35.98672,
-        "overallLengthMm": 36.83,
+        "ogiveLengthMm": 19.2786,
+        "overallLengthMm": 34.696400000000004,
         "tipLengthMm": null,
-        "weightGrams": 11.987798349999998
+        "weightGrams": 11.98779835
       },
       "stability": {
         "ix": null,
@@ -5624,10 +5624,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.569,
-        "g1FF": 0.49,
-        "g7BC": 0.284,
-        "g7FF": 0.98,
+        "g1BC": 0.543,
+        "g1FF": null,
+        "g7BC": 0.278,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_308_XBM7",
@@ -5635,13 +5635,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "VLD Target",
       "physis": {
-        "bearingSurfaceMm": 0.78232,
-        "boatTailLengthMm": 3.9115999999999995,
+        "bearingSurfaceMm": 10.337799999999998,
+        "boatTailLengthMm": 5.5626,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 35.98672,
-        "overallLengthMm": 36.83,
+        "ogiveLengthMm": 19.2278,
+        "overallLengthMm": 35.1282,
         "tipLengthMm": null,
-        "weightGrams": 11.987798349999998
+        "weightGrams": 11.98779835
       },
       "stability": {
         "ix": null,
@@ -5650,10 +5650,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.584,
-        "g1FF": 0.49,
-        "g7BC": 0.292,
-        "g7FF": 0.98,
+        "g1BC": 0.566,
+        "g1FF": null,
+        "g7BC": 0.29,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_308_XBM7",
@@ -5661,13 +5661,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "VLD Hunting",
       "physis": {
-        "bearingSurfaceMm": 0.78232,
-        "boatTailLengthMm": 3.9115999999999995,
+        "bearingSurfaceMm": 10.16,
+        "boatTailLengthMm": 5.460999999999999,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 35.98672,
-        "overallLengthMm": 38.099999999999994,
+        "ogiveLengthMm": 19.2024,
+        "overallLengthMm": 34.8234,
         "tipLengthMm": null,
-        "weightGrams": 12.311792899999999
+        "weightGrams": 12.3117929
       },
       "stability": {
         "ix": null,
@@ -5754,10 +5754,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.707,
-        "g1FF": 0.49,
-        "g7BC": 0.353,
-        "g7FF": 0.98,
+        "g1BC": 0.71,
+        "g1FF": null,
+        "g7BC": 0.364,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_308_XBM7",
@@ -5765,13 +5765,13 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "Hybrid OTM",
       "physis": {
-        "bearingSurfaceMm": 5.82168,
-        "boatTailLengthMm": 3.9115999999999995,
+        "bearingSurfaceMm": 13.7668,
+        "boatTailLengthMm": 6.9088,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 35.98672,
-        "overallLengthMm": 45.72,
+        "ogiveLengthMm": 20.1676,
+        "overallLengthMm": 40.8432,
         "tipLengthMm": null,
-        "weightGrams": 14.903749299999998
+        "weightGrams": 14.9037493
       },
       "stability": {
         "ix": null,
@@ -5806,10 +5806,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.595,
-        "g1FF": 0.525,
-        "g7BC": 0.298,
-        "g7FF": 1.05,
+        "g1BC": 0.685,
+        "g1FF": null,
+        "g7BC": 0.351,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_338_R7E3",
@@ -5817,11 +5817,11 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "Elite Hunter",
       "physis": {
-        "bearingSurfaceMm": 0.8585199999999998,
-        "boatTailLengthMm": 4.2926,
+        "bearingSurfaceMm": 8.6614,
+        "boatTailLengthMm": 8.2804,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 39.49191999999999,
-        "overallLengthMm": 44.449999999999996,
+        "ogiveLengthMm": 24.383999999999997,
+        "overallLengthMm": 41.3258,
         "tipLengthMm": null,
         "weightGrams": 16.1997275
       },
@@ -5832,10 +5832,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.675,
-        "g1FF": 0.463,
-        "g7BC": 0.346,
-        "g7FF": 0.904,
+        "g1BC": 0.682,
+        "g1FF": null,
+        "g7BC": 0.349,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_338_R7E3",
@@ -5843,11 +5843,11 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "OTM Tactical",
       "physis": {
-        "bearingSurfaceMm": 0.8585199999999998,
-        "boatTailLengthMm": 4.2926,
+        "bearingSurfaceMm": 8.991599999999998,
+        "boatTailLengthMm": 8.102599999999999,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 39.49191999999999,
-        "overallLengthMm": 44.449999999999996,
+        "ogiveLengthMm": 24.4348,
+        "overallLengthMm": 41.528999999999996,
         "tipLengthMm": null,
         "weightGrams": 16.1997275
       },
@@ -5858,10 +5858,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.715,
-        "g1FF": 0.525,
-        "g7BC": 0.357,
-        "g7FF": 1.05,
+        "g1BC": 0.814,
+        "g1FF": null,
+        "g7BC": 0.417,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_338_R7E3",
@@ -5869,11 +5869,11 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "Elite Hunter",
       "physis": {
-        "bearingSurfaceMm": 5.74548,
-        "boatTailLengthMm": 4.2926,
+        "bearingSurfaceMm": 14.1224,
+        "boatTailLengthMm": 7.746999999999999,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 39.49191999999999,
-        "overallLengthMm": 49.529999999999994,
+        "ogiveLengthMm": 24.256999999999998,
+        "overallLengthMm": 46.1264,
         "tipLengthMm": null,
         "weightGrams": 19.439673
       },
@@ -5884,10 +5884,10 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.818,
-        "g1FF": 0.459,
-        "g7BC": 0.419,
-        "g7FF": 0.895,
+        "g1BC": 0.822,
+        "g1FF": null,
+        "g7BC": 0.421,
+        "g7FF": null,
         "preferredModel": "G7"
       },
       "diameterId": "DIA_338_R7E3",
@@ -5895,11 +5895,11 @@
       "manufacturerId": "MAN_BERGER_B9K2",
       "name": "OTM Tactical",
       "physis": {
-        "bearingSurfaceMm": 5.74548,
-        "boatTailLengthMm": 4.2926,
+        "bearingSurfaceMm": 13.081,
+        "boatTailLengthMm": 7.899399999999999,
         "meplatDiameterMm": null,
-        "ogiveLengthMm": 39.49191999999999,
-        "overallLengthMm": 49.529999999999994,
+        "ogiveLengthMm": 24.256999999999998,
+        "overallLengthMm": 46.2026,
         "tipLengthMm": null,
         "weightGrams": 19.439673
       },
@@ -17841,6 +17841,1098 @@
         "ix": null,
         "iy": null
       }
+    },
+    {
+      "id": "BUL_BERGER_204_55_0_LRBV",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_204_M9K3",
+      "name": "20 55 Long Range BT Varmint",
+      "physis": {
+        "bearingSurfaceMm": 5.968999999999999,
+        "boatTailLengthMm": 2.54,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 14.554199999999998,
+        "overallLengthMm": 23.0632,
+        "tipLengthMm": null,
+        "weightGrams": 3.5639400500000002
+      },
+      "ballistics": {
+        "g1BC": 0.354,
+        "g1FF": null,
+        "g7BC": 0.182,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_243_69_0_MHBFV",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_243_B7V4",
+      "name": "6 MM 69 High BC FB Varmint",
+      "physis": {
+        "bearingSurfaceMm": 7.086600000000001,
+        "boatTailLengthMm": 0.0,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 16.256,
+        "overallLengthMm": 23.3426,
+        "tipLengthMm": null,
+        "weightGrams": 4.47112479
+      },
+      "ballistics": {
+        "g1BC": 0.289,
+        "g1FF": null,
+        "g7BC": null,
+        "g7FF": null,
+        "preferredModel": "G1"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_243_115_0_MVH",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_243_B7V4",
+      "name": "6 MM 115 VLD Hunting",
+      "physis": {
+        "bearingSurfaceMm": 10.2108,
+        "boatTailLengthMm": 4.9784,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 19.049999999999997,
+        "overallLengthMm": 34.2392,
+        "tipLengthMm": null,
+        "weightGrams": 7.45187465
+      },
+      "ballistics": {
+        "g1BC": 0.568,
+        "g1FF": null,
+        "g7BC": 0.291,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_264_140_0_MEH",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_264_H8J4",
+      "name": "6.5 MM 140 Elite Hunter",
+      "physis": {
+        "bearingSurfaceMm": 11.4554,
+        "boatTailLengthMm": 4.826,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 18.897599999999997,
+        "overallLengthMm": 35.636199999999995,
+        "tipLengthMm": null,
+        "weightGrams": 9.0718474
+      },
+      "ballistics": {
+        "g1BC": 0.606,
+        "g1FF": null,
+        "g7BC": 0.31,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_284_150_0_M1CH",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_284_S3F6",
+      "name": "7 MM 150 Classic Hunter",
+      "physis": {
+        "bearingSurfaceMm": 11.4808,
+        "boatTailLengthMm": 5.232399999999999,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 14.630399999999998,
+        "overallLengthMm": 31.826199999999996,
+        "tipLengthMm": null,
+        "weightGrams": 9.7198365
+      },
+      "ballistics": {
+        "g1BC": 0.505,
+        "g1FF": null,
+        "g7BC": 0.258,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_284_195_0_MEEH",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_284_S3F6",
+      "name": "7 MM 195 EOL Elite Hunter",
+      "physis": {
+        "bearingSurfaceMm": 13.3096,
+        "boatTailLengthMm": 6.35,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 22.1996,
+        "overallLengthMm": 41.859199999999994,
+        "tipLengthMm": null,
+        "weightGrams": 12.63578745
+      },
+      "ballistics": {
+        "g1BC": 0.755,
+        "g1FF": null,
+        "g7BC": 0.387,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_308_155_0_VH",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "name": "30 155 VLD Hunting",
+      "physis": {
+        "bearingSurfaceMm": 7.1374,
+        "boatTailLengthMm": 4.495799999999999,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 19.431,
+        "overallLengthMm": 31.0642,
+        "tipLengthMm": null,
+        "weightGrams": 10.04383105
+      },
+      "ballistics": {
+        "g1BC": 0.464,
+        "g1FF": null,
+        "g7BC": 0.238,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_308_175_0_VH",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "name": "30 175 VLD Hunting",
+      "physis": {
+        "bearingSurfaceMm": 9.9568,
+        "boatTailLengthMm": 4.724399999999999,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 19.049999999999997,
+        "overallLengthMm": 33.7312,
+        "tipLengthMm": null,
+        "weightGrams": 11.33980925
+      },
+      "ballistics": {
+        "g1BC": 0.518,
+        "g1FF": null,
+        "g7BC": 0.265,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_308_180_0_EH",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "name": "30 180 Elite Hunter",
+      "physis": {
+        "bearingSurfaceMm": 9.4742,
+        "boatTailLengthMm": 5.1308,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 19.8628,
+        "overallLengthMm": 34.925,
+        "tipLengthMm": null,
+        "weightGrams": 11.6638038
+      },
+      "ballistics": {
+        "g1BC": 0.576,
+        "g1FF": null,
+        "g7BC": 0.295,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_308_205_0_EH",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "name": "30 205 Elite Hunter",
+      "physis": {
+        "bearingSurfaceMm": 12.5222,
+        "boatTailLengthMm": 5.842,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 18.846799999999998,
+        "overallLengthMm": 37.769800000000004,
+        "tipLengthMm": null,
+        "weightGrams": 13.28377655
+      },
+      "ballistics": {
+        "g1BC": 0.631,
+        "g1FF": null,
+        "g7BC": 0.324,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_308_210_0_VH",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "name": "30 210 VLD Hunting",
+      "physis": {
+        "bearingSurfaceMm": 12.953999999999999,
+        "boatTailLengthMm": 5.308599999999999,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 19.0754,
+        "overallLengthMm": 37.337999999999994,
+        "tipLengthMm": null,
+        "weightGrams": 13.6077711
+      },
+      "ballistics": {
+        "g1BC": 0.625,
+        "g1FF": null,
+        "g7BC": 0.32,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_308_245_0_EH",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "name": "30 245 Elite Hunter",
+      "physis": {
+        "bearingSurfaceMm": 16.0782,
+        "boatTailLengthMm": 5.7658,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 22.7076,
+        "overallLengthMm": 45.084999999999994,
+        "tipLengthMm": null,
+        "weightGrams": 15.87573295
+      },
+      "ballistics": {
+        "g1BC": 0.807,
+        "g1FF": null,
+        "g7BC": 0.413,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_224_75_0_VT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_224_L5X8",
+      "name": "22 75 VLD Target",
+      "physis": {
+        "bearingSurfaceMm": 7.391399999999999,
+        "boatTailLengthMm": 4.8514,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 14.452599999999999,
+        "overallLengthMm": 26.695399999999996,
+        "tipLengthMm": null,
+        "weightGrams": 4.85991825
+      },
+      "ballistics": {
+        "g1BC": 0.421,
+        "g1FF": null,
+        "g7BC": 0.216,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_224_80_0_VT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_224_L5X8",
+      "name": "22 80 VLD Target",
+      "physis": {
+        "bearingSurfaceMm": 8.6106,
+        "boatTailLengthMm": 4.8514,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 14.630399999999998,
+        "overallLengthMm": 28.0924,
+        "tipLengthMm": null,
+        "weightGrams": 5.1839128
+      },
+      "ballistics": {
+        "g1BC": 0.455,
+        "g1FF": null,
+        "g7BC": 0.233,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_224_82_0_LRBT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_224_L5X8",
+      "name": "22 82 Long Range BT Target",
+      "physis": {
+        "bearingSurfaceMm": 9.423399999999999,
+        "boatTailLengthMm": 4.699,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 14.1986,
+        "overallLengthMm": 28.320999999999998,
+        "tipLengthMm": null,
+        "weightGrams": 5.31351062
+      },
+      "ballistics": {
+        "g1BC": 0.44,
+        "g1FF": null,
+        "g7BC": 0.225,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_224_85_5_LRHT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_224_L5X8",
+      "name": "22 Long Range Hybrid Target",
+      "physis": {
+        "bearingSurfaceMm": 9.194799999999999,
+        "boatTailLengthMm": 4.2164,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 15.8242,
+        "overallLengthMm": 29.6418,
+        "tipLengthMm": null,
+        "weightGrams": 5.540306805
+      },
+      "ballistics": {
+        "g1BC": 0.524,
+        "g1FF": null,
+        "g7BC": 0.268,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_243_105_0_MHT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_243_B7V4",
+      "name": "6 MM 105 Hybrid Target",
+      "physis": {
+        "bearingSurfaceMm": 8.6868,
+        "boatTailLengthMm": 5.4102,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 17.8054,
+        "overallLengthMm": 31.9024,
+        "tipLengthMm": null,
+        "weightGrams": 6.80388555
+      },
+      "ballistics": {
+        "g1BC": 0.536,
+        "g1FF": null,
+        "g7BC": 0.275,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_243_109_0_MLRHT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_243_B7V4",
+      "name": "6 MM 109 Long Range Hybrid Target",
+      "physis": {
+        "bearingSurfaceMm": 10.9474,
+        "boatTailLengthMm": 4.2672,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 16.637,
+        "overallLengthMm": 32.43579999999999,
+        "tipLengthMm": null,
+        "weightGrams": 7.06308119
+      },
+      "ballistics": {
+        "g1BC": 0.568,
+        "g1FF": null,
+        "g7BC": 0.292,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_243_115_0_MVT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_243_B7V4",
+      "name": "6 MM 115 VLD Target",
+      "physis": {
+        "bearingSurfaceMm": 9.5758,
+        "boatTailLengthMm": 5.4864,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 18.770599999999998,
+        "overallLengthMm": 33.8328,
+        "tipLengthMm": null,
+        "weightGrams": 7.45187465
+      },
+      "ballistics": {
+        "g1BC": 0.563,
+        "g1FF": null,
+        "g7BC": 0.289,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_264_140_0_MLRBT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_264_H8J4",
+      "name": "6.5 MM 140 Long Range BT Target",
+      "physis": {
+        "bearingSurfaceMm": 8.331199999999999,
+        "boatTailLengthMm": 5.842,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 21.310599999999997,
+        "overallLengthMm": 35.483799999999995,
+        "tipLengthMm": null,
+        "weightGrams": 9.0718474
+      },
+      "ballistics": {
+        "g1BC": 0.593,
+        "g1FF": null,
+        "g7BC": 0.304,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_264_140_0_MHT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_264_H8J4",
+      "name": "6.5 MM 140 Hybrid Target",
+      "physis": {
+        "bearingSurfaceMm": 10.540999999999999,
+        "boatTailLengthMm": 5.6895999999999995,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 19.5072,
+        "overallLengthMm": 35.7378,
+        "tipLengthMm": null,
+        "weightGrams": 9.0718474
+      },
+      "ballistics": {
+        "g1BC": 0.607,
+        "g1FF": null,
+        "g7BC": 0.311,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_264_144_0_MLRHT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_264_H8J4",
+      "name": "6.5 MM 144 Long Range Hybrid Target",
+      "physis": {
+        "bearingSurfaceMm": 11.9126,
+        "boatTailLengthMm": 4.7752,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 18.846799999999998,
+        "overallLengthMm": 35.8902,
+        "tipLengthMm": null,
+        "weightGrams": 9.33104304
+      },
+      "ballistics": {
+        "g1BC": 0.655,
+        "g1FF": null,
+        "g7BC": 0.336,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_264_153_5_MLRHT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_264_H8J4",
+      "name": "6.5 MM Long Range Hybrid Target",
+      "physis": {
+        "bearingSurfaceMm": 14.224,
+        "boatTailLengthMm": 4.724399999999999,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 18.9992,
+        "overallLengthMm": 38.4556,
+        "tipLengthMm": null,
+        "weightGrams": 9.946632685
+      },
+      "ballistics": {
+        "g1BC": 0.694,
+        "g1FF": null,
+        "g7BC": 0.356,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_284_168_0_MVT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_284_S3F6",
+      "name": "7 MM 168 VLD Target",
+      "physis": {
+        "bearingSurfaceMm": 10.617199999999999,
+        "boatTailLengthMm": 6.223,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 19.5072,
+        "overallLengthMm": 36.3474,
+        "tipLengthMm": null,
+        "weightGrams": 10.886216880000001
+      },
+      "ballistics": {
+        "g1BC": 0.628,
+        "g1FF": null,
+        "g7BC": 0.322,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_284_180_0_MHT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_284_S3F6",
+      "name": "7 MM 180 Hybrid Target",
+      "physis": {
+        "bearingSurfaceMm": 10.921999999999999,
+        "boatTailLengthMm": 6.223,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 21.6408,
+        "overallLengthMm": 38.785799999999995,
+        "tipLengthMm": null,
+        "weightGrams": 11.6638038
+      },
+      "ballistics": {
+        "g1BC": 0.68,
+        "g1FF": null,
+        "g7BC": 0.349,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_284_184_0_MFHT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_284_S3F6",
+      "name": "7 MM 184 F\u2010Open Hybrid Target",
+      "physis": {
+        "bearingSurfaceMm": 13.7668,
+        "boatTailLengthMm": 5.715,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 20.5232,
+        "overallLengthMm": 40.004999999999995,
+        "tipLengthMm": null,
+        "weightGrams": 11.92299944
+      },
+      "ballistics": {
+        "g1BC": 0.695,
+        "g1FF": null,
+        "g7BC": 0.356,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_284_190_0_MLRHT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_284_S3F6",
+      "name": "7 MM 190 Long Range Hybrid Target",
+      "physis": {
+        "bearingSurfaceMm": 14.0716,
+        "boatTailLengthMm": 5.2578,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 20.904199999999996,
+        "overallLengthMm": 40.6654,
+        "tipLengthMm": null,
+        "weightGrams": 12.3117929
+      },
+      "ballistics": {
+        "g1BC": 0.751,
+        "g1FF": null,
+        "g7BC": 0.384,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_308_175_0_LRBT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "name": "30 175 Long Range BT Target",
+      "physis": {
+        "bearingSurfaceMm": 8.4836,
+        "boatTailLengthMm": 4.724399999999999,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 20.1676,
+        "overallLengthMm": 33.3756,
+        "tipLengthMm": null,
+        "weightGrams": 11.33980925
+      },
+      "ballistics": {
+        "g1BC": 0.512,
+        "g1FF": null,
+        "g7BC": 0.262,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_308_175_0_VT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "name": "30 175 VLD Target",
+      "physis": {
+        "bearingSurfaceMm": 10.5156,
+        "boatTailLengthMm": 4.648199999999999,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 18.923,
+        "overallLengthMm": 34.0868,
+        "tipLengthMm": null,
+        "weightGrams": 11.33980925
+      },
+      "ballistics": {
+        "g1BC": 0.512,
+        "g1FF": null,
+        "g7BC": 0.262,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_308_185_0_JT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "name": "30 185 Juggernaut Target",
+      "physis": {
+        "bearingSurfaceMm": 8.5344,
+        "boatTailLengthMm": 5.6133999999999995,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 19.9898,
+        "overallLengthMm": 34.1376,
+        "tipLengthMm": null,
+        "weightGrams": 11.98779835
+      },
+      "ballistics": {
+        "g1BC": 0.555,
+        "g1FF": null,
+        "g7BC": 0.284,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_308_185_0_HT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "name": "30 185 Hybrid Target",
+      "physis": {
+        "bearingSurfaceMm": 8.7884,
+        "boatTailLengthMm": 6.1213999999999995,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 21.1074,
+        "overallLengthMm": 36.017199999999995,
+        "tipLengthMm": null,
+        "weightGrams": 11.98779835
+      },
+      "ballistics": {
+        "g1BC": 0.576,
+        "g1FF": null,
+        "g7BC": 0.295,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_308_200_0_HT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "name": "30 200 Hybrid Target",
+      "physis": {
+        "bearingSurfaceMm": 10.413999999999998,
+        "boatTailLengthMm": 6.172199999999999,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 21.234399999999997,
+        "overallLengthMm": 37.8206,
+        "tipLengthMm": null,
+        "weightGrams": 12.959782
+      },
+      "ballistics": {
+        "g1BC": 0.616,
+        "g1FF": null,
+        "g7BC": 0.316,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_308_208_0_LRHT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "name": "30 208 Long Range Hybrid Target",
+      "physis": {
+        "bearingSurfaceMm": 12.446,
+        "boatTailLengthMm": 5.5118,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 21.5138,
+        "overallLengthMm": 40.004999999999995,
+        "tipLengthMm": null,
+        "weightGrams": 13.47817328
+      },
+      "ballistics": {
+        "g1BC": 0.689,
+        "g1FF": null,
+        "g7BC": 0.354,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_308_210_0_LRBT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "name": "30 210 Long Range BT Target",
+      "physis": {
+        "bearingSurfaceMm": 10.9474,
+        "boatTailLengthMm": 5.5118,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 20.675599999999996,
+        "overallLengthMm": 37.1348,
+        "tipLengthMm": null,
+        "weightGrams": 13.6077711
+      },
+      "ballistics": {
+        "g1BC": 0.625,
+        "g1FF": null,
+        "g7BC": 0.32,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_308_210_0_VT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "name": "30 210 VLD Target",
+      "physis": {
+        "bearingSurfaceMm": 13.4366,
+        "boatTailLengthMm": 5.2578,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 18.745199999999997,
+        "overallLengthMm": 37.083999999999996,
+        "tipLengthMm": null,
+        "weightGrams": 13.6077711
+      },
+      "ballistics": {
+        "g1BC": 0.621,
+        "g1FF": null,
+        "g7BC": 0.318,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_308_215_0_HT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "name": "30 215 Hybrid Target",
+      "physis": {
+        "bearingSurfaceMm": 11.7602,
+        "boatTailLengthMm": 6.6802,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 22.148799999999998,
+        "overallLengthMm": 40.5892,
+        "tipLengthMm": null,
+        "weightGrams": 13.931765650000001
+      },
+      "ballistics": {
+        "g1BC": 0.691,
+        "g1FF": null,
+        "g7BC": 0.354,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_308_220_0_LRHT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "name": "30 220 Long Range Hybrid Target",
+      "physis": {
+        "bearingSurfaceMm": 13.106399999999999,
+        "boatTailLengthMm": 5.4102,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 21.2852,
+        "overallLengthMm": 40.5638,
+        "tipLengthMm": null,
+        "weightGrams": 14.255760200000001
+      },
+      "ballistics": {
+        "g1BC": 0.717,
+        "g1FF": null,
+        "g7BC": 0.369,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_308_230_0_HT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "name": "30 230 Hybrid Target",
+      "physis": {
+        "bearingSurfaceMm": 13.4366,
+        "boatTailLengthMm": 7.112,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 21.8186,
+        "overallLengthMm": 42.3672,
+        "tipLengthMm": null,
+        "weightGrams": 14.9037493
+      },
+      "ballistics": {
+        "g1BC": 0.717,
+        "g1FF": null,
+        "g7BC": 0.368,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_375_379_0_S",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_375_OMEC",
+      "name": "375 379 Solid",
+      "physis": {
+        "bearingSurfaceMm": 9.423399999999999,
+        "boatTailLengthMm": 7.823199999999999,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 28.498800000000003,
+        "overallLengthMm": 56.7944,
+        "tipLengthMm": null,
+        "weightGrams": 24.55878689
+      },
+      "ballistics": {
+        "g1BC": 0.951,
+        "g1FF": null,
+        "g7BC": 0.487,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_375_407_0_S",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_375_OMEC",
+      "name": "375 407 Solid",
+      "physis": {
+        "bearingSurfaceMm": 10.540999999999999,
+        "boatTailLengthMm": 7.619999999999999,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 28.752799999999997,
+        "overallLengthMm": 59.6138,
+        "tipLengthMm": null,
+        "weightGrams": 26.37315637
+      },
+      "ballistics": {
+        "g1BC": 1.022,
+        "g1FF": null,
+        "g7BC": 0.523,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_264_130_0_MAHOT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_264_H8J4",
+      "name": "6.5 MM 130 AR Hybrid OTM Tactical",
+      "physis": {
+        "bearingSurfaceMm": 9.042399999999999,
+        "boatTailLengthMm": 5.842,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 18.008599999999998,
+        "overallLengthMm": 32.892999999999994,
+        "tipLengthMm": null,
+        "weightGrams": 8.423858300000001
+      },
+      "ballistics": {
+        "g1BC": 0.56,
+        "g1FF": null,
+        "g7BC": 0.287,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "id": "BUL_BERGER_308_185_0_JOT",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "name": "30 185 Juggernaut OTM Tactical",
+      "physis": {
+        "bearingSurfaceMm": 8.712200000000001,
+        "boatTailLengthMm": 5.6642,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": 20.0406,
+        "overallLengthMm": 34.416999999999994,
+        "tipLengthMm": null,
+        "weightGrams": 11.98779835
+      },
+      "ballistics": {
+        "g1BC": 0.552,
+        "g1FF": null,
+        "g7BC": 0.283,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
     }
   ],
   "cartridges": [
@@ -18250,13 +19342,13 @@
       "trimLengthMm": 51.53659999999999
     },
     {
-      "baseCapacityH2oGrams": 4.8920,
+      "baseCapacityH2oGrams": 4.892,
       "boreDiameterMm": 7.619999999999999,
       "bulletDiameterMm": 7.823199999999999,
-      "burnRateMultiplier": 0.1100,
+      "burnRateMultiplier": 0.11,
       "diameterId": "DIA_308_XBM7",
       "id": "CTG_30338_N3HI",
-      "maxCaseLengthMm": 63.50,
+      "maxCaseLengthMm": 63.5,
       "maxSaamiPa": 448159224.05657,
       "name": "30-338 Winchester Magnum",
       "oalMm": 84.836,
@@ -18320,10 +19412,10 @@
       "trimLengthMm": 53.08599999999999
     },
     {
-      "baseCapacityH2oGrams": 6.3500,
+      "baseCapacityH2oGrams": 6.35,
       "boreDiameterMm": 7.619999999999999,
       "bulletDiameterMm": 7.823199999999999,
-      "burnRateMultiplier": 0.1100,
+      "burnRateMultiplier": 0.11,
       "diameterId": "DIA_308_XBM7",
       "id": "CTG_300WBYMAG_cN75",
       "maxCaseLengthMm": 71.755,
@@ -18743,7 +19835,7 @@
       "baseCapacityH2oGrams": 4.2767,
       "boreDiameterMm": 6.019799999999999,
       "bulletDiameterMm": 6.172199999999999,
-      "burnRateMultiplier": 0.1100,
+      "burnRateMultiplier": 0.11,
       "diameterId": "DIA_243_B7V4",
       "id": "CTG_6MM284_cM33",
       "maxCaseLengthMm": 55.118,
@@ -18813,7 +19905,7 @@
       "baseCapacityH2oGrams": 2.3068412,
       "boreDiameterMm": 7.619999999999999,
       "bulletDiameterMm": 7.899399999999999,
-      "burnRateMultiplier": 0.1000,
+      "burnRateMultiplier": 0.1,
       "diameterId": "DIA_311_XBM9",
       "id": "CTG_762X39_cM32",
       "maxCaseLengthMm": 38.7096,
