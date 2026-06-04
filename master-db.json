@@ -18250,6 +18250,20 @@
       "trimLengthMm": 51.53659999999999
     },
     {
+      "baseCapacityH2oGrams": 4.8920,
+      "boreDiameterMm": 7.619999999999999,
+      "bulletDiameterMm": 7.823199999999999,
+      "burnRateMultiplier": 0.1100,
+      "diameterId": "DIA_308_XBM7",
+      "id": "CTG_30338_N3HI",
+      "maxCaseLengthMm": 63.50,
+      "maxSaamiPa": 448159224.05657,
+      "name": "30-338 Winchester Magnum",
+      "oalMm": 84.836,
+      "primerPocketId": "PKT_LRG",
+      "trimLengthMm": 63.246
+    },
+    {
       "baseCapacityH2oGrams": 1.55517384,
       "boreDiameterMm": 7.619999999999999,
       "bulletDiameterMm": 7.823199999999999,
@@ -18304,6 +18318,20 @@
       "oalMm": 72.64399999999999,
       "primerPocketId": "PKT_LRG",
       "trimLengthMm": 53.08599999999999
+    },
+    {
+      "baseCapacityH2oGrams": 6.3500,
+      "boreDiameterMm": 7.619999999999999,
+      "bulletDiameterMm": 7.823199999999999,
+      "burnRateMultiplier": 0.1100,
+      "diameterId": "DIA_308_XBM7",
+      "id": "CTG_300WBYMAG_cN75",
+      "maxCaseLengthMm": 71.755,
+      "maxSaamiPa": 448159224.05657,
+      "name": "300 Weatherby Magnum",
+      "oalMm": 90.424,
+      "primerPocketId": "PKT_LRG",
+      "trimLengthMm": 71.498
     },
     {
       "baseCapacityH2oGrams": 6.078137758,
@@ -18712,6 +18740,20 @@
       "trimLengthMm": 44.958
     },
     {
+      "baseCapacityH2oGrams": 4.2767,
+      "boreDiameterMm": 6.019799999999999,
+      "bulletDiameterMm": 6.172199999999999,
+      "burnRateMultiplier": 0.1100,
+      "diameterId": "DIA_243_B7V4",
+      "id": "CTG_6MM284_cM33",
+      "maxCaseLengthMm": 55.118,
+      "maxSaamiPa": 448159224.05657,
+      "name": "6mm-284 Winchester",
+      "oalMm": 71.12,
+      "primerPocketId": "PKT_LRG",
+      "trimLengthMm": 54.864
+    },
+    {
       "baseCapacityH2oGrams": 2.07356512,
       "boreDiameterMm": 6.019799999999999,
       "bulletDiameterMm": 6.172199999999999,
@@ -18766,6 +18808,20 @@
       "oalMm": 71.11999999999999,
       "primerPocketId": "PKT_SML",
       "trimLengthMm": 46.736
+    },
+    {
+      "baseCapacityH2oGrams": 2.3068412,
+      "boreDiameterMm": 7.619999999999999,
+      "bulletDiameterMm": 7.899399999999999,
+      "burnRateMultiplier": 0.1000,
+      "diameterId": "DIA_311_XBM9",
+      "id": "CTG_762X39_cM32",
+      "maxCaseLengthMm": 38.7096,
+      "maxSaamiPa": 310264078.05,
+      "name": "7.62x39mm",
+      "oalMm": 55.88,
+      "primerPocketId": "PKT_LRG",
+      "trimLengthMm": 38.4556
     },
     {
       "baseCapacityH2oGrams": 2.365160215,
@@ -18944,6 +19000,11 @@
       "id": "DIA_308_XBM7",
       "imperial": ".308",
       "metric": "7.62"
+    },
+    {
+      "id": "DIA_311_XBM9",
+      "imperial": ".311",
+      "metric": "7.62 Russian"
     },
     {
       "id": "DIA_338_R7E3",
@@ -20391,6 +20452,15 @@
       "grainId": "GRN_EXTRUDED",
       "heatOfExplosionKjKg": 3234.0,
       "id": "PWD_HODG_US_869_MNPM",
+      "kCoeff": 1.2,
+      "manufacturerId": "MAN_HODGDON_H3V8",
+      "name": "US 869"
+    },
+    {
+      "baCoeff": 0.079,
+      "grainId": "GRN_EXTRUDED",
+      "heatOfExplosionKjKg": 3234.0,
+      "id": "PWD_HODG_US869_H1GH",
       "kCoeff": 1.2,
       "manufacturerId": "MAN_HODGDON_H3V8",
       "name": "US 869"
