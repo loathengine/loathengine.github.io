@@ -1,0 +1,1 @@
+var e=.06479891,t=25.4,n=.3048,r=6894.757293178,i=.9144,a=3386.389,o=t=>t*e,s=t=>t/e,c=e=>e*t,l=e=>e/t,u=e=>e*n,d=e=>e/n,f=e=>e*r,p=e=>e/r,m=e=>e*i,h=e=>e/i,g=e=>(e-32)*5/9,_=e=>e*a;export{_ as a,l as c,f as d,m as f,s as i,d as l,u as n,c as o,o as r,h as s,g as t,p as u};
