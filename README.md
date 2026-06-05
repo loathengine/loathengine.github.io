@@ -54,7 +54,7 @@ Everything runs in your browser. No account, no server, no internet connection r
 
 **1. Sync the master database**
 
-Go to **DB Management → Sync Database**. This imports ~600 bullet profiles, 77 powders, 45 cartridges, primers, brass, and commercial loads from the built-in open-source library — no manual entry needed. Safe to run multiple times; it only adds or updates records without deleting your personal data.
+Go to **DB Management → Sync Database**. This imports ~600 bullet profiles, 77 powders, 45 cartridges, primers, and brass from the built-in open-source library — no manual entry needed. Safe to run multiple times; it only adds or updates records without deleting your personal data.
 
 **2. Add your firearm**
 
@@ -62,7 +62,7 @@ Go to **Firearms** and enter your rifle's nickname, cartridge, barrel length, tw
 
 **3. Add your load**
 
-Go to **Load Data** and create a handload recipe or log a factory cartridge.
+Go to **Load Data** and create a handload recipe.
 
 ### Range Day
 
@@ -108,16 +108,9 @@ The landing page. Provides an overview of the app's purpose and privacy architec
 
 ### Load Data
 
-**Handloads vs. Commercial Ammo:** Use the sub-tabs to switch modes.
-
 **Creating a Handload:**
 - Select Cartridge → Bullet → Powder in order (dropdowns are chained)
 - Enter **Charge Weight** (grains), **COAL**, and **CBTO** if you measure it
-- Click **Save Load**
-
-**Creating Commercial Ammo:**
-- Select the cartridge and bullet
-- Enter the product name, manufacturer, part number, and lot number
 - Click **Save Load**
 
 **Recipe Sheet:** Click **Recipe** on any handload to generate a printable summary card.
@@ -301,7 +294,7 @@ The foundation of the application. The master database sync fills most of this a
 
 Imports the built-in `master-db.json` library into your local database. Uses `put()` semantics — existing records are overwritten by ID, your personal data is unaffected.
 
-**What gets synced:** ~600 bullet profiles, 77 powders, 45 cartridges, 29 brass entries, 33 primers, 44 commercial loads.
+**What gets synced:** ~600 bullet profiles, 77 powders, 45 cartridges, 29 brass entries, and 33 primers.
 
 #### Nuclear Reset
 
