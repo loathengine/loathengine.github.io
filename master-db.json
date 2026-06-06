@@ -13060,7 +13060,7 @@
     },
     {
       "ballistics": {
-        "g1BC": 0.445,
+        "g1BC": 0.450,
         "g1FF": 0.525,
         "g7BC": 0.222,
         "g7FF": 1.05,
@@ -13075,7 +13075,7 @@
         "boatTailLengthMm": 3.9115999999999995,
         "meplatDiameterMm": null,
         "ogiveLengthMm": 35.98672,
-        "overallLengthMm": 29.209999999999997,
+        "overallLengthMm": 29.083,
         "tipLengthMm": null,
         "weightGrams": 10.043831049999998
       },
