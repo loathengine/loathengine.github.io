@@ -14126,6 +14126,32 @@
     },
     {
       "ballistics": {
+        "g1BC": 0.417,
+        "g1FF": null,
+        "g7BC": 0.199,
+        "g7FF": null,
+        "preferredModel": "G7"
+      },
+      "diameterId": "DIA_308_XBM7",
+      "id": "BUL_SIERRA_308_150_SMK",
+      "manufacturerId": "MAN_SIERRA_S6Y3",
+      "name": "MatchKing",
+      "physis": {
+        "bearingSurfaceMm": null,
+        "boatTailLengthMm": null,
+        "meplatDiameterMm": null,
+        "ogiveLengthMm": null,
+        "overallLengthMm": 28.321,
+        "tipLengthMm": null,
+        "weightGrams": 9.7198365
+      },
+      "stability": {
+        "ix": null,
+        "iy": null
+      }
+    },
+    {
+      "ballistics": {
         "g1BC": 0.476,
         "g1FF": 0.49,
         "g7BC": 0.238,
