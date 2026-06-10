@@ -1166,7 +1166,8 @@
       "ignitionZ2": 0.9498,
       "manufacturerId": "MAN_ACCURATE_A2C1",
       "grainTypeResolved": "ball",
-      "grainType": "ball"
+      "grainType": "ball",
+      "propellantDensityKgM3": 1550
     },
     {
       "id": "PWD_ACCU_2230_R1A6",
@@ -1246,7 +1247,8 @@
       "ignitionZ2": 0.9497,
       "manufacturerId": "MAN_ACCURATE_A2C1",
       "grainTypeResolved": "ball",
-      "grainType": "ball"
+      "grainType": "ball",
+      "propellantDensityKgM3": 1620
     },
     {
       "id": "PWD_ACCU_NO9_R1A0",
@@ -1326,7 +1328,8 @@
       "ignitionZ2": 0.8059,
       "manufacturerId": "MAN_ALLIANT_A5R2",
       "grainTypeResolved": "extrudedSinglePerf",
-      "grainType": "extrudedSinglePerf"
+      "grainType": "extrudedSinglePerf",
+      "propellantDensityKgM3": 1620
     },
     {
       "id": "PWD_ALLI_RL16_A1L2",
@@ -1400,13 +1403,14 @@
       "kCoeff": 1.255,
       "grainId": "GRN_BALL",
       "tempSensFactor": null,
-      "ignitionBa": null,
-      "ignitionBp": null,
-      "ignitionZ1": null,
-      "ignitionZ2": null,
+      "ignitionBa": 0.5391,
+      "ignitionBp": 0.1647,
+      "ignitionZ1": 0.5102,
+      "ignitionZ2": 0.8084,
       "manufacturerId": "MAN_HODGDON_H7X2",
       "grainTypeResolved": "ball",
-      "grainType": "ball"
+      "grainType": "ball",
+      "propellantDensityKgM3": 1600
     },
     {
       "id": "PWD_HODG_CFE223_H1G6",
@@ -1422,7 +1426,8 @@
       "ignitionZ2": 0.7913,
       "manufacturerId": "MAN_HODGDON_H7X2",
       "grainTypeResolved": "ball",
-      "grainType": "ball"
+      "grainType": "ball",
+      "propellantDensityKgM3": 1580
     },
     {
       "id": "PWD_HODG_CFEPISTOL_H1GP",
@@ -1454,7 +1459,8 @@
       "ignitionZ2": 0.8544,
       "manufacturerId": "MAN_HODGDON_H7X2",
       "grainTypeResolved": "extrudedSinglePerf",
-      "grainType": "extrudedSinglePerf"
+      "grainType": "extrudedSinglePerf",
+      "propellantDensityKgM3": 1580
     },
     {
       "id": "PWD_HODG_H110_H1GQ",
@@ -1486,7 +1492,8 @@
       "ignitionZ2": 0.95,
       "manufacturerId": "MAN_HODGDON_H7X2",
       "grainTypeResolved": "ball",
-      "grainType": "ball"
+      "grainType": "ball",
+      "propellantDensityKgM3": 1640
     },
     {
       "id": "PWD_HODG_H380_H1GC",
@@ -1502,7 +1509,8 @@
       "ignitionZ2": 0.9496,
       "manufacturerId": "MAN_HODGDON_H7X2",
       "grainTypeResolved": "ball",
-      "grainType": "ball"
+      "grainType": "ball",
+      "propellantDensityKgM3": 1570
     },
     {
       "id": "PWD_HODG_H414_H1GD",
@@ -1534,7 +1542,8 @@
       "ignitionZ2": 0.8298,
       "manufacturerId": "MAN_HODGDON_H7X2",
       "grainTypeResolved": "extrudedSinglePerf",
-      "grainType": "extrudedSinglePerf"
+      "grainType": "extrudedSinglePerf",
+      "propellantDensityKgM3": 1600
     },
     {
       "id": "PWD_HODG_H4831SC_H1GF",
@@ -1560,13 +1569,14 @@
       "kCoeff": 1.23,
       "grainId": "GRN_EXTRUDED_SINGLEPERF",
       "tempSensFactor": null,
-      "ignitionBa": null,
-      "ignitionBp": null,
-      "ignitionZ1": null,
-      "ignitionZ2": null,
+      "ignitionBa": 0.4369,
+      "ignitionBp": 0.1219,
+      "ignitionZ1": 0.5063,
+      "ignitionZ2": 0.8091,
       "manufacturerId": "MAN_HODGDON_H7X2",
       "grainTypeResolved": "extrudedSinglePerf",
-      "grainType": "extrudedSinglePerf"
+      "grainType": "extrudedSinglePerf",
+      "propellantDensityKgM3": 1550
     },
     {
       "id": "PWD_HODG_H4895_H1G3",
@@ -1582,7 +1592,8 @@
       "ignitionZ2": 0.8183,
       "manufacturerId": "MAN_HODGDON_H7X2",
       "grainTypeResolved": "extrudedSinglePerf",
-      "grainType": "extrudedSinglePerf"
+      "grainType": "extrudedSinglePerf",
+      "propellantDensityKgM3": 1680
     },
     {
       "id": "PWD_HODG_HP38_H1GT",
@@ -1614,7 +1625,8 @@
       "ignitionZ2": 0.8282,
       "manufacturerId": "MAN_HODGDON_H7X2",
       "grainTypeResolved": "extrudedSinglePerf",
-      "grainType": "extrudedSinglePerf"
+      "grainType": "extrudedSinglePerf",
+      "propellantDensityKgM3": 1570
     },
     {
       "id": "PWD_HODG_IMR4166_H1GK",
@@ -1710,7 +1722,8 @@
       "ignitionZ2": 0.8169,
       "manufacturerId": "MAN_HODGDON_H7X2",
       "grainTypeResolved": "extrudedSinglePerf",
-      "grainType": "extrudedSinglePerf"
+      "grainType": "extrudedSinglePerf",
+      "propellantDensityKgM3": 1600
     },
     {
       "id": "PWD_HODG_IMR7828_H1GN",
@@ -1758,7 +1771,8 @@
       "ignitionZ2": 0.9476,
       "manufacturerId": "MAN_HODGDON_H7X2",
       "grainTypeResolved": "ball",
-      "grainType": "ball"
+      "grainType": "ball",
+      "propellantDensityKgM3": 1570
     },
     {
       "id": "PWD_HODG_LONGSHOT_H1GJ",
@@ -1790,7 +1804,8 @@
       "ignitionZ2": 0.8577,
       "manufacturerId": "MAN_HODGDON_H7X2",
       "grainTypeResolved": "extrudedMultiPerf",
-      "grainType": "extrudedMultiPerf"
+      "grainType": "extrudedMultiPerf",
+      "propellantDensityKgM3": 1590
     },
     {
       "id": "PWD_HODG_TITEGROUP_H1G7",
@@ -1838,7 +1853,8 @@
       "ignitionZ2": 0.7908,
       "manufacturerId": "MAN_HODGDON_H7X2",
       "grainTypeResolved": "extrudedSinglePerf",
-      "grainType": "extrudedSinglePerf"
+      "grainType": "extrudedSinglePerf",
+      "propellantDensityKgM3": 1620
     },
     {
       "id": "PWD_HORNADYOAL_IRJS",
@@ -1918,7 +1934,8 @@
       "ignitionZ2": 0.95,
       "manufacturerId": "MAN_RAMSHOT_R2S3",
       "grainTypeResolved": "ball",
-      "grainType": "ball"
+      "grainType": "ball",
+      "propellantDensityKgM3": 1680
     },
     {
       "id": "PWD_RAMS_XTERM_R1A5",
@@ -2046,7 +2063,8 @@
       "ignitionZ2": 0.7901,
       "manufacturerId": "MAN_VIHTAVUORI_V3H8",
       "grainTypeResolved": "extrudedSinglePerf",
-      "grainType": "extrudedSinglePerf"
+      "grainType": "extrudedSinglePerf",
+      "propellantDensityKgM3": 1560
     },
     {
       "id": "PWD_VIHT_N150_V1H7",
@@ -2062,7 +2080,8 @@
       "ignitionZ2": 0.8169,
       "manufacturerId": "MAN_VIHTAVUORI_V3H8",
       "grainTypeResolved": "extrudedSinglePerf",
-      "grainType": "extrudedSinglePerf"
+      "grainType": "extrudedSinglePerf",
+      "propellantDensityKgM3": 1580
     },
     {
       "id": "PWD_VIHT_N160_V1H8",
@@ -2142,7 +2161,8 @@
       "ignitionZ2": 0.8341,
       "manufacturerId": "MAN_VIHTAVUORI_V3H8",
       "grainTypeResolved": "extrudedMultiPerf",
-      "grainType": "extrudedMultiPerf"
+      "grainType": "extrudedMultiPerf",
+      "propellantDensityKgM3": 1620
     },
     {
       "id": "PWD_VIHT_N550_V5H3",
@@ -2222,7 +2242,8 @@
       "ignitionZ2": 0.8375,
       "manufacturerId": "MAN_VIHTAVUORI_V3H8",
       "grainTypeResolved": "extrudedMultiPerf",
-      "grainType": "extrudedMultiPerf"
+      "grainType": "extrudedMultiPerf",
+      "propellantDensityKgM3": 1620
     },
     {
       "id": "PWD_VIHT_N570_V5H8",
@@ -2334,7 +2355,8 @@
       "ignitionZ2": 0.95,
       "manufacturerId": "MAN_WINCHESTER_W1C6",
       "grainTypeResolved": "ball",
-      "grainType": "ball"
+      "grainType": "ball",
+      "propellantDensityKgM3": 1620
     },
     {
       "id": "PWD_WINC_STABALLHD_W1N3",
@@ -2366,7 +2388,8 @@
       "ignitionZ2": 0.9497,
       "manufacturerId": "MAN_WINCHESTER_W1C6",
       "grainTypeResolved": "ball",
-      "grainType": "ball"
+      "grainType": "ball",
+      "propellantDensityKgM3": 1600
     },
     {
       "id": "PWD_IMPR_IMR_4831_HVBS",
@@ -2824,13 +2847,14 @@
       "kCoeff": 1.2,
       "grainId": "GRN_EXTRUDED",
       "tempSensFactor": null,
-      "ignitionBa": null,
-      "ignitionBp": null,
-      "ignitionZ1": null,
-      "ignitionZ2": null,
+      "ignitionBa": 0.344,
+      "ignitionBp": 0.1238,
+      "ignitionZ1": 0.6264,
+      "ignitionZ2": 0.689,
       "manufacturerId": "MAN_ALLIANT_A5R2",
       "grainTypeResolved": "extruded",
-      "grainType": "extruded"
+      "grainType": "extruded",
+      "propellantDensityKgM3": 1620
     },
     {
       "id": "PWD_ALLI_RELODER_33_VMB0",
@@ -2840,13 +2864,14 @@
       "kCoeff": 1.2,
       "grainId": "GRN_EXTRUDED",
       "tempSensFactor": null,
-      "ignitionBa": null,
-      "ignitionBp": null,
-      "ignitionZ1": null,
-      "ignitionZ2": null,
+      "ignitionBa": 0.248,
+      "ignitionBp": 0.1065,
+      "ignitionZ1": 0.5131,
+      "ignitionZ2": 0.5645,
       "manufacturerId": "MAN_ALLIANT_A5R2",
       "grainTypeResolved": "extruded",
-      "grainType": "extruded"
+      "grainType": "extruded",
+      "propellantDensityKgM3": 1620
     },
     {
       "id": "PWD_HODG_H50BMG_2J1E",
@@ -2862,7 +2887,8 @@
       "ignitionZ2": 0.9494,
       "manufacturerId": "MAN_HODGDON_H7X2",
       "grainTypeResolved": "extruded",
-      "grainType": "extruded"
+      "grainType": "extruded",
+      "propellantDensityKgM3": 1570
     },
     {
       "id": "PWD_HODG_US_869_MNPM",
@@ -3182,7 +3208,9 @@
       "ignitionZ2": 0.95,
       "manufacturerId": "MAN_HODGDON_H7X2",
       "grainTypeResolved": "ball",
-      "grainType": "ball"
+      "grainType": "ball",
+      "propellantDensityKgM3": 1680,
+      "burnRateTempCoeffPerC": 0.0572
     },
     {
       "id": "PWD_NORM_MRP_8AVD",
