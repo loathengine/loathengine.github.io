@@ -134,7 +134,8 @@ Dexie index: `id, manufacturerId, diameterId`
   "kCoeff": 1.2311,
   "heatOfExplosionKjKg": 3585,
   "grainId": "GRN_EXTRUDED_SINGLEPERF",
-  "solidDensity": 1620,
+  "propellantDensityKgM3": 1620,
+  "bulkDensityKgM3": 920,
   "ignitionBa": 0.4857,
   "ignitionBp": 0.1489,
   "ignitionZ1": 0.5175,
@@ -147,7 +148,8 @@ Dexie index: `id, manufacturerId, diameterId`
 * `kCoeff`? — burn rate shape coefficient. Single-base (nitrocellulose only): `1.23`. Double-base (NC + nitroglycerin): `1.255`
 * `heatOfExplosionKjKg`? — heat of explosion in kJ/kg. Single-base: `3580`. Double-base: `3950`
 * `grainId`? — references `grain` collection (powder grain geometry)
-* `solidDensity`? — optional solid density of the powder in kg/m³
+* `propellantDensityKgM3`? — optional solid density of the powder material in kg/m³
+* `bulkDensityKgM3`? — optional bulk density of the powder grains in kg/m³ (used to compute case fill percentage / loading density)
 * `ignitionBa`? / `ignitionBp`? / `ignitionZ1`? / `ignitionZ2`? — optional ignition phase burn rate coefficients
 * `tempSensFactor`? — optional temperature sensitivity factor
 
