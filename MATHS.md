@@ -208,8 +208,8 @@ Where:
 * $x$: Bullet travel distance down the bore (meters).
 * $m_{powder, solid}$: Mass of remaining solid unburned propellant.
 * $\rho_{propellant} = 1600 \quad [\text{kg/m}^3]$ (Solid density of nitrocellulose propellant).
-* $V_0$: Initial chamber volume after subtracting bullet seating displacement:
-  $$V_0 = V_{case\_water\_capacity} - \left(A_{bullet} \cdot SeatingDepth \cdot 0.62\right) \quad [\text{m}^3]$$
+* $V_0$: Initial chamber volume after subtracting bullet seating displacement (using detailed frustum calculations if physical dimensions are present, or a fallback factor of `0.90` reflecting bullet base cylindrical/boat-tail geometry if detailed data is missing):
+  $$V_0 = V_{case\_water\_capacity} - \left(A_{bullet} \cdot SeatingDepth \cdot 0.90\right) \quad [\text{m}^3]$$
 
 #### *Why this model and EOS is used:*
 1. **Ideal Gas Law Inadequacy:** The Ideal Gas Law ($PV = nRT$) assumes that gas molecules are infinitely small points with no volume of their own. At the extreme pressures found in rifle chambers ($50,000\text{ to } 80,000\text{ PSI}$), gas molecules are packed so tightly that their physical volume (covolume, $\eta$) is significant. Ignoring this covolume leads to massive underestimations of chamber pressure (often by $30\%\text{ to } 40\%$). The Noble-Abel EOS corrects for this volume displacement, maintaining scientific accuracy at extreme pressures.
