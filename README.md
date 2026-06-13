@@ -198,9 +198,9 @@ The scale tells the app how many pixels equal one inch on your specific image.
 
 ---
 
-### Heureticoi (Ballistics & Simulation Suite)
+### Heurisko (Ballistics & Simulation Suite)
 
-Heureticoi is the app's internal scientific suite. "Heureticoi" refers to heuristic ballistic modeling — using empirical data to make forward-looking performance predictions and thermodynamic simulation sweeps. The suite contains four tabs: **Stability**, **Monte Carlo**, **Ignition**, and **DOPE**.
+Heurisko is the app's internal scientific suite. "Heurisko" refers to heuristic ballistic modeling — using empirical data to make forward-looking performance predictions and thermodynamic simulation sweeps. The suite contains four tabs: **Stability**, **Monte Carlo**, **Ignition**, and **DOPE**.
 
 #### Ballistic Engine Capabilities
 
