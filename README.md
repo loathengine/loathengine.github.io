@@ -30,17 +30,17 @@ Everything runs in your browser. No account, no server, no internet connection r
 |------|---------|
 | **Session** | One range visit: a target, one or more groups, and metadata (firearm, load, distance) |
 | **Group** | A set of shots fired at a single point of aim within a session |
-| **Mean Radius (MR)** | Average distance of all shots from their collective center. More reliable than Group Size on small groups |
-| **95% CI** | 95% Confidence Interval for Mean Radius — the range the true long-term average is expected to fall in, from 1,000 bootstrap resamples |
-| **MoE** | Margin of Error — the ±% half-width of the 95% CI. Lower means a more trustworthy estimate |
-| **Group Size** | Distance between the two widest shots (Extreme Spread). Highly sensitive to outliers; unreliable on groups fewer than ~20 shots |
-| **H / V Extreme Spread** | Horizontal and vertical extent of the group measured independently |
-| **MPI Offset** | Mean Point of Impact — the geometric center of all shots; where your load actually prints on target |
-| **Reliability Rating** | 0.5–5.0 star composite score based on sample size, bootstrap convergence (MoE), and Shapiro-Wilk normality |
-| **Vel SD** | Standard deviation of muzzle velocities recorded in the session |
-| **Velocity ES** | Extreme Spread of muzzle velocities (max minus min) |
-| **Vert Dispersion R²** | R-squared correlation between muzzle velocity and vertical shot position — values above 40% indicate velocity is driving vertical stringing |
-| **Shapiro-Wilk** | Normality test for shot location and velocity distributions — used in the Reliability Rating calculation |
+| **Mean Radius (MR)** | Average distance of all shots from their collective center (MPI). The primary performance metric — not distorted by a single flyer, unlike ES POI |
+| **95% CI** | The range within which the true long-term Mean Radius is expected to fall with 95% probability, calculated from 1,000 bootstrap resamples of the actual shot data. Used internally to drive the Reliability Rating |
+| **ES POI (Group Size)** | Extreme spread of the points of impact — center-to-center distance between the two furthest shots. Quick to read in the field but highly sensitive to one outlier. A poor statistical metric; use it to flag a severe system issue (baffle strike, loose action screws, etc.) |
+| **ES POI HV** | Horizontal (H) and vertical (V) spread of the group measured independently. Use to narrow down significant issues seen in the ES POI. Examples include barrel contact or scope cant |
+| **MPI Offset** | Mean Point of Impact — the average X and Y position of all shots relative to the session origin. Indicates where the load prints on target, not how tightly it groups |
+| **SD POI HV** | Standard Deviation of the Horizontal or Vertical Points of Impact. A diagnostics tool, not a performance metric. If SD H ≈ SD V, scatter is uniform. If SD V >> SD H, you have vertical stringing — look at velocity variance, dragging firing pin, or barrel-stock contact. If SD H >> SD V, you have horizontal stringing — look at wind, loose bipod, or lateral trigger push |
+| **Reliability Rating (0.5 – 5.0 Stars)** | A composite score that rates data quality. It starts from sample size, then adjusts based on bootstrap CI convergence, Shapiro-Wilk normality for shot location, and Shapiro-Wilk normality for velocity. A high-shot-count session can still be penalized if the data is non-normal or has extreme outliers |
+| **SD V** | Sample standard deviation of muzzle velocities (n-1 formula). Evaluates the entire distribution of the propellant burn — how the internal ballistics are functioning as a cohesive system |
+| **ES V** | Extreme Spread of muzzle velocities (max minus min). Good for flagging a severe system problem in the field, but a poor statistical tool. A sudden spike to 60+ fps is a red flag (blown primer, severe neck tension, erratic ignition) |
+| **Vert Dispersion R²** | R-squared from a linear regression of muzzle velocity vs. vertical shot position. Values above 40% indicate velocity variance is a statistically significant driver of vertical stringing. The smoking gun connecting SD V to vertical dispersion. No correlation means chasing SD V may not improve vertical grouping |
+| **Shapiro-Wilk Test (Location / Velocity)** | A normality test run on shot radial distances from MPI and, separately, on muzzle velocities. W ranges from 0 to 1 — closer to 1 means more normal. p ≥ 0.10 = Normal (+0.5 ★ to rating); p 0.05–0.10 = Marginal (neutral); p < 0.05 = Non-Normal (penalty). Non-normal shot patterns suggest outliers or flyers. Non-normal velocity suggests primer or charge variation |
 | **POA** | Point of Aim — where you were aiming when firing |
 | **Composite Analysis** | Combining multiple sessions aligned by MPI to build meaningful sample sizes from small groups |
 | **Scale** | A calibration you set in the Marking tool so the app knows how many pixels equal one inch |
@@ -61,7 +61,7 @@ Everything runs in your browser. No account, no server, no internet connection r
 
 **1. Sync the master database**
 
-Go to **DB Management → Sync Database**. This imports ~600 bullet profiles, 77 powders, 45 cartridges, primers, and brass from the built-in open-source library — no manual entry needed. Safe to run multiple times; it only adds or updates records without deleting your personal data.
+Go to **DB Management** and click **Sync Remote Repo** under the *Sync Empirical Precision Database* section. This imports ~600 bullet profiles, 77 powders, 45 cartridges, primers, and brass from the built-in open-source library — no manual entry needed. Safe to run multiple times; it only adds or updates records without deleting your personal data.
 
 **2. Add your firearm**
 
@@ -69,25 +69,37 @@ Go to **Firearms** and enter your rifle's nickname, cartridge, barrel length, tw
 
 **3. Add your load**
 
-Go to **Load Data** and create a handload recipe.
+Go to **Load Library** and create a handload recipe with bullet, powder, charge weight, brass, and seating specs.
 
 ### Range Day
 
-**4. Upload your target**
+**4. Design custom targets (Optional)**
 
-Go to **Targets** and upload a photo of your range target, or design one with the built-in generator before you go.
+Go to **Targets** to design and print custom paper targets with exact rings, grid overlays, and labels before heading to the range.
 
-**5. Mark your impacts**
+**5. Upload your target image**
 
-Go to **Marking**. Select your target, set the scale, mark each bullet hole, associate the session with your firearm and load, and save.
+Go to **Marking**. Under the **Targets** panel in the left sidebar, click **Upload Image(s)** to upload a photo of your shot group. Add the target to the session.
 
-**6. Analyze**
+**6. Set the scale calibration**
 
-Go to **Analysis**, select your sessions, and review statistical results and the composite group plot.
+In the **Marking** tab, enter a known reference distance (e.g., `2` inches) under *Scale Setup*, click **Set Scale**, then click two points on your target image exactly that distance apart.
 
-**7. Back up**
+**7. Mark your Point of Aim (POA) & impacts (POI)**
 
-Go to **DB Management → Export Entire Database** and save the `.json` file somewhere safe.
+Click **New Group**, select **Set POA** and click your target's aiming point on the canvas. Then select **Mark POI** and click each bullet hole to mark impact positions. You can optionally log chronographed muzzle velocities in the *Impact Data* table. Name your marked target and click **SAVE MARKED TARGET**.
+
+**8. Combine into a Session**
+
+Go to **Sessions** and create a new session by selecting your saved **Marked Target**, **Firearm**, and **Load**. Set the environmental conditions (temperature, pressure, altitude) and click **+ Create Session**.
+
+**9. Analyze**
+
+Go to **Analysis**, select your sessions with checkboxes, and click **ANALYZE SELECTED** to review statistical results, dispersion trends, normality tests, and the composite overlay plot.
+
+**10. Back up your data**
+
+Go to **DB Management**, expand **Advanced Database Settings**, select `-- Entire Database --` under *Target Active Scope*, and click **Export Selected Scope** to download a `.json` backup file.
 
 ---
 
@@ -95,52 +107,49 @@ Go to **DB Management → Export Entire Database** and save the `.json` file som
 
 ### About Us
 
-The landing page. Provides an overview of the app's purpose and privacy architecture. No data entry here.
+The landing page. Provides an overview of the app's purpose, design philosophy, and privacy architecture. No data entry here.
+
+---
+
+### Targets
+
+The target design generator suite. Design and print custom targets before your range trip:
+- Set paper size (Letter, Legal, A4, 12x12), orientation, and grid options.
+- Choose bullseye shape (Round, Square, Diamond, Star, Triangle, Hexagon), ring count, and colors.
+- Add a text label that can pull cartridge and load data automatically from your library.
+- Click **EXPORT TO PDF (PRINT)** or **EXPORT IMAGE** to download the design.
+
+> **Note:** Target images from range sessions are uploaded and calibrated directly on the **Marking** page, not here.
 
 ---
 
 ### Firearms
 
 **Adding a firearm:**
-1. Enter a **Nickname** (e.g., `6.5 PRC Hunting Rifle`)
-2. Select the **Cartridge** it's chambered in
-3. Enter **Barrel Length**, **Twist Rate** (e.g., `8` for 1-in-8"), and **Sight Over Bore** (scope centerline height above bore, in inches)
-4. Click **Save Firearm**
+1. Enter a **Nickname** (e.g., `6.5 PRC Hunting Rifle`).
+2. Select the **Cartridge** it is chambered in.
+3. Enter **Barrel Length**, **Twist Rate** (e.g., `8` for 1-in-8"), and **Sight Over Bore** (scope centerline height above bore, in inches).
+4. Click **Save Firearm**.
 
 **Editing:** Click **Edit** next to any entry, make changes, then click **Save Firearm** again.
 
-> **Why twist rate matters:** The ballistic simulator uses twist rate to calculate gyroscopic stability (Sg) and spin drift, which directly affect long-range predictions.
+> **Why twist rate matters:** The ballistic simulator uses twist rate to calculate gyroscopic stability ($S_g$) and spin drift, which directly affect long-range predictions.
 
 ---
 
-### Load Data
+### Load Library
 
-**Creating a Handload:**
-- Select Cartridge → Bullet → Powder in order (dropdowns are chained)
-- Enter **Charge Weight** (grains), **COAL**, and **CBTO** if you measure it
-- Click **Save Load**
+**Creating a Load:**
+- Enter a **Nickname** (or leave it blank to auto-generate from specs).
+- **1. Cartridge Spec** — Select Diameter and Cartridge Case.
+- **2. Bullet Details** — Select Weight, Bullet Name, and Lot #.
+- **3. Powder Charge Specs** — Select Powder Mfg, Powder Brand, Charge Weight (grains), and Lot #.
+- **4. Brass Specs** — Select Brass Manufacturer, Pocket Size, Exact Case, Brass Lot #, and Firings count.
+- **5. Primer Details** — Select Primer Manufacturer, Actual Primer, and Lot #.
+- **6. Seating & Precision Dimensions** — Enter COAL (Cartridge Overall Length, in), CBTO (Cartridge Base to Ogive, in), CBTO Comparator tool, Shoulder bump (in), and Shoulder Comparator tool.
+- Click **Save Load** (or **Update Load** when editing).
 
-**Recipe Sheet:** Click **Recipe** on any handload to generate a printable summary card.
-
----
-
-### Targets
-
-#### Range Targets (Upload)
-
-1. Click **"Upload New Target Image(s)"** and select image files from your device
-2. Images are automatically converted to `.webp` and stored as efficient binary data
-3. Use **Preview**, **Rename**, **Download**, or **Delete** from the gallery
-
-> **Tip:** Name your targets descriptively before going to the Marking tab — e.g., `100yd 5-shot Jun-2026`. The name appears in session dropdowns.
-
-#### Custom Targets (Generator)
-
-Design and print targets before your range trip:
-- Set paper size, orientation, and grid options
-- Choose bullseye shape (Circle, Square, Diamond, Cross, etc.), ring count, and colors
-- Add a label that can pull firearm and load data automatically
-- Use **Download PNG** or **Print** to output the design
+**Managing Loads:** View the list of saved loads with quick details on bullet specs, powder specs, and COAL. You can sort by Nickname, Cartridge, Bullet Weight, Powder, Charge, and COAL, and easily edit or delete loads.
 
 ---
 
@@ -150,30 +159,46 @@ Design and print targets before your range trip:
 
 #### Step-by-Step
 
-**1. Select your target image** using the **Load Saved Image** dropdown.
+**1. Upload or Select Target Image:**
+Under the *Targets* section in the left sidebar, click **Upload Image(s)** to upload a new target photo. Once uploaded, select it from the *Select from Gallery* dropdown and click **Add Target** to place it on the canvas. To load an existing marked target, select it under the *Load Saved* dropdown and click **Load**.
 
-**2. Set the Scale**
+**2. Set the Scale:**
+The scale tells the app how many pixels equal one inch or millimeter on your image.
+- Enter a **known distance** (e.g., `2`).
+- Select **units** (Inches or mm).
+- Click **Set Scale**.
+- Click two points on the canvas exactly that distance apart.
 
-The scale tells the app how many pixels equal one inch on your specific image.
+**3. Create a Group:**
+Click **New Group**. Each group represents a set of shots fired at a single point of aim.
 
-- Enter a **known distance** (e.g., `2`)
-- Select **units** (e.g., `Inches`)
-- Click **Set Scale**
-- Click two points on the canvas exactly that distance apart
+**4. Set POA (Point of Aim):**
+Click **Set POA**, then click the exact spot on the target you were aiming at.
 
-*Example: If your target has a 2-inch bullseye ring, type `2`, select `Inches`, click Set Scale, then click the left edge and right edge of that ring.*
+**5. Mark Impacts (POI):**
+Click **Mark POI**, then click each bullet hole on the target. A numbered dot appears for each shot. Use **Undo Last** or **Erase Shot** if you make a mistake.
 
-**3. Create a Group** — Click **New Group**. Each group is one set of shots at a single aiming point. You can have multiple groups per session (e.g., a ladder test with different charge weights).
+**6. Enter Shot Velocities (Optional):**
+If you used a chronograph, enter each shot's velocity (in fps) in the **Impact Data** table below the canvas. This enables velocity-dispersion correlation analysis.
 
-**4. Set POA** — Click **Set POA**, then click the exact spot on the target you were aiming at.
+**7. Save Target:**
+Enter a name for the marked target, enter the target distance (yards/meters), and click **SAVE MARKED TARGET**.
 
-**5. Mark Impacts** — Click **Mark Impacts**, then click each bullet hole. A numbered dot appears per shot. Click **Undo** if you misclick.
+---
 
-**6. Enter Shot Velocities (Optional)** — If you used a chronograph, enter each shot's velocity in the list below the canvas. This enables velocity-dispersion correlation analysis.
+### Sessions
 
-**7. Enter Session Details** — Select the Firearm, Load, Target Distance, and environmental conditions (temperature, altitude, pressure) in the right panel.
+The bridge that connects your range targets to your rifles and ammunition. A session combines a marked target, firearm, load, and environmental conditions.
 
-**8. Save** — Click **Save / Update Session**. Always do this before navigating away — the canvas is not auto-saved.
+**Creating a Session:**
+1. Select a saved **Marked Target**.
+2. Select the **Firearm** used.
+3. Select the **Load** fired (automatically filtered to matching cartridges if a firearm is selected).
+4. Enter a custom **Session Name** (or let it auto-generate).
+5. Enter **Environmental Conditions** (temperature, pressure, altitude).
+6. Click **+ Create Session**.
+
+**Managing Sessions:** View, edit, delete, export individual sessions as JSON, or import sessions from files.
 
 ---
 
@@ -185,27 +210,29 @@ The scale tells the app how many pixels equal one inch on your specific image.
 
 | Metric | What It Tells You |
 |--------|-------------------|
-| **Mean Radius (MR)** | Typical shot-to-shot consistency. Lower = better |
-| **95% CI (\u00b1MoE%)** | How confident you can be in the Mean Radius estimate. Tighter CI = more trustworthy |
-| **Group Size** | Worst-case spread — highly variable on small groups, one flyer can wreck it |
-| **H / V Extreme Spread** | Horizontal and vertical extent measured independently |
-| **MPI Offset** | Where your load actually prints relative to point of aim |
-| **Reliability Rating** | 0.5–5.0 stars: composite quality score including sample size, convergence, and normality |
-| **Vel SD** | Muzzle velocity consistency shot-to-shot |
-| **Vert Dispersion R²** | Whether velocity variation is causing your vertical stringing (>40% = correlated) |
+| **Mean Radius (MR)** | Typical shot-to-shot consistency. Lower = better. |
+| **95% CI** | The range within which the true long-term Mean Radius is expected to fall with 95% probability. Used internally to drive the Reliability Rating. |
+| **ES POI (Group Size)** | Extreme spread of the points of impact — center-to-center distance between the two furthest shots. Highly sensitive to outliers. |
+| **ES POI HV** | Horizontal (H) and vertical (V) spread of the group measured independently. |
+| **SD POI HV** | Standard Deviation of the Horizontal or Vertical Points of Impact. A diagnostics tool to identify non-uniform scatter (stringing). |
+| **MPI Offset** | Where your load actually prints relative to point of aim. |
+| **Reliability Rating** | 0.5–5.0 stars composite score rating data quality based on sample size, bootstrap CI convergence, and normality. |
+| **SD V** | Muzzle velocity standard deviation. Evaluates propellant burn consistency. |
+| **ES V** | Extreme spread of muzzle velocities (max minus min). Good for flagging severe system issues. |
+| **Vert Dispersion R²** | R-squared showing if velocity variation is driving vertical stringing (>40% = correlated). |
 
 #### Step-by-Step
 
-1. **Filter** using the chained panel (Firearm → Cartridge → Bullet → Powder) to narrow the session list
-2. **Select** sessions with checkboxes, or click **All**
-3. **Click Analyze Selected**
+1. **Filter** sessions in the setup panel (Firearm → Cartridge → Bullet → Powder) to narrow the list.
+2. **Select** sessions using checkboxes, or click **All**.
+3. **Click ANALYZE SELECTED**.
 4. **Review:**
-   - **Analysis Results Table** — Mean Radius (with 95% CI), Group Size, Shot SD, Vel SD / Vert Dispersion R², and Reliability Rating per session
-   - **Dispersion Analysis** — checks for vertical stringing and velocity-spread correlation
-   - **Composite Plot** — all groups overlaid and aligned by MPI
-5. **Export:**
-   - **Export as Image** — downloads a 16:9 HUD report
-   - **Export Data (JSON)** — full data export including the visual report embedded as base64
+   - **Analysis Results Table** — View Mean Radius (with 95% CI), ES POI, SD POI HV, SD V / R², and Reliability stars. Click **Show Insights** to inspect normality test results and rating breakdowns.
+   - **Composite Plot** — View all groups overlaid and aligned by their Mean Point of Impact.
+   - **Analysis Report** — Read or copy the text report of ranking, details, environmental conditions, and database parameters.
+5. **Export & Copy:**
+   - **SAVE IMAGE** — Downloads a high-resolution PNG image report containing the composite plot and data HUD table.
+   - **Copy Report** — Copies the full structured text analysis report to your clipboard.
 
 ---
 
@@ -301,43 +328,32 @@ The foundation of the application. The master database sync fills most of this a
 
 ### DB Management
 
-#### Sync Database
+#### Sync Empirical Precision Database
+Imports the built-in library into your local database. Existing records are overwritten by ID, but your personal data is unaffected.
+- **Sync Remote Repo** button: Syncs ~600 bullet profiles, 77 powders, 45 cartridges, 29 brass entries, and 33 primers.
 
-Imports the built-in `master-db.json` library into your local database. Uses `put()` semantics — existing records are overwritten by ID, your personal data is unaffected.
+#### Import Saved JSON Data
+Restore or merge your history, firearms, loads, and custom components from a previously exported `.json` file.
+- Records are merged by ID. Base64 image data is automatically converted back to binary Blob storage on import.
 
-**What gets synced:** ~600 bullet profiles, 77 powders, 45 cartridges, 29 brass entries, and 33 primers.
-
-#### Nuclear Reset
-
-⚠️ **Destructive.** Clears every record from every table. Export a backup first.
-
-#### Clear Table
-
-Clears one specific table without touching others.
-
-#### Export Data
-
-Downloads a `.json` backup. Target images are automatically converted from binary Blob to Base64 strings for JSON compatibility.
-
-#### Restore / Merge Data
-
-Imports a `.json` backup. Records are merged by ID. Base64 image data is automatically converted back to binary Blob storage on import.
-
-#### Table Browser
-
-Raw view of every table and record. Useful for inspecting or debugging specific entries.
+#### Advanced Database Settings (Collapsible Panel)
+- **Target Active Scope**: Dropdown to select either `-- Entire Database --` or a specific table (e.g. `firearms`, `loads`, `sessions`, `targetImages`).
+- **Export Selected Scope** button: Downloads a `.json` backup of the active scope. Target images are automatically converted from binary Blobs to Base64 strings for JSON compatibility.
+- **Install PWA App** button: Installs Empirical Precision as a standalone PWA on your device so you can run it fully offline at the shooting range.
+- **Wipe Active Scope** button: Destructive operation that clears all records from the selected table or wipes the entire database.
+- **Raw DB Records Browser**: View, inspect, or delete raw IndexedDB records when a specific table is selected.
 
 ---
 
 ## Troubleshooting
 
 **My measurements are huge/wrong numbers**
-You didn't set the scale before marking. The app is measuring in raw pixels. Start a new session, set the scale first, then re-mark your shots.
+You didn't set the scale before marking. The app is measuring in raw pixels. Load your marked target, set the scale under *Scale Setup*, and re-save.
 
-**My groups disappeared after closing the browser**
-You didn't save the session. Always click **Save / Update Session** before navigating away. The canvas is not auto-saved.
+**My groups/marked targets disappeared after closing the browser**
+You didn't save your target or session. Always click **SAVE MARKED TARGET** in the Marking tab, and click **+ Create Session** / **Update Session** in the Sessions tab before navigating away. The canvas is not auto-saved.
 
-**Sync Database didn't seem to do anything**
+**Sync Remote Repo didn't seem to do anything**
 The records were already there from a previous sync and were silently overwritten. Your database is up to date.
 
 **I cleared my browser history and lost all my data**
@@ -357,17 +373,18 @@ Check: Firearm has twist rate and sight over bore set. Bullet has G7 BC entered 
 
 ### How to Back Up
 
-1. Go to **DB Management**
-2. Ensure **"Entire Database"** scope is selected
-3. Click **Export Data**
-4. Save the `.json` file to cloud storage, an external drive, or both
+1. Go to **DB Management**.
+2. Click **Advanced Database Settings** to expand the panel.
+3. Ensure **Target Active Scope** is set to `-- Entire Database --`.
+4. Click **Export Selected Scope**.
+5. Save the `.json` file to cloud storage, an external drive, or both.
 
 ### How to Restore
 
-1. Go to **DB Management**
-2. Click **Restore / Merge Data**
-3. Select your backup `.json` file
-4. Records are merged — existing records overwritten, personal records preserved
+1. Go to **DB Management**.
+2. Under the **Import Saved JSON Data** section, click the file input to select your backup `.json` file.
+3. Click the **Import Saved JSON Data** button.
+4. Records are merged — existing records with matching IDs are updated, personal records are preserved.
 
 ### Recommended Backup Schedule
 
