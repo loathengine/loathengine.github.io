@@ -30,10 +30,17 @@ Everything runs in your browser. No account, no server, no internet connection r
 |------|---------|
 | **Session** | One range visit: a target, one or more groups, and metadata (firearm, load, distance) |
 | **Group** | A set of shots fired at a single point of aim within a session |
-| **MR (Mean Radius)** | Average distance of all shots from their collective center. More reliable than Extreme Spread on small groups |
-| **CEP 90%** | Radius of a circle containing 90% of your shots. A strong predictor of real-world capability |
-| **Extreme Spread** | Distance between the two widest shots. Unreliable on groups fewer than ~20 shots |
-| **MPI** | Mean Point of Impact — the geometric center of all shots in a group |
+| **Mean Radius (MR)** | Average distance of all shots from their collective center. More reliable than Group Size on small groups |
+| **95% CI** | 95% Confidence Interval for Mean Radius — the range the true long-term average is expected to fall in, from 1,000 bootstrap resamples |
+| **MoE** | Margin of Error — the ±% half-width of the 95% CI. Lower means a more trustworthy estimate |
+| **Group Size** | Distance between the two widest shots (Extreme Spread). Highly sensitive to outliers; unreliable on groups fewer than ~20 shots |
+| **H / V Extreme Spread** | Horizontal and vertical extent of the group measured independently |
+| **MPI Offset** | Mean Point of Impact — the geometric center of all shots; where your load actually prints on target |
+| **Reliability Rating** | 0.5–5.0 star composite score based on sample size, bootstrap convergence (MoE), and Shapiro-Wilk normality |
+| **Vel SD** | Standard deviation of muzzle velocities recorded in the session |
+| **Velocity ES** | Extreme Spread of muzzle velocities (max minus min) |
+| **Vert Dispersion R²** | R-squared correlation between muzzle velocity and vertical shot position — values above 40% indicate velocity is driving vertical stringing |
+| **Shapiro-Wilk** | Normality test for shot location and velocity distributions — used in the Reliability Rating calculation |
 | **POA** | Point of Aim — where you were aiming when firing |
 | **Composite Analysis** | Combining multiple sessions aligned by MPI to build meaningful sample sizes from small groups |
 | **Scale** | A calibration you set in the Marking tool so the app knows how many pixels equal one inch |
@@ -178,10 +185,14 @@ The scale tells the app how many pixels equal one inch on your specific image.
 
 | Metric | What It Tells You |
 |--------|-------------------|
-| **MR** | Typical shot-to-shot consistency. Lower = better |
-| **CEP 90%** | "90% of my shots will land within this radius" |
-| **Extreme Spread** | Worst-case spread — highly variable on small groups |
-| **MPI** | Center of your group — where your rifle actually shoots |
+| **Mean Radius (MR)** | Typical shot-to-shot consistency. Lower = better |
+| **95% CI (\u00b1MoE%)** | How confident you can be in the Mean Radius estimate. Tighter CI = more trustworthy |
+| **Group Size** | Worst-case spread — highly variable on small groups, one flyer can wreck it |
+| **H / V Extreme Spread** | Horizontal and vertical extent measured independently |
+| **MPI Offset** | Where your load actually prints relative to point of aim |
+| **Reliability Rating** | 0.5–5.0 stars: composite quality score including sample size, convergence, and normality |
+| **Vel SD** | Muzzle velocity consistency shot-to-shot |
+| **Vert Dispersion R²** | Whether velocity variation is causing your vertical stringing (>40% = correlated) |
 
 #### Step-by-Step
 
@@ -189,7 +200,7 @@ The scale tells the app how many pixels equal one inch on your specific image.
 2. **Select** sessions with checkboxes, or click **All**
 3. **Click Analyze Selected**
 4. **Review:**
-   - **Statistics Table** — MR, ES, CEP 90%, shot count per session and in aggregate
+   - **Analysis Results Table** — Mean Radius (with 95% CI), Group Size, Shot SD, Vel SD / Vert Dispersion R², and Reliability Rating per session
    - **Dispersion Analysis** — checks for vertical stringing and velocity-spread correlation
    - **Composite Plot** — all groups overlaid and aligned by MPI
 5. **Export:**
