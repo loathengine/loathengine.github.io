@@ -129,7 +129,7 @@ At ranges beyond 600 yards, the flight time of the bullet is long enough (often 
 
 #### 1.6.1 Gyroscopic Stability Factor ($S_g$)
 Calculated using the Refined Miller Twist equation:
-$$S_g = \frac{30 \cdot m_{grains}}{T^2 \cdot d_{inches}^3 \cdot l \cdot (1 + l^2)} \cdot \left(\frac{V_{fps}}{2800}\right)^{1/3}$$
+$$S_g = \frac{30 \cdot m_{grains}}{T^2 \cdot d_{inches} \cdot l \cdot (1 + l^2)} \cdot \left(\frac{V_{fps}}{2800}\right)^{1/3}$$
 Where:
 * $T$ is the twist rate in inches.
 * $d_{inches}$ is the bullet diameter in inches.

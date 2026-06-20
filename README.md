@@ -238,7 +238,7 @@ The bridge that connects your range targets to your rifles and ammunition. A ses
 
 ### Heurisko (Ballistics & Simulation Suite)
 
-Heurisko is the app's internal scientific suite. "Heurisko" refers to heuristic ballistic modeling — using empirical data to make forward-looking performance predictions and thermodynamic simulation sweeps. The suite contains four tabs: **Stability**, **Monte Carlo**, **Ignition**, and **DOPE**.
+Heurisko is the app's internal scientific suite. "Heurisko" refers to heuristic ballistic modeling — using empirical data to make forward-looking performance predictions and thermodynamic simulation sweeps. The suite contains five tabs: **Efstathia**, **Kylindros**, **Monte Carlo**, **Ignition**, and **DOPE**.
 
 #### Ballistic Engine Capabilities
 
@@ -253,7 +253,7 @@ Heurisko is the app's internal scientific suite. "Heurisko" refers to heuristic 
 
 ---
 
-#### 1. Stability Analysis (Gyroscopic Stability)
+#### 1. Efstathia Analysis (Gyroscopic Stability)
 
 This calculator implements the **Refined Miller Twist Rule** to compute the gyroscopic stability factor ($S_g$) of a bullet. It corrects for muzzle velocity and local atmospheric density (based on altitude, temperature, and station pressure).
 
@@ -264,9 +264,22 @@ This calculator implements the **Refined Miller Twist Rule** to compute the gyro
   - **Marginally Stable ($1.0 \le S_g < 1.5$):** Bullet is stable but experiences yaw, which reduces the effective BC by up to 10–15% and increases group dispersion.
   - **Unstable ($S_g < 1.0$):** Bullet lacks spin to counteract aerodynamic forces and will tumble, causing keyholing.
 
+#### 2. Kylindros (Ballistic Coefficient Estimation)
+
+Kylindros estimates your bullet's Ballistic Coefficient (BC) based on shot muzzle velocities and downrange points of impact (POI). It uses an iterative bisection solver running on the 3DOF RK4 ballistics engine.
+
+**Statistical Reliability Metrics:**
+- **Shot-by-Shot Analysis**: Calculates individual BCs for each shot in the session, generating a distribution.
+- **95% Confidence Interval**: Provides the statistical range where the true BC resides. If the interval is wide, the estimation is flagged as unreliable.
+- **Reliability Assessment HUD**: Checks physical signals (distance, shot count) and data precision (velocities, CI width) to give a reliability rating from Highly Unreliable to High Reliability.
+
+**Important Guidelines:**
+- **Zero Angle Sensitivity**: Extremely sensitive to zero errors. A 0.25 MOA zero error translates to an 8% error in estimated BC.
+- **Short Range Limit**: Target distance must be at least 300 yards/meters. Below this range, drag differences are masked by rifle dispersion, rendering calculations invalid.
+
 ---
 
-#### 2. Monte Carlo Simulation (Hit Probability)
+#### 3. Monte Carlo Simulation (Hit Probability)
 
 Uses a physics-based external ballistics engine seeded with your real measured session dispersion (Mean Radius) to predict field performance.
 
@@ -282,7 +295,7 @@ Uses a physics-based external ballistics engine seeded with your real measured s
 
 ---
 
-#### 3. Propellant Ignition Simulator (Internal Ballistics)
+#### 4. Propellant Ignition Simulator (Internal Ballistics)
 
 This tab simulates thermodynamic propellant combustion and bullet acceleration down the barrel using a physics solver. It outputs pressure-time curves (P-V curves) and burned percentage along the barrel.
 
@@ -297,7 +310,7 @@ This tab simulates thermodynamic propellant combustion and bullet acceleration d
 
 ---
 
-#### 4. Ballistic DOPE Card & Point Blank Zero (MPBR)
+#### 5. Ballistic DOPE Card & Point Blank Zero (MPBR)
 
 Generates pocket-sized ballistic reference cards using the 4th-Order Runge-Kutta exterior ballistics engine.
 
