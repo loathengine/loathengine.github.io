@@ -110,10 +110,11 @@ ${c.join(`
 ----------------------------------------------
 
 --- SELECTION DETAILS ---
-Caliber: ${(()=>{let e=u.find(e=>e.id===F);return e?P(e):``})()||`Custom`}
-Cartridge: ${e}
-Bullet: ${t}
-Powder: ${n}
+Caliber:    ${(()=>{let e=u.find(e=>e.id===F);return e?P(e):``})()||`Custom`} [${F||`none`}]
+Cartridge:  ${e} [${R||`none`}]
+Bullet:     ${t} [${B||`none`}]
+Powder:     ${n} [${U||`none`}]
+Primer:     ${K?x.find(e=>e.id===K)?.name||K:`none`} [${K||`none`}]
 
 --- SIMULATION PARAMETERS ---
 Powder Charge: ${at} gr
