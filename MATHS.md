@@ -281,12 +281,16 @@ Where $m_{bullet, eff}$ incorporates the rotational inertia of the projectile (s
 
 #### 2.3.1 Vieille’s Law (Saint-Robert Equation)
 The linear regression rate of the solid propellant is modeled as:
-$$\text{Burn Rate } r = \sqrt{\beta_{adj}} \cdot \left(\frac{P_{mean}}{10^6}\right)^{\alpha} \quad [\text{m/s}]$$
+$$\text{Burn Rate } r = \sqrt{\beta_{eff}} \cdot \left(\frac{P_{mean}}{10^6}\right)^{\alpha} \quad [\text{m/s}]$$
 Where:
 * $\alpha$ is the powder's burn exponent (`burnExponent` in database).
-* $\beta_{adj}$ is the adjusted burn rate coefficient (`adjusted_ba` in code):
+* $\beta_{eff}$ is the effective, fill-adjusted burn rate coefficient (see §2.3.5 below):
+  $$\beta_{eff} = \beta_{adj} \cdot \underbrace{\left(1 + \lambda \cdot \left(\phi - \phi_{ref}\right)\right)}_{\text{fill-fraction adjustment}}$$
+  Where $\beta_{adj}$ is the geometry-scaled base coefficient (see §2.3.1a), $\lambda$ is `baFillSlope`, $\phi$ is the load's fill fraction, and $\phi_{ref} = 0.50$ is the reference fill fraction at which $\beta_{base}$ is defined.
+
+#### 2.3.1a Base Coefficient Scaling ($\beta_{adj}$)
   $$\beta_{adj} = \beta_{base} \cdot \left(1 + \Delta T \cdot K_{temp}\right) \cdot \beta_{chamber}^{0.05}$$
-  Where $\beta_{base}$ is `baCoeff` (standard Vivacity), $\Delta T = T_{ambient} - 21.11 \quad [^\circ\text{C}]$, $K_{temp}$ is the temperature coefficient (`burnRateTempCoeffPerC`), and $\beta_{chamber}$ is the chamber expansion ratio.
+  Where $\beta_{base}$ is `baCoeff` (standard Vivacity at $\phi = \phi_{ref} = 0.50$), $\Delta T = T_{ambient} - 21.11 \quad [^\circ\text{C}]$, $K_{temp}$ is the temperature coefficient (`burnRateTempCoeffPerC`), and $\beta_{chamber}$ is the chamber expansion ratio.
 
 #### 2.3.2 Mass Burn Rate ($\frac{dm_p}{dt}$)
 $$\frac{dm_p}{dt} = -r \cdot K_{burn\_scale} \cdot m_{powder, total}^{0.75} \cdot \theta(Z) \cdot \text{taper} \cdot \psi_{flame} \quad [\text{kg/s}]$$
@@ -321,6 +325,28 @@ Based on the physical shape of the powder grains:
 * **Extruded Multi-Perforated:** $\theta(Z) = 1.0 + 0.8 \cdot Z$
 * **Multi-Stage Custom Burn Profile:** If custom parameters ($b_p, Z_1, Z_2$) are specified:
   $$\theta(Z) = \begin{cases} 1.0 + b_p \left(\frac{Z}{Z_1}\right) & Z < Z_1 \\ (1.0 + b_p) \left(1 - 0.5\frac{Z - Z_1}{Z_2 - Z_1}\right) & Z_1 \le Z < Z_2 \\ \max\left(0.01, 0.5(1.0 + b_p)\left(1 - \left(\frac{Z - Z_2}{1.0 - Z_2}\right)^2\right)\right) & Z \ge Z_2 \end{cases}$$
+
+#### 2.3.5 Fill-Fraction-Dependent Burn Rate Coefficient ($\lambda$)
+A scalar `baCoeff` fitted across loads with different charge weights cannot simultaneously capture the pressure-curve shapes at low fill and high fill. Empirically, burn dynamics shift with propellant loading density: at higher fill ratios the initial gas-to-void space is smaller, pressure rises faster, and the effective burn rate is higher.
+
+The engine corrects for this via a linear loading-density adjustment:
+$$\phi = \frac{m_{charge} / \rho_{propellant}}{V_{case\_empty}} \quad [\text{dimensionless}]$$
+$$\text{ba}_{eff} = \text{ba}_{base} \cdot \max\!\Bigl(10^{-6},\ 1 + \lambda \cdot (\phi - 0.50)\Bigr)$$
+Where:
+* $\phi$ — charge fill fraction: volume of solid propellant divided by empty case capacity (not a percentage; typical range 0.10–0.68 across the reference dataset)
+* $\phi_{ref} = 0.50$ — the reference pivot. At 50% fill, `ba_eff = baCoeff` exactly. No adjustment is applied at the reference fill.
+* $\lambda$ — `baFillSlope` in database. Fitted per powder by `calibrateV2.ts --fill-slope`.
+  - $\lambda > 0$: powder burns faster at higher density (typical for most extruded powders)
+  - $\lambda = 0$: identical to the scalar model (backward compatible; default when not calibrated)
+  - $\lambda < 0$: powder burns slower at higher density (possible for some ball powders)
+* The $\max(10^{-6}, \cdot)$ clamp prevents `ba_eff` from reaching zero or going negative.
+
+**Calibration guard:** `baFillSlope` is only fitted when a powder has $\ge 10$ reference loads spanning $\ge 8\%$ fill range ($\Delta\phi \ge 0.08$). Powders below either threshold retain `baFillSlope = 0`.
+
+#### *Why this model is used:*
+1. **Systematic bias at load extremes:** Without a fill-fraction correction, a single scalar `baCoeff` produces a pressure-curve that is systematically too high for light charges and too low for heavy charges (or vice versa). The linear slope absorbs this first-order loading-density dependence.
+2. **Physical grounding:** The correction is equivalent to a first-order linearization of loading-density effects on the initial free-volume available for combustion gas expansion — a well-established phenomenon in interior ballistics literature.
+3. **Minimal overfitting risk:** One extra parameter per powder, only fitted when sufficient data spans the fill range. Keeping it linear avoids multi-collinearity with `baCoeff` itself.
 
 #### *Why burn rate and geometry models are used:*
 Propellants do not ignite all at once. The rate at which chemical energy is released into the chamber is controlled by the physical shape of the individual gunpowder grains. By modeling these geometry form factors (progressive vs. degressive), the engine can accurately predict the shape of the pressure curve over time—distinguishing between fast-burning pistol powders (which spike quickly) and slow-burning rifle powders (which maintain pressure longer down the barrel).

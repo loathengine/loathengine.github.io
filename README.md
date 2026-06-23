@@ -247,7 +247,7 @@ Heurisko is the app's internal scientific suite. "Heurisko" refers to heuristic 
 - **Altitude-dependent gravity** — inverse-square law correction
 - **Humidity-corrected speed of sound**
 - **Miller stability formula** — Sg from twist rate, bullet dimensions, and velocity
-- **Propellant thermodynamic solver** — internal ballistics solver modeling combustion curves
+- **Propellant thermodynamic solver** — internal ballistics solver modeling combustion curves with fill-fraction-dependent burn rate
 - **Spin drift** — predicted from Sg and range
 - **Aerodynamic jump** — crosswind-induced vertical deflection
 
@@ -300,7 +300,7 @@ Uses a physics-based external ballistics engine seeded with your real measured s
 This tab simulates thermodynamic propellant combustion and bullet acceleration down the barrel using a physics solver. It outputs pressure-time curves (P-V curves) and burned percentage along the barrel.
 
 **Inputs & Features:**
-- **Auto-Fill from database:** Pulls case capacity ($H_2O$ grains), bullet diameter, weight, length, powder burn rates ($Ba$), heat of explosion, grain geometry, and solid density from loads and components.
+- **Auto-Fill from database:** Pulls case capacity ($H_2O$ grains), bullet diameter, weight, length, powder burn rates ($Ba$, $\lambda$), heat of explosion, grain geometry, and solid density from loads and components.
 - **Diagnostics & Safety Audits:**
   - **Chamber Pressure:** Compares peak simulated pressure against the SAAMI maximum limit. Triggers critical warnings if overpressure is predicted.
   - **Loading Density (Case Fill):** Flags low-fill hazards ($< 80\%$) which can cause erratic ignition/secondary detonation, and compressed loads ($> 100\%$, with critical alerts for excessive compression $> 105\%$).
@@ -331,7 +331,7 @@ The foundation of the application. The master database sync fills most of this a
 | **Diameters** | Caliber definitions (e.g., `.308`, `.264`) |
 | **Cartridges** | Specific chamberings linked to a diameter, with SAAMI specs |
 | **Bullets** | Full profiles: weight, length, ogive, BC, form factors |
-| **Powders** | Propellant profiles including ballistic simulator coefficients |
+| **Powders** | Propellant profiles including ballistic simulator coefficients (`baCoeff`, `baFillSlope`, `burnExponent`, `combustionEfficiency`) |
 | **Primers** | Primer inventory linked to primer pocket size |
 | **Brass** | Brass inventory with water capacity and primer data |
 
