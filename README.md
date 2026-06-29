@@ -61,7 +61,7 @@ Everything runs in your browser. No account, no server, no internet connection r
 
 **1. Sync the master database**
 
-Go to **DB Management** and click **Sync Remote Repo** under the *Sync Empirical Precision Database* section. This imports ~600 bullet profiles, 77 powders, 45 cartridges, primers, and brass from the built-in open-source library — no manual entry needed. Safe to run multiple times; it only adds or updates records without deleting your personal data.
+Go to **DB Management** and click **Sync Remote Repo** under the *Sync Empirical Precision Database* section. This imports bullet profiles, powders, cartridges, primers, and brass from the built-in open-source library — no manual entry needed. Safe to run multiple times; it only adds or updates records without deleting your personal data.
 
 **2. Add your firearm**
 
@@ -303,10 +303,22 @@ This tab simulates thermodynamic propellant combustion and bullet acceleration d
 - **Auto-Fill from database:** Pulls case capacity ($H_2O$ grains), bullet diameter, weight, length, powder burn rates ($Ba$, $\lambda$), heat of explosion, grain geometry, and solid density from loads and components.
 - **Diagnostics & Safety Audits:**
   - **Chamber Pressure:** Compares peak simulated pressure against the SAAMI maximum limit. Triggers critical warnings if overpressure is predicted.
-  - **Loading Density (Case Fill):** Flags low-fill hazards ($< 80\%$) which can cause erratic ignition/secondary detonation, and compressed loads ($> 100\%$, with critical alerts for excessive compression $> 105\%$).
+  - **Loading Density (Case Fill):** Flags low-fill hazards ($\lt 80\%$) which can cause erratic ignition/secondary detonation, and compressed loads ($\gt 100\%$, with critical alerts for excessive compression $\gt 105\%$).
   - **Neck Tension (Seating Depth):** Ensures bullet seating depth is at least one bullet diameter (1-caliber rule) for optimal neck tension and concentricity.
   - **OAL Boundaries:** Compares your COAL against the SAAMI maximum cartridge OAL to ensure magazine compatibility and chamber clearance.
-- **Diagnostic Reports:** Generates a complete structured report with thermodynamic and safety recommendations that can be copied/downloaded.
+- **Diagnostic Reports:** Generates a complete structured report with thermodynamic and safety recommendations.
+
+**Sharing Your Diagnostic Report:**
+
+The report share bar (below the EXPERIMENTAL warning banner) provides three methods to submit your report for developer support — all work on every device without requiring a local email client:
+
+| Button | What it does |
+|--------|--------------|
+| **Copy Report** | Copies the full diagnostic report to your clipboard. Paste it anywhere — Discord, text file, email, etc. Button briefly shows ✓ *Copied!* on success. |
+| **Download .txt** | Saves a `.txt` file named `ignition_report_<Cartridge>_<Powder>_<date>.txt` directly to your Downloads folder. Use this to attach the report to any message. |
+| **Open Gmail** | Opens a pre-filled Gmail compose window in your browser with the report in the body and the developer email pre-addressed. No local mail app required. |
+
+> **Tip:** The fastest path on mobile or shared computers is **Download .txt** — then attach it to a message on the Empirical Precision Discord.
 
 ---
 
@@ -343,7 +355,7 @@ The foundation of the application. The master database sync fills most of this a
 
 #### Sync Empirical Precision Database
 Imports the built-in library into your local database. Existing records are overwritten by ID, but your personal data is unaffected.
-- **Sync Remote Repo** button: Syncs ~600 bullet profiles, 77 powders, 45 cartridges, 29 brass entries, and 33 primers.
+- **Sync Remote Repo** button: Syncs all bullet profiles, powders, cartridges, brass entries, and primers from the master library.
 
 #### Import Saved JSON Data
 Restore or merge your history, firearms, loads, and custom components from a previously exported `.json` file.
@@ -408,3 +420,14 @@ Check: Firearm has twist rate and sight over bore set. Bullet has G7 BC entered 
 ---
 
 *For technical database schema documentation, see [SCHEMA.md](SCHEMA.md).*
+*For the mathematical derivations behind the simulation engines, see [MATHS.md](MATHS.md).*
+
+---
+
+## Community & Support
+
+Join the **Empirical Precision Discord** for load data discussion, bug reports, and feature requests:
+
+> **[discord.gg/adymGUfjst](https://discord.gg/adymGUfjst)**
+
+The **Join Discord** button on the app dashboard opens this link directly.

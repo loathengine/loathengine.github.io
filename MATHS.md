@@ -219,15 +219,17 @@ The model simulates a closed-system thermodynamic expansion of powder gases usin
 $$P_{mean} = \frac{(\gamma - 1) \cdot E_{gas}}{V_{free} - m_{gas} \cdot \eta(T_{gas})} \quad [\text{Pa}]$$
 Where:
 * $P_{mean}$: Average spatial gas pressure inside the chamber/bore.
-* $\gamma$: Ratio of specific heats of the propellant gas (`kCoeff`, typical value range 1.2 – 1.25).
+* $\gamma(T_{gas})$: Temperature-dependent ratio of specific heats, modeled using a sigmoid function that transitions from the frozen low-temperature limit to the fully-excited high-temperature limit:
+  $$\gamma(T) = \gamma_{hot} + \frac{\gamma_{frozen} - \gamma_{hot}}{1 + \exp\left(k_{steep} \cdot (T - T_{half})\right)}$$
+  Where $\gamma_{frozen} = 1.38$ (translation+rotation only, low-T limit), $\gamma_{hot} = 1.24$ (full vibrational excitation per JANAF NC combustion data at 3000 K), $T_{half} = 1800\text{ K}$ (transition midpoint), and $k_{steep} = 0.0015\text{ K}^{-1}$. The effective $\gamma$ at peak combustion temperature ($\approx$3000 K) is approximately $1.25$, giving $(\gamma - 1) \approx 0.25$. A single-pass bootstrap is followed by 3 fixed-point iterations to converge the $\gamma \leftrightarrow T \leftrightarrow C_v$ system to \textless{}0.01\%.
 * $m_{gas} = m_{powder, total} - m_{powder, solid}$: Mass of burned propellant gas.
 * $E_{gas}$: Total thermal energy of the gas.
 * $\eta(T_{gas})$: Temperature-dependent covolume of gas products representing the physical volume of gas molecules:
   $$\eta(T_{gas}) = \eta_{ref} \cdot \left(\frac{T_{ref}}{T_{gas}}\right)^{0.38} \quad [\text{m}^3/\text{kg}]$$
-  Where $\eta_{ref} = 0.00095 \quad [\text{m}^3/\text{kg}]$ and $T_{ref} = 300.0 \quad [\text{K}]$.
-* $T_{gas}$: Gas temperature inside the bore:
-  $$T_{gas} = \max\left(293.15, \min\left(3500.0, \frac{E_{gas}}{m_{gas} \cdot C_v}\right)\right) \quad [\text{K}]$$
-  Where $C_v = \frac{325.0}{\gamma - 1.0} \quad [\text{J/(kg}\cdot\text{K)}]$ is the specific heat of the gas at constant volume.
+  Where $\eta_{ref} = 0.00095 \quad [\text{m}^3/\text{kg}]$ and $T_{ref} = 300.0 \quad [\text{K}]$. At 3000 K this yields $\eta \approx 0.000345\text{ m}^3/\text{kg}$.
+* $T_{gas}$: Gas temperature inside the bore (from converged $\gamma(T)$ iteration):
+  $$T_{gas} = \max\left(300, \min\left(4000, \frac{E_{gas}}{m_{gas} \cdot C_v(\gamma)}\right)\right) \quad [\text{K}]$$
+  Where $C_v = \frac{R_{specific}}{\gamma - 1} \quad [\text{J/(kg}\cdot\text{K)}]$ and $R_{specific} = 325.0 \quad [\text{J/(kg}\cdot\text{K)}]$ is the specific gas constant for NC combustion products.
 
 #### 2.1.1 Free Expansion Volume ($V_{free}$)
 $$V_{free} = \max\left(0.05 \cdot V_0, V_0 + A_{groove} \cdot x - \frac{m_{powder, solid}}{\rho_{propellant}}\right) \quad [\text{m}^3]$$
@@ -261,8 +263,8 @@ If brand-specific case geometry is provided, the chamber surface area $A_{chambe
 The internal gas energy ($E_{gas}$) is determined by subtracting kinetic work and heat loss from the total chemical energy input:
 $$E_{gas} = \max\left(1.0, (m_{gas} \cdot Q + E_{primer}) - E_{kinetic} - E_{heat}\right) \quad [\text{J}]$$
 Where:
-* $Q$: Heat of explosion of the propellant scaled by combustion efficiency (`heatOfExplosionKjKg * 1000 * combustionEfficiency`, J/kg).
-* $E_{primer}$: Electrical/impact energy input from the primer (typically 8 – 14 Joules) delivered linearly over 0.6 milliseconds:
+* $Q$: Net heat of explosion of the propellant scaled by the energy scale factor: $Q = Q_{phys} \cdot ESF$ where $Q_{phys}$ is `heatOfExplosionKjKg × 1000` [J/kg] and $ESF$ is `energyScaleFactor` (a dimensionless calibrated efficiency correction, typically 1.05–1.25). Physical heat values are never modified by calibration — only ESF is adjusted.
+* $E_{primer}$: Electrical/impact energy input from the primer (typically 8–14 Joules) delivered linearly over 0.6 milliseconds:
   $$E_{primer}(t) = \max\left(0, E_{primer, total} \cdot \left(1 - \frac{t}{0.0006}\right)\right)$$
 * $E_{heat}$: Accumulated heat energy lost to the metal walls of the chamber and barrel.
 
@@ -293,29 +295,30 @@ Where:
   Where $\beta_{base}$ is `baCoeff` (standard Vivacity at $\phi = \phi_{ref} = 0.50$), $\Delta T = T_{ambient} - 21.11 \quad [^\circ\text{C}]$, $K_{temp}$ is the temperature coefficient (`burnRateTempCoeffPerC`), and $\beta_{chamber}$ is the chamber expansion ratio.
 
 #### 2.3.2 Mass Burn Rate ($\frac{dm_p}{dt}$)
-$$\frac{dm_p}{dt} = -r \cdot K_{burn\_scale} \cdot m_{powder, total}^{0.75} \cdot \theta(Z) \cdot \text{taper} \cdot \psi_{flame} \quad [\text{kg/s}]$$
+$$\frac{dm_p}{dt} = -r \cdot K_{burn\_scale} \cdot m_{powder, total}^{n_{surf}} \cdot \theta(Z) \cdot \text{taper} \cdot \psi_{flame} \quad [\text{kg/s}]$$
 Where:
-* $K_{burn\_scale} = 70.0$ (calibrated scaling factor).
+* $K_{burn\_scale} = 270.0$ (`vieilleScaleCoeff` — calibrated to m$^{0.75}$ grain surface area model).
+* $n_{surf} = 1.0$ (`grainSurfaceExponent` — physically 1.0 for constant grain population; configurable per powder type).
 * $m_{powder, total}$: Initial propellant charge weight in kilograms.
 * $Z = 1 - \frac{m_p}{m_{powder, total}}$ (Fraction of powder burned).
-* $\text{taper} = \min\left(1.0, \frac{m_p}{0.01 \cdot m_{powder, total}}\right)$ (Burnout taper factor).
-* $\psi_{flame}$: Flame spread fraction.
+* $\text{taper} = \min\left(1.0, \frac{m_p}{0.01 \cdot m_{powder, total}}\right)$ (Burnout taper — prevents negative mass).
+* $\psi_{flame}$: Flame-front fraction (see §2.3.3 below).
 
-#### 2.3.3 Flame Spread Fraction ($\psi_{flame}$)
-Models progressive ignition propagation through the powder column:
-1. Flash hole area ratio factor:
-   $$A_{ratio} = \frac{\pi \cdot d_{flash\_hole}^2 / 4}{\pi \cdot L_{case}^2 / 4}$$
-   $$f_{area} = \sqrt{\max\left(0.01, 1000 \cdot A_{ratio}\right)}$$
-2. Loading density packing factor:
-   $$\rho_{loading} = \frac{m_{powder, total}}{V_{case\_empty}} \quad [\text{kg/m}^3]$$
-   $$f_{density} = \max\left(0.1, \frac{\rho_{loading}}{1000}\right)^{-0.3}$$
-3. Flame propagation time ($t_{spread}$):
-   $$t_{spread} = \frac{L_{case}}{800.0 \cdot f_{area} \cdot f_{density}}$$
-4. Flame spread fraction:
-   * For $t \ge t_{spread}$: $\psi_{flame} = 1.0$
-   * For $t < t_{spread}$: 
-     $$\text{smooth} = \left(\frac{t}{t_{spread}}\right)^2 \cdot \left(3 - 2\frac{t}{t_{spread}}\right)$$
-     $$\psi_{flame} = 0.01 + 0.99 \cdot \text{smooth}$$
+#### 2.3.3 Flame-Front State Variable ($x_{flame}$)
+The ignition flame propagates through the powder column as a physical position tracked by the 5th ODE state variable $x_{flame}$ (meters from the flash hole). The fraction of the charge column that has been ignited is:
+$$\psi_{flame} = \min\left(1.0,\ \frac{x_{flame}}{L_{powder\_col}}\right)$$
+Where $L_{powder\_col}$ is the physical length of the powder column in the case (meters).
+
+The flame front velocity is pressure-coupled:
+$$\dot{x}_{flame} = V_{flame\_ref} \cdot \left(\frac{\max(1, P_{mean})}{P_{ref}}\right)^{n_{flame}} \cdot f_{density} \cdot \left(1 + \frac{E_{primer\_flame}}{E_{primer\_total}}\right)$$
+Where:
+* $V_{flame\_ref} = 800.0\text{ m/s}$ — reference flame propagation speed through packed propellant
+* $P_{ref} = 100\text{ MPa}$ — reference pressure for flame speed coupling
+* $n_{flame} = 0.35$ — pressure exponent for flame velocity scaling
+* $f_{density} = \left(\frac{\rho_{loading}}{\rho_{ref}}\right)^{-0.3}$ — denser packing retards flame spread
+* $E_{primer\_flame} / E_{primer\_total}$ — fraction of primer energy still being delivered (from the 0.6 ms primer burn window), which boosts ignition propagation
+
+The flame front starts at the flash hole ($x_{flame, 0} = d_{flash\_hole}$ in meters) and travels toward the bullet base at $L_{powder\_col}$. Combustion is gated by $\psi_{flame}$ — powder ahead of the flame front cannot burn. This replaces the earlier time-based $t_{spread}$ formula and correctly handles both fast-powder under-filled cases and slow-powder compressed charges.
 
 #### 2.3.4 Surface Form Factor $\theta(Z)$
 Based on the physical shape of the powder grains:
@@ -422,13 +425,17 @@ The rate of heat accumulation in the barrel wall is calculated as:
 $$\frac{dE_{heat}}{dt} = Q_{convective} + Q_{radiative} \quad [\text{J/s}]$$
 
 #### 2.6.1 Effective Heat Transfer Area ($A_{wall, eff}$)
-Gas cooling is insulated by a turbulent boundary layer scaling factor that grows down the bore:
+Gas cooling is insulated by a turbulent boundary layer that grows with bullet travel distance (proportional to $\sqrt{x}$ in turbulent pipe flow), reducing the effective heat transfer coefficient along the bore. A gas temperature correction factor ($2/3$) accounts for the axial temperature gradient (gas is hottest at the breech, cooler near the bullet base):
 $$A_{wall, eff} = A_{chamber} + A_{bore} \cdot \frac{1}{1 + 1.8\sqrt{x}} \cdot \frac{2}{3} \quad [\text{m}^2]$$
-Where $2/3$ is the gas column temperature correction factor, $A_{bore} = \pi \cdot d_{bullet} \cdot x$, and the chamber surface area $A_{chamber}$ is:
+Where $A_{bore} = \pi \cdot d_{bullet} \cdot x$ (bore contact area swept by bullet), and the chamber surface area $A_{chamber}$ is:
 * If detailed cartridge dimensions are missing:
   $$A_{chamber} = \pi R_{case}^2 + \frac{2 \cdot V_0}{R_{case}} \quad [\text{m}^2]$$
   Where $R_{case} = \sqrt{\beta_{chamber}} \cdot \frac{d_{bullet}}{2}$.
 * If detailed custom chamber dimensions are resolved: $A_{chamber} = customAChamber$.
+
+The heat transfer coefficient base is geometry-scaled relative to the .308 Win reference cartridge (bore 7.62 mm, capacity 3.625 g H₂O):
+$$H_{conv,base} = \alpha_{heat} \cdot \frac{d_{bore,ref}}{d_{bore}} \cdot \frac{C_{cap,ref}}{C_{cap}}$$
+Where $\alpha_{heat} = 8.5$ (`heatTransferCoeff`). The capacity ratio exponent is 1.0 (linear SA/V scaling). A 22 Hornet (0.875 g H₂O) therefore receives a 4.14× heat transfer multiplier relative to the .308 Win reference, not the 8.35× that a 1.5 exponent would produce.
 
 #### 2.6.2 Convective Loss ($Q_{convective}$)
 $$Q_{convective} = h_{conv} \cdot A_{wall, eff} \cdot (T_{gas} - 293.15) \quad [\text{J/s}]$$
@@ -439,7 +446,7 @@ $$\rho_{gas} = \frac{m_{gas}}{V_{free} - m_{gas} \cdot \eta(T_{gas})} \quad [\te
 
 #### 2.6.3 Radiative Loss ($Q_{radiative}$)
 $$Q_{radiative} = \epsilon \cdot \sigma \cdot A_{wall, eff} \cdot (T_{gas}^4 - 293.15^4) \quad [\text{J/s}]$$
-Where $\epsilon = 0.85$ (gas emissivity) and $\sigma = 5.670374 \cdot 10^{-8} \quad [\text{W/(m}^2\cdot\text{K}^4)]$ (Stefan-Boltzmann constant).
+Where $\epsilon = 0.12$ (gas-phase emissivity for NC/NG combustion products — not barrel steel emissivity) and $\sigma = 5.670374 \cdot 10^{-8} \quad [\text{W/(m}^2\cdot\text{K}^4)]$ (Stefan-Boltzmann constant).
 
 #### *Why heat loss and boundary layer insulation are modeled:*
 Gunpowder combustion temperatures exceed $3000\text{ K}$, and steel conducts heat rapidly. If heat loss was ignored, the simulated gas would remain too hot, pressure would remain artificially high, and muzzle velocities would be over-estimated. However, if simple pipe convection was used, heat loss would be vastly *over*-estimated. The boundary layer factor models the cool gas buffer that shields the barrel walls, ensuring realistic velocity outputs.
