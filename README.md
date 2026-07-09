@@ -8,6 +8,7 @@ Empirical Precision is a browser-based shooting journal and analysis tool. It le
 - **Photograph** your range targets and mark each bullet impact
 - **Analyze** your groups statistically — across one session or many
 - **Simulate** hit probability at range using a physics-based ballistic engine
+- **Model** internal ballistics with a thermodynamic propellant combustion solver
 
 Everything runs in your browser. No account, no server, no internet connection required after the first page load. Your data never leaves your device.
 
@@ -19,8 +20,9 @@ Everything runs in your browser. No account, no server, no internet connection r
 2. [Privacy & Data Storage](#privacy--data-storage)
 3. [Recommended Workflow](#recommended-workflow)
 4. [Tab-by-Tab Guide](#tab-by-tab-guide)
-5. [Troubleshooting](#troubleshooting)
-6. [Data Backup](#data-backup)
+5. [Per-Firearm Velocity Offset](#per-firearm-velocity-offset)
+6. [Troubleshooting](#troubleshooting)
+7. [Data Backup](#data-backup)
 
 ---
 
@@ -31,7 +33,7 @@ Everything runs in your browser. No account, no server, no internet connection r
 | **Session** | One range visit: a target, one or more groups, and metadata (firearm, load, distance) |
 | **Group** | A set of shots fired at a single point of aim within a session |
 | **Mean Radius (MR)** | Average distance of all shots from their collective center (MPI). The primary performance metric — not distorted by a single flyer, unlike ES POI |
-| **95% CI** | The range within which the true long-term Mean Radius is expected to fall with 95% probability, calculated from 1,000 bootstrap resamples of the actual shot data. Used internally to drive the Reliability Rating |
+| **95% CI** | The range within which the true long-run Mean Radius is expected to fall with 95% probability, calculated from 1,000 bootstrap resamples of the actual shot data. Used internally to drive the Reliability Rating |
 | **ES POI (Group Size)** | Extreme spread of the points of impact — center-to-center distance between the two furthest shots. Quick to read in the field but highly sensitive to one outlier. A poor statistical metric; use it to flag a severe system issue (baffle strike, loose action screws, etc.) |
 | **ES POI HV** | Horizontal (H) and vertical (V) spread of the group measured independently. Use to narrow down significant issues seen in the ES POI. Examples include barrel contact or scope cant |
 | **MPI Offset** | Mean Point of Impact — the average X and Y position of all shots relative to the session origin. Indicates where the load prints on target, not how tightly it groups |
@@ -44,6 +46,7 @@ Everything runs in your browser. No account, no server, no internet connection r
 | **POA** | Point of Aim — where you were aiming when firing |
 | **Composite Analysis** | Combining multiple sessions aligned by MPI to build meaningful sample sizes from small groups |
 | **Scale** | A calibration you set in the Marking tool so the app knows how many pixels equal one inch |
+| **Rifle Velocity Offset** | A per-firearm correction stored on your rifle record that accounts for the difference between the physics model's predicted velocity and your chronograph readings. Applies to displayed velocity only — never to pressure calculations or safety audits |
 
 ---
 
@@ -65,7 +68,7 @@ Go to **DB Management** and click **Sync Remote Repo** under the *Sync Empirical
 
 **2. Add your firearm**
 
-Go to **Firearms** and enter your rifle's nickname, cartridge, barrel length, twist rate, and scope height over bore.
+Go to **Firearms** and enter your rifle's nickname, cartridge, barrel length, twist rate, and scope height over bore. After accumulating range data, you can also store a [per-firearm velocity offset](#per-firearm-velocity-offset) to correct the simulator's displayed velocity for your specific barrel.
 
 **3. Add your load**
 
@@ -133,6 +136,8 @@ The target design generator suite. Design and print custom targets before your r
 
 **Editing:** Click **Edit** next to any entry, make changes, then click **Save Firearm** again.
 
+**Per-Firearm Velocity Offset:** The Ignition Simulator can store a velocity correction factor on your firearm record that accounts for barrel-to-barrel differences (bore dimensions, throat, friction) between your rifle and the physics model. This correction applies **only to the displayed velocity** — it never affects pressure, safety audits, or any powder parameters. See [Per-Firearm Velocity Offset](#per-firearm-velocity-offset) for the full workflow.
+
 > **Why twist rate matters:** The ballistic simulator uses twist rate to calculate gyroscopic stability ($S_g$) and spin drift, which directly affect long-range predictions.
 
 ---
@@ -179,7 +184,7 @@ Click **Set POA**, then click the exact spot on the target you were aiming at.
 Click **Mark POI**, then click each bullet hole on the target. A numbered dot appears for each shot. Use **Undo Last** or **Erase Shot** if you make a mistake.
 
 **6. Enter Shot Velocities (Optional):**
-If you used a chronograph, enter each shot's velocity (in fps) in the **Impact Data** table below the canvas. This enables velocity-dispersion correlation analysis.
+If you used a chronograph, enter each shot's velocity (in fps) in the **Impact Data** table below the canvas. This enables velocity-dispersion correlation analysis and powers the [Per-Firearm Velocity Offset](#per-firearm-velocity-offset) feature in the Ignition Simulator.
 
 **7. Save Target:**
 Enter a name for the marked target, enter the target distance (yards/meters), and click **SAVE MARKED TARGET**.
@@ -211,7 +216,7 @@ The bridge that connects your range targets to your rifles and ammunition. A ses
 | Metric | What It Tells You |
 |--------|-------------------|
 | **Mean Radius (MR)** | Typical shot-to-shot consistency. Lower = better. |
-| **95% CI** | The range within which the true long-term Mean Radius is expected to fall with 95% probability. Used internally to drive the Reliability Rating. |
+| **95% CI** | The range within which the true long-run Mean Radius is expected to fall with 95% probability. Used internally to drive the Reliability Rating. |
 | **ES POI (Group Size)** | Extreme spread of the points of impact — center-to-center distance between the two furthest shots. Highly sensitive to outliers. |
 | **ES POI HV** | Horizontal (H) and vertical (V) spread of the group measured independently. |
 | **SD POI HV** | Standard Deviation of the Horizontal or Vertical Points of Impact. A diagnostics tool to identify non-uniform scatter (stringing). |
@@ -302,10 +307,11 @@ This tab simulates thermodynamic propellant combustion and bullet acceleration d
 **Inputs & Features:**
 - **Auto-Fill from database:** Pulls case capacity ($H_2O$ grains), bullet diameter, weight, length, powder burn rates ($Ba$, $\lambda$), heat of explosion, grain geometry, and solid density from loads and components.
 - **Diagnostics & Safety Audits:**
-  - **Chamber Pressure:** Compares peak simulated pressure against the SAAMI maximum limit. Triggers critical warnings if overpressure is predicted.
+  - **Chamber Pressure:** Compares peak simulated pressure against the SAAMI maximum limit. Triggers critical warnings if overpressure is predicted. Pressure predictions always use the powder's calibrated database parameters and are **never modified** by chronograph data.
   - **Loading Density (Case Fill):** Flags low-fill hazards ($\lt 80\%$) which can cause erratic ignition/secondary detonation, and compressed loads ($\gt 100\%$, with critical alerts for excessive compression $\gt 105\%$).
   - **Neck Tension (Seating Depth):** Ensures bullet seating depth is at least one bullet diameter (1-caliber rule) for optimal neck tension and concentricity.
   - **OAL Boundaries:** Compares your COAL against the SAAMI maximum cartridge OAL to ensure magazine compatibility and chamber clearance.
+- **Rifle Velocity Offset Card:** When a session with chronograph data is selected, the simulator compares the model's predicted velocity against your measured mean. The difference (residual) is displayed for informational purposes. You can save this as a per-firearm correction factor — see [Per-Firearm Velocity Offset](#per-firearm-velocity-offset).
 - **Diagnostic Reports:** Generates a complete structured report with thermodynamic and safety recommendations.
 
 **Sharing Your Diagnostic Report:**
@@ -313,7 +319,7 @@ This tab simulates thermodynamic propellant combustion and bullet acceleration d
 The report share bar (below the EXPERIMENTAL warning banner) provides three methods to submit your report for developer support — all work on every device without requiring a local email client:
 
 | Button | What it does |
-|--------|--------------|
+|--------|--------------| 
 | **Copy Report** | Copies the full diagnostic report to your clipboard. Paste it anywhere — Discord, text file, email, etc. Button briefly shows ✓ *Copied!* on success. |
 | **Download .txt** | Saves a `.txt` file named `ignition_report_<Cartridge>_<Powder>_<date>.txt` directly to your Downloads folder. Use this to attach the report to any message. |
 | **Open Gmail** | Opens a pre-filled Gmail compose window in your browser with the report in the body and the developer email pre-addressed. No local mail app required. |
@@ -370,6 +376,76 @@ Restore or merge your history, firearms, loads, and custom components from a pre
 
 ---
 
+## Per-Firearm Velocity Offset
+
+The Ignition Simulator's physics model predicts muzzle velocity from first principles — powder burn parameters, case capacity, bullet weight, barrel length, and thermodynamics. Different rifles chambered for the same cartridge can produce different velocities from the same load because of barrel-to-barrel variation: groove dimensions, throat geometry, surface finish, and freebore. This is a property of **your rifle**, not of the powder.
+
+The Per-Firearm Velocity Offset feature lets you quantify this difference using your chronograph data and store it on your rifle record. The correction is applied **only to the displayed velocity** — the pressure trace, peak pressure, and all safety audit outputs always use the uncorrected physics engine.
+
+> ⚠️ **Important:** The simulator's pressure predictions are calibrated against laboratory piezo transducer data. Adjusting powder burn parameters to match a chronograph reading would corrupt those pressure predictions and invalidate the safety audit. This system is specifically designed to prevent that from happening.
+
+### How It Works
+
+1. **Run a simulation** in the Ignition Simulator with your load and firearm selected.
+2. **Select the session** that contains chronograph velocity data for that load/firearm combination.
+3. The **Rifle Velocity Offset** card appears in the simulation results, showing:
+   - **Model** — the physics engine's predicted velocity (unmodified)
+   - **Measured** — the mean of your chronograph shots (after outlier rejection)
+   - **Residual** — the difference in fps and percent
+
+### Outlier Rejection
+
+Before computing the mean, the app applies **MAD-based outlier rejection**:
+1. Computes the median of all velocities in the session.
+2. Computes the Median Absolute Deviation (MAD).
+3. Discards any shot more than 3 MAD from the median.
+4. Recomputes mean and SD on the surviving shots.
+
+The number of excluded shots is shown in the card. This prevents a single flyer, equipment glitch, or squib reading from corrupting your offset.
+
+### Data Quality Gates
+
+The **Save velocity offset to this firearm** button is only enabled when:
+
+| Requirement | Threshold | If failed |
+|-------------|-----------|-----------|
+| Minimum shot count | ≥ 5 shots with valid velocity | Save disabled, informational message shown |
+| Maximum SD | < 25 fps | Save disabled, warning shown |
+| Offset sanity | Residual ≤ 4% of predicted velocity | Warning shown, acknowledgment required before saving |
+
+If the residual exceeds 4%, the app warns that the gap is larger than typical barrel-to-barrel variation and prompts you to check your inputs (charge weight, barrel length, case capacity, COAL, chronograph placement) before saving. You can still save after acknowledging the warning, but the stored offset will be flagged as **"large offset — verify inputs"**.
+
+### Step-by-Step: Saving a Velocity Offset
+
+1. In **Heurisko → Ignition**, select your **Firearm** and fill in all simulation parameters.
+2. Click **RUN** to generate the simulation.
+3. Select the **Session** that has chronograph data for this firearm and load combination. The session must have at least 5 shots with valid velocity readings.
+4. The **Rifle Velocity Offset** card updates to show the model vs. measured comparison and the residual.
+5. If the data quality gates are met, click **Save velocity offset to this firearm**.
+   - If the firearm already has a stored offset, a confirmation dialog shows the old and new values. Click **Confirm Overwrite** to proceed.
+   - If the offset exceeds 4%, check the acknowledgment checkbox first.
+6. The offset is saved to your firearm record in the database.
+
+### What Happens After Saving
+
+- **Current simulation:** The Muzzle Velocity card immediately updates to show the corrected velocity, labeled *"Corrected for this rifle (model: X fps, +Y fps offset)"*.
+- **Future simulations:** Any time this firearm is selected in the Ignition Simulator, the stored offset is applied to the displayed velocity automatically.
+- **Pressure and safety:** The peak pressure, P-V chart, burn efficiency, and safety audit always display the raw, uncorrected engine output. The offset has no effect on these values.
+
+### Clearing a Stored Offset
+
+In the **Rifle Velocity Offset** card, click **Clear stored offset** to remove the correction from the firearm record. The displayed velocity immediately reverts to the unmodified physics engine output.
+
+### When to Re-Derive Your Offset
+
+Derive a new offset (and overwrite the old one) when:
+- You change your barrel
+- You change your load significantly (charge weight, bullet, COAL)
+- You move to a new chronograph setup or location
+- Your session data shows a significantly different velocity than your previous offset session
+
+---
+
 ## Troubleshooting
 
 **My measurements are huge/wrong numbers**
@@ -389,6 +465,18 @@ Common causes: scale points weren't placed precisely; the target image was cropp
 
 **The ballistic simulator gives unexpected results**
 Check: Firearm has twist rate and sight over bore set. Bullet has G7 BC entered with `Preferred Model` = `G7`. Muzzle velocity is correct. Environmental conditions are realistic.
+
+**The Ignition Simulator's predicted velocity doesn't match my chronograph**
+This is expected. The physics model is calibrated to laboratory pressure transducer data for every powder — it is not fitted to your specific rifle. Barrel-to-barrel differences (bore dimensions, throat, friction) cause rifle-to-rifle velocity variation. Use the [Per-Firearm Velocity Offset](#per-firearm-velocity-offset) feature to store and apply your rifle's correction. Do not manually adjust the Ba Coefficient or Heat of Explosion fields to match your chronograph — doing so will corrupt the pressure predictions and invalidate the safety audit.
+
+**The "Save velocity offset" button is grayed out**
+One or more data quality gates failed. The card shows which: fewer than 5 shots, SD above 25 fps, or no simulation has been run yet. Fire more shots in that session, or run the simulation first.
+
+**My stored firearm offset seems too large (> 4%)**
+The app will flag this automatically. Common causes: incorrect barrel length entry in the firearm record; charge weight not matching what was actually loaded; case capacity mismatch; or chronograph placement too close to the muzzle. Verify your inputs before saving a large offset.
+
+**I saved a velocity offset but the displayed velocity didn't change**
+The offset is applied to the **displayed velocity** in the Muzzle Velocity card. If you don't see the "Corrected for this rifle" label, the selected firearm may not match the one the offset was saved to. Confirm the correct firearm is selected in the Profile section.
 
 ---
 
@@ -411,10 +499,13 @@ Check: Firearm has twist rate and sight over bore set. Bullet has G7 BC entered 
 3. Click the **Import Saved JSON Data** button.
 4. Records are merged — existing records with matching IDs are updated, personal records are preserved.
 
+> **Note:** Per-firearm velocity offsets are stored on the firearm record and are included in any database export/import automatically.
+
 ### Recommended Backup Schedule
 
 - After every range session
 - After adding new firearms or loads
+- After saving or updating a firearm velocity offset
 - After running a master database sync
 
 ---
