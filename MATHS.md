@@ -4,7 +4,7 @@ This document provides a comprehensive technical overview of the physical and th
 ---
 
 ## 1. External Ballistics Engine (Trajectory Simulator)
-The external ballistics engine (implemented in [ballisticsEngine.ts](file:///home/jobelche/Documents/github/EPv4/src/utils/ballisticsEngine.ts)) computes the flight path of a projectile in three dimensions from the muzzle to the target.
+The external ballistics engine (implemented in [ballisticsEngine.ts](../../src/utils/ballisticsEngine.ts)) computes the flight path of a projectile in three dimensions from the muzzle to the target.
 
 ### 1.1 The 3-Degrees-of-Freedom (3DOF) Point-Mass Model
 The bullet is treated as a point mass with coordinates in three-dimensional space $\vec{r} = (x, y, z)$ and a velocity vector $\vec{v} = (v_x, v_y, v_z)$:
@@ -212,7 +212,7 @@ These solvers eliminate manual trial-and-error. Finding exact zero launch angles
 ---
 
 ## 2. Internal Ballistics Engine (Ignition Simulator)
-The internal ballistics engine (implemented in [ignitionBallisticsEngine.ts](file:///home/jobelche/Documents/github/EPv4/src/utils/ignitionBallisticsEngine.ts)) models chemical propellant combustion, thermodynamic expansion, heat transfer, and mechanical friction as the bullet travels down the barrel bore.
+The internal ballistics engine (implemented in [ignitionBallisticsEngine.ts](../../src/utils/ignitionBallisticsEngine.ts)) models chemical propellant combustion, thermodynamic expansion, heat transfer, and mechanical friction as the bullet travels down the barrel bore.
 
 ### 2.1 Thermodynamic Equation of State (Noble-Abel)
 The model simulates a closed-system thermodynamic expansion of powder gases using the **Noble-Abel Equation of State**:
