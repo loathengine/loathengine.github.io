@@ -24,6 +24,8 @@ Everything runs in your browser. No account, no server, no internet connection r
 6. [Troubleshooting](#troubleshooting)
 7. [Data Backup](#data-backup)
 
+> **Nav bar order:** About Us · Targets · Firearms · Load Library · Marking · Chronos · Sessions · Analysis · Heurisko · Components · DB Management
+
 ---
 
 ## Key Concepts & Terms
@@ -90,7 +92,7 @@ In the **Marking** tab, enter a known reference distance (e.g., `2` inches) unde
 
 **7. Mark your Point of Aim (POA) & impacts (POI)**
 
-Click **New Group**, select **Set POA** and click your target's aiming point on the canvas. Then select **Mark POI** and click each bullet hole to mark impact positions. You can optionally log chronographed muzzle velocities in the *Impact Data* table. Name your marked target and click **SAVE MARKED TARGET**.
+Click **New Group**, select **Set POA** and click your target's aiming point on the canvas. Then select **Mark POI** and click each bullet hole to mark impact positions. You can optionally log chronographed muzzle velocities directly in the *Impact Data* table, or import a chronograph file and bulk-apply velocities from the [Chronos](#chronos) tab. Name your marked target and click **SAVE MARKED TARGET**.
 
 **8. Combine into a Session**
 
@@ -110,7 +112,9 @@ Go to **DB Management**, expand **Advanced Database Settings**, select `-- Entir
 
 ### About Us
 
-The landing page. Provides an overview of the app's purpose, design philosophy, and privacy architecture. No data entry here.
+An overview of the app's purpose, design philosophy, feature list, and privacy architecture. No data entry here.
+
+> **Note:** The actual landing page (what loads at the app's root URL) is the **Dashboard**, reached via the "Empirical Precision" logo link in the top-left of the nav bar. It shows the same 6-step Getting Started Workflow described above with quick links into each tab, plus buttons to sync the master database, view this guide, and join the Discord.
 
 ---
 
@@ -188,6 +192,36 @@ If you used a chronograph, enter each shot's velocity (in fps) in the **Impact D
 
 **7. Save Target:**
 Enter a name for the marked target, enter the target distance (yards/meters), and click **SAVE MARKED TARGET**.
+
+---
+
+### Chronos
+
+Import, review, export, and link chronograph velocity data. The tab has three sub-panels: **Import**, **Export**, and **Associate**.
+
+#### Import
+
+- **Drag & drop or browse** for a file. Supported formats are auto-detected: **LabRadar CSV**, **MagnetoSpeed CSV**, **Garmin Xero (CSV)**, **Garmin FIT** (binary, incl. `.fit` files exported from a Xero), and **Generic CSV** (any file with a numeric velocity column) as a fallback.
+- After parsing, a stats bar shows **Avg / SD / ES / Min / Max** for the shot string.
+- Any file that fails to fully parse shows inline warnings (e.g. a FIT file with no projectile-speed records above the 35 m/s detection threshold).
+- Enter a **session name** and click **Save** to store the shot string as a reusable Chrono Session (listed under **Saved**), independent of any marked target.
+- The **Load Marking Data** panel alongside it lets you pick a saved **Marked Target** to see its groups/shots side-by-side with the imported chrono shots, ready for linking.
+
+#### Associate & Apply Velocities
+
+Link individual chronograph shots to the marking-canvas shots they correspond to, then push the measured velocity into your session's shot records:
+
+1. In the **Import** tab, click a **chrono shot** row (it highlights blue).
+2. Click the corresponding **marking shot** row to link the two.
+3. Repeat for each shot, or click **Auto-Match** to link them sequentially in order.
+4. Switch to the **Associate** tab to review all links, then click **Apply Velocities** to write each linked chrono velocity onto the matching shot in the database.
+5. **Unlink** any single pairing, or **Clear All** to reset every link.
+
+> This is the fastest path to populate velocity data for [Vert Dispersion R²](#key-concepts--terms) and the [Per-Firearm Velocity Offset](#per-firearm-velocity-offset) feature when you have a full string of chronograph readings instead of entering them shot-by-shot in Marking.
+
+#### Export
+
+With a chrono session loaded, download it as **CSV**, **TSV** (for direct paste into Excel/Sheets), or **JSON** (includes computed stats and any marking-shot links), or use **Copy to Clipboard** to paste a TSV table directly into a spreadsheet.
 
 ---
 
@@ -349,7 +383,7 @@ The foundation of the application. The master database sync fills most of this a
 | **Diameters** | Caliber definitions (e.g., `.308`, `.264`) |
 | **Cartridges** | Specific chamberings linked to a diameter, with SAAMI specs |
 | **Bullets** | Full profiles: weight, length, ogive, BC, form factors |
-| **Powders** | Propellant profiles including ballistic simulator coefficients (`baCoeff`, `baFillSlope`, `burnExponent`, `combustionEfficiency`) |
+| **Powders** | Propellant profiles including ballistic simulator coefficients: burn area coefficient, burn exponent (Vieille's law), heat of explosion, propellant/bulk density, grain geometry, ignition parameters, and temperature sensitivity. Supports per-cartridge burn-area overrides. |
 | **Primers** | Primer inventory linked to primer pocket size |
 | **Brass** | Brass inventory with water capacity and primer data |
 
@@ -368,10 +402,10 @@ Restore or merge your history, firearms, loads, and custom components from a pre
 - Records are merged by ID. Base64 image data is automatically converted back to binary Blob storage on import.
 
 #### Advanced Database Settings (Collapsible Panel)
-- **Target Active Scope**: Dropdown to select either `-- Entire Database --` or a specific table (e.g. `firearms`, `loads`, `sessions`, `targetImages`).
-- **Export Selected Scope** button: Downloads a `.json` backup of the active scope. Target images are automatically converted from binary Blobs to Base64 strings for JSON compatibility.
+- **Active Table**: Dropdown to select either `-- Entire Database --` or a specific table (e.g. `firearms`, `loads`, `sessions`, `targetImages`).
+- **Export Selected Table** button: Downloads a `.json` backup of the active table (or the entire database). Target images are automatically converted from binary Blobs to Base64 strings for JSON compatibility.
 - **Install PWA App** button: Installs Empirical Precision as a standalone PWA on your device so you can run it fully offline at the shooting range.
-- **Wipe Active Scope** button: Destructive operation that clears all records from the selected table or wipes the entire database.
+- **Wipe Active Table** button: Destructive operation that clears all records from the selected table or wipes the entire database.
 - **Raw DB Records Browser**: View, inspect, or delete raw IndexedDB records when a specific table is selected.
 
 ---
@@ -488,8 +522,8 @@ The offset is applied to the **displayed velocity** in the Muzzle Velocity card.
 
 1. Go to **DB Management**.
 2. Click **Advanced Database Settings** to expand the panel.
-3. Ensure **Target Active Scope** is set to `-- Entire Database --`.
-4. Click **Export Selected Scope**.
+3. Ensure **Active Table** is set to `-- Entire Database --`.
+4. Click **Export Selected Table**.
 5. Save the `.json` file to cloud storage, an external drive, or both.
 
 ### How to Restore
