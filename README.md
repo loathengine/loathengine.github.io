@@ -185,7 +185,7 @@ Import, review, export, and link chronograph velocity data. The tab has three su
 #### Import
 
 - **Drag & drop or browse** for a file. Supported formats are auto-detected: **LabRadar CSV**, **MagnetoSpeed CSV**, **Garmin Xero (CSV)**, **Garmin FIT** (binary, incl. `.fit` files exported from a Xero), and **Generic CSV** (any file with a numeric velocity column) as a fallback.
-- After parsing, a stats bar shows **Avg / SD / ES / Min / Max** for the shot string.
+- After parsing, a stats bar shows **Avg / SD V / ES V / Min / Max** for the shot string.
 - Any file that fails to fully parse shows inline warnings (e.g. a FIT file with no projectile-speed records above the 35 m/s detection threshold).
 - Enter a **session name** and click **Save** to store the shot string as a reusable Chrono Session (listed under **Saved**), independent of any marked target.
 - The **Load Marking Data** panel alongside it lets you pick a saved **Marked Target** to see its groups/shots side-by-side with the imported chrono shots, ready for linking.
@@ -542,6 +542,8 @@ This is the canonical definition for every term and acronym used in this guide a
 | **Session** | One range visit: a target, one or more groups, and metadata (firearm, load, distance) |
 | **Group** | A set of shots fired at a single point of aim within a session |
 | **POA** | Point of Aim — where you were aiming when firing |
+| **POI** | Point of Impact — where a bullet actually struck the target. Every shot you mark on the canvas is a POI; ES POI, SD POI HV, and MPI Offset are all statistics computed from the set of POIs in a group |
+| **MPI** | Mean Point of Impact — the average X/Y position of every POI in a group, i.e. the group's mathematical center. Used as the reference point for Mean Radius, ES POI, and Composite Analysis alignment |
 | **Scale** | A calibration you set in the Marking tool so the app knows how many pixels equal one inch |
 | **Composite Analysis** | Combining multiple sessions aligned by MPI to build meaningful sample sizes from small groups |
 | **Rifle Velocity Offset** | A per-firearm correction stored on your rifle record that accounts for the difference between the physics model's predicted velocity and your chronograph readings. Applies to displayed velocity only — never to pressure calculations or safety audits |
