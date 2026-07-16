@@ -23,6 +23,7 @@ Everything runs in your browser. No account, no server, no internet connection r
 5. [Per-Firearm Velocity Offset](#per-firearm-velocity-offset)
 6. [Troubleshooting](#troubleshooting)
 7. [Data Backup](#data-backup)
+8. [Glossary](#glossary)
 
 > **Nav bar order:** About Us · Targets · Firearms · Load Library · Marking · Chronos · Sessions · Analysis · Heurisko · Components · DB Management
 
@@ -30,25 +31,7 @@ Everything runs in your browser. No account, no server, no internet connection r
 
 ## Key Concepts & Terms
 
-| Term | Meaning |
-|------|---------|
-| **Session** | One range visit: a target, one or more groups, and metadata (firearm, load, distance) |
-| **Group** | A set of shots fired at a single point of aim within a session |
-| **Mean Radius (MR)** | Average distance of all shots from their collective center (MPI). The primary performance metric — not distorted by a single flyer, unlike ES POI |
-| **95% CI** | The range within which the true long-run Mean Radius is expected to fall with 95% probability, calculated from 1,000 bootstrap resamples of the actual shot data. Used internally to drive the Reliability Rating |
-| **ES POI (Group Size)** | Extreme spread of the points of impact — center-to-center distance between the two furthest shots. Quick to read in the field but highly sensitive to one outlier. A poor statistical metric; use it to flag a severe system issue (baffle strike, loose action screws, etc.) |
-| **ES POI HV** | Horizontal (H) and vertical (V) spread of the group measured independently. Use to narrow down significant issues seen in the ES POI. Examples include barrel contact or scope cant |
-| **MPI Offset** | Mean Point of Impact — the average X and Y position of all shots relative to the session origin. Indicates where the load prints on target, not how tightly it groups |
-| **SD POI HV** | Standard Deviation of the Horizontal or Vertical Points of Impact. A diagnostics tool, not a performance metric. If SD H ≈ SD V, scatter is uniform. If SD V >> SD H, you have vertical stringing — look at velocity variance, dragging firing pin, or barrel-stock contact. If SD H >> SD V, you have horizontal stringing — look at wind, loose bipod, or lateral trigger push |
-| **Reliability Rating (0.5 – 5.0 Stars)** | A composite score that rates data quality. It starts from sample size, then adjusts based on bootstrap CI convergence, Shapiro-Wilk normality for shot location, and Shapiro-Wilk normality for velocity. A high-shot-count session can still be penalized if the data is non-normal or has extreme outliers |
-| **SD V** | Sample standard deviation of muzzle velocities (n-1 formula). Evaluates the entire distribution of the propellant burn — how the internal ballistics are functioning as a cohesive system |
-| **ES V** | Extreme Spread of muzzle velocities (max minus min). Good for flagging a severe system problem in the field, but a poor statistical tool. A sudden spike to 60+ fps is a red flag (blown primer, severe neck tension, erratic ignition) |
-| **Vert Dispersion R²** | R-squared from a linear regression of muzzle velocity vs. vertical shot position. Values above 40% indicate velocity variance is a statistically significant driver of vertical stringing. The smoking gun connecting SD V to vertical dispersion. No correlation means chasing SD V may not improve vertical grouping |
-| **Shapiro-Wilk Test (Location / Velocity)** | A normality test run on shot radial distances from MPI and, separately, on muzzle velocities. W ranges from 0 to 1 — closer to 1 means more normal. p ≥ 0.10 = Normal (+0.5 ★ to rating); p 0.05–0.10 = Marginal (neutral); p < 0.05 = Non-Normal (penalty). Non-normal shot patterns suggest outliers or flyers. Non-normal velocity suggests primer or charge variation |
-| **POA** | Point of Aim — where you were aiming when firing |
-| **Composite Analysis** | Combining multiple sessions aligned by MPI to build meaningful sample sizes from small groups |
-| **Scale** | A calibration you set in the Marking tool so the app knows how many pixels equal one inch |
-| **Rifle Velocity Offset** | A per-firearm correction stored on your rifle record that accounts for the difference between the physics model's predicted velocity and your chronograph readings. Applies to displayed velocity only — never to pressure calculations or safety audits |
+Every term and acronym used in this guide — and everywhere in the app itself — is defined once, in one place: the **[Glossary](#glossary)** at the end of this document. Keeping definitions there and nowhere else is deliberate: a term defined in two places eventually drifts, and drifted wording is exactly what makes an app feel unplanned. If you're looking for what "SD V," "ES POI," "COAL vs SAAMI OAL," or any other term means, jump straight to the [Glossary](#glossary).
 
 ---
 
@@ -217,7 +200,7 @@ Link individual chronograph shots to the marking-canvas shots they correspond to
 4. Switch to the **Associate** tab to review all links, then click **Apply Velocities** to write each linked chrono velocity onto the matching shot in the database.
 5. **Unlink** any single pairing, or **Clear All** to reset every link.
 
-> This is the fastest path to populate velocity data for [Vert Dispersion R²](#key-concepts--terms) and the [Per-Firearm Velocity Offset](#per-firearm-velocity-offset) feature when you have a full string of chronograph readings instead of entering them shot-by-shot in Marking.
+> This is the fastest path to populate velocity data for [Vert Dispersion R²](#glossary) and the [Per-Firearm Velocity Offset](#per-firearm-velocity-offset) feature when you have a full string of chronograph readings instead of entering them shot-by-shot in Marking.
 
 #### Export
 
@@ -247,18 +230,7 @@ The bridge that connects your range targets to your rifles and ammunition. A ses
 
 #### Metric Reference
 
-| Metric | What It Tells You |
-|--------|-------------------|
-| **Mean Radius (MR)** | Typical shot-to-shot consistency. Lower = better. |
-| **95% CI** | The range within which the true long-run Mean Radius is expected to fall with 95% probability. Used internally to drive the Reliability Rating. |
-| **ES POI (Group Size)** | Extreme spread of the points of impact — center-to-center distance between the two furthest shots. Highly sensitive to outliers. |
-| **ES POI HV** | Horizontal (H) and vertical (V) spread of the group measured independently. |
-| **SD POI HV** | Standard Deviation of the Horizontal or Vertical Points of Impact. A diagnostics tool to identify non-uniform scatter (stringing). |
-| **MPI Offset** | Where your load actually prints relative to point of aim. |
-| **Reliability Rating** | 0.5–5.0 stars composite score rating data quality based on sample size, bootstrap CI convergence, and normality. |
-| **SD V** | Muzzle velocity standard deviation. Evaluates propellant burn consistency. |
-| **ES V** | Extreme spread of muzzle velocities (max minus min). Good for flagging severe system issues. |
-| **Vert Dispersion R²** | R-squared showing if velocity variation is driving vertical stringing (>40% = correlated). |
+The Analysis Results Table surfaces: **Mean Radius (MR)**, **95% CI**, **ES POI (Group Size)**, **ES POI HV**, **SD POI HV**, **MPI Offset**, **Reliability Rating**, **SD V**, **ES V**, and **Vert Dispersion R²**. See the [Glossary](#glossary) for what each one means.
 
 #### Step-by-Step
 
@@ -556,3 +528,71 @@ Join the **Empirical Precision Discord** for load data discussion, bug reports, 
 > **[discord.gg/adymGUfjst](https://discord.gg/adymGUfjst)**
 
 The **Join Discord** button on the app dashboard opens this link directly.
+
+---
+
+## Glossary
+
+This is the canonical definition for every term and acronym used in this guide and throughout the app — the same wording appears on the app's About page. If you're standardizing a label anywhere (in the app, in this file, in code comments), match the wording here rather than inventing a new phrasing.
+
+### Workflow Terms
+
+| Term | Meaning |
+|------|---------|
+| **Session** | One range visit: a target, one or more groups, and metadata (firearm, load, distance) |
+| **Group** | A set of shots fired at a single point of aim within a session |
+| **POA** | Point of Aim — where you were aiming when firing |
+| **Scale** | A calibration you set in the Marking tool so the app knows how many pixels equal one inch |
+| **Composite Analysis** | Combining multiple sessions aligned by MPI to build meaningful sample sizes from small groups |
+| **Rifle Velocity Offset** | A per-firearm correction stored on your rifle record that accounts for the difference between the physics model's predicted velocity and your chronograph readings. Applies to displayed velocity only — never to pressure calculations or safety audits |
+
+### Statistical & Precision Terms
+
+| Term | Meaning |
+|------|---------|
+| **Mean Radius (MR)** | The average distance of every shot from the group's center — the preferred precision metric because it uses every shot, not just the two extremes |
+| **95% CI** | 95% Confidence Interval — the range the true Mean Radius is expected to fall within 95% of the time, given the sample size |
+| **ES POI (Group Size)** | Extreme Spread of Point of Impact — the center-to-center distance between the two furthest shots; sensitive to a single outlier. Quick to read in the field but a poor statistical metric; use it to flag a severe system issue (baffle strike, loose action screws, etc.) |
+| **ES POI HV** | The horizontal (H) and vertical (V) spread of the group measured independently. Use to narrow down significant issues seen in the ES POI — examples include barrel contact or scope cant |
+| **MPI Offset** | Mean Point of Impact — the average X and Y position of all shots relative to the session origin. Indicates where the load prints on target, not how tightly it groups |
+| **SD POI HV** | Standard Deviation of the Horizontal or Vertical Points of Impact. A diagnostics tool, not a performance metric. If SD H ≈ SD V, scatter is uniform. If SD V ≫ SD H, you have vertical stringing — look at velocity variance, a dragging firing pin, or barrel-stock contact. If SD H ≫ SD V, you have horizontal stringing — look at wind, a loose bipod, or lateral trigger push |
+| **Reliability Rating** | A 0.5–5.0 star score combining sample size and Mean Radius confidence into a single at-a-glance grade. It starts from sample size, then adjusts based on bootstrap CI convergence and Shapiro-Wilk normality (location and velocity) |
+| **SD V** | Velocity Standard Deviation — the sample standard deviation of a session's muzzle velocities (n-1 formula); the primary indicator of how consistently the internal ballistics are performing |
+| **ES V** | Velocity Extreme Spread — the difference between the highest and lowest recorded velocity; a red-flag indicator, not a statistical tool. A sudden spike to 60+ fps signals something mechanically wrong (blown primer, severe neck tension, erratic ignition) |
+| **Vert Dispersion R²** | The R-squared from a linear regression of muzzle velocity vs. vertical shot position. Values above 40% indicate velocity variance is a statistically significant driver of vertical stringing — connecting SD V to vertical dispersion. No correlation means chasing SD V may not improve vertical grouping |
+| **Shapiro-Wilk Test (Location / Velocity)** | A normality test run on shot radial distances from MPI and, separately, on muzzle velocities. W ranges from 0 to 1 — closer to 1 means more normal. p ≥ 0.10 = Normal (+0.5 ★ to rating); p 0.05–0.10 = Marginal (neutral); p < 0.05 = Non-Normal (penalty) |
+
+### Cartridge & Seating Geometry
+
+| Term | Meaning |
+|------|---------|
+| **COAL** | Cartridge Overall Length — the actual measured length of your loaded round |
+| **SAAMI OAL** | The cartridge's published maximum overall length spec — a ceiling, not a measurement of your load |
+| **Mag COAL** | The maximum COAL a specific firearm's magazine can feed, which may be shorter than SAAMI OAL |
+| **CBTO** | Cartridge Base to Ogive — case-head to bullet-ogive length; more repeatable than COAL for setting seating depth |
+
+### Angular & Ballistic Terms
+
+| Term | Meaning |
+|------|---------|
+| **MOA** | Minutes of Angle — an angular unit (1 MOA ≈ 1.047 in at 100 yd) used for group size and scope adjustments |
+| **MIL** | Milliradian — an angular unit (1 MIL = 10 cm at 100 m), an alternative to MOA on some scopes |
+| **BC (Ballistic Coefficient)** | A measure of a bullet's ability to overcome air resistance relative to its mass and diameter — higher BC means a flatter trajectory and less wind drift. The app supports G1 and G7 drag models |
+| **Sg (Gyroscopic Stability Factor)** | The ratio of a spinning bullet's actual stability to the minimum stability required to prevent tumbling, computed by Efstathia via the Refined Miller Twist Rule. Sg ≥ 1.5 is fully stable; Sg < 1.0 is unstable and will tumble |
+| **Internal Ballistics** | Everything that happens inside the chamber and barrel: combustion, pressure, and the resulting muzzle velocity |
+| **External Ballistics** | Everything that happens after the bullet leaves the muzzle: drag, wind, drop, spin drift, and Coriolis effect |
+
+### Heurisko Sub-Tools
+
+| Term | Meaning |
+|------|---------|
+| **Efstathia** | Heurisko's gyroscopic stability calculator — solves for stability factor (Sg) via the Refined Miller Twist equation |
+| **Kylindros** | Heurisko's ballistic coefficient and twist-rate calculator, derived from bullet geometry |
+| **DOPE** | Data On Previous Engagement — a pocket reference card of ballistic drop/drift corrections at set ranges, generated for MIL or MOA turrets |
+| **MPBR** | Maximum Point Blank Range — the solver that finds the optimal zero range keeping bullet impacts within a defined target vital zone without any elevation adjustment |
+
+### Technical
+
+| Term | Meaning |
+|------|---------|
+| **PWA** | Progressive Web App — a standalone, installable version of the app that runs fully offline once installed from DB Management |
