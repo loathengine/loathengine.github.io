@@ -1,475 +1,995 @@
-# Empirical Precision: Scientific Ballistics Reference
-This document provides a comprehensive technical overview of the physical and thermodynamic equations, constants, and numerical integration algorithms implemented in the **Empirical Precision** ballistics simulation engines, along with the design decisions justifying why each specific model or engine is used.
+# Internal Ballistics Engine — Specification Manual
+
+> **Scope.** This document is a complete, implementation-level specification of the
+> *internal* ballistics engine: the solver that converts a cartridge/powder/bullet
+> load into a **chamber-pressure history** and a **derived muzzle velocity**. It is
+> written to be sufficient to re-create the engine from scratch. Every formula,
+> variable name, constant, and unit below is quoted directly from the source of
+> truth:
+>
+> | Concern | File |
+> |---|---|
+> | The engine (pure solver) | `src/utils/ignitionBallisticsEngine.ts` |
+> | The input builder (controller) | `src/utils/buildSimulationInputs.ts` |
+> | Bullet displacement volume | `src/utils/unitConversions.ts` (`computeBulletDisplacementH2o`) |
+> | Post-engine velocity correction | `src/utils/velocityCorrection.ts` |
+>
+> **All quantities inside the engine are SI/metric.** Metres, kilograms, seconds,
+> Pascals, Joules, Kelvin. Imperial units (grains, inches, fps, PSI) exist *only*
+> at the UI/IO boundary and in the source data; they are converted to metric before
+> the engine is called and back to imperial after. Nothing imperial ever enters the
+> solver.
 
 ---
 
-## 1. External Ballistics Engine (Trajectory Simulator)
-The external ballistics engine (implemented in [ballisticsEngine.ts](../../src/utils/ballisticsEngine.ts)) computes the flight path of a projectile in three dimensions from the muzzle to the target.
+## 1. Architecture & Invariants
 
-### 1.1 The 3-Degrees-of-Freedom (3DOF) Point-Mass Model
-The bullet is treated as a point mass with coordinates in three-dimensional space $\vec{r} = (x, y, z)$ and a velocity vector $\vec{v} = (v_x, v_y, v_z)$:
-* $x$: Horizontal range along the firing axis (meters).
-* $y$: Vertical height above/below the muzzle axis (meters).
-* $z$: Cross-range lateral drift/windage (meters).
-* $t$: Time of flight (seconds).
+### 1.1 Pressure-primary design
 
-The equations of motion are expressed as a system of first-order ordinary differential equations (ODEs):
-$$\frac{d\vec{r}}{dt} = \vec{v}$$
-$$\frac{d\vec{v}}{dt} = \vec{a}_{drag} + \vec{a}_{gravity} + \vec{a}_{coriolis}$$
+The engine is **pressure-primary**. It never fits or targets muzzle velocity
+directly. The state it integrates forward in time is a coupled system of
+combustion, thermodynamics, gas dynamics, heat loss, and mechanics. Chamber
+pressure is computed every derivative evaluation from an energy balance and an
+equation of state; the bullet's acceleration is `P_base · A_groove − F_resist`
+divided by effective mass; **muzzle velocity is simply the value of the velocity
+state variable `v` at the instant the bullet base reaches the muzzle.** Velocity is
+therefore an *emergent output* of the pressure/energy solution, not a tuned
+quantity.
 
-#### *Why this model is used:*
-1. **Balance of Computational Cost and Accuracy:** A full 6DOF (6 Degrees of Freedom) model tracks the projectile's physical pitch, yaw, roll, and body orientations. However, 6DOF requires detailed aerodynamic coefficients (such as overturning moment, dynamic cross-force, and spin-damping coefficients) which are proprietary or unknown for the vast majority of commercial bullets. 
-2. **Superiority over Analytical Approximations (Siacci/Pejsa):** Classic closed-form models like the Siacci or Pejsa methods were developed in the pre-computer era to approximate drop tables using pencil and paper. They fail to handle dynamic atmospheric gradients, varying crosswinds, or Coriolis integrations over long flight paths. 
-3. **Stochastic Feasibility:** The 3DOF model provides high-fidelity trajectories (integrating air density, gravity, wind, Coriolis, and spin effects) while executing fast enough to run thousands of iterations within a client-side browser context—critical for real-time Monte Carlo dispersion simulations.
+The only velocity adjustment in the whole system is a **post-engine multiplicative
+correction** (`velocityCorrection.ts`, §6) applied *after* the solver returns. It
+corrects a known structural velocity deficit (the 0-D engine under-predicts
+overbore cartridges) and **never touches pressure**.
 
----
+### 1.2 The pipeline
 
-### 1.2 Atmospheric Physics & Speed of Sound
-Standard aerodynamic drag is modeled relative to the localized air density and the speed of sound.
+```
+DB records ──► buildSimulationInputs() ──► runInternalBallisticsSimulation() ──► correctVelocity()
+  (Dexie)        (controller, §2)              (pure engine, §3)                 (leaf node, §6)
+                 builds SimulationInputs        raw result:                       corrected muzzle
+                 + FallbackReport               peakPressurePa,                   velocity only —
+                                                muzzleVelocityMps (raw),          pressure untouched
+                                                energy breakdown
+```
 
-#### 1.2.1 Vapor Pressure of Water ($p_{vapor}$)
-Water vapor reduces the density of air. The vapor pressure of water is modeled using the Magnus-Tetens formula:
-$$p_{vapor} = H_{humidity} \cdot 6.1078 \cdot 10^{\frac{7.5 \cdot T_{celsius}}{T_{celsius} + 237.3}} \cdot 100 \quad [\text{Pa}]$$
-Where:
-* $H_{humidity}$ is relative humidity as a fraction ($0.0 \text{ to } 1.0$).
-* $T_{celsius}$ is the ambient temperature in Celsius.
+* **`buildSimulationInputs`** is the *single source of truth* for turning database
+  records into engine inputs. It performs every unit conversion, every geometry
+  reconstruction, every fallback, and emits an auditable `FallbackReport`. It is a
+  pure function (no I/O, no async).
+* **`runInternalBallisticsSimulation`** is the *pure engine*. It receives a fully
+  populated `SimulationInputs` and returns an `InternalBallisticsResult`.
+* **`correctVelocity`** applies the fitted overbore/weight/pressure-ramp velocity
+  correction.
 
-#### 1.2.2 Dry Air Partial Pressure ($p_{dry}$)
-$$p_{dry} = p_{total} - p_{vapor} \quad [\text{Pa}]$$
-Where $p_{total}$ is the barometric station pressure in Pascals.
+### 1.3 Purity invariants of the engine
 
-#### 1.2.3 Air Density ($\rho$)
-$$\rho = \frac{p_{dry}}{R_{dry} \cdot T_{kelvin}} + \frac{p_{vapor}}{R_{vapor} \cdot T_{kelvin}} \quad [\text{kg/m}^3]$$
-Where:
-* $T_{kelvin} = T_{celsius} + 273.15 \quad [\text{K}]$
-* $R_{dry} = 287.058 \quad [\text{J/(kg}\cdot\text{K)}]$ (Specific gas constant for dry air)
-* $R_{vapor} = 461.495 \quad [\text{J/(kg}\cdot\text{K)}]$ (Specific gas constant for water vapor)
+The engine (`runInternalBallisticsSimulation`) obeys strict rules:
 
-#### 1.2.4 Speed of Sound ($c_{sos}$)
-$$x_w = \frac{p_{vapor}}{p_{total}}$$
-$$M_{eff} = M_{dry} \cdot (1 - x_w) + M_{vapor} \cdot x_w \quad [\text{kg/mol}]$$
-$$\gamma_{eff} = 1.4 \cdot (1 - x_w) + 1.33 \cdot x_w$$
-$$c_{sos} = \sqrt{\frac{\gamma_{eff} \cdot R_{universal} \cdot T_{kelvin}}{M_{eff}}} \quad [\text{m/s}]$$
-Where:
-* $M_{dry} = 0.028964 \quad [\text{kg/mol}]$
-* $M_{vapor} = 0.018015 \quad [\text{kg/mol}]$
-* $R_{universal} = 8.314462 \quad [\text{J/(mol}\cdot\text{K)}]$ (Universal gas constant)
+1. **No data fetching.** It reads only its `SimulationInputs` argument.
+2. **No unit conversion.** Every input is already metric. `bulletDisplacementVolumeM3`,
+   for example, must be pre-computed by the controller — the engine throws if it is
+   missing.
+3. **No default values.** It carries no fallbacks. Every required parameter that is
+   missing, non-finite, or out of range causes a **loud throw** (`throw new Error(...)`).
+   Silent coercion and fuzzy matching are prohibited.
+4. **Fail loud.** Invalid `grainType`, missing `burnAreaCoeff`, missing `quenchPressurePa`,
+   invalid twist, over-limit fill fraction, etc. all throw immediately (see §3.2).
 
-#### *Why these atmospheric corrections are used:*
-1. **Dynamic Drag Corrections:** Drag is directly proportional to air density ($\rho$). Since density varies heavily with elevation, pressure, temperature, and humidity, static standard atmospheres are insufficient for precision shooting.
-2. **Mach-Speed Scaling:** Bullet drag coefficients ($C_d$) change dramatically as the bullet transitions from supersonic ($M > 1.2$) through the transonic barrier ($0.8 \le M \le 1.2$) to subsonic speeds ($M < 0.8$). Because the Mach boundary shifts with the speed of sound, and the speed of sound is highly sensitive to temperature and humidity, calculating a precise, humidity-corrected $c_{sos}$ is mandatory to map the drag lookup tables accurately.
+Because the engine refuses to guess, all "best effort" logic — geometry
+reconstruction, named fallbacks — lives in the controller, where it is visible and
+counted.
 
----
+### 1.4 Physical/metric constants (module-level, not tunable)
 
-### 1.3 Aerodynamic Drag Model
-The drag force acts directly opposite to the bullet's relative velocity through the air mass.
+These are true physical constants, distinct from the calibration `EngineConfig` (§4).
 
-#### 1.3.1 Relative Velocity ($\vec{v}_r$)
-The velocity of the bullet relative to the wind vector $\vec{w} = (w_x, 0, w_z)$ is:
-$$\vec{v}_r = \vec{v} - \vec{w} = (v_x - w_x, v_y, v_z - w_z) \quad [\text{m/s}]$$
-Where the wind components are resolved from wind speed ($W$) and wind direction ($\theta_{wind}$ where $0^\circ$ is a headwind and $90^\circ$ is a right-to-left crosswind):
-$$w_x = -W \cdot \cos(\theta_{wind})$$
-$$w_z = -W \cdot \sin(\theta_{wind})$$
-$$v_r = \sqrt{(v_x - w_x)^2 + v_y^2 + (v_z - w_z)^2} \quad [\text{m/s}]$$
+| Symbol (code) | Value | Meaning |
+|---|---|---|
+| `COVOLUME_REF` | `0.00095` | Cold-gas Noble-Abel covolume reference (m³/kg) — overridable via `engineConfig.covolumeRefM3Kg` |
+| `COVOLUME_T_REF` | `300.0` | Reference temperature for covolume (K) |
+| `COVOLUME_T_EXP` | `0.38` | Covolume temperature exponent — overridable via `engineConfig.covolumeTExp` |
+| `T_WALL_K` | `293.15` | Barrel wall temperature (K = 20 °C) |
+| `SIGMA` | `5.670374e-8` | Stefan-Boltzmann constant (W·m⁻²·K⁻⁴) |
+| `SHOULDER_ANGLE_NORM_DEG` | `30.0` | Normalisation shoulder angle for gradient scaling (deg) |
+| `GAMMA_FROZEN` | `1.38` | Low-T asymptote of γ(T) (rotation+translation only) |
+| `GAMMA_HOT` | `1.21` | High-T asymptote of γ(T) (full vibrational excitation) |
+| `GAMMA_T_HALF` | `1800.0` | Sigmoid midpoint temperature for γ(T) (K) |
+| `GAMMA_STEEPNESS` | `0.0015` | γ(T) sigmoid transition rate (1/K) |
+| `R_SPECIFIC` | `325.0` | Specific gas constant of NC/NG combustion products (J·kg⁻¹·K⁻¹) |
 
-#### 1.3.2 Mach Number ($M$)
-$$M = \frac{v_r}{c_{sos}}$$
-
-#### 1.3.3 Sectional Density ($SD$) and Drag Form Factor ($i$)
-$$\text{Sectional Density } SD = \frac{m_{grains}}{7000 \cdot d_{inches}^2} \quad [\text{lb/in}^2]$$
-$$\text{Form Factor } i = \frac{SD}{BC} \quad [\text{dimensionless}]$$
-Where:
-* $m_{grains}$: Bullet weight in grains.
-* $d_{inches}$: Bullet diameter in inches.
-* $BC$: The G1 or G7 Ballistic Coefficient.
-
-#### 1.3.4 Drag Coefficient ($C_d$) and Acceleration
-The standard drag coefficient $C_{d, std}(M)$ is determined using linear interpolation from a G1 (79-point) or G7 (87-point) Mach lookup table:
-$$C_d = C_{d, std}(M) \cdot i$$
-The resulting drag acceleration vector is:
-$$\vec{a}_{drag} = -\frac{1}{2} \rho v_r^2 \cdot C_d \cdot \frac{A_{ref}}{m_{bullet}} \cdot \frac{\vec{v}_r}{v_r} \quad [\text{m/s}^2]$$
-Where $A_{ref} = \pi \frac{d^2}{4}$ (Reference area, meters), and $m_{bullet}$ is bullet mass in kilograms.
-
-#### *Why G1 and G7 models are used:*
-1. **Shape-Matching Drag Curves:** Projectiles experience different boundary layer drag patterns based on their shape. 
-   * **G1 Drag Table:** Calibrated for flat-base, short-nose projectiles (similar to classic pistol or flat-base rifle bullets).
-   * **G7 Drag Table:** Calibrated for modern, streamlined, boat-tail, long-secant-ogive bullets.
-2. **Eliminating Velocity-Dependent BC Drift:** If a modern boat-tail bullet is modeled using a G1 profile, its Ballistic Coefficient will appear to shift or "drift" as it slows down because the G1 drag curve does not match the bullet's physical shape. Using the G7 model for boat-tails keeps the BC constant across supersonic, transonic, and subsonic envelopes, avoiding significant elevation errors at long ranges.
+Two module-level variables `cfgCovolRef`, `cfgCovolTExp` are set once per simulation
+from `engineConfig` and read by the hot-loop pressure/heat functions (avoids
+threading them through every call site).
 
 ---
 
-### 1.4 Gravitational Acceleration (Altitude-Dependent)
-To account for long trajectories or high altitudes, gravity is modeled using the Earth's inverse-square law:
-$$g(y_{alt}) = g_0 \cdot \left(\frac{R_e}{R_e + y_{alt}}\right)^2 \quad [\text{m/s}^2]$$
-Where:
-* $g_0 = 9.80665 \quad [\text{m/s}^2]$ (Standard gravity at sea level)
-* $R_e = 6,371,000 \quad [\text{meters}]$ (Earth mean radius)
-* $y_{alt}$: Total absolute altitude above sea level ($Altitude_{local} + y_{bullet}$).
+## 2. Inputs
 
-#### *Why altitude-dependent gravity is used:*
-For extreme long-range shooting (e.g., ELR past 1500 yards), bullets reach high peak-trajectory heights (called the *ordinate*). Modeling gravity as a variable rather than a constant ($9.8 \text{ m/s}^2$) prevents vertical calculation drift as the bullet travels through different gravity fields.
+### 2.1 The `SimulationInputs` shape (what the engine consumes)
 
----
+Every field below is on the `SimulationInputs` interface. Fields marked **required**
+cause a throw if missing/invalid.
 
-### 1.5 Coriolis Effect (3D Earth Rotation)
-Coriolis acceleration describes the lateral and vertical deviations caused by the rotation of the Earth beneath the bullet during its flight:
-$$\vec{a}_{coriolis} = -2 (\vec{\Omega} \times \vec{v}) \quad [\text{m/s}^2]$$
-Given firing latitude ($\phi$) and firing azimuth direction ($\theta_{azimuth}$):
-$$\Omega_x = \Omega \cdot \cos(\phi) \cdot \cos(\theta_{azimuth})$$
-$$\Omega_y = \Omega \cdot \sin(\phi)$$
-$$\Omega_z = -\Omega \cdot \cos(\phi) \cdot \sin(\theta_{azimuth})$$
-$$\vec{a}_{coriolis} = \begin{bmatrix} a_{c, x} \\ a_{c, y} \\ a_{c, z} \end{bmatrix} = \begin{bmatrix} -2 (\Omega_y v_z - \Omega_z v_y) \\ -2 (\Omega_z v_x - \Omega_x v_z) \\ -2 (\Omega_x v_y - \Omega_y v_x) \end{bmatrix} \quad [\text{m/s}^2]$$
+#### `cartridge: CartridgeParams`
 
-#### *Why the Coriolis model is used:*
-At ranges beyond 600 yards, the flight time of the bullet is long enough (often $1.0\text{ to } 3.0+$ seconds) for the Earth to rotate significantly beneath it. This manifests as horizontal deviation (Coriolis drift) and vertical deviation (Eötvös effect). For precision target impacts, accounting for latitude and firing azimuth is mandatory.
+| Field | Unit | Req | Meaning |
+|---|---|---|---|
+| `name` | — | | Display name |
+| `baseCapacityH2oGrams` | g H₂O | ✔ | Empty-case water capacity → `V_case_empty` |
+| `bulletDiameterMm` | mm | ✔ | Groove/bullet diameter → `A_groove` |
+| `boreDiameterMm` | mm | ✔ | Land-to-land bore diameter → `A_bore` (engraving) |
+| `maxSaamiPa` | Pa | | SAAMI/CIP pressure ceiling (used by controller/calibration, not the solver core) |
+| `throatFreetravelMm` | mm | ✔ | Freebore (jump-to-lands) distance |
+| `flashHoleDiameterMm` | mm | ✔ | Flash-hole diameter → flame-front start position |
+| `shoulderAngleDeg` | deg | ✔ | Shoulder half-angle → Lagrange gradient scaling |
+| `bodyDiameterMm` | mm | | External body diameter at base — improves `beta` estimate |
+| `primerPocketType` | — | | `PKT_SML`/`PKT_LRG` |
+| `trimLengthMm` / `maxCaseLengthMm` | mm | ✔ (one of) | Case length → barrel free travel, powder-column length |
+| `transducerScaleFactor` | — | ✔ | Multiplier applied to reported breech pressure |
+| `gradientBetaScale` | — | | Per-cartridge scale on the (β−1) gradient term; default 1.0 |
 
----
+#### Scalar load/environment fields
 
-### 1.6 Spin Drift and Aerodynamic Jump
+| Field | Unit | Req | Meaning |
+|---|---|---|---|
+| `bulletWeightGrams` | g | ✔ | Bullet mass |
+| `powderChargeGrams` | g | ✔ | Propellant charge mass |
+| `barrelLengthMm` | mm | ✔ | Physical barrel length |
+| `ambientTempC` | °C | ✔ | Ambient temp → powder temperature sensitivity |
+| `seatingDepthMm` | mm | ✔ | Bullet base depth below case mouth |
+| `bulletOverallLengthMm` | mm | | OAL — used with seating depth + ogive to compute effective jump |
+| `ogiveLengthMm` | mm | | Ogive length — corrects freebore consumption and throat volume |
+| `bearingSurfaceMm` | mm | ✔ | Full-diameter shank length → friction contact area |
+| `bulletMaterialType` | — | | e.g. `MAT_JACKETED_LEAD`, mono-copper — selects friction/correction variants |
+| `primerEnergyJ` | J | ✔ | Primer energy input (8 J small / 14 J large typical) |
+| `beta` | — | ✔ | Chamber expansion ratio (body-to-bore area) — pre-computed by controller |
+| `engravingPressurePa` | Pa | ✔ | Peak jacket-engraving pressure (material property) |
+| `bulletDisplacementVolumeM3` | m³ | ✔ | Seated-bullet displacement volume — pre-computed by controller |
+| `twistRateMmPerTurn` | mm/turn | ✔ | Barrel twist → rotational inertia |
+| `caseDimensions` | — | | Optional detailed external+wall profile → exact `V0`, `A_chamber`, `beta` |
+| `densityRefKgM3` | kg/m³ | | Cell-relative reference loading density for density-coupling (§3.5); absent → self-reference (factor 1.0) |
+| `pressureLevelMPa` | MPa | | Cell operating-pressure level for the K(P) coupling law (§3.5); absent → flat `densityCouplingK` |
+| `engineConfig` | — | ✔ | Full `EngineConfig` calibration block (§4) |
 
-#### 1.6.1 Gyroscopic Stability Factor ($S_g$)
-Calculated using the Refined Miller Twist equation:
-$$S_g = \frac{30 \cdot m_{grains}}{T^2 \cdot d_{inches} \cdot l \cdot (1 + l^2)} \cdot \left(\frac{V_{fps}}{2800}\right)^{1/3}$$
-Where:
-* $T$ is the twist rate in inches.
-* $d_{inches}$ is the bullet diameter in inches.
-* $l$ is the bullet length in calibers (bullet length in inches divided by bullet diameter in inches).
-* $m_{grains}$ is the bullet weight in grains.
-* $V_{fps}$ is the muzzle velocity in feet per second.
+### 2.2 How `buildSimulationInputs` derives them
 
-*Note: If the bullet length is not specified, a default gyroscopic stability factor $S_g = 1.5$ is used as a fallback.*
+The controller maps a normalised `BuildInputsArgs` (cartridge / powder / bullet /
+load / environment) into `SimulationInputs`, applying **named fallbacks** and
+recording each one in `FallbackReport.fallbacks[]` as `{ name, value, field }`.
 
-#### 1.6.2 Spin Drift Deflection
-$$\text{Drift}_{inches} = 1.25 \cdot (S_g + 1.2) \cdot t^{1.83}$$
-$$\text{Drift}_{meters} = \text{Drift}_{inches} \cdot 0.0254$$
-Spin drift is added directly to the cross-range (z) coordinate.
+#### 2.2.1 Named fallback constants
 
-#### 1.6.3 Aerodynamic Jump
-Aerodynamic jump is a vertical jump induced by crosswinds on a spin-stabilized projectile:
-$$\text{Jump}_{moa} = 0.01 \cdot W_{crosswind, mph}$$
-$$\text{Jump}_{rad} = \text{Jump}_{moa} \cdot 0.000290888$$
-Where $W_{crosswind, mph}$ is crosswind velocity resolved from the wind vector relative to the line of sight.
+| Constant | Value | Applied to |
+|---|---|---|
+| `FALLBACK_SEATING_DEPTH_MM` | `3.0` mm | `seatingDepthMm` |
+| `FALLBACK_ENGRAVING_PRESSURE_PA` | `40e6` Pa | `engravingPressurePa` |
+| `FALLBACK_FREEBORE_MM` | `3.0` mm | `throatFreetravelMm` |
+| `FALLBACK_FLASH_HOLE_MM` | `2.0` mm | `flashHoleDiameterMm` |
+| `FALLBACK_SHOULDER_ANGLE_DEG` | `30` deg | `shoulderAngleDeg` |
+| `FALLBACK_BODY_DIAMETER_MM` | `11` mm | `bodyDiameterMm` |
+| `FALLBACK_TEMP_SENSITIVITY` | `0.00144` /°C | `tempSensitivity` |
+| `FALLBACK_HEAT_EXPLOSION` | `3900` kJ/kg | `heatOfExplosionKjKg` |
+| `FALLBACK_PROPELLANT_DENSITY` | `1600` kg/m³ | `propellantDensityKgM3` |
+| `FALLBACK_BULK_DENSITY` | `950` kg/m³ | `bulkDensityKgM3` |
+| `FALLBACK_BURN_EXPONENT` | `0.6` | `burnExponent` |
+| `FALLBACK_AMBIENT_TEMP_C` | `21.11` °C (70 °F) | `ambientTempC` |
 
-#### *Why these spin-stabilization effects are modeled:*
-1. **Spin Drift:** A spin-stabilized projectile does not fly perfectly straight; gyroscopic precession causes it to tilt slightly off the flight path, resulting in a continuous lateral drift in the direction of the barrel's rifling twist (usually right). At $1000\text{ yards}$, spin drift can push a bullet $6\text{ to } 10\text{ inches}$ laterally, which is more than enough to miss a target completely.
-2. **Aerodynamic Jump:** When a spinning bullet exits the muzzle into a crosswind, the wind immediately exerts a force on its nose. Due to gyroscopic precession, this lateral force causes a vertical tilt. Integrating this jump prevents vertical point-of-impact errors when shooting in high wind conditions.
+Two derived defaults are not in the table: `transducerScaleFactor ?? 1.0`,
+`gradientBetaScale ?? 1.0`, `grainType || "extrudedSinglePerf"`,
+`energyScaleFactor ?? 1.0`.
 
----
+#### 2.2.2 Bullet length geometry (`resolveBulletGeometry`)
 
-### 1.7 Numerical Integrator (4th-Order Runge-Kutta)
-The ODE system is integrated step-by-step using a classical **Runge-Kutta 4th-order (RK4)** method with a fixed time step ($dt = 0.005$ seconds):
-$$\vec{k}_1 = \vec{f}(t_n, \vec{y}_n)$$
-$$\vec{k}_2 = \vec{f}\left(t_n + \frac{dt}{2}, \vec{y}_n + \frac{dt}{2}\vec{k}_1\right)$$
-$$\vec{k}_3 = \vec{f}\left(t_n + \frac{dt}{2}, \vec{y}_n + \frac{dt}{2}\vec{k}_2\right)$$
-$$\vec{k}_4 = \vec{f}\left(t_n + dt, \vec{y}_n + dt\vec{k}_3\right)$$
-$$\vec{y}_{5th\_order} = \vec{y}_n + \frac{dt}{6} \left(\vec{k}_1 + 2\vec{k}_2 + 2\vec{k}_3 + \vec{k}_4\right)$$
-Where the state vector $\vec{y} = [x, y, z, v_x, v_y, v_z]$.
+The three bullet segments satisfy the identity **overall = ogive + bearing + boattail**.
+Reconstruction priority (first match wins):
 
-#### *Why the RK4 integrator is used:*
-1. **Superior Accuracy over Euler:** A simple Euler integrator ($y_{n+1} = y_n + dt \cdot f(t_n)$) has a local truncation error of $O(dt^2)$, which causes rapid error accumulation (drift) over long trajectories unless the time step is impractically small. RK4 provides 4th-order accuracy ($O(dt^5)$ local, $O(dt^4)$ global), ensuring sub-millimeter trajectory precision even with a larger time step of $0.005$ seconds.
-2. **Efficiency of Fixed Step Size:** Because external flight trajectories are smooth and continuous curves (without sudden, stiff spikes), a fixed-step integrator is highly efficient. It avoids the mathematical overhead of step-size calculations (unlike adaptive methods) and compiles into simple, predictable loop arrays that run extremely fast inside background Web Workers during Monte Carlo simulations.
+1. **Fully measured** (bearing, ogive, boattail, overall all present) → used verbatim;
+   `segmentsInterpolated = false`.
+2. **Bearing missing, ogive+boattail+overall present** → `bearing = overall − ogive − boattail`
+   (exact identity); `segmentsInterpolated = false`.
+3. **Only overall present** → reconstruct a *consistent* set:
+   `bearing = fallbackBearingSurfaceMm(...)`, `boattail = estimateBoatTailMm(...)`,
+   both clamped to leave ≥ half-caliber for the ogive, then `ogive = overall − bearing − boattail`;
+   `segmentsInterpolated = true`.
+4. **No overall** → only a bearing guess; ogive/boattail stay `null`;
+   `segmentsInterpolated = true`.
 
----
+**`fallbackBearingSurfaceMm`** — 2-term physical model fitted on 689 measured bullets
+(5-fold CV MAE ≈ 1.15 mm):
 
-### 1.8 Target Zeroing and Canted Weapon Geometry
+```
+A_mm2  = π · (d/2)²                       (bore cross-section, mm²)
+L_eff  = weightGrams / ((ρ / 1e6) · A_mm2)   (equal-mass solid-cylinder length, mm)
+L_b    = 0.1836 · L_eff + 0.2085 · overallLengthMm
+return clamp(L_b, lower = 0.5·d, upper = overallLengthMm)
+```
 
-#### 1.8.1 Rifle Cant Coordinate Transformation
-When a rifle is canted by an angle $\theta_{cant}$ (degrees), the coordinates of the sight starting position are rotated:
-$$y_{start} = -h_{sight} \cdot \cos(\theta_{cant}) \quad [\text{m}]$$
-$$z_{start} = -h_{sight} \cdot \sin(\theta_{cant}) \quad [\text{m}]$$
-Where $h_{sight}$ is the sight height above the bore axis.
-The solver zeroing angles (elevation $\theta_e$ and windage $\theta_w$) are transformed to true launching angles relative to the canted coordinate frame:
-$$\theta_{e, true} = \theta_e \cdot \cos(\theta_{cant}) - \theta_w \cdot \sin(\theta_{cant}) \quad [\text{rad}]$$
-$$\theta_{w, true} = \theta_e \cdot \sin(\theta_{cant}) + \theta_w \cdot \cos(\theta_{cant}) \quad [\text{rad}]$$
-Incorporating the vertical Aerodynamic Jump ($\theta_{jump}$), the final launch velocity components are:
-$$v_{x, 0} = V_0 \cdot \cos(\theta_{e, true} + \theta_{jump}) \cdot \cos(\theta_{w, true})$$
-$$v_{y, 0} = V_0 \cdot \sin(\theta_{e, true} + \theta_{jump})$$
-$$v_{z, 0} = V_0 \cdot \cos(\theta_{e, true} + \theta_{jump}) \cdot \sin(\theta_{w, true})$$
+`ρ` (material density, kg/m³) via `bearingMaterialDensityKgM3`: copper/mono/brass
+`8940`, cast `11000`, else (jacketed-lead + default) `10400`. If overall length is
+absent it degrades to the bore-ratio constant `1.49 · d`.
 
-#### 1.8.2 Iterative Zeroing Method
-To find the initial elevation angle ($\theta_e$) and windage angle ($\theta_w$) required to zero the rifle at a target distance ($D_{zero}$), the solver uses a shooting/secant iteration loop:
-1. Initialize $\theta_e = 0$, $\theta_w = 0$.
-2. Run trajectory simulation.
-3. Find the vertical ($miss_y$) and lateral ($miss_z$) error at $x = D_{zero}$ via interpolation.
-4. Correct the launching angles:
-   $$\theta_e \leftarrow \theta_e + \arctan\left(\frac{-miss_y}{D_{zero}}\right)$$
-   $$\theta_w \leftarrow \theta_w + \arctan\left(\frac{-miss_z}{D_{zero}}\right)$$
-5. Repeat 3 times to achieve precise zero alignment on paper.
+**`estimateBoatTailMm`** — keyed off the design token in the bullet id
+`BUL_<maker>_<cal>_<weight>_<DESIGN>…`:
 
-#### 1.8.3 Maximum Point Blank Range (MPBR) Solver
-Determines the optimum zero distance to hit a vital zone of size $V$ (e.g. 8 inches) without dialing adjustments.
-* It uses a binary search between $10\text{m}$ and $600\text{m}$ to find a zero distance where the maximum trajectory peak ($y_{peak}$) above the line of sight is exactly:
-  $$y_{peak} = \frac{V}{2}$$
-* The **Near Zero** is the range where the bullet rises above $0$.
-* The **Far Zero** is the calculated optimum zero.
-* The **MPBR Limit** is the range where the falling bullet drops below:
-  $$y_{drop} = -\frac{V}{2}$$
+* Returns `0` for flat-base tokens (`BT_FLAT` = RN, PT, FB, SPT, GS, HC, TNT, FN, SP)
+  *unless* a "strong" boat-tail token also appears (`BT_STRONG` = SBT, HPBT, BTHP,
+  VLD, ELDX/ELDM/ELD, MK/SMK/TMK, LRHT, …).
+* Otherwise returns `bt_fraction · d`, where `bt_fraction` is the max matching entry
+  in the `BT_FRACTION` table (e.g. `MB 0.745`, `ELDM 0.664`, `HPBT 0.653`, `TSX 0.285`),
+  or the global mean `BT_FRACTION_GLOBAL = 0.415` when unknown.
 
-#### *Why these solvers are used:*
-These solvers eliminate manual trial-and-error. Finding exact zero launch angles and MPBR ranges mathematically requires solving boundary value problems (where the final position at a distance is fixed, but the initial angles are unknown). The iterative shooting method solves this in milliseconds, ensuring that the DOPE cards and target indicators match physical targets.
+#### 2.2.3 Seating depth
 
----
----
+```
+if overall & coalMm & caseLength > 0:
+    seatingDepthMm = max(1.0, overallLengthMm − (coalMm − caseLengthMm))
+else:
+    seatingDepthMm = FALLBACK_SEATING_DEPTH_MM (3.0)
+```
 
-## 2. Internal Ballistics Engine (Ignition Simulator)
-The internal ballistics engine (implemented in [ignitionBallisticsEngine.ts](../../src/utils/ignitionBallisticsEngine.ts)) models chemical propellant combustion, thermodynamic expansion, heat transfer, and mechanical friction as the bullet travels down the barrel bore.
+#### 2.2.4 Bullet displacement volume (`computeBulletDisplacementH2o`)
 
-### 2.1 Thermodynamic Equation of State (Noble-Abel)
-The model simulates a closed-system thermodynamic expansion of powder gases using the **Noble-Abel Equation of State**:
-$$P_{mean} = \frac{(\gamma - 1) \cdot E_{gas}}{V_{free} - m_{gas} \cdot \eta(T_{gas})} \quad [\text{Pa}]$$
-Where:
-* $P_{mean}$: Average spatial gas pressure inside the chamber/bore.
-* $\gamma(T_{gas})$: Temperature-dependent ratio of specific heats, modeled using a sigmoid function that transitions from the frozen low-temperature limit to the fully-excited high-temperature limit:
-  $$\gamma(T) = \gamma_{hot} + \frac{\gamma_{frozen} - \gamma_{hot}}{1 + \exp\left(k_{steep} \cdot (T - T_{half})\right)}$$
-  Where $\gamma_{frozen} = 1.38$ (translation+rotation only, low-T limit), $\gamma_{hot} = 1.24$ (full vibrational excitation per JANAF NC combustion data at 3000 K), $T_{half} = 1800\text{ K}$ (transition midpoint), and $k_{steep} = 0.0015\text{ K}^{-1}$. The effective $\gamma$ at peak combustion temperature ($\approx$3000 K) is approximately $1.25$, giving $(\gamma - 1) \approx 0.25$. A single-pass bootstrap is followed by 3 fixed-point iterations to converge the $\gamma \leftrightarrow T \leftrightarrow C_v$ system to \textless{}0.01\%.
-* $m_{gas} = m_{powder, total} - m_{powder, solid}$: Mass of burned propellant gas.
-* $E_{gas}$: Total thermal energy of the gas.
-* $\eta(T_{gas})$: Temperature-dependent covolume of gas products representing the physical volume of gas molecules:
-  $$\eta(T_{gas}) = \eta_{ref} \cdot \left(\frac{T_{ref}}{T_{gas}}\right)^{0.38} \quad [\text{m}^3/\text{kg}]$$
-  Where $\eta_{ref} = 0.00095 \quad [\text{m}^3/\text{kg}]$ and $T_{ref} = 300.0 \quad [\text{K}]$. At 3000 K this yields $\eta \approx 0.000345\text{ m}^3/\text{kg}$.
-* $T_{gas}$: Gas temperature inside the bore (from converged $\gamma(T)$ iteration):
-  $$T_{gas} = \max\left(300, \min\left(4000, \frac{E_{gas}}{m_{gas} \cdot C_v(\gamma)}\right)\right) \quad [\text{K}]$$
-  Where $C_v = \frac{R_{specific}}{\gamma - 1} \quad [\text{J/(kg}\cdot\text{K)}]$ and $R_{specific} = 325.0 \quad [\text{J/(kg}\cdot\text{K)}]$ is the specific gas constant for NC combustion products.
+Called with imperial diameter/seating (converted from mm) plus the metric segment
+lengths; returns **grains of water**, which the controller then converts:
 
-#### 2.1.1 Free Expansion Volume ($V_{free}$)
-$$V_{free} = \max\left(0.05 \cdot V_0, V_0 + A_{groove} \cdot x - \frac{m_{powder, solid}}{\rho_{propellant}}\right) \quad [\text{m}^3]$$
-Where:
-* $A_{groove} = \pi \frac{d_{bullet}^2}{4}$ (Groove cross-sectional area, meters).
-* $x$: Bullet travel distance down the bore (meters).
-* $m_{powder, solid}$: Mass of remaining solid unburned propellant.
-* $\rho_{propellant} = 1600 \quad [\text{kg/m}^3]$ (Solid density of nitrocellulose propellant).
-* $V_0$: Initial chamber volume after subtracting bullet seating displacement and adding freebore volume:
-  $$V_0 = \max\left(0.1 \cdot V_{case\_empty}, V_{case\_empty} - V_{displacement} + A_{groove} \cdot L_{freebore}\right) \quad [\text{m}^3]$$
-  Where $V_{case\_empty} = \frac{baseCapacityH2oGrams}{1,000,000} \quad [\text{m}^3]$ and $L_{freebore}$ is the throat free travel length.
+```
+bulletDisplacementVolumeM3 = grH2o · 0.06479891 / 1000 / 1000
+                             (grains → grams → kg/m³ ; 1 gr = 0.06479891 g, 1 g H₂O = 1 cm³)
+```
 
-#### 2.1.2 Detailed Bullet Displacement ($V_{displacement}$)
-When detailed bullet dimensions are available, $V_{displacement}$ is calculated by dividing the bullet into three geometric zones:
-1. **Boat Tail (frustum of a cone):** Tapering from radius $R_{bullet}$ to $0.85 \cdot R_{bullet}$ at the base.
-2. **Bearing Surface (cylinder):** With radius $R_{bullet}$ and length $L_{bearing}$.
-3. **Ogive (frustum of a cone tapering to a tip):** Tapering from radius $R_{bullet}$ to $0$ at the tip.
-If detailed dimensions are missing, the cylindrical fallback is used:
-$$V_{displacement} = 0.90 \cdot \pi R_{bullet}^2 \cdot SeatingDepth \quad [\text{m}^3]$$
+Inside `computeBulletDisplacementH2o` (metres), when full segment geometry is known
+the seated portion is split into three zones and summed:
 
-#### 2.1.3 Custom Chamber Volumetric Scaling
-If brand-specific case geometry is provided, the chamber surface area $A_{chamber}$ and expansion ratio $\beta$ are resolved by modeling the case profile as a series of conical frustums (body, shoulder, neck, and web). The wall thickness is scaled via a root-finding solver to match the target water capacity.
+* Partition of seating depth `SD` from the base up:
+  `sd_bt = min(SD, L_bt)`, `sd_bs = min(max(0, SD − L_bt), L_bs)`,
+  `sd_og = max(0, SD − L_bt − L_bs)`, with `L_bs = max(0, bearing, overall − ogive − boattail)`.
+* **Boat-tail frustum** (base radius `η·R`, `η = 0.85`, growing to `R`):
+  `v_bt = (π·sd_bt/3)·(r_base² + r_base·r_sub + r_sub²)`,
+  `r_sub = r_base + (R − r_base)·(sd_bt/L_bt)`.
+* **Bearing cylinder:** `v_bs = π·R²·sd_bs`.
+* **Ogive frustum** (R → 0): `v_og = (π·sd_og/3)·(R² + R·r_tip + r_tip²)`,
+  `r_tip = R·max(0, 1 − sd_og/L_og)`.
 
-#### *Why this model and EOS is used:*
-1. **Ideal Gas Law Inadequacy:** The Ideal Gas Law ($PV = nRT$) assumes that gas molecules are infinitely small points with no volume of their own. At the extreme pressures found in rifle chambers ($50,000\text{ to } 80,000\text{ PSI}$), gas molecules are packed so tightly that their physical volume (covolume, $\eta$) is significant. Ignoring this covolume leads to massive underestimations of chamber pressure (often by $30\%\text{ to } 40\%$). The Noble-Abel EOS corrects for this volume displacement, maintaining scientific accuracy at extreme pressures.
-2. **Advantages over Empirical Calculators:** Empirical calculators rely on static, pre-calculated curves. A thermodynamic internal ballistics model allows the user to dynamically change barrel length, propellant charges, seating depth (altering the combustion chamber volume $V_0$), and ambient temperatures, and instantly see their impact on muzzle velocity and pressure.
+Fallback when segments are missing: `v_disp = π·(d/2)²·SD·0.90` (cylinder × 0.90).
 
----
+#### 2.2.5 Other derived inputs
 
-### 2.2 Energy Balance Equation
-The internal gas energy ($E_{gas}$) is determined by subtracting kinetic work and heat loss from the total chemical energy input:
-$$E_{gas} = \max\left(1.0, (m_{gas} \cdot Q + E_{primer}) - E_{kinetic} - E_{heat}\right) \quad [\text{J}]$$
-Where:
-* $Q$: Net heat of explosion of the propellant scaled by the energy scale factor: $Q = Q_{phys} \cdot ESF$ where $Q_{phys}$ is `heatOfExplosionKjKg × 1000` [J/kg] and $ESF$ is `energyScaleFactor` (a dimensionless calibrated efficiency correction, typically 1.05–1.25). Physical heat values are never modified by calibration — only ESF is adjusted.
-* $E_{primer}$: Electrical/impact energy input from the primer (typically 8–14 Joules) delivered linearly over 0.6 milliseconds:
-  $$E_{primer}(t) = \max\left(0, E_{primer, total} \cdot \left(1 - \frac{t}{0.0006}\right)\right)$$
-* $E_{heat}$: Accumulated heat energy lost to the metal walls of the chamber and barrel.
-
-#### 2.2.1 Pidduck-Kent Kinetic Energy Correction
-Rather than the simplified Lagrange approximation ($m_{gas}/3$), the simulator uses the gas kinetic energy fraction $f_{Ke}$ derived from the implicit Pidduck-Kent flow profiles:
-$$E_{kinetic} = \frac{1}{2} \cdot \left(m_{bullet, eff} + f_{Ke} \cdot m_{gas}\right) \cdot v^2 \quad [\text{J}]$$
-Where $m_{bullet, eff}$ incorporates the rotational inertia of the projectile (see Section 2.5).
-
-#### *Why this energy formulation is used:*
-1. **Conserving Energy:** Internal ballistics is a classical thermodynamic expansion. By tracking the conversion of chemical energy into work (bullet movement), heat loss (barrel heating), and gas kinetic energy, we guarantee that the system obeys the First Law of Thermodynamics.
-2. **The Pidduck-Kent Correction:** In a rifle barrel, the gas column is not static; it is expanding rapidly. The gas nearest to the breech is nearly stationary, while the gas pushing the bullet is moving at bullet velocity. Accelerating this gas column consumes a substantial portion of the chemical energy. Adding $f_{Ke}$ of the gas mass to the bullet weight prevents the simulation from overestimating muzzle velocity.
+* **Quench pressure** `computeQuenchPressurePa(heat, grainType)`:
+  ```
+  t      = clamp((heatKjKg − 3000) / 2000, 0, 1)
+  basePa = 15e6 + t · (5e6 − 15e6)          (15 MPa at ≤3000 kJ/kg → 5 MPa at ≥5000)
+  return grainType contains "ball"  ?  basePa · 0.45  :  basePa
+  ```
+* **Primer energy** `getPrimerEnergyJ(primerPocketId, brisanceEnergyJ?)`: explicit
+  brisance wins; else small pocket → `8` J, large → `14` J, unknown → throw.
+* **Beta** `computeBeta(baseCapacityH2oGrams, caseLengthMm, boreDiameterMm, bodyDiameterMm?)`:
+  ```
+  A_bore = π·(d_bore/2)²
+  if bodyDiameter present:
+      V0     = baseCapacityH2oGrams / 1e6           (m³)
+      r_int  = min(bodyDiameter/2000, sqrt(V0 / (π·caseLength_m)))
+      beta   = max(1, π·r_int² / A_bore)
+  else:  beta = max(1, (V_case_empty / caseLength_m) / A_bore)   (cylinder approx)
+  ```
+* **Twist** `resolveStandardTwist`: uses `twistRateMm` if > 0, else **throws** (no
+  heuristic — Core policy #3).
+* **Fill-fraction guard** (also re-checked inside the engine): loads exceeding
+  `FILL_LIMIT = 1.25` (125 %) throw.
 
 ---
 
-### 2.3 Propellant Burning Rate & Grain Geometry
+## 3. The Solver, in Execution Order
 
-#### 2.3.1 Vieille’s Law (Saint-Robert Equation)
-The linear regression rate of the solid propellant is modeled as:
-$$\text{Burn Rate } r = \sqrt{\beta_{eff}} \cdot \left(\frac{P_{mean}}{10^6}\right)^{\alpha} \quad [\text{m/s}]$$
-Where:
-* $\alpha$ is the powder's burn exponent (`burnExponent` in database).
-* $\beta_{eff}$ is the effective, fill-adjusted burn rate coefficient (see §2.3.5 below):
-  $$\beta_{eff} = \beta_{adj} \cdot \underbrace{\left(1 + \lambda \cdot \left(\phi - \phi_{ref}\right)\right)}_{\text{fill-fraction adjustment}}$$
-  Where $\beta_{adj}$ is the geometry-scaled base coefficient (see §2.3.1a), $\lambda$ is `baFillSlope`, $\phi$ is the load's fill fraction, and $\phi_{ref} = 0.50$ is the reference fill fraction at which $\beta_{base}$ is defined.
+`runInternalBallisticsSimulation(inputs)` executes the following stages. Everything
+before the loop is set-up; the loop is an adaptive RKF45 integration.
 
-#### 2.3.1a Base Coefficient Scaling ($\beta_{adj}$)
-  $$\beta_{adj} = \beta_{base} \cdot \left(1 + \Delta T \cdot K_{temp}\right) \cdot \beta_{chamber}^{0.05}$$
-  Where $\beta_{base}$ is `baCoeff` (standard Vivacity at $\phi = \phi_{ref} = 0.50$), $\Delta T = T_{ambient} - 21.11 \quad [^\circ\text{C}]$, $K_{temp}$ is the temperature coefficient (`burnRateTempCoeffPerC`), and $\beta_{chamber}$ is the chamber expansion ratio.
+### 3.1 Covolume config binding
 
-#### 2.3.2 Mass Burn Rate ($\frac{dm_p}{dt}$)
-$$\frac{dm_p}{dt} = -r \cdot K_{burn\_scale} \cdot m_{powder, total}^{n_{surf}} \cdot \theta(Z) \cdot \text{taper} \cdot \psi_{flame} \quad [\text{kg/s}]$$
-Where:
-* $K_{burn\_scale} = 270.0$ (`vieilleScaleCoeff` — calibrated to m$^{0.75}$ grain surface area model).
-* $n_{surf} = 1.0$ (`grainSurfaceExponent` — physically 1.0 for constant grain population; configurable per powder type).
-* $m_{powder, total}$: Initial propellant charge weight in kilograms.
-* $Z = 1 - \frac{m_p}{m_{powder, total}}$ (Fraction of powder burned).
-* $\text{taper} = \min\left(1.0, \frac{m_p}{0.01 \cdot m_{powder, total}}\right)$ (Burnout taper — prevents negative mass).
-* $\psi_{flame}$: Flame-front fraction (see §2.3.3 below).
+```
+cfgCovolRef = cfg.covolumeRefM3Kg   (default 0.00095)
+cfgCovolTExp = cfg.covolumeTExp     (default 0.38)
+```
 
-#### 2.3.3 Flame-Front State Variable ($x_{flame}$)
-The ignition flame propagates through the powder column as a physical position tracked by the 5th ODE state variable $x_{flame}$ (meters from the flash hole). The fraction of the charge column that has been ignited is:
-$$\psi_{flame} = \min\left(1.0,\ \frac{x_{flame}}{L_{powder\_col}}\right)$$
-Where $L_{powder\_col}$ is the physical length of the powder column in the case (meters).
+### 3.2 Input validation (loud throws)
 
-The flame front velocity is pressure-coupled:
-$$\dot{x}_{flame} = V_{flame\_ref} \cdot \left(\frac{\max(1, P_{mean})}{P_{ref}}\right)^{n_{flame}} \cdot f_{density} \cdot \left(1 + \frac{E_{primer\_flame}}{E_{primer\_total}}\right)$$
-Where:
-* $V_{flame\_ref} = 800.0\text{ m/s}$ — reference flame propagation speed through packed propellant
-* $P_{ref} = 100\text{ MPa}$ — reference pressure for flame speed coupling
-* $n_{flame} = 0.35$ — pressure exponent for flame velocity scaling
-* $f_{density} = \left(\frac{\rho_{loading}}{\rho_{ref}}\right)^{-0.3}$ — denser packing retards flame spread
-* $E_{primer\_flame} / E_{primer\_total}$ — fraction of primer energy still being delivered (from the 0.6 ms primer burn window), which boosts ignition propagation
+Before any computation the engine throws on any of: missing `boreDiameterMm`,
+`shoulderAngleDeg`, `engineConfig`, invalid `twistRateMmPerTurn (≤0)`,
+`throatFreetravelMm`, `flashHoleDiameterMm`, both `trimLengthMm`+`maxCaseLengthMm`
+missing, `transducerScaleFactor`, `burnExponent`, `heatOfExplosionKjKg (≤0)`,
+`propellantDensityKgM3 (≤0)`, `quenchPressurePa (≤0)`, `engravingPressurePa`,
+`primerEnergyJ (≤0)`, `bulletDisplacementVolumeM3 (<0 or non-finite)`,
+`baseCapacityH2oGrams (≤0)`, `burnAreaCoeff (missing/non-finite)`.
 
-The flame front starts at the flash hole ($x_{flame, 0} = d_{flash\_hole}$ in meters) and travels toward the bullet base at $L_{powder\_col}$. Combustion is gated by $\psi_{flame}$ — powder ahead of the flame front cannot burn. This replaces the earlier time-based $t_{spread}$ formula and correctly handles both fast-powder under-filled cases and slow-powder compressed charges.
+### 3.3 Geometry and mass set-up
 
-#### 2.3.4 Surface Form Factor $\theta(Z)$
-Based on the physical shape of the powder grains:
-* **Ball / Flake:** $\theta(Z) = \max\left(0.01, (1 - Z)^{2/3}\right)$
-* **Extruded Single-Perforated:** $\theta(Z) = 1.0 + 0.3 \cdot Z$
-* **Extruded:** $\theta(Z) = 1.0 + 0.5 \cdot Z$
-* **Extruded Multi-Perforated:** $\theta(Z) = 1.0 + 0.8 \cdot Z$
-* **Multi-Stage Custom Burn Profile:** If custom parameters ($b_p, Z_1, Z_2$) are specified:
-  $$\theta(Z) = \begin{cases} 1.0 + b_p \left(\frac{Z}{Z_1}\right) & Z < Z_1 \\ (1.0 + b_p) \left(1 - 0.5\frac{Z - Z_1}{Z_2 - Z_1}\right) & Z_1 \le Z < Z_2 \\ \max\left(0.01, 0.5(1.0 + b_p)\left(1 - \left(\frac{Z - Z_2}{1.0 - Z_2}\right)^2\right)\right) & Z \ge Z_2 \end{cases}$$
+```
+d_bullet_m = bulletDiameterMm / 1000       ;  d_bore_m = boreDiameterMm / 1000
+A_bore_m2   = π·(d_bore_m/2)²               (land-to-land, engraving)
+A_groove_m2 = π·(d_bullet_m/2)²             (groove/bullet, gas volume & drive force)
+caseLengthMm = trimLengthMm ?? maxCaseLengthMm
+L_barrel = max(0.01, (barrelLengthMm − caseLengthMm + seatingDepthMm) / 1000)   (m, bullet travel to muzzle)
+m_bullet_kg = bulletWeightGrams / 1000     ;  m_charge_kg = powderChargeGrams / 1000
+```
 
-#### 2.3.5 Fill-Fraction-Dependent Burn Rate Coefficient ($\lambda$)
-A scalar `baCoeff` fitted across loads with different charge weights cannot simultaneously capture the pressure-curve shapes at low fill and high fill. Empirically, burn dynamics shift with propellant loading density: at higher fill ratios the initial gas-to-void space is smaller, pressure rises faster, and the effective burn rate is higher.
+**Rotational inertia.** The bullet's effective mass carries its spin energy
+(`E_rot = ½ I ω²`, `I = ½ m r²`, `ω = 2π v / L_turn`):
 
-The engine corrects for this via a linear loading-density adjustment:
-$$\phi = \frac{m_{charge} / \rho_{propellant}}{V_{case\_empty}} \quad [\text{dimensionless}]$$
-$$\text{ba}_{eff} = \text{ba}_{base} \cdot \max\!\Bigl(10^{-6},\ 1 + \lambda \cdot (\phi - 0.50)\Bigr)$$
-Where:
-* $\phi$ — charge fill fraction: volume of solid propellant divided by empty case capacity (not a percentage; typical range 0.10–0.68 across the reference dataset)
-* $\phi_{ref} = 0.50$ — the reference pivot. At 50% fill, `ba_eff = baCoeff` exactly. No adjustment is applied at the reference fill.
-* $\lambda$ — `baFillSlope` in database. Fitted per powder by `calibrateV2.ts --fill-slope`.
-  - $\lambda > 0$: powder burns faster at higher density (typical for most extruded powders)
-  - $\lambda = 0$: identical to the scalar model (backward compatible; default when not calibrated)
-  - $\lambda < 0$: powder burns slower at higher density (possible for some ball powders)
-* The $\max(10^{-6}, \cdot)$ clamp prevents `ba_eff` from reaching zero or going negative.
+```
+twist_turn_m     = twistRateMmPerTurn / 1000
+rotational_factor = 0.5·π²·(d_bullet_m / twist_turn_m)²
+m_bullet_eff_kg   = m_bullet_kg · (1 + rotational_factor)
+```
 
-**Calibration guard:** `baFillSlope` is only fitted when a powder has $\ge 10$ reference loads spanning $\ge 8\%$ fill range ($\Delta\phi \ge 0.08$). Powders below either threshold retain `baFillSlope = 0`.
+`m_bullet_eff_kg` is used for KE and acceleration; the *physical* `m_bullet_kg` is
+used for the Pidduck-Kent charge ratio ω.
 
-#### *Why this model is used:*
-1. **Systematic bias at load extremes:** Without a fill-fraction correction, a single scalar `baCoeff` produces a pressure-curve that is systematically too high for light charges and too low for heavy charges (or vice versa). The linear slope absorbs this first-order loading-density dependence.
-2. **Physical grounding:** The correction is equivalent to a first-order linearization of loading-density effects on the initial free-volume available for combustion gas expansion — a well-established phenomenon in interior ballistics literature.
-3. **Minimal overfitting risk:** One extra parameter per powder, only fitted when sufficient data spans the fill range. Keeping it linear avoids multi-collinearity with `baCoeff` itself.
+### 3.4 Chamber volume, area, and β
 
-#### *Why burn rate and geometry models are used:*
-Propellants do not ignite all at once. The rate at which chemical energy is released into the chamber is controlled by the physical shape of the individual gunpowder grains. By modeling these geometry form factors (progressive vs. degressive), the engine can accurately predict the shape of the pressure curve over time—distinguishing between fast-burning pistol powders (which spike quickly) and slow-burning rifle powders (which maintain pressure longer down the barrel).
+* **With `caseDimensions`** (detailed profile): the case is modelled as body +
+  shoulder + neck conical frustums. A wall-thickness scale `k_wall` is solved by
+  **25-iteration bisection** (with dynamic bracket expansion, throwing if the target
+  capacity cannot be bracketed) so the interior volume equals
+  `baseCapacityH2oGrams`. From the resulting internal radii the chamber wetted area
+  `A_chamber_custom_m2` (body + shoulder frusta lateral areas + neck cylinder + web
+  cap) and `beta = max(1, area_body_int_avg / A_bore)` are computed. `V_case_empty_m3`
+  is set to the target capacity.
+* **Without `caseDimensions`:** `V_case_empty_m3 = baseCapacityH2oGrams / 1e6` (m³);
+  `beta` is the value passed in (`inputs.beta`).
+
+**Chamber wall area (heat loss):**
+```
+if caseDimensions:  A_chamber_m2 = A_chamber_custom_m2
+else:               R_case = sqrt(beta)·d_bullet_m/2
+                    A_chamber_m2 = π·R_case² + 2·V0_m3 / R_case   (endcap + lateral of equivalent cylinder)
+```
+
+### 3.5 Combustion pre-computation (burn-rate coefficient assembly)
+
+The effective burn-area coefficient is assembled from four multiplicative
+corrections plus a geometry-β adjustment, then square-rooted:
+
+```
+FILL_REF = 0.50 ; REF_BORE_MM = 7.62 ; REF_CAPACITY_G = 3.625
+
+bulkDensKgM3   = bulkDensityKgM3  (else 0.62·propellantDensity)
+chargeVolumeMl = powderChargeGrams / (bulkDensKgM3/1000)
+fillFraction   = chargeVolumeMl / baseCapacityH2oGrams
+   → throw if fillFraction > FILL_LIMIT (1.25)
+
+fill_factor      = 1 + burnAreaFillSlope · (fillFraction − 0.50)
+bore_ratio_sq    = (7.62 / boreDiameterMm)²
+bore_factor      = 1 + burnAreaBoreSlope · (1 − bore_ratio_sq)
+expansion_ratio  = baseCapacityH2oGrams / (π·(boreDiameterMm/20)²)      (cc / cm²)
+expansion_factor = computeExpansionFactor(burnAreaExpansionSlope, expansion_ratio)
+                 = clamp(1 + slope·(expansion_ratio − 10), 0.5, 1.8)     (EXPANSION_REF_RATIO=10)
+temp_factor      = max(0.1, 1 + tempSensitivity·(ambientTempC − 21.11))
+
+burnArea_coeff   = max(1e-6, burnAreaCoeff · fill_factor · bore_factor · expansion_factor · temp_factor)
+burnArea_beta_adj = burnArea_coeff · beta^GEOMETRY_BURN_CORR            (GEOMETRY_BURN_CORR = 0.05)
+burn_kinetic     = sqrt(burnArea_beta_adj)      ← DB stores a squared-vivacity scale
+```
+
+The mass-scaling burn constant (hoisted out of the loop):
+```
+m_charge_kg_scaled = m_charge_kg^grainSurfaceExponent   (grainSurfaceExponent = 1.0)
+burn_mass_scale    = vieilleScaleCoeff · m_charge_kg_scaled   (vieilleScaleCoeff = 270)
+```
+
+Specific energy and density:
+```
+q_explosion_Jkg     = heatOfExplosionKjKg · 1000 · (energyScaleFactor ?? 1.0)   (J/kg)
+rho_propellant_kgm3 = propellantDensityKgM3
+```
+
+**Density coupling exponent** (K or K(P) law), computed once per sim (cell-constant,
+never a function of in-shot pressure):
+```
+DENS_K = (pressureLevelMPa present)
+   ? min(densityCouplingK, max(kpFloorK, kpSlopePerMPa·(pressureLevelMPa − kpCrossoverMPa)))
+   : densityCouplingK
+```
+
+**Loading density** (for flame spread + density coupling):
+```
+loadingDensityKgM3 = (powderChargeGrams/1000) / (V_case_empty_m3 + 1e-12)
+densityRatio       = max(0.1, loadingDensityKgM3/1000)
+flameDensityFactor = densityRatio^flameDensityExponent     (flameDensityExponent = −0.3)
+```
+
+**Powder-column length** (flame only traverses the propellant that is present):
+```
+fillFractionClamped = clamp(fillFraction, 0.05, 1.0)
+L_powder_col_m      = max(flashHoleMm/1000, fillFractionClamped · L_case_m)
+```
+
+### 3.6 Effective jump, throat volume, and V0
+
+**Effective freebore** (only the full-diameter shank past the case mouth consumes jump;
+the tapered ogive does not touch the lands):
+```
+L_freebore_saami_m = throatFreetravelMm / 1000
+if OAL & seatingDepth > 0:
+    totalPastMouth = max(0, (OAL − seatingDepth)/1000)
+    shankPastMouth = max(0, totalPastMouth − ogiveLength/1000)
+    L_freebore_m   = max(0, L_freebore_saami_m − shankPastMouth)
+else:
+    L_freebore_m   = L_freebore_saami_m
+```
+
+**Throat gap volume** (subtract the ogive cone occupying part of the freebore):
+```
+ogiveLenInFreebore = min(ogiveLength/1000, L_freebore_m)
+V_throat_m3 = A_groove·L_freebore_m − (1/3)·A_groove·ogiveLenInFreebore
+V0_m3 = max(V_case_empty·0.1, V_case_empty − bulletDisplacementVolumeM3 + V_throat_m3)
+```
+
+### 3.7 Friction & gradient pre-computation
+
+**Shoulder-angle gradient term:**
+```
+shoulder_gradient_term = shoulderGradientCoeff · (1 + tan(shoulderAngleRad)/tan(30°))
+```
+
+**Bearing-length aspect friction normalisation** (copper-jacket unit-pressure relaxes
+on long bearings — a power law with exponent < 1):
+```
+REF_BEARING_BORE_RATIO = 1.49        (.308 168-gr ELD-M reference)
+bearing_bore_ratio     = L_bearing_m / d_bullet_m
+BEARING_ASPECT_CORRECTION = (mono-copper & bearingAspectCorrectionMono set)
+                              ? bearingAspectCorrectionMono
+                              : (bearingAspectCorrection ?? 0.15)
+bearing_friction_scale = (REF_BEARING_BORE_RATIO / max(0.5, bearing_bore_ratio))^BEARING_ASPECT_CORRECTION
+F_static_base_N        = landFrictionScale · landFrictionPressure · bearing_friction_scale
+A_contact_m2           = π · d_bullet_m · L_bearing_m · bearing_friction_scale
+```
+
+**Pidduck-Kent factors** (hoisted — ω is constant per simulation):
+```
+pk_omega_const = m_charge_kg / m_bullet_kg
+{ fKe, alphaMean, betaBreech } = pidduckKentFactors(pk_omega_const)
+pk_fKe_scaled       = fKe · fKeScale
+beta_gradient_const = (beta − 1) · gradientBetaScale
+pk_gradient_static  = pk_omega_const · alphaMean · (1 + shoulder_gradient_term · beta_gradient_const)
+pk_breech_mult_const = 1 + pk_omega_const · betaBreech · pkBreechMultScale
+effective_decay_rate = max(0, gradientDecayRate − betaDecayScale · max(0, beta − betaDecayRef))
+```
+
+`pidduckKentFactors(ω)` (see §3.11) solves `tan θ = θ·(1 + ω/3)` by Newton iteration
+and returns the exact gas-flow correction factors; at ω→0 they reduce to the Lagrange
+limits `fKe=1/3, alphaMean=1/3, betaBreech=1/2`.
+
+### 3.8 State vector and initial conditions
+
+The integrator advances a **15-component state vector** (`N_STATE = 15`). The first
+five are the physical ODE; the remaining ten are energy-accounting integrators
+carried along so the final energy budget is exact.
+
+| idx | Symbol | Unit | Meaning |
+|---|---|---|---|
+| 0 | `x_bullet_m` | m | Bullet base position from case head |
+| 1 | `v_bullet_mps` | m/s | Bullet velocity ← **muzzle velocity output** |
+| 2 | `m_unburned_kg` | kg | Remaining unburned propellant |
+| 3 | `E_wall_J` | J | Cumulative wall heat loss |
+| 4 | `x_flame_m` | m | Ignition flame-front position in the charge column |
+| 5 | `E_friction_J` | J | Cumulative friction work (static + radial) |
+| 6 | `E_engrave_J` | J | Cumulative engraving work |
+| 7 | `E_chem_J` | J | Integrated chemical energy released (propellant burned) |
+| 8 | `E_primer_gas_J` | J | Integrated primer gas energy |
+| 9 | `E_bulletKE_J` | J | Integrated bullet KE |
+| 10 | `E_gasKE_J` | J | Integrated gas KE |
+| 11 | `E_gasInternal_J` | J | Integrated gas internal energy |
+| 12 | `E_primerLeak_J` | J | Integrated primer flame (leak) energy |
+| 13 | `E_frictionStatic_J` | J | Integrated static-friction work |
+| 14 | `E_frictionRadial_J` | J | Integrated radial-friction work |
+
+Initial values (`PRIMER_IGNITED_FRAC = primerIgnitedFraction`, `PRIMER_FLAME_SPLIT = primerFlameSplit`):
+```
+E_chem_init         = m_charge_kg · PRIMER_IGNITED_FRAC · q_explosion_Jkg
+E_primer_gas_init   = primerEnergyJ · (1 − PRIMER_FLAME_SPLIT)
+E_primer_leak_init  = primerEnergyJ · PRIMER_FLAME_SPLIT
+x_flame_initial_m   = flashHoleMm / 1000
+
+y[0..4]  = [ 0, 0, m_charge_kg·(1−PRIMER_IGNITED_FRAC), 0, x_flame_initial_m ]
+y[5..6]  = [ 0, 0 ]
+y[7]     = E_chem_init
+y[8]     = E_primer_gas_init
+y[9..10] = [ 0, 0 ]
+y[11]    = E_chem_init + E_primer_gas_init
+y[12]    = E_primer_leak_init
+y[13..14] = [ 0, 0 ]
+```
+
+### 3.9 Integration scheme — Runge-Kutta-Fehlberg 4(5), adaptive
+
+The engine uses **RKF45** (adaptive embedded 4th/5th-order), *not* fixed-step RK4.
+Internal ballistics is stiff: pressure spikes from atmospheric to 400+ MPa in the
+first ~1 ms, so the step must shrink to < 1 µs during ignition and grow during the
+expansion stroke.
+
+**Butcher coefficients** (`A2..A6`, `B21..B65`) are the classical Fehlberg values.
+The 5th-order solution weights are `CT1=16/135, CT3=6656/12825, CT4=28561/56430,
+CT5=−9/50, CT6=2/55`. Local truncation error is formed directly from the
+5th-minus-4th weight differences `ERR1=1/360, ERR3=−128/4275, ERR4=−2197/75240,
+ERR5=1/50, ERR6=2/55` (avoids allocating the 4th-order vector).
+
+**Six stages per step** (`k1..k6`), each a call to `deriv()`:
+```
+deriv(t, y, k1)
+y_tmp = y + h·B21·k1                              ; deriv(t+A2·h, y_tmp, k2)
+y_tmp = y + h·(B31·k1+B32·k2)                     ; deriv(t+A3·h, y_tmp, k3)
+y_tmp = y + h·(B41·k1+B42·k2+B43·k3)              ; deriv(t+A4·h, y_tmp, k4)
+y_tmp = y + h·(B51·k1+B52·k2+B53·k3+B54·k4)       ; deriv(t+A5·h, y_tmp, k5)
+y_tmp = y + h·(B61·k1+…+B65·k5)                   ; deriv(t+A6·h, y_tmp, k6)
+y_next = y + h·(CT1·k1+CT3·k3+CT4·k4+CT5·k5+CT6·k6)   (5th-order)
+```
+
+**Error control** (only the four physical states 0–3 contribute; the flame state 4 is
+excluded because its small atol spuriously dominates early on):
+```
+for i in 0..3:
+    diff = h·(ERR1·k1[i]+ERR3·k3[i]+ERR4·k4[i]+ERR5·k5[i]+ERR6·k6[i])
+    sc   = atols[i] + rtol · max(|y[i]|, |y_next[i]|)
+    err  = max(err, |diff|/sc)
+
+rtol  = 1e-4
+atols = [1e-6, 1e-3, 1e-6, 1.0, 1e-5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]   (per index)
+```
+
+**Step accept/reject** (standard controller with a stall guard):
+```
+forceAccept = h ≤ H_MIN_FORCE (1e-9)
+if err ≤ 1 or forceAccept:  accept → t += h ; swap y_cur/y_next
+    grow: h_step = h · clamp(0.84·err^−0.2, 1, 4)
+else:                       reject
+    shrink: h_step = h · clamp(0.84·err^−0.2, 0.1, 0.5) ; floor at H_MIN_FORCE
+```
+
+Step size is also capped to `max_step = 2e-5` s, to `t_max − t`, and — while the
+bullet is moving — to `1.1 × (distance-to-muzzle / v)` (this cap only *tightens*, never
+re-expands, to avoid a limit-cycle stall). Loop terminates when `t ≥ t_max (0.025 s)`,
+the bullet reaches `L_barrel`, or `steps > maxSteps (10000)` (sets `didTimeout`). A
+force-accept floor `H_MIN_FORCE` prevents infinite spinning on stiff loads.
+
+At burnout the remaining mass is snapped to zero when `y[2] < m_charge_kg·1e-3`
+(the asymptotic burn tail never mathematically reaches zero). On the step that first
+crosses `L_barrel`, velocity and position are linearly interpolated back to exactly
+`L_barrel`.
+
+### 3.10 The derivative function `deriv(t, state, out)` — evaluation order
+
+Every stage of every step calls `deriv`. Its internal order is the physical heart of
+the engine.
+
+**(a) Unpack + burned mass**
+```
+x, v, m_unburned, E_wall, x_flame = state[0..4]
+if x ≥ L_barrel:  out[*] = 0 ; return       (bullet has exited)
+m_unburned_clamped = max(0, m_unburned)
+m_burned = m_charge_kg − m_unburned_clamped
+```
+
+**(b) Primer energy split** (delivered linearly over `primerBurnTime`):
+```
+if t < PRIMER_BURN_TIME:
+    E_primer_decay  = primerEnergyJ · (1 − t/PRIMER_BURN_TIME)
+    E_primer_gas    = E_primer_decay · (1 − PRIMER_FLAME_SPLIT)     → to EOS
+    E_primer_flame  = E_primer_decay · PRIMER_FLAME_SPLIT           → drives flame front
+```
+
+**(c) Mean chamber pressure** — `computePressure(...)` (§3.11). Returns `P_mean_Pa`
+and `T_gas_K`. Friction/engrave work states 5,6 are passed in **only when
+`conserveFrictionWork` is true** (debited from gas energy).
+
+**(d) Travel-dependent Lagrange gradient → base pressure**
+```
+V_total       = V0 + A_groove·max(0,x)
+r_expansion   = V0 / max(V0·0.1, V_total)                     (≈1 at breech → ~0.05 at muzzle)
+gradient_decay = effective_decay_rate>0 ? r_expansion^effective_decay_rate : 1
+frac_burned_pk = m_burned / (m_burned + m_unburned_clamped)
+pk_base_denom  = 1 + pk_gradient_static · gradient_decay · frac_burned_pk
+P_base_Pa      = P_mean_Pa / pk_base_denom
+```
+
+**(e) Flame-front ODE** (ignition propagation through the charge column):
+```
+x_flame_clamped = clamp(x_flame, 0, L_powder_col)
+frac_ignited    = min(1, x_flame_clamped / L_powder_col)
+if x_flame_clamped < L_powder_col:
+    flame_pressure_factor = (max(1, P_mean)/flamePressureRef)^flamePressureExponent
+    flame_primer_boost    = E_primer_flame / primerEnergyJ
+    x_flame_dot = flameSpeedRef · flame_pressure_factor · flameDensityFactor · (1 + flame_primer_boost)
+else: x_flame_dot = 0
+```
+
+**(f) Mass burn rate** (Vieille / Saint-Robert law, gated by quench + flame):
+```
+flame_still_spreading = frac_ignited < 1
+combustion_active     = P_mean ≥ quenchPressurePa  OR  t < PRIMER_BURN_TIME  OR  flame_still_spreading
+if m_unburned_clamped > 0 and combustion_active:
+    P_burn_MPa = P_mean / 1e6
+    n_eff = nPressureSlope≠0
+              ? clamp(burnExponent + nPressureSlope·ln(max(1e-3,P_burn_MPa)/nPressureRefMPa), 0.3, 1.2)
+              : burnExponent
+    densCoupling = DENS_K≠0 ? (loadingDensityKgM3 / (densityRefKgM3 ?? loadingDensityKgM3))^DENS_K : 1
+    burn_rate   = burn_kinetic · densCoupling · P_burn_MPa^n_eff          (linear regression rate, m/s)
+    frac_burned = 1 − m_unburned_clamped/m_charge_kg
+    burn_form_factor = getFormFactor(grainType, frac_burned, ignitionBp, ignitionZ1, ignitionZ2, multiPerfProgressivity)
+    burn_taper  = min(1, m_unburned_clamped / (m_charge_kg·burnTaperFraction))
+    m_charge_dot = − burn_rate · burn_mass_scale · burn_form_factor · burn_taper · frac_ignited
+```
+
+`getFormFactor(grainType, Z, …)` — surface progressivity θ(Z):
+
+| grainType | θ(Z) |
+|---|---|
+| `ball`, `flake` | `max(0.01, (1−Z)^{2/3})` (degressive) |
+| `extrudedSinglePerf` | `1 + 0.3·Z` |
+| `extrudedMultiPerf` | `1 + multiPerfProgressivity·Z` (0.8) |
+| `extruded` (fallback) | `1 + 0.5·Z` |
+| *unknown* | **throw** |
+
+Custom multi-stage profile (when `ignitionBp, ignitionZ1, ignitionZ2` all valid,
+`z1>0`, `z2>z1`):
+```
+Z<z1:        1 + bp·(Z/z1)
+z1≤Z<z2:     (1+bp)·(1 − 0.5·(Z−z1)/(z2−z1))
+Z≥z2:        max(0.01, 0.5·(1+bp)·(1 − ((Z−z2)/(1−z2))²))
+```
+
+**(g) Resistive forces** (only once past freebore, `x ≥ L_freebore`):
+```
+in_freebore = x < L_freebore_m
+if not in_freebore:
+    x_engrave    = x − L_freebore_m
+    engrave_ramp = min(1, x_engrave / 0.0005)          (0.5 mm smoothing to avoid RKF discontinuity)
+    F_engrave = getEngravingForce(engravingPressurePa, x_engrave, A_bore) · engrave_ramp
+    F_static  = F_static_base_N · d_bullet · L_bearing · engrave_ramp · staticFrictionScale
+    F_radial  = radialFrictionCoeff · P_base · A_contact_m2 · engrave_ramp · radialFrictionScale
+F_friction = F_static + F_radial
+```
+
+`getEngravingForce(P_peak, x, A_bore)` — a C¹-continuous engraving-pressure profile
+(independent of chamber pressure):
+```
+p_start = 0.40·P_peak ; p_slide = 0.20·P_peak ; x_peak = 0.00075 m ; k_decay = 1500
+x < x_peak:  p = p_start + (P_peak − p_start)·0.5·(1 − cos(π·x/x_peak))   (raised cosine)
+x ≥ x_peak:  Δx = x − x_peak ;  p = p_slide + (P_peak − p_slide)·(1 + k·Δx)·exp(−k·Δx)  (critically damped)
+return p · A_bore
+```
+
+**(h) Bullet acceleration** (Newton's 2nd law on the base pressure):
+```
+F_net = P_base · A_groove − F_engrave − F_friction
+a_bullet = F_net / m_bullet_eff_kg
+   clamp: if x ≤ 0 and F_net < 0 → a = 0     (bullet cannot move backward out of the case)
+          if v ≤ 0 and a < 0     → a = 0     (no negative velocity)
+```
+
+**(i) Heat loss** (convective + radiative, with boundary-layer insulation):
+```
+factor_bl   = 1 / (1 + boreInsulationRate·sqrt(max(0,x)))         (BL grows with travel)
+A_bore_wall = π · d_bullet · max(0,x)
+A_wall_eff  = A_chamber_m2 + A_bore_wall · factor_bl · boreGasTempFactor   (2/3)
+
+V_free   = max(V0·0.05, V0 + A_groove·x − m_unburned_clamped/rho_propellant)
+covolume = cfgCovolRef · (300/T_gas)^cfgCovolTExp
+rho_gas  = m_burned / max(V_free·0.05, V_free − m_burned·covolume)
+
+H_conv = H_CONV_BASE · rho_gas^0.8 · (max(0,v) + convectiveFlowVelocity)^0.8 · d_bullet^{−0.2}
+Q_conv = H_conv · A_wall_eff · (T_gas − T_WALL_K)
+Q_rad  = emissivity · SIGMA · A_wall_eff · (T_gas^4 − T_WALL_K^4)
+E_wall_dot = Q_conv + Q_rad
+```
+where the convection base is geometry-scaled to the .308 reference:
+```
+bore_heat_ratio = (7.62 / boreDiameterMm)^0.4       (small-bore penalty, softened from 1.0)
+cap_heat_ratio  = physicalWallScaling ? 1.0 : (3.625 / baseCapacityH2oGrams)
+H_CONV_BASE     = heatTransferCoeff · bore_heat_ratio · cap_heat_ratio
+```
+
+**(j) Write derivatives** (`out[]`):
+```
+out[0] = v                                   (dx/dt)
+out[1] = a_bullet                            (dv/dt)
+out[2] = m_charge_dot                        (dm_unburned/dt)
+out[3] = E_wall_dot                          (dE_wall/dt)
+out[4] = x_flame_dot                         (dx_flame/dt)
+out[5] = F_friction · v                      (friction power)
+out[6] = F_engrave · v                       (engraving power)
+out[7] = −m_charge_dot · q_explosion_Jkg     (chemical release rate)
+out[8] = t<PRIMER_BURN_TIME ? −primerEnergyJ·(1−split)/PRIMER_BURN_TIME : 0
+out[9]  = m_bullet_eff · v · a               (bullet KE rate)
+out[10] = 0.5·(−m_charge_dot)·pk_fKe·v² + m_burned·pk_fKe·v·a   (gas KE rate)
+out[11] = out[7] + out[8] − out[9] − out[10] − E_wall_dot − (conserveFrictionWork ? out[5]+out[6] : 0)   (gas internal rate)
+out[12] = t<PRIMER_BURN_TIME ? +primerEnergyJ·(1−split)/PRIMER_BURN_TIME : 0   (primer leak)
+out[13] = F_static · v ; out[14] = F_radial · v
+```
+
+Index 11 (`E_gas_internal`) is the running energy balance: chemical + primer-gas in,
+minus bullet KE, gas KE, wall loss, and (optionally) friction+engraving work.
+
+### 3.11 `computePressure` — the equation of state (called from deriv & recorder)
+
+This is the pressure kernel. It converts the current energy state into a mean gas
+pressure via a **Noble-Abel EOS with temperature-dependent γ(T) and covolume** and a
+Pidduck-Kent effective KE mass.
+
+```
+E_chem_J    = m_burned·q + E_primer_gas
+m_effective = m_bullet_eff + m_burned·fKe_in            (PK KE mass, burned-fraction weighted)
+E_kinetic   = 0.5·m_effective·v²
+E_gas_J     = max(1, E_chem_J − E_kinetic − E_wall − E_friction − E_engrave)   (friction/engrave only if conserveFrictionWork)
+
+{ gamma, T_gas_K } = solveGasThermo(E_gas_J, m_burned)
+covolume    = cfgCovolRef · (COVOLUME_T_REF / T_gas_K)^cfgCovolTExp
+V_free_m3   = max(V0·0.05, V0 + A_groove·x − m_unburned/rho_propellant)
+pressure    = ((gamma − 1)·E_gas_J) / max(V_free·0.05, V_free − m_burned·covolume)
+```
+
+**γ(T) and gas thermodynamics** — `solveGasThermo(E_gas, m_burned)` closes the coupled
+`γ(T) ↔ T ↔ C_v` system by fixed-point iteration (bootstrap with midpoint γ, then 3
+passes):
+```
+gammaOfT(T) = GAMMA_FROZEN + (GAMMA_HOT − GAMMA_FROZEN) / (1 + exp(−GAMMA_STEEPNESS·(T − GAMMA_T_HALF)))
+C_v          = R_SPECIFIC / (gamma − 1)
+T_gas        = clamp(E_gas / (m_burned·C_v), 300, 4000)     (K)
+```
+
+**Pidduck-Kent** — replaces the Lagrange (linear gas-velocity) approximation with the
+exact 1922/1938 solution. `solvePidduckKentTheta(ω)` solves
+`tan θ = θ·(1 + ω/3)` by ≤12 Newton steps (bounded to just under π/2). Then
+`pidduckKentFactors(ω)`:
+```
+fKe        = (0.5 − sin(2θ)/(4θ)) / sin²θ            (gas KE fraction ; Lagrange limit 1/3)
+alphaMean  = (sinθ/θ − cosθ) / (θ·sinθ)              (mean-to-base ; limit 1/3)
+betaBreech = (1 − cosθ) / (θ·sinθ)                   (breech-to-base ; limit 1/2)
+```
+
+### 3.12 Pressure history, peak, and reporting
+
+The **reported** pressure at each accepted step and at initialisation is the **breech**
+pressure scaled by the transducer factor:
+```
+P_base   = P_mean / (1 + pk_gradient_static·gradient_decay·frac_burned)     (travel-dependent)
+P_breech = P_base · pk_breech_mult_const
+pPa      = P_breech · transducerScaleFactor
+peakPressurePa = max over all steps of pPa
+```
+The initial breech pressure is computed before the loop from
+`m_charge_kg·PRIMER_IGNITED_FRAC` burned mass and seeds `peakPressurePa`.
+
+### 3.13 Bore-exit / muzzle conditions & how velocity falls out
+
+* The loop stops when `y[0] ≥ L_barrel`; on that crossing, `y[1]` (velocity) and
+  `y[0]` (position) are linearly interpolated to the exact muzzle. **`muzzleVelocityMps
+  = y_cur[1]`** — the raw muzzle velocity is simply the velocity state at exit. No fit,
+  no closed-form; it is the integral of `a_bullet` over the whole stroke.
+* An early break also fires if the bullet has essentially stopped (`v ≤ 1e-4`) after
+  the primer window with pressure below quench (`P_mean < quenchPressurePa`) — a
+  squib/no-launch condition.
+* `burnedPct = (1 − max(0,y[2])/m_charge_kg)·100`.
+* `timeToExitMs = t·1000`.
+* `burnoutPositionMm` is recorded (mm from chamber) at the first step where remaining
+  mass hits zero, else `−1` (bullet exited while powder was still burning).
 
 ---
 
-### 2.4 Pressure Gradient (Pidduck-Kent Solution)
-Due to gas column expansion behind the moving projectile, pressure varies along the bore. Rather than static approximations, the engine solves the implicit **Pidduck-Kent gas dynamic equations**:
-1. Determine the parameter $\theta_{PK}$ by solving via Newton-Raphson iteration:
-   $$\tan(\theta_{PK}) = \theta_{PK} \cdot \left(1 + \frac{\omega}{3}\right)$$
-   Where $\omega = \frac{m_{gas}}{m_{bullet, eff}}$ is the gas-to-bullet mass ratio.
-2. Compute Pidduck-Kent correction factors:
-   * **Gas Kinetic Energy Fraction ($f_{Ke}$):**
-     $$f_{Ke} = \frac{0.5 - \frac{\sin(2\theta_{PK})}{4\theta_{PK}}}{\sin^2(\theta_{PK})}$$
-   * **Mean-to-Base Pressure Factor ($\alpha_{mean}$):**
-     $$\alpha_{mean} = \frac{\frac{\sin(\theta_{PK})}{\theta_{PK}} - \cos(\theta_{PK})}{\theta_{PK} \sin(\theta_{PK})}$$
-   * **Breech-to-Base Pressure Factor ($\beta_{breech}$):**
-     $$\beta_{breech} = \frac{1 - \cos(\theta_{PK})}{\theta_{PK} \sin(\theta_{PK})}$$
+## 4. Configuration — `EngineConfig` / `DEFAULT_ENGINE_CONFIG`
 
-#### 2.4.1 Bullet Base Pressure ($P_{base}$)
-$$P_{base} = \frac{P_{mean}}{1 + \omega \cdot \alpha_{mean} \cdot \left(1 + 0.15 \cdot (\beta_{chamber} - 1)\right)} \quad [\text{Pa}]$$
-Where $\beta_{chamber}$ is the cartridge body-to-bore area expansion ratio.
+The engine carries **no defaults of its own**. Every calibration knob is supplied on
+`inputs.engineConfig`. The canonical set is `DEFAULT_ENGINE_CONFIG` (exported from the
+engine, passed by `buildSimulationInputs` when a caller supplies none). Current shipped
+values and physical meaning:
 
-#### 2.4.2 Breech Pressure ($P_{breech}$)
-$$P_{breech} = P_{mean} \cdot (1 + \omega \cdot \beta_{breech}) \quad [\text{Pa}]$$
-The simulated peak pressure recorded and output is the breech pressure scaled by the cartridge's conformal transducer scale multiplier:
-$$P_{sensor} = P_{breech} \cdot \text{transducerScaleFactor} \quad [\text{Pa}]$$
-This factor reflects mechanical obturation loss and aligns simulated breech pressure with industry-standard SAAMI copper crusher/transducer sensor specifications.
+### 4.1 Heat transfer
 
-#### *Why the pressure gradient is modeled:*
-If the pressure was assumed to be uniform, the force pushing the bullet would be over-estimated, leading to inaccurate muzzle velocities, and the calculated chamber pressures would not match actual transducer data. Modeling the gradient is necessary to bridge the gap between breech-sensor readings and bullet base dynamics.
+| Field | Default | Physical role |
+|---|---|---|
+| `emissivity` | `0.12` | Gas-phase emissivity for radiative loss (NC/NG products, *not* steel) |
+| `convectiveFlowVelocity` | `30.0` | m/s flow offset so convection is non-zero while the bullet is stationary |
+| `heatTransferCoeff` | `6.5` | Dittus-Boelter convective pre-factor (`H_CONV_BASE`). Lowered from 8.5 to cut expansion-stroke over-cooling |
+| `boreInsulationRate` | `1.8` | Boundary-layer growth rate (`factor_bl = 1/(1+k·√x)`) |
+| `boreGasTempFactor` | `2/3` | Axial gas-temperature gradient factor on the swept bore area |
 
----
+### 4.2 Combustion
 
-### 2.5 Resisting Forces & Bullet Acceleration
-The acceleration of the bullet down the bore is computed as:
-$$\frac{dv}{dt} = \frac{P_{base} \cdot A_{groove} - F_{engraving} - F_{friction}}{m_{bullet, eff}} \quad [\text{m/s}^2]$$
-Where $A_{groove} = \pi \frac{d_{bullet}^2}{4}$ (groove cross-sectional area, meters).
+| Field | Default | Physical role |
+|---|---|---|
+| `vieilleScaleCoeff` | `270.0` | Burn-rate mass-scaling constant (`burn_mass_scale`) |
+| `nPressureSlope` | `0.0` | Pressure-dependent Vieille exponent slope; 0 ⇒ fixed exponent (bit-identical) |
+| `nPressureRefMPa` | `300.0` | Reference pressure for the n(P) log term |
+| `nPressureOneSided` | `false` | If true, n(P) slope applies only above the reference |
+| `densityCouplingK` | `0.6` | Loading-density burn coupling exponent (cell-relative) |
+| `densityCouplingRefKgM3` | `600.0` | Retained for config shape; unused by cell-relative form |
+| `kpSlopePerMPa` | `0.016237` | K(P) level-law slope |
+| `kpCrossoverMPa` | `283.62` | K(P) crossover pressure |
+| `kpFloorK` | `−0.6869` | K(P) lower clamp |
+| `covolumeRefM3Kg` | `0.00095` | Noble-Abel reference covolume |
+| `covolumeTExp` | `0.38` | Covolume temperature exponent |
+| `grainSurfaceExponent` | `1.0` | Exponent on charge mass in burn-rate scaling |
+| `burnTaperFraction` | `0.01` | Fraction of charge at which burn tapers to zero |
+| `primerIgnitedFraction` | `0.01` | Fraction of charge pre-ignited by the primer at t=0 |
+| `geometryBurnCorrection` | `0.05` | Exponent of β in the geometry burn-area adjustment |
+| `multiPerfProgressivity` | `0.8` | Progressivity slope for multi-perf grains |
 
-#### 2.5.1 Rotational Inertia Correction ($m_{bullet, eff}$)
-To account for rotational kinetic energy, the bullet's translation mass ($m_{bullet, trans}$) is scaled using the barrel twist rate ($L_{twist}$ in meters):
-$$m_{bullet, eff} = m_{bullet, trans} \cdot \left(1 + \frac{1}{2}\pi^2 \left(\frac{d_{bullet}}{L_{twist}}\right)^2\right) \quad [\text{kg}]$$
+### 4.3 Friction & pressure gradient
 
-#### 2.5.2 Engraving Resistance ($F_{engraving}$)
-* For $x < L_{freebore}$ (bullet in freebore): $F_{engraving} = 0 \quad [\text{N}]$
-* For $x \ge L_{freebore}$:
-  $$F_{engraving} = P_{eng\_profile}(x - L_{freebore}) \cdot A_{bore} \cdot \text{ramp} \quad [\text{N}]$$
-  Where $A_{bore} = \pi \frac{d_{bore}^2}{4}$ (land cross-sectional area, meters), and $P_{eng\_profile}(\Delta x)$ is the engraving pressure:
-  $$P_{eng\_profile}(\Delta x) = \begin{cases} P_{start} + \frac{\Delta x}{0.00075} \cdot (P_{peak} - P_{start}) & \Delta x < 0.75 \text{ mm} \\ P_{slide} + (P_{peak} - P_{slide}) \cdot e^{-1500 \cdot (\Delta x - 0.00075)} & \Delta x \ge 0.75 \text{ mm} \end{cases}$$
-  Where $P_{start} = 0.40 \cdot P_{peak}$, $P_{slide} = 0.20 \cdot P_{peak}$. $P_{peak}$ is the engraving pressure parameter (`engravingPressurePa`, e.g., 32 MPa for jacketed lead, 65 MPa for monolithic copper).
-  The smoothing factor is defined as:
-  $$\text{ramp} = \min\left(1.0, \frac{x - L_{freebore}}{0.0005}\right)$$
+| Field | Default | Physical role |
+|---|---|---|
+| `landFrictionPressure` | `2.5e6` | Static friction stress base (N/m²) |
+| `landFrictionScale` | `0.01` | Multiplier on static friction |
+| `radialFrictionCoeff` | `0.04` | Poisson radial-expansion friction coefficient (× `P_base`) |
+| `bearingAspectCorrection` | `0.5` | Exponent for bearing-length/bore aspect friction normalisation (0=none, 0.5=sqrt) |
+| `bearingAspectCorrectionMono` | *(unset)* | Aspect exponent variant for solid-copper monolithics; disconfirmed, inert by default |
+| `shoulderGradientCoeff` | `0.075` | Scales the shoulder-angle Lagrange gradient term |
+| `gradientDecayRate` | `1.0` | Power-law exponent for travel-dependent gradient relaxation |
+| `betaDecayScale` | `0.0` | Reduces decay rate for high-β overbore cases (keeps gradient stronger longer) |
+| `betaDecayRef` | `1.5` | β below which no decay amplification is applied |
 
-#### 2.5.3 Bore Friction ($F_{friction}$)
-Bore friction is separated into static friction stress and pressure-dependent Poisson radial expansion:
-$$F_{friction} = (F_{static} + F_{pressure}) \cdot \text{ramp} \quad [\text{N}]$$
-Where:
-* **Static Friction:**
-  $$F_{static} = \sigma_{static} \cdot d_{bullet} \cdot L_{bearing} \quad [\text{N}]$$
-  Where $\sigma_{static} = 25,000 \quad [\text{N/m}^2]$ is the sliding friction coefficient offset.
-* **Poisson-Effect Radial Expansion Friction:**
-  $$F_{pressure} = K_{pressure\_friction} \cdot P_{base} \cdot \left(\pi \cdot d_{bullet} \cdot L_{bearing}\right) \quad [\text{N}]$$
-  Where $K_{pressure\_friction} = 0.04$ is the Poisson friction factor.
+### 4.4 Flame front & energy accounting
 
-#### *Why these resistance forces are modeled:*
-1. **Engraving Force Spike:** Entering the rifling is the most mechanically demanding part of the bullet's travel. This initial resistance delays bullet movement by a fraction of a millisecond, which keeps the bullet in the chamber longer and allows pressure to build up to the threshold required for efficient powder combustion.
-2. **Poisson Friction:** High gas pressure does not just push the bullet forward; it also squeezes the bullet's rear core, expanding it radially against the barrel walls. This creates a pressure-dependent friction force (the Poisson effect) that is far higher than simple sliding friction. Modeling this prevents over-estimation of muzzle velocities in high-pressure cartridges.
+| Field | Default | Physical role |
+|---|---|---|
+| `flameSpeedRef` | `800.0` | Reference flame propagation speed (m/s) |
+| `flamePressureRef` | `100e6` | Reference pressure for flame-speed coupling (Pa) |
+| `flamePressureExponent` | `0.35` | Pressure exponent for flame velocity |
+| `flameDensityExponent` | `−0.3` | Loading-density exponent (denser packing slows flame) |
+| `primerFlameSplit` | `0.85` | Fraction of primer energy driving ignition (vs direct gas heating) |
+| `primerBurnTime` | `0.0006` | Primer energy delivery window (s) |
+| `pkBreechMultScale` | `1.0` | Scale on the breech-reporting pressure multiplier |
+| `fKeScale` | `1.0` | Scale on the Pidduck-Kent gas-KE fraction |
+| `conserveFrictionWork` | `true` | If true, friction + engraving work is debited from gas energy (energy-conservative regime) |
+| `staticFrictionScale` | `1.0` | Extra multiplier on static friction |
+| `radialFrictionScale` | `0.86` | Extra multiplier on radial friction |
+| `physicalWallScaling` | `true` | If true, drop the capacity term from heat-geometry scaling (`cap_heat_ratio = 1`) |
 
----
+> **Production-regime note.** `conserveFrictionWork = true` is the shipped/production
+> default: friction and engraving work are subtracted from `E_gas` (reducing pressure
+> and velocity). Calibration harness runs that fit burn parameters with this OFF and
+> then run production ON introduce a known ~44 fps "loads read slow" bias — the fit
+> regime must match the run regime.
 
-### 2.6 Dynamic Heat Loss and Boundary Layer Insulation
-The rate of heat accumulation in the barrel wall is calculated as:
-$$\frac{dE_{heat}}{dt} = Q_{convective} + Q_{radiative} \quad [\text{J/s}]$$
+### 4.5 Expansion-factor clamp constants (exported)
 
-#### 2.6.1 Effective Heat Transfer Area ($A_{wall, eff}$)
-Gas cooling is insulated by a turbulent boundary layer that grows with bullet travel distance (proportional to $\sqrt{x}$ in turbulent pipe flow), reducing the effective heat transfer coefficient along the bore. A gas temperature correction factor ($2/3$) accounts for the axial temperature gradient (gas is hottest at the breech, cooler near the bullet base):
-$$A_{wall, eff} = A_{chamber} + A_{bore} \cdot \frac{1}{1 + 1.8\sqrt{x}} \cdot \frac{2}{3} \quad [\text{m}^2]$$
-Where $A_{bore} = \pi \cdot d_{bullet} \cdot x$ (bore contact area swept by bullet), and the chamber surface area $A_{chamber}$ is:
-* If detailed cartridge dimensions are missing:
-  $$A_{chamber} = \pi R_{case}^2 + \frac{2 \cdot V_0}{R_{case}} \quad [\text{m}^2]$$
-  Where $R_{case} = \sqrt{\beta_{chamber}} \cdot \frac{d_{bullet}}{2}$.
-* If detailed custom chamber dimensions are resolved: $A_{chamber} = customAChamber$.
-
-The heat transfer coefficient base is geometry-scaled relative to the .308 Win reference cartridge (bore 7.62 mm, capacity 3.625 g H₂O):
-$$H_{conv,base} = \alpha_{heat} \cdot \frac{d_{bore,ref}}{d_{bore}} \cdot \frac{C_{cap,ref}}{C_{cap}}$$
-Where $\alpha_{heat} = 8.5$ (`heatTransferCoeff`). The capacity ratio exponent is 1.0 (linear SA/V scaling). A 22 Hornet (0.875 g H₂O) therefore receives a 4.14× heat transfer multiplier relative to the .308 Win reference, not the 8.35× that a 1.5 exponent would produce.
-
-#### 2.6.2 Convective Loss ($Q_{convective}$)
-$$Q_{convective} = h_{conv} \cdot A_{wall, eff} \cdot (T_{gas} - 293.15) \quad [\text{J/s}]$$
-Where $h_{conv}$ is the heat transfer coefficient calculated dynamically from gas density:
-$$h_{conv} = \alpha_{heat} \cdot \rho_{gas}^{0.8} \cdot (v_{bullet} + 30.0)^{0.8} \cdot d_{bullet}^{-0.2}$$
-Where $\rho_{gas}$ is the density of the gas products:
-$$\rho_{gas} = \frac{m_{gas}}{V_{free} - m_{gas} \cdot \eta(T_{gas})} \quad [\text{kg/m}^3]$$
-
-#### 2.6.3 Radiative Loss ($Q_{radiative}$)
-$$Q_{radiative} = \epsilon \cdot \sigma \cdot A_{wall, eff} \cdot (T_{gas}^4 - 293.15^4) \quad [\text{J/s}]$$
-Where $\epsilon = 0.12$ (gas-phase emissivity for NC/NG combustion products — not barrel steel emissivity) and $\sigma = 5.670374 \cdot 10^{-8} \quad [\text{W/(m}^2\cdot\text{K}^4)]$ (Stefan-Boltzmann constant).
-
-#### *Why heat loss and boundary layer insulation are modeled:*
-Gunpowder combustion temperatures exceed $3000\text{ K}$, and steel conducts heat rapidly. If heat loss was ignored, the simulated gas would remain too hot, pressure would remain artificially high, and muzzle velocities would be over-estimated. However, if simple pipe convection was used, heat loss would be vastly *over*-estimated. The boundary layer factor models the cool gas buffer that shields the barrel walls, ensuring realistic velocity outputs.
+| Constant | Value | Role |
+|---|---|---|
+| `EXPANSION_REF_RATIO` | `10.0` | Expansion ratio where `burnAreaExpansionSlope` correction is zero |
+| `EXPANSION_FACTOR_MIN` | `0.5` | Lower clamp on the expansion factor |
+| `EXPANSION_FACTOR_MAX` | `1.8` | Upper clamp on the expansion factor |
 
 ---
 
-### 2.7 Numerical Integrator (Runge-Kutta-Fehlberg 4/5)
-The internal ballistics ODE system is integrated using an adaptive-step **Runge-Kutta-Fehlberg 4/5 (RKF45)** method to handle the stiff pressure rises during early ignition.
+## 5. Outputs — `InternalBallisticsResult`
 
-The solver computes two predictions of the state vector $\vec{y} = [x, v, m_p, E_{heat}]$ at each step using Fehlberg's coefficients:
-$$\vec{y}_{4th\_order} = \vec{y}_n + h \cdot \sum_{i=1}^{5} CH_i \cdot \vec{k}_i$$
-$$\vec{y}_{5th\_order} = \vec{y}_n + h \cdot \sum_{i=1}^{6} CT_i \cdot \vec{k}_i$$
+| Field | Unit | Meaning |
+|---|---|---|
+| `muzzleVelocityMps` | m/s | **Raw** muzzle velocity (velocity state at exit) — before `correctVelocity` |
+| `peakPressurePa` | Pa | Peak reported (breech × transducer) pressure over the shot |
+| `burnedPct` | % | Fraction of charge consumed at exit |
+| `timeToExitMs` | ms | Time to muzzle |
+| `burnoutPositionMm` | mm | Position of complete combustion (−1 if unburned at muzzle) |
+| `travelData[]` | — | Per-inch (25.4 mm) interpolated `{travelMm, timeMs, pressurePa, velocityMps, burnedPct}` |
+| `curveData[]` | — | Downsampled (~100 pt) history preserving peak-pressure, burnout, start, end |
+| `didTimeout` | bool | True only if `maxSteps` exceeded |
+| `stepCount` | — | Accepted+rejected step count |
 
-#### Step Size Control
-The local truncation error $err$ is calculated as the maximum component difference:
-$$err = \max_{j} \left| \frac{y_{5, j} - y_{4, j}}{atols_j + rtol \cdot \max(|y_{n, j}|, |y_{5, j}|)} \right|$$
-Where $rtol = 10^{-4}$ and $atols = [10^{-6}, 10^{-3}, 10^{-6}, 1.0]$.
-* If $err \le 1.0$, the step is **accepted**, the state is updated to $\vec{y}_{5th\_order}$, and the time step $h$ is adjusted.
-* If $err > 1.0$, the step is **rejected**, and the solver retries with a smaller $h$:
-  $$h_{next} = h \cdot 0.84 \cdot err^{-0.2}$$
+**Energy breakdown** (final-state, at exit):
 
-#### *Why the RKF45 adaptive integrator is used:*
-Internal ballistics is a **mathematically stiff** problem.
-1. **Early Ignition Phase:** In the first millisecond, the powder ignites and pressure spikes from atmospheric to $60,000+\text{ PSI}$. During this phase, the rate of change is extremely high, and the integrator must use tiny steps ($dt < 1\mu\text{s}$) to prevent numerical divergence (exploding values).
-2. **Expansion Phase:** Once the bullet begins moving down the barrel, the pressure changes slowly, and a tiny step size would make the simulation take forever to compute.
-3. **Adaptive-Step Solution:** RKF45 dynamically manages this, scaling down the step size during stiff spikes to ensure safety/accuracy, and scaling it up during expansion to maximize calculation speed. This allows a complete simulation to run in under $5\text{ms}$ on a client-side browser.
+| Field | Meaning |
+|---|---|
+| `finalEHeatJ` | Wall heat loss `y[3]` |
+| `finalEFrictionJ` / `finalEFrictionStaticJ` / `finalEFrictionRadialJ` | Friction work `y[5]`, `y[13]`, `y[14]` |
+| `finalEEngraveJ` | Engraving work `y[6]` |
+| `finalEBulletKEJ` | `0.5·m_bullet_eff·v²` |
+| `finalEGasKEJ` | `0.5·m_burned·pk_fKe·v²` |
+| `finalEGasInternalJ` | `E_chem − (bulletKE+gasKE) − E_wall − (friction+engrave if conserved)` |
+| `finalEUnburnedChemJ` | `y[2]·q` (chemical energy left in unburned powder) |
+| `finalEPrimerInJ` | Primer energy input |
+| `integratedE*J` | The path-integrated energy states `y[7..12]` (audit trail) |
+| `calculatedV0EmptyH2oGrains` | `V_case_empty·1e6·15.43235835` |
+| `calculatedAChamberM2` | Chamber wetted area used for heat loss |
+| `calculatedBeta` | β actually used |
+
+`getPrimerEnergyJ(primerPocketId, brisanceEnergyJ?)` is also exported: brisance wins;
+else small → 8 J, large → 14 J, unknown → throw.
+
+---
+
+## 6. Post-Engine Velocity Correction (`velocityCorrection.ts`)
+
+### 6.1 Why it exists
+
+The 0-D pressure-primary engine structurally **under-predicts muzzle velocity for
+overbore cartridges** and carries a per-cartridge bullet-weight-dependent bias. This
+is not a pressure error — peak pressure matches transducer data. So the correction is
+applied to **velocity only, after the engine**, and **pressure is never touched**. Call
+it immediately after `runInternalBallisticsSimulation()` and before any consumer reads
+velocity.
+
+### 6.2 `correctVelocity(...)` resolution order
+
+```
+correctVelocity(rawVelocityMps, expansionRatio, cartridgeId, params,
+                bulletWeightGrams?, powderId?, bulletMaterialType?, simPressurePsi?)
+```
+
+1. **Per-cartridge override** (`params.cartridgeOverrides[cartridgeId]`), if present:
+   * Start from cartridge `factor` / `weightSlope` / `refWeightGrams` / bounds.
+   * **Powder override** (`powderOverrides[powderId]`) supersedes *wholesale* (factor,
+     slope, ref, and — if present — its own p10/p90 bounds). A powder cell that omits a
+     slope is deliberately flat (the weight correlation was rejected); it does **not**
+     inherit the cartridge slope. Bounds *do* fall back to the cartridge's.
+   * **Construction override** (`classifyBulletConstruction(materialType)` → `mono`/`lead`):
+     the construction cell from the most specific level (powder first, else cartridge)
+     supersedes wholesale.
+   * **Weight slope** (if slope, ref, weight all present):
+     `rawFactor = baseFactor + slope·(bulletWeightGrams − refWeightGrams)`, clamped to
+     the cell's `[weightFactorMin, weightFactorMax]` **before** the global clamp.
+   * `factor = clampFactor(rawFactor)` where `clampFactor` bounds to
+     `[FACTOR_FLOOR=0.85, FACTOR_CAP=1.15]`.
+   * **dV/dc pressure ramp** (symmetric), if `pressureRampSlope` + `simPressurePsi` +
+     cell `meanSimPressurePsi`/`stdSimPressurePsi` are all present:
+     ```
+     z        = (simPressurePsi − meanSimPressurePsi) / stdSimPressurePsi
+     rampMult = clamp(exp(pressureRampSlope · z), 0.95, 1.05)     (PRESSURE_RAMP_MULT_MIN/MAX)
+     factor   = clampFactor(factor · rampMult)
+     ```
+     This cools loads whose simulated pressure is below the cell mean (z<0) and warms
+     those above it (z>0), pivoting on the mean so the cell level is unchanged. It is
+     the charge/pressure slope the 0-D engine cannot produce; fitted on abundant
+     velocity data (not pressure). Call sites pass `peakPressurePa · PA_TO_PSI`
+     (`PA_TO_PSI = 0.0001450377`).
+   * Returns `{ correctedVelocityMps: raw·factor, correctionFactor: factor, correctionTier: "FITTED" }`.
+
+2. **Global fallback** (no cartridge override): a monotone **piecewise-linear function
+   of expansion ratio** over `params.globalKnots` (sorted ascending, factors
+   non-decreasing). `evaluateGlobalFunction(expR, knots)`:
+   * Below the first knot: if `|factor−1| < 0.005` → `NONE` (no correction), else
+     `EXTRAPOLATED`.
+   * Above the last knot: linear extrapolation from the last two knots, `clampFactor`,
+     tier `EXTRAPOLATED`.
+   * Between knots: linear interpolation, tier `INTERPOLATED`.
+   * Empty knots → `NONE`, factor 1.0.
+
+### 6.3 Model shape
+
+* `CartridgeOverride`: `factor`, `confidence`, `weightSlope`, `refWeightGrams`,
+  `weightFactorMin/Max`, `powderOverrides`, `constructionOverrides`, cell pressure
+  stats.
+* `PowderOverride` / `ConstructionOverride`: same factor/slope/bounds shape, one level
+  down.
+* `CorrectionParams` (stored in `tuning.velocityCorrection`): `modelVersion`,
+  `globalKnots`, `cartridgeOverrides`, `fittedAt`, `validationR2`, `heldOutMaeFps`,
+  `pressureRampSlope`.
+
+**Expansion ratio** used as the global key:
+`computeExpansionRatio(caseCapacityGramsH2O, boreDiameterMm) = caseCapacityGramsH2O /
+(π·(boreDiameterMm/20)²)` — the same `cc / cm²` used by calibration and by the engine's
+internal `expansion_ratio`.
+
+---
+
+## Appendix A — Engine Constants Quick Reference
+
+| Constant | Value | Where |
+|---|---|---|
+| `rtol` | `1e-4` | RKF45 error control |
+| `atols[0..4]` | `1e-6, 1e-3, 1e-6, 1.0, 1e-5` | position, velocity, mass, heat, flame |
+| `max_step` | `2e-5` s | Step cap |
+| `t_max` | `0.025` s | 25 ms hard time limit |
+| `maxSteps` | `10000` | Loop iteration cap |
+| `H_MIN_FORCE` | `1e-9` s | Force-accept floor |
+| `N_STATE` | `15` | State vector length |
+| `x_peak` (engraving) | `0.00075` m | Engraving peak position |
+| `k_decay` (engraving) | `1500` | Engraving post-peak decay |
+| `engrave_ramp` width | `0.0005` m | Force smoothing distance |
+| `FILL_LIMIT` | `1.25` | 125 % fill-fraction ceiling (throws above) |
+| `FILL_REF` | `0.50` | Reference fill for `burnAreaFillSlope` |
+| `REF_BORE_MM` | `7.62` | Bore reference (.308) |
+| `REF_CAPACITY_G` | `3.625` | Capacity reference (.308) |
+| `REF_BEARING_BORE_RATIO` | `1.49` | Bearing aspect reference |
+| `EXPANSION_REF_RATIO` | `10.0` | Expansion-slope zero point |
+| `GRAINS_TO_GRAMS` | `0.06479891` | Grains → grams |
+| `FACTOR_FLOOR` / `FACTOR_CAP` | `0.85` / `1.15` | Velocity-correction clamp |
+| `PRESSURE_RAMP_MULT_MIN/MAX` | `0.95` / `1.05` | dV/dc ramp clamp |
+| `PA_TO_PSI` | `0.0001450377` | Pa → PSI |

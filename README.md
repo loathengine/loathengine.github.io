@@ -1,600 +1,357 @@
 # Empirical Precision — User Guide
 
-## What Is This App?
-
-Empirical Precision is a browser-based shooting journal and analysis tool. It lets you:
-
-- **Catalog** your firearms, reloading components, and ammunition
-- **Photograph** your range targets and mark each bullet impact
-- **Analyze** your groups statistically — across one session or many
-- **Simulate** hit probability at range using a physics-based ballistic engine
-- **Model** internal ballistics with a thermodynamic propellant combustion solver
-
-Everything runs in your browser. No account, no server, no internet connection required after the first page load. Your data never leaves your device.
+*A field manual for handloaders and precision shooters.*
 
 ---
 
-## Table of Contents
+## 1. What Empirical Precision Is — and Who It's For
 
-1. [Key Concepts & Terms](#key-concepts--terms)
-2. [Privacy & Data Storage](#privacy--data-storage)
-3. [Recommended Workflow](#recommended-workflow)
-4. [Tab-by-Tab Guide](#tab-by-tab-guide)
-5. [Per-Firearm Velocity Offset](#per-firearm-velocity-offset)
-6. [Troubleshooting](#troubleshooting)
-7. [Data Backup](#data-backup)
-8. [Glossary](#glossary)
+Empirical Precision is an **offline-first web app (PWA) for serious handloaders and precision rifle shooters.** It replaces gut feel — the lucky three-shot group, the powder-chart guess, the folklore about "flyers" — with measured data and physics. It does four things, and they reinforce each other:
 
-> **Nav bar order:** About Us · Targets · Firearms · Load Library · Marking · Chronos · Sessions · Analysis · Heurisko · Components · DB Management
+- **Manage your components and ammunition.** Cartridges, bullets, powders, primers, and brass live in one searchable library, and each handload recipe records everything down to CBTO and case firings.
+- **Model internal ballistics.** A thermodynamic combustion solver predicts your **chamber pressure** and **muzzle velocity** from first principles — so you can sanity-check a load against the SAAMI pressure ceiling *before* you pull the trigger.
+- **Model external ballistics.** A 3DOF Runge-Kutta trajectory engine predicts **drop, wind deflection, spin drift, and hit probability** at distance, using high-resolution G1/G7 drag tables.
+- **Record and analyze live-fire.** Photograph your targets, mark the impacts, pair them with chronograph velocities, and get **composite group statistics** that actually mean something.
 
----
+**Who benefits:** anyone who wants to know *why* a load shoots the way it does — whether that's finding the tightest node, confirming a bullet is stable out of your twist, building a DOPE card, or ranking two loads by how far they'll reliably hit a target.
 
-## Key Concepts & Terms
+### Why everything is local
 
-Every term and acronym used in this guide — and everywhere in the app itself — is defined once, in one place: the **[Glossary](#glossary)** at the end of this document. Keeping definitions there and nowhere else is deliberate: a term defined in two places eventually drifts, and drifted wording is exactly what makes an app feel unplanned. If you're looking for what "SD V," "ES POI," "COAL vs SAAMI OAL," or any other term means, jump straight to the [Glossary](#glossary).
+All of your data is stored in your browser's **IndexedDB** — on your device, not on a server. There is no account, no login, and no tracking. This matters for two concrete reasons:
 
----
+- **Privacy.** Your firearms, loads, and range records never leave your device.
+- **It works at the range.** Once loaded (or installed as a PWA), the app runs with **no cell signal and no Wi-Fi** — exactly where you need it.
 
-## Privacy & Data Storage
+The trade-off: **clearing your browser's site data deletes everything permanently.** Back up regularly (see [Backups](#12-backups--keeping-your-data-safe)). Installing the PWA requests persistent storage, which protects your data from routine browser eviction.
 
-- **Offline first.** The app requires internet only for the initial page load.
-- **100% local.** All data is stored in your browser's IndexedDB. Nothing is transmitted to any server.
-- **Vulnerable to browser resets.** Clearing your browser's site data deletes all local data permanently. Back up regularly.
+> **Navigation bar order:** About Us · Targets · Firearms · Load Library · Marking · Chronos · Sessions · Analysis · Heurisko · Components · DB Management. The **Empirical Precision** logo (top-left) returns you to the Dashboard.
 
 ---
 
-## Recommended Workflow
+## 2. Key Concepts to Understand First
 
-### First-Time Setup
+A few ideas run through the whole app. Understanding them up front makes everything else click.
 
-**1. Sync the master database**
+**Metric inside, imperial at the edges.** Every engine and every stored value is **strictly metric (SI)**. Grains, inches, and feet-per-second exist only in the input boxes and the display — they're converted the instant you type them and converted back only when shown. You never have to think about it, but it's why the physics is trustworthy: no unit ambiguity ever reaches the math.
 
-Go to **DB Management** and click **Sync Remote Repo** under the *Sync Empirical Precision Database* section. This imports bullet profiles, powders, cartridges, primers, and brass from the built-in open-source library — no manual entry needed. Safe to run multiple times; it only adds or updates records without deleting your personal data.
+**Calibration is what makes the pressure model safe.** The internal-ballistics engine isn't a generic estimator. Each powder's burn parameters are **fitted against real laboratory pressure-transducer data**. That's why the simulator can compare your predicted peak pressure to the cartridge's SAAMI limit and mean it. The corollary: **never hand-tweak a powder's burn coefficients to make predicted velocity match your chronograph** — doing so corrupts the pressure prediction and voids the safety audit. (For rifle-to-rifle velocity differences there's a dedicated, pressure-safe correction — see [Firearms](#6-firearms).)
 
-**2. Add your firearm**
+**Data provenance and quality are tracked, not hidden.** The app is honest about how good a number is. Velocity SD that comes from real chronograph shots is labeled **measured**; when it's missing, the long-range analysis **imputes** a conservative value and flags the result as low-confidence rather than flattering a load with fake perfection. Likewise, group statistics carry confidence intervals and a reliability rating so you can tell a real result from a small-sample fluke.
 
-Go to **Firearms** and enter your rifle's nickname, cartridge, barrel length, twist rate, and scope height over bore. After accumulating range data, you can also store a [per-firearm velocity offset](#per-firearm-velocity-offset) to correct the simulator's displayed velocity for your specific barrel.
-
-**3. Add your load**
-
-Go to **Load Library** and create a handload recipe with bullet, powder, charge weight, brass, and seating specs.
-
-### Range Day
-
-**4. Design custom targets (Optional)**
-
-Go to **Targets** to design and print custom paper targets with exact rings, grid overlays, and labels before heading to the range.
-
-**5. Upload your target image**
-
-Go to **Marking**. Under the **Targets** panel in the left sidebar, click **Upload Image(s)** to upload a photo of your shot group. Add the target to the session.
-
-**6. Set the scale calibration**
-
-In the **Marking** tab, enter a known reference distance (e.g., `2` inches) under *Scale Setup*, click **Set Scale**, then click two points on your target image exactly that distance apart.
-
-**7. Mark your Point of Aim (POA) & impacts (POI)**
-
-Click **New Group**, select **Set POA** and click your target's aiming point on the canvas. Then select **Mark POI** and click each bullet hole to mark impact positions. You can optionally log chronographed muzzle velocities directly in the *Impact Data* table, or import a chronograph file and bulk-apply velocities from the [Chronos](#chronos) tab. Name your marked target and click **SAVE MARKED TARGET**.
-
-**8. Combine into a Session**
-
-Go to **Sessions** and create a new session by selecting your saved **Marked Target**, **Firearm**, and **Load**. Set the environmental conditions (temperature, pressure, altitude) and click **+ Create Session**.
-
-**9. Analyze**
-
-Go to **Analysis**, select your sessions with checkboxes, and click **ANALYZE SELECTED** to review statistical results, dispersion trends, normality tests, and the composite overlay plot.
-
-**10. Back up your data**
-
-Go to **DB Management**, expand **Advanced Database Settings**, select `-- Entire Database --` under *Target Active Scope*, and click **Export Selected Scope** to download a `.json` backup file.
+**Install it as an app.** From **DB Management → Advanced → Install Offline App**, you can install Empirical Precision as a standalone PWA. It then launches from your home screen and runs fully offline. On iPhone/iPad, use Safari's Share → *Add to Home Screen*.
 
 ---
 
-## Tab-by-Tab Guide
+## 3. The Core Workflow
 
-### About Us
+This is the recommended path from a fresh install to a statistically verified load. Each step exists for a reason, and doing them in this order means every later step already has the data it needs.
 
-An overview of the app's purpose, design philosophy, feature list, and privacy architecture. No data entry here.
+**Step 0 — Sync the master database.** On **DB Management**, click **Sync Remote Repo**. This pulls 600+ bullet profiles, 77 powders, and 45 factory cartridges into your local library, so you rarely have to enter a component by hand. Safe to re-run; it merges by ID and never touches your personal records.
 
-> **Note:** The actual landing page (what loads at the app's root URL) is the **Dashboard**, reached via the "Empirical Precision" logo link in the top-left of the nav bar. It shows the same 6-step Getting Started Workflow described above with quick links into each tab, plus buttons to sync the master database, view this guide, and join the Discord.
+**Step 1 — Add a Firearm.** *(Firearms tab)* Enter your rifle: cartridge, barrel length, twist rate, sight height over bore. **Why first:** twist rate drives the stability and spin-drift math, sight height drives the trajectory zero, and the cartridge determines which loads and pressure limits apply. Everything downstream inherits from this record.
 
----
+**Step 2 — Add a Load.** *(Load Library tab)* Build the handload recipe: bullet, powder + charge, brass, primer, and seating dimensions (COAL/CBTO). **Why:** this is the exact ammunition whose performance you're about to measure and model. Precise seating data feeds the pressure and stability engines.
 
-### Targets
+**Step 3 — Mark your impacts.** *(Marking tab)* Upload a photo of your target, set the scale, mark your point of aim and each bullet hole. **Why:** this converts a photograph into real, measured coordinates — the raw material for every group statistic. Save it as a **Marked Target.**
 
-The target design generator suite. Design and print custom targets before your range trip:
-- Set paper size (Letter, Legal, A4, 12x12), orientation, and grid options.
-- Choose bullseye shape (Round, Square, Diamond, Star, Triangle, Hexagon), ring count, and colors.
-- Add a text label that can pull cartridge and load data automatically from your library.
-- Click **EXPORT TO PDF (PRINT)** or **EXPORT IMAGE** to download the design.
+**Step 4 — Attach chronograph velocities.** *(Chronos tab)* Import your chrono file(s) and pair each velocity reading to a point of impact. **Why:** velocity is what connects *internal* consistency (SD, ES) to *external* behavior (vertical stringing, drop). **Velocity now lives only in Chronos** — you can import many files at once and pair each shot to any impact, in any order, even across different range sessions.
 
-> **Note:** Target images from range sessions are uploaded and calibrated directly on the **Marking** page, not here.
+**Step 5 — Build a Session.** *(Sessions tab)* Combine a Marked Target + Firearm + Load + the day's environment (temperature, pressure, altitude). **Why:** a Session is the complete, self-contained record of *what was fired, from what, in what conditions* — the unit that Analysis and the simulators operate on.
+
+**Step 6 — Analyze.** *(Analysis tab)* Select one Session or many, and run the analysis. **Why:** one small group is noise; ten small groups composited around their centers is a real measurement. This is where you get Mean Radius, reliability, velocity SD, and the long-range hit-probability ranking.
 
 ---
 
-### Firearms
+## 4. Dashboard (Home)
 
-**Adding a firearm:**
-1. Enter a **Nickname** (e.g., `6.5 PRC Hunting Rifle`).
-2. Select the **Cartridge** it is chambered in.
-3. Enter **Barrel Length**, **Twist Rate** (e.g., `8` for 1-in-8"), and **Sight Over Bore** (scope centerline height above bore, in inches).
-4. Click **Save Firearm**.
-
-**Editing:** Click **Edit** next to any entry, make changes, then click **Save Firearm** again.
-
-**Per-Firearm Velocity Offset:** The Ignition Simulator can store a velocity correction factor on your firearm record that accounts for barrel-to-barrel differences (bore dimensions, throat, friction) between your rifle and the physics model. This correction applies **only to the displayed velocity** — it never affects pressure, safety audits, or any powder parameters. See [Per-Firearm Velocity Offset](#per-firearm-velocity-offset) for the full workflow.
-
-> **Why twist rate matters:** The ballistic simulator uses twist rate to calculate gyroscopic stability ($S_g$) and spin drift, which directly affect long-range predictions.
+Reached via the logo, the Dashboard is your launch pad. It lays out the six-step Getting Started workflow as clickable cards, and offers one-tap buttons to **Sync the master database**, **open this User Guide**, and **join the Discord**. It's the fastest way to orient a new install or jump back into the pipeline.
 
 ---
 
-### Load Library
+## 5. About Us — *Philosophy & Reference*
 
-**Creating a Load:**
-- Enter a **Nickname** (or leave it blank to auto-generate from specs).
-- **1. Cartridge Spec** — Select Diameter and Cartridge Case.
-- **2. Bullet Details** — Select Weight, Bullet Name, and Lot #.
-- **3. Powder Charge Specs** — Select Powder Mfg, Powder Brand, Charge Weight (grains), and Lot #.
-- **4. Brass Specs** — Select Brass Manufacturer, Pocket Size, Exact Case, Brass Lot #, and Firings count.
-- **5. Primer Details** — Select Primer Manufacturer, Actual Primer, and Lot #.
-- **6. Seating & Precision Dimensions** — Enter COAL (Cartridge Overall Length, in), CBTO (Cartridge Base to Ogive, in), CBTO Comparator tool, Shoulder bump (in), and Shoulder Comparator tool.
-- Click **Save Load** (or **Update Load** when editing).
-
-**Managing Loads:** View the list of saved loads with quick details on bullet specs, powder specs, and COAL. You can sort by Nickname, Cartridge, Bullet Weight, Powder, Charge, and COAL, and easily edit or delete loads.
+The About page ("Philosophy & Reference") explains *why* the app works the way it does: composite statistics over single lucky groups, measured pressure over assumed pressure, a real solver over a rule of thumb. It also holds a feature overview and — importantly — the canonical definitions of every term the app uses. If a label ever seems ambiguous, this page (and the [Glossary](#13-glossary) below) is the source of truth. No data entry happens here.
 
 ---
 
-### Marking
+## 6. Targets
 
-> **The golden rule:** Always set the scale before marking any shots. Without it, all measurements will be in raw pixels — scientifically meaningless.
+A **target-design generator** for building printable paper targets *before* the range trip. Choose paper size and orientation, add a grid, pick a bullseye shape (round, square, diamond, star, triangle, hexagon), set ring counts and colors, and add a text label that can auto-pull cartridge and load details from your library. Export to **PDF** for printing or to an **image**.
 
-#### Step-by-Step
-
-**1. Upload or Select Target Image:**
-Under the *Targets* section in the left sidebar, click **Upload Image(s)** to upload a new target photo. Once uploaded, select it from the *Select from Gallery* dropdown and click **Add Target** to place it on the canvas. To load an existing marked target, select it under the *Load Saved* dropdown and click **Load**.
-
-**2. Set the Scale:**
-The scale tells the app how many pixels equal one inch or millimeter on your image.
-- Enter a **known distance** (e.g., `2`).
-- Select **units** (Inches or mm).
-- Click **Set Scale**.
-- Click two points on the canvas exactly that distance apart.
-
-**3. Create a Group:**
-Click **New Group**. Each group represents a set of shots fired at a single point of aim.
-
-**4. Set POA (Point of Aim):**
-Click **Set POA**, then click the exact spot on the target you were aiming at.
-
-**5. Mark Impacts (POI):**
-Click **Mark POI**, then click each bullet hole on the target. A numbered dot appears for each shot. Use **Undo Last** or **Erase Shot** if you make a mistake.
-
-**6. Enter Shot Velocities (Optional):**
-If you used a chronograph, enter each shot's velocity (in fps) in the **Impact Data** table below the canvas. This enables velocity-dispersion correlation analysis and powers the [Per-Firearm Velocity Offset](#per-firearm-velocity-offset) feature in the Ignition Simulator.
-
-**7. Save Target:**
-Enter a name for the marked target, enter the target distance (yards/meters), and click **SAVE MARKED TARGET**.
+**Why it matters:** a target with a known grid or ring size gives you a precise, printed reference distance — which makes scale-setting in Marking fast and accurate. (Note: photos of your *shot* targets are uploaded and scaled on the **Marking** page, not here.)
 
 ---
 
-### Chronos
+## 7. Firearms
 
-Import, review, export, and link chronograph velocity data. The tab has three sub-panels: **Import**, **Export**, and **Associate**.
+Register each physical rifle once, then reuse it everywhere. Fields: **Nickname**, **Diameter → Cartridge**, **Barrel Length**, **Twist Rate** (entered as the `X` in 1:X), **Sight Height** over bore, **Mag COAL**, and measured **Freebore**.
 
-#### Import
+**Why each field matters:**
+- **Twist rate** feeds the gyroscopic-stability (Sg) and spin-drift calculations. Get it wrong and every long-range prediction is off.
+- **Sight height over bore** sets where the line of sight crosses the trajectory — essential for correct drop and zero.
+- **Barrel length** feeds the internal-ballistics velocity prediction.
+- **Freebore** (if you've measured it) overrides the generic SAAMI spec, tightening the pressure model to *your* chamber.
+- **Mag COAL** records the longest round your magazine will feed, which may be shorter than SAAMI max.
 
-- **Drag & drop or browse** for a file. Supported formats are auto-detected: **LabRadar CSV**, **MagnetoSpeed CSV**, **Garmin Xero (CSV)**, **Garmin FIT** (binary, incl. `.fit` files exported from a Xero), and **Generic CSV** (any file with a numeric velocity column) as a fallback.
-- After parsing, a stats bar shows **Avg / SD V / ES V / Min / Max** for the shot string.
-- Any file that fails to fully parse shows inline warnings (e.g. a FIT file with no projectile-speed records above the 35 m/s detection threshold).
-- Enter a **session name** and click **Save** to store the shot string as a reusable Chrono Session (listed under **Saved**), independent of any marked target.
-- The **Load Marking Data** panel alongside it lets you pick a saved **Marked Target** to see its groups/shots side-by-side with the imported chrono shots, ready for linking.
-
-#### Associate & Apply Velocities
-
-Link individual chronograph shots to the marking-canvas shots they correspond to, then push the measured velocity into your session's shot records:
-
-1. In the **Import** tab, click a **chrono shot** row (it highlights blue).
-2. Click the corresponding **marking shot** row to link the two.
-3. Repeat for each shot, or click **Auto-Match** to link them sequentially in order.
-4. Switch to the **Associate** tab to review all links, then click **Apply Velocities** to write each linked chrono velocity onto the matching shot in the database.
-5. **Unlink** any single pairing, or **Clear All** to reset every link.
-
-> This is the fastest path to populate velocity data for [Vert Dispersion R²](#glossary) and the [Per-Firearm Velocity Offset](#per-firearm-velocity-offset) feature when you have a full string of chronograph readings instead of entering them shot-by-shot in Marking.
-
-#### Export
-
-With a chrono session loaded, download it as **CSV**, **TSV** (for direct paste into Excel/Sheets), or **JSON** (includes computed stats and any marking-shot links), or use **Copy to Clipboard** to paste a TSV table directly into a spreadsheet.
+**Per-firearm velocity offset (pressure-safe).** Two rifles in the same chambering can throw the same load at different speeds because of bore, throat, and finish differences — a property of *your barrel*, not the powder. Using the **Ignition** simulator (in Heurisko), you can compare the model's predicted velocity to your measured chronograph mean and store the difference as a correction **on the firearm record.** This correction adjusts only the *displayed* velocity — it never touches the pressure trace or the safety audit. It's the right way to reconcile the model with your rifle without corrupting the physics.
 
 ---
 
-### Sessions
+## 8. Load Library
 
-The bridge that connects your range targets to your rifles and ammunition. A session combines a marked target, firearm, load, and environmental conditions.
+Catalog every handload recipe in full. The form walks through six sections: **1) Cartridge Spec** (diameter + case), **2) Bullet Details** (weight, bullet, lot), **3) Powder Charge** (manufacturer, brand, charge in grains, lot), **4) Brass Specs** (manufacturer, pocket size, exact case, lot, number of firings), **5) Primer Details**, and **6) Seating & Precision Dimensions** (COAL, CBTO + comparator tool, base-to-shoulder + comparator). Leave the nickname blank to auto-generate a descriptive name.
 
-**Creating a Session:**
-1. Select a saved **Marked Target**.
-2. Select the **Firearm** used.
-3. Select the **Load** fired (automatically filtered to matching cartridges if a firearm is selected).
-4. Enter a custom **Session Name** (or let it auto-generate).
-5. Enter **Environmental Conditions** (temperature, pressure, altitude).
-6. Click **+ Create Session**.
-
-**Managing Sessions:** View, edit, delete, export individual sessions as JSON, or import sessions from files.
+**Why the detail is worth it:** the load record is what the engines read. Charge weight and case capacity drive the pressure/velocity model; bullet and COAL drive stability and trajectory; brass firings and lots let you trace an anomaly back to a component. The saved-loads list sorts by nickname, cartridge, bullet weight, powder, charge, or COAL so you can compare a ladder at a glance.
 
 ---
 
-### Analysis
+## 9. Marking
 
-> **Why composite?** A 5-shot group gives a rough picture. Ten 5-shot groups composited around their centers give a 50-shot dataset that reveals the true capability of your rifle and load. Mean Radius on 50 shots is far more meaningful than Extreme Spread on 5.
+Marking turns a **photo of your target** into precise, measured impact coordinates. This is the foundation of all group analysis — do it carefully.
 
-#### Metric Reference
+**The golden rule: set the scale before you mark anything.** Without a scale, every measurement is in raw pixels, which is meaningless.
 
-The Analysis Results Table surfaces: **Mean Radius (MR)**, **95% CI**, **ES POI (Group Size)**, **ES POI HV**, **SD POI HV**, **MPI Offset**, **Reliability Rating**, **SD V**, **ES V**, and **Vert Dispersion R²**. See the [Glossary](#glossary) for what each one means.
+**Workflow:**
+1. **Add a target image.** Under *Targets* in the left sidebar, **Upload Image(s)** (stored efficiently as WebP) or pick one from the gallery, then **Add Target** to place it on the canvas.
+2. **Set the scale.** Enter a known reference distance (e.g. `2` inches — a ring diameter or grid square), click **Set Scale**, then click the two endpoints of that distance on the image. This calibrates pixels-per-inch.
+3. **New Group.** Each group is a set of shots fired at one point of aim.
+4. **Set POA.** Click your point of aim.
+5. **Mark POI.** Click each bullet hole; a numbered dot appears. Use **Undo Last** or **Erase Shot** to fix mistakes.
+6. **Enter the target distance** (yards or meters) — this is required, because angular metrics (MOA/MIL) and the trajectory math depend on it.
+7. **Name it and SAVE MARKED TARGET.**
 
-#### Step-by-Step
+**Why it matters:** the impact coordinates you capture here become Mean Radius, group size, MPI offset, stringing diagnostics, and the dispersion seed for the hit-probability simulator. A careful scale and honest impact marks are the difference between a real measurement and garbage-in.
 
-1. **Filter** sessions in the setup panel (Firearm → Cartridge → Bullet → Powder) to narrow the list.
-2. **Select** sessions using checkboxes, or click **All**.
-3. **Click ANALYZE SELECTED**.
-4. **Review:**
-   - **Analysis Results Table** — View Mean Radius (with 95% CI), ES POI, SD POI HV, SD V / R², and Reliability stars. Click **Show Insights** to inspect normality test results and rating breakdowns.
-   - **Composite Plot** — View all groups overlaid and aligned by their Mean Point of Impact.
-   - **Analysis Report** — Read or copy the text report of ranking, details, environmental conditions, and database parameters.
-5. **Export & Copy:**
-   - **SAVE IMAGE** — Downloads a high-resolution PNG image report containing the composite plot and data HUD table.
-   - **Copy Report** — Copies the full structured text analysis report to your clipboard.
+> **Velocity is no longer entered on this page.** The Impact Data table shows coordinates only. Muzzle velocities are attached in **Chronos** (next section) — either imported from a chronograph or typed in by hand there. Any velocity already attached to a shot is preserved when you re-save a marked target.
 
 ---
 
-### Heurisko (Ballistics & Simulation Suite)
+## 10. Chronos
 
-Heurisko is the app's internal scientific suite. "Heurisko" refers to heuristic ballistic modeling — using empirical data to make forward-looking performance predictions and thermodynamic simulation sweeps. The suite contains five tabs: **Efstathia**, **Kylindros**, **Monte Carlo**, **Ignition**, and **DOPE**.
+Chronos is where **muzzle velocity meets point of impact.** It imports chronograph files, stores them as reusable sessions, exports them for spreadsheets, and — the key job — **pairs each velocity reading with the shot that made it.**
 
-#### Ballistic Engine Capabilities
+### Import
+Drag-and-drop or browse for one or more files. Formats are auto-detected: **Garmin FIT** (binary, including `.fit` exported from a Xero), **LabRadar CSV**, **MagnetoSpeed CSV**, **Garmin Xero CSV**, and a **Generic CSV** fallback for any file with a numeric velocity column. After parsing you get an **Avg / SD V / ES V / Min / Max** summary and a per-shot velocity log; parse problems show inline warnings.
 
-- **High-resolution drag tables** — 79-point G1 and 87-point G7 (BRL/McCoy research)
-- **Iterative 3-pass solver** — sub-0.001" zero precision
-- **Altitude-dependent gravity** — inverse-square law correction
-- **Humidity-corrected speed of sound**
-- **Miller stability formula** — Sg from twist rate, bullet dimensions, and velocity
-- **Propellant thermodynamic solver** — internal ballistics solver modeling combustion curves with fill-fraction-dependent burn rate
-- **Spin drift** — predicted from Sg and range
-- **Aerodynamic jump** — crosswind-induced vertical deflection
+- **One file** loads into the editor — name it and **Save** it as a reusable Chrono Session.
+- **Many files at once** are each imported straight into your library, auto-named — ideal for a full day's worth of strings that you'll pair up later.
 
----
+**Why import in bulk:** chrono data is independent of your targets. You can dump every string from a range trip now and associate them to impacts whenever it's convenient — even matching one string against impacts spread across several marking sessions.
 
-#### 1. Efstathia Analysis (Gyroscopic Stability)
+### Load Marking Data
+Select **one or more Marked Targets** (checkboxes). Their points of impact are **pooled into a single list**, so a single chrono string can be paired against impacts from multiple sessions. Each impact row has a velocity field you can also **type into by hand** — this is the new home for manual velocity entry.
 
-This calculator implements the **Refined Miller Twist Rule** to compute the gyroscopic stability factor ($S_g$) of a bullet. It corrects for muzzle velocity and local atmospheric density (based on altitude, temperature, and station pressure).
+### Associate & Apply Velocities
+This is the heart of the tab, and it works in **any order**:
+1. Click **any chrono shot** in the import list (it highlights blue).
+2. Click **any point of impact** — from any loaded marking session — to pair the two. Order doesn't matter; the chrono and impact lists need not line up.
+3. Repeat for each shot. If both lists happen to already be in the same sequence, **Auto-Match (in order)** links them all at once.
+4. Review the pairings and click **Apply Velocities** to write each measured velocity onto its shot in the database. **Unlink** any single pair, or **Clear All** to start over.
 
-**Key Features:**
-- **Plastic Tip Compensation:** If a bullet has a plastic tip, check **Bullet has Plastic Tip** and enter the tip length. The calculator adjusts bullet core length to model the gyroscopic stability of the metal body.
-- **Stability Thresholds:**
-  - **Stable ($S_g \ge 1.5$):** Optimum stability. Projectiles maintain drag efficiency and dynamic stability.
-  - **Marginally Stable ($1.0 \le S_g < 1.5$):** Bullet is stable but experiences yaw, which reduces the effective BC by up to 10–15% and increases group dispersion.
-  - **Unstable ($S_g < 1.0$):** Bullet lacks spin to counteract aerodynamic forces and will tumble, causing keyholing.
+**Why this design:** real chronograph strings and real target impacts rarely arrive in the same tidy order — you might shoot two groups, chrono one, or lose a reading. Free-form, cross-session pairing lets you reconstruct the truth instead of forcing a false 1:1 assumption. Once applied, those velocities power vertical-stringing analysis, velocity SD, and the firearm velocity offset.
 
-#### 2. Kylindros (Ballistic Coefficient Estimation)
-
-Kylindros estimates your bullet's Ballistic Coefficient (BC) based on shot muzzle velocities and downrange points of impact (POI). It uses an iterative bisection solver running on the 3DOF RK4 ballistics engine.
-
-**Statistical Reliability Metrics:**
-- **Shot-by-Shot Analysis**: Calculates individual BCs for each shot in the session, generating a distribution.
-- **95% Confidence Interval**: Provides the statistical range where the true BC resides. If the interval is wide, the estimation is flagged as unreliable.
-- **Reliability Assessment HUD**: Checks physical signals (distance, shot count) and data precision (velocities, CI width) to give a reliability rating from Highly Unreliable to High Reliability.
-
-**Important Guidelines:**
-- **Zero Angle Sensitivity**: Extremely sensitive to zero errors. A 0.25 MOA zero error translates to an 8% error in estimated BC.
-- **Short Range Limit**: Target distance must be at least 300 yards/meters. Below this range, drag differences are masked by rifle dispersion, rendering calculations invalid.
+### Export
+With a session loaded, download it as **CSV**, **TSV** (paste straight into Excel/Sheets), or **JSON** (includes computed stats and any impact links), or **Copy to Clipboard** as a tab-separated table.
 
 ---
 
-#### 3. Monte Carlo Simulation (Hit Probability)
+## 11. Sessions
 
-Uses a physics-based external ballistics engine seeded with your real measured session dispersion (Mean Radius) to predict field performance.
+A **Session** ties everything together into one analyzable record: a **Marked Target** + the **Firearm** + the **Load** + the **environmental conditions** (temperature, pressure/type, altitude). Selecting a firearm filters the load list to matching cartridges. Give it a name (or accept the auto-generated one) and **Create Session**.
 
-**Using the Simulator:**
-1. Select a session — imports your real-world MR as the dispersion seed
-2. Configure firearm — barrel length, twist rate, and sight height pull from your database
-3. Configure load — BC, bullet weight, and velocity pull from your database
-4. Set environmental conditions — temperature, altitude, wind
-5. Set target — shape (IPSC, Circle, Square) and size
-6. Run — generates P(Hit) vs Range curves
-
-> **Interpreting results:** P(Hit) = 0.90 at 500 yards means your rifle/load/shooter system is expected to hit a target of that size 9 times out of 10 at that distance, accounting for measured dispersion and atmospheric ballistics.
+**Why the Session is the unit of analysis:** dispersion and trajectory both depend on conditions and equipment, not just where the holes landed. Bundling the target with the exact rifle, load, and atmosphere makes the record reproducible and lets Analysis and the simulators pull correct inputs automatically. You can edit, delete, and **export individual sessions as JSON**, or **import** sessions others have shared — a clean way to back up or exchange a single load's history.
 
 ---
 
-#### 4. Propellant Ignition Simulator (Internal Ballistics)
+## 12. Analysis
 
-This tab simulates thermodynamic propellant combustion and bullet acceleration down the barrel using a physics solver. It outputs pressure-time curves (P-V curves) and burned percentage along the barrel.
+Analysis is where small groups become a real measurement. Select sessions (filter by firearm, cartridge, bullet, or powder to narrow the list), click **Analyze Selected**, and read the results table, the composite overlay plot, and the full text report. **Advanced (Queue) mode** lets you cherry-pick individual shots across many sessions into a custom dataset — useful for combining ladder rungs or excluding a known equipment error.
 
-**Inputs & Features:**
-- **Auto-Fill from database:** Pulls case capacity ($H_2O$ grains), bullet diameter, weight, length, powder burn rates ($Ba$, $\lambda$), heat of explosion, grain geometry, and solid density from loads and components.
-- **Diagnostics & Safety Audits:**
-  - **Chamber Pressure:** Compares peak simulated pressure against the SAAMI maximum limit. Triggers critical warnings if overpressure is predicted. Pressure predictions always use the powder's calibrated database parameters and are **never modified** by chronograph data.
-  - **Loading Density (Case Fill):** Flags low-fill hazards ($\lt 80\%$) which can cause erratic ignition/secondary detonation, and compressed loads ($\gt 100\%$, with critical alerts for excessive compression $\gt 105\%$).
-  - **Neck Tension (Seating Depth):** Ensures bullet seating depth is at least one bullet diameter (1-caliber rule) for optimal neck tension and concentricity.
-  - **OAL Boundaries:** Compares your COAL against the SAAMI maximum cartridge OAL to ensure magazine compatibility and chamber clearance.
-- **Rifle Velocity Offset Card:** When a session with chronograph data is selected, the simulator compares the model's predicted velocity against your measured mean. The difference (residual) is displayed for informational purposes. You can save this as a per-firearm correction factor — see [Per-Firearm Velocity Offset](#per-firearm-velocity-offset).
-- **Diagnostic Reports:** Generates a complete structured report with thermodynamic and safety recommendations.
+> **Why composite?** A single 5-shot group is mostly luck. Ten 5-shot groups aligned by their centers give you a 50-shot picture of what the rifle and load actually do. Mean Radius on 50 shots is worth far more than extreme spread on 5.
 
-**Sharing Your Diagnostic Report:**
+### Dispersion — how tight is it, really?
+- **Mean Radius (MR)** — the average distance of every shot from the group center. The preferred precision metric because it uses *every* shot, not just the two widest. Reported in inches/mm and, when a target distance is set, in **MOA** (and MIL).
+- **95% Confidence Interval (CI)** — the range the *true* Mean Radius is likely to sit in, given your sample size. A wide CI is the app telling you "you haven't shot enough to be sure yet." Rankings are sorted by the CI **upper bound**, so a lucky small sample can't jump the queue.
+- **ES POI (Group Size)** and **ES POI H/V** — classic extreme spread, and its horizontal/vertical split. Quick to read but outlier-sensitive; best used to *flag* a gross problem (baffle strike, loose screws) rather than to judge precision.
+- **SD POI H / V** — standard deviation of impacts horizontally vs. vertically. A diagnostic: if vertical ≫ horizontal you have **vertical stringing** (suspect velocity spread, firing pin, or barrel contact); if horizontal ≫ vertical, suspect **wind, bipod, or trigger push**.
+- **MPI Offset** — where the group's center prints relative to aim. Tells you *where* it hits, not *how tightly*.
 
-The report share bar (below the EXPERIMENTAL warning banner) provides three methods to submit your report for developer support — all work on every device without requiring a local email client:
+### Velocity — how consistent is the ammo?
+- **SD V (velocity standard deviation)** — the primary measure of internal-ballistic consistency, reported with its own confidence interval. Lower is better; it's what drives vertical drop at distance.
+- **ES V (velocity extreme spread)** — a red-flag indicator. A sudden jump (60+ fps) points at something mechanical: a blown primer, erratic ignition, inconsistent neck tension.
+- **Vert Dispersion R²** — a regression of velocity against vertical impact position. Above ~40% means velocity spread is *statistically driving* your vertical stringing — so chasing lower SD will tighten the group. Near zero means your vertical isn't a velocity problem, and load tuning for SD won't help the group.
 
-| Button | What it does |
-|--------|--------------| 
-| **Copy Report** | Copies the full diagnostic report to your clipboard. Paste it anywhere — Discord, text file, email, etc. Button briefly shows ✓ *Copied!* on success. |
-| **Download .txt** | Saves a `.txt` file named `ignition_report_<Cartridge>_<Powder>_<date>.txt` directly to your Downloads folder. Use this to attach the report to any message. |
-| **Open Gmail** | Opens a pre-filled Gmail compose window in your browser with the report in the body and the developer email pre-addressed. No local mail app required. |
+### Reliability Rating
+A single **0.5–5.0 star** grade that folds sample size, bootstrap CI convergence, and Shapiro-Wilk normality (of both impact location and velocity) into one at-a-glance score. It answers "how much should I trust this result?" — a five-star tight group is a conclusion; a two-star tight group is a hint that needs more rounds.
 
-> **Tip:** The fastest path on mobile or shared computers is **Download .txt** — then attach it to a message on the Empirical Precision Discord.
+### The long-range metric — "most precise" ≠ "best out to distance"
+Beyond raw grouping, Analysis computes a **95% Hit-Probability Max Distance** for each load: the farthest range at which the load holds **≥ 95% hit probability on a 2 MOA target in a 10 mph, 90° crosswind.** It's deliberately *conservative* (per-axis dispersion is widened to the Mean-Radius 95% CI upper bound), *anisotropic* (vertical velocity-spread and horizontal wind-spread are modeled separately), and honest about missing data (velocity SD is **imputed and flagged** when you have no chrono readings). Alongside it you get:
 
----
+- **Vertical/horizontal miss budget** — at the fall-off distance, what fraction of misses are vertical (velocity-driven) vs. horizontal (wind-driven). This tells you *what to fix*.
+- **Transonic (stability) limit** — the range where the bullet slows to ~Mach 1.2. If that comes before the dispersion limit, *it* is what's capping your effective range, not your grouping.
+- **Wind robustness** — the 95% distance recomputed at 5/10/15 mph, so you can see how quickly a load falls apart when the wind picks up.
 
-#### 5. Ballistic DOPE Card & Point Blank Zero (MPBR)
+**Why this reranking matters:** the app produces two rankings — one by pure dispersion (best *average* group) and one by this hit-probability distance. They often disagree. A load that prints the tiniest 100-yard group can be **beaten at 800 yards** by a slightly larger-grouping load with a higher BC, tighter velocity SD, or more supersonic margin. "Most precise up close" and "hits farthest" are different questions, and this is the tool that separates them.
 
-Generates pocket-sized ballistic reference cards using the 4th-Order Runge-Kutta exterior ballistics engine.
-
-**Key Features:**
-- **MIL & MOA Support:** Supports turret click values of 0.1, 0.2, or 0.05 MIL, and 1/4, 1/8, 1/2, or 1 MOA.
-- **Range Increments:** Choose regular distance steps (e.g., every 50 or 100 yards/meters) or comma-separated specific stops (e.g., custom target distances: `123, 400, 527, 750`).
-- **Maximum Point Blank Range (MPBR):** Activates a solver that finds the optimal zero range (Point Blank Zero) keeping bullet impacts within a defined target vital zone (e.g., 8 inches) without any elevation adjustments, maximizing the range at which you can aim dead-center.
-- **Visual Styles:** Multiple themes (Pocket Card size, Tactical Dark, Classic White, Hi-Viz Yellow, Military Green) optimized for direct high-resolution PNG image download.
-
-
-### Components
-
-The foundation of the application. The master database sync fills most of this automatically. Only add components not already in the library.
-
-| Sub-tab | What It Stores |
-|---------|---------------|
-| **Manufacturers** | Companies producing bullets, powder, primers, brass, or ammo |
-| **Diameters** | Caliber definitions (e.g., `.308`, `.264`) |
-| **Cartridges** | Specific chamberings linked to a diameter, with SAAMI specs |
-| **Bullets** | Full profiles: weight, length, ogive, BC, form factors |
-| **Powders** | Propellant profiles including ballistic simulator coefficients: burn area coefficient, burn exponent (Vieille's law), heat of explosion, propellant/bulk density, grain geometry, ignition parameters, and temperature sensitivity. Supports per-cartridge burn-area overrides. |
-| **Primers** | Primer inventory linked to primer pocket size |
-| **Brass** | Brass inventory with water capacity and primer data |
-
-> Not all fields need to be filled. Optional fields improve ballistic simulation accuracy but the app functions without them.
+**Export:** **SAVE IMAGE** downloads a high-resolution composite plot + data HUD; **Copy Report** copies the full structured text report (rankings, per-session metrics, environment, and the exact database parameters used).
 
 ---
 
-### DB Management
+## 13. Heurisko — the Ballistics & Simulation Suite
 
-#### Sync Empirical Precision Database
-Imports the built-in library into your local database. Existing records are overwritten by ID, but your personal data is unaffected.
-- **Sync Remote Repo** button: Syncs all bullet profiles, powders, cartridges, brass entries, and primers from the master library.
+"Heurisko" (Greek: *I find*) is the app's scientific bench. Five sub-tabs, each answering a different forward-looking question. All of them **auto-fill from your firearms, loads, and sessions** so you're modeling your real equipment, not made-up numbers.
 
-#### Import Saved JSON Data
-Restore or merge your history, firearms, loads, and custom components from a previously exported `.json` file.
-- Records are merged by ID. Base64 image data is automatically converted back to binary Blob storage on import.
+**Efstathia — Gyroscopic Stability (Sg).** Uses the Refined Miller Twist Rule (corrected for velocity and air density) to compute your stability factor. **Sg ≥ 1.5** = fully stable; **1.0–1.5** = marginal (yaw robs 10–15% of BC and opens groups); **< 1.0** = unstable, will tumble and keyhole. Handles plastic-tipped bullets by modeling the metal core length. *Why:* tells you before you buy whether a bullet will even stabilize out of your twist.
 
-#### Advanced Database Settings (Collapsible Panel)
-- **Active Table**: Dropdown to select either `-- Entire Database --` or a specific table (e.g. `firearms`, `loads`, `sessions`, `targetImages`).
-- **Export Selected Table** button: Downloads a `.json` backup of the active table (or the entire database). Target images are automatically converted from binary Blobs to Base64 strings for JSON compatibility.
-- **Install PWA App** button: Installs Empirical Precision as a standalone PWA on your device so you can run it fully offline at the shooting range.
-- **Wipe Active Table** button: Destructive operation that clears all records from the selected table or wipes the entire database.
-- **Raw DB Records Browser**: View, inspect, or delete raw IndexedDB records when a specific table is selected.
+**Kylindros — Ballistic Coefficient Estimation.** Solves for your bullet's actual BC from measured muzzle velocities and downrange impacts, with a shot-by-shot distribution, a 95% CI, and a reliability HUD. Requires ≥ 300 yd/m (below that, rifle dispersion masks drag differences) and is very sensitive to zero error. *Why:* verify a manufacturer's advertised BC against how the bullet really flies from your barrel.
+
+**Monte Carlo — Hit Probability.** Seeds a physics trajectory engine with your session's *measured* dispersion and produces P(Hit)-vs-range curves against a target you define (IPSC, circle, square). Runs off the main thread so the UI stays responsive. *Why:* turns "it groups well" into "it hits a 10-inch plate 9 times out of 10 at 500 yards."
+
+**Ignition — Internal Ballistics (the pressure/velocity engine).** Simulates propellant combustion and bullet acceleration down the bore, producing pressure-time (P-V) curves, burn percentage, and predicted muzzle velocity. Its **safety audits** are the standout feature: peak pressure vs. the SAAMI ceiling (with overpressure warnings), loading-density/case-fill flags (low-fill detonation risk, over-compression), a one-caliber neck-tension check, and COAL-vs-SAAMI-max. This is also where you derive the **per-firearm velocity offset**, and where you can copy/download/email a full diagnostic report. *Why:* it's the closest thing to a pressure test you can run at your bench — and it fails loud rather than guessing.
+
+**DOPE — Drop Card & Point-Blank Zero.** Generates pocket ballistic cards from the RK4 trajectory engine: MIL or MOA turret values, regular or custom range stops, and a **Maximum Point Blank Range (MPBR)** solver that finds the zero keeping impacts inside a vital zone with no elevation dialing. Multiple print themes for a high-res PNG. *Why:* a field-ready come-up card built from your exact load and conditions.
 
 ---
 
-## Per-Firearm Velocity Offset
+## 14. Components
 
-The Ignition Simulator's physics model predicts muzzle velocity from first principles — powder burn parameters, case capacity, bullet weight, barrel length, and thermodynamics. Different rifles chambered for the same cartridge can produce different velocities from the same load because of barrel-to-barrel variation: groove dimensions, throat geometry, surface finish, and freebore. This is a property of **your rifle**, not of the powder.
+The foundation library beneath everything else. The master-database sync fills most of it, so you usually only add what's missing or custom.
 
-The Per-Firearm Velocity Offset feature lets you quantify this difference using your chronograph data and store it on your rifle record. The correction is applied **only to the displayed velocity** — the pressure trace, peak pressure, and all safety audit outputs always use the uncorrected physics engine.
+| Sub-tab | What it stores |
+|---|---|
+| **Manufacturers** | Makers of bullets, powder, primers, brass, or ammo |
+| **Diameters** | Caliber definitions (e.g. `.308`, `.264`) |
+| **Cartridges** | Chamberings tied to a diameter, with SAAMI specs and pressure limits |
+| **Bullets** | Full profiles: weight, length, ogive, G1/G7 BC, material/tip |
+| **Powders** | Combustion coefficients (burn-area coefficient, burn exponent, heat of explosion, densities, grain geometry, temperature sensitivity), with per-cartridge overrides |
+| **Primers** | Primer inventory tied to pocket size |
+| **Brass** | Cases with water capacity and primer data |
 
-> ⚠️ **Important:** The simulator's pressure predictions are calibrated against laboratory piezo transducer data. Adjusting powder burn parameters to match a chronograph reading would corrupt those pressure predictions and invalidate the safety audit. This system is specifically designed to prevent that from happening.
-
-### How It Works
-
-1. **Run a simulation** in the Ignition Simulator with your load and firearm selected.
-2. **Select the session** that contains chronograph velocity data for that load/firearm combination.
-3. The **Rifle Velocity Offset** card appears in the simulation results, showing:
-   - **Model** — the physics engine's predicted velocity (unmodified)
-   - **Measured** — the mean of your chronograph shots (after outlier rejection)
-   - **Residual** — the difference in fps and percent
-
-### Outlier Rejection
-
-Before computing the mean, the app applies **MAD-based outlier rejection**:
-1. Computes the median of all velocities in the session.
-2. Computes the Median Absolute Deviation (MAD).
-3. Discards any shot more than 3 MAD from the median.
-4. Recomputes mean and SD on the surviving shots.
-
-The number of excluded shots is shown in the card. This prevents a single flyer, equipment glitch, or squib reading from corrupting your offset.
-
-### Data Quality Gates
-
-The **Save velocity offset to this firearm** button is only enabled when:
-
-| Requirement | Threshold | If failed |
-|-------------|-----------|-----------|
-| Minimum shot count | ≥ 5 shots with valid velocity | Save disabled, informational message shown |
-| Maximum SD | < 25 fps | Save disabled, warning shown |
-| Offset sanity | Residual ≤ 4% of predicted velocity | Warning shown, acknowledgment required before saving |
-
-If the residual exceeds 4%, the app warns that the gap is larger than typical barrel-to-barrel variation and prompts you to check your inputs (charge weight, barrel length, case capacity, COAL, chronograph placement) before saving. You can still save after acknowledging the warning, but the stored offset will be flagged as **"large offset — verify inputs"**.
-
-### Step-by-Step: Saving a Velocity Offset
-
-1. In **Heurisko → Ignition**, select your **Firearm** and fill in all simulation parameters.
-2. Click **RUN** to generate the simulation.
-3. Select the **Session** that has chronograph data for this firearm and load combination. The session must have at least 5 shots with valid velocity readings.
-4. The **Rifle Velocity Offset** card updates to show the model vs. measured comparison and the residual.
-5. If the data quality gates are met, click **Save velocity offset to this firearm**.
-   - If the firearm already has a stored offset, a confirmation dialog shows the old and new values. Click **Confirm Overwrite** to proceed.
-   - If the offset exceeds 4%, check the acknowledgment checkbox first.
-6. The offset is saved to your firearm record in the database.
-
-### What Happens After Saving
-
-- **Current simulation:** The Muzzle Velocity card immediately updates to show the corrected velocity, labeled *"Corrected for this rifle (model: X fps, +Y fps offset)"*.
-- **Future simulations:** Any time this firearm is selected in the Ignition Simulator, the stored offset is applied to the displayed velocity automatically.
-- **Pressure and safety:** The peak pressure, P-V chart, burn efficiency, and safety audit always display the raw, uncorrected engine output. The offset has no effect on these values.
-
-### Clearing a Stored Offset
-
-In the **Rifle Velocity Offset** card, click **Clear stored offset** to remove the correction from the firearm record. The displayed velocity immediately reverts to the unmodified physics engine output.
-
-### When to Re-Derive Your Offset
-
-Derive a new offset (and overwrite the old one) when:
-- You change your barrel
-- You change your load significantly (charge weight, bullet, COAL)
-- You move to a new chronograph setup or location
-- Your session data shows a significantly different velocity than your previous offset session
+**Why it matters:** a wrong number here silently corrupts every load and simulation that references it. Optional fields improve simulation accuracy; the app fails loudly on truly missing data rather than guessing.
 
 ---
 
-## Troubleshooting
+## 15. DB Management
 
-**My measurements are huge/wrong numbers**
-You didn't set the scale before marking. The app is measuring in raw pixels. Load your marked target, set the scale under *Scale Setup*, and re-save.
+Your control panel for the whole local database.
 
-**My groups/marked targets disappeared after closing the browser**
-You didn't save your target or session. Always click **SAVE MARKED TARGET** in the Marking tab, and click **+ Create Session** / **Update Session** in the Sessions tab before navigating away. The canvas is not auto-saved.
-
-**Sync Remote Repo didn't seem to do anything**
-The records were already there from a previous sync and were silently overwritten. Your database is up to date.
-
-**I cleared my browser history and lost all my data**
-Clearing browser site data permanently deletes IndexedDB. There is no recovery without a JSON backup. Back up after every session.
-
-**My scale looks wrong / measurements don't match reality**
-Common causes: scale points weren't placed precisely; the target image was cropped or resized after printing; or the wrong units were entered. Re-set the scale by clicking **Set Scale** again and re-clicking the reference points carefully.
-
-**The ballistic simulator gives unexpected results**
-Check: Firearm has twist rate and sight over bore set. Bullet has G7 BC entered with `Preferred Model` = `G7`. Muzzle velocity is correct. Environmental conditions are realistic.
-
-**The Ignition Simulator's predicted velocity doesn't match my chronograph**
-This is expected. The physics model is calibrated to laboratory pressure transducer data for every powder — it is not fitted to your specific rifle. Barrel-to-barrel differences (bore dimensions, throat, friction) cause rifle-to-rifle velocity variation. Use the [Per-Firearm Velocity Offset](#per-firearm-velocity-offset) feature to store and apply your rifle's correction. Do not manually adjust the Ba Coefficient or Heat of Explosion fields to match your chronograph — doing so will corrupt the pressure predictions and invalidate the safety audit.
-
-**The "Save velocity offset" button is grayed out**
-One or more data quality gates failed. The card shows which: fewer than 5 shots, SD above 25 fps, or no simulation has been run yet. Fire more shots in that session, or run the simulation first.
-
-**My stored firearm offset seems too large (> 4%)**
-The app will flag this automatically. Common causes: incorrect barrel length entry in the firearm record; charge weight not matching what was actually loaded; case capacity mismatch; or chronograph placement too close to the muzzle. Verify your inputs before saving a large offset.
-
-**I saved a velocity offset but the displayed velocity didn't change**
-The offset is applied to the **displayed velocity** in the Muzzle Velocity card. If you don't see the "Corrected for this rifle" label, the selected firearm may not match the one the offset was saved to. Confirm the correct firearm is selected in the Profile section.
+- **Sync Empirical Precision Database → Sync Remote Repo** — pulls the master component library (600+ bullets, 77 powders, 45 cartridges). Merges by ID; your personal records are untouched. Run it on first setup and whenever you want the latest reference data.
+- **Import Saved JSON Data** — restore or merge a previous export (or a friend's shared data). Merged by ID; images are rebuilt automatically.
+- **Advanced Database Settings:**
+  - **Active Table** — scope the actions below to the whole database or one table.
+  - **Export Selected Table** — download a `.json` backup (whole DB or one table). **This is your backup button.**
+  - **Install Offline App** — install the PWA for full offline use (see [Key Concepts](#2-key-concepts-to-understand-first)).
+  - **Wipe Active Table** — *destructive.* Clears the selected table or the entire database.
+  - **Raw DB Records Browser** — inspect or delete individual IndexedDB records when a specific table is selected.
 
 ---
 
-## Data Backup
+## 16. Backups — Keeping Your Data Safe
 
-> ⚠️ **Your data exists only in your browser. Clearing browser site data deletes it permanently with no recovery.**
+> ⚠️ **Your data lives only in your browser. Clearing site data deletes it permanently, with no recovery except a backup.**
 
-### How to Back Up
+**Back up:** DB Management → Advanced → set Active Table to *Entire Database* → **Export Selected Table** → save the `.json` somewhere safe (cloud + external drive).
 
-1. Go to **DB Management**.
-2. Click **Advanced Database Settings** to expand the panel.
-3. Ensure **Active Table** is set to `-- Entire Database --`.
-4. Click **Export Selected Table**.
-5. Save the `.json` file to cloud storage, an external drive, or both.
+**Restore:** DB Management → **Import Saved JSON Data** → choose your `.json` → import. Records merge by ID; your other data is preserved. Firearm velocity offsets ride along automatically.
 
-### How to Restore
-
-1. Go to **DB Management**.
-2. Under the **Import Saved JSON Data** section, click the file input to select your backup `.json` file.
-3. Click the **Import Saved JSON Data** button.
-4. Records are merged — existing records with matching IDs are updated, personal records are preserved.
-
-> **Note:** Per-firearm velocity offsets are stored on the firearm record and are included in any database export/import automatically.
-
-### Recommended Backup Schedule
-
-- After every range session
-- After adding new firearms or loads
-- After saving or updating a firearm velocity offset
-- After running a master database sync
+**Back up after:** every range session, adding firearms/loads, saving a velocity offset, or running a master-database sync. Installing the PWA also requests persistent storage, which guards against routine browser eviction.
 
 ---
 
-*For technical database schema documentation, see [SCHEMA.md](SCHEMA.md).*
-*For the mathematical derivations behind the simulation engines, see [MATHS.md](MATHS.md).*
+## 17. Troubleshooting
+
+**My measurements are huge / nonsensical.** You marked shots before setting the scale, so everything is in pixels. Reload the marked target, **Set Scale**, and re-save.
+
+**My groups disappeared after closing the browser.** The canvas isn't auto-saved. Always **SAVE MARKED TARGET** in Marking and **Create/Update Session** in Sessions before leaving.
+
+**Where did the velocity boxes go in Marking?** Velocity entry moved to **Chronos** — either import a chrono file and pair each reading to an impact, or type velocities by hand in the *Load Marking Data* impact list there.
+
+**The trajectory/stability results look wrong.** Check that the firearm has twist rate and sight height, the bullet has a G7 BC, the muzzle velocity is realistic, and the environment is set.
+
+**The Ignition simulator's velocity doesn't match my chronograph.** Expected — the model is calibrated to lab pressure data, not to your specific barrel. Use the **per-firearm velocity offset** to store the difference. **Do not** edit powder burn coefficients to force a match; that corrupts the pressure prediction and safety audit.
+
+**I cleared my browser and lost everything.** Without a JSON backup there is no recovery. Back up after every session.
+
+---
+
+## 18. Glossary
+
+The canonical definition for every term used here and throughout the app. When standardizing a label anywhere, match the wording below.
+
+### Workflow
+
+| Term | Meaning |
+|---|---|
+| **Session** | One analyzable record: a marked target plus firearm, load, distance, and environment |
+| **Marked Target** | A target photo with its scale, groups, points of aim, and marked impacts |
+| **Group** | A set of shots fired at a single point of aim |
+| **POA** | Point of Aim — where you were aiming |
+| **POI** | Point of Impact — where a bullet struck; the coordinate every group statistic is built from |
+| **MPI** | Mean Point of Impact — the average position of all POIs in a group; the group's center |
+| **Scale** | The pixels-per-inch calibration you set in Marking |
+| **Composite Analysis** | Combining multiple sessions aligned by MPI to build meaningful sample sizes from small groups |
+| **Rifle Velocity Offset** | A per-firearm correction reconciling the model's predicted velocity with your chronograph; affects displayed velocity only, never pressure or the safety audit |
+
+### Statistics & Precision
+
+| Term | Meaning |
+|---|---|
+| **Mean Radius (MR)** | Average distance of every shot from the group center — the preferred precision metric |
+| **95% CI** | Confidence interval — the range the true value likely occupies given the sample size |
+| **ES POI (Group Size)** | Center-to-center distance between the two widest shots; outlier-sensitive |
+| **ES POI H/V** | Horizontal and vertical extreme spread, measured separately |
+| **SD POI H/V** | Standard deviation of impacts horizontally/vertically; a stringing diagnostic |
+| **MPI Offset** | Average impact position relative to aim — where it prints, not how tightly |
+| **Reliability Rating** | 0.5–5.0 star confidence score combining sample size, CI convergence, and normality |
+| **SD V** | Velocity standard deviation — primary indicator of internal-ballistic consistency |
+| **ES V** | Velocity extreme spread — a red-flag indicator, not a precision metric |
+| **Vert Dispersion R²** | Regression of velocity vs. vertical impact; > ~40% means velocity spread is driving vertical stringing |
+| **Shapiro-Wilk** | Normality test on impact radii and on velocities; feeds the reliability rating |
+| **95% Hit-Prob Max Distance** | Conservative farthest range holding ≥ 95% hits on a 2 MOA target in a 10 mph crosswind |
+| **Miss Budget** | The vertical (velocity) vs. horizontal (wind) split of misses at the fall-off distance |
+| **Transonic Limit** | Range where the bullet slows to ~Mach 1.2; may cap effective range before dispersion does |
+
+### Cartridge & Seating
+
+| Term | Meaning |
+|---|---|
+| **COAL** | Cartridge Overall Length — the measured length of your loaded round |
+| **SAAMI OAL** | The published maximum overall length — a ceiling, not your measurement |
+| **Mag COAL** | The longest round a given magazine will feed |
+| **CBTO** | Cartridge Base to Ogive — more repeatable than COAL for setting seating depth |
+| **Freebore** | The unrifled throat length ahead of the chamber; measured value overrides the SAAMI spec |
+
+### Angular & Ballistic
+
+| Term | Meaning |
+|---|---|
+| **MOA** | Minute of Angle (≈ 1.047 in at 100 yd) |
+| **MIL** | Milliradian (10 cm at 100 m) |
+| **BC** | Ballistic Coefficient — resistance to drag; higher = flatter, less wind drift (G1 and G7 supported) |
+| **Sg** | Gyroscopic Stability Factor — ≥ 1.5 fully stable, < 1.0 tumbles |
+| **Internal Ballistics** | Combustion, pressure, and muzzle velocity inside the barrel |
+| **External Ballistics** | Drag, wind, drop, spin drift, and Coriolis after the muzzle |
+
+### Heurisko Tools
+
+| Term | Meaning |
+|---|---|
+| **Efstathia** | Gyroscopic stability (Sg) calculator |
+| **Kylindros** | Ballistic-coefficient estimator from measured data |
+| **Monte Carlo** | Hit-probability trajectory simulator |
+| **Ignition** | Internal-ballistics pressure/velocity engine with SAAMI safety audits |
+| **DOPE** | Data On Previous Engagement — a drop/drift correction card |
+| **MPBR** | Maximum Point Blank Range — the no-dial zero keeping impacts in a vital zone |
+
+### Technical
+
+| Term | Meaning |
+|---|---|
+| **PWA** | Progressive Web App — an installable, fully offline version of the app |
+| **IndexedDB** | The in-browser database where all your data is stored locally |
 
 ---
 
 ## Community & Support
 
-Join the **Empirical Precision Discord** for load data discussion, bug reports, and feature requests:
-
-> **[discord.gg/adymGUfjst](https://discord.gg/adymGUfjst)**
-
-The **Join Discord** button on the app dashboard opens this link directly.
-
----
-
-## Glossary
-
-This is the canonical definition for every term and acronym used in this guide and throughout the app — the same wording appears on the app's About page. If you're standardizing a label anywhere (in the app, in this file, in code comments), match the wording here rather than inventing a new phrasing.
-
-### Workflow Terms
-
-| Term | Meaning |
-|------|---------|
-| **Session** | One range visit: a target, one or more groups, and metadata (firearm, load, distance) |
-| **Group** | A set of shots fired at a single point of aim within a session |
-| **POA** | Point of Aim — where you were aiming when firing |
-| **POI** | Point of Impact — where a bullet actually struck the target. Every shot you mark on the canvas is a POI; ES POI, SD POI HV, and MPI Offset are all statistics computed from the set of POIs in a group |
-| **MPI** | Mean Point of Impact — the average X/Y position of every POI in a group, i.e. the group's mathematical center. Used as the reference point for Mean Radius, ES POI, and Composite Analysis alignment |
-| **Scale** | A calibration you set in the Marking tool so the app knows how many pixels equal one inch |
-| **Composite Analysis** | Combining multiple sessions aligned by MPI to build meaningful sample sizes from small groups |
-| **Rifle Velocity Offset** | A per-firearm correction stored on your rifle record that accounts for the difference between the physics model's predicted velocity and your chronograph readings. Applies to displayed velocity only — never to pressure calculations or safety audits |
-
-### Statistical & Precision Terms
-
-| Term | Meaning |
-|------|---------|
-| **Mean Radius (MR)** | The average distance of every shot from the group's center — the preferred precision metric because it uses every shot, not just the two extremes |
-| **95% CI** | 95% Confidence Interval — the range the true Mean Radius is expected to fall within 95% of the time, given the sample size |
-| **ES POI (Group Size)** | Extreme Spread of Point of Impact — the center-to-center distance between the two furthest shots; sensitive to a single outlier. Quick to read in the field but a poor statistical metric; use it to flag a severe system issue (baffle strike, loose action screws, etc.) |
-| **ES POI HV** | The horizontal (H) and vertical (V) spread of the group measured independently. Use to narrow down significant issues seen in the ES POI — examples include barrel contact or scope cant |
-| **MPI Offset** | Mean Point of Impact — the average X and Y position of all shots relative to the session origin. Indicates where the load prints on target, not how tightly it groups |
-| **SD POI HV** | Standard Deviation of the Horizontal or Vertical Points of Impact. A diagnostics tool, not a performance metric. If SD H ≈ SD V, scatter is uniform. If SD V ≫ SD H, you have vertical stringing — look at velocity variance, a dragging firing pin, or barrel-stock contact. If SD H ≫ SD V, you have horizontal stringing — look at wind, a loose bipod, or lateral trigger push |
-| **Reliability Rating** | A 0.5–5.0 star score combining sample size and Mean Radius confidence into a single at-a-glance grade. It starts from sample size, then adjusts based on bootstrap CI convergence and Shapiro-Wilk normality (location and velocity) |
-| **SD V** | Velocity Standard Deviation — the sample standard deviation of a session's muzzle velocities (n-1 formula); the primary indicator of how consistently the internal ballistics are performing |
-| **ES V** | Velocity Extreme Spread — the difference between the highest and lowest recorded velocity; a red-flag indicator, not a statistical tool. A sudden spike to 60+ fps signals something mechanically wrong (blown primer, severe neck tension, erratic ignition) |
-| **Vert Dispersion R²** | The R-squared from a linear regression of muzzle velocity vs. vertical shot position. Values above 40% indicate velocity variance is a statistically significant driver of vertical stringing — connecting SD V to vertical dispersion. No correlation means chasing SD V may not improve vertical grouping |
-| **Shapiro-Wilk Test (Location / Velocity)** | A normality test run on shot radial distances from MPI and, separately, on muzzle velocities. W ranges from 0 to 1 — closer to 1 means more normal. p ≥ 0.10 = Normal (+0.5 ★ to rating); p 0.05–0.10 = Marginal (neutral); p < 0.05 = Non-Normal (penalty) |
-
-### Cartridge & Seating Geometry
-
-| Term | Meaning |
-|------|---------|
-| **COAL** | Cartridge Overall Length — the actual measured length of your loaded round |
-| **SAAMI OAL** | The cartridge's published maximum overall length spec — a ceiling, not a measurement of your load |
-| **Mag COAL** | The maximum COAL a specific firearm's magazine can feed, which may be shorter than SAAMI OAL |
-| **CBTO** | Cartridge Base to Ogive — case-head to bullet-ogive length; more repeatable than COAL for setting seating depth |
-
-### Angular & Ballistic Terms
-
-| Term | Meaning |
-|------|---------|
-| **MOA** | Minutes of Angle — an angular unit (1 MOA ≈ 1.047 in at 100 yd) used for group size and scope adjustments |
-| **MIL** | Milliradian — an angular unit (1 MIL = 10 cm at 100 m), an alternative to MOA on some scopes |
-| **BC (Ballistic Coefficient)** | A measure of a bullet's ability to overcome air resistance relative to its mass and diameter — higher BC means a flatter trajectory and less wind drift. The app supports G1 and G7 drag models |
-| **Sg (Gyroscopic Stability Factor)** | The ratio of a spinning bullet's actual stability to the minimum stability required to prevent tumbling, computed by Efstathia via the Refined Miller Twist Rule. Sg ≥ 1.5 is fully stable; Sg < 1.0 is unstable and will tumble |
-| **Internal Ballistics** | Everything that happens inside the chamber and barrel: combustion, pressure, and the resulting muzzle velocity |
-| **External Ballistics** | Everything that happens after the bullet leaves the muzzle: drag, wind, drop, spin drift, and Coriolis effect |
-
-### Heurisko Sub-Tools
-
-| Term | Meaning |
-|------|---------|
-| **Efstathia** | Heurisko's gyroscopic stability calculator — solves for stability factor (Sg) via the Refined Miller Twist equation |
-| **Kylindros** | Heurisko's ballistic coefficient and twist-rate calculator, derived from bullet geometry |
-| **DOPE** | Data On Previous Engagement — a pocket reference card of ballistic drop/drift corrections at set ranges, generated for MIL or MOA turrets |
-| **MPBR** | Maximum Point Blank Range — the solver that finds the optimal zero range keeping bullet impacts within a defined target vital zone without any elevation adjustment |
-
-### Technical
-
-| Term | Meaning |
-|------|---------|
-| **PWA** | Progressive Web App — a standalone, installable version of the app that runs fully offline once installed from DB Management |
+Join the **Empirical Precision Discord** for load discussion, bug reports, and feature requests: **[discord.gg/adymGUfjst](https://discord.gg/adymGUfjst)** (also linked from the Dashboard).
