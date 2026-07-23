@@ -215,7 +215,7 @@ Beyond raw grouping, Analysis computes a **95% Hit-Probability Max Distance** fo
 
 ## 14. Components
 
-The foundation library beneath everything else. The master-database sync fills most of it, so you usually only add what's missing or custom.
+The foundation library beneath everything else. The master-database sync fills most of it, so you usually only add what's missing or custom. Each sub-tab has a search box plus diameter / cartridge / manufacturer filters to narrow large lists quickly, and add / edit / delete controls for every record.
 
 | Sub-tab | What it stores |
 |---|---|
