@@ -4,15 +4,14 @@
 > *internal* ballistics engine: the solver that converts a cartridge/powder/bullet
 > load into a **chamber-pressure history** and a **derived muzzle velocity**. It is
 > written to be sufficient to re-create the engine from scratch. Every formula,
-> variable name, constant, and unit below is quoted directly from the source of
-> truth:
+> variable name, constant, and unit below is quoted directly from the specification:
 >
-> | Concern | File |
+> | Concern | Component |
 > |---|---|
-> | The engine (pure solver) | `src/utils/ignitionBallisticsEngine.ts` |
-> | The input builder (controller) | `src/utils/buildSimulationInputs.ts` |
-> | Bullet displacement volume | `src/utils/unitConversions.ts` (`computeBulletDisplacementH2o`) |
-> | Post-engine velocity correction | `src/utils/velocityCorrection.ts` |
+> | The engine (pure solver) | Internal Ballistics Solver |
+> | The input builder (controller) | Simulation Input Builder |
+> | Bullet displacement volume | Bullet Displacement Volume Calculation (`computeBulletDisplacementH2o`) |
+> | Post-engine velocity correction | Post-Engine Velocity Correction Solver |
 >
 > **All quantities inside the engine are SI/metric.** Metres, kilograms, seconds,
 > Pascals, Joules, Kelvin. Imperial units (grains, inches, fps, PSI) exist *only*
@@ -37,7 +36,7 @@ therefore an *emergent output* of the pressure/energy solution, not a tuned
 quantity.
 
 The only velocity adjustment in the whole system is a **post-engine multiplicative
-correction** (`velocityCorrection.ts`, §6) applied *after* the solver returns. It
+correction** (§6) applied *after* the solver returns. It
 corrects a known structural velocity deficit (the 0-D engine under-predicts
 overbore cartridges) and **never touches pressure**.
 
@@ -895,7 +894,7 @@ else small → 8 J, large → 14 J, unknown → throw.
 
 ---
 
-## 6. Post-Engine Velocity Correction (`velocityCorrection.ts`)
+## 6. Post-Engine Velocity Correction
 
 ### 6.1 Why it exists
 
