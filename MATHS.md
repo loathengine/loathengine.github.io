@@ -719,20 +719,42 @@ m_effective = m_bullet_eff + m_burned·fKe_in            (PK KE mass, burned-fra
 E_kinetic   = 0.5·m_effective·v²
 E_gas_J     = max(1, E_chem_J − E_kinetic − E_wall − E_friction − E_engrave)   (friction/engrave only if conserveFrictionWork)
 
-{ gamma, T_gas_K } = solveGasThermo(E_gas_J, m_burned)
+{ gamma, T_gas_K, heldJ } = solveGasThermo(E_gas_J, m_burned)
 covolume    = cfgCovolRef · (COVOLUME_T_REF / T_gas_K)^cfgCovolTExp
 V_free_m3   = max(V0·0.05, V0 + A_groove·x − m_unburned/rho_propellant)
-pressure    = ((gamma − 1)·E_gas_J) / max(V_free·0.05, V_free − m_burned·covolume)
+pressure    = ((gamma − 1)·(E_gas_J − heldJ)) / max(V_free·0.05, V_free − m_burned·covolume)
 ```
 
 **γ(T) and gas thermodynamics** — `solveGasThermo(E_gas, m_burned)` closes the coupled
 `γ(T) ↔ T ↔ C_v` system by fixed-point iteration (bootstrap with midpoint γ, then 3
-passes):
+passes; 6 when the recombination term is active):
 ```
 gammaOfT(T) = GAMMA_FROZEN + (GAMMA_HOT − GAMMA_FROZEN) / (1 + exp(−GAMMA_STEEPNESS·(T − GAMMA_T_HALF)))
 C_v          = R_SPECIFIC / (gamma − 1)
-T_gas        = clamp(E_gas / (m_burned·C_v), 300, 4000)     (K)
+heldJ        = φ_eff · χ(T) · m_burned · RECOMB_QREF_JKG          (0 when φ_eff = 0)
+χ(T)         = 1 / (1 + exp(−(T − recombTK)/recombWK))            (sigmoid, hot-gated)
+T_gas        = clamp((E_gas − heldJ) / (m_burned·C_v), 300, 4000) (K)
 ```
+
+**Shifting-equilibrium recombination reservoir** (SHIPPED 2026-07-27). The frozen-composition
+model deposits full Qex instantly and lets none of it hide chemically. Real propellant gas
+holds part of its energy in dissociated species near peak temperature and returns it as
+sensible energy while the gas cools down the bore — the classic equilibrium-flow vs
+frozen-flow distinction. `heldJ` implements this quasi-statically (reservoir slaved to T, no
+extra ODE state): energy is sequestered while hot (χ→1) and re-enters pressure automatically
+during expansion (χ→0), fattening the late-bore pressure tail without moving the matched
+peak. It converges inside the fixed-point because sequestration lowers T which lowers χ.
+The effective fraction is **level-gated** exactly like K(P) (cell-constant, never in-shot):
+```
+φ_eff = recombPhi · clamp((pressureLevelMPa − recombL0MPa)/(recombL1MPa − recombL0MPa), 0, 1)
+        (pressureLevelMPa absent → φ_eff = 0 → prior frozen-composition behavior)
+```
+Defaults: `recombPhi 0.4, recombL0MPa 300, recombL1MPa 340, recombTK 2400 K, recombWK 250 K,
+RECOMB_QREF_JKG 3.8e6` (representative Qex; φ absorbs powder-to-powder scale). Fleet verdict
+at ship: P-MAE 3285→3190, corrV-MAE 51.3→50.9, fleet dV/dc 0.751→0.769, monolithic pressure
+gap −37%; the GBS global velocity factor shrank 1.0745→1.0436 and its rising expR≥18 tail
+vanished — the empirical correction had been proxying this missing physics. Harness env:
+`RECOMB_PHI / RECOMB_L0 / RECOMB_L1` (experiments only; absence inherits engine defaults).
 
 **Pidduck-Kent** — replaces the Lagrange (linear gas-velocity) approximation with the
 exact 1922/1938 solution. `solvePidduckKentTheta(ω)` solves
