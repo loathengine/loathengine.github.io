@@ -749,8 +749,19 @@ The effective fraction is **level-gated** exactly like K(P) (cell-constant, neve
 φ_eff = recombPhi · clamp((pressureLevelMPa − recombL0MPa)/(recombL1MPa − recombL0MPa), 0, 1)
         (pressureLevelMPa absent → φ_eff = 0 → prior frozen-composition behavior)
 ```
-Defaults: `recombPhi 0.4, recombL0MPa 300, recombL1MPa 340, recombTK 2400 K, recombWK 250 K,
-RECOMB_QREF_JKG 3.8e6` (representative Qex; φ absorbs powder-to-powder scale). Fleet verdict
+**Per-powder thermochem mode** (SHIPPED 2026-07-27, `recombTcRel = 1.0`): the χ center and the
+reservoir energy are per-powder —
+```
+T_ad  = Qex_powder · (GAMMA_HOT − 1) / R_SPECIFIC      (adiabatic flame temperature, K)
+Tc    = recombTcRel · T_ad                              (cool powders recombine lower)
+Qref  = Qex_powder                                      (powder's own heat of explosion, J/kg)
+```
+Fleet-average T_ad ≈ 2,350–2,400 K reproduces the absolute-mode center at REL = 1.0 (zero new
+fitted DOF); the spread (H50BMG 2,071 K ↔ Superformance 2,778 K) is what centers the flame-temp
+outlier powders. `recombTcRel = 0` restores absolute mode (`recombTK`, fixed Qref 3.8e6).
+
+Defaults: `recombPhi 0.4, recombL0MPa 300, recombL1MPa 340, recombTcRel 1.0, recombWK 250 K`
+(`recombTK 2400 K` used only in absolute mode). Fleet verdict
 at ship: P-MAE 3285→3190, corrV-MAE 51.3→50.9, fleet dV/dc 0.751→0.769, monolithic pressure
 gap −37%; the GBS global velocity factor shrank 1.0745→1.0436 and its rising expR≥18 tail
 vanished — the empirical correction had been proxying this missing physics. Harness env:
