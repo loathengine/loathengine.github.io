@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T20:30:39.275Z",
+  "generated_at": "2026-08-03T23:15:29.522Z",
   "generated_by": "test_harnes/tools/calibrate.ts",
   "source_loads": "test_harnes/json/verified-loads.json",
   "source_load_count": 154445,
@@ -28,6 +28,14 @@
       "bore_slope": 0.0028968657037239613,
       "train_count": 2946,
       "train_mape": 1.0436454710767484
+    },
+    "PWD_ACCU_2495_A1C2": {
+      "burn_coeff": 790.0328568970106,
+      "impetus": 798816.5143889631,
+      "fill_slope": 0.07582826390425906,
+      "bore_slope": 0.0022269289792893683,
+      "train_count": 1043,
+      "train_mape": 0.9911630742236212
     },
     "PWD_HODG_H4895_H1G3": {
       "burn_coeff": 715.2667583696805,
@@ -61,14 +69,6 @@
       "train_count": 5146,
       "train_mape": 1.123418310623364
     },
-    "PWD_ACCU_2495_A1C2": {
-      "burn_coeff": 790.0328568970106,
-      "impetus": 798816.5143889631,
-      "fill_slope": 0.07582826390425906,
-      "bore_slope": 0.0022269289792893683,
-      "train_count": 1043,
-      "train_mape": 0.9911630742236212
-    },
     "PWD_HODG_CFE223_H1G6": {
       "burn_coeff": 699.2551135825622,
       "impetus": 802626.6624719959,
@@ -76,6 +76,14 @@
       "bore_slope": 0.0036456969118444245,
       "train_count": 1813,
       "train_mape": 1.419917609273907
+    },
+    "PWD_HODG_H380_H1GC": {
+      "burn_coeff": 627.6867814458446,
+      "impetus": 816960.6083553222,
+      "fill_slope": -0.10558627479940694,
+      "bore_slope": -0.003980968985324579,
+      "train_count": 1869,
+      "train_mape": 1.1537723085173646
     },
     "PWD_ACCU_2520_R1A7": {
       "burn_coeff": 648.9470496313425,
@@ -85,13 +93,13 @@
       "train_count": 2026,
       "train_mape": 0.893051329711516
     },
-    "PWD_HODG_H380_H1GC": {
-      "burn_coeff": 627.6867814458446,
-      "impetus": 816960.6083553222,
-      "fill_slope": -0.10558627479940694,
-      "bore_slope": -0.003980968985324579,
-      "train_count": 1869,
-      "train_mape": 1.1537723085173646
+    "PWD_WINC_760_W1N8": {
+      "burn_coeff": 684.1263334759265,
+      "impetus": 814229.0853177788,
+      "fill_slope": -0.12190003589785194,
+      "bore_slope": 0.011655709025653771,
+      "train_count": 2781,
+      "train_mape": 1.1230322615334072
     },
     "PWD_HODG_H414_H1GD": {
       "burn_coeff": 635.4550666207347,
@@ -109,14 +117,6 @@
       "train_count": 1048,
       "train_mape": 1.3724957416480543
     },
-    "PWD_WINC_760_W1N8": {
-      "burn_coeff": 684.1263334759265,
-      "impetus": 814229.0853177788,
-      "fill_slope": -0.12190003589785194,
-      "bore_slope": 0.011655709025653771,
-      "train_count": 2781,
-      "train_mape": 1.1230322615334072
-    },
     "PWD_ACCU_2700_JFAE": {
       "burn_coeff": 671.0485773239378,
       "impetus": 837197.9811489214,
@@ -133,13 +133,13 @@
       "train_count": 4342,
       "train_mape": 0.9174720657141379
     },
-    "PWD_HODG_IMR8208_H1GA": {
-      "burn_coeff": 638.017634218033,
-      "impetus": 875697.6666441311,
-      "fill_slope": -0.00493409360933585,
-      "bore_slope": -0.0012010154494782907,
-      "train_count": 2434,
-      "train_mape": 1.0688172300301906
+    "PWD_WINC_STABALLMATCH_W1N2": {
+      "burn_coeff": 774.0335560087651,
+      "impetus": 790547.3239966719,
+      "fill_slope": -0.060702999713248565,
+      "bore_slope": -0.00390153842556174,
+      "train_count": 928,
+      "train_mape": 0.8637441265970269
     },
     "PWD_IMPR_IMR_3031_KXZD": {
       "burn_coeff": 895.0991731417586,
@@ -149,14 +149,6 @@
       "train_count": 1906,
       "train_mape": 1.3736546741822513
     },
-    "PWD_WINC_STABALLMATCH_W1N2": {
-      "burn_coeff": 774.0335560087651,
-      "impetus": 790547.3239966719,
-      "fill_slope": -0.060702999713248565,
-      "bore_slope": -0.00390153842556174,
-      "train_count": 928,
-      "train_mape": 0.8637441265970269
-    },
     "PWD_HODG_H335_H1GB": {
       "burn_coeff": 774.433225141221,
       "impetus": 816099.7072313849,
@@ -165,13 +157,13 @@
       "train_count": 2029,
       "train_mape": 1.302073293214733
     },
-    "PWD_ACCU_4064_R1A8": {
-      "burn_coeff": 623.8758433659864,
-      "impetus": 865388.8957181582,
-      "fill_slope": 0.3107956835359801,
-      "bore_slope": 0.012467667289311066,
-      "train_count": 1155,
-      "train_mape": 0.953848486314093
+    "PWD_HODG_IMR8208_H1GA": {
+      "burn_coeff": 638.017634218033,
+      "impetus": 875697.6666441311,
+      "fill_slope": -0.00493409360933585,
+      "bore_slope": -0.0012010154494782907,
+      "train_count": 2434,
+      "train_mape": 1.0688172300301906
     },
     "PWD_RAMS_HUNTER_R1A3": {
       "burn_coeff": 635.7058769136318,
@@ -180,6 +172,14 @@
       "bore_slope": 0.012859037831731257,
       "train_count": 1669,
       "train_mape": 1.0109391439021316
+    },
+    "PWD_ACCU_4064_R1A8": {
+      "burn_coeff": 623.8758433659864,
+      "impetus": 865388.8957181582,
+      "fill_slope": 0.3107956835359801,
+      "bore_slope": 0.012467667289311066,
+      "train_count": 1155,
+      "train_mape": 0.953848486314093
     },
     "PWD_HODG_IMR4451_H1GL": {
       "burn_coeff": 547.9860907219199,
@@ -197,14 +197,6 @@
       "train_count": 2356,
       "train_mape": 1.1490605743298872
     },
-    "PWD_HODG_IMR4166_H1GK": {
-      "burn_coeff": 664.8269626572019,
-      "impetus": 920369.0731083385,
-      "fill_slope": 0.1672238450380974,
-      "bore_slope": 0.015502861754503097,
-      "train_count": 1902,
-      "train_mape": 0.7138304800025047
-    },
     "PWD_HODG_BLC2_H1G8": {
       "burn_coeff": 736.6737189741442,
       "impetus": 859009.5137047968,
@@ -212,14 +204,6 @@
       "bore_slope": -0.0005090652610670065,
       "train_count": 667,
       "train_mape": 1.4796267491392334
-    },
-    "PWD_HODG_H322_V06U": {
-      "burn_coeff": 873.5822564601922,
-      "impetus": 792993.3160152902,
-      "fill_slope": 0.2516239863733062,
-      "bore_slope": 0.012106917761120712,
-      "train_count": 1241,
-      "train_mape": 1.4196859114953502
     },
     "PWD_RAMS_BIGGAME_R1A2": {
       "burn_coeff": 628.2439178740408,
@@ -229,6 +213,22 @@
       "train_count": 1976,
       "train_mape": 0.8986290268251516
     },
+    "PWD_HODG_IMR4166_H1GK": {
+      "burn_coeff": 664.8269626572019,
+      "impetus": 920369.0731083385,
+      "fill_slope": 0.1672238450380974,
+      "bore_slope": 0.015502861754503097,
+      "train_count": 1902,
+      "train_mape": 0.7138304800025047
+    },
+    "PWD_HODG_H322_V06U": {
+      "burn_coeff": 873.5822564601922,
+      "impetus": 792993.3160152902,
+      "fill_slope": 0.2516239863733062,
+      "bore_slope": 0.012106917761120712,
+      "train_count": 1241,
+      "train_mape": 1.4196859114953502
+    },
     "PWD_WINC_STABALL65_W1N1": {
       "burn_coeff": 603.7553765676283,
       "impetus": 811525.1987019646,
@@ -236,14 +236,6 @@
       "bore_slope": 0.015747977457940578,
       "train_count": 836,
       "train_mape": 0.9426431640008587
-    },
-    "PWD_HODG_SUPERFORMANCE_QPVF": {
-      "burn_coeff": 531.2157620746575,
-      "impetus": 875184.1355964758,
-      "fill_slope": 0.18837554817146157,
-      "bore_slope": -0.00995199047669302,
-      "train_count": 965,
-      "train_mape": 1.0263726582624844
     },
     "PWD_HODG_BENCHMARK_BIU3": {
       "burn_coeff": 588.7577633348463,
@@ -253,13 +245,13 @@
       "train_count": 2244,
       "train_mape": 1.0352695355800736
     },
-    "PWD_WINC_748_W1N7": {
-      "burn_coeff": 685.3568366593686,
-      "impetus": 907294.2480147912,
-      "fill_slope": -0.06364859269524459,
-      "bore_slope": -0.003832852873747474,
-      "train_count": 1994,
-      "train_mape": 1.3509618008466917
+    "PWD_HODG_SUPERFORMANCE_QPVF": {
+      "burn_coeff": 531.2157620746575,
+      "impetus": 875184.1355964758,
+      "fill_slope": 0.18837554817146157,
+      "bore_slope": -0.00995199047669302,
+      "train_count": 965,
+      "train_mape": 1.0263726582624844
     },
     "PWD_ACCU_LT32_R1AA": {
       "burn_coeff": 879.2268131817627,
@@ -277,29 +269,13 @@
       "train_count": 2065,
       "train_mape": 0.8995191073023653
     },
-    "PWD_HODG_IMR7828_H1GN": {
-      "burn_coeff": 450.12676977235617,
-      "impetus": 885516.9835420724,
-      "fill_slope": -0.06669768914580343,
-      "bore_slope": 0.009622874893248078,
-      "train_count": 1214,
-      "train_mape": 0.9664810920603067
-    },
-    "PWD_RAMS_XTERM_R1A5": {
-      "burn_coeff": 566.6655995019835,
-      "impetus": 825501.6337390394,
-      "fill_slope": 0.059891886697732835,
-      "bore_slope": 0.007867191646364518,
-      "train_count": 762,
-      "train_mape": 1.1729999998918461
-    },
-    "PWD_HODG_H4198_KN7E": {
-      "burn_coeff": 721.7297206263489,
-      "impetus": 981495.7507934519,
-      "fill_slope": 0.011996593291405587,
-      "bore_slope": -0.031058367939549504,
-      "train_count": 457,
-      "train_mape": 1.9042899248373153
+    "PWD_WINC_748_W1N7": {
+      "burn_coeff": 685.3568366593686,
+      "impetus": 907294.2480147912,
+      "fill_slope": -0.06364859269524459,
+      "bore_slope": -0.003832852873747474,
+      "train_count": 1994,
+      "train_mape": 1.3509618008466917
     },
     "PWD_HODG_IMR4198_H1GS": {
       "burn_coeff": 783.8570855458792,
@@ -309,21 +285,29 @@
       "train_count": 946,
       "train_mape": 1.9452353065933985
     },
-    "PWD_IMPR_IMR_4831_HVBS": {
-      "burn_coeff": 616.4357343749257,
-      "impetus": 841364.9234776839,
-      "fill_slope": -0.10966530838049951,
-      "bore_slope": 0.0010653857211582376,
-      "train_count": 3156,
-      "train_mape": 1.2040208122772815
+    "PWD_RAMS_XTERM_R1A5": {
+      "burn_coeff": 566.6655995019835,
+      "impetus": 825501.6337390394,
+      "fill_slope": 0.059891886697732835,
+      "bore_slope": 0.007867191646364518,
+      "train_count": 762,
+      "train_mape": 1.1729999998918461
     },
-    "PWD_HODG_IMR4350_H1G0": {
-      "burn_coeff": 517.5530232568165,
-      "impetus": 862119.0380873381,
-      "fill_slope": 0.030488918251648997,
-      "bore_slope": 0.006473974835025729,
-      "train_count": 4507,
-      "train_mape": 1.0491644367687643
+    "PWD_HODG_IMR7828_H1GN": {
+      "burn_coeff": 450.12676977235617,
+      "impetus": 885516.9835420724,
+      "fill_slope": -0.06669768914580343,
+      "bore_slope": 0.009622874893248078,
+      "train_count": 1214,
+      "train_mape": 0.9664810920603067
+    },
+    "PWD_HODG_H4198_KN7E": {
+      "burn_coeff": 721.7297206263489,
+      "impetus": 981495.7507934519,
+      "fill_slope": 0.011996593291405587,
+      "bore_slope": -0.031058367939549504,
+      "train_count": 457,
+      "train_mape": 1.9042899248373153
     },
     "PWD_HODG_H1000_H1G5": {
       "burn_coeff": 482.9581143799833,
@@ -333,14 +317,6 @@
       "train_count": 3258,
       "train_mape": 1.094964831166746
     },
-    "PWD_IMPR_IMR_4320_E302": {
-      "burn_coeff": 702.1693799205087,
-      "impetus": 856880.0875620898,
-      "fill_slope": 0.021677018718708037,
-      "bore_slope": -0.0024129985970176866,
-      "train_count": 1796,
-      "train_mape": 0.9903984859779734
-    },
     "PWD_ACCU_4350_R1AB": {
       "burn_coeff": 295.22507218083933,
       "impetus": 822755.9245532455,
@@ -349,21 +325,29 @@
       "train_count": 2731,
       "train_mape": 1.454484028933611
     },
-    "PWD_HODG_LEVEREVOLUTION_XTV3": {
-      "burn_coeff": 702.9740056341043,
-      "impetus": 854115.1431420831,
-      "fill_slope": 0.06535603687593722,
-      "bore_slope": 0.003879365487357519,
-      "train_count": 471,
-      "train_mape": 1.0484250243199555
+    "PWD_IMPR_IMR_4320_E302": {
+      "burn_coeff": 702.1693799205087,
+      "impetus": 856880.0875620898,
+      "fill_slope": 0.021677018718708037,
+      "bore_slope": -0.0024129985970176866,
+      "train_count": 1796,
+      "train_mape": 0.9903984859779734
     },
-    "PWD_WINC_SUPREME_780_REI8": {
-      "burn_coeff": 466.1854029480583,
-      "impetus": 966466.7272111732,
-      "fill_slope": 0.1942655478219421,
-      "bore_slope": 0.031059323362733253,
-      "train_count": 580,
-      "train_mape": 1.4302534115681629
+    "PWD_HODG_IMR4350_H1G0": {
+      "burn_coeff": 517.5530232568165,
+      "impetus": 862119.0380873381,
+      "fill_slope": 0.030488918251648997,
+      "bore_slope": 0.006473974835025729,
+      "train_count": 4507,
+      "train_mape": 1.0491644367687643
+    },
+    "PWD_IMPR_IMR_4831_HVBS": {
+      "burn_coeff": 616.4357343749257,
+      "impetus": 841364.9234776839,
+      "fill_slope": -0.10966530838049951,
+      "bore_slope": 0.0010653857211582376,
+      "train_count": 3156,
+      "train_mape": 1.2040208122772815
     },
     "PWD_HODG_H4831SC_H1GF": {
       "burn_coeff": 507.8731435242085,
@@ -373,6 +357,14 @@
       "train_count": 2642,
       "train_mape": 0.7372758906039614
     },
+    "PWD_HODG_LEVEREVOLUTION_XTV3": {
+      "burn_coeff": 702.9740056341043,
+      "impetus": 854115.1431420831,
+      "fill_slope": 0.06535603687593722,
+      "bore_slope": 0.003879365487357519,
+      "train_count": 471,
+      "train_mape": 1.0484250243199555
+    },
     "PWD_ACCU_MAGPRO_R1A9": {
       "burn_coeff": 566.972689698437,
       "impetus": 857193.4005407043,
@@ -381,6 +373,14 @@
       "train_count": 1184,
       "train_mape": 0.9923780593966459
     },
+    "PWD_WINC_SUPREME_780_REI8": {
+      "burn_coeff": 466.1854029480583,
+      "impetus": 966466.7272111732,
+      "fill_slope": 0.1942655478219421,
+      "bore_slope": 0.031059323362733253,
+      "train_count": 580,
+      "train_mape": 1.4302534115681629
+    },
     "PWD_WINC_STABALLHD_W1N3": {
       "burn_coeff": 465.4806105838919,
       "impetus": 876063.7827399849,
@@ -388,14 +388,6 @@
       "bore_slope": 0.028130837505632354,
       "train_count": 692,
       "train_mape": 0.9752862723481722
-    },
-    "PWD_RAMS_GRAND_LM11": {
-      "burn_coeff": 563.28424028141,
-      "impetus": 830626.0962409814,
-      "fill_slope": 0.08041349827963132,
-      "bore_slope": 0.04082952299925634,
-      "train_count": 517,
-      "train_mape": 0.9918645249682487
     },
     "PWD_HODG_IMR7828SSC_H1GO": {
       "burn_coeff": 439.0513372888063,
@@ -420,6 +412,14 @@
       "bore_slope": 0.01349598034801601,
       "train_count": 2595,
       "train_mape": 0.913677309202853
+    },
+    "PWD_RAMS_GRAND_LM11": {
+      "burn_coeff": 563.28424028141,
+      "impetus": 830626.0962409814,
+      "fill_slope": 0.08041349827963132,
+      "bore_slope": 0.04082952299925634,
+      "train_count": 517,
+      "train_mape": 0.9918645249682487
     },
     "PWD_HODG_RETUMBO_H1G4": {
       "burn_coeff": 439.9276038125977,
@@ -477,22 +477,6 @@
       "train_count": 524,
       "train_mape": 1.0715298549193366
     },
-    "PWD_IMPR_IMR_8133_J4IF": {
-      "burn_coeff": 523.6815495479326,
-      "impetus": 808889.8502074007,
-      "fill_slope": 0.0201553258288186,
-      "bore_slope": 0.03303198661044008,
-      "train_count": 781,
-      "train_mape": 0.9702112954601414
-    },
-    "PWD_VIHT_N150_V1H7": {
-      "burn_coeff": 582.6524396605016,
-      "impetus": 809771.1145746529,
-      "fill_slope": 0.006958863395266246,
-      "bore_slope": 0.0014687502791639394,
-      "train_count": 1146,
-      "train_mape": 1.0530817712745615
-    },
     "PWD_HODG_H110_H1GA": {
       "burn_coeff": 1752.87658233724,
       "impetus": 710189.8475672447,
@@ -509,13 +493,21 @@
       "train_count": 666,
       "train_mape": 1.3976184882351703
     },
-    "PWD_VIHT_N555_V5H4": {
-      "burn_coeff": 500.56159624029135,
-      "impetus": 781985.036980736,
-      "fill_slope": 0.05889125615358354,
-      "bore_slope": 0.03448393084108829,
-      "train_count": 701,
-      "train_mape": 0.9083856823882133
+    "PWD_IMPR_IMR_8133_J4IF": {
+      "burn_coeff": 523.6815495479326,
+      "impetus": 808889.8502074007,
+      "fill_slope": 0.0201553258288186,
+      "bore_slope": 0.03303198661044008,
+      "train_count": 781,
+      "train_mape": 0.9702112954601414
+    },
+    "PWD_VIHT_N150_V1H7": {
+      "burn_coeff": 582.6524396605016,
+      "impetus": 809771.1145746529,
+      "fill_slope": 0.006958863395266246,
+      "bore_slope": 0.0014687502791639394,
+      "train_count": 1146,
+      "train_mape": 1.0530817712745615
     },
     "PWD_VIHT_N165_V1H9": {
       "burn_coeff": 462.24010956751977,
@@ -525,6 +517,14 @@
       "train_count": 2138,
       "train_mape": 1.1956562925043384
     },
+    "PWD_VIHT_N555_V5H4": {
+      "burn_coeff": 500.56159624029135,
+      "impetus": 781985.036980736,
+      "fill_slope": 0.05889125615358354,
+      "bore_slope": 0.03448393084108829,
+      "train_count": 701,
+      "train_mape": 0.9083856823882133
+    },
     "PWD_ACCU_1680_R1AC": {
       "burn_coeff": 998.2150266431635,
       "impetus": 779631.1432652432,
@@ -532,6 +532,14 @@
       "bore_slope": -0.10055674951343153,
       "train_count": 483,
       "train_mape": 1.5265810788748742
+    },
+    "PWD_VIHT_N160_V1H8": {
+      "burn_coeff": 585.3930024667721,
+      "impetus": 755527.1656502185,
+      "fill_slope": -0.15596548018565953,
+      "bore_slope": 0.01130653668828927,
+      "train_count": 1760,
+      "train_mape": 1.0759141361109643
     },
     "PWD_VIHT_N560_V5H5": {
       "burn_coeff": 427.1582193270272,
@@ -541,13 +549,13 @@
       "train_count": 2662,
       "train_mape": 1.1218245631168617
     },
-    "PWD_VIHT_N160_V1H8": {
-      "burn_coeff": 585.3930024667721,
-      "impetus": 755527.1656502185,
-      "fill_slope": -0.15596548018565953,
-      "bore_slope": 0.01130653668828927,
-      "train_count": 1760,
-      "train_mape": 1.0759141361109643
+    "PWD_ALLI_RELODER_19_6C4J": {
+      "burn_coeff": 508.44602906144974,
+      "impetus": 969832.2321663814,
+      "fill_slope": -0.015843927357491332,
+      "bore_slope": 0.006304173976350287,
+      "train_count": 3104,
+      "train_mape": 0.8573623944294405
     },
     "PWD_VIHT_N565_V5H6": {
       "burn_coeff": 386.1569479107983,
@@ -565,14 +573,6 @@
       "train_count": 505,
       "train_mape": 0.916090938448847
     },
-    "PWD_ALLI_RELODER_19_6C4J": {
-      "burn_coeff": 508.44602906144974,
-      "impetus": 969832.2321663814,
-      "fill_slope": -0.015843927357491332,
-      "bore_slope": 0.006304173976350287,
-      "train_count": 3104,
-      "train_mape": 0.8573623944294405
-    },
     "PWD_ALLI_RELODER_22_POE4": {
       "burn_coeff": 465.2748487128928,
       "impetus": 924907.9387067433,
@@ -589,14 +589,6 @@
       "train_count": 421,
       "train_mape": 1.2582497515961386
     },
-    "PWD_VIHT_N550_V5H3": {
-      "burn_coeff": 502.381152213612,
-      "impetus": 838929.5409859874,
-      "fill_slope": 0.21744465904048416,
-      "bore_slope": 0.021708684803597857,
-      "train_count": 1153,
-      "train_mape": 1.014980145655683
-    },
     "PWD_ALLI_2000MR_A1LX": {
       "burn_coeff": 630.2192773042686,
       "impetus": 858722.0476417175,
@@ -604,6 +596,14 @@
       "bore_slope": 0.002643927225335572,
       "train_count": 1536,
       "train_mape": 0.958966033835579
+    },
+    "PWD_VIHT_N550_V5H3": {
+      "burn_coeff": 502.381152213612,
+      "impetus": 838929.5409859874,
+      "fill_slope": 0.21744465904048416,
+      "bore_slope": 0.021708684803597857,
+      "train_count": 1153,
+      "train_mape": 1.014980145655683
     },
     "PWD_ALLI_RELODER_17_Q06H": {
       "burn_coeff": 541.2956875519915,
@@ -629,14 +629,6 @@
       "train_count": 3528,
       "train_mape": 0.8980650706958363
     },
-    "PWD_ALLI_RELODER_10X_98AC": {
-      "burn_coeff": 781.4382852062535,
-      "impetus": 963188.8812532114,
-      "fill_slope": 0.1502081400479256,
-      "bore_slope": -0.004279143475196178,
-      "train_count": 787,
-      "train_mape": 0.9273186303544743
-    },
     "PWD_ALLI_AR_COMP_6RSD": {
       "burn_coeff": 657.6540742315875,
       "impetus": 830587.617370063,
@@ -652,6 +644,14 @@
       "bore_slope": 0.004552160225438205,
       "train_count": 1997,
       "train_mape": 0.758483609752501
+    },
+    "PWD_ALLI_RELODER_10X_98AC": {
+      "burn_coeff": 781.4382852062535,
+      "impetus": 963188.8812532114,
+      "fill_slope": 0.1502081400479256,
+      "bore_slope": -0.004279143475196178,
+      "train_count": 787,
+      "train_mape": 0.9273186303544743
     },
     "PWD_ALLI_4000_MR_KRWA": {
       "burn_coeff": 536.8284922802045,
@@ -677,14 +677,6 @@
       "train_count": 1710,
       "train_mape": 0.6517283862038831
     },
-    "PWD_ALLI_VARMINT_A1L5": {
-      "burn_coeff": 699.4983093767474,
-      "impetus": 896408.2741701362,
-      "fill_slope": 0.04125534334016265,
-      "bore_slope": 0.005737962600833271,
-      "train_count": 943,
-      "train_mape": 1.1265166490190304
-    },
     "PWD_ALLI_RELODER_7_A1L0": {
       "burn_coeff": 801.5726819373024,
       "impetus": 858438.6942726537,
@@ -692,6 +684,14 @@
       "bore_slope": -0.07359789841866585,
       "train_count": 683,
       "train_mape": 1.3996309266768847
+    },
+    "PWD_ALLI_VARMINT_A1L5": {
+      "burn_coeff": 699.4983093767474,
+      "impetus": 896408.2741701362,
+      "fill_slope": 0.04125534334016265,
+      "bore_slope": 0.005737962600833271,
+      "train_count": 943,
+      "train_mape": 1.1265166490190304
     },
     "PWD_SHOO_PRECISION_RIFLE_QCI7": {
       "burn_coeff": 627.8172557109318,
@@ -717,14 +717,6 @@
       "train_count": 498,
       "train_mape": 1.1248365186212457
     },
-    "PWD_ALLI_RELODER_33_A1L9": {
-      "burn_coeff": 438.35601639382094,
-      "impetus": 875998.6238681824,
-      "fill_slope": -0.08811065386980771,
-      "bore_slope": 0.014513328177854414,
-      "train_count": 537,
-      "train_mape": 1.0963962786316526
-    },
     "PWD_IMR_4007SSC_I1G6": {
       "burn_coeff": 642.1612875118035,
       "impetus": 765232.3199372713,
@@ -733,13 +725,13 @@
       "train_count": 321,
       "train_mape": 1.059303384347397
     },
-    "PWD_SHOO_SWTR_S5W7": {
-      "burn_coeff": 721.1612213348761,
-      "impetus": 898918.4056825277,
-      "fill_slope": 0.07509125273209064,
-      "bore_slope": -0.007899362178286538,
-      "train_count": 580,
-      "train_mape": 1.010086188578628
+    "PWD_ALLI_RELODER_33_A1L9": {
+      "burn_coeff": 438.35601639382094,
+      "impetus": 875998.6238681824,
+      "fill_slope": -0.08811065386980771,
+      "bore_slope": 0.014513328177854414,
+      "train_count": 537,
+      "train_mape": 1.0963962786316526
     },
     "PWD_RAMS_LRT_LB6B": {
       "burn_coeff": 393.062796748268,
@@ -748,6 +740,14 @@
       "bore_slope": 0.038049291367497066,
       "train_count": 256,
       "train_mape": 1.2911389119262553
+    },
+    "PWD_SHOO_SWTR_S5W7": {
+      "burn_coeff": 721.1612213348761,
+      "impetus": 898918.4056825277,
+      "fill_slope": 0.07509125273209064,
+      "bore_slope": -0.007899362178286538,
+      "train_count": 580,
+      "train_mape": 1.010086188578628
     },
     "PWD_ACCU_2200_EA5G": {
       "burn_coeff": 876.4064562510314,
@@ -765,13 +765,13 @@
       "train_count": 179,
       "train_mape": 1.6513971395685494
     },
-    "PWD_VIHT_N110_V1H2": {
-      "burn_coeff": 2225.66479523537,
-      "impetus": 718919.9368465382,
-      "fill_slope": -0.8570692644920199,
-      "bore_slope": 0.10390540431719274,
-      "train_count": 227,
-      "train_mape": 1.9556627978033128
+    "PWD_VIHT_N120_V1H3": {
+      "burn_coeff": 968.4707798144476,
+      "impetus": 865438.8269094658,
+      "fill_slope": 0.058882240538278535,
+      "bore_slope": -0.08408999474799839,
+      "train_count": 240,
+      "train_mape": 1.3991178642446709
     },
     "PWD_HODG_H50BMG_2J1E": {
       "burn_coeff": 438.0537803457909,
@@ -781,13 +781,13 @@
       "train_count": 137,
       "train_mape": 1.052598870570146
     },
-    "PWD_VIHT_N120_V1H3": {
-      "burn_coeff": 968.4707798144476,
-      "impetus": 865438.8269094658,
-      "fill_slope": 0.058882240538278535,
-      "bore_slope": -0.08408999474799839,
-      "train_count": 240,
-      "train_mape": 1.3991178642446709
+    "PWD_VIHT_N110_V1H2": {
+      "burn_coeff": 2225.66479523537,
+      "impetus": 718919.9368465382,
+      "fill_slope": -0.8570692644920199,
+      "bore_slope": 0.10390540431719274,
+      "train_count": 227,
+      "train_mape": 1.9556627978033128
     },
     "PWD_ALLI_2400_A1L7": {
       "burn_coeff": 1582.3713807462773,
@@ -813,13 +813,13 @@
       "train_count": 132,
       "train_mape": 0.7748950167255865
     },
-    "PWD_NORM_TS155_N1H1": {
-      "burn_coeff": 697.5115863100946,
-      "impetus": 869635.7757978388,
-      "fill_slope": 0.4457629679236561,
-      "bore_slope": 0.020838644066825507,
-      "train_count": 86,
-      "train_mape": 0.48856939352125456
+    "PWD_ALLI_1200R_A1LY": {
+      "burn_coeff": 683.2746783104001,
+      "impetus": 964151.4249158307,
+      "fill_slope": 0.06314928096579706,
+      "bore_slope": -0.012825605064992935,
+      "train_count": 76,
+      "train_mape": 1.0864181379292321
     },
     "PWD_ACCU_NO9_R1AE": {
       "burn_coeff": 1910.739181819265,
@@ -829,29 +829,13 @@
       "train_count": 74,
       "train_mape": 1.3151841554149508
     },
-    "PWD_ALLI_1200R_A1LY": {
-      "burn_coeff": 683.2746783104001,
-      "impetus": 964151.4249158307,
-      "fill_slope": 0.06314928096579706,
-      "bore_slope": -0.012825605064992935,
-      "train_count": 76,
-      "train_mape": 1.0864181379292321
-    },
-    "PWD_SHOO_AR_PLUS_LMUA": {
-      "burn_coeff": 693.9668749084956,
-      "impetus": 930839.6302715049,
-      "fill_slope": -0.028676973163965176,
-      "bore_slope": -0.013344756829792458,
-      "train_count": 57,
-      "train_mape": 1.7202193517480022
-    },
-    "PWD_SHOO_SW4350_JZV8": {
-      "burn_coeff": 686.0729352339199,
-      "impetus": 751965.1766505823,
-      "fill_slope": 0.21777775265782112,
-      "bore_slope": 0.02470319663646478,
-      "train_count": 216,
-      "train_mape": 1.414764527338567
+    "PWD_NORM_TS155_N1H1": {
+      "burn_coeff": 697.5115863100946,
+      "impetus": 869635.7757978388,
+      "fill_slope": 0.4457629679236561,
+      "bore_slope": 0.020838644066825507,
+      "train_count": 86,
+      "train_mape": 0.48856939352125456
     },
     "PWD_HODG_LILGUN_H1G8": {
       "burn_coeff": 947.1761083953679,
@@ -861,6 +845,14 @@
       "train_count": 61,
       "train_mape": 3.3603248151076826
     },
+    "PWD_SHOO_AR_PLUS_LMUA": {
+      "burn_coeff": 693.9668749084956,
+      "impetus": 930839.6302715049,
+      "fill_slope": -0.028676973163965176,
+      "bore_slope": -0.013344756829792458,
+      "train_count": 57,
+      "train_mape": 1.7202193517480022
+    },
     "PWD_ALLI_300MP_A1L6": {
       "burn_coeff": 1682.2565562692303,
       "impetus": 665531.4106888219,
@@ -869,21 +861,13 @@
       "train_count": 63,
       "train_mape": 2.959774527495108
     },
-    "PWD_WINC_296_W1N4": {
-      "burn_coeff": 1295.3096637073638,
-      "impetus": 725047.3454676564,
-      "fill_slope": -0.17006778717041005,
-      "bore_slope": 0,
-      "train_count": 265,
-      "train_mape": 2.3563643462591948
-    },
-    "PWD_HODG_CFEBLK_H1GB": {
-      "burn_coeff": 926.2998161718804,
-      "impetus": 727956.77459834,
-      "fill_slope": 0.14434116773886727,
-      "bore_slope": -0.09609830235068106,
-      "train_count": 303,
-      "train_mape": 1.7206303614789582
+    "PWD_VIHT_24N41_5S8S": {
+      "burn_coeff": 404.77503450233894,
+      "impetus": 950509.5965817998,
+      "fill_slope": 0.07719749902389596,
+      "bore_slope": -0.009649597144889416,
+      "train_count": 97,
+      "train_mape": 0.9114319056903374
     },
     "PWD_SHOO_THE_CREED_8NG4": {
       "burn_coeff": 631.4889128047386,
@@ -893,6 +877,30 @@
       "train_count": 52,
       "train_mape": 1.3938981691779233
     },
+    "PWD_WINC_296_W1N4": {
+      "burn_coeff": 1295.3096637073638,
+      "impetus": 725047.3454676564,
+      "fill_slope": -0.17006778717041005,
+      "bore_slope": 0,
+      "train_count": 265,
+      "train_mape": 2.3563643462591948
+    },
+    "PWD_SHOO_SW4350_JZV8": {
+      "burn_coeff": 686.0729352339199,
+      "impetus": 751965.1766505823,
+      "fill_slope": 0.21777775265782112,
+      "bore_slope": 0.02470319663646478,
+      "train_count": 216,
+      "train_mape": 1.414764527338567
+    },
+    "PWD_SHOO_THE_PATRIOT_8NG5": {
+      "burn_coeff": 911.3131990381183,
+      "impetus": 748317.7150296853,
+      "fill_slope": 0,
+      "bore_slope": 0,
+      "train_count": 35,
+      "train_mape": 1.4336843869293245
+    },
     "PWD_ACCU_4100_R1AD": {
       "burn_coeff": 1363.365730692834,
       "impetus": 800488.3854398597,
@@ -900,6 +908,46 @@
       "bore_slope": 0,
       "train_count": 16,
       "train_mape": 0.647740506732962
+    },
+    "PWD_NORM_200_N1H3": {
+      "burn_coeff": 1843.3959829404273,
+      "impetus": 506837.50397953216,
+      "fill_slope": 0,
+      "bore_slope": 0,
+      "train_count": 22,
+      "train_mape": 1.4795205895575825
+    },
+    "PWD_HODG_SR4759_H1GH": {
+      "burn_coeff": 820.602615922913,
+      "impetus": 872721.1144595508,
+      "fill_slope": -0.15915174174497984,
+      "bore_slope": 0.033356191894197806,
+      "train_count": 101,
+      "train_mape": 3.3194854140727412
+    },
+    "PWD_IMR_4227_I1G5": {
+      "burn_coeff": 1324.4070094194312,
+      "impetus": 731444.0408515974,
+      "fill_slope": 0.13698750070225302,
+      "bore_slope": -0.14815352740439275,
+      "train_count": 289,
+      "train_mape": 3.0006435591017966
+    },
+    "PWD_ALLI_RELODER_50_A1L8": {
+      "burn_coeff": 571.6782977932723,
+      "impetus": 629403.683604984,
+      "fill_slope": 0,
+      "bore_slope": 0,
+      "train_count": 11,
+      "train_mape": 1.443287513736608
+    },
+    "PWD_ACCU_NO11FS_A1C5": {
+      "burn_coeff": 967.0475559108548,
+      "impetus": 851928.2522987095,
+      "fill_slope": 0.000002324581146240234,
+      "bore_slope": 0,
+      "train_count": 59,
+      "train_mape": 1.482621276800427
     },
     "PWD_SHOO_BLACKOUT_S5B1": {
       "burn_coeff": 963.2551661839093,
@@ -917,14 +965,6 @@
       "train_count": 154,
       "train_mape": 0.5907115046506886
     },
-    "PWD_VIHT_24N41_5S8S": {
-      "burn_coeff": 404.77503450233894,
-      "impetus": 950509.5965817998,
-      "fill_slope": 0.07719749902389596,
-      "bore_slope": -0.009649597144889416,
-      "train_count": 97,
-      "train_mape": 0.9114319056903374
-    },
     "PWD_VIHT_20N29_V3H9": {
       "burn_coeff": 418.3505790323443,
       "impetus": 585957.4174353468,
@@ -932,62 +972,6 @@
       "bore_slope": 0,
       "train_count": 10,
       "train_mape": 1.538066894662371
-    },
-    "PWD_NORM_202_N1H2": {
-      "burn_coeff": 563.7463376420211,
-      "impetus": 811602.0728258902,
-      "fill_slope": 0.13440315882617132,
-      "bore_slope": -0.013947520054061899,
-      "train_count": 56,
-      "train_mape": 0.969750114664219
-    },
-    "PWD_ALLI_RELODER_50_A1L8": {
-      "burn_coeff": 571.6782977932723,
-      "impetus": 629403.683604984,
-      "fill_slope": 0,
-      "bore_slope": 0,
-      "train_count": 11,
-      "train_mape": 1.443287513736608
-    },
-    "PWD_NORM_200_N1H3": {
-      "burn_coeff": 1843.3959829404273,
-      "impetus": 506837.50397953216,
-      "fill_slope": 0,
-      "bore_slope": 0,
-      "train_count": 22,
-      "train_mape": 1.4795205895575825
-    },
-    "PWD_SHOO_THE_PATRIOT_8NG5": {
-      "burn_coeff": 911.3131990381183,
-      "impetus": 748317.7150296853,
-      "fill_slope": 0,
-      "bore_slope": 0,
-      "train_count": 35,
-      "train_mape": 1.4336843869293245
-    },
-    "PWD_HODG_SR4759_H1GH": {
-      "burn_coeff": 820.602615922913,
-      "impetus": 872721.1144595508,
-      "fill_slope": -0.15915174174497984,
-      "bore_slope": 0.033356191894197806,
-      "train_count": 101,
-      "train_mape": 3.3194854140727412
-    },
-    "PWD_ACCU_NO11FS_A1C5": {
-      "burn_coeff": 967.0475559108548,
-      "impetus": 851928.2522987095,
-      "fill_slope": 0.000002324581146240234,
-      "bore_slope": 0,
-      "train_count": 59,
-      "train_mape": 1.482621276800427
-    },
-    "PWD_VIHT_N105_V1H1": {
-      "burn_coeff": 1186.7113774801792,
-      "impetus": 1064838.0742921848,
-      "fill_slope": -0.5205688476562498,
-      "bore_slope": 0,
-      "train_count": 53,
-      "train_mape": 2.2289980572184813
     },
     "PWD_SHOO_SWSBR_S5W8": {
       "burn_coeff": 1604.4935316822102,
@@ -997,13 +981,29 @@
       "train_count": 69,
       "train_mape": 4.143868784239837
     },
-    "PWD_IMR_4227_I1G5": {
-      "burn_coeff": 1324.4070094194312,
-      "impetus": 731444.0408515974,
-      "fill_slope": 0.13698750070225302,
-      "bore_slope": -0.14815352740439275,
-      "train_count": 289,
-      "train_mape": 3.0006435591017966
+    "PWD_NORM_202_N1H2": {
+      "burn_coeff": 563.7463376420211,
+      "impetus": 811602.0728258902,
+      "fill_slope": 0.13440315882617132,
+      "bore_slope": -0.013947520054061899,
+      "train_count": 56,
+      "train_mape": 0.969750114664219
+    },
+    "PWD_VIHT_N105_V1H1": {
+      "burn_coeff": 1186.7113774801792,
+      "impetus": 1064838.0742921848,
+      "fill_slope": -0.5205688476562498,
+      "bore_slope": 0,
+      "train_count": 53,
+      "train_mape": 2.2289980572184813
+    },
+    "PWD_HODG_CFEBLK_H1GB": {
+      "burn_coeff": 926.2998161718804,
+      "impetus": 727956.77459834,
+      "fill_slope": 0.14434116773886727,
+      "bore_slope": -0.09609830235068106,
+      "train_count": 303,
+      "train_mape": 1.7206303614789582
     },
     "PWD_ACCU_NO2_A1LA": {
       "burn_coeff": 2566.5337120022778,
