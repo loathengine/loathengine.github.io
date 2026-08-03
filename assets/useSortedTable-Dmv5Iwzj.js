@@ -1,0 +1,1 @@
+import{T as e}from"./vendor-Dtdges_Y.js";import{t}from"./stable-Bsu_0J3u.js";function n(n,r,i){return e(()=>n.toArray().then(e=>{let{desc:t,...n}=i??{},a=t?-1:1;return e.sort((e,t)=>a*r(e).localeCompare(r(t),void 0,n))}),[n])??t}function r(n,r){return e(()=>n.toArray().then(e=>e.sort((e,t)=>r(e)-r(t))),[n])??t}export{r as n,n as t};
