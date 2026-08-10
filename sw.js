@@ -15,9 +15,9 @@
 //     returning user. See docs/WORKSTREAMS.md WS28.
 //   • The cache is pruned to MAX_ENTRIES so old hashed bundles can't accumulate
 //     forever. Bump CACHE_NAME on strategy changes to drop everything at once.
-// Bumped from v2: the caching strategy changed (NETWORK_FIRST below), and existing
-// installs are holding a cache-first copy of tuning_fit.json that must be dropped.
-const CACHE_NAME = 'empirical-precision-v3';
+// Bumped from v3: master-db.json joined ASSETS and NETWORK_FIRST (WS93), and existing
+// installs have no cached copy of it at all.
+const CACHE_NAME = 'empirical-precision-v4';
 const MAX_ENTRIES = 80;
 
 /**
@@ -28,8 +28,13 @@ const MAX_ENTRIES = 80;
  * `generated_at` stamp the velocity-offset staleness check compares against. Serving a
  * previous deploy's copy would both show old numbers and make that check compare a stored
  * offset against the wrong calibration generation, producing a spurious warning.
+ *
+ * master-db.json is the component library snapshot the app seeds a new install from. It is
+ * read once, when the reference tables are empty, so a stale copy would not be corrected on
+ * a later visit the way a stale fit would — whatever is served becomes that install's whole
+ * database until the user syncs.
  */
-const NETWORK_FIRST = ['/tuning_fit.json'];
+const NETWORK_FIRST = ['/tuning_fit.json', '/master-db.json'];
 // Precached at install so the app works offline from the first launch.
 //
 // tuning_fit.json is here despite being ~980 KB. This is a range tool and internal
@@ -37,12 +42,21 @@ const NETWORK_FIRST = ['/tuning_fit.json'];
 // edge case. Left lazy it entered the cache only once a user had run a simulation while
 // online, meaning anyone who installed the PWA and went offline without opening the
 // Ignition tab got no simulations at all. See docs/WORKSTREAMS.md WS31.
+//
+// master-db.json (~760 KB, ~73 KB over the wire) is here for the same reason and a stronger
+// one: it is fetched during boot on a brand-new install. Someone who installs the PWA and
+// drives to a range without opening it has never triggered a lazy fetch, and an empty
+// component library is an app with nothing in it. See docs/WORKSTREAMS.md WS93.
+//
+// addAll is atomic — a deploy missing either file fails SW install outright and takes
+// offline support for everything with it. Both are checked into public/.
 const ASSETS = [
   '/',
   '/index.html',
   '/favicon.svg',
   '/manifest.json',
-  '/tuning_fit.json'
+  '/tuning_fit.json',
+  '/master-db.json'
 ];
 
 self.addEventListener('install', (e) => {
