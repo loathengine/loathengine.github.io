@@ -17,13 +17,19 @@
 //     forever. Bump CACHE_NAME on strategy changes to drop everything at once.
 // Bumped from v3: master-db.json joined ASSETS and NETWORK_FIRST (WS93), and existing
 // installs have no cached copy of it at all.
-const CACHE_NAME = 'empirical-precision-v4';
+// Bumped from v4: library-db.json joined the cache as an optional precached asset
+// (WS98), and the trim guard now protects it.
+// Bumped from v5: the two data assets were renamed — tuning_fit.json → tuning-db.json and
+// library-loads.json → library-db.json. Existing installs hold the old paths, which no
+// longer resolve, and neither ASSETS nor NETWORK_FIRST would ever match them again. Dropping
+// the whole cache is the only thing that clears them.
+const CACHE_NAME = 'empirical-precision-v6';
 const MAX_ENTRIES = 80;
 
 /**
  * Stable-named files that must never be served stale.
  *
- * tuning_fit.json is the fitted ballistics model — it determines every velocity and
+ * tuning-db.json is the fitted ballistics model — it determines every velocity and
  * pressure the app reports, including the SAAMI safety gauge, and it carries the
  * `generated_at` stamp the velocity-offset staleness check compares against. Serving a
  * previous deploy's copy would both show old numbers and make that check compare a stored
@@ -34,10 +40,10 @@ const MAX_ENTRIES = 80;
  * a later visit the way a stale fit would — whatever is served becomes that install's whole
  * database until the user syncs.
  */
-const NETWORK_FIRST = ['/tuning_fit.json', '/master-db.json'];
+const NETWORK_FIRST = ['/tuning-db.json', '/master-db.json'];
 // Precached at install so the app works offline from the first launch.
 //
-// tuning_fit.json is here despite being ~980 KB. This is a range tool and internal
+// tuning-db.json is here despite being ~980 KB. This is a range tool and internal
 // ballistics is a core feature, so "offline" is a normal operating mode rather than an
 // edge case. Left lazy it entered the cache only once a user had run a simulation while
 // online, meaning anyone who installed the PWA and went offline without opening the
@@ -55,13 +61,34 @@ const ASSETS = [
   '/index.html',
   '/favicon.svg',
   '/manifest.json',
-  '/tuning_fit.json',
+  '/tuning-db.json',
   '/master-db.json'
 ];
 
+/**
+ * Wanted offline, but not worth failing the install for.
+ *
+ * library-db.json (~7.4 MB, ~710 KB over the wire) is the published-load reference. It
+ * is genuinely useful at a range with no signal, so it should be there. But it differs from
+ * the ASSETS above in one decisive way: it is copied into public/ by hand rather than
+ * produced by the build, so it is the one file a deploy can plausibly ship without.
+ *
+ * Because `addAll` is atomic, listing it above would mean a missing copy takes down offline
+ * support for the entire app — the fit, the component database and the shell included — to
+ * protect a reference tab. Best-effort instead: precache it when it is there, carry on
+ * without it when it is not. If it never precaches, the tab still works online and caches
+ * itself on first view through the cache-first path below.
+ */
+const OPTIONAL_ASSETS = ['/library-db.json'];
+
 self.addEventListener('install', (e) => {
   e.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(ASSETS))
+    caches.open(CACHE_NAME).then(async (cache) => {
+      await cache.addAll(ASSETS);
+      await Promise.all(
+        OPTIONAL_ASSETS.map((path) => cache.add(path).catch(() => {}))
+      );
+    })
   );
   self.skipWaiting();
 });
@@ -81,7 +108,9 @@ async function trimCache(cache) {
   // FIFO prune, but never evict a precached entry. One build emits ~39 files, so two or
   // three deploys reach the cap and plain oldest-first pruning would eventually drop the
   // app shell or the fit and silently break offline use.
-  const protectedPaths = new Set(ASSETS);
+  // The optional assets are protected too. Nothing re-adds them after install, so evicting
+  // one would silently and permanently remove it from offline use.
+  const protectedPaths = new Set([...ASSETS, ...OPTIONAL_ASSETS]);
   const evictable = keys.filter((k) => !protectedPaths.has(new URL(k.url).pathname));
   const excess = keys.length - MAX_ENTRIES;
   for (const key of evictable.slice(0, excess)) {
