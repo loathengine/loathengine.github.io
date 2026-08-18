@@ -1,0 +1,1 @@
+import{r as e}from"./rolldown-runtime-hePW80VL.js";import{in as t}from"./vendor-CTidhoT8.js";var n=e(t(),1);function r(e,t){let[r,i]=(0,n.useState)(()=>{try{let t=sessionStorage.getItem(e);if(t!==null)return JSON.parse(t)}catch{}return t});return(0,n.useEffect)(()=>{try{sessionStorage.setItem(e,JSON.stringify(r))}catch{}},[e,r]),[r,(0,n.useCallback)(e=>{i(e)},[])]}export{r as t};
