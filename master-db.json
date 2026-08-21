@@ -8461,6 +8461,25 @@
       "ballistics": {}
     },
     {
+      "id": "BUL_FEDERAL_284_155_EDGETLR_CA79",
+      "name": "Edge TLR",
+      "manufacturerId": "MAN_FEDERAL_F4G7",
+      "diameterId": "DIA_284_S3F6",
+      "physis": {
+        "weightGrams": 10.043831,
+        "overallLengthMm": null,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.586,
+        "g7BC": null
+      }
+    },
+    {
       "id": "BUL_FEDERAL_284_160_TROPHYBOND_8326",
       "name": "Trophy Bonded Tip Federal",
       "manufacturerId": "MAN_FEDERAL_F4G7",
@@ -8494,6 +8513,25 @@
       },
       "ballistics": {
         "g1BC": 0.41
+      }
+    },
+    {
+      "id": "BUL_FEDERAL_308_175_EDGETLR_7708",
+      "name": "Edge TLR",
+      "manufacturerId": "MAN_FEDERAL_F4G7",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 11.3398093,
+        "overallLengthMm": null,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.536,
+        "g7BC": null
       }
     },
     {
@@ -8605,6 +8643,25 @@
       }
     },
     {
+      "id": "BUL_HORNADY_224_45_HORNET_788C",
+      "name": "Hornet",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "diameterId": "DIA_224_L5X8",
+      "physis": {
+        "weightGrams": 2.915951,
+        "overallLengthMm": 14.986,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.202,
+        "g7BC": null
+      }
+    },
+    {
       "id": "BUL_HORNADY_224_50_CX_6C4A",
       "name": "CX",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -8616,6 +8673,25 @@
         "boatTailLengthMm": 2.361184,
         "bearingSurfaceMm": 6.700113891309972,
         "engravingPressurePa": 45000000,
+        "materialType": "MAT_MONOLITHIC_COPPER"
+      },
+      "ballistics": {
+        "g1BC": 0.164,
+        "g7BC": null
+      }
+    },
+    {
+      "id": "BUL_HORNADY_224_50_ECX_1B91",
+      "name": "ECX",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "diameterId": "DIA_224_L5X8",
+      "physis": {
+        "weightGrams": 3.2399455,
+        "overallLengthMm": null,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
         "materialType": "MAT_MONOLITHIC_COPPER"
       },
       "ballistics": {
@@ -8749,6 +8825,25 @@
       "ballistics": {
         "g1BC": 0.29,
         "g7BC": 0.1458
+      }
+    },
+    {
+      "id": "BUL_HORNADY_224_55_FMJBT_C26B",
+      "name": "FMJ BT",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "diameterId": "DIA_224_L5X8",
+      "physis": {
+        "weightGrams": 3.5639401,
+        "overallLengthMm": 18.669,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.243,
+        "g7BC": null
       }
     },
     {
@@ -9332,6 +9427,25 @@
       "ballistics": {
         "g1BC": 0.395,
         "g7BC": 0.179
+      }
+    },
+    {
+      "id": "BUL_HORNADY_243_87_BTHP_52F3",
+      "name": "BTHP",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "diameterId": "DIA_243_B7V4",
+      "physis": {
+        "weightGrams": 5.6375052,
+        "overallLengthMm": null,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.376,
+        "g7BC": null
       }
     },
     {
@@ -10035,6 +10149,25 @@
       }
     },
     {
+      "id": "BUL_HORNADY_264_140_ECX_E77D",
+      "name": "ECX",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "diameterId": "DIA_264_H8J4",
+      "physis": {
+        "weightGrams": 9.0718474,
+        "overallLengthMm": null,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_MONOLITHIC_COPPER"
+      },
+      "ballistics": {
+        "g1BC": 0.301,
+        "g7BC": null
+      }
+    },
+    {
       "id": "BUL_HORNADY_264_140_SPINTERL_29C7",
       "name": "InterLock SP",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -10556,6 +10689,25 @@
       }
     },
     {
+      "id": "BUL_HORNADY_284_150_ECX_75C1",
+      "name": "ECX",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "diameterId": "DIA_284_S3F6",
+      "physis": {
+        "weightGrams": 9.7198365,
+        "overallLengthMm": null,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_MONOLITHIC_COPPER"
+      },
+      "ballistics": {
+        "g1BC": 0.287,
+        "g7BC": null
+      }
+    },
+    {
       "id": "BUL_HORNADY_284_154_IBOND_B6EA",
       "name": "InterBond",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -10890,6 +11042,25 @@
       }
     },
     {
+      "id": "BUL_HORNADY_308_110_FMJRN_5BCA",
+      "name": "FMJ RN",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 7.1278801,
+        "overallLengthMm": null,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.178,
+        "g7BC": null
+      }
+    },
+    {
       "id": "BUL_HORNADY_308_110_FTX_135E",
       "name": "FTX",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -10979,6 +11150,25 @@
       "ballistics": {
         "g1BC": 0.29,
         "g7BC": 0.145
+      }
+    },
+    {
+      "id": "BUL_HORNADY_308_125_ECX_EA15",
+      "name": "ECX",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 8.0998638,
+        "overallLengthMm": null,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_MONOLITHIC_COPPER"
+      },
+      "ballistics": {
+        "g1BC": 0.181,
+        "g7BC": null
       }
     },
     {
@@ -11110,6 +11300,25 @@
       "ballistics": {
         "g1BC": 0.418,
         "g7BC": 0.1992
+      }
+    },
+    {
+      "id": "BUL_HORNADY_308_150_ECX_7BBB",
+      "name": "ECX",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 9.7198365,
+        "overallLengthMm": null,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_MONOLITHIC_COPPER"
+      },
+      "ballistics": {
+        "g1BC": 0.223,
+        "g7BC": null
       }
     },
     {
@@ -11315,6 +11524,25 @@
         "materialType": "MAT_MONOLITHIC_COPPER"
       },
       "ballistics": {}
+    },
+    {
+      "id": "BUL_HORNADY_308_165_ECX_38FB",
+      "name": "ECX",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 10.6918201,
+        "overallLengthMm": null,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_MONOLITHIC_COPPER"
+      },
+      "ballistics": {
+        "g1BC": 0.251,
+        "g7BC": null
+      }
     },
     {
       "id": "BUL_HORNADY_308_165_GMX_3761",
@@ -13671,6 +13899,25 @@
       }
     },
     {
+      "id": "BUL_NOSLER_224_64_BSB_0971",
+      "name": "Bonded Solid Base",
+      "manufacturerId": "MAN_NOSLER_N9K4",
+      "diameterId": "DIA_224_L5X8",
+      "physis": {
+        "weightGrams": 4.1471302,
+        "overallLengthMm": 20.32,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.231,
+        "g7BC": null
+      }
+    },
+    {
       "id": "BUL_NOSLER_224_69_CC_44AE",
       "name": "Custom Competition",
       "manufacturerId": "MAN_NOSLER_N9K4",
@@ -13877,6 +14124,25 @@
       "ballistics": {
         "g1BC": 0.634,
         "g7BC": 0.312
+      }
+    },
+    {
+      "id": "BUL_NOSLER_243_55_BTLF_D3BB",
+      "name": "Ballistic Tip Lead-Free",
+      "manufacturerId": "MAN_NOSLER_N9K4",
+      "diameterId": "DIA_243_B7V4",
+      "physis": {
+        "weightGrams": 3.5639401,
+        "overallLengthMm": 24.13,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_MONOLITHIC_COPPER"
+      },
+      "ballistics": {
+        "g1BC": 0.288,
+        "g7BC": null
       }
     },
     {
@@ -14546,6 +14812,25 @@
       }
     },
     {
+      "id": "BUL_NOSLER_264_90_VMG_A86D",
+      "name": "Varmageddon",
+      "manufacturerId": "MAN_NOSLER_N9K4",
+      "diameterId": "DIA_264_H8J4",
+      "physis": {
+        "weightGrams": 5.8319019,
+        "overallLengthMm": 25.933,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.35,
+        "g7BC": null
+      }
+    },
+    {
       "id": "BUL_NOSLER_277_100_AB_7FC7",
       "name": "AccuBond",
       "manufacturerId": "MAN_NOSLER_N9K4",
@@ -14843,6 +15128,25 @@
       "ballistics": {}
     },
     {
+      "id": "BUL_NOSLER_284_120_BT_4389",
+      "name": "Ballistic Tip",
+      "manufacturerId": "MAN_NOSLER_N9K4",
+      "diameterId": "DIA_284_S3F6",
+      "physis": {
+        "weightGrams": 7.7758692,
+        "overallLengthMm": 28.829,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.417,
+        "g7BC": null
+      }
+    },
+    {
       "id": "BUL_NOSLER_284_120_FP_1C8D",
       "name": "Flat Point",
       "manufacturerId": "MAN_NOSLER_N9K4",
@@ -14950,6 +15254,25 @@
       "ballistics": {
         "g1BC": 0.546,
         "g7BC": 0.275
+      }
+    },
+    {
+      "id": "BUL_NOSLER_284_150_AB_6202",
+      "name": "AccuBond",
+      "manufacturerId": "MAN_NOSLER_N9K4",
+      "diameterId": "DIA_284_S3F6",
+      "physis": {
+        "weightGrams": 9.7198365,
+        "overallLengthMm": 32.766,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.493,
+        "g7BC": null
       }
     },
     {
