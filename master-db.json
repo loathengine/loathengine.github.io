@@ -2184,6 +2184,15 @@
       "burnFractionAtSliverStart": 0.82
     },
     {
+      "id": "PWD_ACCU_3100_32FE",
+      "name": "3100",
+      "manufacturerId": "MAN_ACCURATE_A2C1",
+      "grainType": "extrudedSinglePerf",
+      "propellantDensityKgM3": 1530,
+      "bulkDensityKgM3": 920,
+      "heatOfExplosionKjKg": 3600
+    },
+    {
       "id": "PWD_ACCU_4064_R1A8",
       "name": "4064",
       "manufacturerId": "MAN_ACCURATE_A2C1",
@@ -2221,6 +2230,15 @@
       "burnSurfacePeakGain": 1.7,
       "burnFractionAtSurfacePeak": 0.26,
       "burnFractionAtSliverStart": 0.98
+    },
+    {
+      "id": "PWD_ACCU_5744_17A1",
+      "name": "5744",
+      "manufacturerId": "MAN_ACCURATE_A2C1",
+      "grainType": "extrudedSinglePerf",
+      "propellantDensityKgM3": 1500,
+      "bulkDensityKgM3": 860,
+      "heatOfExplosionKjKg": 4310
     },
     {
       "id": "PWD_ACCU_LT32_R1AA",
@@ -3111,6 +3129,15 @@
       "burnFractionAtSliverStart": 0.92
     },
     {
+      "id": "PWD_NORM_201_9F49",
+      "name": "201",
+      "manufacturerId": "MAN_NORMA_N3R4",
+      "grainType": "extrudedSinglePerf",
+      "propellantDensityKgM3": 1570,
+      "bulkDensityKgM3": 900,
+      "heatOfExplosionKjKg": 3980
+    },
+    {
       "id": "PWD_NORM_202_N1H2",
       "name": "202",
       "manufacturerId": "MAN_NORMA_N3R4",
@@ -3124,6 +3151,24 @@
       "burnFractionAtSliverStart": 0.98
     },
     {
+      "id": "PWD_NORM_203B_3879",
+      "name": "203B",
+      "manufacturerId": "MAN_NORMA_N3R4",
+      "grainType": "extrudedSinglePerf",
+      "propellantDensityKgM3": 1620,
+      "bulkDensityKgM3": 920,
+      "heatOfExplosionKjKg": 3910
+    },
+    {
+      "id": "PWD_NORM_204_4BEF",
+      "name": "204",
+      "manufacturerId": "MAN_NORMA_N3R4",
+      "grainType": "extrudedSinglePerf",
+      "propellantDensityKgM3": 1570,
+      "bulkDensityKgM3": 950,
+      "heatOfExplosionKjKg": 3950
+    },
+    {
       "id": "PWD_NORM_217_N1H0",
       "name": "217",
       "manufacturerId": "MAN_NORMA_N3R4",
@@ -3135,6 +3180,24 @@
       "burnSurfacePeakGain": 0.292,
       "burnFractionAtSurfacePeak": 0.702,
       "burnFractionAtSliverStart": 0.9
+    },
+    {
+      "id": "PWD_NORM_MRP_44D5",
+      "name": "MRP",
+      "manufacturerId": "MAN_NORMA_N3R4",
+      "grainType": "extrudedSinglePerf",
+      "propellantDensityKgM3": 1620,
+      "bulkDensityKgM3": 960,
+      "heatOfExplosionKjKg": 4020
+    },
+    {
+      "id": "PWD_NORM_R123_66E1",
+      "name": "R123",
+      "manufacturerId": "MAN_NORMA_N3R4",
+      "grainType": "extrudedSinglePerf",
+      "propellantDensityKgM3": 1620,
+      "bulkDensityKgM3": 920,
+      "heatOfExplosionKjKg": 4000
     },
     {
       "id": "PWD_NORM_TS155_N1H1",
@@ -9289,7 +9352,7 @@
       "diameterId": "DIA_243_B7V4",
       "physis": {
         "weightGrams": 3.7583368,
-        "overallLengthMm": 20.700999999999997,
+        "overallLengthMm": 20.14,
         "ogiveLengthMm": 13.886179999999998,
         "boatTailLengthMm": 0,
         "bearingSurfaceMm": 6.814819999999999,
@@ -9436,7 +9499,7 @@
       "diameterId": "DIA_243_B7V4",
       "physis": {
         "weightGrams": 5.6375052,
-        "overallLengthMm": null,
+        "overallLengthMm": 24.4,
         "ogiveLengthMm": null,
         "boatTailLengthMm": null,
         "bearingSurfaceMm": null,
@@ -10477,7 +10540,7 @@
       "diameterId": "DIA_277_K9L0",
       "physis": {
         "weightGrams": 9.3958419,
-        "overallLengthMm": 36.5252,
+        "overallLengthMm": 34.72,
         "ogiveLengthMm": 20.1676,
         "boatTailLengthMm": 4.9073,
         "bearingSurfaceMm": 11.4503,
@@ -11048,7 +11111,7 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 7.1278801,
-        "overallLengthMm": null,
+        "overallLengthMm": 17,
         "ogiveLengthMm": null,
         "boatTailLengthMm": null,
         "bearingSurfaceMm": null,
@@ -11905,7 +11968,7 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 12.959782,
-        "overallLengthMm": 37.7698,
+        "overallLengthMm": 38.86,
         "ogiveLengthMm": 20.7899,
         "boatTailLengthMm": 5.094,
         "bearingSurfaceMm": 11.8859,
@@ -12042,7 +12105,7 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 14.5797547,
-        "overallLengthMm": 41.8846,
+        "overallLengthMm": 42.65,
         "ogiveLengthMm": 22.8473,
         "boatTailLengthMm": 5.7112,
         "bearingSurfaceMm": 13.3261,
@@ -21186,7 +21249,7 @@
       "diameterId": "DIA_284_S3F6",
       "physis": {
         "weightGrams": 10.3678256,
-        "overallLengthMm": 30.48,
+        "overallLengthMm": 29.72,
         "ogiveLengthMm": 17.929,
         "boatTailLengthMm": 0,
         "bearingSurfaceMm": 12.551,
