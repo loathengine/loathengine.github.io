@@ -9353,9 +9353,9 @@
       "physis": {
         "weightGrams": 3.7583368,
         "overallLengthMm": 20.14,
-        "ogiveLengthMm": 13.886179999999998,
+        "ogiveLengthMm": 13.5105,
         "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 6.814819999999999,
+        "bearingSurfaceMm": 6.6305,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -10541,9 +10541,9 @@
       "physis": {
         "weightGrams": 9.3958419,
         "overallLengthMm": 34.72,
-        "ogiveLengthMm": 20.1676,
-        "boatTailLengthMm": 4.9073,
-        "bearingSurfaceMm": 11.4503,
+        "ogiveLengthMm": 19.1683,
+        "boatTailLengthMm": 4.6642,
+        "bearingSurfaceMm": 10.883,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD",
         "tipLengthMm": 3.81
@@ -11969,9 +11969,9 @@
       "physis": {
         "weightGrams": 12.959782,
         "overallLengthMm": 38.86,
-        "ogiveLengthMm": 20.7899,
-        "boatTailLengthMm": 5.094,
-        "bearingSurfaceMm": 11.8859,
+        "ogiveLengthMm": 21.3899,
+        "boatTailLengthMm": 5.241,
+        "bearingSurfaceMm": 12.2289,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD",
         "tipLengthMm": 3.81
@@ -12106,9 +12106,9 @@
       "physis": {
         "weightGrams": 14.5797547,
         "overallLengthMm": 42.65,
-        "ogiveLengthMm": 22.8473,
-        "boatTailLengthMm": 5.7112,
-        "bearingSurfaceMm": 13.3261,
+        "ogiveLengthMm": 23.2674,
+        "boatTailLengthMm": 5.8162,
+        "bearingSurfaceMm": 13.5711,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD",
         "tipLengthMm": 3.81
@@ -21250,9 +21250,9 @@
       "physis": {
         "weightGrams": 10.3678256,
         "overallLengthMm": 29.72,
-        "ogiveLengthMm": 17.929,
+        "ogiveLengthMm": 17.482,
         "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 12.551,
+        "bearingSurfaceMm": 12.238,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
