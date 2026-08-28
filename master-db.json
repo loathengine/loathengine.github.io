@@ -9363,7 +9363,7 @@
       "diameterId": "DIA_224_L5X8",
       "physis": {
         "weightGrams": 3.2399455,
-        "overallLengthMm": null,
+        "overallLengthMm": 18.29,
         "ogiveLengthMm": null,
         "boatTailLengthMm": null,
         "bearingSurfaceMm": null,
@@ -10831,7 +10831,7 @@
       "diameterId": "DIA_264_H8J4",
       "physis": {
         "weightGrams": 9.0718474,
-        "overallLengthMm": null,
+        "overallLengthMm": 34.54,
         "ogiveLengthMm": null,
         "boatTailLengthMm": null,
         "bearingSurfaceMm": null,
@@ -11371,7 +11371,7 @@
       "diameterId": "DIA_284_S3F6",
       "physis": {
         "weightGrams": 9.7198365,
-        "overallLengthMm": null,
+        "overallLengthMm": 33.53,
         "ogiveLengthMm": null,
         "boatTailLengthMm": null,
         "bearingSurfaceMm": null,
@@ -11835,7 +11835,7 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 8.0998638,
-        "overallLengthMm": null,
+        "overallLengthMm": 25.4,
         "ogiveLengthMm": null,
         "boatTailLengthMm": null,
         "bearingSurfaceMm": null,
@@ -11985,7 +11985,7 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 9.7198365,
-        "overallLengthMm": null,
+        "overallLengthMm": 30.5,
         "ogiveLengthMm": null,
         "boatTailLengthMm": null,
         "bearingSurfaceMm": null,
@@ -12208,7 +12208,7 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 10.6918201,
-        "overallLengthMm": null,
+        "overallLengthMm": 33.02,
         "ogiveLengthMm": null,
         "boatTailLengthMm": null,
         "bearingSurfaceMm": null,
@@ -13443,7 +13443,7 @@
       "diameterId": "DIA_375_W4T2",
       "physis": {
         "weightGrams": 16.199728,
-        "overallLengthMm": null,
+        "overallLengthMm": 35.56,
         "ogiveLengthMm": null,
         "boatTailLengthMm": null,
         "bearingSurfaceMm": null,
