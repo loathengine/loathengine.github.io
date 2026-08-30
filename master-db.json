@@ -2685,6 +2685,11 @@
       "heatOfExplosionKjKg": 4310
     },
     {
+      "id": "PWD_ACCU_8700_R1AF",
+      "name": "8700",
+      "manufacturerId": "MAN_ACCURATE_A2C1"
+    },
+    {
       "id": "PWD_ACCU_LT32_R1AA",
       "name": "LT-32",
       "manufacturerId": "MAN_ACCURATE_A2C1",
@@ -3144,6 +3149,11 @@
       "burnFractionAtSliverStart": 0.9414
     },
     {
+      "id": "PWD_HODG_H4227_H1GD",
+      "name": "H4227",
+      "manufacturerId": "MAN_HODGDON_H7X2"
+    },
+    {
       "id": "PWD_HODG_H4350_H1G2",
       "name": "H4350",
       "manufacturerId": "MAN_HODGDON_H7X2",
@@ -3207,6 +3217,11 @@
       "burnSurfacePeakGain": 0.2754,
       "burnFractionAtSurfacePeak": 0.2754,
       "burnFractionAtSliverStart": 0.9
+    },
+    {
+      "id": "PWD_HODG_H870_H1GG",
+      "name": "H870",
+      "manufacturerId": "MAN_HODGDON_H7X2"
     },
     {
       "id": "PWD_HODG_HYBRID_100V_UMIK",
@@ -3506,6 +3521,11 @@
       "burnSurfacePeakGain": 0.2768,
       "burnFractionAtSurfacePeak": 0.6991,
       "burnFractionAtSliverStart": 0.95
+    },
+    {
+      "id": "PWD_IMPR_IMR_4985_I4P1",
+      "name": "IMR 4985",
+      "manufacturerId": "MAN_IMR_I2M3"
     },
     {
       "id": "PWD_IMPR_IMR_7977_GDVA",
@@ -3849,6 +3869,11 @@
       "burnFractionAtSliverStart": 0.82
     },
     {
+      "id": "PWD_SHOO_SW_BMG_8NG2",
+      "name": "SW-BMG",
+      "manufacturerId": "MAN_SHOOTERS_WORLD_S5W6"
+    },
+    {
       "id": "PWD_SHOO_THE_CREED_8NG4",
       "name": "The Creed",
       "manufacturerId": "MAN_SHOOTERS_WORLD_S5W6",
@@ -3867,6 +3892,11 @@
       "bulkDensityKgM3": 960,
       "heatOfExplosionKjKg": 3600,
       "burnExponent": 0.5566
+    },
+    {
+      "id": "PWD_SHOO_TUBAL7000_8NG6",
+      "name": "Tubal 7000",
+      "manufacturerId": "MAN_SHOOTERS_WORLD_S5W6"
     },
     {
       "id": "PWD_VIHT_20N29_V3H9",
@@ -5694,7 +5724,7 @@
       }
     },
     {
-      "id": "BUL_BARNES_308_110_TSX_FB",
+      "id": "BUL_BARNES_308_110_TSX_FB_C3A6",
       "name": "TSX FB",
       "manufacturerId": "MAN_BARNES_B2N5",
       "diameterId": "DIA_308_XBM7",
@@ -6963,25 +6993,6 @@
       }
     },
     {
-      "id": "BUL_BERGER_224_60_HP_FB",
-      "name": "HP Flat Base",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "diameterId": "DIA_224_L5X8",
-      "physis": {
-        "weightGrams": 3.8879346,
-        "overallLengthMm": 21.3,
-        "ogiveLengthMm": 9.6,
-        "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 11.7,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {
-        "g1BC": 0.267,
-        "g7BC": 0
-      }
-    },
-    {
       "id": "BUL_BERGER_224_64_FBVAR_CD6D",
       "name": "FB Varmint",
       "manufacturerId": "MAN_BERGER_B9K2",
@@ -7096,7 +7107,7 @@
       }
     },
     {
-      "id": "BUL_BERGER_224_80_5_80.5_FBT",
+      "id": "BUL_BERGER_224_80_5_80.5_FBT_5171",
       "name": "Fullbore Target",
       "manufacturerId": "MAN_BERGER_B9K2",
       "diameterId": "DIA_224_L5X8",
@@ -7473,25 +7484,6 @@
       "ballistics": {
         "g1BC": 0.2821,
         "g7BC": 0.144
-      }
-    },
-    {
-      "id": "BUL_BERGER_243_65_HP_FB",
-      "name": "HP Flat Base",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "diameterId": "DIA_243_B7V4",
-      "physis": {
-        "weightGrams": 4.2119292,
-        "overallLengthMm": 21.5,
-        "ogiveLengthMm": 9.7,
-        "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 11.8,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {
-        "g1BC": 0.255,
-        "g7BC": 0
       }
     },
     {
@@ -8597,7 +8589,7 @@
       }
     },
     {
-      "id": "BUL_BERGER_308_155_5_155.5_FBT",
+      "id": "BUL_BERGER_308_155_5_155.5_FBT_A819",
       "name": "Fullbore",
       "manufacturerId": "MAN_BERGER_B9K2",
       "diameterId": "DIA_308_XBM7",
@@ -9860,7 +9852,7 @@
       }
     },
     {
-      "id": "BUL_HORNADY_224_62_ELD_VT",
+      "id": "BUL_HORNADY_224_62_ELD_VT_D5B8",
       "name": "ELD-VT",
       "manufacturerId": "MAN_HORNADY_JGR4",
       "diameterId": "DIA_224_L5X8",
@@ -10280,7 +10272,7 @@
       }
     },
     {
-      "id": "BUL_HORNADY_243_80_ELD_VT",
+      "id": "BUL_HORNADY_243_80_ELD_VT_1B76",
       "name": "ELD-VT",
       "manufacturerId": "MAN_HORNADY_JGR4",
       "diameterId": "DIA_243_B7V4",
@@ -10776,7 +10768,7 @@
       }
     },
     {
-      "id": "BUL_HORNADY_264_100_ELD_VT",
+      "id": "BUL_HORNADY_264_100_ELD_VT_8EA4",
       "name": "ELD-VT",
       "manufacturerId": "MAN_HORNADY_JGR4",
       "diameterId": "DIA_264_H8J4",
@@ -12617,7 +12609,7 @@
       }
     },
     {
-      "id": "BUL_HORNADY_308_174_ELD_VT",
+      "id": "BUL_HORNADY_308_174_ELD_VT_EAB2",
       "name": "ELD-VT",
       "manufacturerId": "MAN_HORNADY_JGR4",
       "diameterId": "DIA_308_XBM7",
@@ -14824,7 +14816,7 @@
       }
     },
     {
-      "id": "BUL_NOSLER_224_40_BT_VAR",
+      "id": "BUL_NOSLER_224_40_BT_VAR_4EFA",
       "name": "Ballistic Tip Varmint",
       "manufacturerId": "MAN_NOSLER_N9K4",
       "diameterId": "DIA_224_L5X8",
@@ -14881,7 +14873,7 @@
       }
     },
     {
-      "id": "BUL_NOSLER_224_50_BT_VAR",
+      "id": "BUL_NOSLER_224_50_BT_VAR_4450",
       "name": "Ballistic Tip Varmint",
       "manufacturerId": "MAN_NOSLER_N9K4",
       "diameterId": "DIA_224_L5X8",
@@ -20523,7 +20515,7 @@
       }
     },
     {
-      "id": "BUL_SIERRA_308_165_TGK_2",
+      "id": "BUL_SIERRA_308_165_TGK_2_CA94",
       "name": "Tipped GameKing",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "diameterId": "DIA_308_XBM7",
@@ -21728,7 +21720,7 @@
       }
     },
     {
-      "id": "BUL_SPEER_243_100_6MMSPITZER",
+      "id": "BUL_SPEER_243_100_6MMSPITZER_B558",
       "name": "6mm Spitzer BTSP",
       "manufacturerId": "MAN_SPEER_S2P1",
       "diameterId": "DIA_243_B7V4",
@@ -21820,7 +21812,7 @@
       }
     },
     {
-      "id": "BUL_SPEER_243_75_6MMHP",
+      "id": "BUL_SPEER_243_75_6MMHP_CDCC",
       "name": "6mm HP",
       "manufacturerId": "MAN_SPEER_S2P1",
       "diameterId": "DIA_243_B7V4",
@@ -21857,7 +21849,7 @@
       }
     },
     {
-      "id": "BUL_SPEER_243_90_6MMSPITZER",
+      "id": "BUL_SPEER_243_90_6MMSPITZER_BF8A",
       "name": "6mm Spitzer SP Hot-Cor",
       "manufacturerId": "MAN_SPEER_S2P1",
       "diameterId": "DIA_243_B7V4",
@@ -24246,7 +24238,7 @@
     {
       "id": "BUL_WOODLEIGH_375_270_RNSP_B8BD",
       "name": "RNSP",
-      "manufacturerId": "MAN_WOODLEIGH",
+      "manufacturerId": "MAN_WOODLEIGH_2906",
       "diameterId": "DIA_375_W4T2",
       "physis": {
         "weightGrams": 17.495706,
@@ -27031,7 +27023,7 @@
       ]
     },
     {
-      "id": "MAN_WOODLEIGH",
+      "id": "MAN_WOODLEIGH_2906",
       "name": "Woodleigh",
       "type": [
         "bullet"
