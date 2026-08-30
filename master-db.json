@@ -98,6 +98,13 @@
       "imperialName": ".375",
       "bulletDiameterMm": 9.525,
       "boreDiameterMm": 9.2964
+    },
+    {
+      "id": "DIA_458_83DA",
+      "metricName": "11.63",
+      "imperialName": ".458",
+      "bulletDiameterMm": 11.6332,
+      "boreDiameterMm": 11.43
     }
   ],
   "cartridges": [
@@ -144,6 +151,17 @@
       "twistRateMm": 355.6,
       "maxSaamiPa": 427474952,
       "refTestBarrelMm": null
+    },
+    {
+      "id": "CTG_22250ACKLEYIMP_E52B",
+      "name": "22-250 Ackley Improved",
+      "diameterId": "DIA_224_L5X8",
+      "primerPocketId": "PKT_LRG",
+      "trimLengthMm": 48.311,
+      "maxCaseLengthMm": 48.565,
+      "oalMm": 59.69,
+      "bodyDiameterMm": 11.94,
+      "twistRateMm": 304.8
     },
     {
       "id": "CTG_22250_cK32",
@@ -194,6 +212,17 @@
       "maxSaamiPa": 344737850,
       "maxCipPa": 370000000,
       "refTestBarrelMm": null
+    },
+    {
+      "id": "CTG_223REMINGTONAC_266C",
+      "name": "223 Remington Ackley Improved",
+      "diameterId": "DIA_224_L5X8",
+      "primerPocketId": "PKT_SML",
+      "trimLengthMm": 44.45,
+      "maxCaseLengthMm": 44.704,
+      "oalMm": 57.404,
+      "bodyDiameterMm": 9.58,
+      "twistRateMm": 228.6
     },
     {
       "id": "CTG_223REM_cR82",
@@ -337,6 +366,17 @@
       "maxCipPa": 300000000
     },
     {
+      "id": "CTG_22KHORNET_F5EA",
+      "name": "22 K Hornet",
+      "diameterId": "DIA_224_L5X8",
+      "primerPocketId": "PKT_SML",
+      "trimLengthMm": 35.386,
+      "maxCaseLengthMm": 35.64,
+      "oalMm": 43.76,
+      "bodyDiameterMm": 7.59,
+      "twistRateMm": 406
+    },
+    {
       "id": "CTG_22NOSLER_n2s2",
       "name": "22 Nosler",
       "diameterId": "DIA_224_L5X8",
@@ -432,6 +472,17 @@
       "refTestBarrelMm": null
     },
     {
+      "id": "CTG_2506REMINGTONA_E6CD",
+      "name": "25-06 Remington Ackley Improved",
+      "diameterId": "DIA_257_N2M1",
+      "primerPocketId": "PKT_LRG",
+      "trimLengthMm": 63.094,
+      "maxCaseLengthMm": 63.348,
+      "oalMm": 82.55,
+      "bodyDiameterMm": 11.94,
+      "twistRateMm": 254
+    },
+    {
       "id": "CTG_2506_cL42",
       "name": "25-06 Remington",
       "diameterId": "DIA_257_N2M1",
@@ -445,6 +496,30 @@
       "twistRateMm": 254,
       "maxSaamiPa": 434369709,
       "refTestBarrelMm": null
+    },
+    {
+      "id": "CTG_250SAVACKLEY_A47D",
+      "name": "250 Savage Ackley Improved",
+      "diameterId": "DIA_257_N2M1",
+      "primerPocketId": "PKT_LRG",
+      "trimLengthMm": 48.306,
+      "maxCaseLengthMm": 48.56,
+      "oalMm": 63.88,
+      "bodyDiameterMm": 11.93,
+      "twistRateMm": 254
+    },
+    {
+      "id": "CTG_250SAV_1CFB",
+      "name": "250 Savage",
+      "diameterId": "DIA_257_N2M1",
+      "primerPocketId": "PKT_LRG",
+      "baseCapacityH2oGrams": 3.0390689,
+      "trimLengthMm": 48.306,
+      "maxCaseLengthMm": 48.56,
+      "oalMm": 63.88,
+      "bodyDiameterMm": 11.93,
+      "twistRateMm": 254,
+      "maxCipPa": 365000000
     },
     {
       "id": "CTG_250SAV_cN77",
@@ -521,6 +596,17 @@
       "maxSaamiPa": 330948336,
       "maxCipPa": 350000000,
       "refTestBarrelMm": null
+    },
+    {
+      "id": "CTG_257ROBERTSACKL_75D7",
+      "name": "257 Roberts Ackley Improved",
+      "diameterId": "DIA_257_N2M1",
+      "primerPocketId": "PKT_LRG",
+      "trimLengthMm": 56.464,
+      "maxCaseLengthMm": 56.718,
+      "oalMm": 70.485,
+      "bodyDiameterMm": 11.99,
+      "twistRateMm": 254
     },
     {
       "id": "CTG_257ROB_N2H9",
@@ -775,6 +861,17 @@
       "maxSaamiPa": 448159205,
       "maxCipPa": 460000000,
       "refTestBarrelMm": null
+    },
+    {
+      "id": "CTG_3006SPRINGFIEL_5005",
+      "name": "30-06 Springfield Ackley Improved",
+      "diameterId": "DIA_308_XBM7",
+      "primerPocketId": "PKT_LRG",
+      "trimLengthMm": 63.094,
+      "maxCaseLengthMm": 63.348,
+      "oalMm": 84.836,
+      "bodyDiameterMm": 11.94,
+      "twistRateMm": 254
     },
     {
       "id": "CTG_3006_cE12",
@@ -1575,6 +1672,58 @@
       "maxCipPa": 430000000
     },
     {
+      "id": "CTG_4570GOV_cN8B",
+      "name": "45-70 Government",
+      "diameterId": "DIA_458_83DA",
+      "primerPocketId": "PKT_LRG",
+      "baseCapacityH2oGrams": 5.1385536,
+      "trimLengthMm": 53.213,
+      "maxCaseLengthMm": 53.467,
+      "oalMm": 64.77,
+      "bodyDiameterMm": 12.827,
+      "maxSaamiPa": 193053196,
+      "maxCipPa": 220000000
+    },
+    {
+      "id": "CTG_4570LEVER_cN8C",
+      "name": "45-70 Government (Lever Actions)",
+      "diameterId": "DIA_458_83DA",
+      "primerPocketId": "PKT_LRG",
+      "baseCapacityH2oGrams": 5.1385536,
+      "trimLengthMm": 53.213,
+      "maxCaseLengthMm": 53.467,
+      "oalMm": 64.77,
+      "bodyDiameterMm": 12.827,
+      "maxSaamiPa": 193053196,
+      "maxCipPa": 220000000
+    },
+    {
+      "id": "CTG_4570MOD_cN8D",
+      "name": "45-70 Government (Modern Rifles)",
+      "diameterId": "DIA_458_83DA",
+      "primerPocketId": "PKT_LRG",
+      "baseCapacityH2oGrams": 5.1385536,
+      "trimLengthMm": 53.213,
+      "maxCaseLengthMm": 53.467,
+      "oalMm": 64.77,
+      "bodyDiameterMm": 12.827,
+      "maxSaamiPa": 193053196,
+      "maxCipPa": 220000000
+    },
+    {
+      "id": "CTG_458WINMAG_cN8E",
+      "name": "458 Winchester Magnum",
+      "diameterId": "DIA_458_83DA",
+      "primerPocketId": "PKT_LRG",
+      "baseCapacityH2oGrams": 6.1753361,
+      "trimLengthMm": 63.246,
+      "maxCaseLengthMm": 63.5,
+      "oalMm": 84.836,
+      "bodyDiameterMm": 13.03,
+      "twistRateMm": 355.6,
+      "maxCipPa": 430000000
+    },
+    {
       "id": "CTG_556NATO_cN56",
       "name": "5.56x45mm NATO",
       "diameterId": "DIA_224_L5X8",
@@ -1819,6 +1968,19 @@
       "maxCipPa": 295000000
     },
     {
+      "id": "CTG_65X57MAU_9C1B",
+      "name": "6.5x57mm Mauser",
+      "diameterId": "DIA_264_H8J4",
+      "primerPocketId": "PKT_LRG",
+      "baseCapacityH2oGrams": 3.8296156,
+      "trimLengthMm": 56.446,
+      "maxCaseLengthMm": 56.7,
+      "oalMm": 82,
+      "bodyDiameterMm": 11.9,
+      "twistRateMm": 200,
+      "maxCipPa": 390000000
+    },
+    {
       "id": "CTG_68REMSPC_cN7B",
       "name": "6.8mm Remington SPC",
       "diameterId": "DIA_277_K9L0",
@@ -1948,6 +2110,17 @@
       "twistRateMm": 254,
       "maxSaamiPa": 448159205,
       "refTestBarrelMm": null
+    },
+    {
+      "id": "CTG_6MMREMINGTONAC_B4A4",
+      "name": "6mm Remington Ackley Improved",
+      "diameterId": "DIA_243_B7V4",
+      "primerPocketId": "PKT_LRG",
+      "trimLengthMm": 56.464,
+      "maxCaseLengthMm": 56.718,
+      "oalMm": 71.755,
+      "bodyDiameterMm": 11.99,
+      "twistRateMm": 228.6
     },
     {
       "id": "CTG_6MMXC_cNJ5",
@@ -7550,6 +7723,25 @@
       }
     },
     {
+      "id": "BUL_BERGER_257_87_FBTGT_89C8",
+      "name": "FB Target",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_257_N2M1",
+      "physis": {
+        "weightGrams": 5.63750517,
+        "overallLengthMm": 24.511,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": 0,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.292,
+        "g7BC": null
+      }
+    },
+    {
       "id": "BUL_BERGER_257_87_FBVAR_9CCC",
       "name": "FB Varmint",
       "manufacturerId": "MAN_BERGER_B9K2",
@@ -8291,6 +8483,25 @@
       }
     },
     {
+      "id": "BUL_BERGER_308_110_FBTGT_9DFC",
+      "name": "FB Target",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 7.1278801,
+        "overallLengthMm": 23.8252,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": 0,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.284,
+        "g7BC": null
+      }
+    },
+    {
       "id": "BUL_BERGER_308_115_FBTGT_2C68",
       "name": "FB Target",
       "manufacturerId": "MAN_BERGER_B9K2",
@@ -8307,6 +8518,25 @@
       "ballistics": {
         "g1BC": 0.296,
         "g7BC": 0.1382
+      }
+    },
+    {
+      "id": "BUL_BERGER_308_125_FBTGT_C1E4",
+      "name": "FB Target",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 8.09986375,
+        "overallLengthMm": 26.0604,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": 0,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.329,
+        "g7BC": null
       }
     },
     {
@@ -20043,22 +20273,6 @@
         "engravingPressurePa": 30000000,
         "materialType": "MAT_JACKETED_LEAD",
         "tipLengthMm": 3.81
-      },
-      "ballistics": {}
-    },
-    {
-      "id": "BUL_SIERRA_308_135_FBT_9F5E",
-      "name": "FBT",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "diameterId": "DIA_308_XBM7",
-      "physis": {
-        "weightGrams": 8.747852850000001,
-        "overallLengthMm": 27.2034,
-        "ogiveLengthMm": 14.0098,
-        "boatTailLengthMm": 3.9989,
-        "bearingSurfaceMm": 9.1947,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {}
     },
