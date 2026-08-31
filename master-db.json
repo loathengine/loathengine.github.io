@@ -6917,25 +6917,6 @@
       }
     },
     {
-      "id": "BUL_BERGER_224_52_HP_ECA3",
-      "name": "HP Flat Base",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "diameterId": "DIA_224_L5X8",
-      "physis": {
-        "weightGrams": 3.3695433,
-        "overallLengthMm": 18.8,
-        "ogiveLengthMm": 8.5,
-        "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 10.3,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {
-        "g1BC": 0.238,
-        "g7BC": 0
-      }
-    },
-    {
       "id": "BUL_BERGER_224_55_FBVAR_88C7",
       "name": "FB Varmint",
       "manufacturerId": "MAN_BERGER_B9K2",
@@ -7427,25 +7408,6 @@
       "ballistics": {
         "g1BC": 0.242,
         "g7BC": 0.1225
-      }
-    },
-    {
-      "id": "BUL_BERGER_243_60_FBV_3538",
-      "name": "Flat Base Varmint",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "diameterId": "DIA_243_B7V4",
-      "physis": {
-        "weightGrams": 3.8879346,
-        "overallLengthMm": 20.1,
-        "ogiveLengthMm": 9,
-        "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 11.1,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {
-        "g1BC": 0.235,
-        "g7BC": 0
       }
     },
     {
