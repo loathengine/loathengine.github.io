@@ -6828,10 +6828,10 @@
       "diameterId": "DIA_224_L5X8",
       "physis": {
         "weightGrams": 2.5919564,
-        "overallLengthMm": 15.5448,
-        "ogiveLengthMm": 11.811,
+        "overallLengthMm": 15.4686,
+        "ogiveLengthMm": 10.541,
         "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 3.7338,
+        "bearingSurfaceMm": 4.9276,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -6860,35 +6860,16 @@
       }
     },
     {
-      "id": "BUL_BERGER_224_50_HPBT_D88E",
-      "name": "HPBT Varmint",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "diameterId": "DIA_224_L5X8",
-      "physis": {
-        "weightGrams": 3.2399455,
-        "overallLengthMm": 18.1,
-        "ogiveLengthMm": 11.561,
-        "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 6.539,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {
-        "g1BC": 0.23,
-        "g7BC": 0.115
-      }
-    },
-    {
       "id": "BUL_BERGER_224_52_FBTGT_0C89",
       "name": "FB Target",
       "manufacturerId": "MAN_BERGER_B9K2",
       "diameterId": "DIA_224_L5X8",
       "physis": {
         "weightGrams": 3.3695433,
-        "overallLengthMm": 18.2626,
-        "ogiveLengthMm": 12.9032,
+        "overallLengthMm": 18.1356,
+        "ogiveLengthMm": 12.0904,
         "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 5.3594,
+        "bearingSurfaceMm": 6.0452,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -6904,10 +6885,10 @@
       "diameterId": "DIA_224_L5X8",
       "physis": {
         "weightGrams": 3.3695433,
-        "overallLengthMm": 18.2372,
-        "ogiveLengthMm": 11.7348,
+        "overallLengthMm": 18.2118,
+        "ogiveLengthMm": 11.0744,
         "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 6.5024,
+        "bearingSurfaceMm": 7.1374,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -6917,16 +6898,35 @@
       }
     },
     {
+      "id": "BUL_BERGER_224_55_FBTGT_06DA",
+      "name": "FB Target",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_224_L5X8",
+      "physis": {
+        "weightGrams": 3.5639401,
+        "overallLengthMm": 19.0246,
+        "ogiveLengthMm": 12.9286,
+        "boatTailLengthMm": 0,
+        "bearingSurfaceMm": 6.096,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.254,
+        "g7BC": null
+      }
+    },
+    {
       "id": "BUL_BERGER_224_55_FBVAR_88C7",
       "name": "FB Varmint",
       "manufacturerId": "MAN_BERGER_B9K2",
       "diameterId": "DIA_224_L5X8",
       "physis": {
         "weightGrams": 3.56394,
-        "overallLengthMm": 19.05,
-        "ogiveLengthMm": 12.2682,
+        "overallLengthMm": 19.1262,
+        "ogiveLengthMm": 11.6078,
         "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 6.7818,
+        "bearingSurfaceMm": 7.5184,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -6936,35 +6936,16 @@
       }
     },
     {
-      "id": "BUL_BERGER_224_55_HPBT_6206",
-      "name": "HPBT Varmint",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "diameterId": "DIA_224_L5X8",
-      "physis": {
-        "weightGrams": 3.5639401,
-        "overallLengthMm": 18.9,
-        "ogiveLengthMm": 9.617,
-        "boatTailLengthMm": 3.8,
-        "bearingSurfaceMm": 5.483,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {
-        "g1BC": 0.209,
-        "g7BC": 0.133
-      }
-    },
-    {
       "id": "BUL_BERGER_224_60_FBVAR_CC84",
       "name": "FB Varmint",
       "manufacturerId": "MAN_BERGER_B9K2",
       "diameterId": "DIA_224_L5X8",
       "physis": {
         "weightGrams": 3.8879346,
-        "overallLengthMm": 20.3454,
-        "ogiveLengthMm": 13.3604,
+        "overallLengthMm": 20.574,
+        "ogiveLengthMm": 12.5984,
         "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 6.985,
+        "bearingSurfaceMm": 7.9756,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -6980,10 +6961,10 @@
       "diameterId": "DIA_224_L5X8",
       "physis": {
         "weightGrams": 4.1471302,
-        "overallLengthMm": 20.701,
-        "ogiveLengthMm": 13.3604,
+        "overallLengthMm": 20.8026,
+        "ogiveLengthMm": 12.8524,
         "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 7.3406,
+        "bearingSurfaceMm": 7.9502,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -6999,10 +6980,10 @@
       "diameterId": "DIA_224_L5X8",
       "physis": {
         "weightGrams": 4.5359237,
-        "overallLengthMm": 24.7904,
-        "ogiveLengthMm": 11.9634,
-        "boatTailLengthMm": 4.318,
-        "bearingSurfaceMm": 8.509,
+        "overallLengthMm": 24.4094,
+        "ogiveLengthMm": 12.3698,
+        "boatTailLengthMm": 4.8768,
+        "bearingSurfaceMm": 7.1628,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -7018,10 +6999,10 @@
       "diameterId": "DIA_224_L5X8",
       "physis": {
         "weightGrams": 4.7303204,
-        "overallLengthMm": 24.638,
-        "ogiveLengthMm": 13.3858,
-        "boatTailLengthMm": 3.048,
-        "bearingSurfaceMm": 8.2042,
+        "overallLengthMm": 24.4602,
+        "ogiveLengthMm": 13.589,
+        "boatTailLengthMm": 3.556,
+        "bearingSurfaceMm": 7.3152,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -7037,10 +7018,10 @@
       "diameterId": "DIA_224_L5X8",
       "physis": {
         "weightGrams": 4.8599182,
-        "overallLengthMm": 27.0002,
-        "ogiveLengthMm": 14.478,
-        "boatTailLengthMm": 4.318,
-        "bearingSurfaceMm": 8.2042,
+        "overallLengthMm": 26.6954,
+        "ogiveLengthMm": 14.4526,
+        "boatTailLengthMm": 4.8514,
+        "bearingSurfaceMm": 7.3914,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -7050,35 +7031,16 @@
       }
     },
     {
-      "id": "BUL_BERGER_224_77_HPBT_3D2B",
-      "name": "HPBT Target",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "diameterId": "DIA_224_L5X8",
-      "physis": {
-        "weightGrams": 4.9895161,
-        "overallLengthMm": 26.14,
-        "ogiveLengthMm": 13.509970495584684,
-        "boatTailLengthMm": 3.7153088000000003,
-        "bearingSurfaceMm": 8.914720704415318,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {
-        "g1BC": 0.391,
-        "g7BC": 0.2
-      }
-    },
-    {
       "id": "BUL_BERGER_224_77_OTM_3D41",
       "name": "OTM Tactical",
       "manufacturerId": "MAN_BERGER_B9K2",
       "diameterId": "DIA_224_L5X8",
       "physis": {
         "weightGrams": 4.9895161,
-        "overallLengthMm": 26.1366,
-        "ogiveLengthMm": 12.573,
-        "boatTailLengthMm": 3.175,
-        "bearingSurfaceMm": 10.3886,
+        "overallLengthMm": 25.781,
+        "ogiveLengthMm": 13.0302,
+        "boatTailLengthMm": 3.3782,
+        "bearingSurfaceMm": 9.398,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -7103,26 +7065,7 @@
       },
       "ballistics": {
         "g1BC": 0.441,
-        "g7BC": 0.233
-      }
-    },
-    {
-      "id": "BUL_BERGER_224_80_HPBT_6690",
-      "name": "HPBT Target",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "diameterId": "DIA_224_L5X8",
-      "physis": {
-        "weightGrams": 5.1839128,
-        "overallLengthMm": 28.37,
-        "ogiveLengthMm": 15.140033801470695,
-        "boatTailLengthMm": 3.7153088000000003,
-        "bearingSurfaceMm": 9.514657398529305,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {
-        "g1BC": 0.42,
-        "g7BC": 0.211
+        "g7BC": 0.226
       }
     },
     {
@@ -7132,15 +7075,15 @@
       "diameterId": "DIA_224_L5X8",
       "physis": {
         "weightGrams": 5.1839128,
-        "overallLengthMm": 28.067,
-        "ogiveLengthMm": 14.5034,
-        "boatTailLengthMm": 4.572,
-        "bearingSurfaceMm": 8.9916,
+        "overallLengthMm": 28.0924,
+        "ogiveLengthMm": 14.6304,
+        "boatTailLengthMm": 4.8514,
+        "bearingSurfaceMm": 8.6106,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.4507,
+        "g1BC": 0.455,
         "g7BC": 0.233
       }
     },
@@ -7152,33 +7095,14 @@
       "physis": {
         "weightGrams": 5.3135106,
         "overallLengthMm": 28.321,
-        "ogiveLengthMm": 14.4272,
-        "boatTailLengthMm": 4.318,
-        "bearingSurfaceMm": 9.5758,
+        "ogiveLengthMm": 14.1986,
+        "boatTailLengthMm": 4.699,
+        "bearingSurfaceMm": 9.4234,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.4348,
-        "g7BC": 0.225
-      }
-    },
-    {
-      "id": "BUL_BERGER_224_82_82_LRBT_5921",
-      "name": "LRBT Target",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "diameterId": "DIA_224_L5X8",
-      "physis": {
-        "weightGrams": 5.3135106,
-        "overallLengthMm": 28.321,
-        "ogiveLengthMm": 14.201,
-        "boatTailLengthMm": 4.4056,
-        "bearingSurfaceMm": 9.714,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {
-        "g1BC": 0.4327,
+        "g1BC": 0.44,
         "g7BC": 0.225
       }
     },
@@ -7197,7 +7121,7 @@
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.5158,
+        "g1BC": 0.524,
         "g7BC": 0.268
       }
     },
@@ -7208,10 +7132,10 @@
       "diameterId": "DIA_224_L5X8",
       "physis": {
         "weightGrams": 5.8319019,
-        "overallLengthMm": 32.0802,
-        "ogiveLengthMm": 17.6276,
-        "boatTailLengthMm": 4.318,
-        "bearingSurfaceMm": 10.1346,
+        "overallLengthMm": 31.8516,
+        "ogiveLengthMm": 17.5768,
+        "boatTailLengthMm": 4.9784,
+        "bearingSurfaceMm": 9.2964,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -7246,15 +7170,15 @@
       "diameterId": "DIA_243_B7V4",
       "physis": {
         "weightGrams": 6.8038855,
-        "overallLengthMm": 30.099,
-        "ogiveLengthMm": 16.4846,
-        "boatTailLengthMm": 4.953,
-        "bearingSurfaceMm": 8.6614,
+        "overallLengthMm": 30.2006,
+        "ogiveLengthMm": 16.0274,
+        "boatTailLengthMm": 5.4864,
+        "bearingSurfaceMm": 8.6868,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.4975,
+        "g1BC": 0.494,
         "g7BC": 0.253
       }
     },
@@ -7265,10 +7189,10 @@
       "diameterId": "DIA_243_B7V4",
       "physis": {
         "weightGrams": 6.8038855,
-        "overallLengthMm": 31.369,
-        "ogiveLengthMm": 17.0434,
-        "boatTailLengthMm": 4.699,
-        "bearingSurfaceMm": 9.6266,
+        "overallLengthMm": 31.0642,
+        "ogiveLengthMm": 17.7292,
+        "boatTailLengthMm": 4.826,
+        "bearingSurfaceMm": 8.509,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -7284,15 +7208,15 @@
       "diameterId": "DIA_243_B7V4",
       "physis": {
         "weightGrams": 6.8038855,
-        "overallLengthMm": 31.242,
-        "ogiveLengthMm": 16.6624,
-        "boatTailLengthMm": 4.699,
-        "bearingSurfaceMm": 9.8806,
+        "overallLengthMm": 31.0388,
+        "ogiveLengthMm": 17.272,
+        "boatTailLengthMm": 5.4864,
+        "bearingSurfaceMm": 8.2804,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.5192,
+        "g1BC": 0.517,
         "g7BC": 0.265
       }
     },
@@ -7303,10 +7227,10 @@
       "diameterId": "DIA_243_B7V4",
       "physis": {
         "weightGrams": 6.8038856,
-        "overallLengthMm": 32.8168,
-        "ogiveLengthMm": 18.5674,
-        "boatTailLengthMm": 4.572,
-        "bearingSurfaceMm": 9.2964,
+        "overallLengthMm": 31.9024,
+        "ogiveLengthMm": 17.8054,
+        "boatTailLengthMm": 5.4102,
+        "bearingSurfaceMm": 8.6868,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -7322,16 +7246,16 @@
       "diameterId": "DIA_243_B7V4",
       "physis": {
         "weightGrams": 6.9982823,
-        "overallLengthMm": 31.115,
-        "ogiveLengthMm": 16.0274,
-        "boatTailLengthMm": 4.699,
-        "bearingSurfaceMm": 10.3886,
+        "overallLengthMm": 30.9118,
+        "ogiveLengthMm": 16.6624,
+        "boatTailLengthMm": 5.5118,
+        "bearingSurfaceMm": 8.7376,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.5133,
-        "g7BC": 0.262
+        "g1BC": 0.522,
+        "g7BC": 0.268
       }
     },
     {
@@ -7342,9 +7266,9 @@
       "physis": {
         "weightGrams": 6.9982823,
         "overallLengthMm": 32.004,
-        "ogiveLengthMm": 16.1748,
-        "boatTailLengthMm": 4.7526,
-        "bearingSurfaceMm": 11.0638,
+        "ogiveLengthMm": 16.5354,
+        "boatTailLengthMm": 4.699,
+        "bearingSurfaceMm": 10.3632,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -7360,10 +7284,10 @@
       "diameterId": "DIA_243_B7V4",
       "physis": {
         "weightGrams": 7.0630812,
-        "overallLengthMm": 31.9024,
-        "ogiveLengthMm": 16.1235,
-        "boatTailLengthMm": 4.7375,
-        "bearingSurfaceMm": 11.0287,
+        "overallLengthMm": 32.4358,
+        "ogiveLengthMm": 16.891,
+        "boatTailLengthMm": 4.2672,
+        "bearingSurfaceMm": 10.9474,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -7373,22 +7297,41 @@
       }
     },
     {
+      "id": "BUL_BERGER_243_115_VLDH_00CD",
+      "name": "VLD Hunting",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_243_B7V4",
+      "physis": {
+        "weightGrams": 7.4518746,
+        "overallLengthMm": 34.2392,
+        "ogiveLengthMm": 19.05,
+        "boatTailLengthMm": 4.9784,
+        "bearingSurfaceMm": 10.2108,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.568,
+        "g7BC": 0.291
+      }
+    },
+    {
       "id": "BUL_BERGER_243_115_VLD_DFA4",
       "name": "VLD Target",
       "manufacturerId": "MAN_BERGER_B9K2",
       "diameterId": "DIA_243_B7V4",
       "physis": {
         "weightGrams": 7.4518746,
-        "overallLengthMm": 34.671,
-        "ogiveLengthMm": 17.907,
-        "boatTailLengthMm": 4.826,
-        "bearingSurfaceMm": 11.938,
+        "overallLengthMm": 33.8328,
+        "ogiveLengthMm": 18.7706,
+        "boatTailLengthMm": 5.4864,
+        "bearingSurfaceMm": 9.5758,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
         "g1BC": 0.563,
-        "g7BC": 0.279
+        "g7BC": 0.289
       }
     },
     {
@@ -7411,35 +7354,16 @@
       }
     },
     {
-      "id": "BUL_BERGER_243_64_FBVAR_67BA",
-      "name": "FB Varmint",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "diameterId": "DIA_243_B7V4",
-      "physis": {
-        "weightGrams": 4.1471302,
-        "overallLengthMm": 20.574,
-        "ogiveLengthMm": 13.886179999999998,
-        "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 6.687819999999999,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {
-        "g1BC": 0.231,
-        "g7BC": 0.1177
-      }
-    },
-    {
       "id": "BUL_BERGER_243_65_65_BTGT_E359",
       "name": "BT Target",
       "manufacturerId": "MAN_BERGER_B9K2",
       "diameterId": "DIA_243_B7V4",
       "physis": {
         "weightGrams": 4.2119291,
-        "overallLengthMm": 21.59,
-        "ogiveLengthMm": 14.2494,
-        "boatTailLengthMm": 2.54,
-        "bearingSurfaceMm": 4.8006,
+        "overallLengthMm": 21.1582,
+        "ogiveLengthMm": 13.1064,
+        "boatTailLengthMm": 2.921,
+        "bearingSurfaceMm": 5.1308,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -7449,21 +7373,40 @@
       }
     },
     {
+      "id": "BUL_BERGER_243_66_BRCT_E2E3",
+      "name": "BR Column Target",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_243_B7V4",
+      "physis": {
+        "weightGrams": 4.2767281,
+        "overallLengthMm": 20.574,
+        "ogiveLengthMm": 13.6652,
+        "boatTailLengthMm": 0,
+        "bearingSurfaceMm": 6.9088,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.231,
+        "g7BC": null
+      }
+    },
+    {
       "id": "BUL_BERGER_243_68_FBTGT_17AC",
       "name": "FB Target",
       "manufacturerId": "MAN_BERGER_B9K2",
       "diameterId": "DIA_243_B7V4",
       "physis": {
         "weightGrams": 4.4063259,
-        "overallLengthMm": 21.463,
-        "ogiveLengthMm": 14.2494,
+        "overallLengthMm": 21.1582,
+        "ogiveLengthMm": 13.4874,
         "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 7.2136,
+        "bearingSurfaceMm": 7.6708,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.276,
+        "g1BC": 0.255,
         "g7BC": 0.136
       }
     },
@@ -7474,10 +7417,10 @@
       "diameterId": "DIA_243_B7V4",
       "physis": {
         "weightGrams": 4.4711248,
-        "overallLengthMm": 23.4442,
-        "ogiveLengthMm": 16.0528,
+        "overallLengthMm": 23.3426,
+        "ogiveLengthMm": 16.256,
         "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 7.3914,
+        "bearingSurfaceMm": 7.0866,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -7506,35 +7449,16 @@
       }
     },
     {
-      "id": "BUL_BERGER_243_80_BTV_435C",
-      "name": "BT Varmint",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "diameterId": "DIA_243_B7V4",
-      "physis": {
-        "weightGrams": 5.1839128,
-        "overallLengthMm": 23.19,
-        "ogiveLengthMm": 12.73479045486619,
-        "boatTailLengthMm": 2.561463,
-        "bearingSurfaceMm": 7.893746545133811,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {
-        "g1BC": 0.3,
-        "g7BC": 0.1608
-      }
-    },
-    {
       "id": "BUL_BERGER_243_80_FBVAR_6E47",
       "name": "FB Varmint",
       "manufacturerId": "MAN_BERGER_B9K2",
       "diameterId": "DIA_243_B7V4",
       "physis": {
         "weightGrams": 5.1839128,
-        "overallLengthMm": 23.495,
-        "ogiveLengthMm": 14.4018,
+        "overallLengthMm": 23.1902,
+        "ogiveLengthMm": 13.7414,
         "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 9.0932,
+        "bearingSurfaceMm": 9.4488,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -7550,16 +7474,16 @@
       "diameterId": "DIA_243_B7V4",
       "physis": {
         "weightGrams": 5.6375052,
-        "overallLengthMm": 26.7208,
-        "ogiveLengthMm": 14.986,
-        "boatTailLengthMm": 3.81,
-        "bearingSurfaceMm": 7.9248,
+        "overallLengthMm": 26.4668,
+        "ogiveLengthMm": 15.367,
+        "boatTailLengthMm": 3.9624,
+        "bearingSurfaceMm": 7.1374,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.4202,
-        "g7BC": 0.211
+        "g1BC": 0.427,
+        "g7BC": 0.219
       }
     },
     {
@@ -7569,10 +7493,10 @@
       "diameterId": "DIA_243_B7V4",
       "physis": {
         "weightGrams": 5.7023041,
-        "overallLengthMm": 27.051,
-        "ogiveLengthMm": 16.3322,
+        "overallLengthMm": 26.8986,
+        "ogiveLengthMm": 17.0688,
         "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 10.7188,
+        "bearingSurfaceMm": 9.8298,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -7588,15 +7512,15 @@
       "diameterId": "DIA_243_B7V4",
       "physis": {
         "weightGrams": 5.8319019,
-        "overallLengthMm": 26.543,
-        "ogiveLengthMm": 15.8242,
-        "boatTailLengthMm": 2.54,
-        "bearingSurfaceMm": 8.1788,
+        "overallLengthMm": 26.67,
+        "ogiveLengthMm": 16.3576,
+        "boatTailLengthMm": 2.8448,
+        "bearingSurfaceMm": 7.4676,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.4178,
+        "g1BC": 0.409,
         "g7BC": 0.21
       }
     },
@@ -7607,16 +7531,16 @@
       "diameterId": "DIA_243_B7V4",
       "physis": {
         "weightGrams": 6.1558964,
-        "overallLengthMm": 29.21,
-        "ogiveLengthMm": 17.018,
-        "boatTailLengthMm": 4.953,
-        "bearingSurfaceMm": 7.239,
+        "overallLengthMm": 28.702,
+        "ogiveLengthMm": 17.0688,
+        "boatTailLengthMm": 5.334,
+        "bearingSurfaceMm": 6.2992,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
         "g1BC": 0.467,
-        "g7BC": 0.249
+        "g7BC": 0.239
       }
     },
     {
@@ -7627,15 +7551,34 @@
       "physis": {
         "weightGrams": 6.1558964,
         "overallLengthMm": 27.152599999999996,
-        "ogiveLengthMm": 15.297694969654781,
-        "boatTailLengthMm": 2.561463,
-        "bearingSurfaceMm": 9.293442030345213,
+        "ogiveLengthMm": 13.8176,
+        "boatTailLengthMm": 4.191,
+        "bearingSurfaceMm": 9.144,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
         "g1BC": 0.4354,
-        "g7BC": 0.219
+        "g7BC": 0.223
+      }
+    },
+    {
+      "id": "BUL_BERGER_243_95_VLDT_A533",
+      "name": "VLD Target",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_243_B7V4",
+      "physis": {
+        "weightGrams": 6.1558965,
+        "overallLengthMm": 28.702,
+        "ogiveLengthMm": 16.8656,
+        "boatTailLengthMm": 5.2578,
+        "bearingSurfaceMm": 6.5786,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.467,
+        "g7BC": 0.24
       }
     },
     {
@@ -7645,10 +7588,10 @@
       "diameterId": "DIA_257_N2M1",
       "physis": {
         "weightGrams": 7.4518746,
-        "overallLengthMm": 30.48,
-        "ogiveLengthMm": 17.1704,
-        "boatTailLengthMm": 3.302,
-        "bearingSurfaceMm": 10.0076,
+        "overallLengthMm": 30.1752,
+        "ogiveLengthMm": 17.2974,
+        "boatTailLengthMm": 3.81,
+        "bearingSurfaceMm": 9.0678,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -7664,16 +7607,35 @@
       "diameterId": "DIA_257_N2M1",
       "physis": {
         "weightGrams": 8.618255,
-        "overallLengthMm": 35.738,
-        "ogiveLengthMm": 18.198,
-        "boatTailLengthMm": 5.0921,
-        "bearingSurfaceMm": 12.448,
+        "overallLengthMm": 35.7378,
+        "ogiveLengthMm": 18.3642,
+        "boatTailLengthMm": 5.4356,
+        "bearingSurfaceMm": 11.3538,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.6202,
+        "g1BC": 0.613,
         "g7BC": 0.315
+      }
+    },
+    {
+      "id": "BUL_BERGER_257_135_LRHT_89D3",
+      "name": "LR Hybrid Target",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_257_N2M1",
+      "physis": {
+        "weightGrams": 8.7478529,
+        "overallLengthMm": 35.9664,
+        "ogiveLengthMm": 18.5166,
+        "boatTailLengthMm": 5.207,
+        "bearingSurfaceMm": 11.43,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.65,
+        "g7BC": 0.334
       }
     },
     {
@@ -7696,35 +7658,16 @@
       }
     },
     {
-      "id": "BUL_BERGER_257_87_FBVAR_9CCC",
-      "name": "FB Varmint",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "diameterId": "DIA_257_N2M1",
-      "physis": {
-        "weightGrams": 5.6375052,
-        "overallLengthMm": 24.13,
-        "ogiveLengthMm": 16.125156799749902,
-        "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 8.004843200250098,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {
-        "g1BC": 0.347,
-        "g7BC": 0.1703
-      }
-    },
-    {
       "id": "BUL_BERGER_264_120_120_BTGT_7D5E",
       "name": "BT Target",
       "manufacturerId": "MAN_BERGER_B9K2",
       "diameterId": "DIA_264_H8J4",
       "physis": {
         "weightGrams": 7.7758692,
-        "overallLengthMm": 30.988,
-        "ogiveLengthMm": 15.1638,
-        "boatTailLengthMm": 3.048,
-        "bearingSurfaceMm": 12.7762,
+        "overallLengthMm": 30.9626,
+        "ogiveLengthMm": 17.4752,
+        "boatTailLengthMm": 3.5052,
+        "bearingSurfaceMm": 9.9822,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -7734,41 +7677,22 @@
       }
     },
     {
-      "id": "BUL_BERGER_264_120_HPBT_B280",
-      "name": "HPBT Hunting",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "diameterId": "DIA_264_H8J4",
-      "physis": {
-        "weightGrams": 7.7758692,
-        "overallLengthMm": 33.5,
-        "ogiveLengthMm": 17.4,
-        "boatTailLengthMm": 5,
-        "bearingSurfaceMm": 11.1,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {
-        "g1BC": 0.458,
-        "g7BC": 0.232
-      }
-    },
-    {
       "id": "BUL_BERGER_264_130_130_VLDH_1DA0",
       "name": "VLD Hunting",
       "manufacturerId": "MAN_BERGER_B9K2",
       "diameterId": "DIA_264_H8J4",
       "physis": {
         "weightGrams": 8.4238583,
-        "overallLengthMm": 35.56,
-        "ogiveLengthMm": 18.3896,
-        "boatTailLengthMm": 5.08,
-        "bearingSurfaceMm": 12.0904,
+        "overallLengthMm": 33.6296,
+        "ogiveLengthMm": 18.3642,
+        "boatTailLengthMm": 5.6642,
+        "bearingSurfaceMm": 9.6012,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
         "g1BC": 0.5625,
-        "g7BC": 0.282
+        "g7BC": 0.288
       }
     },
     {
@@ -7810,16 +7734,16 @@
       }
     },
     {
-      "id": "BUL_BERGER_264_130_HPBT_7057",
-      "name": "HPBT Hunting",
+      "id": "BUL_BERGER_264_130_VLDT_76B6",
+      "name": "VLD Target",
       "manufacturerId": "MAN_BERGER_B9K2",
       "diameterId": "DIA_264_H8J4",
       "physis": {
         "weightGrams": 8.4238583,
-        "overallLengthMm": 36.3,
-        "ogiveLengthMm": 18.9,
-        "boatTailLengthMm": 5.2,
-        "bearingSurfaceMm": 12.2,
+        "overallLengthMm": 33.274,
+        "ogiveLengthMm": 18.669,
+        "boatTailLengthMm": 5.6642,
+        "bearingSurfaceMm": 8.9408,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -7829,35 +7753,16 @@
       }
     },
     {
-      "id": "BUL_BERGER_264_130_HYB_B140",
-      "name": "Hybrid Hunter",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "diameterId": "DIA_264_H8J4",
-      "physis": {
-        "weightGrams": 8.4238583,
-        "overallLengthMm": 32.9,
-        "ogiveLengthMm": 16.701,
-        "boatTailLengthMm": 5.5,
-        "bearingSurfaceMm": 10.699,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {
-        "g1BC": 0.508,
-        "g7BC": 0.26
-      }
-    },
-    {
       "id": "BUL_BERGER_264_135_CH_A2D7",
       "name": "Classic Hunter",
       "manufacturerId": "MAN_BERGER_B9K2",
       "diameterId": "DIA_264_H8J4",
       "physis": {
         "weightGrams": 8.7478528,
-        "overallLengthMm": 34.29,
-        "ogiveLengthMm": 17.3302,
-        "boatTailLengthMm": 5.0921,
-        "bearingSurfaceMm": 11.8541,
+        "overallLengthMm": 33.655,
+        "ogiveLengthMm": 16.637,
+        "boatTailLengthMm": 4.826,
+        "bearingSurfaceMm": 11.6332,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -7873,16 +7778,16 @@
       "diameterId": "DIA_264_H8J4",
       "physis": {
         "weightGrams": 9.0718474,
-        "overallLengthMm": 36.0934,
-        "ogiveLengthMm": 18.3134,
-        "boatTailLengthMm": 5.08,
-        "bearingSurfaceMm": 12.7,
+        "overallLengthMm": 35.306,
+        "ogiveLengthMm": 18.5674,
+        "boatTailLengthMm": 5.6896,
+        "bearingSurfaceMm": 11.049,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
         "g1BC": 0.6,
-        "g7BC": 0.313
+        "g7BC": 0.307
       }
     },
     {
@@ -7905,40 +7810,21 @@
       }
     },
     {
-      "id": "BUL_BERGER_264_140_HPBT_DABC",
-      "name": "HPBT Match",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "diameterId": "DIA_264_H8J4",
-      "physis": {
-        "weightGrams": 9.0718474,
-        "overallLengthMm": 36.09,
-        "ogiveLengthMm": 19.651555325085212,
-        "boatTailLengthMm": 4.3787568,
-        "bearingSurfaceMm": 12.059687874914792,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {
-        "g1BC": 0.538,
-        "g7BC": 0.275
-      }
-    },
-    {
       "id": "BUL_BERGER_264_140_LRBT_4135",
       "name": "Long Range BT Target",
       "manufacturerId": "MAN_BERGER_B9K2",
       "diameterId": "DIA_264_H8J4",
       "physis": {
         "weightGrams": 9.0718474,
-        "overallLengthMm": 35.8648,
-        "ogiveLengthMm": 21.1836,
-        "boatTailLengthMm": 5.08,
-        "bearingSurfaceMm": 9.6012,
+        "overallLengthMm": 35.4838,
+        "ogiveLengthMm": 21.3106,
+        "boatTailLengthMm": 5.842,
+        "bearingSurfaceMm": 8.3312,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.5987,
+        "g1BC": 0.593,
         "g7BC": 0.303
       }
     },
@@ -7949,15 +7835,15 @@
       "diameterId": "DIA_264_H8J4",
       "physis": {
         "weightGrams": 9.0718474,
-        "overallLengthMm": 36.2204,
-        "ogiveLengthMm": 20.7264,
-        "boatTailLengthMm": 5.3848,
-        "bearingSurfaceMm": 10.1092,
+        "overallLengthMm": 35.7378,
+        "ogiveLengthMm": 19.5072,
+        "boatTailLengthMm": 5.6896,
+        "bearingSurfaceMm": 10.541,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.6139,
+        "g1BC": 0.607,
         "g7BC": 0.311
       }
     },
@@ -7968,16 +7854,16 @@
       "diameterId": "DIA_264_H8J4",
       "physis": {
         "weightGrams": 9.0718474,
-        "overallLengthMm": 36.0934,
-        "ogiveLengthMm": 18.3134,
-        "boatTailLengthMm": 5.08,
-        "bearingSurfaceMm": 12.7,
+        "overallLengthMm": 35.2298,
+        "ogiveLengthMm": 18.5674,
+        "boatTailLengthMm": 5.8928,
+        "bearingSurfaceMm": 10.7696,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.607,
-        "g7BC": 0.311
+        "g1BC": 0.593,
+        "g7BC": 0.304
       }
     },
     {
@@ -7987,15 +7873,15 @@
       "diameterId": "DIA_264_H8J4",
       "physis": {
         "weightGrams": 9.331043,
-        "overallLengthMm": 36.57599999999999,
-        "ogiveLengthMm": 18.4855,
-        "boatTailLengthMm": 5.4315,
-        "bearingSurfaceMm": 12.6443,
+        "overallLengthMm": 35.8902,
+        "ogiveLengthMm": 18.8468,
+        "boatTailLengthMm": 4.7752,
+        "bearingSurfaceMm": 11.9126,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.6613,
+        "g1BC": 0.655,
         "g7BC": 0.336
       }
     },
@@ -8009,31 +7895,31 @@
         "overallLengthMm": 38.4556,
         "ogiveLengthMm": 18.9992,
         "boatTailLengthMm": 4.724399999999999,
-        "bearingSurfaceMm": 14.732,
+        "bearingSurfaceMm": 14.224,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.6964,
+        "g1BC": 0.694,
         "g7BC": 0.356
       }
     },
     {
       "id": "BUL_BERGER_264_156_EH_4132",
-      "name": "Elite Hunter",
+      "name": "EOL Elite Hunter",
       "manufacturerId": "MAN_BERGER_B9K2",
       "diameterId": "DIA_264_H8J4",
       "physis": {
         "weightGrams": 10.10863,
-        "overallLengthMm": 38.405,
-        "ogiveLengthMm": 19.311,
-        "boatTailLengthMm": 5.8842,
-        "bearingSurfaceMm": 13.209,
+        "overallLengthMm": 38.4048,
+        "ogiveLengthMm": 19.431,
+        "boatTailLengthMm": 4.8006,
+        "bearingSurfaceMm": 13.843,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.6746,
+        "g1BC": 0.679,
         "g7BC": 0.347
       }
     },
@@ -8044,16 +7930,16 @@
       "diameterId": "DIA_277_K9L0",
       "physis": {
         "weightGrams": 8.4238583,
-        "overallLengthMm": 29.9974,
-        "ogiveLengthMm": 15.7734,
-        "boatTailLengthMm": 5.334,
-        "bearingSurfaceMm": 8.89,
+        "overallLengthMm": 29.7942,
+        "ogiveLengthMm": 15.6972,
+        "boatTailLengthMm": 6.1722,
+        "bearingSurfaceMm": 7.9248,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.4679,
-        "g7BC": 0.231
+        "g1BC": 0.462,
+        "g7BC": 0.236
       }
     },
     {
@@ -8064,15 +7950,15 @@
       "physis": {
         "weightGrams": 8.4238583,
         "overallLengthMm": 30.734,
-        "ogiveLengthMm": 15.165,
-        "boatTailLengthMm": 4.953,
-        "bearingSurfaceMm": 10.616,
+        "ogiveLengthMm": 17.4244,
+        "boatTailLengthMm": 6.223,
+        "bearingSurfaceMm": 7.0866,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
         "g1BC": 0.49,
-        "g7BC": 0.254
+        "g7BC": 0.251
       }
     },
     {
@@ -8082,35 +7968,35 @@
       "diameterId": "DIA_277_K9L0",
       "physis": {
         "weightGrams": 9.0718474,
-        "overallLengthMm": 31.623,
-        "ogiveLengthMm": 15.6972,
-        "boatTailLengthMm": 5.334,
-        "bearingSurfaceMm": 10.5918,
+        "overallLengthMm": 31.8262,
+        "ogiveLengthMm": 15.6718,
+        "boatTailLengthMm": 5.969,
+        "bearingSurfaceMm": 10.1854,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.4979,
-        "g7BC": 0.248
+        "g1BC": 0.504,
+        "g7BC": 0.258
       }
     },
     {
-      "id": "BUL_BERGER_277_140_HPBT_0212",
-      "name": "HPBT Hunting",
+      "id": "BUL_BERGER_277_140_CH_A667",
+      "name": "Classic Hybrid Hunter",
       "manufacturerId": "MAN_BERGER_B9K2",
       "diameterId": "DIA_277_K9L0",
       "physis": {
         "weightGrams": 9.0718474,
-        "overallLengthMm": 31.8,
-        "ogiveLengthMm": 16.164,
-        "boatTailLengthMm": 5.5,
-        "bearingSurfaceMm": 10.136,
+        "overallLengthMm": 32.3596,
+        "ogiveLengthMm": 16.383,
+        "boatTailLengthMm": 5.1562,
+        "bearingSurfaceMm": 10.414,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.461,
-        "g7BC": 0.232
+        "g1BC": 0.528,
+        "g7BC": 0.271
       }
     },
     {
@@ -8120,35 +8006,16 @@
       "diameterId": "DIA_277_K9L0",
       "physis": {
         "weightGrams": 9.7198365,
-        "overallLengthMm": 33.274,
-        "ogiveLengthMm": 15.6464,
-        "boatTailLengthMm": 5.334,
-        "bearingSurfaceMm": 12.2936,
+        "overallLengthMm": 32.8676,
+        "ogiveLengthMm": 15.875,
+        "boatTailLengthMm": 5.842,
+        "bearingSurfaceMm": 11.1506,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
         "g1BC": 0.518,
-        "g7BC": 0.272
-      }
-    },
-    {
-      "id": "BUL_BERGER_277_150_HPBT_1CDE",
-      "name": "HPBT Hunting",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "diameterId": "DIA_277_K9L0",
-      "physis": {
-        "weightGrams": 9.7198365,
-        "overallLengthMm": 33.3,
-        "ogiveLengthMm": 17.34908973884402,
-        "boatTailLengthMm": 4.5943774,
-        "bearingSurfaceMm": 11.356532861155978,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {
-        "g1BC": 0.5,
-        "g7BC": 0.252
+        "g7BC": 0.265
       }
     },
     {
@@ -8158,10 +8025,10 @@
       "diameterId": "DIA_277_K9L0",
       "physis": {
         "weightGrams": 11.0158147,
-        "overallLengthMm": 38.6,
-        "ogiveLengthMm": 19.114,
-        "boatTailLengthMm": 6.4122,
-        "bearingSurfaceMm": 13.074,
+        "overallLengthMm": 37.846,
+        "ogiveLengthMm": 21.0566,
+        "boatTailLengthMm": 6.4516,
+        "bearingSurfaceMm": 10.3378,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -8177,16 +8044,16 @@
       "diameterId": "DIA_284_S3F6",
       "physis": {
         "weightGrams": 9.0718474,
-        "overallLengthMm": 32.6644,
-        "ogiveLengthMm": 17.4498,
-        "boatTailLengthMm": 5.588,
-        "bearingSurfaceMm": 9.6266,
+        "overallLengthMm": 32.1818,
+        "ogiveLengthMm": 17.78,
+        "boatTailLengthMm": 6.1722,
+        "bearingSurfaceMm": 8.2296,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.5073,
-        "g7BC": 0.248
+        "g1BC": 0.5,
+        "g7BC": 0.256
       }
     },
     {
@@ -8209,25 +8076,6 @@
       }
     },
     {
-      "id": "BUL_BERGER_284_150_HPBT_827F",
-      "name": "HPBT Hunting",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "diameterId": "DIA_284_S3F6",
-      "physis": {
-        "weightGrams": 9.7198365,
-        "overallLengthMm": 31.8,
-        "ogiveLengthMm": 16.139,
-        "boatTailLengthMm": 5.5,
-        "bearingSurfaceMm": 10.161,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {
-        "g1BC": 0.493,
-        "g7BC": 0.248
-      }
-    },
-    {
       "id": "BUL_BERGER_284_168_CH_8009",
       "name": "Classic Hunter",
       "manufacturerId": "MAN_BERGER_B9K2",
@@ -8247,22 +8095,22 @@
       }
     },
     {
-      "id": "BUL_BERGER_284_168_HPBT_9F6A",
-      "name": "HPBT Match",
+      "id": "BUL_BERGER_284_168_VLDH_A0D6",
+      "name": "VLD Hunting",
       "manufacturerId": "MAN_BERGER_B9K2",
       "diameterId": "DIA_284_S3F6",
       "physis": {
         "weightGrams": 10.8862169,
-        "overallLengthMm": 36.7,
-        "ogiveLengthMm": 19.635139345743905,
-        "boatTailLengthMm": 4.7104808,
-        "bearingSurfaceMm": 12.354379854256099,
+        "overallLengthMm": 36.3982,
+        "ogiveLengthMm": 19.5834,
+        "boatTailLengthMm": 6.223,
+        "bearingSurfaceMm": 10.5918,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.544,
-        "g7BC": 0.274
+        "g1BC": 0.618,
+        "g7BC": 0.316
       }
     },
     {
@@ -8272,16 +8120,16 @@
       "diameterId": "DIA_284_S3F6",
       "physis": {
         "weightGrams": 10.8862169,
-        "overallLengthMm": 36.703,
-        "ogiveLengthMm": 19.3802,
-        "boatTailLengthMm": 5.588,
-        "bearingSurfaceMm": 11.7348,
+        "overallLengthMm": 36.3474,
+        "ogiveLengthMm": 19.5072,
+        "boatTailLengthMm": 6.223,
+        "bearingSurfaceMm": 10.6172,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
         "g1BC": 0.628,
-        "g7BC": 0.316
+        "g7BC": 0.322
       }
     },
     {
@@ -8292,7 +8140,7 @@
       "physis": {
         "weightGrams": 11.3398092,
         "overallLengthMm": 38.1508,
-        "ogiveLengthMm": 20.7518,
+        "ogiveLengthMm": 20.3454,
         "boatTailLengthMm": 5.2578,
         "bearingSurfaceMm": 12.1412,
         "engravingPressurePa": null,
@@ -8310,35 +8158,16 @@
       "diameterId": "DIA_284_S3F6",
       "physis": {
         "weightGrams": 11.6638038,
-        "overallLengthMm": 38.735,
-        "ogiveLengthMm": 19.4056,
-        "boatTailLengthMm": 5.588,
-        "bearingSurfaceMm": 13.7414,
+        "overallLengthMm": 38.2524,
+        "ogiveLengthMm": 19.6088,
+        "boatTailLengthMm": 6.1722,
+        "bearingSurfaceMm": 12.4714,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.6766,
-        "g7BC": 0.337
-      }
-    },
-    {
-      "id": "BUL_BERGER_284_180_HYB_0525",
-      "name": "Hybrid Hunter",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "diameterId": "DIA_284_S3F6",
-      "physis": {
-        "weightGrams": 11.6638038,
-        "overallLengthMm": 38.8,
-        "ogiveLengthMm": 19.706,
-        "boatTailLengthMm": 6.5,
-        "bearingSurfaceMm": 12.594,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {
-        "g1BC": 0.618,
-        "g7BC": 0.316
+        "g1BC": 0.673,
+        "g7BC": 0.345
       }
     },
     {
@@ -8348,16 +8177,35 @@
       "diameterId": "DIA_284_S3F6",
       "physis": {
         "weightGrams": 11.6638038,
-        "overallLengthMm": 38.8366,
-        "ogiveLengthMm": 21.59,
-        "boatTailLengthMm": 5.588,
-        "bearingSurfaceMm": 11.6586,
+        "overallLengthMm": 38.7858,
+        "ogiveLengthMm": 21.6408,
+        "boatTailLengthMm": 6.223,
+        "bearingSurfaceMm": 10.922,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
         "g1BC": 0.68,
-        "g7BC": 0.345
+        "g7BC": 0.349
+      }
+    },
+    {
+      "id": "BUL_BERGER_284_180_VLDT_4212",
+      "name": "VLD Target",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_284_S3F6",
+      "physis": {
+        "weightGrams": 11.6638038,
+        "overallLengthMm": 38.608,
+        "ogiveLengthMm": 19.7358,
+        "boatTailLengthMm": 6.1722,
+        "bearingSurfaceMm": 12.7,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.683,
+        "g7BC": 0.35
       }
     },
     {
@@ -8375,7 +8223,7 @@
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.7113,
+        "g1BC": 0.695,
         "g7BC": 0.356
       }
     },
@@ -8394,7 +8242,7 @@
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.7642,
+        "g1BC": 0.751,
         "g7BC": 0.384
       }
     },
@@ -8409,25 +8257,6 @@
         "ogiveLengthMm": 22.1996,
         "boatTailLengthMm": 6.35,
         "bearingSurfaceMm": 13.3096,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {
-        "g1BC": 0.755,
-        "g7BC": 0.387
-      }
-    },
-    {
-      "id": "BUL_BERGER_284_195_EHTR_815C",
-      "name": "Elite Hunter",
-      "manufacturerId": "MAN_BERGER_B9K2",
-      "diameterId": "DIA_284_S3F6",
-      "physis": {
-        "weightGrams": 12.6357875,
-        "overallLengthMm": 41.78,
-        "ogiveLengthMm": 24.617048479025197,
-        "boatTailLengthMm": 2.9936439999999997,
-        "bearingSurfaceMm": 14.169307520974805,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -8462,15 +8291,15 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 7.4518746,
-        "overallLengthMm": 23.9268,
-        "ogiveLengthMm": 17.6022,
+        "overallLengthMm": 23.876,
+        "ogiveLengthMm": 17.7546,
         "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 6.3246,
+        "bearingSurfaceMm": 6.1214,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.296,
+        "g1BC": 0.289,
         "g7BC": 0.1382
       }
     },
@@ -8519,15 +8348,15 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 9.7198365,
-        "overallLengthMm": 29.7688,
-        "ogiveLengthMm": 19.5326,
+        "overallLengthMm": 29.337,
+        "ogiveLengthMm": 19.3548,
         "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 10.2362,
+        "bearingSurfaceMm": 9.9822,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.398,
+        "g1BC": 0.393,
         "g7BC": 0.1885
       }
     },
@@ -8538,16 +8367,16 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 10.043831,
-        "overallLengthMm": 32.512,
-        "ogiveLengthMm": 20.3708,
-        "boatTailLengthMm": 5.08,
-        "bearingSurfaceMm": 7.0612,
+        "overallLengthMm": 32.2834,
+        "ogiveLengthMm": 20.2692,
+        "boatTailLengthMm": 5.6134,
+        "bearingSurfaceMm": 6.4008,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
         "g1BC": 0.478,
-        "g7BC": 0.247
+        "g7BC": 0.245
       }
     },
     {
@@ -8557,16 +8386,16 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 10.0762305,
-        "overallLengthMm": 31.876999999999995,
-        "ogiveLengthMm": 21.529989779711983,
-        "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 10.347010220288013,
+        "overallLengthMm": 31.1404,
+        "ogiveLengthMm": 20.7264,
+        "boatTailLengthMm": 4.5974,
+        "bearingSurfaceMm": 5.8166,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.4981,
-        "g7BC": 0.237
+        "g1BC": 0.473,
+        "g7BC": 0.242
       }
     },
     {
@@ -8584,7 +8413,26 @@
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.474,
+        "g1BC": 0.464,
+        "g7BC": 0.238
+      }
+    },
+    {
+      "id": "BUL_BERGER_308_155_VLDT_8F27",
+      "name": "VLD Target",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 10.043831,
+        "overallLengthMm": 31.7246,
+        "ogiveLengthMm": 18.9484,
+        "boatTailLengthMm": 4.3942,
+        "bearingSurfaceMm": 8.382,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.464,
         "g7BC": 0.238
       }
     },
@@ -8595,16 +8443,16 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 10.8862169,
-        "overallLengthMm": 32.9184,
-        "ogiveLengthMm": 20.3708,
-        "boatTailLengthMm": 5.08,
-        "bearingSurfaceMm": 7.4676,
+        "overallLengthMm": 32.6898,
+        "ogiveLengthMm": 20.193,
+        "boatTailLengthMm": 5.6642,
+        "bearingSurfaceMm": 6.8326,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
         "g1BC": 0.515,
-        "g7BC": 0.266
+        "g7BC": 0.264
       }
     },
     {
@@ -8614,16 +8462,35 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 10.8862169,
-        "overallLengthMm": 31.191,
-        "ogiveLengthMm": 15.434,
-        "boatTailLengthMm": 4.953,
-        "bearingSurfaceMm": 10.804,
+        "overallLengthMm": 31.1912,
+        "ogiveLengthMm": 17.9578,
+        "boatTailLengthMm": 5.5372,
+        "bearingSurfaceMm": 7.6962,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.5268,
+        "g1BC": 0.489,
         "g7BC": 0.251
+      }
+    },
+    {
+      "id": "BUL_BERGER_308_168_VLDT_95E9",
+      "name": "VLD Target",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 10.8862169,
+        "overallLengthMm": 31.7754,
+        "ogiveLengthMm": 19.05,
+        "boatTailLengthMm": 4.3434,
+        "bearingSurfaceMm": 8.382,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.507,
+        "g7BC": 0.26
       }
     },
     {
@@ -8633,16 +8500,16 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 10.8862169,
-        "overallLengthMm": 32.131,
-        "ogiveLengthMm": 17.4752,
-        "boatTailLengthMm": 4.064,
-        "bearingSurfaceMm": 10.5918,
+        "overallLengthMm": 32.0294,
+        "ogiveLengthMm": 19.05,
+        "boatTailLengthMm": 4.5974,
+        "bearingSurfaceMm": 8.382,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.473,
-        "g7BC": 0.242
+        "g1BC": 0.498,
+        "g7BC": 0.255
       }
     },
     {
@@ -8652,16 +8519,16 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 11.3398093,
-        "overallLengthMm": 34.2392,
-        "ogiveLengthMm": 20.447,
-        "boatTailLengthMm": 3.81,
-        "bearingSurfaceMm": 9.9822,
+        "overallLengthMm": 33.3756,
+        "ogiveLengthMm": 20.1676,
+        "boatTailLengthMm": 4.7244,
+        "bearingSurfaceMm": 8.4836,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
         "g1BC": 0.512,
-        "g7BC": 0.264
+        "g7BC": 0.262
       }
     },
     {
@@ -8671,16 +8538,16 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 11.3398092,
-        "overallLengthMm": 32.2072,
-        "ogiveLengthMm": 18.542,
-        "boatTailLengthMm": 5.08,
-        "bearingSurfaceMm": 8.3312,
+        "overallLengthMm": 32.0294,
+        "ogiveLengthMm": 19.177,
+        "boatTailLengthMm": 5.461,
+        "bearingSurfaceMm": 7.4168,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
         "g1BC": 0.512,
-        "g7BC": 0.259
+        "g7BC": 0.263
       }
     },
     {
@@ -8690,16 +8557,35 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 11.3398093,
-        "overallLengthMm": 32.7152,
-        "ogiveLengthMm": 17.9578,
-        "boatTailLengthMm": 4.572,
-        "bearingSurfaceMm": 10.1854,
+        "overallLengthMm": 33.7312,
+        "ogiveLengthMm": 19.05,
+        "boatTailLengthMm": 4.7244,
+        "bearingSurfaceMm": 9.9568,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
         "g1BC": 0.518,
-        "g7BC": 0.255
+        "g7BC": 0.265
+      }
+    },
+    {
+      "id": "BUL_BERGER_308_175_VLDT_21D4",
+      "name": "VLD Target",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 11.3398093,
+        "overallLengthMm": 34.0868,
+        "ogiveLengthMm": 18.923,
+        "boatTailLengthMm": 4.6482,
+        "bearingSurfaceMm": 10.5156,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.512,
+        "g7BC": 0.262
       }
     },
     {
@@ -8728,16 +8614,16 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 11.9877983,
-        "overallLengthMm": 35.0012,
-        "ogiveLengthMm": 17.9578,
-        "boatTailLengthMm": 5.08,
-        "bearingSurfaceMm": 11.9634,
+        "overallLengthMm": 34.6964,
+        "ogiveLengthMm": 19.2786,
+        "boatTailLengthMm": 5.4356,
+        "bearingSurfaceMm": 9.9822,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
         "g1BC": 0.558,
-        "g7BC": 0.281
+        "g7BC": 0.286
       }
     },
     {
@@ -8747,16 +8633,16 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 11.9877983,
-        "overallLengthMm": 33.38,
-        "ogiveLengthMm": 16.69,
-        "boatTailLengthMm": 5.007,
-        "bearingSurfaceMm": 11.683,
+        "overallLengthMm": 33.3756,
+        "ogiveLengthMm": 17.5768,
+        "boatTailLengthMm": 6.1468,
+        "bearingSurfaceMm": 9.652,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
         "g1BC": 0.533,
-        "g7BC": 0.28
+        "g7BC": 0.273
       }
     },
     {
@@ -8766,16 +8652,16 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 11.9877984,
-        "overallLengthMm": 36.449,
-        "ogiveLengthMm": 20.828,
-        "boatTailLengthMm": 5.588,
-        "bearingSurfaceMm": 10.033,
+        "overallLengthMm": 36.0172,
+        "ogiveLengthMm": 21.1074,
+        "boatTailLengthMm": 6.1214,
+        "bearingSurfaceMm": 8.7884,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
         "g1BC": 0.576,
-        "g7BC": 0.291
+        "g7BC": 0.295
       }
     },
     {
@@ -8785,10 +8671,10 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 11.9877984,
-        "overallLengthMm": 34.3662,
-        "ogiveLengthMm": 20.1422,
-        "boatTailLengthMm": 5.08,
-        "bearingSurfaceMm": 9.144,
+        "overallLengthMm": 34.417,
+        "ogiveLengthMm": 20.0406,
+        "boatTailLengthMm": 5.6642,
+        "bearingSurfaceMm": 8.7122,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -8817,16 +8703,35 @@
       }
     },
     {
+      "id": "BUL_BERGER_308_185_VLDT_4385",
+      "name": "VLD Target",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 11.9877984,
+        "overallLengthMm": 35.1282,
+        "ogiveLengthMm": 19.2278,
+        "boatTailLengthMm": 5.5626,
+        "bearingSurfaceMm": 10.3378,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.543,
+        "g7BC": 0.278
+      }
+    },
+    {
       "id": "BUL_BERGER_308_190_190_VLDH_FC00",
       "name": "VLD Hunting",
       "manufacturerId": "MAN_BERGER_B9K2",
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 12.3117929,
-        "overallLengthMm": 34.798,
-        "ogiveLengthMm": 18.542,
-        "boatTailLengthMm": 4.826,
-        "bearingSurfaceMm": 11.43,
+        "overallLengthMm": 34.8234,
+        "ogiveLengthMm": 19.2024,
+        "boatTailLengthMm": 5.461,
+        "bearingSurfaceMm": 10.16,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -8836,16 +8741,35 @@
       }
     },
     {
+      "id": "BUL_BERGER_308_200_2_HT_D1C8",
+      "name": "Hybrid Target",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 12.9727418,
+        "overallLengthMm": 38.3032,
+        "ogiveLengthMm": 21.5392,
+        "boatTailLengthMm": 5.7658,
+        "bearingSurfaceMm": 10.4902,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.64,
+        "g7BC": 0.328
+      }
+    },
+    {
       "id": "BUL_BERGER_308_200_HT_FE6A",
       "name": "Hybrid Target",
       "manufacturerId": "MAN_BERGER_B9K2",
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 12.959782,
-        "overallLengthMm": 38.1,
-        "ogiveLengthMm": 20.955,
-        "boatTailLengthMm": 5.588,
-        "bearingSurfaceMm": 11.43,
+        "overallLengthMm": 37.8206,
+        "ogiveLengthMm": 21.2344,
+        "boatTailLengthMm": 6.1722,
+        "bearingSurfaceMm": 10.414,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -8862,9 +8786,9 @@
       "physis": {
         "weightGrams": 13.2837766,
         "overallLengthMm": 37.7698,
-        "ogiveLengthMm": 20.3708,
-        "boatTailLengthMm": 4.699,
-        "bearingSurfaceMm": 12.7,
+        "ogiveLengthMm": 18.8468,
+        "boatTailLengthMm": 5.842,
+        "bearingSurfaceMm": 12.5222,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -8880,10 +8804,10 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 13.4781733,
-        "overallLengthMm": 40,
-        "ogiveLengthMm": 20.057,
-        "boatTailLengthMm": 6.224,
-        "bearingSurfaceMm": 13.719,
+        "overallLengthMm": 40.005,
+        "ogiveLengthMm": 21.5138,
+        "boatTailLengthMm": 5.5118,
+        "bearingSurfaceMm": 12.446,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -8899,15 +8823,15 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 13.6077711,
-        "overallLengthMm": 36.9062,
-        "ogiveLengthMm": 20.955,
-        "boatTailLengthMm": 4.826,
-        "bearingSurfaceMm": 11.1252,
+        "overallLengthMm": 37.1348,
+        "ogiveLengthMm": 20.6756,
+        "boatTailLengthMm": 5.5118,
+        "bearingSurfaceMm": 10.9474,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.664,
+        "g1BC": 0.625,
         "g7BC": 0.32
       }
     },
@@ -8918,16 +8842,35 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 13.6077711,
-        "overallLengthMm": 37.0586,
-        "ogiveLengthMm": 18.5166,
-        "boatTailLengthMm": 4.826,
-        "bearingSurfaceMm": 13.716,
+        "overallLengthMm": 37.338,
+        "ogiveLengthMm": 19.0754,
+        "boatTailLengthMm": 5.3086,
+        "bearingSurfaceMm": 12.954,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
         "g1BC": 0.625,
-        "g7BC": 0.323
+        "g7BC": 0.32
+      }
+    },
+    {
+      "id": "BUL_BERGER_308_210_VLDT_950F",
+      "name": "VLD Target",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 13.6077711,
+        "overallLengthMm": 37.084,
+        "ogiveLengthMm": 18.7452,
+        "boatTailLengthMm": 5.2578,
+        "bearingSurfaceMm": 13.4366,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.621,
+        "g7BC": 0.318
       }
     },
     {
@@ -8938,15 +8881,15 @@
       "physis": {
         "weightGrams": 13.9317656,
         "overallLengthMm": 40.5892,
-        "ogiveLengthMm": 20.9034,
-        "boatTailLengthMm": 5.9666,
-        "bearingSurfaceMm": 13.7192,
+        "ogiveLengthMm": 22.1488,
+        "boatTailLengthMm": 6.6802,
+        "bearingSurfaceMm": 11.7602,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
         "g1BC": 0.691,
-        "g7BC": 0.356
+        "g7BC": 0.354
       }
     },
     {
@@ -8957,14 +8900,14 @@
       "physis": {
         "weightGrams": 14.2557602,
         "overallLengthMm": 40.5638,
-        "ogiveLengthMm": 21.717,
-        "boatTailLengthMm": 4.953,
-        "bearingSurfaceMm": 13.8938,
+        "ogiveLengthMm": 21.2852,
+        "boatTailLengthMm": 5.4102,
+        "bearingSurfaceMm": 13.1064,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.7577,
+        "g1BC": 0.717,
         "g7BC": 0.369
       }
     },
@@ -8975,16 +8918,16 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 14.9037493,
-        "overallLengthMm": 41.656,
-        "ogiveLengthMm": 22.987,
-        "boatTailLengthMm": 5.588,
-        "bearingSurfaceMm": 13.081,
+        "overallLengthMm": 42.3672,
+        "ogiveLengthMm": 21.8186,
+        "boatTailLengthMm": 7.112,
+        "bearingSurfaceMm": 13.4366,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
         "g1BC": 0.717,
-        "g7BC": 0.38
+        "g7BC": 0.368
       }
     },
     {
@@ -8994,16 +8937,16 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 14.9037493,
-        "overallLengthMm": 40.6908,
-        "ogiveLengthMm": 20.3708,
-        "boatTailLengthMm": 5.588,
-        "bearingSurfaceMm": 14.732,
+        "overallLengthMm": 40.8432,
+        "ogiveLengthMm": 20.1676,
+        "boatTailLengthMm": 6.9088,
+        "bearingSurfaceMm": 13.7668,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
         "g1BC": 0.71,
-        "g7BC": 0.368
+        "g7BC": 0.364
       }
     },
     {
@@ -9014,20 +8957,20 @@
       "physis": {
         "weightGrams": 15.8757329,
         "overallLengthMm": 45.085,
-        "ogiveLengthMm": 23.241,
+        "ogiveLengthMm": 22.7076,
         "boatTailLengthMm": 5.7658,
         "bearingSurfaceMm": 16.0782,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.837,
-        "g7BC": 0.413
+        "g1BC": 0.846,
+        "g7BC": 0.433
       }
     },
     {
       "id": "BUL_BERGER_308_245_EH_05F5",
-      "name": "Elite Hunter",
+      "name": "EOL Elite Hunter",
       "manufacturerId": "MAN_BERGER_B9K2",
       "diameterId": "DIA_308_XBM7",
       "physis": {
@@ -9035,13 +8978,32 @@
         "overallLengthMm": 45.084999999999994,
         "ogiveLengthMm": 22.7076,
         "boatTailLengthMm": 5.7658,
-        "bearingSurfaceMm": 16.6116,
+        "bearingSurfaceMm": 16.0782,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.837,
+        "g1BC": 0.807,
         "g7BC": 0.413
+      }
+    },
+    {
+      "id": "BUL_BERGER_338_250_EH_D5CE",
+      "name": "Elite Hunter",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_338_R7E3",
+      "physis": {
+        "weightGrams": 16.1997275,
+        "overallLengthMm": 41.3258,
+        "ogiveLengthMm": 24.384,
+        "boatTailLengthMm": 8.2804,
+        "bearingSurfaceMm": 8.6614,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.685,
+        "g7BC": 0.351
       }
     },
     {
@@ -9051,10 +9013,10 @@
       "diameterId": "DIA_338_R7E3",
       "physis": {
         "weightGrams": 16.1997275,
-        "overallLengthMm": 41.402,
-        "ogiveLengthMm": 25.4,
-        "boatTailLengthMm": 7.62,
-        "bearingSurfaceMm": 8.382,
+        "overallLengthMm": 41.529,
+        "ogiveLengthMm": 24.4348,
+        "boatTailLengthMm": 8.1026,
+        "bearingSurfaceMm": 8.9916,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
@@ -9070,16 +9032,16 @@
       "diameterId": "DIA_338_R7E3",
       "physis": {
         "weightGrams": 19.439673,
-        "overallLengthMm": 46.2,
-        "ogiveLengthMm": 23.067,
-        "boatTailLengthMm": 7.355,
-        "bearingSurfaceMm": 15.778,
+        "overallLengthMm": 46.1264,
+        "ogiveLengthMm": 24.257,
+        "boatTailLengthMm": 7.747,
+        "bearingSurfaceMm": 14.1224,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
         "g1BC": 0.814,
-        "g7BC": 0.419
+        "g7BC": 0.417
       }
     },
     {
@@ -9089,16 +9051,16 @@
       "diameterId": "DIA_338_R7E3",
       "physis": {
         "weightGrams": 19.439673,
-        "overallLengthMm": 46.228,
-        "ogiveLengthMm": 25.4,
-        "boatTailLengthMm": 7.62,
-        "bearingSurfaceMm": 13.208,
+        "overallLengthMm": 46.2026,
+        "ogiveLengthMm": 24.257,
+        "boatTailLengthMm": 7.8994,
+        "bearingSurfaceMm": 13.081,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
         "g1BC": 0.822,
-        "g7BC": 0.419
+        "g7BC": 0.421
       }
     },
     {
@@ -9108,16 +9070,54 @@
       "diameterId": "DIA_375_W4T2",
       "physis": {
         "weightGrams": 24.558787,
-        "overallLengthMm": null,
-        "ogiveLengthMm": null,
-        "boatTailLengthMm": null,
-        "bearingSurfaceMm": null,
+        "overallLengthMm": 56.7944,
+        "ogiveLengthMm": 28.4988,
+        "boatTailLengthMm": 7.8232,
+        "bearingSurfaceMm": 9.4234,
         "engravingPressurePa": null,
         "materialType": "MAT_MONOLITHIC_COPPER"
       },
       "ballistics": {
-        "g1BC": null,
-        "g7BC": null
+        "g1BC": 0.951,
+        "g7BC": 0.487
+      }
+    },
+    {
+      "id": "BUL_BERGER_375_407_ELRMATCH_F099",
+      "name": "ELR Match Solid",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_375_W4T2",
+      "physis": {
+        "weightGrams": 26.3731564,
+        "overallLengthMm": 59.6138,
+        "ogiveLengthMm": 28.7528,
+        "boatTailLengthMm": 7.62,
+        "bearingSurfaceMm": 10.541,
+        "engravingPressurePa": null,
+        "materialType": "MAT_MONOLITHIC_COPPER"
+      },
+      "ballistics": {
+        "g1BC": 1.022,
+        "g7BC": 0.523
+      }
+    },
+    {
+      "id": "BUL_BERGER_375_410_HT_2D4E",
+      "name": "Hybrid Target",
+      "manufacturerId": "MAN_BERGER_B9K2",
+      "diameterId": "DIA_375_W4T2",
+      "physis": {
+        "weightGrams": 26.5675531,
+        "overallLengthMm": 51.7398,
+        "ogiveLengthMm": 27.1526,
+        "boatTailLengthMm": 7.874,
+        "bearingSurfaceMm": 16.1798,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.928,
+        "g7BC": 0.475
       }
     },
     {
