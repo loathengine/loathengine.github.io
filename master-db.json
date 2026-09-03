@@ -5611,25 +5611,6 @@
       }
     },
     {
-      "id": "BUL_BARNES_284_160_TSX_9F13",
-      "name": "Triple-Shock X FB",
-      "manufacturerId": "MAN_BARNES_B2N5",
-      "diameterId": "DIA_284_S3F6",
-      "physis": {
-        "weightGrams": 10.367826,
-        "overallLengthMm": 35.61,
-        "ogiveLengthMm": 18.034,
-        "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 17.576,
-        "engravingPressurePa": 50000000,
-        "materialType": "MAT_MONOLITHIC_COPPER"
-      },
-      "ballistics": {
-        "g1BC": 0.392,
-        "g7BC": null
-      }
-    },
-    {
       "id": "BUL_BARNES_284_168_LRX_C6CF",
       "name": "LRX BT",
       "manufacturerId": "MAN_BARNES_B2N5",
@@ -5683,25 +5664,6 @@
       },
       "ballistics": {
         "g1BC": 0.417
-      }
-    },
-    {
-      "id": "BUL_BARNES_284_175_TSX_6350",
-      "name": "TSX BT",
-      "manufacturerId": "MAN_BARNES_B2N5",
-      "diameterId": "DIA_284_S3F6",
-      "physis": {
-        "weightGrams": 11.3398093,
-        "overallLengthMm": 38.5,
-        "ogiveLengthMm": 22.653,
-        "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 15.847,
-        "engravingPressurePa": 45000000,
-        "materialType": "MAT_MONOLITHIC_COPPER"
-      },
-      "ballistics": {
-        "g1BC": 0.417,
-        "g7BC": 0.251
       }
     },
     {
@@ -5995,10 +5957,10 @@
       "diameterId": "DIA_308_XBM7",
       "physis": {
         "weightGrams": 10.886216880000001,
-        "overallLengthMm": 33.477199999999996,
-        "ogiveLengthMm": 18.6436,
-        "boatTailLengthMm": 4.4501,
-        "bearingSurfaceMm": 10.3835,
+        "overallLengthMm": 36.059,
+        "ogiveLengthMm": 20.0814,
+        "boatTailLengthMm": 4.7933,
+        "bearingSurfaceMm": 11.1843,
         "engravingPressurePa": 45000000,
         "materialType": "MAT_MONOLITHIC_COPPER",
         "tipLengthMm": 3.81
@@ -6524,7 +6486,7 @@
       "diameterId": "DIA_358_P8K5",
       "physis": {
         "weightGrams": 12.959782,
-        "overallLengthMm": null,
+        "overallLengthMm": 29.95,
         "ogiveLengthMm": null,
         "boatTailLengthMm": null,
         "bearingSurfaceMm": null,
@@ -6552,25 +6514,6 @@
       },
       "ballistics": {
         "g1BC": 0.369,
-        "g7BC": null
-      }
-    },
-    {
-      "id": "BUL_BARNES_358_225_TSXFB_7662",
-      "name": "TSX FB",
-      "manufacturerId": "MAN_BARNES_B2N5",
-      "diameterId": "DIA_358_P8K5",
-      "physis": {
-        "weightGrams": 14.579755,
-        "overallLengthMm": 33.2003,
-        "ogiveLengthMm": null,
-        "boatTailLengthMm": null,
-        "bearingSurfaceMm": null,
-        "engravingPressurePa": null,
-        "materialType": "MAT_MONOLITHIC_COPPER"
-      },
-      "ballistics": {
-        "g1BC": 0.359,
         "g7BC": null
       }
     },
@@ -6676,7 +6619,7 @@
       "diameterId": "DIA_375_W4T2",
       "physis": {
         "weightGrams": 17.495706,
-        "overallLengthMm": null,
+        "overallLengthMm": 32.893,
         "ogiveLengthMm": null,
         "boatTailLengthMm": null,
         "bearingSurfaceMm": null,
@@ -6714,7 +6657,7 @@
       "diameterId": "DIA_375_W4T2",
       "physis": {
         "weightGrams": 17.495706,
-        "overallLengthMm": null,
+        "overallLengthMm": 34.801,
         "ogiveLengthMm": null,
         "boatTailLengthMm": null,
         "bearingSurfaceMm": null,
@@ -6752,7 +6695,7 @@
       "diameterId": "DIA_375_W4T2",
       "physis": {
         "weightGrams": 19.439673,
-        "overallLengthMm": null,
+        "overallLengthMm": 37.91,
         "ogiveLengthMm": null,
         "boatTailLengthMm": null,
         "bearingSurfaceMm": null,
@@ -6771,7 +6714,7 @@
       "diameterId": "DIA_375_W4T2",
       "physis": {
         "weightGrams": 22.679619,
-        "overallLengthMm": null,
+        "overallLengthMm": 41.605,
         "ogiveLengthMm": null,
         "boatTailLengthMm": null,
         "bearingSurfaceMm": null,
@@ -10510,6 +10453,24 @@
       }
     },
     {
+      "id": "BUL_HORNADY_257_117_RN_9D6F",
+      "name": "InterLock RN",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "diameterId": "DIA_257_N2M1",
+      "physis": {
+        "weightGrams": 7.58147247,
+        "overallLengthMm": 24.5999,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.243
+      }
+    },
+    {
       "id": "BUL_HORNADY_257_117_SST_6CE2",
       "name": "SST",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -11006,6 +10967,24 @@
       "ballistics": {
         "g1BC": 0.646,
         "g7BC": 0.326
+      }
+    },
+    {
+      "id": "BUL_HORNADY_264_140_BTHP_506C",
+      "name": "BTHP Match",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "diameterId": "DIA_264_H8J4",
+      "physis": {
+        "weightGrams": 9.0718474,
+        "overallLengthMm": 33.80994,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.58
       }
     },
     {
@@ -12251,7 +12230,7 @@
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.415
+        "g1BC": 0.186
       }
     },
     {
@@ -12329,6 +12308,24 @@
       },
       "ballistics": {
         "g1BC": 0.435
+      }
+    },
+    {
+      "id": "BUL_HORNADY_308_155_BTHP_5535",
+      "name": "BTHP Match",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 10.04383105,
+        "overallLengthMm": 30.099,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.405
       }
     },
     {
@@ -12739,6 +12736,24 @@
       }
     },
     {
+      "id": "BUL_HORNADY_308_190_CX_27AB",
+      "name": "CX",
+      "manufacturerId": "MAN_HORNADY_JGR4",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 12.3117929,
+        "overallLengthMm": 41.986,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": 45000000,
+        "materialType": "MAT_MONOLITHIC_COPPER"
+      },
+      "ballistics": {
+        "g1BC": 0.575
+      }
+    },
+    {
       "id": "BUL_HORNADY_308_195_195_ELDM_64E5",
       "name": "ELD-Match",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -12972,22 +12987,6 @@
       "ballistics": {}
     },
     {
-      "id": "BUL_HORNADY_323_125_SP_6C37",
-      "name": "InterLock SP",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "diameterId": "DIA_323_M2P1",
-      "physis": {
-        "weightGrams": 8.09986,
-        "overallLengthMm": 21.3,
-        "ogiveLengthMm": 14.154029590588127,
-        "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 7.1459704094118734,
-        "engravingPressurePa": 30000000,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {}
-    },
-    {
       "id": "BUL_HORNADY_323_125_SP_B09B",
       "name": "Spitzer SP",
       "manufacturerId": "MAN_HORNADY_JGR4",
@@ -13028,7 +13027,7 @@
       "diameterId": "DIA_323_M2P1",
       "physis": {
         "weightGrams": 11.01581,
-        "overallLengthMm": null,
+        "overallLengthMm": 19.9,
         "ogiveLengthMm": null,
         "boatTailLengthMm": null,
         "bearingSurfaceMm": null,
@@ -13053,25 +13052,6 @@
       },
       "ballistics": {
         "g1BC": 0.217
-      }
-    },
-    {
-      "id": "BUL_HORNADY_323_170_SP_BE2F",
-      "name": "SP",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "diameterId": "DIA_323_M2P1",
-      "physis": {
-        "weightGrams": 11.0158147,
-        "overallLengthMm": 36.8,
-        "ogiveLengthMm": 16.6,
-        "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 20.2,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {
-        "g1BC": 0.217,
-        "g7BC": 0.198
       }
     },
     {
@@ -13160,22 +13140,6 @@
       "ballistics": {
         "g1BC": 0.464
       }
-    },
-    {
-      "id": "BUL_HORNADY_323_220_SP_39B4",
-      "name": "InterLock SP",
-      "manufacturerId": "MAN_HORNADY_JGR4",
-      "diameterId": "DIA_323_M2P1",
-      "physis": {
-        "weightGrams": 14.25576,
-        "overallLengthMm": 33.6,
-        "ogiveLengthMm": 21.8337379421771,
-        "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 11.766262057822903,
-        "engravingPressurePa": 30000000,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {}
     },
     {
       "id": "BUL_HORNADY_338_185_CX_1413",
@@ -13494,7 +13458,7 @@
       "diameterId": "DIA_358_P8K5",
       "physis": {
         "weightGrams": 10.238228,
-        "overallLengthMm": null,
+        "overallLengthMm": 17.046,
         "ogiveLengthMm": null,
         "boatTailLengthMm": null,
         "bearingSurfaceMm": null,
@@ -13532,7 +13496,7 @@
       "diameterId": "DIA_358_P8K5",
       "physis": {
         "weightGrams": 11.015815,
-        "overallLengthMm": null,
+        "overallLengthMm": 22.479,
         "ogiveLengthMm": null,
         "boatTailLengthMm": null,
         "bearingSurfaceMm": null,
@@ -13589,7 +13553,7 @@
       "diameterId": "DIA_358_P8K5",
       "physis": {
         "weightGrams": 16.199728,
-        "overallLengthMm": null,
+        "overallLengthMm": 33.071,
         "ogiveLengthMm": null,
         "boatTailLengthMm": null,
         "bearingSurfaceMm": null,
@@ -18043,22 +18007,6 @@
       }
     },
     {
-      "id": "BUL_SIERRA_224_69_BTHP_2903",
-      "name": "BTHP",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "diameterId": "DIA_224_L5X8",
-      "physis": {
-        "weightGrams": 4.47112479,
-        "overallLengthMm": 22.86,
-        "ogiveLengthMm": 11.7729,
-        "boatTailLengthMm": 3.3604,
-        "bearingSurfaceMm": 7.7267,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {}
-    },
-    {
       "id": "BUL_SIERRA_224_69_HPBT_3274",
       "name": "MatchKing HPBT",
       "manufacturerId": "MAN_SIERRA_S6Y3",
@@ -21269,25 +21217,6 @@
       }
     },
     {
-      "id": "BUL_SIERRA_375_350_HPBT_C323",
-      "name": "HPBT",
-      "manufacturerId": "MAN_SIERRA_S6Y3",
-      "diameterId": "DIA_375_W4T2",
-      "physis": {
-        "weightGrams": 22.679619,
-        "overallLengthMm": 47.2999,
-        "ogiveLengthMm": null,
-        "boatTailLengthMm": null,
-        "bearingSurfaceMm": null,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {
-        "g1BC": null,
-        "g7BC": null
-      }
-    },
-    {
       "id": "BUL_SPEER_224_30_TNT_D60D",
       "name": "TNT",
       "manufacturerId": "MAN_SPEER_S2P1",
@@ -21682,24 +21611,6 @@
       }
     },
     {
-      "id": "BUL_SPEER_243_100_6MMSPITZER_B558",
-      "name": "6mm Spitzer BTSP",
-      "manufacturerId": "MAN_SPEER_S2P1",
-      "diameterId": "DIA_243_B7V4",
-      "physis": {
-        "weightGrams": 6.479891,
-        "overallLengthMm": 26.7,
-        "ogiveLengthMm": 17.309760568582735,
-        "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 9.390239431417264,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {
-        "g1BC": 0.446
-      }
-    },
-    {
       "id": "BUL_SPEER_243_100_BTSP_7AE0",
       "name": "Spitzer BTSP",
       "manufacturerId": "MAN_SPEER_S2P1",
@@ -21744,7 +21655,7 @@
       "diameterId": "DIA_243_B7V4",
       "physis": {
         "weightGrams": 6.80388555,
-        "overallLengthMm": 31.75,
+        "overallLengthMm": 27.643,
         "ogiveLengthMm": 17.653,
         "boatTailLengthMm": 4.191,
         "bearingSurfaceMm": 9.906,
@@ -22103,26 +22014,8 @@
         "materialType": "MAT_JACKETED_LEAD"
       },
       "ballistics": {
-        "g1BC": 0.498,
+        "g1BC": 0.378,
         "g7BC": 0.1936
-      }
-    },
-    {
-      "id": "BUL_SPEER_264_140_HOTCOR_C043",
-      "name": "Hot-Cor SP",
-      "manufacturerId": "MAN_SPEER_S2P1",
-      "diameterId": "DIA_264_H8J4",
-      "physis": {
-        "weightGrams": 9.0718474,
-        "overallLengthMm": 28.448,
-        "ogiveLengthMm": 19.6035,
-        "boatTailLengthMm": 0,
-        "bearingSurfaceMm": 8.8445,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {
-        "g1BC": 0.498
       }
     },
     {
@@ -23437,32 +23330,13 @@
       }
     },
     {
-      "id": "BUL_SPEER_375_235_SPITZER_71D3",
-      "name": "Spitzer",
-      "manufacturerId": "MAN_SPEER_S2P1",
-      "diameterId": "DIA_375_W4T2",
-      "physis": {
-        "weightGrams": 15.227744,
-        "overallLengthMm": null,
-        "ogiveLengthMm": null,
-        "boatTailLengthMm": null,
-        "bearingSurfaceMm": null,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {
-        "g1BC": null,
-        "g7BC": null
-      }
-    },
-    {
       "id": "BUL_SPEER_375_235_SP_E2E9",
       "name": "SP",
       "manufacturerId": "MAN_SPEER_S2P1",
       "diameterId": "DIA_375_W4T2",
       "physis": {
         "weightGrams": 15.227744,
-        "overallLengthMm": null,
+        "overallLengthMm": 26.416,
         "ogiveLengthMm": null,
         "boatTailLengthMm": null,
         "bearingSurfaceMm": null,
@@ -23494,32 +23368,13 @@
       }
     },
     {
-      "id": "BUL_SPEER_375_270_BTSP_370B",
-      "name": "BTSP",
-      "manufacturerId": "MAN_SPEER_S2P1",
-      "diameterId": "DIA_375_W4T2",
-      "physis": {
-        "weightGrams": 17.495706,
-        "overallLengthMm": null,
-        "ogiveLengthMm": null,
-        "boatTailLengthMm": null,
-        "bearingSurfaceMm": null,
-        "engravingPressurePa": null,
-        "materialType": "MAT_JACKETED_LEAD"
-      },
-      "ballistics": {
-        "g1BC": null,
-        "g7BC": null
-      }
-    },
-    {
       "id": "BUL_SPEER_375_270_SPITZERB_C1DD",
       "name": "Spitzer BTSP",
       "manufacturerId": "MAN_SPEER_S2P1",
       "diameterId": "DIA_375_W4T2",
       "physis": {
         "weightGrams": 17.495706,
-        "overallLengthMm": null,
+        "overallLengthMm": 33.274,
         "ogiveLengthMm": null,
         "boatTailLengthMm": null,
         "bearingSurfaceMm": null,
