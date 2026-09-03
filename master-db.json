@@ -13027,7 +13027,7 @@
       "diameterId": "DIA_323_M2P1",
       "physis": {
         "weightGrams": 11.01581,
-        "overallLengthMm": 19.9,
+        "overallLengthMm": null,
         "ogiveLengthMm": null,
         "boatTailLengthMm": null,
         "bearingSurfaceMm": null,
@@ -18138,7 +18138,7 @@
     },
     {
       "id": "BUL_SIERRA_224_95_MKCN_1D89",
-      "name": "MatchKing CrownStrike",
+      "name": "MatchKing HPBT/CN",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "diameterId": "DIA_224_L5X8",
       "physis": {
@@ -18209,7 +18209,7 @@
     },
     {
       "id": "BUL_SIERRA_243_105_MKCN_A8C0",
-      "name": "MatchKing CrownStrike",
+      "name": "MatchKing HPBT/CN",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "diameterId": "DIA_243_B7V4",
       "physis": {
@@ -18283,7 +18283,7 @@
     },
     {
       "id": "BUL_SIERRA_243_110_MKCN_4EB5",
-      "name": "MatchKing CrownStrike",
+      "name": "MatchKing HPBT/CN",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "diameterId": "DIA_243_B7V4",
       "physis": {
@@ -18570,7 +18570,7 @@
     },
     {
       "id": "BUL_SIERRA_243_95_MKCN_8EAE",
-      "name": "MatchKing CrownStrike",
+      "name": "MatchKing HPBT/CN",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "diameterId": "DIA_243_B7V4",
       "physis": {
@@ -18754,7 +18754,7 @@
     },
     {
       "id": "BUL_SIERRA_257_131_MKCN_D820",
-      "name": "MatchKing CrownStrike",
+      "name": "MatchKing HPBT/CN",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "diameterId": "DIA_257_N2M1",
       "physis": {
@@ -19059,7 +19059,7 @@
     },
     {
       "id": "BUL_SIERRA_264_130_MKCN_FA6C",
-      "name": "MatchKing CrownStrike",
+      "name": "MatchKing HPBT/CN",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "diameterId": "DIA_264_H8J4",
       "physis": {
@@ -19206,7 +19206,7 @@
     },
     {
       "id": "BUL_SIERRA_264_142_MKCN_6222",
-      "name": "MatchKing CrownStrike",
+      "name": "MatchKing HPBT/CN",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "diameterId": "DIA_264_H8J4",
       "physis": {
@@ -19274,7 +19274,7 @@
     },
     {
       "id": "BUL_SIERRA_264_150_MKCN_5967",
-      "name": "MatchKing CrownStrike",
+      "name": "MatchKing HPBT/CN",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "diameterId": "DIA_264_H8J4",
       "physis": {
@@ -19980,7 +19980,7 @@
     },
     {
       "id": "BUL_SIERRA_284_180_MKCN_19EE",
-      "name": "MatchKing CrownStrike",
+      "name": "MatchKing HPBT/CN",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "diameterId": "DIA_284_S3F6",
       "physis": {
@@ -20017,7 +20017,7 @@
     },
     {
       "id": "BUL_SIERRA_284_183_MKCN_B88D",
-      "name": "MatchKing CrownStrike",
+      "name": "MatchKing HPBT/CN",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "diameterId": "DIA_284_S3F6",
       "physis": {
@@ -20052,7 +20052,7 @@
     },
     {
       "id": "BUL_SIERRA_284_197_MKCN_26B9",
-      "name": "MatchKing CrownStrike",
+      "name": "MatchKing HPBT/CN",
       "manufacturerId": "MAN_SIERRA_S6Y3",
       "diameterId": "DIA_284_S3F6",
       "physis": {
@@ -21656,9 +21656,9 @@
       "physis": {
         "weightGrams": 6.80388555,
         "overallLengthMm": 27.643,
-        "ogiveLengthMm": 17.653,
-        "boatTailLengthMm": 4.191,
-        "bearingSurfaceMm": 9.906,
+        "ogiveLengthMm": 15.3695,
+        "boatTailLengthMm": 3.6489,
+        "bearingSurfaceMm": 8.6246,
         "engravingPressurePa": null,
         "materialType": "MAT_JACKETED_LEAD"
       },
