@@ -13699,6 +13699,25 @@
       }
     },
     {
+      "id": "BUL_LAPUA_224_51_HPCE_FBB7",
+      "name": "HPCE G494",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "diameterId": "DIA_224_L5X8",
+      "physis": {
+        "weightGrams": 3.3047444,
+        "overallLengthMm": 18.4,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.221,
+        "g7BC": null
+      }
+    },
+    {
       "id": "BUL_LAPUA_224_55_FMJ_6E10",
       "name": "FMJBT",
       "manufacturerId": "MAN_LAPUA_L5X1",
@@ -13774,6 +13793,25 @@
       }
     },
     {
+      "id": "BUL_LAPUA_243_100_MEGA_0BE5",
+      "name": "Mega E457",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "diameterId": "DIA_243_B7V4",
+      "physis": {
+        "weightGrams": 6.479891,
+        "overallLengthMm": 25.1,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.287,
+        "g7BC": null
+      }
+    },
+    {
       "id": "BUL_LAPUA_243_105_SCENARL_1FFA",
       "name": "Scenar-L",
       "manufacturerId": "MAN_LAPUA_L5X1",
@@ -13790,6 +13828,25 @@
       "ballistics": {
         "g1BC": 0.472,
         "g7BC": 0.236
+      }
+    },
+    {
+      "id": "BUL_LAPUA_243_77_HP_AACC",
+      "name": "HP G490",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "diameterId": "DIA_243_B7V4",
+      "physis": {
+        "weightGrams": 4.9895161,
+        "overallLengthMm": 24.2,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.319,
+        "g7BC": null
       }
     },
     {
@@ -13831,6 +13888,25 @@
       }
     },
     {
+      "id": "BUL_LAPUA_264_100_FMJ_4F09",
+      "name": "FMJ S341",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "diameterId": "DIA_264_H8J4",
+      "physis": {
+        "weightGrams": 6.479891,
+        "overallLengthMm": 21.3,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.25,
+        "g7BC": null
+      }
+    },
+    {
       "id": "BUL_LAPUA_264_100_SCENAR_5F24",
       "name": "Scenar",
       "manufacturerId": "MAN_LAPUA_L5X1",
@@ -13866,6 +13942,44 @@
       "ballistics": {
         "g1BC": 0.4669,
         "g7BC": 0.231
+      }
+    },
+    {
+      "id": "BUL_LAPUA_264_108_SCENAR_8AC2",
+      "name": "Scenar GB464",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "diameterId": "DIA_264_H8J4",
+      "physis": {
+        "weightGrams": 6.9982823,
+        "overallLengthMm": 33.1,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.465,
+        "g7BC": 0.231
+      }
+    },
+    {
+      "id": "BUL_LAPUA_264_120_SCENARL_9564",
+      "name": "Scenar-L GB547",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "diameterId": "DIA_264_H8J4",
+      "physis": {
+        "weightGrams": 7.7758692,
+        "overallLengthMm": 31.9,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.497,
+        "g7BC": 0.246
       }
     },
     {
@@ -13984,6 +14098,25 @@
       }
     },
     {
+      "id": "BUL_LAPUA_264_144_FMJBT_404D",
+      "name": "FMJBT B343",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "diameterId": "DIA_264_H8J4",
+      "physis": {
+        "weightGrams": 9.331043,
+        "overallLengthMm": 33.1,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.636,
+        "g7BC": null
+      }
+    },
+    {
       "id": "BUL_LAPUA_264_144_MAXRANGE_32DF",
       "name": "MaxRange Target",
       "manufacturerId": "MAN_LAPUA_L5X1",
@@ -14041,6 +14174,44 @@
       }
     },
     {
+      "id": "BUL_LAPUA_284_156_NAT_477A",
+      "name": "Naturalis N564",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "diameterId": "DIA_284_S3F6",
+      "physis": {
+        "weightGrams": 10.10863,
+        "overallLengthMm": 34.3,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": 65000000,
+        "materialType": "MAT_MONOLITHIC_COPPER"
+      },
+      "ballistics": {
+        "g1BC": 0.28,
+        "g7BC": null
+      }
+    },
+    {
+      "id": "BUL_LAPUA_284_160_NAT_8D52",
+      "name": "Naturalis N510",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "diameterId": "DIA_284_S3F6",
+      "physis": {
+        "weightGrams": 10.3678256,
+        "overallLengthMm": 32.8,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": 65000000,
+        "materialType": "MAT_MONOLITHIC_COPPER"
+      },
+      "ballistics": {
+        "g1BC": 0.276,
+        "g7BC": null
+      }
+    },
+    {
       "id": "BUL_LAPUA_284_180_SCENARL_D7F7",
       "name": "Scenar-L",
       "manufacturerId": "MAN_LAPUA_L5X1",
@@ -14060,6 +14231,63 @@
       }
     },
     {
+      "id": "BUL_LAPUA_308_100_OTCE_4E06",
+      "name": "OTCE G477",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 6.479891,
+        "overallLengthMm": 23.2,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.17,
+        "g7BC": null
+      }
+    },
+    {
+      "id": "BUL_LAPUA_308_100_OT_CCB6",
+      "name": "Open Tip G580",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 6.479891,
+        "overallLengthMm": null,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.2,
+        "g7BC": null
+      }
+    },
+    {
+      "id": "BUL_LAPUA_308_105_HP_47E9",
+      "name": "HP G450",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 6.8038856,
+        "overallLengthMm": 25.3,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.168,
+        "g7BC": null
+      }
+    },
+    {
       "id": "BUL_LAPUA_308_123_FMJ_1E9E",
       "name": "FMJ",
       "manufacturerId": "MAN_LAPUA_L5X1",
@@ -14076,6 +14304,44 @@
       "ballistics": {
         "g1BC": 0.27,
         "g7BC": null
+      }
+    },
+    {
+      "id": "BUL_LAPUA_308_130_HP_55E1",
+      "name": "HP G402",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 8.4238583,
+        "overallLengthMm": 25,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.21,
+        "g7BC": null
+      }
+    },
+    {
+      "id": "BUL_LAPUA_308_150_LB_0F66",
+      "name": "LockBase B466",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 9.7198365,
+        "overallLengthMm": 28.1,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.434,
+        "g7BC": 0.217
       }
     },
     {
@@ -14195,6 +14461,25 @@
       }
     },
     {
+      "id": "BUL_LAPUA_308_170_FMJBT_B1EE",
+      "name": "FMJBT D46",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 11.0158147,
+        "overallLengthMm": 31.6,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.504,
+        "g7BC": null
+      }
+    },
+    {
       "id": "BUL_LAPUA_308_170_LB_C960",
       "name": "LockBase B476",
       "manufacturerId": "MAN_LAPUA_L5X1",
@@ -14271,6 +14556,63 @@
       }
     },
     {
+      "id": "BUL_LAPUA_308_180_NAT_BD9E",
+      "name": "Naturalis N505",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 11.6638038,
+        "overallLengthMm": 31.9,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": 65000000,
+        "materialType": "MAT_MONOLITHIC_COPPER"
+      },
+      "ballistics": {
+        "g1BC": 0.302,
+        "g7BC": null
+      }
+    },
+    {
+      "id": "BUL_LAPUA_308_185_FMJBT_2F0F",
+      "name": "FMJBT D46",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 11.9877984,
+        "overallLengthMm": 33.7,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.506,
+        "g7BC": 0.254
+      }
+    },
+    {
+      "id": "BUL_LAPUA_308_185_MEGA_66AF",
+      "name": "Mega E415",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 11.9877984,
+        "overallLengthMm": 28.7,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.319,
+        "g7BC": null
+      }
+    },
+    {
       "id": "BUL_LAPUA_308_185_SCENAR_5ACF",
       "name": "Scenar",
       "manufacturerId": "MAN_LAPUA_L5X1",
@@ -14309,6 +14651,44 @@
       }
     },
     {
+      "id": "BUL_LAPUA_308_200_FMJBT_71AE",
+      "name": "FMJBT D166",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 12.959782,
+        "overallLengthMm": 36.1,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.483,
+        "g7BC": 0.224
+      }
+    },
+    {
+      "id": "BUL_LAPUA_308_201_NAT_A4F8",
+      "name": "Naturalis N513",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 13.0245809,
+        "overallLengthMm": 33.6,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": 65000000,
+        "materialType": "MAT_MONOLITHIC_COPPER"
+      },
+      "ballistics": {
+        "g1BC": 0.336,
+        "g7BC": null
+      }
+    },
+    {
       "id": "BUL_LAPUA_308_220_SCENARL_5A72",
       "name": "Scenar-L",
       "manufacturerId": "MAN_LAPUA_L5X1",
@@ -14325,6 +14705,82 @@
       "ballistics": {
         "g1BC": 0.647,
         "g7BC": 0.3137
+      }
+    },
+    {
+      "id": "BUL_LAPUA_308_57_ALS_5152",
+      "name": "FMJ ALS",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "diameterId": "DIA_308_XBM7",
+      "physis": {
+        "weightGrams": 3.6935379,
+        "overallLengthMm": 12.3,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": 0.13,
+        "g7BC": null
+      }
+    },
+    {
+      "id": "BUL_LAPUA_323_120_OT_673C",
+      "name": "Open Tip G573",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "diameterId": "DIA_323_M2P1",
+      "physis": {
+        "weightGrams": 7.7758692,
+        "overallLengthMm": null,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": null,
+        "materialType": "MAT_JACKETED_LEAD"
+      },
+      "ballistics": {
+        "g1BC": null,
+        "g7BC": null
+      }
+    },
+    {
+      "id": "BUL_LAPUA_323_180_NAT_9FA6",
+      "name": "Naturalis N559",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "diameterId": "DIA_323_M2P1",
+      "physis": {
+        "weightGrams": 11.6638038,
+        "overallLengthMm": 31.6,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": 65000000,
+        "materialType": "MAT_MONOLITHIC_COPPER"
+      },
+      "ballistics": {
+        "g1BC": 0.357,
+        "g7BC": null
+      }
+    },
+    {
+      "id": "BUL_LAPUA_338_231_NATLR_D835",
+      "name": "Naturalis LR N508",
+      "manufacturerId": "MAN_LAPUA_L5X1",
+      "diameterId": "DIA_338_R7E3",
+      "physis": {
+        "weightGrams": 14.9685482,
+        "overallLengthMm": 34.4,
+        "ogiveLengthMm": null,
+        "boatTailLengthMm": null,
+        "bearingSurfaceMm": null,
+        "engravingPressurePa": 65000000,
+        "materialType": "MAT_MONOLITHIC_COPPER"
+      },
+      "ballistics": {
+        "g1BC": 0.373,
+        "g7BC": null
       }
     },
     {
