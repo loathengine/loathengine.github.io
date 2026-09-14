@@ -187,15 +187,15 @@ Analysis also computes a **95% Hit-Probability Max Distance** for each load. Tha
 
 **Ignition is internal ballistics: the pressure and velocity engine.** Simulates propellant combustion and bullet acceleration down the bore. It produces pressure-time curves, burn percentage and predicted muzzle velocity. Its **safety audits** are the standout feature: peak pressure against the SAAMI ceiling, case-fill flags for low-fill risk and over-compression, a one-caliber seating-depth check and COAL against SAAMI OAL. This is also where you derive the **per-firearm velocity offset**. *Why:* it's the closest thing to a pressure test you can run at your bench and it fails loud rather than guessing.
 
-**Monte Carlo: hit probability.** Seeds the trajectory engine with your dispersion and the *uncertainty* in every input. It then fires thousands of virtual shots to produce P(Hit) against range curves and an impact heat map on a target you define. *Why:* turns "it groups well" into "it hits a 10-inch plate 9 times out of 10 at 500 yards."
+**Varytita: drop chart and DOPE card.** Charts drop, drift and velocity from the RK4 trajectory engine in a Quick or Advanced tier, and its DOPE tier generates pocket ballistic cards. A card carries MIL or MOA turret values, regular or custom range stops and a **Maximum Point Blank Range (MPBR)** solver. The solver finds the zero that keeps impacts inside a vital zone with no elevation dialing. Exports as a high-resolution PNG. *Why:* a field-ready come-up card built from your exact load and conditions.
 
-**Efstathia: gyroscopic stability (Sg).** Uses the Refined Miller Twist Rule corrected for velocity and air density to compute your stability factor. **Sg ≥ 1.5** is fully stable. **1.0–1.5** is marginal. Yaw robs 10–15% of BC and opens groups. **Below 1.0** is unstable and will tumble and keyhole. It handles plastic-tipped bullets by modeling the metal core length. *Why:* tells you before you buy whether a bullet will even stabilize out of your twist.
+**Kyvos: hit probability.** Seeds the trajectory engine with your dispersion and the *uncertainty* in every input. It then fires thousands of virtual shots to produce P(Hit) against range curves and an impact heat map on a target you define. *Why:* turns "it groups well" into "it hits a 10-inch plate 9 times out of 10 at 500 yards."
 
-**Kylindros: ballistic coefficient estimation.** Solves for your bullet's actual BC from measured muzzle velocities and downrange impacts. You get a shot-by-shot distribution, a 95% CI and a reliability readout. It requires 300 yd/m or more and is very sensitive to zero error. *Why:* verify a manufacturer's advertised BC against how the bullet really flies from your barrel.
+**Strovilos: gyroscopic stability (Sg).** Uses the Refined Miller Twist Rule corrected for velocity and air density to compute your stability factor. **Sg ≥ 1.5** is fully stable. **1.0–1.5** is marginal. Yaw robs 10–15% of BC and opens groups. **Below 1.0** is unstable and will tumble and keyhole. It handles plastic-tipped bullets by modeling the metal core length. *Why:* tells you before you buy whether a bullet will even stabilize out of your twist.
+
+**Rheos: ballistic coefficient estimation.** Solves for your bullet's actual BC from measured muzzle velocities and downrange impacts. You get a shot-by-shot distribution, a 95% CI and a reliability readout. It requires 300 yd/m or more and is very sensitive to zero error. *Why:* verify a manufacturer's advertised BC against how the bullet really flies from your barrel.
 
 **Manteis: empirical hit probability.** The only tool that compares **many saved sessions at once**. It builds a hit-percentage matrix across a distance band and a set of crosswinds. It uses each session's *measured* group dispersion and velocity consistency and crowns a winner at every distance. *Why:* answers "which of my loads should I actually take to a 700-yard match?" using data you already shot.
-
-**DOPE: drop card and point-blank zero.** Generates pocket ballistic cards from the RK4 trajectory engine. A card carries MIL or MOA turret values, regular or custom range stops and a **Maximum Point Blank Range (MPBR)** solver. The solver finds the zero that keeps impacts inside a vital zone with no elevation dialing. Exports as a high-resolution PNG. *Why:* a field-ready come-up card built from your exact load and conditions.
 
 > **Every tool starts the same way.** Pick a **Session** to fill everything or work down **Firearm → Caliber → Cartridge → Bullet Manufacturer → Bullet Name**. Caliber narrows the cartridge list. Cartridge narrows nothing else. So **choosing a cartridge never picks a bullet for you.** Field-by-field detail for all six tools is in [The Advanced Tool Guide](#14-the-advanced-tool-guide-heurisko-field-by-field).
 
@@ -367,7 +367,58 @@ Ignition needs the whole cartridge rather than just the bullet. So it adds four 
 A chronograph that consistently reads 40 fps below prediction is telling you about your barrel rather than the physics. Store the difference on the **firearm** with the offset control here. It shifts **displayed velocity only** and the pressure trace and the entire safety audit are untouched. This is the sanctioned way to reconcile the model with your rifle and it is why you never need to touch a burn coefficient.
 
 ---
-### 14.2 Monte Carlo: hit probability
+
+---
+
+### 14.2 Varytita: the drop chart and DOPE card
+
+**What it answers:** how far does this bullet fall and drift at every distance today, and what do I dial? Varytita has three tiers. **Quick** and **Advanced** draw the drop, drift and velocity chart from the same trajectory engine. The **DOPE** tier turns that trajectory into a printable card and adds the point-blank-zero solver. The fields below are the DOPE tier's; the chart tiers share the Ballistic Profile and Environment fields and add their own chart settings, which are not yet written up here.
+
+**A card is only as good as the atmosphere you built it in.** Elevation and temperature change air density and air density changes drop. A card built at sea level in winter will be wrong in a summer match at 5,000 ft. Build a new one or accept that you'll be re-truing in the field.
+
+#### Ballistic Profile
+
+**Twist Rate (1:X).** Feeds **spin drift** and the card includes it. At 1000 yd it's several inches and it's always the same direction. So leaving twist wrong bakes a constant lateral error into the card.
+
+**Sight Height (in).** As above. Wrong here means a card that's fine far out and wrong up close.
+
+**Zero Distance (yd).** The range where the card reads 0.0. **This is the anchor for every row.**
+
+**Zero Offset X / Y (in).** A known constant aim error at the zero distance from your measured MPI offset. **Leave at 0** for a true zero. Set it if your rifle prints consistently off and you want the card to correct for it rather than pretending.
+
+**Bullet Diameter (in) / Bullet Weight (gr) / Bullet Length (in).** The projectile. Length feeds stability and therefore the aerodynamic-jump and transonic notes.
+
+**Ballistic Coefficient (BC).** **The field that shapes the whole card.** **Raise it** and every drop number shrinks. **Change it when:** you've measured it in Rheos. An optimistic advertised BC produces a card that's close at 300 and increasingly wrong past 700. That is the classic "my dope stops matching past 600" complaint.
+
+**Muzzle Velocity (fps).** The measured mean and ideally one taken at the temperature you'll be shooting. **Raise it** and everything flattens.
+
+#### Environment
+
+**Temperature (°F) / Pressure (inHg) / Altitude (ft) / Humidity (0–1).** The air. Note humidity here is a **fraction**. So `0.5` is 50% rather than `50`.
+
+**Wind Speed (mph) / Wind Angle (°).** The wind the windage column is computed for. **0° head, 90° full-value right, 180° tail, 270° full-value left.** Many shooters build the card at a **10 mph full-value (90°) crosswind** and then scale in their head since half the wind is half the hold. That's a good default.
+
+**Firing Azimuth.** Compass direction of fire for Coriolis. Only meaningful past roughly 800 yd.
+
+#### Card Configuration
+
+**Range Units.** Yards or meters for the whole card.
+
+**Holds Unit.** **MIL or MOA.** Match your scope's turrets. Getting this wrong is the fastest way to a dangerous miss because MIL and MOA numbers are similar in magnitude and easy to confuse under stress.
+
+**Turret Click Value.** Your scope's click increment such as 0.1 MIL or 1/4 MOA. The card rounds its solutions to whole clicks. So this must match your actual turret or the printed values won't be dialable.
+
+**Interval / Stops Mode.** How rows are chosen:
+- **Interval** gives regular steps. Use **Max Range** and **Step Increments**. An example is every 50 yd to 1000.
+- **Stops** takes your own list in **Comma Separated Range Stops**. It is better for a card built around the known distances of a specific range or match stage: `100, 285, 400, 630, 875`.
+
+**Vital Zone Diameter (in).** The target the **MPBR** solver must stay inside. **This is the only input to point-blank zero that matters.** MPBR finds the zero distance that keeps the bullet within plus or minus half this diameter for the longest possible span. So you can hold dead-on without dialing. **Set it to your quarry or your target.** 6" is a conventional deer vital zone, 10" suits elk and 2–4" suits varmints. **Lower it** and the point-blank span shrinks sharply. That is the trade-off and seeing it quantified is the point of the tool.
+
+**Reading the output.** Each row gives elevation hold, windage hold and remaining velocity. The card flags where the bullet goes **transonic** at roughly Mach 1.2. Past that the trajectories become less predictable and it is usually the honest end of your card regardless of what the numbers say below it. The MPBR block gives the near zero, the far zero and the maximum point-blank range for your chosen vital zone.
+
+---
+
+### 14.3 Kyvos: hit probability
 
 **What it answers:** how many out of a thousand shots hit this target at this range in these conditions? It fires thousands of virtual shots and counts the holes. Each shot gets a slightly different velocity, BC, wind and aim.
 
@@ -383,7 +434,7 @@ A chronograph that consistently reads 40 fps below prediction is telling you abo
 
 **Bullet Diameter (in)** and **Bullet Weight (gr).** As in Ignition. Weight and diameter set the sectional density. Sectional density and BC together govern how the bullet holds velocity.
 
-**Ballistic Coefficient (BC).** The bullet's drag number. **Auto-fills from:** the bullet record. G7 is preferred with G1 as fallback. **Raise it** and the bullet drops less, drifts less and stays supersonic longer. **Change it when:** you have measured your own with Kylindros. Advertised BCs are frequently optimistic and are quoted at velocities you may not be shooting. **Make sure it matches the Drag Model below.** A G1 number entered against a G7 model is the single most common way to get a badly wrong answer here because G1 values are roughly double G7 for the same bullet.
+**Ballistic Coefficient (BC).** The bullet's drag number. **Auto-fills from:** the bullet record. G7 is preferred with G1 as fallback. **Raise it** and the bullet drops less, drifts less and stays supersonic longer. **Change it when:** you have measured your own with Rheos. Advertised BCs are frequently optimistic and are quoted at velocities you may not be shooting. **Make sure it matches the Drag Model below.** A G1 number entered against a G7 model is the single most common way to get a badly wrong answer here because G1 values are roughly double G7 for the same bullet.
 
 **Muzzle Velocity (fps).** The average speed at the muzzle. **Auto-fills from:** the session's chronograph mean if there is one. Otherwise the Ignition estimate. **Use your measured mean if you have it.**
 
@@ -561,7 +612,10 @@ Shot-to-shot variation in how level you hold the rifle in degrees. Use **1–2°
 7. Now set **Wind Estimate Error** to 0 and re-run. The gap between the two answers is *your wind-reading skill expressed in yards*. For most shooters it is a bigger number than anything they could gain by reloading.
 
 ---
-### 14.3 Efstathia: gyroscopic stability
+
+---
+
+### 14.4 Strovilos: gyroscopic stability
 
 **What it answers:** will this bullet fly point-first out of my barrel or wobble? One number called **Sg** from the Refined Miller Twist Rule corrected for velocity and air density.
 
@@ -585,7 +639,7 @@ Shot-to-shot variation in how level you hold the rifle in degrees. Use **1–2°
 
 ---
 
-### 14.4 Kylindros: ballistic coefficient from your own data
+### 14.5 Rheos: ballistic coefficient from your own data
 
 **What it answers:** what is my bullet's *actual* BC as measured from how far it dropped rather than from what the box claims?
 
@@ -616,7 +670,10 @@ Shot-to-shot variation in how level you hold the rifle in degrees. Use **1–2°
 **When to use it:** verifying an advertised BC before building a DOPE card on it. **When not to:** as a substitute for a chronograph or at 200 yards.
 
 ---
-### 14.5 Manteis: comparing loads across sessions
+
+---
+
+### 14.6 Manteis: comparing loads across sessions
 
 **What it answers:** which of the loads I've actually shot hits best at 600 yards in a 10 mph wind? This is the only Heurisko tool that works on **many sessions at once** and every number in it comes from measured data rather than a hypothetical.
 
@@ -631,51 +688,6 @@ Shot-to-shot variation in how level you hold the rifle in degrees. Use **1–2°
 **Reading the matrix.** Each row is a session, each column a distance and each cell a colour-coded hit percentage. The **golden ★ TOP** ring marks the best session at each distance under the primary wind. **Watch for the crossover.** The row that wins at 300 is often not the row that wins at 800 and that is precisely the decision this tool exists to inform.
 
 ---
-### 14.6 DOPE: the drop card
-
-**What it answers:** what do I dial at every distance with this rifle and load today? The output is a printable card.
-
-**A card is only as good as the atmosphere you built it in.** Elevation and temperature change air density and air density changes drop. A card built at sea level in winter will be wrong in a summer match at 5,000 ft. Build a new one or accept that you'll be re-truing in the field.
-
-#### Ballistic Profile
-
-**Twist Rate (1:X).** Feeds **spin drift** and the card includes it. At 1000 yd it's several inches and it's always the same direction. So leaving twist wrong bakes a constant lateral error into the card.
-
-**Sight Height (in).** As above. Wrong here means a card that's fine far out and wrong up close.
-
-**Zero Distance (yd).** The range where the card reads 0.0. **This is the anchor for every row.**
-
-**Zero Offset X / Y (in).** A known constant aim error at the zero distance from your measured MPI offset. **Leave at 0** for a true zero. Set it if your rifle prints consistently off and you want the card to correct for it rather than pretending.
-
-**Bullet Diameter (in) / Bullet Weight (gr) / Bullet Length (in).** The projectile. Length feeds stability and therefore the aerodynamic-jump and transonic notes.
-
-**Ballistic Coefficient (BC).** **The field that shapes the whole card.** **Raise it** and every drop number shrinks. **Change it when:** you've measured it in Kylindros. An optimistic advertised BC produces a card that's close at 300 and increasingly wrong past 700. That is the classic "my dope stops matching past 600" complaint.
-
-**Muzzle Velocity (fps).** The measured mean and ideally one taken at the temperature you'll be shooting. **Raise it** and everything flattens.
-
-#### Environment
-
-**Temperature (°F) / Pressure (inHg) / Altitude (ft) / Humidity (0–1).** The air. Note humidity here is a **fraction**. So `0.5` is 50% rather than `50`.
-
-**Wind Speed (mph) / Wind Angle (°).** The wind the windage column is computed for. **0° head, 90° full-value right, 180° tail, 270° full-value left.** Many shooters build the card at a **10 mph full-value (90°) crosswind** and then scale in their head since half the wind is half the hold. That's a good default.
-
-**Firing Azimuth.** Compass direction of fire for Coriolis. Only meaningful past roughly 800 yd.
-
-#### Card Configuration
-
-**Range Units.** Yards or meters for the whole card.
-
-**Holds Unit.** **MIL or MOA.** Match your scope's turrets. Getting this wrong is the fastest way to a dangerous miss because MIL and MOA numbers are similar in magnitude and easy to confuse under stress.
-
-**Turret Click Value.** Your scope's click increment such as 0.1 MIL or 1/4 MOA. The card rounds its solutions to whole clicks. So this must match your actual turret or the printed values won't be dialable.
-
-**Interval / Stops Mode.** How rows are chosen:
-- **Interval** gives regular steps. Use **Max Range** and **Step Increments**. An example is every 50 yd to 1000.
-- **Stops** takes your own list in **Comma Separated Range Stops**. It is better for a card built around the known distances of a specific range or match stage: `100, 285, 400, 630, 875`.
-
-**Vital Zone Diameter (in).** The target the **MPBR** solver must stay inside. **This is the only input to point-blank zero that matters.** MPBR finds the zero distance that keeps the bullet within plus or minus half this diameter for the longest possible span. So you can hold dead-on without dialing. **Set it to your quarry or your target.** 6" is a conventional deer vital zone, 10" suits elk and 2–4" suits varmints. **Lower it** and the point-blank span shrinks sharply. That is the trade-off and seeing it quantified is the point of the tool.
-
-**Reading the output.** Each row gives elevation hold, windage hold and remaining velocity. The card flags where the bullet goes **transonic** at roughly Mach 1.2. Past that the trajectories become less predictable and it is usually the honest end of your card regardless of what the numbers say below it. The MPBR block gives the near zero, the far zero and the maximum point-blank range for your chosen vital zone.
 
 ---
 
@@ -686,20 +698,20 @@ Shot-to-shot variation in how level you hold the rifle in degrees. Use **1–2°
 | Is this charge safe? | **Ignition** | Powder Charge, Case Capacity, Max SAAMI |
 | How much velocity will a shorter barrel cost me? | **Ignition** | Barrel Length slider |
 | Why is my velocity 40 fps off the model? | **Ignition** | the velocity offset, *not* the burn coefficient |
-| Will this bullet stabilize in my twist? | **Efstathia** | Bullet Length, Twist Rate, Tip Length |
-| Is the advertised BC real? | **Kylindros** | Zero Distance and a 300 yd or longer session |
-| Will I hit that plate at 700? | **Monte Carlo** | the Parameter Uncertainties card |
-| How much is my wind-reading costing me? | **Monte Carlo** | Wind Estimate Error |
+| Will this bullet stabilize in my twist? | **Strovilos** | Bullet Length, Twist Rate, Tip Length |
+| Is the advertised BC real? | **Rheos** | Zero Distance and a 300 yd or longer session |
+| Will I hit that plate at 700? | **Kyvos** | the Parameter Uncertainties card |
+| How much is my wind-reading costing me? | **Kyvos** | Wind Estimate Error |
 | Which of my loads is best at distance? | **Manteis** | Crosswind Speeds, Target Size (MOA) |
-| What do I dial? | **DOPE** | Ballistic Coefficient, Holds Unit, Turret Click Value |
-| Where can I hold dead-on? | **DOPE** | Vital Zone Diameter |
+| What do I dial? | **Varytita** (DOPE tier) | Ballistic Coefficient, Holds Unit, Turret Click Value |
+| Where can I hold dead-on? | **Varytita** (DOPE tier) | Vital Zone Diameter |
 
 ### 14.8 The five mistakes that produce confident and wrong answers
 
 1. **A G1 BC entered against a G7 drag model** or the reverse. G1 values are roughly double G7 for the same bullet. So the mismatch is enormous and the tool cannot detect it. Check them together every time.
-2. **All Parameter Uncertainties left at zero in Monte Carlo.** You get a trajectory calculator reporting 100% hits. That is not a probability and it will get you beaten on the clock.
+2. **All Parameter Uncertainties left at zero in Kyvos.** You get a trajectory calculator reporting 100% hits. That is not a probability and it will get you beaten on the clock.
 3. **Editing a powder's burn coefficients to match a chronograph.** It moves the pressure curve and voids the safety audit. Use the per-firearm velocity offset.
-4. **An unverified zero distance in Kylindros.** Your zero error becomes the bullet's BC and then that wrong BC propagates into every DOPE card you build.
+4. **An unverified zero distance in Rheos.** Your zero error becomes the bullet's BC and then that wrong BC propagates into every DOPE card you build.
 5. **Modelling stability or a max load in pleasant weather.** Check Sg in the coldest densest air you'll shoot in and check pressure at the hottest temperature your ammunition will reach in a truck.
 
 ---
@@ -716,11 +728,11 @@ Shot-to-shot variation in how level you hold the rifle in degrees. Use **1–2°
 
 **The Ignition simulator's velocity doesn't match my chronograph.** That is expected because the model is calibrated to lab pressure data rather than to your specific barrel. Use the **per-firearm velocity offset** to store the difference. **Do not** edit powder burn coefficients to force a match. That corrupts the pressure prediction and safety audit.
 
-**Monte Carlo says 100% hits at every range.** Every **Parameter Uncertainty** is still 0. So all thousand virtual shots are identical. Fill in at least Muzzle Velocity SD, System Precision and a realistic Wind Estimate Error. See [The Advanced Tool Guide](#14-the-advanced-tool-guide-heurisko-field-by-field).
+**Kyvos says 100% hits at every range.** Every **Parameter Uncertainty** is still 0. So all thousand virtual shots are identical. Fill in at least Muzzle Velocity SD, System Precision and a realistic Wind Estimate Error. See [The Advanced Tool Guide](#14-the-advanced-tool-guide-heurisko-field-by-field).
 
-**My drop card is right at 300 and wrong at 800.** It is almost always an optimistic BC or a BC quoted for the wrong drag model. Confirm the number and the G1/G7 setting agree and then measure your own BC in Kylindros.
+**My drop card is right at 300 and wrong at 800.** It is almost always an optimistic BC or a BC quoted for the wrong drag model. Confirm the number and the G1/G7 setting agree and then measure your own BC in Rheos.
 
-**A bullet the app calls unstable shoots fine.** Set the tip length in Efstathia if it's polymer-tipped. The tool then models the metal core instead of the full length. That is the honest calculation for a tipped bullet.
+**A bullet the app calls unstable shoots fine.** Set the tip length in Strovilos if it's polymer-tipped. The tool then models the metal core instead of the full length. That is the honest calculation for a tipped bullet.
 
 **Which box do I change to get X?** Every field in every Heurisko tool is documented in [The Advanced Tool Guide](#14-the-advanced-tool-guide-heurisko-field-by-field). That includes when changing it will make your answer worse.
 
@@ -763,7 +775,7 @@ The canonical definition for every term used here and throughout the app. Match 
 | **Shapiro-Wilk** | Normality test on impact radii and on velocities. Feeds the reliability rating |
 | **95% Hit-Prob Max Distance** | Conservative farthest range holding 95% or better hits on a 2 MOA target in a 10 mph crosswind |
 | **Miss Budget** | The vertical (velocity) against horizontal (wind) split of misses at the fall-off distance |
-| **Parameter Uncertainty** | The shot-to-shot variation you give Monte Carlo such as velocity SD, wind SD and wind-call error. It is what turns a trajectory into a probability |
+| **Parameter Uncertainty** | The shot-to-shot variation you give Kyvos such as velocity SD, wind SD and wind-call error. It is what turns a trajectory into a probability |
 | **Wind Estimate Error** | How far your wind *call* is from the true wind. Distinct from wind variability and usually the larger term |
 | **Transonic Limit** | Range where the bullet slows to roughly Mach 1.2. It may cap effective range before dispersion does |
 
@@ -800,12 +812,13 @@ The canonical definition for every term used here and throughout the app. Match 
 
 | Term | Meaning |
 |---|---|
-| **Efstathia** | Gyroscopic stability (Sg) calculator |
-| **Kylindros** | Ballistic-coefficient estimator from measured data |
-| **Monte Carlo** | Hit-probability trajectory simulator |
-| **Manteis** | Empirical hit-probability comparison across many saved sessions |
 | **Ignition** | Internal-ballistics pressure and velocity engine with SAAMI safety audits |
-| **DOPE** | Data On Previous Engagement. A drop and drift correction card |
+| **Varytita** | Drop, drift and velocity chart with a DOPE-card tier |
+| **Kyvos** | Hit-probability trajectory simulator |
+| **Strovilos** | Gyroscopic stability (Sg) calculator |
+| **Rheos** | Ballistic-coefficient estimator from measured data |
+| **Manteis** | Empirical hit-probability comparison across many saved sessions |
+| **DOPE** | Data On Previous Engagement. A drop and drift correction card, Varytita's third tier |
 | **MPBR** | Maximum Point Blank Range. The no-dial zero keeping impacts in a vital zone |
 
 ### Technical
