@@ -7,6 +7,7 @@
 //   • Hashed build assets (/assets/*) and other same-origin GETs are CACHE-FIRST
 //     with background revalidation (they're content-addressed, so staleness is
 //     impossible; revalidation keeps non-hashed files like favicon fresh).
+//     The current build's assets are also precached — see precacheBuild.
 //   • NETWORK_FIRST paths are the exception: same-origin files with a STABLE name whose
 //     contents change between deploys. Cache-first is justified by content-addressing,
 //     and these are not content-addressed, so that justification does not cover them.
@@ -81,6 +82,61 @@ const ASSETS = [
  */
 const OPTIONAL_ASSETS = ['/library-db.json'];
 
+/**
+ * Finds the hashed build in index.html and precaches all of it: the entry bundle, its
+ * preloads and stylesheet, and every chunk they import, lazy pages included.
+ *
+ * ASSETS cannot list these because their names change every deploy, and a first visit
+ * never routes them through this worker: the page fetches its bundles before the worker is
+ * registered. Without this, someone who installs the PWA and opens it offline once the
+ * HTTP cache has expired (GitHub Pages sends max-age=600) gets the cached index.html, a
+ * failed fetch for /assets/index-*.js, and a blank page.
+ *
+ * index.html's <script>/<link> tags name the entry. The entry's __vite__mapDeps names
+ * every lazy chunk as "assets/…", and chunks import one another as "./…". A regex match
+ * that is not a real file just returns 404 and is skipped, so this is best-effort in the
+ * same way OPTIONAL_ASSETS is.
+ *
+ * sw.js is byte-identical across deploys, so install runs once per install rather than
+ * once per deploy. The navigation handler therefore re-runs this for every fresh
+ * index.html.
+ */
+const BUILD_REF = /(?:assets\/|\.\/)([\w-]+\.(?:js|css))/g;
+
+async function precacheBuild(html) {
+  const cache = await caches.open(CACHE_NAME);
+  const seen = new Set();
+  let texts = [html];
+  while (texts.length) {
+    const paths = [];
+    for (const text of texts) {
+      for (const [, name] of text.matchAll(BUILD_REF)) {
+        const path = `/assets/${name}`;
+        if (!seen.has(path)) {
+          seen.add(path);
+          paths.push(path);
+        }
+      }
+    }
+    const found = await Promise.all(
+      paths.map(async (path) => {
+        let response = await cache.match(path);
+        if (!response) {
+          response = await fetch(path).catch(() => null);
+          if (!response || response.status !== 200) return null;
+        }
+        // Put even on a hit. That moves the entry to the newest end of trimCache's FIFO.
+        // A chunk carried over unchanged from an earlier deploy (usually the vendor
+        // bundle) would otherwise be the oldest entry and the first one evicted.
+        await cache.put(path, response.clone());
+        return path.endsWith('.js') ? response.text() : null;
+      })
+    );
+    texts = found.filter(Boolean);
+  }
+  await trimCache(cache);
+}
+
 self.addEventListener('install', (e) => {
   e.waitUntil(
     caches.open(CACHE_NAME).then(async (cache) => {
@@ -88,6 +144,8 @@ self.addEventListener('install', (e) => {
       await Promise.all(
         OPTIONAL_ASSETS.map((path) => cache.add(path).catch(() => {}))
       );
+      const shell = await cache.match('/index.html');
+      await precacheBuild(await shell.text()).catch(() => {});
     })
   );
   self.skipWaiting();
@@ -134,7 +192,12 @@ self.addEventListener('fetch', (e) => {
       fetch(e.request)
         .then((response) => {
           if (response.status === 200) {
-            e.waitUntil(putAndTrim('/index.html', response.clone()));
+            const shell = response.clone();
+            e.waitUntil(
+              putAndTrim('/index.html', shell.clone())
+                .then(async () => precacheBuild(await shell.text()))
+                .catch(() => {})
+            );
           }
           return response;
         })
