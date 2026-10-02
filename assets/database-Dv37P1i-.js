@@ -1,0 +1,1 @@
+var e=e=>e.groupId!=null&&e.x!=null&&e.y!=null;export{e as t};
