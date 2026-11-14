@@ -1,0 +1,2394 @@
+[
+  {
+    "type": "cartridge",
+    "name": "218 Bee",
+    "id": "CTG_218BEE_B801",
+    "slug": "218-bee",
+    "url": "https://empiricalprecision.com/load-data/218-bee/",
+    "loadCount": 524
+  },
+  {
+    "type": "cartridge",
+    "name": "219 Zipper",
+    "id": "CTG_219ZIP_cNH4",
+    "slug": "219-zipper",
+    "url": "https://empiricalprecision.com/load-data/219-zipper/",
+    "loadCount": 290
+  },
+  {
+    "type": "cartridge",
+    "name": "22-250 Ackley Improved",
+    "id": "CTG_22250ACKLEYIMP_E52B",
+    "slug": "22-250-ackley-improved",
+    "url": "https://empiricalprecision.com/load-data/22-250-ackley-improved/",
+    "loadCount": 1978
+  },
+  {
+    "type": "cartridge",
+    "name": "22-250 Remington",
+    "id": "CTG_22250_cK32",
+    "slug": "22-250-remington",
+    "url": "https://empiricalprecision.com/load-data/22-250-remington/",
+    "loadCount": 5444
+  },
+  {
+    "type": "cartridge",
+    "name": "22 ARC",
+    "id": "CTG_22ARC_cK12",
+    "slug": "22-arc",
+    "url": "https://empiricalprecision.com/load-data/22-arc/",
+    "loadCount": 4527
+  },
+  {
+    "type": "cartridge",
+    "name": "22 BR Remington",
+    "id": "CTG_22BR_cNH2",
+    "slug": "22-br-remington",
+    "url": "https://empiricalprecision.com/load-data/22-br-remington/",
+    "loadCount": 1457
+  },
+  {
+    "type": "cartridge",
+    "name": "22 Creedmoor",
+    "id": "CTG_22CM_cA72",
+    "slug": "22-creedmoor",
+    "url": "https://empiricalprecision.com/load-data/22-creedmoor/",
+    "loadCount": 1968
+  },
+  {
+    "type": "cartridge",
+    "name": "22 Hornet",
+    "id": "CTG_22HORNET_96E2",
+    "slug": "22-hornet",
+    "url": "https://empiricalprecision.com/load-data/22-hornet/",
+    "loadCount": 988
+  },
+  {
+    "type": "cartridge",
+    "name": "22 K Hornet",
+    "id": "CTG_22KHORNET_F5EA",
+    "slug": "22-k-hornet",
+    "url": "https://empiricalprecision.com/load-data/22-k-hornet/",
+    "loadCount": 770
+  },
+  {
+    "type": "cartridge",
+    "name": "22 Nosler",
+    "id": "CTG_22NOSLER_n2s2",
+    "slug": "22-nosler",
+    "url": "https://empiricalprecision.com/load-data/22-nosler/",
+    "loadCount": 2817
+  },
+  {
+    "type": "cartridge",
+    "name": "22 PPC USA",
+    "id": "CTG_22PPC_cNH1",
+    "slug": "22-ppc-usa",
+    "url": "https://empiricalprecision.com/load-data/22-ppc-usa/",
+    "loadCount": 1130
+  },
+  {
+    "type": "cartridge",
+    "name": "220 Swift",
+    "id": "CTG_220SWIFT_N2H6",
+    "slug": "220-swift",
+    "url": "https://empiricalprecision.com/load-data/220-swift/",
+    "loadCount": 3322
+  },
+  {
+    "type": "cartridge",
+    "name": "222 Remington",
+    "id": "CTG_222REM_cR81",
+    "slug": "222-remington",
+    "url": "https://empiricalprecision.com/load-data/222-remington/",
+    "loadCount": 3110
+  },
+  {
+    "type": "cartridge",
+    "name": "222 Remington Magnum",
+    "id": "CTG_222REMMAG_cR84",
+    "slug": "222-remington-magnum",
+    "url": "https://empiricalprecision.com/load-data/222-remington-magnum/",
+    "loadCount": 1983
+  },
+  {
+    "type": "cartridge",
+    "name": "223 Remington",
+    "id": "CTG_223REM_cR82",
+    "slug": "223-remington",
+    "url": "https://empiricalprecision.com/load-data/223-remington/",
+    "loadCount": 9198
+  },
+  {
+    "type": "cartridge",
+    "name": "223 Remington Ackley Improved",
+    "id": "CTG_223REMINGTONAC_266C",
+    "slug": "223-remington-ackley-improved",
+    "url": "https://empiricalprecision.com/load-data/223-remington-ackley-improved/",
+    "loadCount": 1681
+  },
+  {
+    "type": "cartridge",
+    "name": "223 WSSM",
+    "id": "CTG_223WSSM_cNH0",
+    "slug": "223-wssm",
+    "url": "https://empiricalprecision.com/load-data/223-wssm/",
+    "loadCount": 801
+  },
+  {
+    "type": "cartridge",
+    "name": "224 Valkyrie",
+    "id": "CTG_224VALK_N2H5",
+    "slug": "224-valkyrie",
+    "url": "https://empiricalprecision.com/load-data/224-valkyrie/",
+    "loadCount": 2327
+  },
+  {
+    "type": "cartridge",
+    "name": "224 Weatherby Magnum",
+    "id": "CTG_224WBYMAG_cN95",
+    "slug": "224-weatherby-magnum",
+    "url": "https://empiricalprecision.com/load-data/224-weatherby-magnum/",
+    "loadCount": 1250
+  },
+  {
+    "type": "cartridge",
+    "name": "225 Winchester",
+    "id": "CTG_225WIN_cN93",
+    "slug": "225-winchester",
+    "url": "https://empiricalprecision.com/load-data/225-winchester/",
+    "loadCount": 1225
+  },
+  {
+    "type": "cartridge",
+    "name": "24 Nosler",
+    "id": "CTG_24NOSLER_cNH5",
+    "slug": "24-nosler",
+    "url": "https://empiricalprecision.com/load-data/24-nosler/",
+    "loadCount": 480
+  },
+  {
+    "type": "cartridge",
+    "name": "240 Weatherby Magnum",
+    "id": "CTG_240WBYMAG_cN76",
+    "slug": "240-weatherby-magnum",
+    "url": "https://empiricalprecision.com/load-data/240-weatherby-magnum/",
+    "loadCount": 1614
+  },
+  {
+    "type": "cartridge",
+    "name": "243 Winchester",
+    "id": "CTG_243WIN_cB42",
+    "slug": "243-winchester",
+    "url": "https://empiricalprecision.com/load-data/243-winchester/",
+    "loadCount": 4097
+  },
+  {
+    "type": "cartridge",
+    "name": "243 WSSM",
+    "id": "CTG_243WSSM_cN97",
+    "slug": "243-wssm",
+    "url": "https://empiricalprecision.com/load-data/243-wssm/",
+    "loadCount": 1931
+  },
+  {
+    "type": "cartridge",
+    "name": "25-06 Remington",
+    "id": "CTG_2506_cL42",
+    "slug": "25-06-remington",
+    "url": "https://empiricalprecision.com/load-data/25-06-remington/",
+    "loadCount": 2453
+  },
+  {
+    "type": "cartridge",
+    "name": "25-06 Remington Ackley Improved",
+    "id": "CTG_2506REMINGTONA_E6CD",
+    "slug": "25-06-remington-ackley-improved",
+    "url": "https://empiricalprecision.com/load-data/25-06-remington-ackley-improved/",
+    "loadCount": 385
+  },
+  {
+    "type": "cartridge",
+    "name": "25-20 Winchester",
+    "id": "CTG_2520WINCHEST_2A16",
+    "slug": "25-20-winchester",
+    "url": "https://empiricalprecision.com/load-data/25-20-winchester/",
+    "loadCount": 71
+  },
+  {
+    "type": "cartridge",
+    "name": "25-284",
+    "id": "CTG_25284_cNJ7",
+    "slug": "25-284",
+    "url": "https://empiricalprecision.com/load-data/25-284/",
+    "loadCount": 28
+  },
+  {
+    "type": "cartridge",
+    "name": "25-35 Winchester",
+    "id": "CTG_2535WIN_cNH7",
+    "slug": "25-35-winchester",
+    "url": "https://empiricalprecision.com/load-data/25-35-winchester/",
+    "loadCount": 164
+  },
+  {
+    "type": "cartridge",
+    "name": "25 Creedmoor",
+    "id": "CTG_25CM_cN72",
+    "slug": "25-creedmoor",
+    "url": "https://empiricalprecision.com/load-data/25-creedmoor/",
+    "loadCount": 966
+  },
+  {
+    "type": "cartridge",
+    "name": "25 WBY RPM",
+    "id": "CTG_25WBYRPM_cNA5",
+    "slug": "25-wby-rpm",
+    "url": "https://empiricalprecision.com/load-data/25-wby-rpm/",
+    "loadCount": 82
+  },
+  {
+    "type": "cartridge",
+    "name": "25 WSSM",
+    "id": "CTG_25WSSM_cN99",
+    "slug": "25-wssm",
+    "url": "https://empiricalprecision.com/load-data/25-wssm/",
+    "loadCount": 1460
+  },
+  {
+    "type": "cartridge",
+    "name": "250 Savage",
+    "id": "CTG_250SAV_1CFB",
+    "slug": "250-savage",
+    "url": "https://empiricalprecision.com/load-data/250-savage/",
+    "loadCount": 1660
+  },
+  {
+    "type": "cartridge",
+    "name": "250 Savage Ackley Improved",
+    "id": "CTG_250SAVACKLEY_A47D",
+    "slug": "250-savage-ackley-improved",
+    "url": "https://empiricalprecision.com/load-data/250-savage-ackley-improved/",
+    "loadCount": 592
+  },
+  {
+    "type": "cartridge",
+    "name": "256 Winchester Magnum",
+    "id": "CTG_256WINMAG_cNL0",
+    "slug": "256-winchester-magnum",
+    "url": "https://empiricalprecision.com/load-data/256-winchester-magnum/",
+    "loadCount": 124
+  },
+  {
+    "type": "cartridge",
+    "name": "257 Roberts",
+    "id": "CTG_257ROB_N2H9",
+    "slug": "257-roberts",
+    "url": "https://empiricalprecision.com/load-data/257-roberts/",
+    "loadCount": 1731
+  },
+  {
+    "type": "cartridge",
+    "name": "257 Roberts Ackley Improved",
+    "id": "CTG_257ROBERTSACKL_75D7",
+    "slug": "257-roberts-ackley-improved",
+    "url": "https://empiricalprecision.com/load-data/257-roberts-ackley-improved/",
+    "loadCount": 531
+  },
+  {
+    "type": "cartridge",
+    "name": "257 Weatherby Magnum",
+    "id": "CTG_257WBY_N2H0",
+    "slug": "257-weatherby-magnum",
+    "url": "https://empiricalprecision.com/load-data/257-weatherby-magnum/",
+    "loadCount": 1567
+  },
+  {
+    "type": "cartridge",
+    "name": "26 Nosler",
+    "id": "CTG_26NOSLER_cNA3",
+    "slug": "26-nosler",
+    "url": "https://empiricalprecision.com/load-data/26-nosler/",
+    "loadCount": 251
+  },
+  {
+    "type": "cartridge",
+    "name": "260 Remington",
+    "id": "CTG_260REM_N2HB",
+    "slug": "260-remington",
+    "url": "https://empiricalprecision.com/load-data/260-remington/",
+    "loadCount": 3189
+  },
+  {
+    "type": "cartridge",
+    "name": "264 Winchester Magnum",
+    "id": "CTG_264WINMAG_cN78",
+    "slug": "264-winchester-magnum",
+    "url": "https://empiricalprecision.com/load-data/264-winchester-magnum/",
+    "loadCount": 2406
+  },
+  {
+    "type": "cartridge",
+    "name": "27 Nosler",
+    "id": "CTG_27NOSLER_cNA4",
+    "slug": "27-nosler",
+    "url": "https://empiricalprecision.com/load-data/27-nosler/",
+    "loadCount": 227
+  },
+  {
+    "type": "cartridge",
+    "name": "270 Weatherby Magnum",
+    "id": "CTG_270WBYMAG_cN7A",
+    "slug": "270-weatherby-magnum",
+    "url": "https://empiricalprecision.com/load-data/270-weatherby-magnum/",
+    "loadCount": 1747
+  },
+  {
+    "type": "cartridge",
+    "name": "270 Winchester",
+    "id": "CTG_270WIN_cU62",
+    "slug": "270-winchester",
+    "url": "https://empiricalprecision.com/load-data/270-winchester/",
+    "loadCount": 3417
+  },
+  {
+    "type": "cartridge",
+    "name": "270 WSM",
+    "id": "CTG_270WSM_N2HC",
+    "slug": "270-wsm",
+    "url": "https://empiricalprecision.com/load-data/270-wsm/",
+    "loadCount": 1640
+  },
+  {
+    "type": "cartridge",
+    "name": "28 Nosler",
+    "id": "CTG_28NOSLER_cN7D",
+    "slug": "28-nosler",
+    "url": "https://empiricalprecision.com/load-data/28-nosler/",
+    "loadCount": 1239
+  },
+  {
+    "type": "cartridge",
+    "name": "280 Ackley Improved",
+    "id": "CTG_280AI_cA52",
+    "slug": "280-ackley-improved",
+    "url": "https://empiricalprecision.com/load-data/280-ackley-improved/",
+    "loadCount": 2073
+  },
+  {
+    "type": "cartridge",
+    "name": "280 Remington",
+    "id": "CTG_280REM_cN7C",
+    "slug": "280-remington",
+    "url": "https://empiricalprecision.com/load-data/280-remington/",
+    "loadCount": 3016
+  },
+  {
+    "type": "cartridge",
+    "name": "284 Winchester",
+    "id": "CTG_284WIN_cW92",
+    "slug": "284-winchester",
+    "url": "https://empiricalprecision.com/load-data/284-winchester/",
+    "loadCount": 1794
+  },
+  {
+    "type": "cartridge",
+    "name": "30-06 Springfield",
+    "id": "CTG_3006_cE12",
+    "slug": "30-06-springfield",
+    "url": "https://empiricalprecision.com/load-data/30-06-springfield/",
+    "loadCount": 9303
+  },
+  {
+    "type": "cartridge",
+    "name": "30-06 Springfield Ackley Improved",
+    "id": "CTG_3006SPRINGFIEL_5005",
+    "slug": "30-06-springfield-ackley-improved",
+    "url": "https://empiricalprecision.com/load-data/30-06-springfield-ackley-improved/",
+    "loadCount": 1630
+  },
+  {
+    "type": "cartridge",
+    "name": "30-30 Winchester",
+    "id": "CTG_3030_N3HG",
+    "slug": "30-30-winchester",
+    "url": "https://empiricalprecision.com/load-data/30-30-winchester/",
+    "loadCount": 1382
+  },
+  {
+    "type": "cartridge",
+    "name": "30-378 Weatherby Magnum",
+    "id": "CTG_300WBY_N3HI",
+    "slug": "30-378-weatherby-magnum",
+    "url": "https://empiricalprecision.com/load-data/30-378-weatherby-magnum/",
+    "loadCount": 1274
+  },
+  {
+    "type": "cartridge",
+    "name": "30-40 Krag",
+    "id": "CTG_3040KRAG_cNAB",
+    "slug": "30-40-krag",
+    "url": "https://empiricalprecision.com/load-data/30-40-krag/",
+    "loadCount": 1719
+  },
+  {
+    "type": "cartridge",
+    "name": "30 AR Remington",
+    "id": "CTG_30ARREM_cN7M",
+    "slug": "30-ar-remington",
+    "url": "https://empiricalprecision.com/load-data/30-ar-remington/",
+    "loadCount": 633
+  },
+  {
+    "type": "cartridge",
+    "name": "30 BR Remington",
+    "id": "CTG_30BR_cNL2",
+    "slug": "30-br-remington",
+    "url": "https://empiricalprecision.com/load-data/30-br-remington/",
+    "loadCount": 1218
+  },
+  {
+    "type": "cartridge",
+    "name": "30 Nosler",
+    "id": "CTG_30NOSLER_cN7L",
+    "slug": "30-nosler",
+    "url": "https://empiricalprecision.com/load-data/30-nosler/",
+    "loadCount": 1336
+  },
+  {
+    "type": "cartridge",
+    "name": "30 TC",
+    "id": "CTG_30TC_cN7G",
+    "slug": "30-tc",
+    "url": "https://empiricalprecision.com/load-data/30-tc/",
+    "loadCount": 1353
+  },
+  {
+    "type": "cartridge",
+    "name": "300 Blackout",
+    "id": "CTG_300BLK_cI72",
+    "slug": "300-blackout",
+    "url": "https://empiricalprecision.com/load-data/300-blackout/",
+    "loadCount": 3739
+  },
+  {
+    "type": "cartridge",
+    "name": "300 H&H Magnum",
+    "id": "CTG_300HH_cN7I",
+    "slug": "300-h-h-magnum",
+    "url": "https://empiricalprecision.com/load-data/300-h-h-magnum/",
+    "loadCount": 3551
+  },
+  {
+    "type": "cartridge",
+    "name": "300 HAM'R",
+    "id": "CTG_300HAMR_6D25",
+    "slug": "300-ham-r",
+    "url": "https://empiricalprecision.com/load-data/300-ham-r/",
+    "loadCount": 201
+  },
+  {
+    "type": "cartridge",
+    "name": "300 Lapua Magnum",
+    "id": "CTG_300LAPMAG_cN7K",
+    "slug": "300-lapua-magnum",
+    "url": "https://empiricalprecision.com/load-data/300-lapua-magnum/",
+    "loadCount": 26
+  },
+  {
+    "type": "cartridge",
+    "name": "300 Norma Magnum",
+    "id": "CTG_300NORMAMAG_cN73",
+    "slug": "300-norma-magnum",
+    "url": "https://empiricalprecision.com/load-data/300-norma-magnum/",
+    "loadCount": 714
+  },
+  {
+    "type": "cartridge",
+    "name": "300 PRC",
+    "id": "CTG_300PRC_cK02",
+    "slug": "300-prc",
+    "url": "https://empiricalprecision.com/load-data/300-prc/",
+    "loadCount": 1959
+  },
+  {
+    "type": "cartridge",
+    "name": "300 Remington SAUM",
+    "id": "CTG_300RSAUM_PTnZ",
+    "slug": "300-remington-saum",
+    "url": "https://empiricalprecision.com/load-data/300-remington-saum/",
+    "loadCount": 4252
+  },
+  {
+    "type": "cartridge",
+    "name": "300 Remington Ultra Magnum",
+    "id": "CTG_300RUM_cN7J",
+    "slug": "300-remington-ultra-magnum",
+    "url": "https://empiricalprecision.com/load-data/300-remington-ultra-magnum/",
+    "loadCount": 3770
+  },
+  {
+    "type": "cartridge",
+    "name": "300 Ruger Compact Magnum",
+    "id": "CTG_300RCM_cNA9",
+    "slug": "300-ruger-compact-magnum",
+    "url": "https://empiricalprecision.com/load-data/300-ruger-compact-magnum/",
+    "loadCount": 2550
+  },
+  {
+    "type": "cartridge",
+    "name": "300 Savage",
+    "id": "CTG_300SAV_cN7E",
+    "slug": "300-savage",
+    "url": "https://empiricalprecision.com/load-data/300-savage/",
+    "loadCount": 2144
+  },
+  {
+    "type": "cartridge",
+    "name": "300 Weatherby Magnum",
+    "id": "CTG_300WBYMAG_cN75",
+    "slug": "300-weatherby-magnum",
+    "url": "https://empiricalprecision.com/load-data/300-weatherby-magnum/",
+    "loadCount": 3935
+  },
+  {
+    "type": "cartridge",
+    "name": "300 Winchester Magnum",
+    "id": "CTG_300WINMAG_cG42",
+    "slug": "300-winchester-magnum",
+    "url": "https://empiricalprecision.com/load-data/300-winchester-magnum/",
+    "loadCount": 7811
+  },
+  {
+    "type": "cartridge",
+    "name": "300 WSM",
+    "id": "CTG_300WSM_N3HH",
+    "slug": "300-wsm",
+    "url": "https://empiricalprecision.com/load-data/300-wsm/",
+    "loadCount": 5484
+  },
+  {
+    "type": "cartridge",
+    "name": "307 Winchester",
+    "id": "CTG_307WINCHESTE_E301",
+    "slug": "307-winchester",
+    "url": "https://empiricalprecision.com/load-data/307-winchester/",
+    "loadCount": 156
+  },
+  {
+    "type": "cartridge",
+    "name": "308 Marlin Express",
+    "id": "CTG_308MARLEXP_cN7H",
+    "slug": "308-marlin-express",
+    "url": "https://empiricalprecision.com/load-data/308-marlin-express/",
+    "loadCount": 315
+  },
+  {
+    "type": "cartridge",
+    "name": "308 Norma Magnum",
+    "id": "CTG_308NORMMAG_cNAA",
+    "slug": "308-norma-magnum",
+    "url": "https://empiricalprecision.com/load-data/308-norma-magnum/",
+    "loadCount": 2212
+  },
+  {
+    "type": "cartridge",
+    "name": "308 Winchester",
+    "id": "CTG_308WIN_cC82",
+    "slug": "308-winchester",
+    "url": "https://empiricalprecision.com/load-data/308-winchester/",
+    "loadCount": 9165
+  },
+  {
+    "type": "cartridge",
+    "name": "325 WSM",
+    "id": "CTG_325WSM_cN7V",
+    "slug": "325-wsm",
+    "url": "https://empiricalprecision.com/load-data/325-wsm/",
+    "loadCount": 800
+  },
+  {
+    "type": "cartridge",
+    "name": "33 Nosler",
+    "id": "CTG_33NOSLER_cN7W",
+    "slug": "33-nosler",
+    "url": "https://empiricalprecision.com/load-data/33-nosler/",
+    "loadCount": 389
+  },
+  {
+    "type": "cartridge",
+    "name": "338-06",
+    "id": "CTG_33806_cN7T",
+    "slug": "338-06",
+    "url": "https://empiricalprecision.com/load-data/338-06/",
+    "loadCount": 943
+  },
+  {
+    "type": "cartridge",
+    "name": "338-378 Weatherby Magnum",
+    "id": "CTG_338378WBY_cN7X",
+    "slug": "338-378-weatherby-magnum",
+    "url": "https://empiricalprecision.com/load-data/338-378-weatherby-magnum/",
+    "loadCount": 757
+  },
+  {
+    "type": "cartridge",
+    "name": "338 ARC",
+    "id": "CTG_338ARC_cNAF",
+    "slug": "338-arc",
+    "url": "https://empiricalprecision.com/load-data/338-arc/",
+    "loadCount": 576
+  },
+  {
+    "type": "cartridge",
+    "name": "338 Federal",
+    "id": "CTG_338FED_N3HK",
+    "slug": "338-federal",
+    "url": "https://empiricalprecision.com/load-data/338-federal/",
+    "loadCount": 924
+  },
+  {
+    "type": "cartridge",
+    "name": "338 Lapua Magnum",
+    "id": "CTG_338LAP_cO62",
+    "slug": "338-lapua-magnum",
+    "url": "https://empiricalprecision.com/load-data/338-lapua-magnum/",
+    "loadCount": 1852
+  },
+  {
+    "type": "cartridge",
+    "name": "338 Marlin Express",
+    "id": "CTG_338MRLX_cNK0",
+    "slug": "338-marlin-express",
+    "url": "https://empiricalprecision.com/load-data/338-marlin-express/",
+    "loadCount": 78
+  },
+  {
+    "type": "cartridge",
+    "name": "338 Norma Magnum",
+    "id": "CTG_338NORMAMAG_cN74",
+    "slug": "338-norma-magnum",
+    "url": "https://empiricalprecision.com/load-data/338-norma-magnum/",
+    "loadCount": 406
+  },
+  {
+    "type": "cartridge",
+    "name": "338 Remington Ultra Magnum",
+    "id": "CTG_338REMUM_cN7Y",
+    "slug": "338-remington-ultra-magnum",
+    "url": "https://empiricalprecision.com/load-data/338-remington-ultra-magnum/",
+    "loadCount": 995
+  },
+  {
+    "type": "cartridge",
+    "name": "338 Ruger Compact Magnum",
+    "id": "CTG_338RCM_cN7U",
+    "slug": "338-ruger-compact-magnum",
+    "url": "https://empiricalprecision.com/load-data/338-ruger-compact-magnum/",
+    "loadCount": 607
+  },
+  {
+    "type": "cartridge",
+    "name": "338 Weatherby RPM",
+    "id": "CTG_338WBYRPM_cNAE",
+    "slug": "338-weatherby-rpm",
+    "url": "https://empiricalprecision.com/load-data/338-weatherby-rpm/",
+    "loadCount": 108
+  },
+  {
+    "type": "cartridge",
+    "name": "338 Winchester Magnum",
+    "id": "CTG_338WINMAG_cQ92",
+    "slug": "338-winchester-magnum",
+    "url": "https://empiricalprecision.com/load-data/338-winchester-magnum/",
+    "loadCount": 1424
+  },
+  {
+    "type": "cartridge",
+    "name": "340 Weatherby Magnum",
+    "id": "CTG_340WBYMAG_cNG0",
+    "slug": "340-weatherby-magnum",
+    "url": "https://empiricalprecision.com/load-data/340-weatherby-magnum/",
+    "loadCount": 825
+  },
+  {
+    "type": "cartridge",
+    "name": "35 Remington",
+    "id": "CTG_35REM_cN7Z",
+    "slug": "35-remington",
+    "url": "https://empiricalprecision.com/load-data/35-remington/",
+    "loadCount": 365
+  },
+  {
+    "type": "cartridge",
+    "name": "35 Whelen",
+    "id": "CTG_35WHELEN_cNG1",
+    "slug": "35-whelen",
+    "url": "https://empiricalprecision.com/load-data/35-whelen/",
+    "loadCount": 494
+  },
+  {
+    "type": "cartridge",
+    "name": "350 Remington Magnum",
+    "id": "CTG_350REMMAG_cNG3",
+    "slug": "350-remington-magnum",
+    "url": "https://empiricalprecision.com/load-data/350-remington-magnum/",
+    "loadCount": 269
+  },
+  {
+    "type": "cartridge",
+    "name": "356 Winchester",
+    "id": "CTG_356WIN_cNI4",
+    "slug": "356-winchester",
+    "url": "https://empiricalprecision.com/load-data/356-winchester/",
+    "loadCount": 125
+  },
+  {
+    "type": "cartridge",
+    "name": "358 Norma Magnum",
+    "id": "CTG_358NORMAMAG_cNK1",
+    "slug": "358-norma-magnum",
+    "url": "https://empiricalprecision.com/load-data/358-norma-magnum/",
+    "loadCount": 70
+  },
+  {
+    "type": "cartridge",
+    "name": "358 Winchester",
+    "id": "CTG_358WIN_cN80",
+    "slug": "358-winchester",
+    "url": "https://empiricalprecision.com/load-data/358-winchester/",
+    "loadCount": 394
+  },
+  {
+    "type": "cartridge",
+    "name": "375 CheyTac",
+    "id": "CTG_375CHEYTAC_cNI6",
+    "slug": "375-cheytac",
+    "url": "https://empiricalprecision.com/load-data/375-cheytac/",
+    "loadCount": 22
+  },
+  {
+    "type": "cartridge",
+    "name": "375 Holland & Holland Magnum",
+    "id": "CTG_375HH_cN84",
+    "slug": "375-holland-holland-magnum",
+    "url": "https://empiricalprecision.com/load-data/375-holland-holland-magnum/",
+    "loadCount": 673
+  },
+  {
+    "type": "cartridge",
+    "name": "375 Remington Ultra Magnum",
+    "id": "CTG_375RUM_cN86",
+    "slug": "375-remington-ultra-magnum",
+    "url": "https://empiricalprecision.com/load-data/375-remington-ultra-magnum/",
+    "loadCount": 532
+  },
+  {
+    "type": "cartridge",
+    "name": "375 Ruger",
+    "id": "CTG_375RUG_cN85",
+    "slug": "375-ruger",
+    "url": "https://empiricalprecision.com/load-data/375-ruger/",
+    "loadCount": 792
+  },
+  {
+    "type": "cartridge",
+    "name": "375 Weatherby Magnum",
+    "id": "CTG_375WBYMAG_cN87",
+    "slug": "375-weatherby-magnum",
+    "url": "https://empiricalprecision.com/load-data/375-weatherby-magnum/",
+    "loadCount": 241
+  },
+  {
+    "type": "cartridge",
+    "name": "376 Steyr",
+    "id": "CTG_376STEYR_cNI7",
+    "slug": "376-steyr",
+    "url": "https://empiricalprecision.com/load-data/376-steyr/",
+    "loadCount": 163
+  },
+  {
+    "type": "cartridge",
+    "name": "378 Weatherby Magnum",
+    "id": "CTG_378WBYMAG_cNK2",
+    "slug": "378-weatherby-magnum",
+    "url": "https://empiricalprecision.com/load-data/378-weatherby-magnum/",
+    "loadCount": 199
+  },
+  {
+    "type": "cartridge",
+    "name": "458 SOCOM",
+    "id": "CTG_458SOCOM_0C3C",
+    "slug": "458-socom",
+    "url": "https://empiricalprecision.com/load-data/458-socom/",
+    "loadCount": 200
+  },
+  {
+    "type": "cartridge",
+    "name": "460 Weatherby Magnum",
+    "id": "CTG_460WBYMAG_cNI9",
+    "slug": "460-weatherby-magnum",
+    "url": "https://empiricalprecision.com/load-data/460-weatherby-magnum/",
+    "loadCount": 187
+  },
+  {
+    "type": "cartridge",
+    "name": "5.56x45mm NATO",
+    "id": "CTG_556NATO_cN56",
+    "slug": "5-56x45mm-nato",
+    "url": "https://empiricalprecision.com/load-data/5-56x45mm-nato/",
+    "loadCount": 816
+  },
+  {
+    "type": "cartridge",
+    "name": "6.5-284 Norma",
+    "id": "CTG_65284_cN73",
+    "slug": "6-5-284-norma",
+    "url": "https://empiricalprecision.com/load-data/6-5-284-norma/",
+    "loadCount": 2022
+  },
+  {
+    "type": "cartridge",
+    "name": "6.5-300 Weatherby Magnum",
+    "id": "CTG_65300WBYMAG_cN73",
+    "slug": "6-5-300-weatherby-magnum",
+    "url": "https://empiricalprecision.com/load-data/6-5-300-weatherby-magnum/",
+    "loadCount": 144
+  },
+  {
+    "type": "cartridge",
+    "name": "6.5 Creedmoor",
+    "id": "CTG_65CM_cN72",
+    "slug": "6-5-creedmoor",
+    "url": "https://empiricalprecision.com/load-data/6-5-creedmoor/",
+    "loadCount": 4155
+  },
+  {
+    "type": "cartridge",
+    "name": "6.5 Grendel",
+    "id": "CTG_65GRN_cS32",
+    "slug": "6-5-grendel",
+    "url": "https://empiricalprecision.com/load-data/6-5-grendel/",
+    "loadCount": 2738
+  },
+  {
+    "type": "cartridge",
+    "name": "6.5 PRC",
+    "id": "CTG_65PRC_cP02",
+    "slug": "6-5-prc",
+    "url": "https://empiricalprecision.com/load-data/6-5-prc/",
+    "loadCount": 1601
+  },
+  {
+    "type": "cartridge",
+    "name": "6.5 WBY RPM",
+    "id": "CTG_65WBYRPM_cNA2",
+    "slug": "6-5-wby-rpm",
+    "url": "https://empiricalprecision.com/load-data/6-5-wby-rpm/",
+    "loadCount": 164
+  },
+  {
+    "type": "cartridge",
+    "name": "6.5mm-06",
+    "id": "CTG_65X06_N6HB",
+    "slug": "6-5mm-06",
+    "url": "https://empiricalprecision.com/load-data/6-5mm-06/",
+    "loadCount": 1784
+  },
+  {
+    "type": "cartridge",
+    "name": "6.5mm BR Remington",
+    "id": "CTG_65BR_cNA0",
+    "slug": "6-5mm-br-remington",
+    "url": "https://empiricalprecision.com/load-data/6-5mm-br-remington/",
+    "loadCount": 442
+  },
+  {
+    "type": "cartridge",
+    "name": "6.5mm Carcano",
+    "id": "CTG_65CARC_cNH9",
+    "slug": "6-5mm-carcano",
+    "url": "https://empiricalprecision.com/load-data/6-5mm-carcano/",
+    "loadCount": 351
+  },
+  {
+    "type": "cartridge",
+    "name": "6.5mm Remington Magnum",
+    "id": "CTG_65REMMAG_cNA1",
+    "slug": "6-5mm-remington-magnum",
+    "url": "https://empiricalprecision.com/load-data/6-5mm-remington-magnum/",
+    "loadCount": 792
+  },
+  {
+    "type": "cartridge",
+    "name": "6.5x47mm Lapua",
+    "id": "CTG_65X47LAP_cN79",
+    "slug": "6-5x47mm-lapua",
+    "url": "https://empiricalprecision.com/load-data/6-5x47mm-lapua/",
+    "loadCount": 1440
+  },
+  {
+    "type": "cartridge",
+    "name": "6.5x50mm Japanese",
+    "id": "CTG_65X50JAP_cNH8",
+    "slug": "6-5x50mm-japanese",
+    "url": "https://empiricalprecision.com/load-data/6-5x50mm-japanese/",
+    "loadCount": 706
+  },
+  {
+    "type": "cartridge",
+    "name": "6.5x54 Mannlicher-Schoenauer",
+    "id": "CTG_65X54MS_E22E",
+    "slug": "6-5x54-mannlicher-schoenauer",
+    "url": "https://empiricalprecision.com/load-data/6-5x54-mannlicher-schoenauer/",
+    "loadCount": 194
+  },
+  {
+    "type": "cartridge",
+    "name": "6.5x55 Swedish",
+    "id": "CTG_65SWE_N6HA",
+    "slug": "6-5x55-swedish",
+    "url": "https://empiricalprecision.com/load-data/6-5x55-swedish/",
+    "loadCount": 1837
+  },
+  {
+    "type": "cartridge",
+    "name": "6.5x57mm Mauser",
+    "id": "CTG_65X57MAU_9C1B",
+    "slug": "6-5x57mm-mauser",
+    "url": "https://empiricalprecision.com/load-data/6-5x57mm-mauser/",
+    "loadCount": 283
+  },
+  {
+    "type": "cartridge",
+    "name": "6.5x57R",
+    "id": "CTG_65X57R_A36C",
+    "slug": "6-5x57r",
+    "url": "https://empiricalprecision.com/load-data/6-5x57r/",
+    "loadCount": 8
+  },
+  {
+    "type": "cartridge",
+    "name": "6.8 Western",
+    "id": "CTG_68WEST_N6HD",
+    "slug": "6-8-western",
+    "url": "https://empiricalprecision.com/load-data/6-8-western/",
+    "loadCount": 867
+  },
+  {
+    "type": "cartridge",
+    "name": "6.8mm Remington SPC",
+    "id": "CTG_68REMSPC_cN7B",
+    "slug": "6-8mm-remington-spc",
+    "url": "https://empiricalprecision.com/load-data/6-8mm-remington-spc/",
+    "loadCount": 1249
+  },
+  {
+    "type": "cartridge",
+    "name": "6 GT",
+    "id": "CTG_6GT_cN96",
+    "slug": "6-gt",
+    "url": "https://empiricalprecision.com/load-data/6-gt/",
+    "loadCount": 2247
+  },
+  {
+    "type": "cartridge",
+    "name": "6mm-250",
+    "id": "CTG_6MM250_cNJ4",
+    "slug": "6mm-250",
+    "url": "https://empiricalprecision.com/load-data/6mm-250/",
+    "loadCount": 130
+  },
+  {
+    "type": "cartridge",
+    "name": "6mm-284",
+    "id": "CTG_6284_N6H9",
+    "slug": "6mm-284",
+    "url": "https://empiricalprecision.com/load-data/6mm-284/",
+    "loadCount": 1116
+  },
+  {
+    "type": "cartridge",
+    "name": "6mm ARC",
+    "id": "CTG_6ARC_cH92",
+    "slug": "6mm-arc",
+    "url": "https://empiricalprecision.com/load-data/6mm-arc/",
+    "loadCount": 3056
+  },
+  {
+    "type": "cartridge",
+    "name": "6mm BR",
+    "id": "CTG_6BR_cJ12",
+    "slug": "6mm-br",
+    "url": "https://empiricalprecision.com/load-data/6mm-br/",
+    "loadCount": 2157
+  },
+  {
+    "type": "cartridge",
+    "name": "6mm Creedmoor",
+    "id": "CTG_6CM_cG62",
+    "slug": "6mm-creedmoor",
+    "url": "https://empiricalprecision.com/load-data/6mm-creedmoor/",
+    "loadCount": 2594
+  },
+  {
+    "type": "cartridge",
+    "name": "6mm Dasher",
+    "id": "CTG_6DASHER_cN98",
+    "slug": "6mm-dasher",
+    "url": "https://empiricalprecision.com/load-data/6mm-dasher/",
+    "loadCount": 1149
+  },
+  {
+    "type": "cartridge",
+    "name": "6mm PPC",
+    "id": "CTG_6PPC_cJ12",
+    "slug": "6mm-ppc",
+    "url": "https://empiricalprecision.com/load-data/6mm-ppc/",
+    "loadCount": 1144
+  },
+  {
+    "type": "cartridge",
+    "name": "6mm Remington",
+    "id": "CTG_6REM_N6H7",
+    "slug": "6mm-remington",
+    "url": "https://empiricalprecision.com/load-data/6mm-remington/",
+    "loadCount": 3321
+  },
+  {
+    "type": "cartridge",
+    "name": "6mm Remington Ackley Improved",
+    "id": "CTG_6MMREMINGTONAC_B4A4",
+    "slug": "6mm-remington-ackley-improved",
+    "url": "https://empiricalprecision.com/load-data/6mm-remington-ackley-improved/",
+    "loadCount": 339
+  },
+  {
+    "type": "cartridge",
+    "name": "6mm XC",
+    "id": "CTG_6MMXC_cNJ5",
+    "slug": "6mm-xc",
+    "url": "https://empiricalprecision.com/load-data/6mm-xc/",
+    "loadCount": 1208
+  },
+  {
+    "type": "cartridge",
+    "name": "6x45mm (6mm-223)",
+    "id": "CTG_6X45_N6H8",
+    "slug": "6x45mm-6mm-223",
+    "url": "https://empiricalprecision.com/load-data/6x45mm-6mm-223/",
+    "loadCount": 800
+  },
+  {
+    "type": "cartridge",
+    "name": "6x47 Lapua",
+    "id": "CTG_6X47_cNH6",
+    "slug": "6x47-lapua",
+    "url": "https://empiricalprecision.com/load-data/6x47-lapua/",
+    "loadCount": 1108
+  },
+  {
+    "type": "cartridge",
+    "name": "7-30 Waters",
+    "id": "CTG_7WTERS_cNA8",
+    "slug": "7-30-waters",
+    "url": "https://empiricalprecision.com/load-data/7-30-waters/",
+    "loadCount": 1064
+  },
+  {
+    "type": "cartridge",
+    "name": "7.5x55mm Swiss",
+    "id": "CTG_75X55SWS_cNI1",
+    "slug": "7-5x55mm-swiss",
+    "url": "https://empiricalprecision.com/load-data/7-5x55mm-swiss/",
+    "loadCount": 815
+  },
+  {
+    "type": "cartridge",
+    "name": "7.62 x 53 R",
+    "id": "CTG_762X53R_EED8",
+    "slug": "7-62-x-53-r",
+    "url": "https://empiricalprecision.com/load-data/7-62-x-53-r/",
+    "loadCount": 120
+  },
+  {
+    "type": "cartridge",
+    "name": "7mm-08 Remington",
+    "id": "CTG_7MM08_cZ22",
+    "slug": "7mm-08-remington",
+    "url": "https://empiricalprecision.com/load-data/7mm-08-remington/",
+    "loadCount": 4748
+  },
+  {
+    "type": "cartridge",
+    "name": "7mm BR Remington",
+    "id": "CTG_7BR_cZ22",
+    "slug": "7mm-br-remington",
+    "url": "https://empiricalprecision.com/load-data/7mm-br-remington/",
+    "loadCount": 866
+  },
+  {
+    "type": "cartridge",
+    "name": "7mm PRC",
+    "id": "CTG_7PRC_N7HE",
+    "slug": "7mm-prc",
+    "url": "https://empiricalprecision.com/load-data/7mm-prc/",
+    "loadCount": 3367
+  },
+  {
+    "type": "cartridge",
+    "name": "7mm Remington Magnum",
+    "id": "CTG_7REMMAG_cW92",
+    "slug": "7mm-remington-magnum",
+    "url": "https://empiricalprecision.com/load-data/7mm-remington-magnum/",
+    "loadCount": 4001
+  },
+  {
+    "type": "cartridge",
+    "name": "7mm Remington SAUM",
+    "id": "CTG_7RSAUM_5yW7",
+    "slug": "7mm-remington-saum",
+    "url": "https://empiricalprecision.com/load-data/7mm-remington-saum/",
+    "loadCount": 1914
+  },
+  {
+    "type": "cartridge",
+    "name": "7mm RUM",
+    "id": "CTG_7RUM_cW92",
+    "slug": "7mm-rum",
+    "url": "https://empiricalprecision.com/load-data/7mm-rum/",
+    "loadCount": 1468
+  },
+  {
+    "type": "cartridge",
+    "name": "7mm STW",
+    "id": "CTG_7STW_cW92",
+    "slug": "7mm-stw",
+    "url": "https://empiricalprecision.com/load-data/7mm-stw/",
+    "loadCount": 2280
+  },
+  {
+    "type": "cartridge",
+    "name": "7mm Weatherby Magnum",
+    "id": "CTG_7WBYMAG_cNA6",
+    "slug": "7mm-weatherby-magnum",
+    "url": "https://empiricalprecision.com/load-data/7mm-weatherby-magnum/",
+    "loadCount": 2308
+  },
+  {
+    "type": "cartridge",
+    "name": "7mm WSM",
+    "id": "CTG_7WSM_cNA7",
+    "slug": "7mm-wsm",
+    "url": "https://empiricalprecision.com/load-data/7mm-wsm/",
+    "loadCount": 2565
+  },
+  {
+    "type": "cartridge",
+    "name": "7x57 Mauser",
+    "id": "CTG_7MAU_N7HF",
+    "slug": "7x57-mauser",
+    "url": "https://empiricalprecision.com/load-data/7x57-mauser/",
+    "loadCount": 3127
+  },
+  {
+    "type": "cartridge",
+    "name": "7x57R",
+    "id": "CTG_7X57R_82D2",
+    "slug": "7x57r",
+    "url": "https://empiricalprecision.com/load-data/7x57r/",
+    "loadCount": 63
+  },
+  {
+    "type": "cartridge",
+    "name": "7x61 Sharpe & Hart",
+    "id": "CTG_7X61SH_060B",
+    "slug": "7x61-sharpe-hart",
+    "url": "https://empiricalprecision.com/load-data/7x61-sharpe-hart/",
+    "loadCount": 199
+  },
+  {
+    "type": "cartridge",
+    "name": "7x64 Brenneke",
+    "id": "CTG_7X64_N7HG",
+    "slug": "7x64-brenneke",
+    "url": "https://empiricalprecision.com/load-data/7x64-brenneke/",
+    "loadCount": 174
+  },
+  {
+    "type": "cartridge",
+    "name": "7x65R",
+    "id": "CTG_7X65R_N7HH",
+    "slug": "7x65r",
+    "url": "https://empiricalprecision.com/load-data/7x65r/",
+    "loadCount": 98
+  },
+  {
+    "type": "cartridge",
+    "name": "8mm-06",
+    "id": "CTG_8MM06_cN7R",
+    "slug": "8mm-06",
+    "url": "https://empiricalprecision.com/load-data/8mm-06/",
+    "loadCount": 543
+  },
+  {
+    "type": "cartridge",
+    "name": "8mm Remington Magnum",
+    "id": "CTG_8MMREMMAG_cN7S",
+    "slug": "8mm-remington-magnum",
+    "url": "https://empiricalprecision.com/load-data/8mm-remington-magnum/",
+    "loadCount": 554
+  },
+  {
+    "type": "cartridge",
+    "name": "8x57mm IRS",
+    "id": "CTG_8X57IRS_cN7P",
+    "slug": "8x57mm-irs",
+    "url": "https://empiricalprecision.com/load-data/8x57mm-irs/",
+    "loadCount": 22
+  },
+  {
+    "type": "cartridge",
+    "name": "8x57mm IS (8mm Mauser)",
+    "id": "CTG_8X57IS_cN7O",
+    "slug": "8x57mm-is-8mm-mauser",
+    "url": "https://empiricalprecision.com/load-data/8x57mm-is-8mm-mauser/",
+    "loadCount": 933
+  },
+  {
+    "type": "cartridge",
+    "name": "8x68S",
+    "id": "CTG_8X68S_cN7Q",
+    "slug": "8x68s",
+    "url": "https://empiricalprecision.com/load-data/8x68s/",
+    "loadCount": 46
+  },
+  {
+    "type": "powder",
+    "name": "24N41",
+    "id": "PWD_VIHT_24N41_5S8S",
+    "slug": "24n41",
+    "url": "https://empiricalprecision.com/load-data/powders/24n41/",
+    "loadCount": 169
+  },
+  {
+    "type": "powder",
+    "name": "Accurate 1680",
+    "id": "PWD_ACCU_1680_R1AC",
+    "slug": "accurate-1680",
+    "url": "https://empiricalprecision.com/load-data/powders/accurate-1680/",
+    "loadCount": 999
+  },
+  {
+    "type": "powder",
+    "name": "Accurate 2015",
+    "id": "PWD_ACCU_2015_A1C3",
+    "slug": "accurate-2015",
+    "url": "https://empiricalprecision.com/load-data/powders/accurate-2015/",
+    "loadCount": 1484
+  },
+  {
+    "type": "powder",
+    "name": "Accurate 2200",
+    "id": "PWD_ACCU_2200_EA5G",
+    "slug": "accurate-2200",
+    "url": "https://empiricalprecision.com/load-data/powders/accurate-2200/",
+    "loadCount": 263
+  },
+  {
+    "type": "powder",
+    "name": "Accurate 2230",
+    "id": "PWD_ACCU_2230_R1A6",
+    "slug": "accurate-2230",
+    "url": "https://empiricalprecision.com/load-data/powders/accurate-2230/",
+    "loadCount": 1535
+  },
+  {
+    "type": "powder",
+    "name": "Accurate 2460",
+    "id": "PWD_ACCU_2460_A1C1",
+    "slug": "accurate-2460",
+    "url": "https://empiricalprecision.com/load-data/powders/accurate-2460/",
+    "loadCount": 1895
+  },
+  {
+    "type": "powder",
+    "name": "Accurate 2495",
+    "id": "PWD_ACCU_2495_A1C2",
+    "slug": "accurate-2495",
+    "url": "https://empiricalprecision.com/load-data/powders/accurate-2495/",
+    "loadCount": 1482
+  },
+  {
+    "type": "powder",
+    "name": "Accurate 2520",
+    "id": "PWD_ACCU_2520_R1A7",
+    "slug": "accurate-2520",
+    "url": "https://empiricalprecision.com/load-data/powders/accurate-2520/",
+    "loadCount": 3081
+  },
+  {
+    "type": "powder",
+    "name": "Accurate 2700",
+    "id": "PWD_ACCU_2700_JFAE",
+    "slug": "accurate-2700",
+    "url": "https://empiricalprecision.com/load-data/powders/accurate-2700/",
+    "loadCount": 1322
+  },
+  {
+    "type": "powder",
+    "name": "Accurate 3100",
+    "id": "PWD_ACCU_3100_32FE",
+    "slug": "accurate-3100",
+    "url": "https://empiricalprecision.com/load-data/powders/accurate-3100/",
+    "loadCount": 509
+  },
+  {
+    "type": "powder",
+    "name": "Accurate 4064",
+    "id": "PWD_ACCU_4064_R1A8",
+    "slug": "accurate-4064",
+    "url": "https://empiricalprecision.com/load-data/powders/accurate-4064/",
+    "loadCount": 1361
+  },
+  {
+    "type": "powder",
+    "name": "Accurate 4100",
+    "id": "PWD_ACCU_4100_R1AD",
+    "slug": "accurate-4100",
+    "url": "https://empiricalprecision.com/load-data/powders/accurate-4100/",
+    "loadCount": 35
+  },
+  {
+    "type": "powder",
+    "name": "Accurate 4350",
+    "id": "PWD_ACCU_4350_R1AB",
+    "slug": "accurate-4350",
+    "url": "https://empiricalprecision.com/load-data/powders/accurate-4350/",
+    "loadCount": 4580
+  },
+  {
+    "type": "powder",
+    "name": "Accurate 5744",
+    "id": "PWD_ACCU_5744_17A1",
+    "slug": "accurate-5744",
+    "url": "https://empiricalprecision.com/load-data/powders/accurate-5744/",
+    "loadCount": 330
+  },
+  {
+    "type": "powder",
+    "name": "Accurate No. 11FS",
+    "id": "PWD_ACCU_NO11FS_A1C5",
+    "slug": "accurate-no-11fs",
+    "url": "https://empiricalprecision.com/load-data/powders/accurate-no-11fs/",
+    "loadCount": 65
+  },
+  {
+    "type": "powder",
+    "name": "Accurate No. 9",
+    "id": "PWD_ACCU_NO9_R1AE",
+    "slug": "accurate-no-9",
+    "url": "https://empiricalprecision.com/load-data/powders/accurate-no-9/",
+    "loadCount": 177
+  },
+  {
+    "type": "powder",
+    "name": "Alliant 2400",
+    "id": "PWD_ALLI_2400_A1L7",
+    "slug": "alliant-2400",
+    "url": "https://empiricalprecision.com/load-data/powders/alliant-2400/",
+    "loadCount": 513
+  },
+  {
+    "type": "powder",
+    "name": "AR-Comp",
+    "id": "PWD_ALLI_AR_COMP_6RSD",
+    "slug": "ar-comp",
+    "url": "https://empiricalprecision.com/load-data/powders/ar-comp/",
+    "loadCount": 1378
+  },
+  {
+    "type": "powder",
+    "name": "Benchmark",
+    "id": "PWD_HODG_BENCHMARK_BIU3",
+    "slug": "benchmark",
+    "url": "https://empiricalprecision.com/load-data/powders/benchmark/",
+    "loadCount": 3123
+  },
+  {
+    "type": "powder",
+    "name": "BL-C(2)",
+    "id": "PWD_HODG_BLC2_H1G8",
+    "slug": "bl-c-2",
+    "url": "https://empiricalprecision.com/load-data/powders/bl-c-2/",
+    "loadCount": 1109
+  },
+  {
+    "type": "powder",
+    "name": "CFE 223",
+    "id": "PWD_HODG_CFE223_H1G6",
+    "slug": "cfe-223",
+    "url": "https://empiricalprecision.com/load-data/powders/cfe-223/",
+    "loadCount": 2631
+  },
+  {
+    "type": "powder",
+    "name": "CFE BLK",
+    "id": "PWD_HODG_CFEBLK_H1GB",
+    "slug": "cfe-blk",
+    "url": "https://empiricalprecision.com/load-data/powders/cfe-blk/",
+    "loadCount": 476
+  },
+  {
+    "type": "powder",
+    "name": "H1000",
+    "id": "PWD_HODG_H1000_H1G5",
+    "slug": "h1000",
+    "url": "https://empiricalprecision.com/load-data/powders/h1000/",
+    "loadCount": 4974
+  },
+  {
+    "type": "powder",
+    "name": "H110",
+    "id": "PWD_HODG_H110_H1GA",
+    "slug": "h110",
+    "url": "https://empiricalprecision.com/load-data/powders/h110/",
+    "loadCount": 1278
+  },
+  {
+    "type": "powder",
+    "name": "H322",
+    "id": "PWD_HODG_H322_V06U",
+    "slug": "h322",
+    "url": "https://empiricalprecision.com/load-data/powders/h322/",
+    "loadCount": 2071
+  },
+  {
+    "type": "powder",
+    "name": "H335",
+    "id": "PWD_HODG_H335_H1GB",
+    "slug": "h335",
+    "url": "https://empiricalprecision.com/load-data/powders/h335/",
+    "loadCount": 3032
+  },
+  {
+    "type": "powder",
+    "name": "H380",
+    "id": "PWD_HODG_H380_H1GC",
+    "slug": "h380",
+    "url": "https://empiricalprecision.com/load-data/powders/h380/",
+    "loadCount": 3062
+  },
+  {
+    "type": "powder",
+    "name": "H414",
+    "id": "PWD_HODG_H414_H1GD",
+    "slug": "h414",
+    "url": "https://empiricalprecision.com/load-data/powders/h414/",
+    "loadCount": 2858
+  },
+  {
+    "type": "powder",
+    "name": "H4198",
+    "id": "PWD_HODG_H4198_KN7E",
+    "slug": "h4198",
+    "url": "https://empiricalprecision.com/load-data/powders/h4198/",
+    "loadCount": 748
+  },
+  {
+    "type": "powder",
+    "name": "H4227",
+    "id": "PWD_HODG_H4227_H1GD",
+    "slug": "h4227",
+    "url": "https://empiricalprecision.com/load-data/powders/h4227/",
+    "loadCount": 103
+  },
+  {
+    "type": "powder",
+    "name": "H4350",
+    "id": "PWD_HODG_H4350_H1G2",
+    "slug": "h4350",
+    "url": "https://empiricalprecision.com/load-data/powders/h4350/",
+    "loadCount": 7656
+  },
+  {
+    "type": "powder",
+    "name": "H4831",
+    "id": "PWD_HODG_H4831_H1GE",
+    "slug": "h4831",
+    "url": "https://empiricalprecision.com/load-data/powders/h4831/",
+    "loadCount": 3877
+  },
+  {
+    "type": "powder",
+    "name": "H4831SC",
+    "id": "PWD_HODG_H4831SC_H1GF",
+    "slug": "h4831sc",
+    "url": "https://empiricalprecision.com/load-data/powders/h4831sc/",
+    "loadCount": 4357
+  },
+  {
+    "type": "powder",
+    "name": "H4895",
+    "id": "PWD_HODG_H4895_H1G3",
+    "slug": "h4895",
+    "url": "https://empiricalprecision.com/load-data/powders/h4895/",
+    "loadCount": 5889
+  },
+  {
+    "type": "powder",
+    "name": "H50BMG",
+    "id": "PWD_HODG_H50BMG_2J1E",
+    "slug": "h50bmg",
+    "url": "https://empiricalprecision.com/load-data/powders/h50bmg/",
+    "loadCount": 315
+  },
+  {
+    "type": "powder",
+    "name": "Hybrid 100V",
+    "id": "PWD_HODG_HYBRID_100V_UMIK",
+    "slug": "hybrid-100v",
+    "url": "https://empiricalprecision.com/load-data/powders/hybrid-100v/",
+    "loadCount": 3556
+  },
+  {
+    "type": "powder",
+    "name": "IMR 3031",
+    "id": "PWD_IMPR_IMR_3031_KXZD",
+    "slug": "imr-3031",
+    "url": "https://empiricalprecision.com/load-data/powders/imr-3031/",
+    "loadCount": 3081
+  },
+  {
+    "type": "powder",
+    "name": "IMR 4007 SSC",
+    "id": "PWD_IMR_4007SSC_I1G6",
+    "slug": "imr-4007-ssc",
+    "url": "https://empiricalprecision.com/load-data/powders/imr-4007-ssc/",
+    "loadCount": 726
+  },
+  {
+    "type": "powder",
+    "name": "IMR 4064",
+    "id": "PWD_HODG_IMR4064_H1G9",
+    "slug": "imr-4064",
+    "url": "https://empiricalprecision.com/load-data/powders/imr-4064/",
+    "loadCount": 7106
+  },
+  {
+    "type": "powder",
+    "name": "IMR 4166",
+    "id": "PWD_HODG_IMR4166_H1GK",
+    "slug": "imr-4166",
+    "url": "https://empiricalprecision.com/load-data/powders/imr-4166/",
+    "loadCount": 2431
+  },
+  {
+    "type": "powder",
+    "name": "IMR 4198",
+    "id": "PWD_HODG_IMR4198_H1GS",
+    "slug": "imr-4198",
+    "url": "https://empiricalprecision.com/load-data/powders/imr-4198/",
+    "loadCount": 1692
+  },
+  {
+    "type": "powder",
+    "name": "IMR 4227",
+    "id": "PWD_IMR_4227_I1G5",
+    "slug": "imr-4227",
+    "url": "https://empiricalprecision.com/load-data/powders/imr-4227/",
+    "loadCount": 650
+  },
+  {
+    "type": "powder",
+    "name": "IMR 4320",
+    "id": "PWD_IMPR_IMR_4320_E302",
+    "slug": "imr-4320",
+    "url": "https://empiricalprecision.com/load-data/powders/imr-4320/",
+    "loadCount": 2937
+  },
+  {
+    "type": "powder",
+    "name": "IMR 4350",
+    "id": "PWD_HODG_IMR4350_H1G0",
+    "slug": "imr-4350",
+    "url": "https://empiricalprecision.com/load-data/powders/imr-4350/",
+    "loadCount": 8420
+  },
+  {
+    "type": "powder",
+    "name": "IMR 4451",
+    "id": "PWD_HODG_IMR4451_H1GL",
+    "slug": "imr-4451",
+    "url": "https://empiricalprecision.com/load-data/powders/imr-4451/",
+    "loadCount": 3595
+  },
+  {
+    "type": "powder",
+    "name": "IMR 4831",
+    "id": "PWD_IMPR_IMR_4831_HVBS",
+    "slug": "imr-4831",
+    "url": "https://empiricalprecision.com/load-data/powders/imr-4831/",
+    "loadCount": 5789
+  },
+  {
+    "type": "powder",
+    "name": "IMR 4895",
+    "id": "PWD_HODG_IMR4895_H1GM",
+    "slug": "imr-4895",
+    "url": "https://empiricalprecision.com/load-data/powders/imr-4895/",
+    "loadCount": 4858
+  },
+  {
+    "type": "powder",
+    "name": "IMR 4955",
+    "id": "PWD_IMPR_IMR_4955_170P",
+    "slug": "imr-4955",
+    "url": "https://empiricalprecision.com/load-data/powders/imr-4955/",
+    "loadCount": 1629
+  },
+  {
+    "type": "powder",
+    "name": "IMR 7828",
+    "id": "PWD_HODG_IMR7828_H1GN",
+    "slug": "imr-7828",
+    "url": "https://empiricalprecision.com/load-data/powders/imr-7828/",
+    "loadCount": 2831
+  },
+  {
+    "type": "powder",
+    "name": "IMR 7828SSC",
+    "id": "PWD_HODG_IMR7828SSC_H1GO",
+    "slug": "imr-7828ssc",
+    "url": "https://empiricalprecision.com/load-data/powders/imr-7828ssc/",
+    "loadCount": 3161
+  },
+  {
+    "type": "powder",
+    "name": "IMR 7977",
+    "id": "PWD_IMPR_IMR_7977_GDVA",
+    "slug": "imr-7977",
+    "url": "https://empiricalprecision.com/load-data/powders/imr-7977/",
+    "loadCount": 2150
+  },
+  {
+    "type": "powder",
+    "name": "IMR 8133",
+    "id": "PWD_IMPR_IMR_8133_J4IF",
+    "slug": "imr-8133",
+    "url": "https://empiricalprecision.com/load-data/powders/imr-8133/",
+    "loadCount": 862
+  },
+  {
+    "type": "powder",
+    "name": "IMR 8208 XBR",
+    "id": "PWD_HODG_IMR8208_H1GA",
+    "slug": "imr-8208-xbr",
+    "url": "https://empiricalprecision.com/load-data/powders/imr-8208-xbr/",
+    "loadCount": 3366
+  },
+  {
+    "type": "powder",
+    "name": "Leverevolution",
+    "id": "PWD_HODG_LEVEREVOLUTION_XTV3",
+    "slug": "leverevolution",
+    "url": "https://empiricalprecision.com/load-data/powders/leverevolution/",
+    "loadCount": 607
+  },
+  {
+    "type": "powder",
+    "name": "Lil'Gun",
+    "id": "PWD_HODG_LILGUN_H1G8",
+    "slug": "lil-gun",
+    "url": "https://empiricalprecision.com/load-data/powders/lil-gun/",
+    "loadCount": 554
+  },
+  {
+    "type": "powder",
+    "name": "LRT",
+    "id": "PWD_RAMS_LRT_LB6B",
+    "slug": "lrt",
+    "url": "https://empiricalprecision.com/load-data/powders/lrt/",
+    "loadCount": 315
+  },
+  {
+    "type": "powder",
+    "name": "LT-30",
+    "id": "PWD_ACCU_LT_30_XE5M",
+    "slug": "lt-30",
+    "url": "https://empiricalprecision.com/load-data/powders/lt-30/",
+    "loadCount": 222
+  },
+  {
+    "type": "powder",
+    "name": "LT-32",
+    "id": "PWD_ACCU_LT32_R1AA",
+    "slug": "lt-32",
+    "url": "https://empiricalprecision.com/load-data/powders/lt-32/",
+    "loadCount": 505
+  },
+  {
+    "type": "powder",
+    "name": "MagPro",
+    "id": "PWD_ACCU_MAGPRO_R1A9",
+    "slug": "magpro",
+    "url": "https://empiricalprecision.com/load-data/powders/magpro/",
+    "loadCount": 1888
+  },
+  {
+    "type": "powder",
+    "name": "MRP",
+    "id": "PWD_NORM_MRP_44D5",
+    "slug": "mrp",
+    "url": "https://empiricalprecision.com/load-data/powders/mrp/",
+    "loadCount": 712
+  },
+  {
+    "type": "powder",
+    "name": "N105",
+    "id": "PWD_VIHT_N105_V1H1",
+    "slug": "n105",
+    "url": "https://empiricalprecision.com/load-data/powders/n105/",
+    "loadCount": 59
+  },
+  {
+    "type": "powder",
+    "name": "N110",
+    "id": "PWD_VIHT_N110_V1H2",
+    "slug": "n110",
+    "url": "https://empiricalprecision.com/load-data/powders/n110/",
+    "loadCount": 481
+  },
+  {
+    "type": "powder",
+    "name": "N120",
+    "id": "PWD_VIHT_N120_V1H3",
+    "slug": "n120",
+    "url": "https://empiricalprecision.com/load-data/powders/n120/",
+    "loadCount": 507
+  },
+  {
+    "type": "powder",
+    "name": "N130",
+    "id": "PWD_VIHT_N130_V1H4",
+    "slug": "n130",
+    "url": "https://empiricalprecision.com/load-data/powders/n130/",
+    "loadCount": 1054
+  },
+  {
+    "type": "powder",
+    "name": "N133",
+    "id": "PWD_VIHT_N133_V1H5",
+    "slug": "n133",
+    "url": "https://empiricalprecision.com/load-data/powders/n133/",
+    "loadCount": 1255
+  },
+  {
+    "type": "powder",
+    "name": "N135",
+    "id": "PWD_VIHT_N135_V1H6",
+    "slug": "n135",
+    "url": "https://empiricalprecision.com/load-data/powders/n135/",
+    "loadCount": 1772
+  },
+  {
+    "type": "powder",
+    "name": "N140",
+    "id": "PWD_VIHT_N140_7Ih6",
+    "slug": "n140",
+    "url": "https://empiricalprecision.com/load-data/powders/n140/",
+    "loadCount": 3849
+  },
+  {
+    "type": "powder",
+    "name": "N150",
+    "id": "PWD_VIHT_N150_V1H7",
+    "slug": "n150",
+    "url": "https://empiricalprecision.com/load-data/powders/n150/",
+    "loadCount": 1984
+  },
+  {
+    "type": "powder",
+    "name": "N160",
+    "id": "PWD_VIHT_N160_V1H8",
+    "slug": "n160",
+    "url": "https://empiricalprecision.com/load-data/powders/n160/",
+    "loadCount": 3154
+  },
+  {
+    "type": "powder",
+    "name": "N165",
+    "id": "PWD_VIHT_N165_V1H9",
+    "slug": "n165",
+    "url": "https://empiricalprecision.com/load-data/powders/n165/",
+    "loadCount": 3410
+  },
+  {
+    "type": "powder",
+    "name": "N170",
+    "id": "PWD_VIHT_N170_V1HA",
+    "slug": "n170",
+    "url": "https://empiricalprecision.com/load-data/powders/n170/",
+    "loadCount": 770
+  },
+  {
+    "type": "powder",
+    "name": "N530",
+    "id": "PWD_VIHT_N530_V5H1",
+    "slug": "n530",
+    "url": "https://empiricalprecision.com/load-data/powders/n530/",
+    "loadCount": 185
+  },
+  {
+    "type": "powder",
+    "name": "N540",
+    "id": "PWD_VIHT_N540_V5H2",
+    "slug": "n540",
+    "url": "https://empiricalprecision.com/load-data/powders/n540/",
+    "loadCount": 2902
+  },
+  {
+    "type": "powder",
+    "name": "N550",
+    "id": "PWD_VIHT_N550_V5H3",
+    "slug": "n550",
+    "url": "https://empiricalprecision.com/load-data/powders/n550/",
+    "loadCount": 1930
+  },
+  {
+    "type": "powder",
+    "name": "N555",
+    "id": "PWD_VIHT_N555_V5H4",
+    "slug": "n555",
+    "url": "https://empiricalprecision.com/load-data/powders/n555/",
+    "loadCount": 787
+  },
+  {
+    "type": "powder",
+    "name": "N560",
+    "id": "PWD_VIHT_N560_V5H5",
+    "slug": "n560",
+    "url": "https://empiricalprecision.com/load-data/powders/n560/",
+    "loadCount": 3643
+  },
+  {
+    "type": "powder",
+    "name": "N565",
+    "id": "PWD_VIHT_N565_V5H6",
+    "slug": "n565",
+    "url": "https://empiricalprecision.com/load-data/powders/n565/",
+    "loadCount": 809
+  },
+  {
+    "type": "powder",
+    "name": "N568",
+    "id": "PWD_VIHT_N568_V5H7",
+    "slug": "n568",
+    "url": "https://empiricalprecision.com/load-data/powders/n568/",
+    "loadCount": 156
+  },
+  {
+    "type": "powder",
+    "name": "N570",
+    "id": "PWD_VIHT_N570_V5H8",
+    "slug": "n570",
+    "url": "https://empiricalprecision.com/load-data/powders/n570/",
+    "loadCount": 542
+  },
+  {
+    "type": "powder",
+    "name": "Norma 200",
+    "id": "PWD_NORM_200_N1H3",
+    "slug": "norma-200",
+    "url": "https://empiricalprecision.com/load-data/powders/norma-200/",
+    "loadCount": 92
+  },
+  {
+    "type": "powder",
+    "name": "Norma 201",
+    "id": "PWD_NORM_201_9F49",
+    "slug": "norma-201",
+    "url": "https://empiricalprecision.com/load-data/powders/norma-201/",
+    "loadCount": 215
+  },
+  {
+    "type": "powder",
+    "name": "Norma 202",
+    "id": "PWD_NORM_202_N1H2",
+    "slug": "norma-202",
+    "url": "https://empiricalprecision.com/load-data/powders/norma-202/",
+    "loadCount": 194
+  },
+  {
+    "type": "powder",
+    "name": "Norma 203B",
+    "id": "PWD_NORM_203B_3879",
+    "slug": "norma-203b",
+    "url": "https://empiricalprecision.com/load-data/powders/norma-203b/",
+    "loadCount": 422
+  },
+  {
+    "type": "powder",
+    "name": "Norma 204",
+    "id": "PWD_NORM_204_4BEF",
+    "slug": "norma-204",
+    "url": "https://empiricalprecision.com/load-data/powders/norma-204/",
+    "loadCount": 487
+  },
+  {
+    "type": "powder",
+    "name": "Norma 217",
+    "id": "PWD_NORM_217_N1H0",
+    "slug": "norma-217",
+    "url": "https://empiricalprecision.com/load-data/powders/norma-217/",
+    "loadCount": 120
+  },
+  {
+    "type": "powder",
+    "name": "Power Pro 1200-R",
+    "id": "PWD_ALLI_1200R_A1LY",
+    "slug": "power-pro-1200-r",
+    "url": "https://empiricalprecision.com/load-data/powders/power-pro-1200-r/",
+    "loadCount": 102
+  },
+  {
+    "type": "powder",
+    "name": "Power Pro 2000-MR",
+    "id": "PWD_ALLI_2000MR_A1LX",
+    "slug": "power-pro-2000-mr",
+    "url": "https://empiricalprecision.com/load-data/powders/power-pro-2000-mr/",
+    "loadCount": 2321
+  },
+  {
+    "type": "powder",
+    "name": "Power Pro 300-MP",
+    "id": "PWD_ALLI_300MP_A1L6",
+    "slug": "power-pro-300-mp",
+    "url": "https://empiricalprecision.com/load-data/powders/power-pro-300-mp/",
+    "loadCount": 69
+  },
+  {
+    "type": "powder",
+    "name": "Power Pro 4000-MR",
+    "id": "PWD_ALLI_4000_MR_KRWA",
+    "slug": "power-pro-4000-mr",
+    "url": "https://empiricalprecision.com/load-data/powders/power-pro-4000-mr/",
+    "loadCount": 820
+  },
+  {
+    "type": "powder",
+    "name": "Power Pro Varmint",
+    "id": "PWD_ALLI_VARMINT_A1L5",
+    "slug": "power-pro-varmint",
+    "url": "https://empiricalprecision.com/load-data/powders/power-pro-varmint/",
+    "loadCount": 1414
+  },
+  {
+    "type": "powder",
+    "name": "R123",
+    "id": "PWD_NORM_R123_66E1",
+    "slug": "r123",
+    "url": "https://empiricalprecision.com/load-data/powders/r123/",
+    "loadCount": 52
+  },
+  {
+    "type": "powder",
+    "name": "Ramshot Big Game",
+    "id": "PWD_RAMS_BIGGAME_R1A2",
+    "slug": "ramshot-big-game",
+    "url": "https://empiricalprecision.com/load-data/powders/ramshot-big-game/",
+    "loadCount": 3081
+  },
+  {
+    "type": "powder",
+    "name": "Ramshot Grand",
+    "id": "PWD_RAMS_GRAND_LM11",
+    "slug": "ramshot-grand",
+    "url": "https://empiricalprecision.com/load-data/powders/ramshot-grand/",
+    "loadCount": 585
+  },
+  {
+    "type": "powder",
+    "name": "Ramshot Hunter",
+    "id": "PWD_RAMS_HUNTER_R1A3",
+    "slug": "ramshot-hunter",
+    "url": "https://empiricalprecision.com/load-data/powders/ramshot-hunter/",
+    "loadCount": 3111
+  },
+  {
+    "type": "powder",
+    "name": "Ramshot Magnum",
+    "id": "PWD_RAMS_MAGNUM_R1A4",
+    "slug": "ramshot-magnum",
+    "url": "https://empiricalprecision.com/load-data/powders/ramshot-magnum/",
+    "loadCount": 3936
+  },
+  {
+    "type": "powder",
+    "name": "Reloder 10x",
+    "id": "PWD_ALLI_RELODER_10X_98AC",
+    "slug": "reloder-10x",
+    "url": "https://empiricalprecision.com/load-data/powders/reloder-10x/",
+    "loadCount": 1338
+  },
+  {
+    "type": "powder",
+    "name": "Reloder 15",
+    "id": "PWD_ALLI_RELODER_15_A1L1",
+    "slug": "reloder-15",
+    "url": "https://empiricalprecision.com/load-data/powders/reloder-15/",
+    "loadCount": 6344
+  },
+  {
+    "type": "powder",
+    "name": "Reloder 16",
+    "id": "PWD_ALLI_RELODER_16_A1L2",
+    "slug": "reloder-16",
+    "url": "https://empiricalprecision.com/load-data/powders/reloder-16/",
+    "loadCount": 2459
+  },
+  {
+    "type": "powder",
+    "name": "Reloder 17",
+    "id": "PWD_ALLI_RELODER_17_Q06H",
+    "slug": "reloder-17",
+    "url": "https://empiricalprecision.com/load-data/powders/reloder-17/",
+    "loadCount": 4486
+  },
+  {
+    "type": "powder",
+    "name": "Reloder 19",
+    "id": "PWD_ALLI_RELODER_19_6C4J",
+    "slug": "reloder-19",
+    "url": "https://empiricalprecision.com/load-data/powders/reloder-19/",
+    "loadCount": 6110
+  },
+  {
+    "type": "powder",
+    "name": "Reloder 22",
+    "id": "PWD_ALLI_RELODER_22_POE4",
+    "slug": "reloder-22",
+    "url": "https://empiricalprecision.com/load-data/powders/reloder-22/",
+    "loadCount": 5008
+  },
+  {
+    "type": "powder",
+    "name": "Reloder 23",
+    "id": "PWD_ALLI_RELODER_23_A1L3",
+    "slug": "reloder-23",
+    "url": "https://empiricalprecision.com/load-data/powders/reloder-23/",
+    "loadCount": 2156
+  },
+  {
+    "type": "powder",
+    "name": "Reloder 25",
+    "id": "PWD_ALLI_RELODER_25_JJAD",
+    "slug": "reloder-25",
+    "url": "https://empiricalprecision.com/load-data/powders/reloder-25/",
+    "loadCount": 3068
+  },
+  {
+    "type": "powder",
+    "name": "Reloder 26",
+    "id": "PWD_ALLI_RELODER_26_A1L4",
+    "slug": "reloder-26",
+    "url": "https://empiricalprecision.com/load-data/powders/reloder-26/",
+    "loadCount": 2113
+  },
+  {
+    "type": "powder",
+    "name": "Reloder 33",
+    "id": "PWD_ALLI_RELODER_33_A1L9",
+    "slug": "reloder-33",
+    "url": "https://empiricalprecision.com/load-data/powders/reloder-33/",
+    "loadCount": 770
+  },
+  {
+    "type": "powder",
+    "name": "Reloder 50",
+    "id": "PWD_ALLI_RELODER_50_A1L8",
+    "slug": "reloder-50",
+    "url": "https://empiricalprecision.com/load-data/powders/reloder-50/",
+    "loadCount": 45
+  },
+  {
+    "type": "powder",
+    "name": "Reloder 7",
+    "id": "PWD_ALLI_RELODER_7_A1L0",
+    "slug": "reloder-7",
+    "url": "https://empiricalprecision.com/load-data/powders/reloder-7/",
+    "loadCount": 1142
+  },
+  {
+    "type": "powder",
+    "name": "Retumbo",
+    "id": "PWD_HODG_RETUMBO_H1G4",
+    "slug": "retumbo",
+    "url": "https://empiricalprecision.com/load-data/powders/retumbo/",
+    "loadCount": 2797
+  },
+  {
+    "type": "powder",
+    "name": "RS40",
+    "id": "PWD_RELO_RS40_C8BB",
+    "slug": "rs40",
+    "url": "https://empiricalprecision.com/load-data/powders/rs40/",
+    "loadCount": 44
+  },
+  {
+    "type": "powder",
+    "name": "RS50",
+    "id": "PWD_RELO_RS50_AF23",
+    "slug": "rs50",
+    "url": "https://empiricalprecision.com/load-data/powders/rs50/",
+    "loadCount": 82
+  },
+  {
+    "type": "powder",
+    "name": "RS52",
+    "id": "PWD_RELO_RS52_C003",
+    "slug": "rs52",
+    "url": "https://empiricalprecision.com/load-data/powders/rs52/",
+    "loadCount": 102
+  },
+  {
+    "type": "powder",
+    "name": "RS60",
+    "id": "PWD_RELO_RS60_1449",
+    "slug": "rs60",
+    "url": "https://empiricalprecision.com/load-data/powders/rs60/",
+    "loadCount": 148
+  },
+  {
+    "type": "powder",
+    "name": "RS62",
+    "id": "PWD_RELO_RS62_4D68",
+    "slug": "rs62",
+    "url": "https://empiricalprecision.com/load-data/powders/rs62/",
+    "loadCount": 146
+  },
+  {
+    "type": "powder",
+    "name": "RS70",
+    "id": "PWD_RELO_RS70_6701",
+    "slug": "rs70",
+    "url": "https://empiricalprecision.com/load-data/powders/rs70/",
+    "loadCount": 134
+  },
+  {
+    "type": "powder",
+    "name": "RS76",
+    "id": "PWD_RELO_RS76_76B6",
+    "slug": "rs76",
+    "url": "https://empiricalprecision.com/load-data/powders/rs76/",
+    "loadCount": 94
+  },
+  {
+    "type": "powder",
+    "name": "RS80",
+    "id": "PWD_RELO_RS80_C9A9",
+    "slug": "rs80",
+    "url": "https://empiricalprecision.com/load-data/powders/rs80/",
+    "loadCount": 58
+  },
+  {
+    "type": "powder",
+    "name": "SBR-SOCOM",
+    "id": "PWD_SHOO_SWSBR_S5W8",
+    "slug": "sbr-socom",
+    "url": "https://empiricalprecision.com/load-data/powders/sbr-socom/",
+    "loadCount": 101
+  },
+  {
+    "type": "powder",
+    "name": "Shooters World AR Plus",
+    "id": "PWD_SHOO_AR_PLUS_LMUA",
+    "slug": "shooters-world-ar-plus",
+    "url": "https://empiricalprecision.com/load-data/powders/shooters-world-ar-plus/",
+    "loadCount": 80
+  },
+  {
+    "type": "powder",
+    "name": "Shooters World Blackout",
+    "id": "PWD_SHOO_BLACKOUT_S5B1",
+    "slug": "shooters-world-blackout",
+    "url": "https://empiricalprecision.com/load-data/powders/shooters-world-blackout/",
+    "loadCount": 166
+  },
+  {
+    "type": "powder",
+    "name": "Shooters World Long Rifle",
+    "id": "PWD_SHOO_LONG_RIFLE_YB45",
+    "slug": "shooters-world-long-rifle",
+    "url": "https://empiricalprecision.com/load-data/powders/shooters-world-long-rifle/",
+    "loadCount": 326
+  },
+  {
+    "type": "powder",
+    "name": "Shooters World Match Rifle",
+    "id": "PWD_SHOO_MATCH_RIFLE_DSNK",
+    "slug": "shooters-world-match-rifle",
+    "url": "https://empiricalprecision.com/load-data/powders/shooters-world-match-rifle/",
+    "loadCount": 539
+  },
+  {
+    "type": "powder",
+    "name": "Shooters World Precision Rifle",
+    "id": "PWD_SHOO_PRECISION_RIFLE_QCI7",
+    "slug": "shooters-world-precision-rifle",
+    "url": "https://empiricalprecision.com/load-data/powders/shooters-world-precision-rifle/",
+    "loadCount": 494
+  },
+  {
+    "type": "powder",
+    "name": "Shooters World Tactical Rifle",
+    "id": "PWD_SHOO_SWTR_S5W7",
+    "slug": "shooters-world-tactical-rifle",
+    "url": "https://empiricalprecision.com/load-data/powders/shooters-world-tactical-rifle/",
+    "loadCount": 670
+  },
+  {
+    "type": "powder",
+    "name": "Shooters World The Creed",
+    "id": "PWD_SHOO_THE_CREED_8NG4",
+    "slug": "shooters-world-the-creed",
+    "url": "https://empiricalprecision.com/load-data/powders/shooters-world-the-creed/",
+    "loadCount": 54
+  },
+  {
+    "type": "powder",
+    "name": "Shooters World The Patriot",
+    "id": "PWD_SHOO_THE_PATRIOT_8NG5",
+    "slug": "shooters-world-the-patriot",
+    "url": "https://empiricalprecision.com/load-data/powders/shooters-world-the-patriot/",
+    "loadCount": 35
+  },
+  {
+    "type": "powder",
+    "name": "SR-4759",
+    "id": "PWD_HODG_SR4759_H1GH",
+    "slug": "sr-4759",
+    "url": "https://empiricalprecision.com/load-data/powders/sr-4759/",
+    "loadCount": 102
+  },
+  {
+    "type": "powder",
+    "name": "StaBALL 6.5",
+    "id": "PWD_WINC_STABALL65_W1N1",
+    "slug": "staball-6-5",
+    "url": "https://empiricalprecision.com/load-data/powders/staball-6-5/",
+    "loadCount": 1026
+  },
+  {
+    "type": "powder",
+    "name": "StaBALL HD",
+    "id": "PWD_WINC_STABALLHD_W1N3",
+    "slug": "staball-hd",
+    "url": "https://empiricalprecision.com/load-data/powders/staball-hd/",
+    "loadCount": 751
+  },
+  {
+    "type": "powder",
+    "name": "StaBALL Match",
+    "id": "PWD_WINC_STABALLMATCH_W1N2",
+    "slug": "staball-match",
+    "url": "https://empiricalprecision.com/load-data/powders/staball-match/",
+    "loadCount": 1038
+  },
+  {
+    "type": "powder",
+    "name": "SUPERFORMANCE",
+    "id": "PWD_HODG_SUPERFORMANCE_QPVF",
+    "slug": "superformance",
+    "url": "https://empiricalprecision.com/load-data/powders/superformance/",
+    "loadCount": 1713
+  },
+  {
+    "type": "powder",
+    "name": "Supreme 780",
+    "id": "PWD_WINC_SUPREME_780_REI8",
+    "slug": "supreme-780",
+    "url": "https://empiricalprecision.com/load-data/powders/supreme-780/",
+    "loadCount": 500
+  },
+  {
+    "type": "powder",
+    "name": "SW4350",
+    "id": "PWD_SHOO_SW4350_JZV8",
+    "slug": "sw4350",
+    "url": "https://empiricalprecision.com/load-data/powders/sw4350/",
+    "loadCount": 228
+  },
+  {
+    "type": "powder",
+    "name": "TAC",
+    "id": "PWD_RAMS_TAC_R1A1",
+    "slug": "tac",
+    "url": "https://empiricalprecision.com/load-data/powders/tac/",
+    "loadCount": 3236
+  },
+  {
+    "type": "powder",
+    "name": "Trail Boss",
+    "id": "PWD_HODG_TRAILBOSS_H1GC",
+    "slug": "trail-boss",
+    "url": "https://empiricalprecision.com/load-data/powders/trail-boss/",
+    "loadCount": 38
+  },
+  {
+    "type": "powder",
+    "name": "TS 15.5",
+    "id": "PWD_NORM_TS155_N1H1",
+    "slug": "ts-15-5",
+    "url": "https://empiricalprecision.com/load-data/powders/ts-15-5/",
+    "loadCount": 93
+  },
+  {
+    "type": "powder",
+    "name": "URP",
+    "id": "PWD_NORM_URP_1A4A",
+    "slug": "urp",
+    "url": "https://empiricalprecision.com/load-data/powders/urp/",
+    "loadCount": 488
+  },
+  {
+    "type": "powder",
+    "name": "US 869",
+    "id": "PWD_HODG_US869_H1GE",
+    "slug": "us-869",
+    "url": "https://empiricalprecision.com/load-data/powders/us-869/",
+    "loadCount": 818
+  },
+  {
+    "type": "powder",
+    "name": "Varget",
+    "id": "PWD_HODG_VARGET_H1G1",
+    "slug": "varget",
+    "url": "https://empiricalprecision.com/load-data/powders/varget/",
+    "loadCount": 8380
+  },
+  {
+    "type": "powder",
+    "name": "Winchester 748",
+    "id": "PWD_WINC_748_W1N7",
+    "slug": "winchester-748",
+    "url": "https://empiricalprecision.com/load-data/powders/winchester-748/",
+    "loadCount": 3553
+  },
+  {
+    "type": "powder",
+    "name": "Winchester 760",
+    "id": "PWD_WINC_760_W1N8",
+    "slug": "winchester-760",
+    "url": "https://empiricalprecision.com/load-data/powders/winchester-760/",
+    "loadCount": 5413
+  },
+  {
+    "type": "powder",
+    "name": "X-Terminator",
+    "id": "PWD_RAMS_XTERM_R1A5",
+    "slug": "x-terminator",
+    "url": "https://empiricalprecision.com/load-data/powders/x-terminator/",
+    "loadCount": 1022
+  }
+]

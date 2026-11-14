@@ -1,0 +1,1 @@
+function e(e){return e instanceof Error&&e.message?e.message:String(e)}export{e as t};
