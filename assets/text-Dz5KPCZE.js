@@ -1,0 +1,1 @@
+function e(e){return e.length<2?e.join(``):`${e.slice(0,-1).join(`, `)} and ${e[e.length-1]}`}function t(e,t,n=`${t}s`){return`${e.toLocaleString(`en-US`)} ${e===1?t:n}`}export{t as n,e as t};
