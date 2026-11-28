@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>
+window.dataLayer = window.dataLayer || [];
+window.gtag = function () { window.dataLayer.push(arguments); };
+window.gtag('js', new Date());
+window.gtag('config', 'GT-MKRCK4SD', {
+  allow_ad_personalization_signals: false,
+  allow_google_signals: false,
+});
+if (location.hostname === 'empiricalprecision.com' || location.hostname === 'www.empiricalprecision.com') {
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=GT-MKRCK4SD';
+  document.head.appendChild(s);
+}
+</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1c1f24" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/icon-180.png" />
+<title>Chapter 18. Bullet Stability | Precision Rifle Handbook</title>
+<meta name="description" content="Ch. 18 (Precision Rifle): The gyroscopic stability factor, Sg, compares the bullet’s spin with the air’s push to turn it over. Below 1.0 the bullet tumbles." />
+<link rel="canonical" href="https://empiricalprecision.com/books/precision-rifle-handbook/chapter-18-bullet-stability/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Empirical Precision" />
+<meta property="og:title" content="Chapter 18. Bullet Stability | Precision Rifle Handbook" />
+<meta property="og:description" content="Ch. 18 (Precision Rifle): The gyroscopic stability factor, Sg, compares the bullet’s spin with the air’s push to turn it over. Below 1.0 the bullet tumbles." />
+<meta property="og:url" content="https://empiricalprecision.com/books/precision-rifle-handbook/chapter-18-bullet-stability/" />
+<meta property="og:image" content="https://empiricalprecision.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="628" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Chapter 18. Bullet Stability | Precision Rifle Handbook","description":"Ch. 18 (Precision Rifle): The gyroscopic stability factor, Sg, compares the bullet’s spin with the air’s push to turn it over. Below 1.0 the bullet tumbles.","url":"https://empiricalprecision.com/books/precision-rifle-handbook/chapter-18-bullet-stability/","isPartOf":{"@type":"WebSite","name":"Empirical Precision","url":"https://empiricalprecision.com/"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://empiricalprecision.com/"},{"@type":"ListItem","position":2,"name":"Books","item":"https://empiricalprecision.com/books/"},{"@type":"ListItem","position":3,"name":"The Precision Rifle Handbook","item":"https://empiricalprecision.com/books/precision-rifle-handbook/"},{"@type":"ListItem","position":4,"name":"Chapter 18. Bullet Stability","item":"https://empiricalprecision.com/books/precision-rifle-handbook/chapter-18-bullet-stability/"}]}}</script>
+<link rel="stylesheet" href="/books/books.css?v=3f177077" />
+<script src="/books/books.js?v=2c487a03" defer></script>
+</head>
+<body data-book-slug="precision-rifle-handbook" data-page-label="Ch. 18: Bullet Stability" data-search-url="/books/books-search.json?v=045b5f3b">
+<a class="bk-skip" href="#bk-content">Skip to content</a>
+<header class="bk-topbar">
+  <div class="bk-topbar-in">
+    <div class="bk-top-left">
+      <button type="button" class="bk-menu-btn" data-bk-menu aria-label="Open book contents" aria-expanded="false" aria-controls="bk-sidebar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      <a class="bk-logo-link" href="/books/" title="All Empirical Precision Books" aria-label="All Books"><img src="/favicon.svg" alt="" width="24" height="24" /></a>
+      <details class="bk-switcher">
+        <summary><span class="bk-switcher-txt">Precision Rifle Handbook</span><svg class="bk-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <div class="bk-switcher-menu" role="menu">
+          <a href="/books/handloading-handbook/"><span>Handloading Handbook</span><span class="bk-switcher-sub">31 ch</span></a><a class="is-cur" href="/books/precision-rifle-handbook/"><span>Precision Rifle Handbook</span><span class="bk-switcher-sub">24 ch</span></a><a href="/books/smokeless-propellants-treatise/"><span>Propellants Treatise</span><span class="bk-switcher-sub">12 ch · 135 cards</span></a>
+          <div class="bk-switcher-div"></div>
+          <a href="/books/"><span>All Books</span><span class="bk-switcher-sub">3 books</span></a>
+          <a href="/load-data/"><span>Published Load Data</span><span class="bk-switcher-sub">Tables</span></a>
+          <a href="/"><span>Open Workbench</span><span class="bk-switcher-sub">App</span></a>
+        </div>
+      </details>
+    </div>
+    <div class="bk-top-right">
+      <button type="button" class="bk-search-btn" data-bk-search aria-label="Search books (/)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="bk-search-lbl">Search…</span><kbd class="bk-search-kbd">/</kbd></button>
+      <a class="bk-pdf-pill" href="/books/precision-rifle-handbook.pdf" download="precision-rifle-handbook.pdf" data-pdf-dl="precision-rifle-handbook" title="Download complete Precision Rifle Handbook PDF (1.2 MB)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span>PDF</span><span class="bk-pdf-sz">1.2 MB</span></a>
+      <a class="bk-app-btn" href="/">Workbench</a>
+    </div>
+  </div>
+</header>
+<div class="bk-shell has-toc">
+<div id="bk-backdrop" class="bk-backdrop" aria-hidden="true"></div>
+<aside id="bk-sidebar" class="bk-sidebar" aria-label="Book contents">
+  <div class="sb-mob-hd">
+    <span class="sb-mob-title">Contents</span>
+    <button type="button" class="sb-close-btn" data-bk-close aria-label="Close book contents"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <nav class="sb-scroll" aria-label="Chapters">
+    <a class="sb-book-home" href="/books/precision-rifle-handbook/">The Precision Rifle Handbook</a>
+    <div class="sb-group"><ul class="sb-list"><li><a class="sb-link" href="/books/precision-rifle-handbook/before-you-begin/"><span class="sb-txt">Before You Begin</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/how-to-use/"><span class="sb-txt">How to Use This Book</span></a></li></ul></div>
+<div class="sb-group">
+  <div class="sb-part-hd">Part I &middot; Foundations and the Empirical Mindset</div>
+  <ul class="sb-list"><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-01-accuracy-precision-and-evidence/"><span class="sb-num">1</span><span class="sb-txt">Accuracy, Precision, and Evidence</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-02-firearm-range-and-field-safety/"><span class="sb-num">2</span><span class="sb-txt">Firearm, Range, and Field Safety</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-03-angular-units-and-ballistic-math-basics/"><span class="sb-num">3</span><span class="sb-txt">Angular Units and Ballistic Math Basics</span></a></li></ul>
+</div>
+<div class="sb-group">
+  <div class="sb-part-hd">Part II &middot; The Precision Rifle System</div>
+  <ul class="sb-list"><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-04-the-rifle-as-a-system/"><span class="sb-num">4</span><span class="sb-txt">The Rifle as a System</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-05-optics-and-aiming-systems/"><span class="sb-num">5</span><span class="sb-txt">Optics and Aiming Systems</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-06-scope-mounting-leveling-and-mechanical-verification/"><span class="sb-num">6</span><span class="sb-txt">Scope Mounting, Leveling, and Mechanical Verification</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-07-range-and-field-equipment/"><span class="sb-num">7</span><span class="sb-txt">Range and Field Equipment</span></a></li></ul>
+</div>
+<div class="sb-group">
+  <div class="sb-part-hd">Part III &middot; Marksmanship, Zeroing, and Fieldcraft</div>
+  <ul class="sb-list"><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-08-fundamentals-of-precision-marksmanship/"><span class="sb-num">8</span><span class="sb-txt">Fundamentals of Precision Marksmanship</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-09-alternate-and-positional-shooting/"><span class="sb-num">9</span><span class="sb-txt">Alternate and Positional Shooting</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-10-zeroing-spotting-and-shot-calling/"><span class="sb-num">10</span><span class="sb-txt">Zeroing, Spotting, and Shot Calling</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-11-estimating-range-wind-and-angles/"><span class="sb-num">11</span><span class="sb-txt">Estimating Range, Wind, and Angles</span></a></li></ul>
+</div>
+<div class="sb-group">
+  <div class="sb-part-hd">Part IV &middot; Cartridge Evaluation and Measurement Science</div>
+  <ul class="sb-list"><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-12-evaluating-and-selecting-a-cartridge/"><span class="sb-num">12</span><span class="sb-txt">Evaluating and Selecting a Cartridge</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-13-keeping-shooting-and-evaluation-records/"><span class="sb-num">13</span><span class="sb-txt">Keeping Shooting and Evaluation Records</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-14-the-range-testing-protocol/"><span class="sb-num">14</span><span class="sb-txt">The Range Testing Protocol</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-15-measurement-science-for-shooters/"><span class="sb-num">15</span><span class="sb-txt">Measurement Science for Shooters</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-16-comparing-cartridges-loads-and-hardware/"><span class="sb-num">16</span><span class="sb-txt">Comparing Cartridges, Loads, and Hardware</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-17-popular-load-development-and-tuning-methods-examined/"><span class="sb-num">17</span><span class="sb-txt">Popular Load-Development and Tuning Methods Examined</span></a></li></ul>
+</div>
+<div class="sb-group">
+  <div class="sb-part-hd">Part V &middot; Bullet Flight, External Ballistics, and Terminal Performance</div>
+  <ul class="sb-list"><li><a class="sb-link is-active" href="/books/precision-rifle-handbook/chapter-18-bullet-stability/" aria-current="page"><span class="sb-num">18</span><span class="sb-txt">Bullet Stability</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-19-external-ballistics-essentials/"><span class="sb-num">19</span><span class="sb-txt">External Ballistics Essentials</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-20-ballistic-solvers-truing-and-dope/"><span class="sb-num">20</span><span class="sb-txt">Ballistic Solvers, Truing, and DOPE</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-21-hit-probability-and-error-budgets/"><span class="sb-num">21</span><span class="sb-txt">Hit Probability and Error Budgets</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-22-terminal-ballistics-and-ethical-hunting-range/"><span class="sb-num">22</span><span class="sb-txt">Terminal Ballistics and Ethical Hunting Range</span></a></li></ul>
+</div>
+<div class="sb-group">
+  <div class="sb-part-hd">Part VI &middot; Living With a Precision Rifle</div>
+  <ul class="sb-list"><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-23-barrel-lifecycle-thermal-management-and-maintenance/"><span class="sb-num">23</span><span class="sb-txt">Barrel Lifecycle, Thermal Management, and Maintenance</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-24-range-and-accuracy-troubleshooting/"><span class="sb-num">24</span><span class="sb-txt">Range and Accuracy Troubleshooting</span></a></li></ul>
+</div>
+  </nav>
+  <div class="sb-foot">
+<a href="/books/precision-rifle-handbook.pdf" download="precision-rifle-handbook.pdf" data-pdf-dl="precision-rifle-handbook">PDF (1.2 MB)</a>
+    <a href="/books/">All Books</a>
+    <a href="/load-data/">Load Data</a>
+    <a href="/">Workbench</a>
+  </div>
+</aside>
+  <main id="bk-content" class="bk-main">
+    <article class="bk-article">
+<header class="bk-head">
+  <p class="bk-kicker"><span>Part V. Bullet Flight, External Ballistics, and Terminal Performance</span><span class="bk-kicker-muted">&middot; ~7 min read</span></p>
+  <h1>Chapter 18. Bullet Stability</h1>
+</header>
+<details class="bk-inline-toc">
+  <summary>On this page (11 sections)</summary>
+  <ul><li class="lvl-3"><a href="#why-it-matters">Why it matters</a></li><li class="lvl-3"><a href="#how-it-is-done">How it is done</a></li><li class="lvl-4"><a href="#what-sg-measures">What Sg measures</a></li><li class="lvl-4"><a href="#the-thresholds">The thresholds</a></li><li class="lvl-4"><a href="#spin-drag-and-the-spin-ceiling">Spin, drag and the spin ceiling</a></li><li class="lvl-4"><a href="#the-miller-twist-rule-by-hand">The Miller twist rule by hand</a></li><li class="lvl-4"><a href="#bullet-length-and-tips">Bullet length and tips</a></li><li class="lvl-4"><a href="#why-cold-dense-air-is-the-hard-case">Why cold, dense air is the hard case</a></li><li class="lvl-4"><a href="#contested-a-hotter-load-rescues-a-marginal-bullet">Contested: a hotter load rescues a marginal bullet</a></li><li class="lvl-4"><a href="#signs-at-the-target">Signs at the target</a></li><li class="lvl-3"><a href="#notes">Notes</a></li></ul>
+</details>
+<div class="bk-prose"><p class="block-label"><strong>Key points</strong></p>
+<ul><li>The gyroscopic stability factor, Sg, compares the bullet’s spin with the air’s push to turn it over. Below 1.0 the bullet tumbles.</li><li>An Sg of 1.5 or more gives full BC with a margin. From 1.1 to 1.5 the bullet flies but yaws, which costs BC and opens groups.</li><li>Length decides stability far more than weight. A polymer tip adds length but almost no mass, so it needs its own correction.</li><li>Cold, dense air is the hard case. Sg falls as the air gets denser, so the coldest, densest day sets the margin.</li><li>A hotter load barely helps. A faster twist or a shorter bullet is the fix.</li></ul>
+<h3 id="why-it-matters">Why it matters</h3>
+<p>The powder’s work ends at the muzzle. From there the bullet has to fly point first. An unstable bullet will not group. A marginal one flies but wobbles, so it loses part of its ballistic coefficient, or BC. A BC compares a bullet’s drag with that of a standard projectile (see <a class="xref" href="/books/precision-rifle-handbook/chapter-19-external-ballistics-essentials/" title="Chapter 19. External Ballistics Essentials">Chapter 19</a>). A bullet below Sg 1.0 tumbles and leaves oblong holes. No amount of load tuning fixes that.</p>
+<p>Stability is set by the barrel’s twist, the bullet’s length and weight, its velocity and the air. The twist is the costly part to change. So check stability before you buy bullets and before you build a load around them.</p>
+<h3 id="how-it-is-done">How it is done</h3>
+<h4 id="what-sg-measures">What Sg measures</h4>
+<p>On a typical rifle bullet, the air’s push centers ahead of the center of gravity. So the air tries to turn the nose away from the path. Spin resists that turning, much as a spinning top resists falling over. Sg is the ratio of the spin’s resistance to the air’s overturning push.</p>
+<p>Sg depends on the bullet’s mass, its moments of inertia, its spin rate, the air density, the aerodynamic overturning moment and the velocity. Simple formulas such as Greenhill’s and Miller’s are estimates. They are built on the bullet’s diameter, length and weight or density. They cannot see how the mass is spread inside the bullet or exactly where the air’s push centers.<sup class="cite-ref" id="cite-1"><a href="#note-1" aria-label="Note 1">1</a></sup></p>
+<p>A bullet grows more stable as it flies. Its spin decays much more slowly than its forward speed. So the muzzle is where gyroscopic stability is lowest.</p>
+<p>Sg measures gyroscopic stability only. A bullet can also be dynamically unstable, meaning its wobble grows in flight instead of settling out. Dynamic instability shows up mostly as the bullet slows through the transonic zone near the speed of sound (see <a class="xref" href="/books/precision-rifle-handbook/chapter-19-external-ballistics-essentials/" title="Chapter 19. External Ballistics Essentials">Chapter 19</a>).<sup class="cite-ref" id="cite-2"><a href="#note-2" aria-label="Note 2">2</a></sup></p>
+<figure class="book-fig"><div class="book-fig-paper"><img src="/books/figures/precision-rifle-handbook/18-1.svg" alt="Figure 18-1: Why a bullet needs spin. The air’s push centers ahead of the center of gravity and tries to turn the nose away from the path." width="388" height="145" loading="lazy" /></div><figcaption><strong>Figure 18-1.</strong> Why a bullet needs spin. The air’s push centers ahead of the center of gravity and tries to turn the nose away from the path.</figcaption></figure>
+<h4 id="the-thresholds">The thresholds</h4>
+<p><strong>Table 18-1.</strong> How to read Sg.<sup class="cite-ref" id="cite-3"><a href="#note-3" aria-label="Note 3">3</a></sup></p>
+<div class="tbl-wrap"><table><thead><tr><th>Sg</th><th>Reading</th><th>What it means</th></tr></thead><tbody><tr><td>1.5 or more</td><td>Stable</td><td>Full BC, with margin for colder and denser air</td></tr><tr><td>1.1 to under 1.5</td><td>Marginal</td><td>The bullet flies but yaws. That can cost as much as 10 to 15% of its BC and open groups</td></tr><tr><td>1.0 to under 1.1</td><td>Insufficient</td><td>Flies point first for now, with no margin. Colder air or a slower load can take it below 1.0</td></tr><tr><td>Below 1.0</td><td>Insufficient, will not stabilize</td><td>The bullet tumbles and keyholes. No load tuning fixes it</td></tr></tbody></table></div>
+<p>Some sources set the threshold for full stability at 1.4 instead of 1.5. Either way, that margin covers formula error and cold, dense air.<sup class="cite-ref" id="cite-1-2"><a href="#note-1" aria-label="Note 1">1</a></sup> The line at 1.0 is physics. The margin above it is insurance.</p>
+<h4 id="spin-drag-and-the-spin-ceiling">Spin, drag and the spin ceiling</h4>
+<p>More spin also lowers drag, up to a point. Mach 1.7 is 1.7 times the speed of sound. Doppler tests show that above about Mach 1.7 to 1.8, a bullet’s drag is lowest at an Sg of about 2.0. Transonic drag keeps falling as Sg rises.<sup class="cite-ref" id="cite-1-3"><a href="#note-1" aria-label="Note 1">1</a></sup></p>
+<p>Spin has a ceiling too. A bullet can spin fast enough to come apart in flight. From about 250,000 rpm, thin-jacketed bullets have been known to fail.<sup class="cite-ref" id="cite-4"><a href="#note-4" aria-label="Note 4">4</a></sup></p>
+<pre><code>Spin rate (rpm) = muzzle velocity (fps) × 720
+                  ÷ twist (inches per turn)</code></pre>
+<p>Example numbers. Not load data. A bullet at 3,000 fps from a 1:8 twist spins at 3,000 × 720 ÷ 8 = 270,000 rpm. That is past the 250,000 rpm caution, so a thin-jacketed bullet could come apart.</p>
+<h4 id="the-miller-twist-rule-by-hand">The Miller twist rule by hand</h4>
+<p>The Miller twist rule is the usual estimate.<sup class="cite-ref" id="cite-5"><a href="#note-5" aria-label="Note 5">5</a></sup></p>
+<pre><code>Sg = 30 × m ÷ (t² × d³ × l × (1 + l²))
+
+m   bullet weight in grains
+d   bullet diameter in inches
+l   bullet length in calibers = length ÷ d
+t   twist in calibers per turn = twist in inches ÷ d</code></pre>
+<p>The base rule assumes 2,800 fps, 59 °F and 29.92 inHg. Two factors adjust it.</p>
+<pre><code>Velocity factor = (v ÷ 2,800)^(1/3)
+                  v = muzzle velocity in fps
+
+Air factor      = ((T + 460) ÷ 519) × (29.92 ÷ Pst)
+                  T   = air temperature in °F
+                  Pst = station pressure in inHg
+
+Sg corrected    = Sg × velocity factor × air factor</code></pre>
+<p>Below 1,120 fps the velocity factor stops changing. The rule holds it at its 1,120 fps value. Station pressure is the air pressure a barometer reads where you stand, not the sea-level figure in weather reports (see <a class="xref" href="/books/precision-rifle-handbook/chapter-19-external-ballistics-essentials/" title="Chapter 19. External Ballistics Essentials">Chapter 19</a>).</p>
+<ol><li>Measure a few bullets with calipers and use the longest. Catalog lengths are often nominal.<sup class="cite-ref" id="cite-4-2"><a href="#note-4" aria-label="Note 4">4</a></sup> For a polymer-tipped bullet, also measure the metal length (see “Bullet length and tips” below).</li><li>Convert the length and the twist to calibers.</li><li>Work out the base Sg. For a tipped bullet, use the tip formula.</li><li>Apply the velocity factor for your measured muzzle velocity. If you have not fired the load yet, use the published velocity (see <a class="xref" href="/books/handloading-handbook/"><em>The Handloading Handbook</em></a>) adjusted for your barrel length (see <a class="xref" href="/books/precision-rifle-handbook/chapter-04-the-rifle-as-a-system/" title="Chapter 4. The Rifle as a System">Chapter 4</a>).</li><li>Apply the air factor for the coldest, densest day you expect.</li><li>Read the result against the thresholds.</li></ol>
+<p><strong>Worked example.</strong> Example numbers. Not load data.</p>
+<p>A bullet of .264 inch diameter weighs 140 gr and measures 1.40 inches. The barrel has a 1:8 twist. The muzzle velocity is 2,700 fps.</p>
+<pre><code>l  = 1.40 ÷ 0.264 = 5.30 calibers
+t  = 8 ÷ 0.264 = 30.3 calibers
+
+Sg = 30 × 140 ÷ (30.3² × 0.264³ × 5.30 × (1 + 5.30²))
+   = 4,200 ÷ (918 × 0.0184 × 154.2)
+   = 1.61
+
+Velocity factor      = (2,700 ÷ 2,800)^(1/3) = 0.988
+Sg on a standard day = 1.61 × 0.988 = 1.59</code></pre>
+<p>On a mild sea-level day this bullet is stable, but only just.</p>
+<h4 id="bullet-length-and-tips">Bullet length and tips</h4>
+<p>Length decides. In Miller’s rule, Sg falls roughly with the cube of the bullet’s length. Twist enters as a square, so a 1:7 barrel gives about 31 percent more Sg than a 1:8 barrel. Weight enters only once. Heavy bullets cause trouble mostly because they are long.</p>
+<p>Several things make a bullet longer.</p>
+<ul><li>A heavier bullet of the same design.</li><li>A monolithic copper bullet. Copper bullets are longer than lead-core bullets of the same weight, so they may need a faster twist (see <a class="xref" href="/books/handloading-handbook/"><em>The Handloading Handbook</em></a>).</li><li>A polymer tip, which adds length but almost no mass.</li></ul>
+<p>A tip-corrected form of Miller’s rule accounts for a polymer tip.<sup class="cite-ref" id="cite-6"><a href="#note-6" aria-label="Note 6">6</a></sup> Use the metal length (total length minus tip length) in the (1 + lm²) term, which reflects how the bullet’s mass is distributed. Keep the full length l outside the parentheses, because the tip still shapes the airflow.</p>
+<pre><code>Sg = 30 × m ÷ (t² × d³ × l × (1 + lm²))
+
+l    full length in calibers
+lm   metal length in calibers = (length − tip length) ÷ d</code></pre>
+<p>Example numbers. Not load data. Give the bullet in the worked example a .15 inch polymer tip. Its metal length is 1.25 inches, or 4.73 calibers. Its Sg on a standard day becomes 1.98 instead of 1.59. Leaving the tip out of the formula makes a tipped bullet look less stable than it is. That is the classic false “unstable” verdict.</p>
+<p>The tip formula treats the tip as weightless, so it reads slightly high for an aluminum tip. By contrast, a lead-free bullet with a light powdered-metal core inside a copper jacket is more stable than the formula predicts.<sup class="cite-ref" id="cite-3-2"><a href="#note-3" aria-label="Note 3">3</a></sup></p>
+<p>Measuring matters most when the answer is close. Whenever Sg lands between 1.3 and 1.6, a nominal catalog length can flip the verdict.<sup class="cite-ref" id="cite-3-3"><a href="#note-3" aria-label="Note 3">3</a></sup> An estimated tip length is usually within .02 inch, which moves Sg about 3 percent.<sup class="cite-ref" id="cite-7"><a href="#note-7" aria-label="Note 7">7</a></sup></p>
+<aside class="callout callout-evidence ev-supported"><div class="callout-hd">Evidence · Supported by data</div><div class="callout-body"><p>In firing tests, tipped varmint bullets keyholed within a few percent of Sg 1.0 by the tip-corrected formula.<sup class="cite-ref" id="cite-6-2"><a href="#note-6" aria-label="Note 6">6</a></sup> So the line at 1.0 is real.</p></div></aside>
+<figure class="book-fig"><div class="book-fig-paper"><img src="/books/figures/precision-rifle-handbook/18-2.svg" alt="Figure 18-2: Measuring a tipped bullet: overall length, then metal length." width="388" height="203" loading="lazy" /></div><figcaption><strong>Figure 18-2.</strong> Measuring a tipped bullet: overall length, then metal length.</figcaption></figure>
+<h4 id="why-cold-dense-air-is-the-hard-case">Why cold, dense air is the hard case</h4>
+<p>Dense air pushes harder on the nose, but the spin does not change with the weather. So Sg falls as air density rises. Air is densest when it is cold, at low altitude and under high pressure.</p>
+<p>Carry the worked example into two kinds of weather.</p>
+<pre><code>20 °F at sea level, 29.92 inHg:
+  Air factor = (20 + 460) ÷ 519 × 29.92 ÷ 29.92 = 0.925
+  Sg = 1.59 × 0.925 = 1.47     Marginal
+
+80 °F at 5,000 feet, station pressure about 24.9 inHg:
+  Air factor = (80 + 460) ÷ 519 × 29.92 ÷ 24.9 = 1.25
+  Sg = 1.59 × 1.25 = 1.99      Stable</code></pre>
+<p>The same bullet and load reads 1.99 on a warm day at altitude and 1.47 on a cold day at sea level (see Figure 18-3). In a similar case, a bullet at Sg 1.5 on an 80 °F afternoon at 5,000 feet is about 1.1 on a 20 °F day at sea level.<sup class="cite-ref" id="cite-3-4"><a href="#note-3" aria-label="Note 3">3</a></sup> A rifle zeroed in summer and carried on a late-season hunt sees exactly this change.</p>
+<figure class="book-fig"><div class="book-fig-paper"><img src="/books/figures/precision-rifle-handbook/18-3.svg" alt="Figure 18-3: Sg against air temperature for the worked-example bullet, at sea level and at 5,000 feet." width="388" height="233" loading="lazy" /></div><figcaption><strong>Figure 18-3.</strong> Sg against air temperature for the worked-example bullet, at sea level and at 5,000 feet.</figcaption></figure>
+<aside class="callout callout-ep"><div class="callout-hd">Easier on EP &middot; STROVILOS · STABILITY SOLVER</div><div class="callout-body"><p>Strovilos works out the stability factor from your bullet, twist, velocity and air, and names the band: stable, marginal or insufficient.</p></div><div class="callout-act"><a class="ep-tool-btn" href="/heurisko/?tab=strovilos">Open Strovilos &rarr;</a></div></aside>
+<h4 id="contested-a-hotter-load-rescues-a-marginal-bullet" class="contested-hd"><span class="contested-tag">Contested</span> a hotter load rescues a marginal bullet</h4>
+<p><strong>The claim.</strong> If a bullet is marginal, drive it faster. The idea comes up often at the range.</p>
+<p><strong>The physics.</strong> A faster bullet spins faster from the same twist. But the air’s overturning push also grows with speed. In Miller’s rule, the net gain grows only with the cube root of velocity.</p>
+<p><strong>The test.</strong> Work the velocity factor at two speeds.</p>
+<p><strong>The data.</strong> In the worked example, 200 fps more velocity raises Sg from 1.59 to 1.63. That is about 2 percent. Changing the twist from 1:8 to 1:7.5 raises it to 1.81.</p>
+<p><strong>The verdict.</strong> Folklore. The effect is real but weak. A hotter load cannot rescue a marginal bullet. It does keep the bullet supersonic a little longer. It also raises the spin rate, which matters near the 250,000 rpm caution. The real fixes are a faster twist, which is a barrel decision, or a shorter bullet. For a tipped bullet, first make sure the tip is in the formula.</p>
+<blockquote><p><strong>Safety · See </strong><em><strong>The Handloading Handbook</strong></em><strong>.</strong> Never go past a published maximum to chase stability.</p></blockquote>
+<h4 id="signs-at-the-target">Signs at the target</h4>
+<p>A tumbling bullet hits the target sideways and leaves oblong holes (see Figure 18-4). That points to an Sg below 1.0. A marginal bullet usually cuts round holes at 100 yards, but its groups open up and it drops and drifts more at distance because yaw lowers its BC.</p>
+<figure class="book-fig"><div class="book-fig-paper"><img src="/books/figures/precision-rifle-handbook/18-4.svg" alt="Figure 18-4: Round holes from a stable bullet beside oblong keyholes from a tumbling one." width="388" height="141" loading="lazy" /></div><figcaption><strong>Figure 18-4.</strong> Round holes from a stable bullet beside oblong keyholes from a tumbling one.</figcaption></figure></div>
+<section id="notes" class="notes-sec" aria-label="Notes"><h2>Notes</h2><ol class="notes-list"><li id="note-1">Hornady, <em>Hornady 4 Degree of Freedom (4 DOF) Trajectory Program</em>, Version II user manual, 2017, <a href="https://static.hornady.media/site/hornady/files/ballistic/hornady-4dof-technical-paper-v2.pdf" target="_blank" rel="noopener noreferrer">static.hornady.media/site/hornady/files/ballistic/hornady-4dof-technical-paper-v2.pdf</a>. <a class="note-back" href="#cite-1" aria-label="Back to reference 1" title="Back to text">&#8617;</a></li><li id="note-2">Applied Ballistics, <em>AB Mobile User Guide</em>, version 2.2 (07/2018), <a href="https://appliedballisticsllc.com/wp-content/uploads/2019/11/ABMobileUserGuide.pdf" target="_blank" rel="noopener noreferrer">appliedballisticsllc.com/wp-content/uploads/2019/11/ABMobileUserGuide.pdf</a>. <a class="note-back" href="#cite-2" aria-label="Back to reference 2" title="Back to text">&#8617;</a></li><li id="note-3">Empirical Precision, <em>User Guide</em>, linked from the app’s dashboard, 2026, section 15.4, <a href="https://empiricalprecision.com" target="_blank" rel="noopener noreferrer">empiricalprecision.com</a>. <a class="note-back" href="#cite-3" aria-label="Back to reference 3" title="Back to text">&#8617;</a></li><li id="note-4">Empirical Precision, <em>User Guide</em>, section 15.1. <a class="note-back" href="#cite-4" aria-label="Back to reference 4" title="Back to text">&#8617;</a></li><li id="note-5">Don Miller, “A New Rule for Estimating Rifling Twist: An Aid to Choosing Bullets and Rifles,” <em>Precision Shooting</em>, pp. 43–48, March 2005. <a class="note-back" href="#cite-5" aria-label="Back to reference 5" title="Back to text">&#8617;</a></li><li id="note-6">Michael Courtney and Don Miller, “A Stability Formula for Plastic-Tipped Bullets, Parts 1 and 2,” <em>Precision Shooting</em>, January and February 2012, <a href="https://arxiv.org/abs/1410.5340" target="_blank" rel="noopener noreferrer">arxiv.org/abs/1410.5340</a>. <a class="note-back" href="#cite-6" aria-label="Back to reference 6" title="Back to text">&#8617;</a></li><li id="note-7">Empirical Precision, <em>User Guide</em>, section 15.2. <a class="note-back" href="#cite-7" aria-label="Back to reference 7" title="Back to text">&#8617;</a></li></ol></section>
+<nav class="bk-pager" aria-label="Page navigation">
+  <a href="/books/precision-rifle-handbook/chapter-17-popular-load-development-and-tuning-methods-examined/"><span class="pg-lbl">&larr; Previous</span><span>Chapter 17. Popular Load-Development and Tuning Methods Examined</span></a>
+  <a class="pg-next" href="/books/precision-rifle-handbook/chapter-19-external-ballistics-essentials/"><span class="pg-lbl">Next &rarr;</span><span>Chapter 19. External Ballistics Essentials</span></a>
+</nav>
+    </article>
+  </main>
+<aside class="bk-toc-rail" aria-label="On this page">
+  <p class="toc-rail-hd">On this page</p>
+  <ul class="toc-rail-list"><li class="lvl-3"><a href="#why-it-matters">Why it matters</a></li><li class="lvl-3"><a href="#how-it-is-done">How it is done</a></li><li class="lvl-4"><a href="#what-sg-measures">What Sg measures</a></li><li class="lvl-4"><a href="#the-thresholds">The thresholds</a></li><li class="lvl-4"><a href="#spin-drag-and-the-spin-ceiling">Spin, drag and the spin ceiling</a></li><li class="lvl-4"><a href="#the-miller-twist-rule-by-hand">The Miller twist rule by hand</a></li><li class="lvl-4"><a href="#bullet-length-and-tips">Bullet length and tips</a></li><li class="lvl-4"><a href="#why-cold-dense-air-is-the-hard-case">Why cold, dense air is the hard case</a></li><li class="lvl-4"><a href="#contested-a-hotter-load-rescues-a-marginal-bullet">Contested: a hotter load rescues a marginal bullet</a></li><li class="lvl-4"><a href="#signs-at-the-target">Signs at the target</a></li><li class="lvl-3"><a href="#notes">Notes</a></li></ul>
+</aside>
+</div>
+<dialog id="bk-search-dlg" class="bk-search-dlg" aria-label="Search books">
+  <div class="bk-sdlg-hd">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input id="bk-search-in" class="bk-sdlg-in" type="search" autocomplete="off" spellcheck="false" placeholder="Search chapters, sections, or powders…" aria-label="Search books" />
+    <button type="button" class="bk-sdlg-esc" data-search-close>Esc</button>
+  </div>
+  <div class="bk-sdlg-scope" role="group" aria-label="Search scope">
+    <button type="button" class="is-active" data-search-scope="book">Precision Rifle Handbook</button>
+    <button type="button" data-search-scope="all">All 3 Books</button>
+  </div>
+  <ul id="bk-search-res" class="bk-sdlg-res" role="list"></ul>
+</dialog>
+</body>
+</html>

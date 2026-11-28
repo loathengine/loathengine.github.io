@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>
+window.dataLayer = window.dataLayer || [];
+window.gtag = function () { window.dataLayer.push(arguments); };
+window.gtag('js', new Date());
+window.gtag('config', 'GT-MKRCK4SD', {
+  allow_ad_personalization_signals: false,
+  allow_google_signals: false,
+});
+if (location.hostname === 'empiricalprecision.com' || location.hostname === 'www.empiricalprecision.com') {
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=GT-MKRCK4SD';
+  document.head.appendChild(s);
+}
+</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1c1f24" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/icon-180.png" />
+<title>Ch. 3: Angular Units and Ballistic Math… | Precision Rifle</title>
+<meta name="description" content="Ch. 3 (Precision Rifle): MIL (mrad) and MOA are angular units, not linear inches; their linear size grows with distance." />
+<link rel="canonical" href="https://empiricalprecision.com/books/precision-rifle-handbook/chapter-03-angular-units-and-ballistic-math-basics/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Empirical Precision" />
+<meta property="og:title" content="Ch. 3: Angular Units and Ballistic Math… | Precision Rifle" />
+<meta property="og:description" content="Ch. 3 (Precision Rifle): MIL (mrad) and MOA are angular units, not linear inches; their linear size grows with distance." />
+<meta property="og:url" content="https://empiricalprecision.com/books/precision-rifle-handbook/chapter-03-angular-units-and-ballistic-math-basics/" />
+<meta property="og:image" content="https://empiricalprecision.com/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="628" />
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Ch. 3: Angular Units and Ballistic Math… | Precision Rifle","description":"Ch. 3 (Precision Rifle): MIL (mrad) and MOA are angular units, not linear inches; their linear size grows with distance.","url":"https://empiricalprecision.com/books/precision-rifle-handbook/chapter-03-angular-units-and-ballistic-math-basics/","isPartOf":{"@type":"WebSite","name":"Empirical Precision","url":"https://empiricalprecision.com/"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://empiricalprecision.com/"},{"@type":"ListItem","position":2,"name":"Books","item":"https://empiricalprecision.com/books/"},{"@type":"ListItem","position":3,"name":"The Precision Rifle Handbook","item":"https://empiricalprecision.com/books/precision-rifle-handbook/"},{"@type":"ListItem","position":4,"name":"Chapter 3. Angular Units and Ballistic Math Basics","item":"https://empiricalprecision.com/books/precision-rifle-handbook/chapter-03-angular-units-and-ballistic-math-basics/"}]}}</script>
+<link rel="stylesheet" href="/books/books.css?v=3f177077" />
+<script src="/books/books.js?v=2c487a03" defer></script>
+</head>
+<body data-book-slug="precision-rifle-handbook" data-page-label="Ch. 3: Angular Units and Ballistic Math Basics" data-search-url="/books/books-search.json?v=045b5f3b">
+<a class="bk-skip" href="#bk-content">Skip to content</a>
+<header class="bk-topbar">
+  <div class="bk-topbar-in">
+    <div class="bk-top-left">
+      <button type="button" class="bk-menu-btn" data-bk-menu aria-label="Open book contents" aria-expanded="false" aria-controls="bk-sidebar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      <a class="bk-logo-link" href="/books/" title="All Empirical Precision Books" aria-label="All Books"><img src="/favicon.svg" alt="" width="24" height="24" /></a>
+      <details class="bk-switcher">
+        <summary><span class="bk-switcher-txt">Precision Rifle Handbook</span><svg class="bk-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary>
+        <div class="bk-switcher-menu" role="menu">
+          <a href="/books/handloading-handbook/"><span>Handloading Handbook</span><span class="bk-switcher-sub">31 ch</span></a><a class="is-cur" href="/books/precision-rifle-handbook/"><span>Precision Rifle Handbook</span><span class="bk-switcher-sub">24 ch</span></a><a href="/books/smokeless-propellants-treatise/"><span>Propellants Treatise</span><span class="bk-switcher-sub">12 ch · 135 cards</span></a>
+          <div class="bk-switcher-div"></div>
+          <a href="/books/"><span>All Books</span><span class="bk-switcher-sub">3 books</span></a>
+          <a href="/load-data/"><span>Published Load Data</span><span class="bk-switcher-sub">Tables</span></a>
+          <a href="/"><span>Open Workbench</span><span class="bk-switcher-sub">App</span></a>
+        </div>
+      </details>
+    </div>
+    <div class="bk-top-right">
+      <button type="button" class="bk-search-btn" data-bk-search aria-label="Search books (/)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span class="bk-search-lbl">Search…</span><kbd class="bk-search-kbd">/</kbd></button>
+      <a class="bk-pdf-pill" href="/books/precision-rifle-handbook.pdf" download="precision-rifle-handbook.pdf" data-pdf-dl="precision-rifle-handbook" title="Download complete Precision Rifle Handbook PDF (1.2 MB)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span>PDF</span><span class="bk-pdf-sz">1.2 MB</span></a>
+      <a class="bk-app-btn" href="/">Workbench</a>
+    </div>
+  </div>
+</header>
+<div class="bk-shell has-toc">
+<div id="bk-backdrop" class="bk-backdrop" aria-hidden="true"></div>
+<aside id="bk-sidebar" class="bk-sidebar" aria-label="Book contents">
+  <div class="sb-mob-hd">
+    <span class="sb-mob-title">Contents</span>
+    <button type="button" class="sb-close-btn" data-bk-close aria-label="Close book contents"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  </div>
+  <nav class="sb-scroll" aria-label="Chapters">
+    <a class="sb-book-home" href="/books/precision-rifle-handbook/">The Precision Rifle Handbook</a>
+    <div class="sb-group"><ul class="sb-list"><li><a class="sb-link" href="/books/precision-rifle-handbook/before-you-begin/"><span class="sb-txt">Before You Begin</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/how-to-use/"><span class="sb-txt">How to Use This Book</span></a></li></ul></div>
+<div class="sb-group">
+  <div class="sb-part-hd">Part I &middot; Foundations and the Empirical Mindset</div>
+  <ul class="sb-list"><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-01-accuracy-precision-and-evidence/"><span class="sb-num">1</span><span class="sb-txt">Accuracy, Precision, and Evidence</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-02-firearm-range-and-field-safety/"><span class="sb-num">2</span><span class="sb-txt">Firearm, Range, and Field Safety</span></a></li><li><a class="sb-link is-active" href="/books/precision-rifle-handbook/chapter-03-angular-units-and-ballistic-math-basics/" aria-current="page"><span class="sb-num">3</span><span class="sb-txt">Angular Units and Ballistic Math Basics</span></a></li></ul>
+</div>
+<div class="sb-group">
+  <div class="sb-part-hd">Part II &middot; The Precision Rifle System</div>
+  <ul class="sb-list"><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-04-the-rifle-as-a-system/"><span class="sb-num">4</span><span class="sb-txt">The Rifle as a System</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-05-optics-and-aiming-systems/"><span class="sb-num">5</span><span class="sb-txt">Optics and Aiming Systems</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-06-scope-mounting-leveling-and-mechanical-verification/"><span class="sb-num">6</span><span class="sb-txt">Scope Mounting, Leveling, and Mechanical Verification</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-07-range-and-field-equipment/"><span class="sb-num">7</span><span class="sb-txt">Range and Field Equipment</span></a></li></ul>
+</div>
+<div class="sb-group">
+  <div class="sb-part-hd">Part III &middot; Marksmanship, Zeroing, and Fieldcraft</div>
+  <ul class="sb-list"><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-08-fundamentals-of-precision-marksmanship/"><span class="sb-num">8</span><span class="sb-txt">Fundamentals of Precision Marksmanship</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-09-alternate-and-positional-shooting/"><span class="sb-num">9</span><span class="sb-txt">Alternate and Positional Shooting</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-10-zeroing-spotting-and-shot-calling/"><span class="sb-num">10</span><span class="sb-txt">Zeroing, Spotting, and Shot Calling</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-11-estimating-range-wind-and-angles/"><span class="sb-num">11</span><span class="sb-txt">Estimating Range, Wind, and Angles</span></a></li></ul>
+</div>
+<div class="sb-group">
+  <div class="sb-part-hd">Part IV &middot; Cartridge Evaluation and Measurement Science</div>
+  <ul class="sb-list"><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-12-evaluating-and-selecting-a-cartridge/"><span class="sb-num">12</span><span class="sb-txt">Evaluating and Selecting a Cartridge</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-13-keeping-shooting-and-evaluation-records/"><span class="sb-num">13</span><span class="sb-txt">Keeping Shooting and Evaluation Records</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-14-the-range-testing-protocol/"><span class="sb-num">14</span><span class="sb-txt">The Range Testing Protocol</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-15-measurement-science-for-shooters/"><span class="sb-num">15</span><span class="sb-txt">Measurement Science for Shooters</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-16-comparing-cartridges-loads-and-hardware/"><span class="sb-num">16</span><span class="sb-txt">Comparing Cartridges, Loads, and Hardware</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-17-popular-load-development-and-tuning-methods-examined/"><span class="sb-num">17</span><span class="sb-txt">Popular Load-Development and Tuning Methods Examined</span></a></li></ul>
+</div>
+<div class="sb-group">
+  <div class="sb-part-hd">Part V &middot; Bullet Flight, External Ballistics, and Terminal Performance</div>
+  <ul class="sb-list"><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-18-bullet-stability/"><span class="sb-num">18</span><span class="sb-txt">Bullet Stability</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-19-external-ballistics-essentials/"><span class="sb-num">19</span><span class="sb-txt">External Ballistics Essentials</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-20-ballistic-solvers-truing-and-dope/"><span class="sb-num">20</span><span class="sb-txt">Ballistic Solvers, Truing, and DOPE</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-21-hit-probability-and-error-budgets/"><span class="sb-num">21</span><span class="sb-txt">Hit Probability and Error Budgets</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-22-terminal-ballistics-and-ethical-hunting-range/"><span class="sb-num">22</span><span class="sb-txt">Terminal Ballistics and Ethical Hunting Range</span></a></li></ul>
+</div>
+<div class="sb-group">
+  <div class="sb-part-hd">Part VI &middot; Living With a Precision Rifle</div>
+  <ul class="sb-list"><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-23-barrel-lifecycle-thermal-management-and-maintenance/"><span class="sb-num">23</span><span class="sb-txt">Barrel Lifecycle, Thermal Management, and Maintenance</span></a></li><li><a class="sb-link" href="/books/precision-rifle-handbook/chapter-24-range-and-accuracy-troubleshooting/"><span class="sb-num">24</span><span class="sb-txt">Range and Accuracy Troubleshooting</span></a></li></ul>
+</div>
+  </nav>
+  <div class="sb-foot">
+<a href="/books/precision-rifle-handbook.pdf" download="precision-rifle-handbook.pdf" data-pdf-dl="precision-rifle-handbook">PDF (1.2 MB)</a>
+    <a href="/books/">All Books</a>
+    <a href="/load-data/">Load Data</a>
+    <a href="/">Workbench</a>
+  </div>
+</aside>
+  <main id="bk-content" class="bk-main">
+    <article class="bk-article">
+<header class="bk-head">
+  <p class="bk-kicker"><span>Part I. Foundations and the Empirical Mindset</span><span class="bk-kicker-muted">&middot; ~4 min read</span></p>
+  <h1>Chapter 3. Angular Units and Ballistic Math Basics</h1>
+</header>
+<details class="bk-inline-toc">
+  <summary>On this page (7 sections)</summary>
+  <ul><li class="lvl-3"><a href="#why-it-matters">Why it matters</a></li><li class="lvl-3"><a href="#how-it-is-done">How it is done</a></li><li class="lvl-4"><a href="#what-an-angle-is-and-why-shooters-use-angles">What an angle is and why shooters use angles</a></li><li class="lvl-4"><a href="#mil-milliradians">MIL (milliradians)</a></li><li class="lvl-4"><a href="#moa-true-moa-vs-iphy">MOA (True MOA vs. IPHY)</a></li><li class="lvl-4"><a href="#converting-between-mil-moa-and-linear-units">Converting between MIL, MOA, and linear units</a></li><li class="lvl-4"><a href="#using-the-reticle-as-a-ruler">Using the reticle as a ruler</a></li></ul>
+</details>
+<div class="bk-prose"><p class="block-label"><strong>Key points</strong></p>
+<ul><li>MIL (mrad) and MOA are angular units, not linear inches; their linear size grows with distance.</li><li>1 MIL equals 1/1,000 of the distance (3.6 inches at 100 yards; 10 cm at 100 meters).</li><li>True MOA is 1.047 inches at 100 yards; Shooter’s MOA (IPHY) is 1.000 inch at 100 yards.</li><li>Using your reticle as a ruler removes guesswork when measuring impacts, holding wind, and dialing corrections.</li></ul>
+<h3 id="why-it-matters">Why it matters</h3>
+<p>External ballistics, scope turrets, group dispersion, and wind calls all speak in angles. Fluent angular math turns every shot impact into an exact correction.</p>
+<h3 id="how-it-is-done">How it is done</h3>
+<h4 id="what-an-angle-is-and-why-shooters-use-angles">What an angle is and why shooters use angles</h4>
+<p>Linear units—inches, feet, centimeters—measure physical size on a target. They fail as a universal shooting language because the rifle pivots around you in an angle, not in inches.</p>
+<p>A 2-inch group at 100 yards is mediocre for a precision rifle. A 2-inch group at 1,000 yards is extraordinary. The physical size is the same, yet the angular dispersion at 1,000 yards is ten times smaller. The same rule governs your riflescope. Turning an elevation turret by one click tilts the scope’s internal erector assembly by a fixed angle. At 100 yards, that angle moves the point of impact a fraction of an inch. At 1,000 yards, the exact same click moves the point of impact ten times as many inches.</p>
+<p>Working in angles solves this problem. Drop charts, wind calls, scope turrets, reticle hashes, and group dispersion all share one angular language that scales automatically with distance.</p>
+<figure class="book-fig"><div class="book-fig-paper"><img src="/books/figures/precision-rifle-handbook/3-1.svg" alt="Figure 3-1: An angle expands linearly with distance. A 1 MIL cone spans 3.6 inches at 100 yards, 7.2 inches at 200 yards, and 18.0 inches at 500 yards." width="388" height="173" loading="lazy" /></div><figcaption><strong>Figure 3-1.</strong> An angle expands linearly with distance. A 1 MIL cone spans 3.6 inches at 100 yards, 7.2 inches at 200 yards, and 18.0 inches at 500 yards.</figcaption></figure>
+<h4 id="mil-milliradians">MIL (milliradians)</h4>
+<p>A radian is the angle formed when an arc along a circle equals the circle’s radius. One milliradian (1 mrad, written <strong>1 MIL</strong> in shooting) is 1/1,000 of a radian.</p>
+<p>Because MIL is base-10, its math is simple in any unit of distance. For the small angles used in shooting, 1 MIL subtends (covers) 1/1,000 of the distance to the target:</p>
+<ul><li>At <strong>100 yards</strong> (3,600 inches), 1 MIL = <strong>3.6 inches</strong>.</li><li>At <strong>1,000 yards</strong>, 1 MIL = <strong>36 inches</strong> (1 yard).</li><li>At <strong>100 meters</strong> (100,000 mm), 1 MIL = <strong>10 cm</strong> (100 mm).</li><li>At <strong>1,000 meters</strong>, 1 MIL = <strong>1 meter</strong>.</li></ul>
+<p>Most MIL riflescopes adjust in <strong>0.1 MIL</strong> clicks. One click moves the point of impact 0.36 inch at 100 yards (1 cm at 100 meters).</p>
+<pre><code>1 MIL in inches = 3.6 × (distance_yd / 100)
+1 MIL in cm     = 10 × (distance_m / 100)
+MIL correction  = linear_offset_in / (3.6 × distance_yd / 100)</code></pre>
+<p><strong>Worked example.</strong> Example numbers.</p>
+<p>You fire at a steel plate at 400 yards and measure your impact 7.2 inches low.</p>
+<pre><code>1 MIL at 400 yards = 3.6 × (400 / 100) = 14.4 inches
+MIL correction     = 7.2 / 14.4        = 0.5 MIL (5 clicks of 0.1 MIL)</code></pre>
+<p>Dial up 0.5 MIL to bring the point of impact onto the center of the plate.</p>
+<h4 id="moa-true-moa-vs-iphy">MOA (True MOA vs. IPHY)</h4>
+<p>A full circle contains 360 degrees, and each degree divides into 60 minutes. One Minute of Angle (<strong>1 MOA</strong>) is 1/60 of a degree, or 1/21,600 of a full circle.</p>
+<p>At a radius of 100 yards (3,600 inches), the circumference of a full circle is <code>2 × pi × 3,600 = 22,619.5 inches</code>. Dividing by 21,600 gives <strong>1.0472 inches per 100 yards</strong>, usually rounded to <strong>1.047 inches</strong>. This exact geometric value is <strong>True MOA</strong>. In metric units, <strong>1 True MOA = 2.91 cm (29.1 mm) at 100 meters</strong>.</p>
+<p>Many shooters approximate 1 MOA as <strong>1.000 inch per 100 yards</strong> for quick mental arithmetic. That rounded unit is called <strong>Shooter’s MOA</strong> or <strong>IPHY</strong> (Inches Per Hundred Yards).</p>
+<p>At 100 yards, the 4.7 percent difference between True MOA and IPHY is tiny (0.047 inch on a 1-inch group). At long range, it adds up fast. Suppose a ballistic solver calculates a drop of 30.0 True MOA at 1,000 yards (314.2 inches). If your scope actually tracks in IPHY (1.000 inch per 100 yards per click) and you dial 30.0 MOA, the scope moves only 300.0 inches. You miss 14.2 inches low—about 1.35 MOA—purely from mixing True MOA and IPHY. Know whether your scope and your solver use True MOA or IPHY, and verify your scope’s real click value with a Tall Target Test (see <a class="xref" href="/books/precision-rifle-handbook/chapter-06-scope-mounting-leveling-and-mechanical-verification/" title="Chapter 6. Scope Mounting, Leveling, and Mechanical Verification">Chapter 6</a>).</p>
+<p>Most MOA riflescopes adjust in <strong>1/4 MOA</strong> clicks (0.262 inch at 100 yards; 7.3 mm at 100 meters). Benchrest and F-Class scopes often use <strong>1/8 MOA</strong> clicks (0.131 inch at 100 yards; 3.6 mm at 100 meters) for finer zeroing on tiny scoring rings.</p>
+<h4 id="converting-between-mil-moa-and-linear-units">Converting between MIL, MOA, and linear units</h4>
+<p>Use these plain-text formulas to move between MIL, True MOA, and linear measurements at any distance:</p>
+<pre><code>1 MIL        = 3.4377 True MOA (about 3.44 MOA)
+1 True MOA   = 0.2909 MIL      (about 0.291 MIL)
+
+Linear size (in) = MIL × 3.6 × (distance_yd / 100)
+Linear size (in) = True_MOA × 1.0472 × (distance_yd / 100)
+Linear size (cm) = MIL × 10 × (distance_m / 100)
+Linear size (cm) = True_MOA × 2.909 × (distance_m / 100)
+
+MIL      = linear_in / (3.6 × distance_yd / 100)
+True MOA = linear_in / (1.0472 × distance_yd / 100)
+True MOA = linear_cm / (2.909 × distance_m / 100)</code></pre>
+<div class="tbl-wrap"><table><thead><tr><th>Distance</th><th>1 MIL</th><th>0.1 MIL click</th><th>1 True MOA</th><th>1/4 True MOA click</th><th>1/8 True MOA click</th></tr></thead><tbody><tr><td>50 yards</td><td>1.80″</td><td>0.18″</td><td>0.52″</td><td>0.13″</td><td>0.065″</td></tr><tr><td>100 yards</td><td>3.60″</td><td>0.36″</td><td>1.05″</td><td>0.26″</td><td>0.13″</td></tr><tr><td>100 meters</td><td>10.0 cm</td><td>1.0 cm</td><td>2.91 cm</td><td>7.3 mm</td><td>3.6 mm</td></tr><tr><td>200 yards</td><td>7.20″</td><td>0.72″</td><td>2.09″</td><td>0.52″</td><td>0.26″</td></tr><tr><td>300 yards</td><td>10.80″</td><td>1.08″</td><td>3.14″</td><td>0.79″</td><td>0.39″</td></tr><tr><td>500 yards</td><td>18.00″</td><td>1.80″</td><td>5.24″</td><td>1.31″</td><td>0.65″</td></tr><tr><td>1,000 yards</td><td>36.00″</td><td>3.60″</td><td>10.47″</td><td>2.62″</td><td>1.31″</td></tr></tbody></table></div>
+<p><strong>Worked example.</strong> Example numbers.</p>
+<p>You fire a group at 300 yards and measure its size on paper as 2.10 inches.</p>
+<pre><code>True MOA = 2.10 / (1.0472 × 3) = 2.10 / 3.1416 = 0.67 True MOA
+MIL      = 2.10 / (3.6 × 3)    = 2.10 / 10.8   = 0.19 MIL</code></pre>
+<p>Notice that <code>0.67 × 0.2909 = 0.195 MIL</code>, matching the direct calculation.</p>
+<h4 id="using-the-reticle-as-a-ruler">Using the reticle as a ruler</h4>
+<p>With a matched scope (MIL reticle with MIL turrets, or MOA with MOA), you can skip inches and use the reticle as a calibrated ruler; mixing units forces you to multiply or divide by 3.44 under time pressure, inviting mistakes.</p>
+<ol><li><strong>Measure impacts directly.</strong> If a 600-yard splash lands 0.8 MIL low and 0.4 MIL left, skip inches: dial up 0.8 MIL and right 0.4 MIL, or hold 0.8 MIL high and 0.4 MIL right.</li><li><strong>Dial vs. hold.</strong> Dialing centers the crosshair for elevation changes, deliberate shots, and small targets; holding is faster under time pressure, follow-ups, and shifting wind. Many shooters dial elevation and hold wind.</li><li><strong>Estimate range.</strong> Measuring a known-size target (such as an 18-inch steel plate) in MIL or MOA lets you compute distance without a laser rangefinder (see <a class="xref" href="/books/precision-rifle-handbook/chapter-11-estimating-range-wind-and-angles/" title="Chapter 11. Estimating Range, Wind, and Angles">Chapter 11</a>).</li></ol></div>
+<nav class="bk-pager" aria-label="Page navigation">
+  <a href="/books/precision-rifle-handbook/chapter-02-firearm-range-and-field-safety/"><span class="pg-lbl">&larr; Previous</span><span>Chapter 2. Firearm, Range, and Field Safety</span></a>
+  <a class="pg-next" href="/books/precision-rifle-handbook/chapter-04-the-rifle-as-a-system/"><span class="pg-lbl">Next &rarr;</span><span>Chapter 4. The Rifle as a System</span></a>
+</nav>
+    </article>
+  </main>
+<aside class="bk-toc-rail" aria-label="On this page">
+  <p class="toc-rail-hd">On this page</p>
+  <ul class="toc-rail-list"><li class="lvl-3"><a href="#why-it-matters">Why it matters</a></li><li class="lvl-3"><a href="#how-it-is-done">How it is done</a></li><li class="lvl-4"><a href="#what-an-angle-is-and-why-shooters-use-angles">What an angle is and why shooters use angles</a></li><li class="lvl-4"><a href="#mil-milliradians">MIL (milliradians)</a></li><li class="lvl-4"><a href="#moa-true-moa-vs-iphy">MOA (True MOA vs. IPHY)</a></li><li class="lvl-4"><a href="#converting-between-mil-moa-and-linear-units">Converting between MIL, MOA, and linear units</a></li><li class="lvl-4"><a href="#using-the-reticle-as-a-ruler">Using the reticle as a ruler</a></li></ul>
+</aside>
+</div>
+<dialog id="bk-search-dlg" class="bk-search-dlg" aria-label="Search books">
+  <div class="bk-sdlg-hd">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input id="bk-search-in" class="bk-sdlg-in" type="search" autocomplete="off" spellcheck="false" placeholder="Search chapters, sections, or powders…" aria-label="Search books" />
+    <button type="button" class="bk-sdlg-esc" data-search-close>Esc</button>
+  </div>
+  <div class="bk-sdlg-scope" role="group" aria-label="Search scope">
+    <button type="button" class="is-active" data-search-scope="book">Precision Rifle Handbook</button>
+    <button type="button" data-search-scope="all">All 3 Books</button>
+  </div>
+  <ul id="bk-search-res" class="bk-sdlg-res" role="list"></ul>
+</dialog>
+</body>
+</html>
